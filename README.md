@@ -23,8 +23,25 @@
 
 ## Licencia
 
-> *TODO*: Es requisito INDISPENSABLE el licenciar explícitamente el proyecto software. Se recomienda licenciar con *GNU Free Documentation License Version 1.3*. Crear un fichero `LICENSE` en la raiz del repo, con tu fichero de licencia. Recuerda que si empleas una licencia de software libre estás autorizando la derivación de tu obra bajo la misma licencia que elijas, pudiendo dar continuidad, p. e. otro alumno, para continuar tu proyecto en otro curso.
-> Si tu proyecto es documental, recomendamos los términos de *GNU Free Documentation License Version 1.3*, crea igualmente el fichero `LICENSE`. Será especialmente valorado en este caso, la claridad de la especificación para que el proyecto pueda ser ejecutado partiendo de lo proyectado.
+>Gesalt, Gestión de alquileres turísticos  
+>Copyright (C) 2020 Juan Manuel Cardeso García
+
+>Este programa es software libre: puede redistribuirlo y/o modificarlo bajo
+los términos de la Licencia General Pública de GNU publicada por la Free
+Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección)
+cualquier versión posterior.
+
+>Este programa se distribuye con la esperanza de que sea útil pero SIN
+NINGUNA GARANTÍA; incluso sin la garantía implícita de MERCANTIBILIDAD o
+CALIFICADA PARA UN PROPÓSITO EN PARTICULAR. Vea la Licencia General Pública
+de GNU para más detalles.
+
+>Usted ha debido de recibir una copia de la Licencia General Pública
+de GNU junto con este programa. Si no, vea http://www.gnu.org/licenses/.
+
+>***
+
+>Icono diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de [Flaticon](https://www.flaticon.es/)
 
 
 ## Índice
@@ -45,4 +62,3 @@
 
 ## Links
 
-Icono diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de [Flaticon](https://www.flaticon.es/)
