@@ -23,25 +23,25 @@
 
 ## Licencia
 
->Gesalt, Gestión de alquileres turísticos  
->Copyright (C) 2020 Juan Manuel Cardeso García
+Gesalt, Gestión de alquileres turísticos  
+Copyright (C) 2020 Juan Manuel Cardeso García
 
->Este programa es software libre: puede redistribuirlo y/o modificarlo bajo
+Este programa es software libre: puede redistribuirlo y/o modificarlo bajo
 los términos de la Licencia General Pública de GNU publicada por la Free
 Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección)
 cualquier versión posterior.
 
->Este programa se distribuye con la esperanza de que sea útil pero SIN
+Este programa se distribuye con la esperanza de que sea útil pero SIN
 NINGUNA GARANTÍA; incluso sin la garantía implícita de MERCANTIBILIDAD o
 CALIFICADA PARA UN PROPÓSITO EN PARTICULAR. Vea la Licencia General Pública
 de GNU para más detalles.
 
->Usted ha debido de recibir una copia de la Licencia General Pública
+Usted ha debido de recibir una copia de la Licencia General Pública
 de GNU junto con este programa. Si no, vea http://www.gnu.org/licenses/.
 
->***
+***
 
->Icono diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de [Flaticon](https://www.flaticon.es/)
+Icono diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de [Flaticon](https://www.flaticon.es/)
 
 
 ## Índice
