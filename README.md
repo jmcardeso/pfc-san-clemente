@@ -4,7 +4,16 @@
 
 ## Descripción
 
-> *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
+En los últimos años, el mercado de los alquileres turísticos ha crecido de manera exponencial. Cada vez es mayor el número de propietarios que optan por ofrecer sus viviendas de esta forma por su mayor rentabilidad económica. Sin embargo, este tipo de negocio tiene una serie de particularidades que hacen que su gestión sea más difícil que la del alquiler convencional.
+
+Gesalt nace con el propósito de ayudar a propietarios o inmobiliarias a gestionar las viviendas destinadas a alquiler turístico ofreciendo las siguientes características:
+
+* Operar con distintos propietarios
+* Gestionar de forma centralizada los calendarios de reservas de sus propiedades
+* Gestionar los clientes, independientemente de dónde hayan reservado la vivienda (en una web o directamente con el propietario/agencia)
+* Crear los contratos de fianza y alquiler, asi como expedir las facturas reglamentarias para esos clientes
+* Permitir realizar valoraciones y comentarios sobre los clientes
+* Enviar por email ofertas, promociones o cualquier otra información a los clientes ateniéndose a la ley de protección de datos
 
 ## Instalación / Puesta en marcha
 
@@ -18,7 +27,15 @@
 
 ## Sobre el autor
 
-> *TODO*: Realiza una breve descripción de quien eres (perfil profesional), tus puntos fuertes, o tecnologías que más dominas... y porqué te has decantado por este proyecto. **No más de 200 palabras**. Indica la forma fiable de contactar contigo en el presente y en el futuro.
+Apasionado de la informática y especialmente de la programación desde los tiempos de los 8 bits, cuando píxeles como puños centelleaban en televisores de tubo o monitores de fósforo verde y sólo a Dijkstra y sus filósofos se les atragantaba la cena al usar sentencias GOTO.
+
+Autodidacta en los primeros tiempos, con un certificado de profesionalidad de programación de sistemas informáticos y (casi) técnico superior en DAM. Peleando con los sistemas operativos desde el viejo CP/M hasta los actuales Windows 10, Linux, Android...
+
+**Lenguajes:** C/C++, C#, Visual Basic, Python, Java, PHP, SQL
+
+**Contacto:** a18juancg@iessanclemente.net - jmcardeso@outlook.es
+
+**¿Por qué Gesalt?**: Porque me permite trabajar con tecnologías como .NET con las que me siento cómodo, avanzando en su conocimiento al mismo tiempo que creo una aplicación que puede ser de utilidad.
 
 ## Licencia
 
