@@ -9,8 +9,8 @@ Muchas gracias por ayudar a que Gesalt sea una aplicación mejor. Puedes contrib
 También puedes participar en el desarrollo del programa aportando tu propio código. En ese caso, realiza un `merge request` para solicitar su inclusión en una nueva versión. Lee la licencia (la puedes encontrar [aquí](/LICENSE)) antes de iniciar tu colaboración.
 
 
-[bug]: <https://gitlab.iessanclemente.net/damo/a18juancg/issues/new?issuable_template=bug&issue[title]=Bug>
+[bug]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=bug&issue[title]=Bug>
 
-[feature]: <https://gitlab.iessanclemente.net/damo/a18juancg/issues/new?issuable_template=new_feature&issue[title]=Nueva%20caracter&iacutestica>
+[feature]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=new_feature&issue[title]=Nueva%20caracter&iacutestica>
 
-[non-specific]: <https://gitlab.iessanclemente.net/damo/a18juancg/issues/new?issuable_template=non-specific&issue[title]=Incidencia%20general>
+[non-specific]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=non-specific&issue[title]=Incidencia%20general>
