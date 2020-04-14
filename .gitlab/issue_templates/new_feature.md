@@ -8,4 +8,4 @@
 
 <!-- ¡No borres esto! -->
 /label ~feature
-/assing @a18juancg
+/assign @a18juancg
