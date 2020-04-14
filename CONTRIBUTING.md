@@ -13,4 +13,4 @@ También puedes participar en el desarrollo del programa aportando tu propio có
 
 [feature]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=new_feature&issue[title]=Nueva%20caracteristica>
 
-[non-specific]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=non-specific&issue[title]=Incidencia%20general>
+[non-specific]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=non-specific&issue[title]=Incidencia>
