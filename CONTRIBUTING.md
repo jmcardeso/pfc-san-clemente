@@ -11,6 +11,6 @@ También puedes participar en el desarrollo del programa aportando tu propio có
 
 [bug]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=bug&issue[title]=Bug>
 
-[feature]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=new_feature&issue[title]=Nueva%20caracter&iacutestica>
+[feature]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=new_feature&issue[title]=Nueva%20caracteristica>
 
 [non-specific]: <https://gitlab.iessanclemente.net/a18juancg/pruebas/issues/new?issuable_template=non-specific&issue[title]=Incidencia%20general>
