@@ -18,5 +18,5 @@
 <!-- ¡No borres esto! -->
 /label ~bug
 
-/assing @a18juancg
+/assign @a18juancg
 
