@@ -42,18 +42,18 @@ Autodidacta en los primeros tiempos, con un certificado de profesionalidad de pr
 Gesalt, Gestión de alquileres turísticos  
 Copyright (C) 2020 Juan Manuel Cardeso García
 
-Este programa es software libre: puede redistribuirlo y/o modificarlo bajo
+Este programa es software libre: puedes redistribuirlo y/o modificarlo bajo
 los términos de la Licencia General Pública de GNU publicada por la Free
-Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección)
+Software Foundation, ya sea la versión 3 de la Licencia, o (a tu elección)
 cualquier versión posterior.
 
 Este programa se distribuye con la esperanza de que sea útil pero SIN
 NINGUNA GARANTÍA; incluso sin la garantía implícita de MERCANTIBILIDAD o
-CALIFICADA PARA UN PROPÓSITO EN PARTICULAR. Vea la Licencia General Pública
+CALIFICADA PARA UN PROPÓSITO EN PARTICULAR. Lee la Licencia General Pública
 de GNU para más detalles.
 
-Usted ha debido de recibir una copia de la Licencia General Pública
-de GNU junto con este programa. Si no, vea http://www.gnu.org/licenses/.
+Has debido de recibir una copia de la Licencia General Pública
+de GNU junto con este programa. Si no, ve a http://www.gnu.org/licenses/.
 
 ***
 
@@ -74,7 +74,9 @@ Icono diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de 
 
 ## Guía de contribución
 
-> *TODO*: Tratándose de un proyecto de software libre, es muy importante que expongas cómo se puede contribuir con tu proyecto. Algunos ejemplos de esto son realizar nuevas funcionalidades, corrección y/u optimización del código, realización de tests automatizados, nuevas interfaces de integración, desarrollo de plugins, etc. etc. Sé lo más conciso que puedas.
+¿Deseas contribuir? Cualquier aportación es bienvenida. Sigue, por favor, [estas instrucciones](CONTRIBUTING.md).
 
 ## Links
+
+> *TODO*: Enlaces externos y descipciones de estos enlaces que creas conveniente indicar aquí. Generalmente ya van a estar integrados con tu documentación, pero si requieres realizar un listado de ellos, este es el lugar.
 
