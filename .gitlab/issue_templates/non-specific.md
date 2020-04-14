@@ -3,4 +3,4 @@
 
 <!-- ¡No borres esto! -->
 /label ~non-specific
-/assing @a18juancg
+/assign @a18juancg
