@@ -16,7 +16,7 @@ Por todo ello, surge la idea de crear una aplicación que permita a sus posibles
 * Permitir realizar valoraciones y comentarios sobre los clientes
 * Enviar por email ofertas, promociones o cualquier otra información a los clientes ateniéndose a la ley de protección de datos
 
-###### Competencia
+###### Alternativas
 En la actualidad, sea en el segmento que sea, es muy difícil no encontrar software que intente cubrir esa necesidad, y el caso de los alquileres vacacionales no es una excepción. Existen algunas webs dedicadas a este mercado, aunque todas de pago o, de tener opción gratuita, con funciones muy limitadas.
 
 ###### Comercialización
