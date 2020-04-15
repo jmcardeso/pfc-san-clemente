@@ -403,7 +403,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PruebaICal"
         "ProductCode" = "8:{A85922F1-05B0-49CD-9DFB-67F09F44FAA3}"
-        "PackageCode" = "8:{FAB0CB93-6EE6-43E0-8144-00B13D8BC72C}"
+        "PackageCode" = "8:{85BCE6CB-FCDD-4177-B248-B95A10467ADF}"
         "UpgradeCode" = "8:{101FEDCC-6683-42B8-89DE-C7E26CA0975E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -411,7 +411,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:IES San Clemente"
+        "Manufacturer" = "8:Juan M. Cardeso"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Instalador de PruebaICal"
@@ -952,7 +952,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0EE6E4B46BC645E380343F6A98C7A169"
             {
-            "SourcePath" = "8:..\\PruebaICal\\obj\\Release\\PruebaICal.exe"
+            "SourcePath" = "8:..\\PruebaICal\\obj\\Debug\\PruebaICal.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
