@@ -376,7 +376,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_6D8D89DBAAC145C68839C6CECBAF4C53"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -403,7 +403,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PruebaICal"
         "ProductCode" = "8:{A85922F1-05B0-49CD-9DFB-67F09F44FAA3}"
-        "PackageCode" = "8:{2F37F32C-C32F-4863-8E6B-ED4382DD02EC}"
+        "PackageCode" = "8:{FAB0CB93-6EE6-43E0-8144-00B13D8BC72C}"
         "UpgradeCode" = "8:{101FEDCC-6683-42B8-89DE-C7E26CA0975E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
