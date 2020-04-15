@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Revisar los valores de los atributos del ensamblado
 
 <Assembly: AssemblyTitle("PruebaICal")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("HP Inc.")>
+<Assembly: AssemblyDescription("Prueba de descripción de info de ensamblado")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("PruebaICal")>
-<Assembly: AssemblyCopyright("Copyright © HP Inc. 2020")>
+<Assembly: AssemblyCopyright("Copyright © Juan Manuel Cardeso García 2020")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
