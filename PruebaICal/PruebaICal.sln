@@ -30,6 +30,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
 		SolutionGuid = {A2287848-887B-4346-8151-F949ADD9D769}
 	EndGlobalSection
 EndGlobal
