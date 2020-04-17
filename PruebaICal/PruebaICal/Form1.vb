@@ -11,6 +11,7 @@ Public Class Form1
         ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
         If strIdioma.Equals("primera_vez") Then
             cultura = Threading.Thread.CurrentThread.CurrentUICulture
+
             Select Case cultura.TwoLetterISOLanguageName
                 Case "es", "gl"
                     strIdioma = cultura.TwoLetterISOLanguageName

@@ -27,7 +27,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_34C1602FF10C331D1BE4150D1F83243B"
+        "MsmKey" = "8:_50389A570C59DAA5C2F2C736DD26BBF6"
+        "OwnerKey" = "8:_0EE6E4B46BC645E380343F6A98C7A169"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7757FE257AE960B9F405CB52FE04EDAD"
+        "OwnerKey" = "8:_87B8A6EB6F2619C0D9812FF6B627FFD5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7757FE257AE960B9F405CB52FE04EDAD"
         "OwnerKey" = "8:_0EE6E4B46BC645E380343F6A98C7A169"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,18 +63,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D33B56B403D1D62C8F10A9DD149D3038"
-        "OwnerKey" = "8:_87B8A6EB6F2619C0D9812FF6B627FFD5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D33B56B403D1D62C8F10A9DD149D3038"
-        "OwnerKey" = "8:_0EE6E4B46BC645E380343F6A98C7A169"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_EE91D015B0884D3A88CFF0B1F1A30A68"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -82,7 +82,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_34C1602FF10C331D1BE4150D1F83243B"
+        "OwnerKey" = "8:_50389A570C59DAA5C2F2C736DD26BBF6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -94,7 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D33B56B403D1D62C8F10A9DD149D3038"
+        "OwnerKey" = "8:_7757FE257AE960B9F405CB52FE04EDAD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -229,20 +229,51 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_34C1602FF10C331D1BE4150D1F83243B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_50389A570C59DAA5C2F2C736DD26BBF6"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Reflection.TypeExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.Reflection.TypeExtensions, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_34C1602FF10C331D1BE4150D1F83243B"
+                    "_50389A570C59DAA5C2F2C736DD26BBF6"
                     {
                     "Name" = "8:System.Reflection.TypeExtensions.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:System.Reflection.TypeExtensions.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7757FE257AE960B9F405CB52FE04EDAD"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NodaTime, Version=2.4.7.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7757FE257AE960B9F405CB52FE04EDAD"
+                    {
+                    "Name" = "8:NodaTime.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NodaTime.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
@@ -342,37 +373,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D33B56B403D1D62C8F10A9DD149D3038"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:NodaTime, Version=2.0.2.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_D33B56B403D1D62C8F10A9DD149D3038"
-                    {
-                    "Name" = "8:NodaTime.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:NodaTime.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EE91D015B0884D3A88CFF0B1F1A30A68"
             {
             "SourcePath" = "8:..\\..\\LICENSE"
@@ -461,7 +461,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PruebaICal"
         "ProductCode" = "8:{8F077D8B-E31D-42BD-9092-CC91EDC8A381}"
-        "PackageCode" = "8:{7F013CE3-5833-4496-8449-B5E636FAB7B1}"
+        "PackageCode" = "8:{2DD3A16A-260F-49BB-8CD9-DD1DDB60E437}"
         "UpgradeCode" = "8:{101FEDCC-6683-42B8-89DE-C7E26CA0975E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1022,6 +1022,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0922465249224B8C8AD4C7692D581ABD"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:LocalizedResourceDlls"
+            "OutputProjectGuid" = "8:{4D99B3EB-4AAD-46BB-8B20-B9AC0CE0C9D3}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0EE6E4B46BC645E380343F6A98C7A169"
             {
             "SourcePath" = "8:..\\PruebaICal\\obj\\Debug\\PruebaICal.exe"
