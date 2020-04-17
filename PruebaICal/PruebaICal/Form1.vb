@@ -5,8 +5,23 @@ Imports Ical.Net.Serialization
 Imports System.Resources
 Public Class Form1
     Public Sub New()
+        Dim strIdioma As String = My.Settings.idioma
+        Dim cultura As Globalization.CultureInfo
+
+        ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
+        If strIdioma.Equals("primera_vez") Then
+            cultura = Threading.Thread.CurrentThread.CurrentUICulture
+            Select Case cultura.TwoLetterISOLanguageName
+                Case "es", "gl"
+                    strIdioma = cultura.TwoLetterISOLanguageName
+                Case Else
+                    strIdioma = "en"
+            End Select
+            My.Settings.idioma = strIdioma
+        End If
+
         ' Para forzar el cambio de idioma por código
-        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo("fr")
+        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(strIdioma)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -14,11 +29,16 @@ Public Class Form1
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Creamos un ResourceManager para el formulario
         Dim LocRM As New ResourceManager("PruebaICal.WinFormStrings", GetType(Form1).Assembly)
         ' Asignamos a la etiqueta Label2 la cadena con la clave Cosa (como en Android)
+        ' Esto no es necesario hacerlo así, porque ya tenemos el propio formulario con la propiedad Language en varios idiomas
+        ' pero sirve para ver cómo se haría con texto mostrado por código
         Label2.Text = LocRM.GetString("Cosa")
+
         Dim now = Date.Now
         Dim later = now.AddHours(1)
 
@@ -45,23 +65,6 @@ Public Class Form1
         Return numero * 2
     End Function
 
-    Private Sub Idioma_Click(sender As ToolStripMenuItem, e As EventArgs) Handles mnuIdiomaGL.Click, mnuIdiomaES.Click, mnuIdiomaEN.Click
-        Dim idioma As String
-
-        Select Case sender.Name
-            Case "mnuIdiomaGL"
-                idioma = "gl"
-               ' sender.Checked = True
-            Case "mnuIdiomaES"
-                idioma = "es"
-                sender.Checked = True
-            Case Else
-                idioma = "en"
-                sender.Checked = True
-        End Select
-
-        CambiarIdioma(idioma)
-    End Sub
     Private Sub CambiarIdioma(idioma As String)
         Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(idioma)
         Me.Controls.Clear()
@@ -69,8 +72,13 @@ Public Class Form1
         Form1_Load(Nothing, Nothing)
     End Sub
 
-    Private Sub Idioma_Click(sender As Object, e As EventArgs) Handles mnuIdiomaGL.Click, mnuIdiomaES.Click, mnuIdiomaEN.Click
+    Private Sub mnuAyuda_Preferencias_Click(sender As Object, e As EventArgs) Handles mnuAyuda_Preferencias.Click
+        Dim frmPref As New frmPreferencias
 
+        frmPref.ShowDialog()
+
+        If frmPref.CambioIdioma Then
+            CambiarIdioma(My.Settings.idioma)
+        End If
     End Sub
-
 End Class

@@ -26,10 +26,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuIdiomaGL = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuIdiomaES = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuIdiomaEN = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuAyuda = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuAyuda_Preferencias = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,30 +43,20 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAyuda})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
-        'IdiomaToolStripMenuItem
+        'mnuAyuda
         '
-        Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuIdiomaGL, Me.mnuIdiomaES, Me.mnuIdiomaEN})
-        Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        resources.ApplyResources(Me.IdiomaToolStripMenuItem, "IdiomaToolStripMenuItem")
+        Me.mnuAyuda.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAyuda_Preferencias})
+        Me.mnuAyuda.Name = "mnuAyuda"
+        resources.ApplyResources(Me.mnuAyuda, "mnuAyuda")
         '
-        'mnuIdiomaGL
+        'mnuAyuda_Preferencias
         '
-        Me.mnuIdiomaGL.Name = "mnuIdiomaGL"
-        resources.ApplyResources(Me.mnuIdiomaGL, "mnuIdiomaGL")
-        '
-        'mnuIdiomaES
-        '
-        Me.mnuIdiomaES.Name = "mnuIdiomaES"
-        resources.ApplyResources(Me.mnuIdiomaES, "mnuIdiomaES")
-        '
-        'mnuIdiomaEN
-        '
-        Me.mnuIdiomaEN.Name = "mnuIdiomaEN"
-        resources.ApplyResources(Me.mnuIdiomaEN, "mnuIdiomaEN")
+        Me.mnuAyuda_Preferencias.Name = "mnuAyuda_Preferencias"
+        resources.ApplyResources(Me.mnuAyuda_Preferencias, "mnuAyuda_Preferencias")
         '
         'Form1
         '
@@ -89,8 +77,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents IdiomaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents mnuIdiomaGL As ToolStripMenuItem
-    Friend WithEvents mnuIdiomaES As ToolStripMenuItem
-    Friend WithEvents mnuIdiomaEN As ToolStripMenuItem
+    Friend WithEvents mnuAyuda As ToolStripMenuItem
+    Friend WithEvents mnuAyuda_Preferencias As ToolStripMenuItem
 End Class

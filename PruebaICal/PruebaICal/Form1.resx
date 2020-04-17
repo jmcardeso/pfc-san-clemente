@@ -131,9 +131,6 @@
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Label1</value>
-  </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
   </data>
@@ -158,9 +155,6 @@
   <data name="Label2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Cosa</value>
-  </data>
   <data name="&gt;&gt;Label2.Name" xml:space="preserve">
     <value>Label2</value>
   </data>
@@ -176,29 +170,17 @@
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="mnuIdiomaGL.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="mnuAyuda_Preferencias.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="mnuIdiomaGL.Text" xml:space="preserve">
-    <value>Galician</value>
+  <data name="mnuAyuda_Preferencias.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="mnuIdiomaES.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+  <data name="mnuAyuda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
   </data>
-  <data name="mnuIdiomaES.Text" xml:space="preserve">
-    <value>Spanish</value>
-  </data>
-  <data name="mnuIdiomaEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="mnuIdiomaEN.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="IdiomaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="IdiomaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
+  <data name="mnuAyuda.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -911,28 +893,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Prueba ICalendar</value>
   </data>
-  <data name="&gt;&gt;IdiomaToolStripMenuItem.Name" xml:space="preserve">
-    <value>IdiomaToolStripMenuItem</value>
+  <data name="&gt;&gt;mnuAyuda.Name" xml:space="preserve">
+    <value>mnuAyuda</value>
   </data>
-  <data name="&gt;&gt;IdiomaToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuAyuda.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mnuIdiomaGL.Name" xml:space="preserve">
-    <value>mnuIdiomaGL</value>
+  <data name="&gt;&gt;mnuAyuda_Preferencias.Name" xml:space="preserve">
+    <value>mnuAyuda_Preferencias</value>
   </data>
-  <data name="&gt;&gt;mnuIdiomaGL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnuIdiomaES.Name" xml:space="preserve">
-    <value>mnuIdiomaES</value>
-  </data>
-  <data name="&gt;&gt;mnuIdiomaES.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnuIdiomaEN.Name" xml:space="preserve">
-    <value>mnuIdiomaEN</value>
-  </data>
-  <data name="&gt;&gt;mnuIdiomaEN.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuAyuda_Preferencias.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

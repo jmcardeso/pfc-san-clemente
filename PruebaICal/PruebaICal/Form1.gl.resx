@@ -793,16 +793,10 @@
         //4H/////////////////////////////////w==
 </value>
   </data>
-  <data name="IdiomaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Idioma</value>
+  <data name="mnuAyuda.Text" xml:space="preserve">
+    <value>Axuda</value>
   </data>
-  <data name="mnuIdiomaGL.Text" xml:space="preserve">
-    <value>Galego</value>
-  </data>
-  <data name="mnuIdiomaES.Text" xml:space="preserve">
-    <value>Español</value>
-  </data>
-  <data name="mnuIdiomaEN.Text" xml:space="preserve">
-    <value>Inglés</value>
+  <data name="mnuAyuda_Preferencias.Text" xml:space="preserve">
+    <value>Preferencias</value>
   </data>
 </root>
