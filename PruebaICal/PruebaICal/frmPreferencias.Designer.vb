@@ -33,8 +33,13 @@ Partial Class frmPreferencias
         Me.rbGalician = New System.Windows.Forms.RadioButton()
         Me.lblIdioma = New System.Windows.Forms.Label()
         Me.tbpLogin = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tbxUser = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbxPass = New System.Windows.Forms.TextBox()
         Me.tcPreferencias.SuspendLayout()
         Me.tbpLanguage.SuspendLayout()
+        Me.tbpLogin.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnOK
@@ -102,9 +107,34 @@ Partial Class frmPreferencias
         '
         'tbpLogin
         '
+        Me.tbpLogin.Controls.Add(Me.tbxPass)
+        Me.tbpLogin.Controls.Add(Me.Label3)
+        Me.tbpLogin.Controls.Add(Me.tbxUser)
+        Me.tbpLogin.Controls.Add(Me.Label2)
         resources.ApplyResources(Me.tbpLogin, "tbpLogin")
         Me.tbpLogin.Name = "tbpLogin"
         Me.tbpLogin.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'tbxUser
+        '
+        resources.ApplyResources(Me.tbxUser, "tbxUser")
+        Me.tbxUser.Name = "tbxUser"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
+        '
+        'tbxPass
+        '
+        resources.ApplyResources(Me.tbxPass, "tbxPass")
+        Me.tbxPass.Name = "tbxPass"
+        Me.tbxPass.UseSystemPasswordChar = True
         '
         'frmPreferencias
         '
@@ -120,6 +150,8 @@ Partial Class frmPreferencias
         Me.tcPreferencias.ResumeLayout(False)
         Me.tbpLanguage.ResumeLayout(False)
         Me.tbpLanguage.PerformLayout()
+        Me.tbpLogin.ResumeLayout(False)
+        Me.tbpLogin.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -134,4 +166,8 @@ Partial Class frmPreferencias
     Friend WithEvents rbGalician As RadioButton
     Friend WithEvents lblIdioma As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents tbxUser As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents tbxPass As TextBox
+    Friend WithEvents Label3 As Label
 End Class

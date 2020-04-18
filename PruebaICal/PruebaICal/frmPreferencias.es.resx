@@ -147,4 +147,10 @@
   <data name="Label1.Text" xml:space="preserve">
     <value>La aplicación se reiniciará.</value>
   </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Usuario:</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
 </root>

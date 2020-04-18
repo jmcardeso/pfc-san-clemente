@@ -11,6 +11,9 @@
             Case "gl"
                 rbGalician.Checked = True
         End Select
+
+        tbxUser.Text = My.Settings.usuario
+        tbxPass.Text = My.Settings.contrasenha
     End Sub
 
     Private Sub rbDefecto_CheckedChanged(sender As RadioButton, e As EventArgs) Handles rbEnglish.CheckedChanged, rbGalician.CheckedChanged, rbSpanish.CheckedChanged
@@ -32,14 +35,20 @@
             End If
         Next
 
-        If Not strIdioma.Equals(My.Settings.idioma) Then
-            CambioIdioma = True
-        End If
+        CambioIdioma = IIf(strIdioma.Equals(My.Settings.idioma), False, True)
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         My.Settings.idioma = strIdioma
+        My.Settings.usuario = tbxUser.Text
+        My.Settings.contrasenha = tbxPass.Text
+
         My.Settings.Save()
+        Close()
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        CambioIdioma = False
         Close()
     End Sub
 End Class
