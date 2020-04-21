@@ -5,11 +5,8 @@
     <Setting Name="idioma" Type="System.String" Scope="User">
       <Value Profile="(Default)">primera_vez</Value>
     </Setting>
-    <Setting Name="usuario" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="contrasenha" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="ssh" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

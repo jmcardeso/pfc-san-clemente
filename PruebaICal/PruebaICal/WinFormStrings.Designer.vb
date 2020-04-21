@@ -65,11 +65,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Connection Error.
+        '''</summary>
+        Friend Shared ReadOnly Property conError() As String
+            Get
+                Return ResourceManager.GetString("conError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Connection established successfully.
+        '''</summary>
+        Friend Shared ReadOnly Property conOK() As String
+            Get
+                Return ResourceManager.GetString("conOK", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Thing.
         '''</summary>
         Friend Shared ReadOnly Property Cosa() As String
             Get
                 Return ResourceManager.GetString("Cosa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a No connection bd..
+        '''</summary>
+        Friend Shared ReadOnly Property csNotFound() As String
+            Get
+                Return ResourceManager.GetString("csNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a PruebaICal.
+        '''</summary>
+        Friend Shared ReadOnly Property msgTitle() As String
+            Get
+                Return ResourceManager.GetString("msgTitle", resourceCulture)
             End Get
         End Property
     End Class

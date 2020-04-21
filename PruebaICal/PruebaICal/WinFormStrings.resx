@@ -110,4 +110,16 @@
   <data name="Cosa" xml:space="preserve">
     <value>Thing</value>
   </data>
+  <data name="msgTitle" xml:space="preserve">
+    <value>PruebaICal</value>
+  </data>
+  <data name="csNotFound" xml:space="preserve">
+    <value>No connection bd.</value>
+  </data>
+  <data name="conError" xml:space="preserve">
+    <value>Connection Error</value>
+  </data>
+  <data name="conOK" xml:space="preserve">
+    <value>Connection established successfully</value>
+  </data>
 </root>

@@ -68,25 +68,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property usuario() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ssh() As Boolean
             Get
-                Return CType(Me("usuario"),String)
+                Return CType(Me("ssh"),Boolean)
             End Get
             Set
-                Me("usuario") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property contrasenha() As String
-            Get
-                Return CType(Me("contrasenha"),String)
-            End Get
-            Set
-                Me("contrasenha") = value
+                Me("ssh") = value
             End Set
         End Property
     End Class

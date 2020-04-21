@@ -2,9 +2,10 @@
 Imports Ical.Net.CalendarComponents
 Imports Ical.Net.DataTypes
 Imports Ical.Net.Serialization
-Imports System.Configuration
 Imports System.Resources
+Imports MySql.Data.MySqlClient
 Public Class Form1
+
     Public Sub New()
         Dim strIdioma As String = My.Settings.idioma
         Dim cultura As Globalization.CultureInfo
@@ -63,71 +64,25 @@ Public Class Form1
 
         Label1.Text = serializerCalendar
 
-        AddConnectionString("mysql", "LocalSqlServer: data source=127.0.0.1;Integrated Security=SSPI;" + "Initial Catalog=aspnetdb", "System.Data.SqlClient")
+        ' =========================================================================
 
-        MsgBox(GetConnectionStringByName("mysql"))
+        Dim con As Connection = Connection.getInstance()
+        Dim conexion As MySqlConnection
+        Dim dtaTabla As MySqlDataAdapter
+        Dim dtsPruebas As New DataSet
+        Dim cs = con.GetConnectionStringByName(MYSQL_CS_NAME)
 
-        EditConnectionString("mysql", "LocalSqlServer: data source=127.0.0.199;Integrated Security=SSPI;" + "Initial Catalog=aspnetdb", "System.Data.SqlClient")
+        conexion = con.mysqlOpen(cs.ConnectionString)
 
-        MsgBox(GetConnectionStringByName("mysql"))
+        dtaTabla = New MySqlDataAdapter("select * from country", conexion)
+        dtaTabla.Fill(dtsPruebas, "paises")
+
+        DataGridView1.DataSource = dtsPruebas.Tables("paises")
+
+        con.mysqlClose()
     End Sub
     Public Function PruebaDePruebas(numero As Integer) As Integer
         Return numero * 2
-    End Function
-
-    Private Sub EditConnectionString(csName As String, csConnectionString As String, csProviderName As String)
-        If RemoveConnectionStrings(csName) Then
-            AddConnectionString(csName, csConnectionString, csProviderName)
-        End If
-    End Sub
-
-    ' Ref: https://docs.microsoft.com/en-us/dotnet/api/system.configuration.connectionstringsettingscollection.add?view=netframework-4.8
-    Private Sub AddConnectionString(csName As String, csConnectionString As String, csProviderName As String)
-        Try
-            ' Get the configuration file.
-            Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
-
-            ' Add the connection string.
-            Dim csSection As ConnectionStringsSection = config.ConnectionStrings
-            csSection.ConnectionStrings.Add(New ConnectionStringSettings(csName, csConnectionString, csProviderName))
-
-            ' Save the configuration file.
-            config.Save(ConfigurationSaveMode.Modified)
-        Catch err As ConfigurationErrorsException
-            MsgBox(err.ToString)
-        End Try
-    End Sub
-
-    ' Ref: https://docs.microsoft.com/en-us/dotnet/api/system.configuration.connectionstringsettingscollection.remove?view=netframework-4.8
-    Private Function RemoveConnectionStrings(csName As String) As Boolean
-        Dim resultado As Boolean = False
-
-        Try
-            ' Get the application configuration file.
-            Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
-
-            ' Clear the connection strings collection.
-            Dim csSection As ConnectionStringsSection = config.ConnectionStrings
-            Dim csCollection As ConnectionStringSettingsCollection = csSection.ConnectionStrings
-
-            ' Get the connection string setting element
-            ' with the specified name.
-            Dim cs As ConnectionStringSettings = csCollection(csName)
-
-            ' Remove it.
-            If Not (cs Is Nothing) Then
-                ' Remove the element.
-                csCollection.Remove(cs)
-
-                ' Save the configuration file.
-                config.Save(ConfigurationSaveMode.Modified)
-                resultado = True
-            End If
-        Catch err As ConfigurationErrorsException
-            MsgBox(err.ToString())
-        End Try
-
-        Return resultado
     End Function
 
     Private Sub CambiarIdioma(idioma As String)
@@ -146,23 +101,4 @@ Public Class Form1
             CambiarIdioma(My.Settings.idioma)
         End If
     End Sub
-
-    ' Ref: https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
-    ' Retrieves a connection string by name.
-    ' Returns Nothing if the name is not found.
-    Private Shared Function GetConnectionStringByName(ByVal name As String) As String
-
-        ' Assume failure
-        Dim returnValue As String = Nothing
-
-        ' Look for the name in the connectionStrings section.
-        Dim settings As ConnectionStringSettings = ConfigurationManager.ConnectionStrings(name)
-
-        ' If found, return the connection string.
-        If Not settings Is Nothing Then
-            returnValue = settings.ConnectionString
-        End If
-
-        Return returnValue
-    End Function
 End Class

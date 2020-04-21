@@ -153,4 +153,28 @@
   <data name="Label3.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
+  <data name="cbxSSH.Text" xml:space="preserve">
+    <value>Túnel SSH</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Servidor:</value>
+  </data>
+  <data name="lblHostName.Text" xml:space="preserve">
+    <value>Nombre del host:</value>
+  </data>
+  <data name="lblSSHPassword.Text" xml:space="preserve">
+    <value>Contr. SSH:</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>Nombre usuario:</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Puerto:</value>
+  </data>
+  <data name="lblSSHPort.Text" xml:space="preserve">
+    <value>Puerto SSH:</value>
+  </data>
+  <data name="btnTestCon.Text" xml:space="preserve">
+    <value>Prueba de conexión</value>
+  </data>
 </root>

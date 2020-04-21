@@ -28,7 +28,9 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuAyuda = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAyuda_Preferencias = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -58,10 +60,17 @@ Partial Class Form1
         Me.mnuAyuda_Preferencias.Name = "mnuAyuda_Preferencias"
         resources.ApplyResources(Me.mnuAyuda_Preferencias, "mnuAyuda_Preferencias")
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
+        Me.DataGridView1.Name = "DataGridView1"
+        '
         'Form1
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -69,6 +78,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -79,4 +89,5 @@ Partial Class Form1
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents mnuAyuda As ToolStripMenuItem
     Friend WithEvents mnuAyuda_Preferencias As ToolStripMenuItem
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
