@@ -70,16 +70,16 @@ Public Class Form1
         Dim conexion As MySqlConnection
         Dim dtaTabla As MySqlDataAdapter
         Dim dtsPruebas As New DataSet
-        Dim cs = con.GetConnectionStringByName(MYSQL_CS_NAME)
+        Dim cs = con.GetMySQLConnectionString()
 
-        conexion = con.mysqlOpen(cs.ConnectionString)
+        conexion = con.Open(New MySqlConnectionStringBuilder(cs.ConnectionString))
 
         dtaTabla = New MySqlDataAdapter("select * from country", conexion)
         dtaTabla.Fill(dtsPruebas, "paises")
 
         DataGridView1.DataSource = dtsPruebas.Tables("paises")
 
-        con.mysqlClose()
+        con.Close()
     End Sub
     Public Function PruebaDePruebas(numero As Integer) As Integer
         Return numero * 2

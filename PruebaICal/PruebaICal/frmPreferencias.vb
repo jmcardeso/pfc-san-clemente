@@ -23,7 +23,7 @@ Public Class frmPreferencias
 
     Private Sub LoadConnectionStringData()
         Dim con As Connection = Connection.getInstance()
-        Dim cs As ConnectionStringSettings = con.GetConnectionStringByName(MYSQL_CS_NAME)
+        Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
         Dim csBuilder As New MySqlConnectionStringBuilder(cs.ConnectionString)
 
         If cs Is Nothing Then
@@ -46,7 +46,7 @@ Public Class frmPreferencias
 
     Private Sub SaveConnectionStringData()
         Dim con As Connection = Connection.getInstance()
-        Dim cs As ConnectionStringSettings = con.GetConnectionStringByName(MYSQL_CS_NAME)
+        Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
 
         Dim csBuilder As New MySqlConnectionStringBuilder() With {
             .UserID = tbxUser.Text,
@@ -139,12 +139,11 @@ Public Class frmPreferencias
             csBuilder.SshPassword = tbxSSHPass.Text
         End If
 
-        con.mysqlClose()
-        If con.mysqlOpen(csBuilder.ConnectionString) Is Nothing Then
+        If con.Open(csBuilder) Is Nothing Then
             MsgBox(LocRM.GetString("conError"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
         Else
             MsgBox(LocRM.GetString("conOK"), MsgBoxStyle.Information, LocRM.GetString("msgTitle"))
-            con.mysqlClose()
+            con.Close()
         End If
     End Sub
 End Class

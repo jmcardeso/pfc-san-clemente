@@ -1,9 +1,10 @@
 ﻿Imports System.Configuration
 Imports MySql.Data.MySqlClient
 Imports System.Data.OleDb
+Imports System.Data.Common
 Public Class Connection
     Private Shared objConnection As Connection
-    Private mysqlCon As MySqlConnection
+    Private Con As DbConnection
 
     Private Sub New()
 
@@ -16,26 +17,26 @@ Public Class Connection
 
         Return objConnection
     End Function
-    Public Function mysqlOpen(cs As String) As MySqlConnection
-        If mysqlCon Is Nothing Then
+    Public Function Open(cs As MySqlConnectionStringBuilder) As MySqlConnection
+        If Con Is Nothing Then
             Try
-                mysqlCon = New MySqlConnection(cs)
-                mysqlCon.Open()
+                Con = New MySqlConnection(cs.ConnectionString)
+                Con.Open()
             Catch err As Exception
                 Return Nothing
             End Try
         End If
-        Return mysqlCon
+        Return Con
     End Function
 
-    Public Function Open(cs As String) As OleDbConnection
+    Public Function Open(cs As OleDbConnectionStringBuilder) As OleDbConnection
 
     End Function
 
-    Public Sub mysqlClose()
-        If Not mysqlCon Is Nothing Then
-            mysqlCon.Close()
-            mysqlCon = Nothing
+    Public Sub Close()
+        If Not Con Is Nothing Then
+            Con.Close()
+            Con = Nothing
         End If
     End Sub
     Public Sub EditConnectionString(csName As String, csConnectionString As String, csProviderName As String)
@@ -126,15 +127,15 @@ Public Class Connection
     End Function
 
     ' Ref: https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
-    ' Retrieves a connection string by name.
+    ' Retrieves the MySQL connection string.
     ' Returns Nothing if the name is not found.
-    Public Function GetConnectionStringByName(ByVal name As String) As ConnectionStringSettings
+    Public Function GetMySQLConnectionString() As ConnectionStringSettings
 
         ' Assume failure
         Dim returnValue As ConnectionStringSettings = Nothing
 
         ' Look for the name in the connectionStrings section.
-        Dim settings As ConnectionStringSettings = ConfigurationManager.ConnectionStrings(name)
+        Dim settings As ConnectionStringSettings = ConfigurationManager.ConnectionStrings(MYSQL_CS_NAME)
 
         ' If found, return the connection string.
         If Not settings Is Nothing Then
