@@ -8,7 +8,7 @@ Public Class frmPreferencias
     Dim LocRM As New ResourceManager("PruebaICal.WinFormStrings", GetType(frmPreferencias).Assembly)
 
     Private Sub frmPreferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Select Case My.Settings.idioma
+        Select Case My.Settings.language
             Case "en"
                 rbEnglish.Checked = True
             Case "es"
@@ -18,18 +18,19 @@ Public Class frmPreferencias
         End Select
 
         cbxSSH.Checked = My.Settings.ssh
-        LoadConnectionStringData()
+        LoadMySQLConnectionStringData()
     End Sub
 
-    Private Sub LoadConnectionStringData()
+    Private Sub LoadMySQLConnectionStringData()
         Dim con As Connection = Connection.getInstance()
         Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
-        Dim csBuilder As New MySqlConnectionStringBuilder(cs.ConnectionString)
 
         If cs Is Nothing Then
             MsgBox(LocRM.GetString("csNotFound"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             Exit Sub
         End If
+
+        Dim csBuilder As New MySqlConnectionStringBuilder(cs.ConnectionString)
 
         tbxUser.Text = csBuilder.UserID
         tbxPass.Text = csBuilder.Password
@@ -44,7 +45,7 @@ Public Class frmPreferencias
         End If
     End Sub
 
-    Private Sub SaveConnectionStringData()
+    Private Sub SaveMySQLConnectionStringData()
         Dim con As Connection = Connection.getInstance()
         Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
 
@@ -101,14 +102,14 @@ Public Class frmPreferencias
             End If
         Next
 
-        CambioIdioma = IIf(strIdioma.Equals(My.Settings.idioma), False, True)
+        CambioIdioma = IIf(strIdioma.Equals(My.Settings.language), False, True)
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        My.Settings.idioma = strIdioma
+        My.Settings.language = strIdioma
         My.Settings.ssh = cbxSSH.Checked
         My.Settings.Save()
-        SaveConnectionStringData()
+        SaveMySQLConnectionStringData()
         Close()
     End Sub
 

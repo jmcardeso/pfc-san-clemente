@@ -3,15 +3,16 @@ Imports Ical.Net.CalendarComponents
 Imports Ical.Net.DataTypes
 Imports Ical.Net.Serialization
 Imports System.Resources
+Imports System.Data.Common
 Imports MySql.Data.MySqlClient
 Public Class Form1
 
     Public Sub New()
-        Dim strIdioma As String = My.Settings.idioma
+        Dim strIdioma As String = My.Settings.language
         Dim cultura As Globalization.CultureInfo
 
         ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
-        If strIdioma.Equals("primera_vez") Then
+        If strIdioma.Equals("first_start") Then
             cultura = Threading.Thread.CurrentThread.CurrentUICulture
 
             Select Case cultura.TwoLetterISOLanguageName
@@ -20,7 +21,7 @@ Public Class Form1
                 Case Else
                     strIdioma = "en"
             End Select
-            My.Settings.idioma = strIdioma
+            My.Settings.language = strIdioma
         End If
 
         ' Para forzar el cambio de idioma por código
@@ -67,15 +68,16 @@ Public Class Form1
         ' =========================================================================
 
         Dim con As Connection = Connection.getInstance()
-        Dim conexion As MySqlConnection
-        Dim dtaTabla As MySqlDataAdapter
+
+        'Dim dbt As New DuckTypingMySQL()
+        Dim dbt As New DuckTypingOleDB()
+
         Dim dtsPruebas As New DataSet
-        Dim cs = con.GetMySQLConnectionString()
 
-        conexion = con.Open(New MySqlConnectionStringBuilder(cs.ConnectionString))
+        dbt.dbCon = con.Open(dbt.csBuilder)
 
-        dtaTabla = New MySqlDataAdapter("select * from country", conexion)
-        dtaTabla.Fill(dtsPruebas, "paises")
+        dbt.dtaPrueba = con.DataApdapter("select * from country", dbt.dbCon)
+        dbt.dtaPrueba.Fill(dtsPruebas, "paises")
 
         DataGridView1.DataSource = dtsPruebas.Tables("paises")
 
@@ -98,7 +100,7 @@ Public Class Form1
         frmPref.ShowDialog()
 
         If frmPref.CambioIdioma Then
-            CambiarIdioma(My.Settings.idioma)
+            CambiarIdioma(My.Settings.language)
         End If
     End Sub
 End Class

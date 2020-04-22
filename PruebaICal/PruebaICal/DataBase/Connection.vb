@@ -30,7 +30,15 @@ Public Class Connection
     End Function
 
     Public Function Open(cs As OleDbConnectionStringBuilder) As OleDbConnection
-
+        If Con Is Nothing Then
+            Try
+                Con = New OleDbConnection(cs.ConnectionString)
+                Con.Open()
+            Catch err As Exception
+                Return Nothing
+            End Try
+        End If
+        Return Con
     End Function
 
     Public Sub Close()
@@ -39,6 +47,14 @@ Public Class Connection
             Con = Nothing
         End If
     End Sub
+
+    Public Function DataApdapter(selectCommandText As String, connection As MySqlConnection) As MySqlDataAdapter
+        Return New MySqlDataAdapter(selectCommandText, connection)
+    End Function
+
+    Public Function DataApdapter(selectCommandText As String, connection As OleDbConnection) As OleDbDataAdapter
+        Return New OleDbDataAdapter(selectCommandText, connection)
+    End Function
     Public Sub EditConnectionString(csName As String, csConnectionString As String, csProviderName As String)
         If RemoveConnectionStrings(csName) Then
             AddConnectionString(csName, csConnectionString, csProviderName)

@@ -56,13 +56,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("primera_vez")>  _
-        Public Property idioma() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("first_start")>  _
+        Public Property language() As String
             Get
-                Return CType(Me("idioma"),String)
+                Return CType(Me("language"),String)
             End Get
             Set
-                Me("idioma") = value
+                Me("language") = value
             End Set
         End Property
         
@@ -75,6 +75,18 @@ Namespace My
             End Get
             Set
                 Me("ssh") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property dbType() As String
+            Get
+                Return CType(Me("dbType"),String)
+            End Get
+            Set
+                Me("dbType") = value
             End Set
         End Property
     End Class
