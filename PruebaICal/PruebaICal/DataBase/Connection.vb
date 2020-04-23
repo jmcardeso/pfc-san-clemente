@@ -70,7 +70,7 @@ Public Class Connection
                 cs.SectionInformation.ProtectSection("DataProtectionConfigurationProvider")
                 cs.SectionInformation.ForceSave = True
                 config.Save(ConfigurationSaveMode.Full)
-                ConfigurationManager.RefreshSection("connectionStrings")
+                ConfigurationManager.RefreshSection("configuration")
             End If
         End If
     End Sub
@@ -84,7 +84,7 @@ Public Class Connection
                 cs.SectionInformation.UnprotectSection()
                 cs.SectionInformation.ForceSave = True
                 config.Save(ConfigurationSaveMode.Full)
-                ConfigurationManager.RefreshSection("connectionStrings")
+                ConfigurationManager.RefreshSection("configuration")
             End If
         End If
     End Sub
@@ -101,7 +101,7 @@ Public Class Connection
 
             ' Save the configuration file.
             config.Save(ConfigurationSaveMode.Modified)
-            ConfigurationManager.RefreshSection("connectionStrings")
+            ConfigurationManager.RefreshSection("configuration")
             ProtectConnectionString()
         Catch err As ConfigurationErrorsException
             MsgBox(err.BareMessage)
@@ -132,7 +132,7 @@ Public Class Connection
 
                 ' Save the configuration file.
                 config.Save(ConfigurationSaveMode.Modified)
-                ConfigurationManager.RefreshSection("connectionStrings")
+                ConfigurationManager.RefreshSection("configuration")
                 resultado = True
             End If
         Catch err As ConfigurationErrorsException

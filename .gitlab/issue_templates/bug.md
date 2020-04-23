@@ -17,6 +17,4 @@
 
 <!-- ¡No borres esto! -->
 /label ~bug
-
 /assign @a18juancg
-
