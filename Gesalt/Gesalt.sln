@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Gesalt", "Gesalt\Gesalt.vbproj", "{4D99B3EB-4AAD-46BB-8B20-B9AC0CE0C9D3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.vbproj", "{F1F3659E-2075-4D96-BD9E-4A969D19E9B5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{5A285A25-8CB4-4BE4-8687-D4F5533F6CFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D99B3EB-4AAD-46BB-8B20-B9AC0CE0C9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D99B3EB-4AAD-46BB-8B20-B9AC0CE0C9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D99B3EB-4AAD-46BB-8B20-B9AC0CE0C9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D99B3EB-4AAD-46BB-8B20-B9AC0CE0C9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F3659E-2075-4D96-BD9E-4A969D19E9B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F3659E-2075-4D96-BD9E-4A969D19E9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F3659E-2075-4D96-BD9E-4A969D19E9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F3659E-2075-4D96-BD9E-4A969D19E9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A285A25-8CB4-4BE4-8687-D4F5533F6CFE}.Debug|Any CPU.ActiveCfg = Release
+		{5A285A25-8CB4-4BE4-8687-D4F5533F6CFE}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
+		SolutionGuid = {A2287848-887B-4346-8151-F949ADD9D769}
+	EndGlobalSection
+EndGlobal
