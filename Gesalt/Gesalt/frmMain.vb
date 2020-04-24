@@ -3,7 +3,7 @@ Imports Ical.Net.CalendarComponents
 Imports Ical.Net.DataTypes
 Imports Ical.Net.Serialization
 Imports System.Resources
-Public Class Form1
+Public Class frmMain
 
     Public Sub New()
         Dim strIdioma As String = My.Settings.language
@@ -35,7 +35,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Creamos un ResourceManager para el formulario
-        Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(Form1).Assembly)
+        Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
         ' Asignamos a la etiqueta Label2 la cadena con la clave Cosa (como en Android)
         ' Esto no es necesario hacerlo así, porque ya tenemos el propio formulario con la propiedad Language en varios idiomas
         ' pero sirve para ver cómo se haría con texto mostrado por código

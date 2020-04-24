@@ -2,7 +2,7 @@
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
 <TestClass()> Public Class UnitTest1
-    Dim pb As New Gesalt.Form1()
+    Dim pb As New Gesalt.frmMain()
     Dim ClasePrivada As New PrivateObject(pb)
     <TestMethod()> Public Sub TestMethod1()
         Dim resultado = pb.PruebaDePruebas(2)
