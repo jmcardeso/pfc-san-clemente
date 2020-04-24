@@ -125,8 +125,9 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
     <Compile Include="DataBase\Connection.vb" />
-    <Compile Include="DataBase\DuckTypingMySQL.vb" />
-    <Compile Include="DataBase\DuckTypingOleDB.vb" />
+    <Compile Include="DataBase\DBTypeMySQL.vb" />
+    <Compile Include="DataBase\DBTypeOleDB.vb" />
+    <Compile Include="DataBase\IDBType.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>

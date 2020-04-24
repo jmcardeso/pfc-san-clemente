@@ -52,6 +52,7 @@ Partial Class frmPreferencias
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbxUser = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.tcPreferencias.SuspendLayout()
         Me.tbpLanguage.SuspendLayout()
         Me.tbpLogin.SuspendLayout()
@@ -77,6 +78,7 @@ Partial Class frmPreferencias
         '
         Me.tcPreferencias.Controls.Add(Me.tbpLanguage)
         Me.tcPreferencias.Controls.Add(Me.tbpLogin)
+        Me.tcPreferencias.Controls.Add(Me.TabPage1)
         resources.ApplyResources(Me.tcPreferencias, "tcPreferencias")
         Me.tcPreferencias.Name = "tcPreferencias"
         Me.tcPreferencias.SelectedIndex = 0
@@ -250,6 +252,12 @@ Partial Class frmPreferencias
         resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
         '
+        'TabPage1
+        '
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
         'frmPreferencias
         '
         Me.AcceptButton = Me.btnOK
@@ -303,4 +311,5 @@ Partial Class frmPreferencias
     Friend WithEvents nudPort As NumericUpDown
     Friend WithEvents nudSSHPort As NumericUpDown
     Friend WithEvents btnTestCon As Button
+    Friend WithEvents TabPage1 As TabPage
 End Class

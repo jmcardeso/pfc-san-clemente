@@ -67,8 +67,8 @@ Public Class frmMain
 
         Dim con As Connection = Connection.getInstance()
 
-        Dim dbt As New DuckTypingMySQL()
-        'Dim dbt As New DuckTypingOleDB()
+        Dim dbt As New DBTypeMySQL()
+        'Dim dbt As New DBTypeOleDB()
 
         Dim dtsPruebas As New DataSet
 
