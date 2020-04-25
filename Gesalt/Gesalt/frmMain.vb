@@ -4,6 +4,8 @@ Imports Ical.Net.DataTypes
 Imports Ical.Net.Serialization
 Imports System.Resources
 Public Class frmMain
+    ' Creamos un ResourceManager para el formulario
+    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
 
     Public Sub New()
         Dim strIdioma As String = My.Settings.language
@@ -29,13 +31,12 @@ Public Class frmMain
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
     End Sub
 
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Creamos un ResourceManager para el formulario
-        Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
+        If My.Settings.dbType.Equals("") Then
+            ConnectionWizard()
+        End If
         ' Asignamos a la etiqueta Label2 la cadena con la clave Cosa (como en Android)
         ' Esto no es necesario hacerlo así, porque ya tenemos el propio formulario con la propiedad Language en varios idiomas
         ' pero sirve para ver cómo se haría con texto mostrado por código
@@ -67,8 +68,8 @@ Public Class frmMain
 
         Dim con As Connection = Connection.getInstance()
 
-        Dim dbt As New DBTypeMySQL()
-        'Dim dbt As New DBTypeOleDB()
+        ' Dim dbt As New DBTypeMySQL()
+        Dim dbt As New DBTypeOleDB()
 
         Dim dtsPruebas As New DataSet
 
@@ -95,6 +96,18 @@ Public Class frmMain
     Private Sub mnuAyuda_Preferencias_Click(sender As Object, e As EventArgs) Handles mnuAyuda_Preferencias.Click
         Dim frmPref As New frmPreferencias
 
+        frmPref.ShowDialog()
+
+        If frmPref.CambioIdioma Then
+            CambiarIdioma(My.Settings.language)
+        End If
+    End Sub
+    Private Sub ConnectionWizard()
+        Dim frmPref As New frmPreferencias
+
+        MsgBox(LocRM.GetString("firstTimeMsg1") & vbNewLine & LocRM.GetString("firstTimeMsg2"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
+
+        frmPref.Text = LocRM.GetString("firstTimeTitle")
         frmPref.ShowDialog()
 
         If frmPref.CambioIdioma Then

@@ -142,7 +142,7 @@
     <value>Idioma</value>
   </data>
   <data name="tbpLogin.Text" xml:space="preserve">
-    <value>Inicio de sesión</value>
+    <value>Base de datos</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>A aplicación reiniciarase.</value>
@@ -176,5 +176,17 @@
   </data>
   <data name="btnTestCon.Text" xml:space="preserve">
     <value>Proba de conexión</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Localización da base de datos:</value>
+  </data>
+  <data name="rdbServer.Text" xml:space="preserve">
+    <value>Remota (nun servidor)</value>
+  </data>
+  <data name="rdbLocal.Text" xml:space="preserve">
+    <value>Local (neste ordenador)</value>
+  </data>
+  <data name="lblServerSettings.Text" xml:space="preserve">
+    <value>Configuración de conexión do servidor</value>
   </data>
 </root>

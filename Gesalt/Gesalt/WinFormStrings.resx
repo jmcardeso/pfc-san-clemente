@@ -122,4 +122,16 @@
   <data name="conOK" xml:space="preserve">
     <value>Connection established successfully</value>
   </data>
+  <data name="firstTimeMsg1" xml:space="preserve">
+    <value>Gesalt is running for the first time.</value>
+  </data>
+  <data name="firstTimeTitle" xml:space="preserve">
+    <value>Setup Wizard</value>
+  </data>
+  <data name="firstTimeMsg2" xml:space="preserve">
+    <value>You must enter some data.</value>
+  </data>
+  <data name="noDBMsg" xml:space="preserve">
+    <value>You must choose a database location</value>
+  </data>
 </root>

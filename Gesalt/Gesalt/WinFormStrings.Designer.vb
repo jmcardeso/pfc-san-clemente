@@ -101,11 +101,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Gesalt is running for the first time..
+        '''</summary>
+        Friend Shared ReadOnly Property firstTimeMsg1() As String
+            Get
+                Return ResourceManager.GetString("firstTimeMsg1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a You must enter some data..
+        '''</summary>
+        Friend Shared ReadOnly Property firstTimeMsg2() As String
+            Get
+                Return ResourceManager.GetString("firstTimeMsg2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Setup Wizard.
+        '''</summary>
+        Friend Shared ReadOnly Property firstTimeTitle() As String
+            Get
+                Return ResourceManager.GetString("firstTimeTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property msgTitle() As String
             Get
                 Return ResourceManager.GetString("msgTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a You must choose a database location.
+        '''</summary>
+        Friend Shared ReadOnly Property noDBMsg() As String
+            Get
+                Return ResourceManager.GetString("noDBMsg", resourceCulture)
             End Get
         End Property
     End Class

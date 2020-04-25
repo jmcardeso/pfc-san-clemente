@@ -5,6 +5,7 @@ Imports MySql.Data.MySqlClient
 Public Class frmPreferencias
     Public Property CambioIdioma() As Boolean
     Dim strIdioma As String = ""
+    Dim strDBType As String = ""
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPreferencias).Assembly)
 
     Private Sub frmPreferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -17,7 +18,11 @@ Public Class frmPreferencias
                 rbGalician.Checked = True
         End Select
 
+        ' Ajustamos la posición de la etiqueta al ancho del texto (diferente para cada idioma)
+        lblServerSettings.Location = New Point((Panel2.Size.Width - lblServerSettings.Size.Width) / 2, lblServerSettings.Location.Y)
+
         cbxSSH.Checked = My.Settings.ssh
+
         LoadMySQLConnectionStringData()
     End Sub
 
@@ -106,6 +111,10 @@ Public Class frmPreferencias
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+        If strDBType.Equals("") Then
+            MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
+            Exit Sub
+        End If
         My.Settings.language = strIdioma
         My.Settings.ssh = cbxSSH.Checked
         My.Settings.Save()
@@ -145,6 +154,16 @@ Public Class frmPreferencias
         Else
             MsgBox(LocRM.GetString("conOK"), MsgBoxStyle.Information, LocRM.GetString("msgTitle"))
             con.Close()
+        End If
+    End Sub
+
+    Private Sub rbLocal_CheckedChanged(sender As Object, e As EventArgs) Handles rbLocal.CheckedChanged
+        If rbLocal.Checked Then
+            MsgBox("Está pulsado local")
+            strDBType = "local"
+        Else
+            MsgBox("Está pulsado remoto")
+            strDBType = "remote"
         End If
     End Sub
 End Class
