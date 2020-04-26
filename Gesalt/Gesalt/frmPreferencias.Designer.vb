@@ -74,7 +74,6 @@ Partial Class frmPreferencias
         '
         'btnCancel
         '
-        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         resources.ApplyResources(Me.btnCancel, "btnCancel")
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.UseVisualStyleBackColor = True

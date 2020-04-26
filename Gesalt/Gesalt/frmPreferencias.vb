@@ -1,4 +1,5 @@
-﻿Imports System.Configuration
+﻿Imports System.ComponentModel
+Imports System.Configuration
 Imports System.Resources
 Imports MySql.Data.MySqlClient
 
@@ -123,6 +124,10 @@ Public Class frmPreferencias
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        If strDBType.Equals("") Then
+            MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
+            Exit Sub
+        End If
         CambioIdioma = False
         Close()
     End Sub
@@ -164,6 +169,13 @@ Public Class frmPreferencias
         Else
             MsgBox("Está pulsado remoto")
             strDBType = "remote"
+        End If
+    End Sub
+
+    Private Sub frmPreferencias_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If strDBType.Equals("") Then
+            MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
+            e.Cancel = True
         End If
     End Sub
 End Class
