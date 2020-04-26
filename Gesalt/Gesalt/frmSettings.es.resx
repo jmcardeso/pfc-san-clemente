@@ -180,13 +180,13 @@
   <data name="Label6.Text" xml:space="preserve">
     <value>Localización de la base de datos:</value>
   </data>
-  <data name="rdbServer.Text" xml:space="preserve">
-    <value>Remota (en un servidor)</value>
-  </data>
-  <data name="rdbLocal.Text" xml:space="preserve">
-    <value>Local (en este ordenador)</value>
-  </data>
   <data name="lblServerSettings.Text" xml:space="preserve">
     <value>Configuración de conexión del servidor</value>
+  </data>
+  <data name="rbLocal.Text" xml:space="preserve">
+    <value>Local (en este ordenador)</value>
+  </data>
+  <data name="rbServer.Text" xml:space="preserve">
+    <value>Remota (en un servidor)</value>
   </data>
 </root>

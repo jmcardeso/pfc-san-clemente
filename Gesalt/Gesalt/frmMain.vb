@@ -94,7 +94,7 @@ Public Class frmMain
     End Sub
 
     Private Sub mnuAyuda_Preferencias_Click(sender As Object, e As EventArgs) Handles mnuAyuda_Preferencias.Click
-        Dim frmPref As New frmPreferencias
+        Dim frmPref As New frmSettings
 
         frmPref.ShowDialog()
 
@@ -103,7 +103,7 @@ Public Class frmMain
         End If
     End Sub
     Private Sub ConnectionWizard()
-        Dim frmPref As New frmPreferencias
+        Dim frmPref As New frmSettings
 
         MsgBox(LocRM.GetString("firstTimeMsg1") & vbNewLine & LocRM.GetString("firstTimeMsg2"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
 
