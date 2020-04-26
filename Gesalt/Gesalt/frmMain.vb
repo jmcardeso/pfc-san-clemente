@@ -67,13 +67,25 @@ Public Class frmMain
         ' =========================================================================
 
         Dim con As Connection = Connection.getInstance()
+        Dim dbt As Object = Nothing
 
-        ' Dim dbt As New DBTypeMySQL()
-        Dim dbt As New DBTypeOleDB()
+        If My.Settings.dbType.Equals("local") Then
+            dbt = New DBTypeOleDB()
+        Else
+            dbt = New DBTypeMySQL()
+        End If
 
         Dim dtsPruebas As New DataSet
 
         dbt.dbCon = con.Open(dbt.csBuilder)
+
+        If dbt.dbCon Is Nothing Then
+            MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
+            My.Settings.dbType = ""
+            My.Settings.dbError = True
+            My.Settings.Save()
+            Environment.Exit(1)
+        End If
 
         dbt.dtaPrueba = con.DataApdapter("select * from country", dbt.dbCon)
         dbt.dtaPrueba.Fill(dtsPruebas, "paises")
@@ -105,9 +117,16 @@ Public Class frmMain
     Private Sub ConnectionWizard()
         Dim frmPref As New frmSettings
 
-        MsgBox(LocRM.GetString("firstTimeMsg1") & vbNewLine & LocRM.GetString("firstTimeMsg2"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
+        If My.Settings.dbError Then
+            MsgBox(LocRM.GetString("dbErrorMsg"), MsgBoxStyle.Information, LocRM.GetString("dbErrorTitle"))
+            frmPref.Text = LocRM.GetString("dbErrorTitle")
+            My.Settings.dbError = False
+            My.Settings.Save()
+        Else
+            MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
+            frmPref.Text = LocRM.GetString("firstTimeTitle")
+        End If
 
-        frmPref.Text = LocRM.GetString("firstTimeTitle")
         frmPref.ShowDialog()
 
         If frmPref.CambioIdioma Then

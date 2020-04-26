@@ -147,17 +147,8 @@
   <data name="Label1.Text" xml:space="preserve">
     <value>A aplicación reiniciarase.</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Usuario:</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Contrasinal:</value>
-  </data>
   <data name="cbxSSH.Text" xml:space="preserve">
     <value>Túnel SSH</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>Servidor:</value>
   </data>
   <data name="lblHostName.Text" xml:space="preserve">
     <value>Nome do host:</value>
@@ -167,9 +158,6 @@
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
     <value>Nome usuario:</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Porto:</value>
   </data>
   <data name="lblSSHPort.Text" xml:space="preserve">
     <value>Porto SSH:</value>
@@ -188,5 +176,17 @@
   </data>
   <data name="rbServer.Text" xml:space="preserve">
     <value>Remota (nun servidor)</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Contrasinal:</value>
+  </data>
+  <data name="lblPort.Text" xml:space="preserve">
+    <value>Porto:</value>
+  </data>
+  <data name="lblServer.Text" xml:space="preserve">
+    <value>Servidor:</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Usuario:</value>
   </data>
 </root>

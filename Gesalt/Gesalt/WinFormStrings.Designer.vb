@@ -101,20 +101,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Gesalt is running for the first time..
+        '''  Busca una cadena traducida similar a The database will change. The data saved in the old one will not be saved in the new one. The program will stop and the next time you run it, it will open with the new database..
         '''</summary>
-        Friend Shared ReadOnly Property firstTimeMsg1() As String
+        Friend Shared ReadOnly Property dbChange() As String
             Get
-                Return ResourceManager.GetString("firstTimeMsg1", resourceCulture)
+                Return ResourceManager.GetString("dbChange", resourceCulture)
             End Get
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a You must enter some data..
+        '''  Busca una cadena traducida similar a Database change.
         '''</summary>
-        Friend Shared ReadOnly Property firstTimeMsg2() As String
+        Friend Shared ReadOnly Property dbChangeTitle() As String
             Get
-                Return ResourceManager.GetString("firstTimeMsg2", resourceCulture)
+                Return ResourceManager.GetString("dbChangeTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a An error occurred while trying to connect to the database. Check the connection settings..
+        '''</summary>
+        Friend Shared ReadOnly Property dbErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("dbErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Check the connection settings.
+        '''</summary>
+        Friend Shared ReadOnly Property dbErrorTitle() As String
+            Get
+                Return ResourceManager.GetString("dbErrorTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a An error occurred while connecting to the database. The program will stop and the next time you run it, the wizard will open to check if the connection data is correct..
+        '''</summary>
+        Friend Shared ReadOnly Property fatalErrorDB() As String
+            Get
+                Return ResourceManager.GetString("fatalErrorDB", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Fatal error.
+        '''</summary>
+        Friend Shared ReadOnly Property fatalErrorDBTitle() As String
+            Get
+                Return ResourceManager.GetString("fatalErrorDBTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Gesalt is running for the first time. You must enter some data..
+        '''</summary>
+        Friend Shared ReadOnly Property firstTimeMsg() As String
+            Get
+                Return ResourceManager.GetString("firstTimeMsg", resourceCulture)
             End Get
         End Property
         

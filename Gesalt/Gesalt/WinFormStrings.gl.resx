@@ -122,16 +122,31 @@
   <data name="conOK" xml:space="preserve">
     <value>Conexión establecida con éxito</value>
   </data>
-  <data name="firstTimeMsg1" xml:space="preserve">
-    <value>É a primeira vez que se inicia Gesalt.</value>
+  <data name="firstTimeMsg" xml:space="preserve">
+    <value>É a primeira vez que se inicia Gesalt. É necesario que indique algúns datos.</value>
   </data>
   <data name="firstTimeTitle" xml:space="preserve">
     <value>Asistente de configuración</value>
   </data>
-  <data name="firstTimeMsg2" xml:space="preserve">
-    <value>É necesario que indique algúns datos.</value>
-  </data>
   <data name="noDBMsg" xml:space="preserve">
     <value>Debe especificar unha localización para a base de datos</value>
+  </data>
+  <data name="dbErrorMsg" xml:space="preserve">
+    <value>Produciuse un erro ao tentar conectarse á base de datos. Comprobe a configuración da conexión.</value>
+  </data>
+  <data name="dbErrorTitle" xml:space="preserve">
+    <value>Verifique os datos da conexión</value>
+  </data>
+  <data name="fatalErrorDB" xml:space="preserve">
+    <value>Produciuse un erro ao conectarse á base de datos. O programa pecharase e, a próxima vez que o execute, abrirase o asistente para que verifique se os datos da conexión son correctos.</value>
+  </data>
+  <data name="fatalErrorDBTitle" xml:space="preserve">
+    <value>Erro grave</value>
+  </data>
+  <data name="dbChange" xml:space="preserve">
+    <value>Vai cambiar de base de datos. Os datos gardados na anterior non se conservarán na nova. O programa pecharase e, a próxima vez que o execute, abrirase coa nova base de datos.</value>
+  </data>
+  <data name="dbChangeTitle" xml:space="preserve">
+    <value>Cambio de base de datos</value>
   </data>
 </root>

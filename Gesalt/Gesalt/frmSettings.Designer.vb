@@ -34,7 +34,7 @@ Partial Class frmSettings
         Me.lblServerSettings = New System.Windows.Forms.Label()
         Me.nudPort = New System.Windows.Forms.NumericUpDown()
         Me.btnTestCon = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblPort = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.nudSSHPort = New System.Windows.Forms.NumericUpDown()
         Me.tbxSSHPass = New System.Windows.Forms.TextBox()
@@ -45,12 +45,12 @@ Partial Class frmSettings
         Me.lblSSHPassword = New System.Windows.Forms.Label()
         Me.lblHostName = New System.Windows.Forms.Label()
         Me.tbxServer = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblServer = New System.Windows.Forms.Label()
         Me.cbxSSH = New System.Windows.Forms.CheckBox()
         Me.tbxPass = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblPass = New System.Windows.Forms.Label()
         Me.tbxUser = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
         Me.tbpLanguage = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.rbEnglish = New System.Windows.Forms.RadioButton()
@@ -121,15 +121,15 @@ Partial Class frmSettings
         Me.Panel2.Controls.Add(Me.lblServerSettings)
         Me.Panel2.Controls.Add(Me.nudPort)
         Me.Panel2.Controls.Add(Me.btnTestCon)
-        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.lblPort)
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Controls.Add(Me.tbxServer)
-        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.lblServer)
         Me.Panel2.Controls.Add(Me.cbxSSH)
         Me.Panel2.Controls.Add(Me.tbxPass)
-        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.lblPass)
         Me.Panel2.Controls.Add(Me.tbxUser)
-        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.lblUser)
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
         '
@@ -150,10 +150,10 @@ Partial Class frmSettings
         Me.btnTestCon.Name = "btnTestCon"
         Me.btnTestCon.UseVisualStyleBackColor = True
         '
-        'Label5
+        'lblPort
         '
-        resources.ApplyResources(Me.Label5, "Label5")
-        Me.Label5.Name = "Label5"
+        resources.ApplyResources(Me.lblPort, "lblPort")
+        Me.lblPort.Name = "lblPort"
         '
         'Panel1
         '
@@ -216,10 +216,10 @@ Partial Class frmSettings
         resources.ApplyResources(Me.tbxServer, "tbxServer")
         Me.tbxServer.Name = "tbxServer"
         '
-        'Label4
+        'lblServer
         '
-        resources.ApplyResources(Me.Label4, "Label4")
-        Me.Label4.Name = "Label4"
+        resources.ApplyResources(Me.lblServer, "lblServer")
+        Me.lblServer.Name = "lblServer"
         '
         'cbxSSH
         '
@@ -233,20 +233,20 @@ Partial Class frmSettings
         Me.tbxPass.Name = "tbxPass"
         Me.tbxPass.UseSystemPasswordChar = True
         '
-        'Label3
+        'lblPass
         '
-        resources.ApplyResources(Me.Label3, "Label3")
-        Me.Label3.Name = "Label3"
+        resources.ApplyResources(Me.lblPass, "lblPass")
+        Me.lblPass.Name = "lblPass"
         '
         'tbxUser
         '
         resources.ApplyResources(Me.tbxUser, "tbxUser")
         Me.tbxUser.Name = "tbxUser"
         '
-        'Label2
+        'lblUser
         '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Name = "Label2"
+        resources.ApplyResources(Me.lblUser, "lblUser")
+        Me.lblUser.Name = "lblUser"
         '
         'tbpLanguage
         '
@@ -290,7 +290,7 @@ Partial Class frmSettings
         resources.ApplyResources(Me.lblIdioma, "lblIdioma")
         Me.lblIdioma.Name = "lblIdioma"
         '
-        'frmPreferencias
+        'frmSettings
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
@@ -299,7 +299,7 @@ Partial Class frmSettings
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnOK)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "frmPreferencias"
+        Me.Name = "frmSettings"
         Me.tcPreferencias.ResumeLayout(False)
         Me.tbpLogin.ResumeLayout(False)
         Me.tbpLogin.PerformLayout()
@@ -326,11 +326,11 @@ Partial Class frmSettings
     Friend WithEvents lblIdioma As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents tbxUser As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblUser As Label
     Friend WithEvents tbxPass As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblPass As Label
     Friend WithEvents tbxServer As TextBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblServer As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents tbxSSHHost As TextBox
     Friend WithEvents tbxSSHName As TextBox
@@ -340,7 +340,7 @@ Partial Class frmSettings
     Friend WithEvents cbxSSH As CheckBox
     Friend WithEvents tbxSSHPass As TextBox
     Friend WithEvents lblSSHPort As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblPort As Label
     Friend WithEvents nudPort As NumericUpDown
     Friend WithEvents nudSSHPort As NumericUpDown
     Friend WithEvents btnTestCon As Button

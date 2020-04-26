@@ -22,36 +22,66 @@ Public Class frmSettings
         ' Ajustamos la posición de la etiqueta de conexión al servidor al ancho del texto (diferente para cada idioma)
         lblServerSettings.Location = New Point((Panel2.Size.Width - lblServerSettings.Size.Width) / 2, lblServerSettings.Location.Y)
 
-        rbLocal.Checked = If(My.Settings.dbType.Equals("local"), True, False)
-        cbxSSH.Checked = My.Settings.ssh
+        If My.Settings.dbType.Equals("local") Then
+            rbLocal.Checked = True
+            strDBType = "local"
+        ElseIf My.Settings.dbType.Equals("remote") Then
+            rbServer.Checked = True
+            strDBType = "remote"
+        End If
 
-        LoadMySQLConnectionStringData()
+        cbxSSH.Checked = My.Settings.ssh
+        EnabledServerSettings(rbServer.Checked)
+
+        If My.Settings.dbType.Equals("remote") Then
+            LoadMySQLConnectionStringData()
+        End If
     End Sub
 
     Private Sub frmPreferencias_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         If strDBType.Equals("") Then
-            MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             e.Cancel = True
             Environment.Exit(1)
         End If
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        If strDBType.Equals("") Then
+        Dim changeDBType As Boolean = False
+
+        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, pide confirmación
+        If strDBType.Equals("") And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
             MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             Exit Sub
         End If
-        My.Settings.dbType = strDBType
+
+        If Not strDBType.Equals(My.Settings.dbType) Then
+            If MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Yes Then
+                My.Settings.dbType = strDBType
+                changeDBType = True
+            Else
+                Exit Sub
+            End If
+        End If
+
         My.Settings.language = strIdioma
         My.Settings.ssh = cbxSSH.Checked
         My.Settings.Save()
-        SaveMySQLConnectionStringData()
+
+        ' Si se elige un servidor, guarda la cadena de conexión
+        If strDBType.Equals("remote") Then
+            SaveMySQLConnectionStringData()
+        End If
+
+        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, sal de la aplicación
+        If changeDBType And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
+            Environment.Exit(0)
+        End If
+
         Close()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If strDBType.Equals("") Then
-            MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             Environment.Exit(1)
         End If
         CambioIdioma = False
@@ -84,11 +114,13 @@ Public Class frmSettings
         End If
     End Sub
 
-    Private Sub rbLocal_CheckedChanged(sender As Object, e As EventArgs) Handles rbLocal.CheckedChanged
+    Private Sub rbDBType_CheckedChanged(sender As Object, e As EventArgs) Handles rbLocal.CheckedChanged, rbServer.CheckedChanged
         If rbLocal.Checked Then
             strDBType = "local"
+            EnabledServerSettings(False)
         Else
             strDBType = "remote"
+            EnabledServerSettings(True)
         End If
     End Sub
 
@@ -164,6 +196,29 @@ Public Class frmSettings
             con.AddConnectionString(MYSQL_CS_NAME, csBuilder.ConnectionString, MYSQL_PROVIDER_NAME)
         Else
             con.EditConnectionString(MYSQL_CS_NAME, csBuilder.ConnectionString, MYSQL_PROVIDER_NAME)
+        End If
+    End Sub
+
+    Private Sub EnabledServerSettings(opt As Boolean)
+        lblServerSettings.Enabled = opt
+        lblUser.Enabled = opt
+        lblPass.Enabled = opt
+        lblServer.Enabled = opt
+        lblPort.Enabled = opt
+
+        tbxUser.Enabled = opt
+        tbxPass.Enabled = opt
+        tbxServer.Enabled = opt
+        nudPort.Enabled = opt
+
+        btnTestCon.Enabled = opt
+
+        cbxSSH.Enabled = opt
+
+        If Not opt OrElse Not cbxSSH.Checked Then
+            SSHControls(False)
+        Else
+            SSHControls(True)
         End If
     End Sub
 

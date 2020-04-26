@@ -122,16 +122,31 @@
   <data name="conOK" xml:space="preserve">
     <value>Connection established successfully</value>
   </data>
-  <data name="firstTimeMsg1" xml:space="preserve">
-    <value>Gesalt is running for the first time.</value>
+  <data name="firstTimeMsg" xml:space="preserve">
+    <value>Gesalt is running for the first time. You must enter some data.</value>
   </data>
   <data name="firstTimeTitle" xml:space="preserve">
     <value>Setup Wizard</value>
   </data>
-  <data name="firstTimeMsg2" xml:space="preserve">
-    <value>You must enter some data.</value>
-  </data>
   <data name="noDBMsg" xml:space="preserve">
     <value>You must choose a database location</value>
+  </data>
+  <data name="dbErrorMsg" xml:space="preserve">
+    <value>An error occurred while trying to connect to the database. Check the connection settings.</value>
+  </data>
+  <data name="dbErrorTitle" xml:space="preserve">
+    <value>Check the connection settings</value>
+  </data>
+  <data name="fatalErrorDB" xml:space="preserve">
+    <value>An error occurred while connecting to the database. The program will stop and the next time you run it, the wizard will open to check if the connection data is correct.</value>
+  </data>
+  <data name="fatalErrorDBTitle" xml:space="preserve">
+    <value>Fatal error</value>
+  </data>
+  <data name="dbChange" xml:space="preserve">
+    <value>The database will change. The data saved in the old one will not be saved in the new one. The program will stop and the next time you run it, it will open with the new database.</value>
+  </data>
+  <data name="dbChangeTitle" xml:space="preserve">
+    <value>Database change</value>
   </data>
 </root>

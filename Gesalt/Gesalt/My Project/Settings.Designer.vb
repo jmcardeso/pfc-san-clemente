@@ -89,6 +89,18 @@ Namespace My
                 Me("dbType") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property dbError() As Boolean
+            Get
+                Return CType(Me("dbError"),Boolean)
+            End Get
+            Set
+                Me("dbError") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
