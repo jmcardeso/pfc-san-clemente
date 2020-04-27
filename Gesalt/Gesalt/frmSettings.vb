@@ -39,7 +39,7 @@ Public Class frmSettings
     End Sub
 
     Private Sub frmPreferencias_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If strDBType.Equals("") Then
+        If strDBType.Equals("") OrElse (Me.Text.Equals(LocRM.GetString("firstTimeTitle")) OrElse Me.Text.Equals(LocRM.GetString("dbErrorTitle"))) Then
             e.Cancel = True
             Environment.Exit(1)
         End If
@@ -72,7 +72,7 @@ Public Class frmSettings
             SaveMySQLConnectionStringData()
         End If
 
-        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, sal de la aplicación
+        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, sale de la aplicación
         If changeDBType And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
             Environment.Exit(0)
         End If
@@ -81,7 +81,7 @@ Public Class frmSettings
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        If strDBType.Equals("") Then
+        If strDBType.Equals("") OrElse (Me.Text.Equals(LocRM.GetString("firstTimeTitle")) OrElse Me.Text.Equals(LocRM.GetString("dbErrorTitle"))) Then
             Environment.Exit(1)
         End If
         CambioIdioma = False
