@@ -137,6 +137,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a You will change the database connection settings. The program will stop and the next time you run it, it will connect to the database with the new settings..
+        '''</summary>
+        Friend Shared ReadOnly Property dbSettingsChange() As String
+            Get
+                Return ResourceManager.GetString("dbSettingsChange", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Database connection settings change.
+        '''</summary>
+        Friend Shared ReadOnly Property dbSettingsChangeTitle() As String
+            Get
+                Return ResourceManager.GetString("dbSettingsChangeTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a An error occurred while connecting to the database. The Connection Wizard will open for you to check if the settings are correct..
         '''</summary>
         Friend Shared ReadOnly Property fatalErrorDB() As String

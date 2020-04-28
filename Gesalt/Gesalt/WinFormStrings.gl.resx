@@ -149,4 +149,10 @@
   <data name="dbChangeTitle" xml:space="preserve">
     <value>Cambio de base de datos</value>
   </data>
+  <data name="dbSettingsChange" xml:space="preserve">
+    <value>Vai cambiar os parámetros de conexión da base de datos. O programa pecharase e, a próxima vez que o execute, conectarase á base de datos cos novos parámetros.</value>
+  </data>
+  <data name="dbSettingsChangeTitle" xml:space="preserve">
+    <value>Cambio nos parámetros de conexión da base de datos</value>
+  </data>
 </root>

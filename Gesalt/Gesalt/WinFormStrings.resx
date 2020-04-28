@@ -149,4 +149,10 @@
   <data name="dbChangeTitle" xml:space="preserve">
     <value>Database change</value>
   </data>
+  <data name="dbSettingsChange" xml:space="preserve">
+    <value>You will change the database connection settings. The program will stop and the next time you run it, it will connect to the database with the new settings.</value>
+  </data>
+  <data name="dbSettingsChangeTitle" xml:space="preserve">
+    <value>Database connection settings change</value>
+  </data>
 </root>

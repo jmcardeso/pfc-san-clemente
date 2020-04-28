@@ -6,9 +6,8 @@ Imports MySql.Data.MySqlClient
 Public Class frmSettings
     Public Property LanguageChanged() As Boolean
 
-    Dim strIdioma As String = ""
+    Dim strLanguage As String = ""
     Dim strDBType As String = ""
-    Dim changeDBType As Boolean = False
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmSettings).Assembly)
 
     Private Sub frmPreferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -48,6 +47,12 @@ Public Class frmSettings
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+        Dim changeDBType As Boolean = False
+        Dim changeDBSettings As Boolean = False
+        Dim con As Connection = Connection.getInstance()
+        Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
+        Dim csbOld As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder(cs.ConnectionString)
+
         If strDBType.Equals("") Then ' And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
             MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             Exit Sub
@@ -57,16 +62,34 @@ Public Class frmSettings
             changeDBType = True
         End If
 
-        '  If Not My.Settings.dbType.Equals("") Then ' AndAlso Not strDBType.Equals(My.Settings.dbType) Then
+        If strDBType.Equals("remote") AndAlso Not changeDBType Then
+            If Not csbOld.UserID.Equals(tbxUser.Text) OrElse Not csbOld.Password.Equals(tbxPass.Text) OrElse
+                Not csbOld.Server.Equals(tbxServer.Text) OrElse csbOld.Port <> nudPort.Value Then
+                changeDBSettings = True
+            End If
+
+            If My.Settings.ssh <> cbxSSH.Checked Then
+                changeDBSettings = True
+            End If
+
+            If Not changeDBSettings Then
+                If Not csbOld.SshHostName.Equals(tbxSSHHost.Text) OrElse csbOld.SshPort <> nudSSHPort.Value OrElse
+                    Not csbOld.SshUserName.Equals(tbxSSHName.Text) OrElse Not csbOld.SshPassword.Equals(tbxSSHPass.Text) Then
+                    changeDBSettings = True
+                End If
+            End If
+        End If
+
         If changeDBType AndAlso MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then
             Exit Sub
         End If
-        ' End If
 
-
+        If changeDBSettings AndAlso MsgBox(LocRM.GetString("dbSettingsChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbSettingsChangeTitle")) = MsgBoxResult.Cancel Then
+            Exit Sub
+        End If
 
         My.Settings.dbType = strDBType
-        My.Settings.language = strIdioma
+        My.Settings.language = strLanguage
 
         ' Si se elige un servidor, guarda la cadena de conexión
         If strDBType.Equals("remote") Then
@@ -79,7 +102,7 @@ Public Class frmSettings
         My.Settings.Save()
 
         ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, sale de la aplicación
-        If changeDBType And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
+        If (changeDBSettings Or changeDBType) And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
             Environment.Exit(0)
         End If
 
@@ -142,18 +165,18 @@ Public Class frmSettings
                 If rb.Checked = True Then
                     Select Case rb.Name
                         Case "rbEnglish"
-                            strIdioma = "en"
+                            strLanguage = "en"
                         Case "rbGalician"
-                            strIdioma = "gl"
+                            strLanguage = "gl"
                         Case "rbSpanish"
-                            strIdioma = "es"
+                            strLanguage = "es"
                     End Select
                     Exit For
                 End If
             End If
         Next
 
-        LanguageChanged = IIf(strIdioma.Equals(My.Settings.language), False, True)
+        LanguageChanged = IIf(strLanguage.Equals(My.Settings.language), False, True)
     End Sub
 
     Private Sub LoadMySQLConnectionStringData()
@@ -203,7 +226,7 @@ Public Class frmSettings
             con.AddConnectionString(MYSQL_CS_NAME, csBuilder.ConnectionString, MYSQL_PROVIDER_NAME)
         Else
             con.EditConnectionString(MYSQL_CS_NAME, csBuilder.ConnectionString, MYSQL_PROVIDER_NAME)
-        End If
+            End If
     End Sub
 
     Private Sub EnabledServerSettings(opt As Boolean)
