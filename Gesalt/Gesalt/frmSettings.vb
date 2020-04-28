@@ -53,16 +53,17 @@ Public Class frmSettings
             Exit Sub
         End If
 
-        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, pide confirmación
-        If Not My.Settings.dbType.Equals("") Then ' AndAlso Not strDBType.Equals(My.Settings.dbType) Then
-            If MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then
-                Exit Sub
-            End If
-        End If
-
         If Not strDBType.Equals(My.Settings.dbType) Then
             changeDBType = True
         End If
+
+        '  If Not My.Settings.dbType.Equals("") Then ' AndAlso Not strDBType.Equals(My.Settings.dbType) Then
+        If changeDBType AndAlso MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then
+            Exit Sub
+        End If
+        ' End If
+
+
 
         My.Settings.dbType = strDBType
         My.Settings.language = strIdioma
