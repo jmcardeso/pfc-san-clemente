@@ -137,7 +137,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a An error occurred while connecting to the database. The program will stop and the next time you run it, the wizard will open to check if the connection data is correct..
+        '''  Busca una cadena traducida similar a An error occurred while connecting to the database. The Connection Wizard will open for you to check if the settings are correct..
         '''</summary>
         Friend Shared ReadOnly Property fatalErrorDB() As String
             Get

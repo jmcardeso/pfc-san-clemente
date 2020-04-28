@@ -138,7 +138,7 @@
     <value>Verifique os datos da conexión</value>
   </data>
   <data name="fatalErrorDB" xml:space="preserve">
-    <value>Produciuse un erro ao conectarse á base de datos. O programa pecharase e, a próxima vez que o execute, abrirase o asistente para que verifique se os datos da conexión son correctos.</value>
+    <value>Produciuse un erro ao conectarse á base de datos. Abrirase o asistente para que verifique se os datos da conexión son correctos.</value>
   </data>
   <data name="fatalErrorDBTitle" xml:space="preserve">
     <value>Erro grave</value>

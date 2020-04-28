@@ -4,9 +4,11 @@ Imports System.Resources
 Imports MySql.Data.MySqlClient
 
 Public Class frmSettings
-    Public Property CambioIdioma() As Boolean
+    Public Property LanguageChanged() As Boolean
+
     Dim strIdioma As String = ""
     Dim strDBType As String = ""
+    Dim changeDBType As Boolean = False
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmSettings).Assembly)
 
     Private Sub frmPreferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -46,31 +48,34 @@ Public Class frmSettings
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        Dim changeDBType As Boolean = False
-
-        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, pide confirmación
-        If strDBType.Equals("") And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
+        If strDBType.Equals("") Then ' And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
             MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             Exit Sub
         End If
 
-        If Not strDBType.Equals(My.Settings.dbType) Then
-            If MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Yes Then
-                My.Settings.dbType = strDBType
-                changeDBType = True
-            Else
+        ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, pide confirmación
+        If Not My.Settings.dbType.Equals("") Then ' AndAlso Not strDBType.Equals(My.Settings.dbType) Then
+            If MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then
                 Exit Sub
             End If
         End If
 
+        If Not strDBType.Equals(My.Settings.dbType) Then
+            changeDBType = True
+        End If
+
+        My.Settings.dbType = strDBType
         My.Settings.language = strIdioma
-        My.Settings.ssh = cbxSSH.Checked
-        My.Settings.Save()
 
         ' Si se elige un servidor, guarda la cadena de conexión
         If strDBType.Equals("remote") Then
+            My.Settings.ssh = cbxSSH.Checked
             SaveMySQLConnectionStringData()
+        Else
+            My.Settings.ssh = False
         End If
+
+        My.Settings.Save()
 
         ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, sale de la aplicación
         If changeDBType And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
@@ -83,14 +88,13 @@ Public Class frmSettings
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If strDBType.Equals("") OrElse (Me.Text.Equals(LocRM.GetString("firstTimeTitle")) OrElse Me.Text.Equals(LocRM.GetString("dbErrorTitle"))) Then
             Environment.Exit(1)
+        Else
+            LanguageChanged = False
+            Close()
         End If
-        CambioIdioma = False
-        Close()
     End Sub
 
     Private Sub btnTestCon_Click(sender As Object, e As EventArgs) Handles btnTestCon.Click
-        Dim con As Connection = Connection.getInstance()
-
         Dim csBuilder As New MySqlConnectionStringBuilder() With {
             .UserID = tbxUser.Text,
             .Password = tbxPass.Text,
@@ -106,12 +110,14 @@ Public Class frmSettings
             csBuilder.SshPassword = tbxSSHPass.Text
         End If
 
-        If con.Open(csBuilder) Is Nothing Then
-            MsgBox(LocRM.GetString("conError"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
-        Else
+        Try
+            Dim con As MySqlConnection = New MySqlConnection(csBuilder.ConnectionString)
+            con.Open()
             MsgBox(LocRM.GetString("conOK"), MsgBoxStyle.Information, LocRM.GetString("msgTitle"))
             con.Close()
-        End If
+        Catch err As Exception
+            MsgBox(LocRM.GetString("conError"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
+        End Try
     End Sub
 
     Private Sub rbDBType_CheckedChanged(sender As Object, e As EventArgs) Handles rbLocal.CheckedChanged, rbServer.CheckedChanged
@@ -146,7 +152,7 @@ Public Class frmSettings
             End If
         Next
 
-        CambioIdioma = IIf(strIdioma.Equals(My.Settings.language), False, True)
+        LanguageChanged = IIf(strIdioma.Equals(My.Settings.language), False, True)
     End Sub
 
     Private Sub LoadMySQLConnectionStringData()

@@ -80,11 +80,11 @@ Public Class frmMain
         dbt.dbCon = con.Open(dbt.csBuilder)
 
         If dbt.dbCon Is Nothing Then
-            MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
-            My.Settings.dbType = ""
             My.Settings.dbError = True
             My.Settings.Save()
-            Environment.Exit(1)
+            MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
+            ConnectionWizard()
+            '  My.Settings.dbType = ""
         End If
 
         dbt.dtaPrueba = con.DataApdapter("select * from country", dbt.dbCon)
@@ -98,7 +98,7 @@ Public Class frmMain
         Return numero * 2
     End Function
 
-    Private Sub CambiarIdioma(idioma As String)
+    Private Sub ReLoadMain(idioma As String)
         Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(idioma)
         Me.Controls.Clear()
         Me.InitializeComponent()
@@ -110,18 +110,18 @@ Public Class frmMain
 
         frmPref.ShowDialog()
 
-        If frmPref.CambioIdioma Then
-            CambiarIdioma(My.Settings.language)
+        If frmPref.LanguageChanged Then
+            ReLoadMain(My.Settings.language)
         End If
     End Sub
     Private Sub ConnectionWizard()
         Dim frmPref As New frmSettings
 
         If My.Settings.dbError Then
-            MsgBox(LocRM.GetString("dbErrorMsg"), MsgBoxStyle.Information, LocRM.GetString("dbErrorTitle"))
+            '  MsgBox(LocRM.GetString("dbErrorMsg"), MsgBoxStyle.Information, LocRM.GetString("dbErrorTitle"))
             frmPref.Text = LocRM.GetString("dbErrorTitle")
-            My.Settings.dbError = False
-            My.Settings.Save()
+            '  My.Settings.dbError = False
+            ' My.Settings.Save()
         Else
             MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
             frmPref.Text = LocRM.GetString("firstTimeTitle")
@@ -129,8 +129,8 @@ Public Class frmMain
 
         frmPref.ShowDialog()
 
-        If frmPref.CambioIdioma Then
-            CambiarIdioma(My.Settings.language)
+        If frmPref.LanguageChanged Then
+            ReLoadMain(My.Settings.language)
         End If
     End Sub
 End Class
