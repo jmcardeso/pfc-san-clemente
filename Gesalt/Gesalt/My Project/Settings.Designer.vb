@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("first_start")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property language() As String
             Get
                 Return CType(Me("language"),String)
@@ -92,13 +92,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property dbError() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("first_start")>  _
+        Public Property appStatus() As String
             Get
-                Return CType(Me("dbError"),Boolean)
+                Return CType(Me("appStatus"),String)
             End Get
             Set
-                Me("dbError") = value
+                Me("appStatus") = value
             End Set
         End Property
     End Class

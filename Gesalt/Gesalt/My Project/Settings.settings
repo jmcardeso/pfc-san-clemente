@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">first_start</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ssh" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -11,8 +11,8 @@
     <Setting Name="dbType" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="dbError" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="appStatus" Type="System.String" Scope="User">
+      <Value Profile="(Default)">first_start</Value>
     </Setting>
   </Settings>
 </SettingsFile>

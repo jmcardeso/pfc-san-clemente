@@ -160,9 +160,6 @@ Public Class Connection
         ' with the specified name.
         Dim settings As ConnectionStringSettings = csCollection(MYSQL_CS_NAME)
 
-        '' Look for the name in the connectionStrings section.
-        'Dim settings As ConnectionStringSettings = ConfigurationManager.ConnectionStrings(MYSQL_CS_NAME)
-
         ' If found, return the connection string.
         If Not settings Is Nothing Then
             returnValue = settings

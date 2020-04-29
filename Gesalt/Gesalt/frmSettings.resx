@@ -277,7 +277,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblServerSettings.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;lblServerSettings.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -301,7 +301,7 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudPort.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;nudPort.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -325,7 +325,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnTestCon.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;btnTestCon.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -355,10 +355,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPort.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;lblPort.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="nudSSHPort.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="nudSSHPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 39</value>
+  </data>
+  <data name="nudSSHPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="nudSSHPort.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="nudSSHPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="&gt;&gt;nudSSHPort.Name" xml:space="preserve">
     <value>nudSSHPort</value>
@@ -367,10 +382,22 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudSSHPort.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;nudSSHPort.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tbxSSHPass.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbxSSHPass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 91</value>
+  </data>
+  <data name="tbxSSHPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 20</value>
+  </data>
+  <data name="tbxSSHPass.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;tbxSSHPass.Name" xml:space="preserve">
     <value>tbxSSHPass</value>
@@ -379,10 +406,28 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbxSSHPass.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;tbxSSHPass.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lblSSHPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSSHPort.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblSSHPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 41</value>
+  </data>
+  <data name="lblSSHPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="lblSSHPort.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblSSHPort.Text" xml:space="preserve">
+    <value>SSH Port:</value>
   </data>
   <data name="&gt;&gt;lblSSHPort.Name" xml:space="preserve">
     <value>lblSSHPort</value>
@@ -391,10 +436,22 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSSHPort.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;lblSSHPort.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="tbxSSHHost.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbxSSHHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 12</value>
+  </data>
+  <data name="tbxSSHHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 20</value>
+  </data>
+  <data name="tbxSSHHost.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;tbxSSHHost.Name" xml:space="preserve">
     <value>tbxSSHHost</value>
@@ -403,10 +460,22 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbxSSHHost.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;tbxSSHHost.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="tbxSSHName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbxSSHName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 65</value>
+  </data>
+  <data name="tbxSSHName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 20</value>
+  </data>
+  <data name="tbxSSHName.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;tbxSSHName.Name" xml:space="preserve">
     <value>tbxSSHName</value>
@@ -415,10 +484,31 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbxSSHName.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;tbxSSHName.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="lblUserName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUserName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblUserName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 65</value>
+  </data>
+  <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="lblUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>User Name:</value>
   </data>
   <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
     <value>lblUserName</value>
@@ -427,10 +517,31 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUserName.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;lblUserName.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="lblSSHPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSSHPassword.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblSSHPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSSHPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 94</value>
+  </data>
+  <data name="lblSSHPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="lblSSHPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblSSHPassword.Text" xml:space="preserve">
+    <value>SSH Password:</value>
   </data>
   <data name="&gt;&gt;lblSSHPassword.Name" xml:space="preserve">
     <value>lblSSHPassword</value>
@@ -439,10 +550,28 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSSHPassword.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;lblSSHPassword.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="lblHostName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblHostName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblHostName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 12</value>
+  </data>
+  <data name="lblHostName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="lblHostName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblHostName.Text" xml:space="preserve">
+    <value>Host Name:</value>
   </data>
   <data name="&gt;&gt;lblHostName.Name" xml:space="preserve">
     <value>lblHostName</value>
@@ -451,30 +580,30 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblHostName.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>pnlSSH</value>
   </data>
   <data name="&gt;&gt;lblHostName.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pnlSSH.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 167</value>
   </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pnlSSH.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 128</value>
   </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="pnlSSH.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
+  <data name="&gt;&gt;pnlSSH.Name" xml:space="preserve">
+    <value>pnlSSH</value>
   </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;pnlSSH.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>Panel2</value>
+  <data name="&gt;&gt;pnlSSH.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
   </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlSSH.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="tbxServer.Location" type="System.Drawing.Point, System.Drawing">
@@ -493,7 +622,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbxServer.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;tbxServer.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -520,7 +649,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblServer.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;lblServer.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -547,7 +676,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbxSSH.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;cbxSSH.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -568,7 +697,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbxPass.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;tbxPass.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -595,7 +724,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPass.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;lblPass.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -616,7 +745,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbxUser.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;tbxUser.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -643,30 +772,30 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUser.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>pnlConnection</value>
   </data>
   <data name="&gt;&gt;lblUser.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pnlConnection.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 96</value>
   </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pnlConnection.Size" type="System.Drawing.Size, System.Drawing">
     <value>398, 353</value>
   </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+  <data name="pnlConnection.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
+  <data name="&gt;&gt;pnlConnection.Name" xml:space="preserve">
+    <value>pnlConnection</value>
   </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;pnlConnection.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pnlConnection.Parent" xml:space="preserve">
     <value>tbpLogin</value>
   </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlConnection.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tbpLogin.Location" type="System.Drawing.Point, System.Drawing">
@@ -803,231 +932,6 @@
   </data>
   <data name="&gt;&gt;tcPreferencias.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="nudSSHPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="nudSSHPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 39</value>
-  </data>
-  <data name="nudSSHPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
-  </data>
-  <data name="nudSSHPort.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="nudSSHPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;nudSSHPort.Name" xml:space="preserve">
-    <value>nudSSHPort</value>
-  </data>
-  <data name="&gt;&gt;nudSSHPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudSSHPort.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;nudSSHPort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tbxSSHPass.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tbxSSHPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 91</value>
-  </data>
-  <data name="tbxSSHPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 20</value>
-  </data>
-  <data name="tbxSSHPass.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHPass.Name" xml:space="preserve">
-    <value>tbxSSHPass</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHPass.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHPass.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHPass.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblSSHPort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSSHPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblSSHPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 41</value>
-  </data>
-  <data name="lblSSHPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
-  </data>
-  <data name="lblSSHPort.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblSSHPort.Text" xml:space="preserve">
-    <value>SSH Port:</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPort.Name" xml:space="preserve">
-    <value>lblSSHPort</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPort.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPort.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tbxSSHHost.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tbxSSHHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 12</value>
-  </data>
-  <data name="tbxSSHHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 20</value>
-  </data>
-  <data name="tbxSSHHost.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHHost.Name" xml:space="preserve">
-    <value>tbxSSHHost</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHHost.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHHost.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbxSSHName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tbxSSHName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 65</value>
-  </data>
-  <data name="tbxSSHName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 20</value>
-  </data>
-  <data name="tbxSSHName.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHName.Name" xml:space="preserve">
-    <value>tbxSSHName</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHName.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;tbxSSHName.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblUserName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUserName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblUserName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUserName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 65</value>
-  </data>
-  <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
-  </data>
-  <data name="lblUserName.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblUserName.Text" xml:space="preserve">
-    <value>User Name:</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
-    <value>lblUserName</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblSSHPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSSHPassword.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblSSHPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSSHPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 94</value>
-  </data>
-  <data name="lblSSHPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblSSHPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblSSHPassword.Text" xml:space="preserve">
-    <value>SSH Password:</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPassword.Name" xml:space="preserve">
-    <value>lblSSHPassword</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPassword.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSSHPassword.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblHostName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblHostName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblHostName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 12</value>
-  </data>
-  <data name="lblHostName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
-  </data>
-  <data name="lblHostName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblHostName.Text" xml:space="preserve">
-    <value>Host Name:</value>
-  </data>
-  <data name="&gt;&gt;lblHostName.Name" xml:space="preserve">
-    <value>lblHostName</value>
-  </data>
-  <data name="&gt;&gt;lblHostName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHostName.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblHostName.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

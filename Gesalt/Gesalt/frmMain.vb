@@ -12,7 +12,7 @@ Public Class frmMain
         Dim cultura As Globalization.CultureInfo
 
         ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
-        If strIdioma.Equals("first_start") Then
+        If My.Settings.appStatus.Equals("first_start") Then
             cultura = Threading.Thread.CurrentThread.CurrentUICulture
 
             Select Case cultura.TwoLetterISOLanguageName
@@ -34,7 +34,7 @@ Public Class frmMain
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If My.Settings.dbType.Equals("") Then
+        If My.Settings.appStatus.Equals("first_start") Then
             ConnectionWizard()
         End If
         ' Asignamos a la etiqueta Label2 la cadena con la clave Cosa (como en Android)
@@ -80,11 +80,10 @@ Public Class frmMain
         dbt.dbCon = con.Open(dbt.csBuilder)
 
         If dbt.dbCon Is Nothing Then
-            My.Settings.dbError = True
+            My.Settings.appStatus = "dbError"
             My.Settings.Save()
             MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
             ConnectionWizard()
-            '  My.Settings.dbType = ""
         End If
 
         dbt.dtaPrueba = con.DataApdapter("select * from country", dbt.dbCon)
@@ -117,12 +116,9 @@ Public Class frmMain
     Private Sub ConnectionWizard()
         Dim frmPref As New frmSettings
 
-        If My.Settings.dbError Then
-            '  MsgBox(LocRM.GetString("dbErrorMsg"), MsgBoxStyle.Information, LocRM.GetString("dbErrorTitle"))
+        If My.Settings.appStatus.Equals("dbError") Then
             frmPref.Text = LocRM.GetString("dbErrorTitle")
-            '  My.Settings.dbError = False
-            ' My.Settings.Save()
-        Else
+        ElseIf My.Settings.appStatus.Equals("first_start") Then
             MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
             frmPref.Text = LocRM.GetString("firstTimeTitle")
         End If

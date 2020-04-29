@@ -8,6 +8,7 @@ Public Class frmSettings
 
     Dim strLanguage As String = ""
     Dim strDBType As String = ""
+    Dim accept As Boolean = False
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmSettings).Assembly)
 
     Private Sub frmPreferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,7 +22,7 @@ Public Class frmSettings
         End Select
 
         ' Ajustamos la posición de la etiqueta de conexión al servidor al ancho del texto (diferente para cada idioma)
-        lblServerSettings.Location = New Point((Panel2.Size.Width - lblServerSettings.Size.Width) / 2, lblServerSettings.Location.Y)
+        lblServerSettings.Location = New Point((pnlConnection.Size.Width - lblServerSettings.Size.Width) / 2, lblServerSettings.Location.Y)
 
         If My.Settings.dbType.Equals("local") Then
             rbLocal.Checked = True
@@ -40,20 +41,21 @@ Public Class frmSettings
     End Sub
 
     Private Sub frmPreferencias_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If strDBType.Equals("") OrElse (Me.Text.Equals(LocRM.GetString("firstTimeTitle")) OrElse Me.Text.Equals(LocRM.GetString("dbErrorTitle"))) Then
-            e.Cancel = True
-            Environment.Exit(1)
+        If Not accept Then
+            If strDBType.Equals("") OrElse My.Settings.appStatus.Equals("first_start") OrElse My.Settings.appStatus.Equals("dbError") Then
+                e.Cancel = True
+                Environment.Exit(1)
+            End If
         End If
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         Dim changeDBType As Boolean = False
         Dim changeDBSettings As Boolean = False
-        Dim con As Connection = Connection.getInstance()
-        Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
-        Dim csbOld As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder(cs.ConnectionString)
 
-        If strDBType.Equals("") Then ' And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
+        accept = True
+
+        If strDBType.Equals("") Then
             MsgBox(LocRM.GetString("noDBMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
             Exit Sub
         End If
@@ -63,6 +65,10 @@ Public Class frmSettings
         End If
 
         If strDBType.Equals("remote") AndAlso Not changeDBType Then
+            Dim con As Connection = Connection.getInstance()
+            Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
+            Dim csbOld As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder(cs.ConnectionString)
+
             If Not csbOld.UserID.Equals(tbxUser.Text) OrElse Not csbOld.Password.Equals(tbxPass.Text) OrElse
                 Not csbOld.Server.Equals(tbxServer.Text) OrElse csbOld.Port <> nudPort.Value Then
                 changeDBSettings = True
@@ -80,7 +86,7 @@ Public Class frmSettings
             End If
         End If
 
-        If changeDBType AndAlso MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then
+        If changeDBType And Not My.Settings.appStatus.Equals("first_start") AndAlso MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then
             Exit Sub
         End If
 
@@ -102,45 +108,29 @@ Public Class frmSettings
         My.Settings.Save()
 
         ' Si no entró como asistente, es decir, si es el usuario quien fuerza el cambio de SGBD, sale de la aplicación
-        If (changeDBSettings Or changeDBType) And Not Me.Text.Equals(LocRM.GetString("firstTimeTitle")) And Not Me.Text.Equals(LocRM.GetString("dbErrorTitle")) Then
+        If (changeDBSettings Or changeDBType) And Not My.Settings.appStatus.Equals("first_start") Then
             Environment.Exit(0)
         End If
+
+        My.Settings.appStatus = "ok"
+        My.Settings.Save()
 
         Close()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        If strDBType.Equals("") OrElse (Me.Text.Equals(LocRM.GetString("firstTimeTitle")) OrElse Me.Text.Equals(LocRM.GetString("dbErrorTitle"))) Then
-            Environment.Exit(1)
-        Else
-            LanguageChanged = False
-            Close()
-        End If
+        Close()
     End Sub
 
     Private Sub btnTestCon_Click(sender As Object, e As EventArgs) Handles btnTestCon.Click
-        Dim csBuilder As New MySqlConnectionStringBuilder() With {
-            .UserID = tbxUser.Text,
-            .Password = tbxPass.Text,
-            .Server = tbxServer.Text,
-            .Port = nudPort.Value,
-            .Database = MYSQL_DATABASE
-        }
-
-        If cbxSSH.Checked Then
-            csBuilder.SshHostName = tbxSSHHost.Text
-            csBuilder.SshPort = nudSSHPort.Value
-            csBuilder.SshUserName = tbxSSHName.Text
-            csBuilder.SshPassword = tbxSSHPass.Text
-        End If
-
+        Dim con As MySqlConnection = New MySqlConnection(buildMySQLConnectionString.ConnectionString)
         Try
-            Dim con As MySqlConnection = New MySqlConnection(csBuilder.ConnectionString)
             con.Open()
             MsgBox(LocRM.GetString("conOK"), MsgBoxStyle.Information, LocRM.GetString("msgTitle"))
-            con.Close()
         Catch err As Exception
             MsgBox(LocRM.GetString("conError"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
+        Finally
+            con.Close()
         End Try
     End Sub
 
@@ -226,8 +216,27 @@ Public Class frmSettings
             con.AddConnectionString(MYSQL_CS_NAME, csBuilder.ConnectionString, MYSQL_PROVIDER_NAME)
         Else
             con.EditConnectionString(MYSQL_CS_NAME, csBuilder.ConnectionString, MYSQL_PROVIDER_NAME)
-            End If
+        End If
     End Sub
+
+    Private Function buildMySQLConnectionString() As MySqlConnectionStringBuilder
+        Dim csBuilder As New MySqlConnectionStringBuilder() With {
+            .UserID = tbxUser.Text,
+            .Password = tbxPass.Text,
+            .Server = tbxServer.Text,
+            .Port = nudPort.Value,
+            .Database = MYSQL_DATABASE
+        }
+
+        If cbxSSH.Checked Then
+            csBuilder.SshHostName = tbxSSHHost.Text
+            csBuilder.SshPort = nudSSHPort.Value
+            csBuilder.SshUserName = tbxSSHName.Text
+            csBuilder.SshPassword = tbxSSHPass.Text
+        End If
+
+        Return csBuilder
+    End Function
 
     Private Sub EnabledServerSettings(opt As Boolean)
         lblServerSettings.Enabled = opt

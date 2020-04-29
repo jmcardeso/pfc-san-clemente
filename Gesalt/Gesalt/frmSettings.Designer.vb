@@ -30,12 +30,12 @@ Partial Class frmSettings
         Me.Label6 = New System.Windows.Forms.Label()
         Me.rbServer = New System.Windows.Forms.RadioButton()
         Me.rbLocal = New System.Windows.Forms.RadioButton()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlConnection = New System.Windows.Forms.Panel()
         Me.lblServerSettings = New System.Windows.Forms.Label()
         Me.nudPort = New System.Windows.Forms.NumericUpDown()
         Me.btnTestCon = New System.Windows.Forms.Button()
         Me.lblPort = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlSSH = New System.Windows.Forms.Panel()
         Me.nudSSHPort = New System.Windows.Forms.NumericUpDown()
         Me.tbxSSHPass = New System.Windows.Forms.TextBox()
         Me.lblSSHPort = New System.Windows.Forms.Label()
@@ -59,9 +59,9 @@ Partial Class frmSettings
         Me.lblIdioma = New System.Windows.Forms.Label()
         Me.tcPreferencias.SuspendLayout()
         Me.tbpLogin.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlConnection.SuspendLayout()
         CType(Me.nudPort, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.pnlSSH.SuspendLayout()
         CType(Me.nudSSHPort, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpLanguage.SuspendLayout()
         Me.SuspendLayout()
@@ -91,7 +91,7 @@ Partial Class frmSettings
         Me.tbpLogin.Controls.Add(Me.Label6)
         Me.tbpLogin.Controls.Add(Me.rbServer)
         Me.tbpLogin.Controls.Add(Me.rbLocal)
-        Me.tbpLogin.Controls.Add(Me.Panel2)
+        Me.tbpLogin.Controls.Add(Me.pnlConnection)
         resources.ApplyResources(Me.tbpLogin, "tbpLogin")
         Me.tbpLogin.Name = "tbpLogin"
         Me.tbpLogin.UseVisualStyleBackColor = True
@@ -115,23 +115,25 @@ Partial Class frmSettings
         Me.rbLocal.TabStop = True
         Me.rbLocal.UseVisualStyleBackColor = True
         '
-        'Panel2
+        'pnlConnection
         '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.lblServerSettings)
-        Me.Panel2.Controls.Add(Me.nudPort)
-        Me.Panel2.Controls.Add(Me.btnTestCon)
-        Me.Panel2.Controls.Add(Me.lblPort)
-        Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Controls.Add(Me.tbxServer)
-        Me.Panel2.Controls.Add(Me.lblServer)
-        Me.Panel2.Controls.Add(Me.cbxSSH)
-        Me.Panel2.Controls.Add(Me.tbxPass)
-        Me.Panel2.Controls.Add(Me.lblPass)
-        Me.Panel2.Controls.Add(Me.tbxUser)
-        Me.Panel2.Controls.Add(Me.lblUser)
-        resources.ApplyResources(Me.Panel2, "Panel2")
-        Me.Panel2.Name = "Panel2"
+        Me.pnlConnection.BackColor = System.Drawing.Color.Transparent
+        Me.pnlConnection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlConnection.Controls.Add(Me.lblServerSettings)
+        Me.pnlConnection.Controls.Add(Me.nudPort)
+        Me.pnlConnection.Controls.Add(Me.btnTestCon)
+        Me.pnlConnection.Controls.Add(Me.lblPort)
+        Me.pnlConnection.Controls.Add(Me.pnlSSH)
+        Me.pnlConnection.Controls.Add(Me.tbxServer)
+        Me.pnlConnection.Controls.Add(Me.lblServer)
+        Me.pnlConnection.Controls.Add(Me.cbxSSH)
+        Me.pnlConnection.Controls.Add(Me.tbxPass)
+        Me.pnlConnection.Controls.Add(Me.lblPass)
+        Me.pnlConnection.Controls.Add(Me.tbxUser)
+        Me.pnlConnection.Controls.Add(Me.lblUser)
+        Me.pnlConnection.ForeColor = System.Drawing.SystemColors.ControlText
+        resources.ApplyResources(Me.pnlConnection, "pnlConnection")
+        Me.pnlConnection.Name = "pnlConnection"
         '
         'lblServerSettings
         '
@@ -155,19 +157,20 @@ Partial Class frmSettings
         resources.ApplyResources(Me.lblPort, "lblPort")
         Me.lblPort.Name = "lblPort"
         '
-        'Panel1
+        'pnlSSH
         '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.nudSSHPort)
-        Me.Panel1.Controls.Add(Me.tbxSSHPass)
-        Me.Panel1.Controls.Add(Me.lblSSHPort)
-        Me.Panel1.Controls.Add(Me.tbxSSHHost)
-        Me.Panel1.Controls.Add(Me.tbxSSHName)
-        Me.Panel1.Controls.Add(Me.lblUserName)
-        Me.Panel1.Controls.Add(Me.lblSSHPassword)
-        Me.Panel1.Controls.Add(Me.lblHostName)
-        resources.ApplyResources(Me.Panel1, "Panel1")
-        Me.Panel1.Name = "Panel1"
+        Me.pnlSSH.BackColor = System.Drawing.Color.Transparent
+        Me.pnlSSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSSH.Controls.Add(Me.nudSSHPort)
+        Me.pnlSSH.Controls.Add(Me.tbxSSHPass)
+        Me.pnlSSH.Controls.Add(Me.lblSSHPort)
+        Me.pnlSSH.Controls.Add(Me.tbxSSHHost)
+        Me.pnlSSH.Controls.Add(Me.tbxSSHName)
+        Me.pnlSSH.Controls.Add(Me.lblUserName)
+        Me.pnlSSH.Controls.Add(Me.lblSSHPassword)
+        Me.pnlSSH.Controls.Add(Me.lblHostName)
+        resources.ApplyResources(Me.pnlSSH, "pnlSSH")
+        Me.pnlSSH.Name = "pnlSSH"
         '
         'nudSSHPort
         '
@@ -303,11 +306,11 @@ Partial Class frmSettings
         Me.tcPreferencias.ResumeLayout(False)
         Me.tbpLogin.ResumeLayout(False)
         Me.tbpLogin.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.pnlConnection.ResumeLayout(False)
+        Me.pnlConnection.PerformLayout()
         CType(Me.nudPort, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.pnlSSH.ResumeLayout(False)
+        Me.pnlSSH.PerformLayout()
         CType(Me.nudSSHPort, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpLanguage.ResumeLayout(False)
         Me.tbpLanguage.PerformLayout()
@@ -331,7 +334,7 @@ Partial Class frmSettings
     Friend WithEvents lblPass As Label
     Friend WithEvents tbxServer As TextBox
     Friend WithEvents lblServer As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlSSH As Panel
     Friend WithEvents tbxSSHHost As TextBox
     Friend WithEvents tbxSSHName As TextBox
     Friend WithEvents lblUserName As Label
@@ -344,7 +347,7 @@ Partial Class frmSettings
     Friend WithEvents nudPort As NumericUpDown
     Friend WithEvents nudSSHPort As NumericUpDown
     Friend WithEvents btnTestCon As Button
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pnlConnection As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents rbServer As RadioButton
     Friend WithEvents rbLocal As RadioButton
