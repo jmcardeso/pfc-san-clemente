@@ -6,7 +6,7 @@ Public Class DBTypeOleDB
 
     Public ReadOnly Property csBuilder As OleDbConnectionStringBuilder Implements IDBType(Of OleDbConnectionStringBuilder, OleDbConnection, OleDbDataAdapter).csBuilder
         Get
-            _csBuilder = New OleDbConnectionStringBuilder("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" & My.Computer.FileSystem.SpecialDirectories.Desktop & "\Prueba.Accdb'")
+            _csBuilder = New OleDbConnectionStringBuilder("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" & My.Computer.FileSystem.SpecialDirectories.Desktop & "\Gesalt\gesalt.accdb'")
             Return _csBuilder
         End Get
     End Property

@@ -86,10 +86,10 @@ Public Class frmMain
             ConnectionWizard()
         End If
 
-        dbt.dtaPrueba = con.DataApdapter("select * from country", dbt.dbCon)
-        dbt.dtaPrueba.Fill(dtsPruebas, "paises")
+        dbt.dtaPrueba = con.DataApdapter("select * from owner", dbt.dbCon)
+        dbt.dtaPrueba.Fill(dtsPruebas, "owner")
 
-        DataGridView1.DataSource = dtsPruebas.Tables("paises")
+        DataGridView1.DataSource = dtsPruebas.Tables("owner")
 
         con.Close()
     End Sub
