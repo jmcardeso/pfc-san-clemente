@@ -93,16 +93,6 @@ Public Class frmMain
 
         con.Close()
     End Sub
-    Public Function PruebaDePruebas(numero As Integer) As Integer
-        Return numero * 2
-    End Function
-
-    Private Sub ReLoadMain(idioma As String)
-        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(idioma)
-        Me.Controls.Clear()
-        Me.InitializeComponent()
-        Form1_Load(Nothing, Nothing)
-    End Sub
 
     Private Sub mnuAyuda_Preferencias_Click(sender As Object, e As EventArgs) Handles mnuAyuda_Preferencias.Click
         Dim frmPref As New frmSettings
@@ -113,6 +103,28 @@ Public Class frmMain
             ReLoadMain(My.Settings.language)
         End If
     End Sub
+
+    ' PARA PROBAR LOS TESTS. BORRAR!
+    Public Function PruebaDePruebas(numero As Integer) As Integer
+        Return numero * 2
+    End Function
+
+    ''' <summary>
+    ''' Vuelve a cargar el formulario.
+    ''' </summary>
+    ''' <param name="language">El idioma en el que se mostrará el formulario.
+    ''' <para>Ver: <see cref="Globalization.CultureInfo.GetCultureInfo(String)"/>.</para></param>
+    Private Sub ReLoadMain(language As String)
+        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(language)
+        Me.Controls.Clear()
+        Me.InitializeComponent()
+        Form1_Load(Nothing, Nothing)
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario de preferencias de la aplicación.
+    ''' <para>Se utiliza en caso de error en la conexión o cuando el programa se ejecuta por primera vez.</para>
+    ''' </summary>
     Private Sub ConnectionWizard()
         Dim frmPref As New frmSettings
 

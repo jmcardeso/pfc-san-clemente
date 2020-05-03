@@ -2,14 +2,25 @@
 Imports MySql.Data.MySqlClient
 Imports System.Data.OleDb
 Imports System.Data.Common
+
+''' <summary>
+''' Ayuda en la creación de una conexión a una base de datos, exponiendo métodos y propiedades útiles para tal fin.
+''' </summary>
 Public Class Connection
     Private Shared objConnection As Connection
     Private Con As DbConnection
 
+    ''' <summary>
+    ''' Inicializa una nueva instancia de la clase <c>Connection</c>, que ayuda a establecer una conexión a una base de datos.
+    ''' </summary>
     Private Sub New()
 
     End Sub
 
+    ''' <summary>
+    ''' Devuelve la única instancia del objeto <c>Connection</c>.
+    ''' </summary>
+    ''' <returns>Instancia al objeto <c>Connection</c></returns>
     Public Shared Function getInstance() As Connection
         If objConnection Is Nothing Then
             objConnection = New Connection()
@@ -17,6 +28,12 @@ Public Class Connection
 
         Return objConnection
     End Function
+
+    ''' <summary>
+    ''' Abre una conexión con la base de datos con la configuración especificada.
+    ''' </summary>
+    ''' <param name="cs">Ayuda en la creación de la cadena de conexión exponiendo las opciones como propiedades.</param>
+    ''' <returns>Representa una conexión abierta con una base de datos en un servidor MySQL o <c>Nothing</c> si se ha producido un error.</returns>
     Public Function Open(cs As MySqlConnectionStringBuilder) As MySqlConnection
         If Con Is Nothing Then
             Try
@@ -29,6 +46,11 @@ Public Class Connection
         Return Con
     End Function
 
+    ''' <summary>
+    ''' Abre una conexión con la base de datos con la configuración especificada.
+    ''' </summary>
+    ''' <param name="cs">Ayuda en la creación de la cadena de conexión exponiendo las opciones como propiedades.</param>
+    ''' <returns>Representa una conexión abierta con una base de datos en un servidor MySQL o <c>Nothing</c> si se ha producido un error.</returns>
     Public Function Open(cs As OleDbConnectionStringBuilder) As OleDbConnection
         If Con Is Nothing Then
             Try
@@ -41,6 +63,9 @@ Public Class Connection
         Return Con
     End Function
 
+    ''' <summary>
+    ''' Cierra la conexión establecida con la base de datos.
+    ''' </summary>
     Public Sub Close()
         If Not Con Is Nothing Then
             Con.Close()
@@ -48,19 +73,41 @@ Public Class Connection
         End If
     End Sub
 
+    ''' <summary>
+    ''' Inicializa una instancia de la clase MySqlDataAdapter.
+    ''' </summary>
+    ''' <param name="selectCommandText">Setencia SELECT.</param>
+    ''' <param name="connection">Conexión a la base de datos</param>
+    ''' <returns>Representa un conjunto de comnados de datos y una conexión a una base de datos que se usan para rellenar <c>DataSet</c> y actualizar el origen de datos.</returns>
     Public Function DataApdapter(selectCommandText As String, connection As MySqlConnection) As MySqlDataAdapter
         Return New MySqlDataAdapter(selectCommandText, connection)
     End Function
 
+    ''' <summary>
+    ''' Inicializa una instancia de la clase OleDbDataAdapter.
+    ''' </summary>
+    ''' <param name="selectCommandText">Setencia SELECT.</param>
+    ''' <param name="connection">Conexión a la base de datos</param>
+    ''' <returns>Representa un conjunto de comnados de datos y una conexión a una base de datos que se usan para rellenar <c>DataSet</c> y actualizar el origen de datos.</returns>
     Public Function DataApdapter(selectCommandText As String, connection As OleDbConnection) As OleDbDataAdapter
         Return New OleDbDataAdapter(selectCommandText, connection)
     End Function
+
+    ''' <summary>
+    ''' Modifica la cadena de conexión de una base de datos guardada en el archivo de configuración del programa.
+    ''' </summary>
+    ''' <param name="csName">Nombre de la cadena de conexión en las preferencias del programa.</param>
+    ''' <param name="csConnectionString">Cadena de conexión de la base de datos.</param>
+    ''' <param name="csProviderName">Nombre del proveedor de la base de datos.</param>
     Public Sub EditConnectionString(csName As String, csConnectionString As String, csProviderName As String)
         If RemoveConnectionStrings(csName) Then
             AddConnectionString(csName, csConnectionString, csProviderName)
         End If
     End Sub
 
+    ''' <summary>
+    ''' Encripta la sección de la configuración del programa que almacena las cadenas de conexión de las bases de datos.
+    ''' </summary>
     Private Sub ProtectConnectionString()
         Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
         Dim cs As ConfigurationSection = config.ConnectionStrings
@@ -75,6 +122,9 @@ Public Class Connection
         End If
     End Sub
 
+    ''' <summary>
+    ''' Desencripta la sección de la configuración del programa que almacena las cadenas de conexión de las bases de datos.
+    ''' </summary>
     Private Sub UnprotectConnectionString()
         Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
         Dim cs As ConfigurationSection = config.ConnectionStrings
@@ -89,7 +139,13 @@ Public Class Connection
         End If
     End Sub
 
-    ' Ref: https://docs.microsoft.com/en-us/dotnet/api/system.configuration.connectionstringsettingscollection.add?view=netframework-4.8
+    ''' <summary>
+    ''' Añade una cadena de conexión de una base de datos en el archivo de configuración del programa.
+    ''' <para>Referencia: "https://docs.microsoft.com/en-us/dotnet/api/system.configuration.connectionstringsettingscollection.add?view=netframework-4.8"</para>
+    ''' </summary>
+    ''' <param name="csName">Nombre único de la cadena de conexión en el archivo de configuración del programa.</param>
+    ''' <param name="csConnectionString">Cadena de conexión de la base de datos.</param>
+    ''' <param name="csProviderName">Nombre del proveedor de la base de datos.</param>
     Public Sub AddConnectionString(csName As String, csConnectionString As String, csProviderName As String)
         Try
             ' Get the configuration file.
@@ -109,6 +165,11 @@ Public Class Connection
     End Sub
 
     ' Ref: https://docs.microsoft.com/en-us/dotnet/api/system.configuration.connectionstringsettingscollection.remove?view=netframework-4.8
+    ''' <summary>
+    ''' Borra una cadena de conexión de una base de datos de el archivo de conexión del programa.
+    ''' </summary>
+    ''' <param name="csName">Nombre único de la cadena de conexión en el archivo de conexión del programa.</param>
+    ''' <returns><c>True</c> si la cadena de conexión ha sido borrada, <c>False</c> en caso contrario.</returns>
     Private Function RemoveConnectionStrings(csName As String) As Boolean
         Dim resultado As Boolean = False
 
@@ -136,7 +197,7 @@ Public Class Connection
                 resultado = True
             End If
         Catch err As ConfigurationErrorsException
-            MsgBox(err.BareMessage)
+
         End Try
 
         Return resultado
@@ -145,6 +206,12 @@ Public Class Connection
     ' Ref: https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
     ' Retrieves the MySQL connection string.
     ' Returns Nothing if the name is not found.
+    ''' <summary>
+    ''' Obtiene la cadena de conexión con nombre único del archivo de configuración del programa.
+    ''' <para>La cadena de conexión debe ser válida para una conexión del tipo <c>MySQLConnection</c>.</para>
+    ''' <para>Referencia: " https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files"</para>
+    ''' </summary>
+    ''' <returns>La cadena de conexión de nombre único de la configuración del programa o <c>Nothing</c> si no se ha encontrado.</returns>
     Public Function GetMySQLConnectionString() As ConnectionStringSettings
 
         ' Assume failure

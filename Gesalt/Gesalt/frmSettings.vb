@@ -4,6 +4,11 @@ Imports System.Resources
 Imports MySql.Data.MySqlClient
 
 Public Class frmSettings
+
+    ''' <summary>
+    ''' Obtiene o establece si el usuario ha cambiado el idioma de la aplicación.
+    ''' </summary>
+    ''' <returns><c>True</c> si el usuario ha cambiado el idioma, <c>False</c> en caso contrario.</returns>
     Public Property LanguageChanged() As Boolean
 
     Dim strLanguage As String = ""
@@ -127,6 +132,7 @@ Public Class frmSettings
         Try
             con.Open()
             MsgBox(LocRM.GetString("conOK"), MsgBoxStyle.Information, LocRM.GetString("msgTitle"))
+            ' Comprobar si es una excepción de Socket y, en ese caso, salir del programa o algo
         Catch err As Exception
             MsgBox(LocRM.GetString("conError"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
         Finally
@@ -169,6 +175,9 @@ Public Class frmSettings
         LanguageChanged = IIf(strLanguage.Equals(My.Settings.language), False, True)
     End Sub
 
+    ''' <summary>
+    ''' Obtiene la cadena de conexión de la base de datos MySQL de los ajustes de la aplicación e introduce sus parámetros en el formulario.
+    ''' </summary>
     Private Sub LoadMySQLConnectionStringData()
         Dim con As Connection = Connection.getInstance()
         Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
@@ -193,6 +202,9 @@ Public Class frmSettings
         End If
     End Sub
 
+    ''' <summary>
+    ''' Establece la cadena de conexión de la base de datos MySQL, recogiendo los parámetros del formulario y guardándola encriptada en los ajustes de la aplicación.
+    ''' </summary>
     Private Sub SaveMySQLConnectionStringData()
         Dim con As Connection = Connection.getInstance()
         Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
@@ -219,6 +231,10 @@ Public Class frmSettings
         End If
     End Sub
 
+    ''' <summary>
+    ''' Crea una cadena de conexión del tipo <c>MySqlConnectionStringBuilder</c>, recogiendo los parámetros del formulario.
+    ''' </summary>
+    ''' <returns>Cadena de conexión de una base de datos MySQL</returns>
     Private Function buildMySQLConnectionString() As MySqlConnectionStringBuilder
         Dim csBuilder As New MySqlConnectionStringBuilder() With {
             .UserID = tbxUser.Text,
@@ -238,6 +254,10 @@ Public Class frmSettings
         Return csBuilder
     End Function
 
+    ''' <summary>
+    ''' Habilita o deshabilita los controles del formulario que permiten al usuario editar una cadena de conexión para una base de datos MySQL.
+    ''' </summary>
+    ''' <param name="opt"><c>True</c> si se habilitan los controles, <c>False</c> en caso contrario.</param>
     Private Sub EnabledServerSettings(opt As Boolean)
         lblServerSettings.Enabled = opt
         lblUser.Enabled = opt
@@ -261,6 +281,10 @@ Public Class frmSettings
         End If
     End Sub
 
+    ''' <summary>
+    ''' Habilita o deshabilita los controles del formulario que permiten al usuario editar los parámetros del túnel SSH de una cadena de conexión MySQL.
+    ''' </summary>
+    ''' <param name="ssh"><c>True</c> si se habilitan los controles del túnel SSH, <c>False</c> en caso contrario.</param>
     Private Sub SSHControls(ssh As Boolean)
         lblHostName.Enabled = ssh
         lblSSHPassword.Enabled = ssh
