@@ -203,9 +203,6 @@ Public Class Connection
         Return resultado
     End Function
 
-    ' Ref: https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
-    ' Retrieves the MySQL connection string.
-    ' Returns Nothing if the name is not found.
     ''' <summary>
     ''' Obtiene la cadena de conexión con nombre único del archivo de configuración del programa.
     ''' <para>La cadena de conexión debe ser válida para una conexión del tipo <c>MySQLConnection</c>.</para>
@@ -234,4 +231,5 @@ Public Class Connection
 
         Return returnValue
     End Function
+
 End Class

@@ -802,4 +802,13 @@
   <data name="mnuAyuda_Preferencias.Text" xml:space="preserve">
     <value>Preferencias</value>
   </data>
+  <data name="btnGuests.Text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="btnOwners.Text" xml:space="preserve">
+    <value>Propietarios</value>
+  </data>
+  <data name="btnProperties.Text" xml:space="preserve">
+    <value>Inmuebles</value>
+  </data>
 </root>

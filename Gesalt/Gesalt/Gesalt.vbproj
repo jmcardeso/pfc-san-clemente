@@ -125,14 +125,22 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
     <Compile Include="DataBase\Connection.vb" />
+    <Compile Include="DataBase\DbOperations.vb" />
     <Compile Include="DataBase\DBTypeMySQL.vb" />
     <Compile Include="DataBase\DBTypeOleDB.vb" />
     <Compile Include="DataBase\IDBType.vb" />
+    <Compile Include="DataBase\Owner.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOwners.Designer.vb">
+      <DependentUpon>frmOwners.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOwners.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSettings.Designer.vb">
@@ -172,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwners.resx">
+      <DependentUpon>frmOwners.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.es.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>

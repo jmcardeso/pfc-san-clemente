@@ -23,31 +23,14 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuAyuda = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAyuda_Preferencias = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.btnOwners = New System.Windows.Forms.Button()
+        Me.btnGuests = New System.Windows.Forms.Button()
+        Me.btnProperties = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
-        '
-        'Label2
-        '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Name = "Label2"
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAyuda})
-        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
-        Me.MenuStrip1.Name = "MenuStrip1"
         '
         'mnuAyuda
         '
@@ -60,34 +43,53 @@ Partial Class frmMain
         Me.mnuAyuda_Preferencias.Name = "mnuAyuda_Preferencias"
         resources.ApplyResources(Me.mnuAyuda_Preferencias, "mnuAyuda_Preferencias")
         '
-        'DataGridView1
+        'MenuStrip1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
-        Me.DataGridView1.Name = "DataGridView1"
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAyuda})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
         '
-        'Form1
+        'btnOwners
+        '
+        resources.ApplyResources(Me.btnOwners, "btnOwners")
+        Me.btnOwners.Name = "btnOwners"
+        Me.btnOwners.UseVisualStyleBackColor = True
+        '
+        'btnGuests
+        '
+        resources.ApplyResources(Me.btnGuests, "btnGuests")
+        Me.btnGuests.Name = "btnGuests"
+        Me.btnGuests.TabStop = False
+        Me.btnGuests.UseVisualStyleBackColor = True
+        '
+        'btnProperties
+        '
+        resources.ApplyResources(Me.btnProperties, "btnProperties")
+        Me.btnProperties.Name = "btnProperties"
+        Me.btnProperties.UseVisualStyleBackColor = True
+        '
+        'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnProperties)
+        Me.Controls.Add(Me.btnGuests)
+        Me.Controls.Add(Me.btnOwners)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Form1"
+        Me.MaximizeBox = False
+        Me.Name = "frmMain"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents mnuAyuda As ToolStripMenuItem
     Friend WithEvents mnuAyuda_Preferencias As ToolStripMenuItem
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents btnOwners As Button
+    Friend WithEvents btnGuests As Button
+    Friend WithEvents btnProperties As Button
 End Class
