@@ -13,9 +13,9 @@ Public Class DBTypeMySQL
     ''' Obtiene la cadena de conexión para la base de datos MySQL.
     ''' </summary>
     ''' <returns>Cadena de conexión de la base de datos MySQL.</returns>
-    Public ReadOnly Property csBuilder As MySqlConnectionStringBuilder Implements IDBType(Of MySqlConnectionStringBuilder, MySqlConnection, MySqlDataAdapter).csBuilder
+    Public Overloads ReadOnly Property csBuilder As MySqlConnectionStringBuilder Implements IDBType(Of MySqlConnectionStringBuilder, MySqlConnection, MySqlDataAdapter).csBuilder
         Get
-            Dim conMySQL As Connection = Connection.getInstance()
+            Dim conMySQL As Connection = Connection.GetInstance()
             Dim cs As ConnectionStringSettings = conMySQL.GetMySQLConnectionString()
             _csBuilder = New MySqlConnectionStringBuilder(cs.ConnectionString)
             Return _csBuilder
@@ -26,11 +26,11 @@ Public Class DBTypeMySQL
     ''' Obtiene o establece la conexión para la base de datos MySQL.
     ''' </summary>
     ''' <returns>La conexión para la base de datos MySQL.</returns>
-    Public Property dbCon As MySqlConnection Implements IDBType(Of MySqlConnectionStringBuilder, MySqlConnection, MySqlDataAdapter).dbCon
+    Public Overloads Property dbCon As MySqlConnection Implements IDBType(Of MySqlConnectionStringBuilder, MySqlConnection, MySqlDataAdapter).dbCon
 
     ''' <summary>
     ''' Obtiene o establece un DataAdapter para la base de datos MySQL.
     ''' </summary>
     ''' <returns>DataAdapter para la base de datos MySQL.</returns>
-    Public Property dtaPrueba As MySqlDataAdapter Implements IDBType(Of MySqlConnectionStringBuilder, MySqlConnection, MySqlDataAdapter).dtaPrueba
+    Public Overloads Property dtaPrueba As MySqlDataAdapter Implements IDBType(Of MySqlConnectionStringBuilder, MySqlConnection, MySqlDataAdapter).dtaPrueba
 End Class

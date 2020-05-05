@@ -21,7 +21,7 @@ Public Class Connection
     ''' Devuelve la única instancia del objeto <c>Connection</c>.
     ''' </summary>
     ''' <returns>Instancia al objeto <c>Connection</c></returns>
-    Public Shared Function getInstance() As Connection
+    Public Shared Function GetInstance() As Connection
         If objConnection Is Nothing Then
             objConnection = New Connection()
         End If

@@ -1,6 +1,6 @@
 ﻿Public Class Owner
 
-    Public Property Id As Integer
+    Public ReadOnly Property Id As Integer
 
     Public Property Type As String
 

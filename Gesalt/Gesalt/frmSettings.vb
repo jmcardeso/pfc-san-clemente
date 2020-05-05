@@ -70,7 +70,7 @@ Public Class frmSettings
         End If
 
         If strDBType.Equals("remote") AndAlso Not changeDBType Then
-            Dim con As Connection = Connection.getInstance()
+            Dim con As Connection = Connection.GetInstance()
             Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
             Dim csbOld As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder(cs.ConnectionString)
 
@@ -179,7 +179,7 @@ Public Class frmSettings
     ''' Obtiene la cadena de conexión de la base de datos MySQL de los ajustes de la aplicación e introduce sus parámetros en el formulario.
     ''' </summary>
     Private Sub LoadMySQLConnectionStringData()
-        Dim con As Connection = Connection.getInstance()
+        Dim con As Connection = Connection.GetInstance()
         Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
 
         If cs Is Nothing Then
@@ -206,7 +206,7 @@ Public Class frmSettings
     ''' Establece la cadena de conexión de la base de datos MySQL, recogiendo los parámetros del formulario y guardándola encriptada en los ajustes de la aplicación.
     ''' </summary>
     Private Sub SaveMySQLConnectionStringData()
-        Dim con As Connection = Connection.getInstance()
+        Dim con As Connection = Connection.GetInstance()
         Dim cs As ConnectionStringSettings = con.GetMySQLConnectionString()
 
         Dim csBuilder As New MySqlConnectionStringBuilder() With {

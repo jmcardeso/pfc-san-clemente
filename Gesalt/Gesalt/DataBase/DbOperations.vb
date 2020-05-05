@@ -1,9 +1,10 @@
 ﻿Public Class DbOperations
-    Private con As Connection = Connection.getInstance()
-    Private dbt As Object = Nothing
-    Private dtsPruebas As New DataSet
+    Private Shared objDbOperations As DbOperations
+    Private con As Connection = Connection.GetInstance()
+    Private dbt As Object
+    ' Private dtsPruebas As New DataSet
 
-    Public Sub New(dbType As String)
+    Private Sub New(dbType As String)
         If dbType.Equals("local") Then
             dbt = New DBTypeOleDB()
         Else
@@ -20,6 +21,21 @@
         End If
     End Sub
 
+    Public Shared Function GetInstance(dbType As String) As DbOperations
+        If objDbOperations Is Nothing Then
+            If dbType Is Nothing Then
+                Throw New InvalidOperationException("No database type has been defined")
+            End If
+            objDbOperations = New DbOperations(dbType)
+        End If
+
+        Return objDbOperations
+    End Function
+
+    Public Shared Function GetInstance() As DbOperations
+        Return GetInstance(Nothing)
+    End Function
+
     Public Function GetAllOwners() As List(Of Owner)
         Return GetAllOwners(Nothing)
     End Function
@@ -31,7 +47,8 @@
 
         ' Mejor utilizar parámetros y no concatenar sentencias SQL (por seguridad)
         If Not nif Is Nothing Then
-            sql &= " where nif like '" & nif & "'"
+            sql = "select * from owner where nif like @p_nif"
+
         End If
 
         dbt.dtaPrueba = con.DataApdapter(sql, dbt.dbCon)
