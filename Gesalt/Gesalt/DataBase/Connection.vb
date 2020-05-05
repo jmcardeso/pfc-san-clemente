@@ -1,5 +1,4 @@
 ﻿Imports System.Configuration
-Imports MySql.Data.MySqlClient
 Imports System.Data.OleDb
 Imports System.Data.Common
 
@@ -8,7 +7,20 @@ Imports System.Data.Common
 ''' </summary>
 Public Class Connection
     Private Shared objConnection As Connection
-    Private Con As DbConnection
+    Private _Con As DbConnection
+    Private _Factory As DbProviderFactory
+
+    ReadOnly Property Con As DbConnection
+        Get
+            Return _Con
+        End Get
+    End Property
+
+    ReadOnly Property Factory As DbProviderFactory
+        Get
+            Return _Factory
+        End Get
+    End Property
 
     ''' <summary>
     ''' Inicializa una nueva instancia de la clase <c>Connection</c>, que ayuda a establecer una conexión a una base de datos.
@@ -32,33 +44,32 @@ Public Class Connection
     ''' <summary>
     ''' Abre una conexión con la base de datos con la configuración especificada.
     ''' </summary>
-    ''' <param name="cs">Ayuda en la creación de la cadena de conexión exponiendo las opciones como propiedades.</param>
-    ''' <returns>Representa una conexión abierta con una base de datos en un servidor MySQL o <c>Nothing</c> si se ha producido un error.</returns>
-    Public Function Open(cs As MySqlConnectionStringBuilder) As MySqlConnection
-        If Con Is Nothing Then
-            Try
-                Con = New MySqlConnection(cs.ConnectionString)
-                Con.Open()
-            Catch err As Exception
-                Return Nothing
-            End Try
-        End If
-        Return Con
-    End Function
+    ''' <param name="dbType">Tipo de base de datos que se usará.</param>
+    ''' <returns>Representa una conexión abierta con una base de datos.</returns>
+    Public Function Open(dbType As String) As DbConnection
+        If _Con Is Nothing Then
+            Dim configuration As Configuration
+            Dim csSection As ConnectionStringsSection
+            Dim csCollection As ConnectionStringSettingsCollection
+            Dim css As ConnectionStringSettings
+            Dim csBuilder As DbConnectionStringBuilder
 
-    ''' <summary>
-    ''' Abre una conexión con la base de datos con la configuración especificada.
-    ''' </summary>
-    ''' <param name="cs">Ayuda en la creación de la cadena de conexión exponiendo las opciones como propiedades.</param>
-    ''' <returns>Representa una conexión abierta con una base de datos en un servidor MySQL o <c>Nothing</c> si se ha producido un error.</returns>
-    Public Function Open(cs As OleDbConnectionStringBuilder) As OleDbConnection
-        If Con Is Nothing Then
-            Try
-                Con = New OleDbConnection(cs.ConnectionString)
-                Con.Open()
-            Catch err As Exception
-                Return Nothing
-            End Try
+            If dbType.Equals("local") Then
+                csBuilder = New OleDbConnectionStringBuilder("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" & My.Computer.FileSystem.SpecialDirectories.Desktop & "\Gesalt\gesalt.accdb'")
+                _Factory = DbProviderFactories.GetFactory("System.Data.OleDb")
+                _Con = _Factory.CreateConnection()
+                _Con.ConnectionString = csBuilder.ConnectionString
+            Else
+                configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
+                csSection = configuration.ConnectionStrings
+                csCollection = csSection.ConnectionStrings
+                css = csCollection("mysql")
+                _Factory = DbProviderFactories.GetFactory(css.ProviderName)
+                _Con = _Factory.CreateConnection()
+                _Con.ConnectionString = css.ConnectionString
+            End If
+
+            Con.Open()
         End If
         Return Con
     End Function
@@ -67,31 +78,11 @@ Public Class Connection
     ''' Cierra la conexión establecida con la base de datos.
     ''' </summary>
     Public Sub Close()
-        If Not Con Is Nothing Then
-            Con.Close()
-            Con = Nothing
+        If Not _Con Is Nothing Then
+            _Con.Close()
+            _Con = Nothing
         End If
     End Sub
-
-    ''' <summary>
-    ''' Inicializa una instancia de la clase MySqlDataAdapter.
-    ''' </summary>
-    ''' <param name="selectCommandText">Setencia SELECT.</param>
-    ''' <param name="connection">Conexión a la base de datos</param>
-    ''' <returns>Representa un conjunto de comnados de datos y una conexión a una base de datos que se usan para rellenar <c>DataSet</c> y actualizar el origen de datos.</returns>
-    Public Function DataApdapter(selectCommandText As String, connection As MySqlConnection) As MySqlDataAdapter
-        Return New MySqlDataAdapter(selectCommandText, connection)
-    End Function
-
-    ''' <summary>
-    ''' Inicializa una instancia de la clase OleDbDataAdapter.
-    ''' </summary>
-    ''' <param name="selectCommandText">Setencia SELECT.</param>
-    ''' <param name="connection">Conexión a la base de datos</param>
-    ''' <returns>Representa un conjunto de comnados de datos y una conexión a una base de datos que se usan para rellenar <c>DataSet</c> y actualizar el origen de datos.</returns>
-    Public Function DataApdapter(selectCommandText As String, connection As OleDbConnection) As OleDbDataAdapter
-        Return New OleDbDataAdapter(selectCommandText, connection)
-    End Function
 
     ''' <summary>
     ''' Modifica la cadena de conexión de una base de datos guardada en el archivo de configuración del programa.
