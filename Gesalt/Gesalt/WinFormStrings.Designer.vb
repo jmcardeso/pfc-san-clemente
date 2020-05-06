@@ -173,6 +173,105 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Address.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldAddress() As String
+            Get
+                Return ResourceManager.GetString("fieldAddress", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a City.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldCity() As String
+            Get
+                Return ResourceManager.GetString("fieldCity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Email.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldEmail() As String
+            Get
+                Return ResourceManager.GetString("fieldEmail", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a First Name.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldFirstName() As String
+            Get
+                Return ResourceManager.GetString("fieldFirstName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Last Name.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldLastName() As String
+            Get
+                Return ResourceManager.GetString("fieldLastName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a NIF.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldNif() As String
+            Get
+                Return ResourceManager.GetString("fieldNif", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Path Logo.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldPathLogo() As String
+            Get
+                Return ResourceManager.GetString("fieldPathLogo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Phone.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldPhone() As String
+            Get
+                Return ResourceManager.GetString("fieldPhone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Province/Country.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldProvince() As String
+            Get
+                Return ResourceManager.GetString("fieldProvince", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Type.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldType() As String
+            Get
+                Return ResourceManager.GetString("fieldType", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Zip Code.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldZip() As String
+            Get
+                Return ResourceManager.GetString("fieldZip", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Gesalt is running for the first time. You must enter some data..
         '''</summary>
         Friend Shared ReadOnly Property firstTimeMsg() As String

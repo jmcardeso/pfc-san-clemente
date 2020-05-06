@@ -155,4 +155,37 @@
   <data name="dbSettingsChangeTitle" xml:space="preserve">
     <value>Database connection settings change</value>
   </data>
+  <data name="fieldFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="fieldLastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="fieldNif" xml:space="preserve">
+    <value>NIF</value>
+  </data>
+  <data name="fieldAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="fieldZip" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="fieldCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="fieldProvince" xml:space="preserve">
+    <value>Province/Country</value>
+  </data>
+  <data name="fieldPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="fieldEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="fieldPathLogo" xml:space="preserve">
+    <value>Path Logo</value>
+  </data>
+  <data name="fieldType" xml:space="preserve">
+    <value>Type</value>
+  </data>
 </root>

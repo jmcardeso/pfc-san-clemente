@@ -825,114 +825,6 @@
   <data name="&gt;&gt;tbpLogin.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbEnglish.Name" xml:space="preserve">
-    <value>rbEnglish</value>
-  </data>
-  <data name="&gt;&gt;rbEnglish.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbEnglish.Parent" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;rbEnglish.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;rbSpanish.Name" xml:space="preserve">
-    <value>rbSpanish</value>
-  </data>
-  <data name="&gt;&gt;rbSpanish.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbSpanish.Parent" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;rbSpanish.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;rbGalician.Name" xml:space="preserve">
-    <value>rbGalician</value>
-  </data>
-  <data name="&gt;&gt;rbGalician.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbGalician.Parent" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;rbGalician.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblIdioma.Name" xml:space="preserve">
-    <value>lblIdioma</value>
-  </data>
-  <data name="&gt;&gt;lblIdioma.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblIdioma.Parent" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;lblIdioma.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tbpLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tbpLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 464</value>
-  </data>
-  <data name="tbpLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbpLanguage.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.Name" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.Parent" xml:space="preserve">
-    <value>tcPreferencias</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tcPreferencias.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 17</value>
-  </data>
-  <data name="tcPreferencias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 490</value>
-  </data>
-  <data name="tcPreferencias.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.Name" xml:space="preserve">
-    <value>tcPreferencias</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1074,6 +966,54 @@
   <data name="&gt;&gt;lblIdioma.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="tbpLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbpLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbpLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 464</value>
+  </data>
+  <data name="tbpLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tbpLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.Name" xml:space="preserve">
+    <value>tbpLanguage</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.Parent" xml:space="preserve">
+    <value>tcPreferencias</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tcPreferencias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 17</value>
+  </data>
+  <data name="tcPreferencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 490</value>
+  </data>
+  <data name="tcPreferencias.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.Name" xml:space="preserve">
+    <value>tcPreferencias</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1082,6 +1022,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>458, 555</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Gesalt Settings</value>

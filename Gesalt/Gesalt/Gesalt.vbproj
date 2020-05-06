@@ -182,6 +182,12 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOwners.es.resx">
+      <DependentUpon>frmOwners.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwners.gl.resx">
+      <DependentUpon>frmOwners.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOwners.resx">
       <DependentUpon>frmOwners.vb</DependentUpon>
     </EmbeddedResource>
