@@ -120,4 +120,37 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Propietarios - Gesalt</value>
   </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Apelidos:</value>
+  </data>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>Provincia/País:</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Logo:</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Cód. Postal:</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Localidade:</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>Enderezo:</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>NIF:</value>
+  </data>
 </root>

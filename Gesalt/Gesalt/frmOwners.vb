@@ -35,7 +35,20 @@ Public Class frmOwners
                 .DataSource = owners
             End With
 
+            ' Uso de CurrencyManager con objetos: https://support.microsoft.com/en-us/help/315786/how-to-bind-a-datagrid-control-to-an-array-of-objects-or-of-structures
             cm = dgvOwners.BindingContext(owners)
+
+            lblLastName.DataBindings.Add("Text", owners, "LastName")
+            lblFirstName.DataBindings.Add("Text", owners, "FirstName")
+            lblAddress.DataBindings.Add("Text", owners, "Address")
+            lblCity.DataBindings.Add("Text", owners, "City")
+            lblEmail.DataBindings.Add("Text", owners, "Email")
+            lblLogo.DataBindings.Add("Text", owners, "PathLogo")
+            lblNif.DataBindings.Add("Text", owners, "Nif")
+            lblPhone.DataBindings.Add("Text", owners, "Phone")
+            lblProvince.DataBindings.Add("Text", owners, "Province")
+            lblType.DataBindings.Add("Text", owners, "Type")
+            lblZip.DataBindings.Add("Text", owners, "Zip")
 
         Catch err As InvalidOperationException
             MsgBox(err.Message)

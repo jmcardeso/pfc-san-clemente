@@ -40,11 +40,11 @@ Public Class DbOperations
 
         Dim da As DbDataAdapter
         Dim sqlCommand As DbCommand
-        Dim sql As String = "select * from owner"
+        Dim sql As String = "select * from owner order by last_name"
 
         ' Mejor utilizar parámetros y no concatenar sentencias SQL (por seguridad)
         If Not nif Is Nothing Then
-            sql = "select * from owner where nif like @p_nif"
+            sql = "select * from owner where nif like @p_nif order by last_name"
 
         End If
 

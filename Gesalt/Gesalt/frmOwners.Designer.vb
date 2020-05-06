@@ -22,7 +22,7 @@ Partial Class frmOwners
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwners))
         Me.dgvOwners = New System.Windows.Forms.DataGridView()
         Me.mnsOwners = New System.Windows.Forms.MenuStrip()
@@ -31,17 +31,6 @@ Partial Class frmOwners
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnLast = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -53,6 +42,17 @@ Partial Class frmOwners
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.lblPhone = New System.Windows.Forms.Label()
+        Me.lblProvince = New System.Windows.Forms.Label()
+        Me.lblLogo = New System.Windows.Forms.Label()
+        Me.lblCity = New System.Windows.Forms.Label()
+        Me.lblZip = New System.Windows.Forms.Label()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lblType = New System.Windows.Forms.Label()
+        Me.lblNif = New System.Windows.Forms.Label()
+        Me.lblFirstName = New System.Windows.Forms.Label()
+        Me.lblLastName = New System.Windows.Forms.Label()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,12 +60,14 @@ Partial Class frmOwners
         '
         Me.dgvOwners.AllowUserToAddRows = False
         Me.dgvOwners.AllowUserToDeleteRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvOwners, "dgvOwners")
+        Me.dgvOwners.MultiSelect = False
         Me.dgvOwners.Name = "dgvOwners"
         Me.dgvOwners.ReadOnly = True
+        Me.dgvOwners.ShowEditingIcon = False
         '
         'mnsOwners
         '
@@ -100,61 +102,6 @@ Partial Class frmOwners
         resources.ApplyResources(Me.btnLast, "btnLast")
         Me.btnLast.Name = "btnLast"
         Me.btnLast.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        resources.ApplyResources(Me.TextBox1, "TextBox1")
-        Me.TextBox1.Name = "TextBox1"
-        '
-        'TextBox2
-        '
-        resources.ApplyResources(Me.TextBox2, "TextBox2")
-        Me.TextBox2.Name = "TextBox2"
-        '
-        'TextBox3
-        '
-        resources.ApplyResources(Me.TextBox3, "TextBox3")
-        Me.TextBox3.Name = "TextBox3"
-        '
-        'TextBox4
-        '
-        resources.ApplyResources(Me.TextBox4, "TextBox4")
-        Me.TextBox4.Name = "TextBox4"
-        '
-        'TextBox5
-        '
-        resources.ApplyResources(Me.TextBox5, "TextBox5")
-        Me.TextBox5.Name = "TextBox5"
-        '
-        'TextBox6
-        '
-        resources.ApplyResources(Me.TextBox6, "TextBox6")
-        Me.TextBox6.Name = "TextBox6"
-        '
-        'TextBox7
-        '
-        resources.ApplyResources(Me.TextBox7, "TextBox7")
-        Me.TextBox7.Name = "TextBox7"
-        '
-        'TextBox8
-        '
-        resources.ApplyResources(Me.TextBox8, "TextBox8")
-        Me.TextBox8.Name = "TextBox8"
-        '
-        'TextBox9
-        '
-        resources.ApplyResources(Me.TextBox9, "TextBox9")
-        Me.TextBox9.Name = "TextBox9"
-        '
-        'TextBox10
-        '
-        resources.ApplyResources(Me.TextBox10, "TextBox10")
-        Me.TextBox10.Name = "TextBox10"
-        '
-        'TextBox11
-        '
-        resources.ApplyResources(Me.TextBox11, "TextBox11")
-        Me.TextBox11.Name = "TextBox11"
         '
         'Label1
         '
@@ -211,10 +158,76 @@ Partial Class frmOwners
         resources.ApplyResources(Me.Label12, "Label12")
         Me.Label12.Name = "Label12"
         '
+        'lblEmail
+        '
+        resources.ApplyResources(Me.lblEmail, "lblEmail")
+        Me.lblEmail.Name = "lblEmail"
+        '
+        'lblPhone
+        '
+        resources.ApplyResources(Me.lblPhone, "lblPhone")
+        Me.lblPhone.Name = "lblPhone"
+        '
+        'lblProvince
+        '
+        resources.ApplyResources(Me.lblProvince, "lblProvince")
+        Me.lblProvince.Name = "lblProvince"
+        '
+        'lblLogo
+        '
+        resources.ApplyResources(Me.lblLogo, "lblLogo")
+        Me.lblLogo.Name = "lblLogo"
+        '
+        'lblCity
+        '
+        resources.ApplyResources(Me.lblCity, "lblCity")
+        Me.lblCity.Name = "lblCity"
+        '
+        'lblZip
+        '
+        resources.ApplyResources(Me.lblZip, "lblZip")
+        Me.lblZip.Name = "lblZip"
+        '
+        'lblAddress
+        '
+        resources.ApplyResources(Me.lblAddress, "lblAddress")
+        Me.lblAddress.Name = "lblAddress"
+        '
+        'lblType
+        '
+        resources.ApplyResources(Me.lblType, "lblType")
+        Me.lblType.Name = "lblType"
+        '
+        'lblNif
+        '
+        resources.ApplyResources(Me.lblNif, "lblNif")
+        Me.lblNif.Name = "lblNif"
+        '
+        'lblFirstName
+        '
+        resources.ApplyResources(Me.lblFirstName, "lblFirstName")
+        Me.lblFirstName.Name = "lblFirstName"
+        '
+        'lblLastName
+        '
+        resources.ApplyResources(Me.lblLastName, "lblLastName")
+        Me.lblLastName.Name = "lblLastName"
+        '
         'frmOwners
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblLastName)
+        Me.Controls.Add(Me.lblFirstName)
+        Me.Controls.Add(Me.lblNif)
+        Me.Controls.Add(Me.lblType)
+        Me.Controls.Add(Me.lblAddress)
+        Me.Controls.Add(Me.lblZip)
+        Me.Controls.Add(Me.lblCity)
+        Me.Controls.Add(Me.lblLogo)
+        Me.Controls.Add(Me.lblProvince)
+        Me.Controls.Add(Me.lblPhone)
+        Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -226,17 +239,6 @@ Partial Class frmOwners
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox11)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnLast)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnPrevious)
@@ -259,17 +261,6 @@ Partial Class frmOwners
     Friend WithEvents btnPrevious As Button
     Friend WithEvents btnNext As Button
     Friend WithEvents btnLast As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox11 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
@@ -281,4 +272,15 @@ Partial Class frmOwners
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents lblEmail As Label
+    Friend WithEvents lblPhone As Label
+    Friend WithEvents lblProvince As Label
+    Friend WithEvents lblLogo As Label
+    Friend WithEvents lblCity As Label
+    Friend WithEvents lblZip As Label
+    Friend WithEvents lblAddress As Label
+    Friend WithEvents lblType As Label
+    Friend WithEvents lblNif As Label
+    Friend WithEvents lblFirstName As Label
+    Friend WithEvents lblLastName As Label
 End Class
