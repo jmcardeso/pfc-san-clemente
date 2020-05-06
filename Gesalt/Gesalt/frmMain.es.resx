@@ -811,4 +811,7 @@
   <data name="btnProperties.Text" xml:space="preserve">
     <value>Inmuebles</value>
   </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>PRUEBAS</value>
+  </data>
 </root>

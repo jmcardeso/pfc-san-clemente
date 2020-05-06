@@ -89,6 +89,12 @@ Public Class frmSettings
                     changeDBSettings = True
                 End If
             End If
+        Else
+            Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments
+            If Not My.Computer.FileSystem.FileExists(path & "\Gesalt\gesalt.accdb") Then
+                System.IO.Directory.CreateDirectory(path & "\Gesalt")
+                System.IO.File.WriteAllBytes(path & "\Gesalt\gesalt.accdb", My.Resources.Database)
+            End If
         End If
 
         If changeDBType And Not My.Settings.appStatus.Equals("first_start") AndAlso MsgBox(LocRM.GetString("dbChange"), MsgBoxStyle.OkCancel Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question, LocRM.GetString("dbChangeTitle")) = MsgBoxResult.Cancel Then

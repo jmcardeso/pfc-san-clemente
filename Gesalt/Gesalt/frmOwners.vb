@@ -7,6 +7,11 @@
         Catch err As InvalidOperationException
             MsgBox(err.Message)
             Close()
+        Catch err As Net.Sockets.SocketException
+            MsgBox(err.Message)
+            Close()
+        Finally
+
         End Try
     End Sub
 End Class

@@ -55,15 +55,15 @@ Public Class Connection
             Dim csBuilder As DbConnectionStringBuilder
 
             If dbType.Equals("local") Then
-                csBuilder = New OleDbConnectionStringBuilder("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" & My.Computer.FileSystem.SpecialDirectories.Desktop & "\Gesalt\gesalt.accdb'")
-                _Factory = DbProviderFactories.GetFactory("System.Data.OleDb")
+                csBuilder = New OleDbConnectionStringBuilder("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" & My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\Gesalt\gesalt.accdb'")
+                _Factory = DbProviderFactories.GetFactory(OLEDB_PROVIDER_NAME)
                 _Con = _Factory.CreateConnection()
                 _Con.ConnectionString = csBuilder.ConnectionString
             Else
                 configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
                 csSection = configuration.ConnectionStrings
                 csCollection = csSection.ConnectionStrings
-                css = csCollection("mysql")
+                css = csCollection(MYSQL_CS_NAME)
                 _Factory = DbProviderFactories.GetFactory(css.ProviderName)
                 _Con = _Factory.CreateConnection()
                 _Con.ConnectionString = css.ConnectionString
