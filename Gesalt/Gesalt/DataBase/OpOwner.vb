@@ -60,6 +60,40 @@ Public Class OpOwner
         Return owners
     End Function
 
+    Public Function AddOwner(owner As Owner) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+
+        Dim sql As String = "select * from owner"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        FillRow(dr, owner)
+        dt.Rows.Add(dr)
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
     Public Function UpdateOwner(owner As Owner) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -92,6 +126,17 @@ Public Class OpOwner
         dr = dt.Rows.Item(0)
 
         dr.BeginEdit()
+        FillRow(dr, owner)
+        dr.EndEdit()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Private Sub FillRow(dr As DataRow, owner As Owner)
         dr("Id") = owner.Id
         dr("first_name") = owner.FirstName
         dr("last_name") = owner.LastName
@@ -104,10 +149,5 @@ Public Class OpOwner
         dr("phone") = owner.Phone
         dr("email") = owner.Email
         dr("path_logo") = owner.PathLogo
-        dr.EndEdit()
-
-        da.Update(dt)
-
-        Return result
-    End Function
+    End Sub
 End Class

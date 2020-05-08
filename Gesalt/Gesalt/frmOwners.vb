@@ -84,6 +84,14 @@ Public Class frmOwners
             Exit Sub
         End If
 
+        If opOwner.AddOwner(frmAux.editOwner) Then
+            owners.Add(frmAux.editOwner)
+            bs.ResetBindings(False)
+            bs.Position = owners.Count - 1
+        Else
+            MsgBox("Fallo al añadir registro TRADUCIR")
+        End If
+
 
 
     End Sub

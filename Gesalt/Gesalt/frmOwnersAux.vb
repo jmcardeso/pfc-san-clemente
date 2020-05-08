@@ -8,11 +8,12 @@ Public Class frmOwnersAux
     Private Sub frmOwnersAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If editOwner IsNot Nothing Then
-            ownerAux = Utils.DeepClone(editOwner)
             Me.Text = LocRM.GetString("editOwnerTitle")
         Else
-
+            editOwner = New Owner()
         End If
+
+        ownerAux = Utils.DeepClone(editOwner)
 
         tbxLastName.DataBindings.Add("Text", ownerAux, "LastName")
         tbxFirstName.DataBindings.Add("Text", ownerAux, "FirstName")

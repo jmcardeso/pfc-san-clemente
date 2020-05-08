@@ -25,6 +25,21 @@ Public Class Owner
 
     Public Property PathLogo As String
 
+    Public Sub New()
+        Me.Id = 0
+        Me.Type = ""
+        Me.FirstName = ""
+        Me.LastName = ""
+        Me.Nif = ""
+        Me.Address = ""
+        Me.Zip = ""
+        Me.City = ""
+        Me.Province = ""
+        Me.Phone = ""
+        Me.Email = ""
+        Me.PathLogo = ""
+    End Sub
+
     Public Sub New(id As Integer, type As String, firstName As String, lastName As String, nif As String, address As String, zip As String, city As String, province As String, phone As String, email As String, pathLogo As String)
         Me.Id = id
         Me.Type = type
