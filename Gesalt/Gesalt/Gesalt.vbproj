@@ -129,8 +129,9 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
     <Compile Include="DataBase\Connection.vb" />
-    <Compile Include="DataBase\DbOperations.vb" />
+    <Compile Include="DataBase\OpOwner.vb" />
     <Compile Include="DataBase\Owner.vb" />
+    <Compile Include="DataBase\Utils.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>

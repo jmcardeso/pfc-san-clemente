@@ -1,16 +1,11 @@
 ﻿Imports System.Data.Common
-Imports System.Configuration
-Imports System.IO
-Imports System.Runtime.Serialization.Formatters.Binary
 
-Public Class DbOperations
-    Private Shared objDbOperations As DbOperations
+Public Class OpOwner
+    Private Shared objOpOwner As OpOwner
     Private con As Connection = Connection.GetInstance()
-    Private cs As ConnectionStringSettings
-    ' Private dtsPruebas As New DataSet
 
-    Private Sub New(dbType As String)
-        If con.Open(dbType) Is Nothing Then
+    Private Sub New()
+        If con.Open() Is Nothing Then
             'My.Settings.appStatus = "dbError"
             'My.Settings.Save()
             'MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
@@ -18,19 +13,12 @@ Public Class DbOperations
         End If
     End Sub
 
-    Public Shared Function GetInstance(dbType As String) As DbOperations
-        If objDbOperations Is Nothing Then
-            If dbType Is Nothing Then
-                Throw New InvalidOperationException("No database type has been defined")
-            End If
-            objDbOperations = New DbOperations(dbType)
+    Public Shared Function GetInstance() As OpOwner
+        If objOpOwner Is Nothing Then
+            objOpOwner = New OpOwner()
         End If
 
-        Return objDbOperations
-    End Function
-
-    Public Shared Function GetInstance() As DbOperations
-        Return GetInstance(Nothing)
+        Return objOpOwner
     End Function
 
     Public Function GetAllOwners() As List(Of Owner)
@@ -120,17 +108,6 @@ Public Class DbOperations
 
         da.Update(dt)
 
-
         Return result
-    End Function
-
-    'Ref: https://stackoverflow.com/questions/129389/how-do-you-do-a-deep-copy-of-an-object-in-net
-    Public Shared Function DeepClone(Of T)(obj As T)
-        Using ms = New MemoryStream()
-            Dim formatter = New BinaryFormatter()
-            formatter.Serialize(ms, obj)
-            ms.Position = 0
-            Return formatter.Deserialize(ms)
-        End Using
     End Function
 End Class

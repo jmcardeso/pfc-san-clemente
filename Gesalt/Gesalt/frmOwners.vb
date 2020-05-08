@@ -1,15 +1,15 @@
 ﻿Imports System.Resources
 
 Public Class frmOwners
-    Dim dbo As DbOperations
+    Dim opOwner As OpOwner
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwners).Assembly)
     Dim bs As New BindingSource()
     Dim owners As New List(Of Owner)
 
     Private Sub frmOwners_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            dbo = DbOperations.GetInstance(My.Settings.dbType)
-            owners = dbo.GetAllOwners()
+            opOwner = OpOwner.GetInstance()
+            owners = opOwner.GetAllOwners()
 
             bs.DataSource = owners
 
@@ -98,10 +98,10 @@ Public Class frmOwners
             Exit Sub
         End If
 
-        owners.Item(bs.Position) = DbOperations.DeepClone(frmAux.editOwner)
+        owners.Item(bs.Position) = Utils.DeepClone(frmAux.editOwner)
         bs.ResetBindings(False)
 
-        dbo = DbOperations.GetInstance(My.Settings.dbType)
-        dbo.UpdateOwner(owners.Item(bs.Position))
+        opOwner = OpOwner.GetInstance()
+        opOwner.UpdateOwner(owners.Item(bs.Position))
     End Sub
 End Class

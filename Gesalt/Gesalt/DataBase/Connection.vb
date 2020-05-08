@@ -44,9 +44,8 @@ Public Class Connection
     ''' <summary>
     ''' Abre una conexión con la base de datos con la configuración especificada.
     ''' </summary>
-    ''' <param name="dbType">Tipo de base de datos que se usará.</param>
     ''' <returns>Representa una conexión abierta con una base de datos.</returns>
-    Public Function Open(dbType As String) As DbConnection
+    Public Function Open() As DbConnection
         If _Con Is Nothing Then
             Dim configuration As Configuration
             Dim csSection As ConnectionStringsSection
@@ -54,7 +53,7 @@ Public Class Connection
             Dim css As ConnectionStringSettings
             Dim csBuilder As DbConnectionStringBuilder
 
-            If dbType.Equals("local") Then
+            If My.Settings.dbType.Equals("local") Then
                 csBuilder = New OleDbConnectionStringBuilder("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" & My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\Gesalt\gesalt.accdb'")
                 _Factory = DbProviderFactories.GetFactory(OLEDB_PROVIDER_NAME)
                 _Con = _Factory.CreateConnection()

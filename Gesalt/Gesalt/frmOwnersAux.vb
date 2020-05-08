@@ -8,7 +8,7 @@ Public Class frmOwnersAux
     Private Sub frmOwnersAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If editOwner IsNot Nothing Then
-            ownerAux = DbOperations.DeepClone(editOwner)
+            ownerAux = Utils.DeepClone(editOwner)
             Me.Text = LocRM.GetString("editOwnerTitle")
         Else
 
@@ -28,7 +28,7 @@ Public Class frmOwnersAux
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        editOwner = DbOperations.DeepClone(ownerAux)
+        editOwner = Utils.DeepClone(ownerAux)
         Me.DialogResult = DialogResult.OK
     End Sub
 
