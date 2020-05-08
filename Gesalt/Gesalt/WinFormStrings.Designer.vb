@@ -315,5 +315,41 @@ Namespace My.Resources
                 Return ResourceManager.GetString("noDBMsg", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The operation couldn&apos;t be completed..
+        '''</summary>
+        Friend Shared ReadOnly Property opFailedMsg() As String
+            Get
+                Return ResourceManager.GetString("opFailedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Operation failed.
+        '''</summary>
+        Friend Shared ReadOnly Property opFailedTitle() As String
+            Get
+                Return ResourceManager.GetString("opFailedTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a is going to be removed from the database. Are you sure?.
+        '''</summary>
+        Friend Shared ReadOnly Property rowRemovedMsg() As String
+            Get
+                Return ResourceManager.GetString("rowRemovedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Delete a row.
+        '''</summary>
+        Friend Shared ReadOnly Property rowRemovedTitle() As String
+            Get
+                Return ResourceManager.GetString("rowRemovedTitle", resourceCulture)
+            End Get
+        End Property
     End Class
 End Namespace

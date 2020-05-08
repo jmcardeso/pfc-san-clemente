@@ -151,6 +151,12 @@
     <Compile Include="frmOwnersAux.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmOwnersFilter.Designer.vb">
+      <DependentUpon>frmOwnersFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOwnersFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSettings.Designer.vb">
       <DependentUpon>frmSettings.vb</DependentUpon>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOwnersAux.resx">
       <DependentUpon>frmOwnersAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwnersFilter.resx">
+      <DependentUpon>frmOwnersFilter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.es.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>

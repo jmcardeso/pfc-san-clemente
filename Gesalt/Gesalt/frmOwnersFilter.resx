@@ -17,13 +17,14 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1">this is my long string</data>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
     <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        [base64 mime encoded serialized .NET Framework object]
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
     <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        [base64 mime encoded string representing a byte array form of the .NET Framework object]
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
     </data>
                 
     There are any number of "resheader" rows that contain simple 
@@ -45,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -59,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -67,9 +69,16 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
@@ -78,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -102,105 +112,9 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Cosa" xml:space="preserve">
-    <value>Thing</value>
-  </data>
-  <data name="msgTitle" xml:space="preserve">
-    <value>Gesalt</value>
-  </data>
-  <data name="csNotFound" xml:space="preserve">
-    <value>No connection bd.</value>
-  </data>
-  <data name="conError" xml:space="preserve">
-    <value>Connection Error</value>
-  </data>
-  <data name="conOK" xml:space="preserve">
-    <value>Connection established successfully</value>
-  </data>
-  <data name="firstTimeMsg" xml:space="preserve">
-    <value>Gesalt is running for the first time. You must enter some data.</value>
-  </data>
-  <data name="firstTimeTitle" xml:space="preserve">
-    <value>Setup Wizard</value>
-  </data>
-  <data name="noDBMsg" xml:space="preserve">
-    <value>You must choose a database location</value>
-  </data>
-  <data name="dbErrorMsg" xml:space="preserve">
-    <value>An error occurred while trying to connect to the database. Check the connection settings.</value>
-  </data>
-  <data name="dbErrorTitle" xml:space="preserve">
-    <value>Check the connection settings</value>
-  </data>
-  <data name="fatalErrorDB" xml:space="preserve">
-    <value>An error occurred while connecting to the database. The Connection Wizard will open for you to check if the settings are correct.</value>
-  </data>
-  <data name="fatalErrorDBTitle" xml:space="preserve">
-    <value>Fatal error</value>
-  </data>
-  <data name="dbChange" xml:space="preserve">
-    <value>The database will change. The data saved in the old one will not be saved in the new one. The program will stop and the next time you run it, it will open with the new database.</value>
-  </data>
-  <data name="dbChangeTitle" xml:space="preserve">
-    <value>Database change</value>
-  </data>
-  <data name="dbSettingsChange" xml:space="preserve">
-    <value>You will change the database connection settings. The program will stop and the next time you run it, it will connect to the database with the new settings.</value>
-  </data>
-  <data name="dbSettingsChangeTitle" xml:space="preserve">
-    <value>Database connection settings change</value>
-  </data>
-  <data name="fieldFirstName" xml:space="preserve">
-    <value>First Name</value>
-  </data>
-  <data name="fieldLastName" xml:space="preserve">
-    <value>Last Name</value>
-  </data>
-  <data name="fieldNif" xml:space="preserve">
-    <value>NIF</value>
-  </data>
-  <data name="fieldAddress" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <data name="fieldZip" xml:space="preserve">
-    <value>Zip Code</value>
-  </data>
-  <data name="fieldCity" xml:space="preserve">
-    <value>City</value>
-  </data>
-  <data name="fieldProvince" xml:space="preserve">
-    <value>Province/Country</value>
-  </data>
-  <data name="fieldPhone" xml:space="preserve">
-    <value>Phone</value>
-  </data>
-  <data name="fieldEmail" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="fieldPathLogo" xml:space="preserve">
-    <value>Path Logo</value>
-  </data>
-  <data name="fieldType" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="editOwnerTitle" xml:space="preserve">
-    <value>Edit an Owner - Gesalt</value>
-  </data>
-  <data name="rowRemovedMsg" xml:space="preserve">
-    <value>is going to be removed from the database. Are you sure?</value>
-  </data>
-  <data name="rowRemovedTitle" xml:space="preserve">
-    <value>Delete a row</value>
-  </data>
-  <data name="opFailedMsg" xml:space="preserve">
-    <value>The operation couldn't be completed.</value>
-  </data>
-  <data name="opFailedTitle" xml:space="preserve">
-    <value>Operation failed</value>
-  </data>
 </root>

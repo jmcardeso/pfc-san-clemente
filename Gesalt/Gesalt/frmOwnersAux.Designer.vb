@@ -202,6 +202,7 @@ Partial Class frmOwnersAux
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
         Me.Name = "frmOwnersAux"
         Me.ResumeLayout(False)
         Me.PerformLayout()

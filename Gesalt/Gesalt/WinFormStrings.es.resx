@@ -191,4 +191,16 @@
   <data name="editOwnerTitle" xml:space="preserve">
     <value>Editar un propietario - Gesalt</value>
   </data>
+  <data name="rowRemovedMsg" xml:space="preserve">
+    <value>se va a eliminar de la base de datos. ¿Está seguro?</value>
+  </data>
+  <data name="rowRemovedTitle" xml:space="preserve">
+    <value>Borrar una fila</value>
+  </data>
+  <data name="opFailedMsg" xml:space="preserve">
+    <value>La operación no pudo completarse.</value>
+  </data>
+  <data name="opFailedTitle" xml:space="preserve">
+    <value>Operación fallida</value>
+  </data>
 </root>

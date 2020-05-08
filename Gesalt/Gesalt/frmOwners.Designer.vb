@@ -30,6 +30,7 @@ Partial Class frmOwners
         Me.AddAnOwnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FilterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MailingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsOwners = New System.Windows.Forms.ToolStrip()
@@ -59,6 +60,7 @@ Partial Class frmOwners
         Me.lblNif = New System.Windows.Forms.Label()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
+        Me.lblFilter = New System.Windows.Forms.Label()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsOwners.SuspendLayout()
         Me.SuspendLayout()
@@ -84,7 +86,7 @@ Partial Class frmOwners
         '
         'OwnersToolStripMenuItem
         '
-        Me.OwnersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAnOwnerToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.OwnersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAnOwnerToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.FilterDataToolStripMenuItem})
         Me.OwnersToolStripMenuItem.Name = "OwnersToolStripMenuItem"
         resources.ApplyResources(Me.OwnersToolStripMenuItem, "OwnersToolStripMenuItem")
         '
@@ -102,6 +104,11 @@ Partial Class frmOwners
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
         resources.ApplyResources(Me.DeleteToolStripMenuItem, "DeleteToolStripMenuItem")
+        '
+        'FilterDataToolStripMenuItem
+        '
+        Me.FilterDataToolStripMenuItem.Name = "FilterDataToolStripMenuItem"
+        resources.ApplyResources(Me.FilterDataToolStripMenuItem, "FilterDataToolStripMenuItem")
         '
         'ReportsToolStripMenuItem
         '
@@ -252,10 +259,16 @@ Partial Class frmOwners
         resources.ApplyResources(Me.lblLastName, "lblLastName")
         Me.lblLastName.Name = "lblLastName"
         '
+        'lblFilter
+        '
+        resources.ApplyResources(Me.lblFilter, "lblFilter")
+        Me.lblFilter.Name = "lblFilter"
+        '
         'frmOwners
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblFilter)
         Me.Controls.Add(Me.lblLastName)
         Me.Controls.Add(Me.lblFirstName)
         Me.Controls.Add(Me.lblNif)
@@ -330,4 +343,6 @@ Partial Class frmOwners
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MailingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FilterDataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblFilter As Label
 End Class

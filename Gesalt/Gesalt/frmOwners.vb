@@ -1,14 +1,13 @@
 ﻿Imports System.Resources
 
 Public Class frmOwners
-    Dim opOwner As OpOwner
+    Dim opOwner As OpOwner = OpOwner.GetInstance()
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwners).Assembly)
     Dim bs As New BindingSource()
     Dim owners As New List(Of Owner)
 
     Private Sub frmOwners_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            opOwner = OpOwner.GetInstance()
             owners = opOwner.GetAllOwners()
 
             bs.DataSource = owners
@@ -84,16 +83,14 @@ Public Class frmOwners
             Exit Sub
         End If
 
-        If opOwner.AddOwner(frmAux.editOwner) Then
-            owners.Add(frmAux.editOwner)
-            bs.ResetBindings(False)
-            bs.Position = owners.Count - 1
-        Else
-            MsgBox("Fallo al añadir registro TRADUCIR")
+        If Not opOwner.AddOwner(frmAux.editOwner) Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            Exit Sub
         End If
 
-
-
+        owners.Add(frmAux.editOwner)
+        bs.ResetBindings(False)
+        bs.Position = owners.Count - 1
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
@@ -106,10 +103,35 @@ Public Class frmOwners
             Exit Sub
         End If
 
+        Dim ownerAux As Owner = Utils.DeepClone(owners.Item(bs.Position))
         owners.Item(bs.Position) = Utils.DeepClone(frmAux.editOwner)
-        bs.ResetBindings(False)
 
-        opOwner = OpOwner.GetInstance()
-        opOwner.UpdateOwner(owners.Item(bs.Position))
+        If Not opOwner.UpdateOwner(owners.Item(bs.Position)) Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            owners.Item(bs.Position) = Utils.DeepClone(ownerAux)
+            Exit Sub
+        End If
+
+        bs.ResetBindings(False)
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
+                  MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
+                  LocRM.GetString("rewRemovedTitle")) = MsgBoxResult.No Then
+            Exit Sub
+        End If
+
+        If Not opOwner.DeleteOwner(bs.Current) Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            Exit Sub
+        End If
+
+        owners.Remove(bs.Current)
+        bs.ResetBindings(False)
+    End Sub
+
+    Private Sub FilterDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterDataToolStripMenuItem.Click
+
     End Sub
 End Class
