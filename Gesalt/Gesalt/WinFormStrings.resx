@@ -188,4 +188,7 @@
   <data name="fieldType" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="editOwnerTitle" xml:space="preserve">
+    <value>Edit an Owner - Gesalt</value>
+  </data>
 </root>

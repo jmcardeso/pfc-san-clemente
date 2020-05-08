@@ -1,5 +1,8 @@
 ﻿Imports System.Data.Common
 Imports System.Configuration
+Imports System.IO
+Imports System.Runtime.Serialization.Formatters.Binary
+
 Public Class DbOperations
     Private Shared objDbOperations As DbOperations
     Private con As Connection = Connection.GetInstance()
@@ -42,13 +45,18 @@ Public Class DbOperations
         Dim sqlCommand As DbCommand
         Dim sql As String = "select * from owner order by last_name"
 
-        ' Mejor utilizar parámetros y no concatenar sentencias SQL (por seguridad)
-        If Not nif Is Nothing Then
-            sql = "select * from owner where nif like @p_nif order by last_name"
+        sqlCommand = con.Factory.CreateCommand()
 
+        If nif IsNot Nothing Then
+            sql = "select * from owner where nif like @p_nif order by last_name"
+            Dim p As DbParameter
+            p = con.Factory.CreateParameter()
+            p.DbType = DbType.String
+            p.Value = nif
+            p.ParameterName = "@p_nif"
+            sqlCommand.Parameters.Add(p)
         End If
 
-        sqlCommand = con.Factory.CreateCommand()
         sqlCommand.CommandText = sql
         sqlCommand.Connection = con.Con
         da = con.Factory.CreateDataAdapter()
@@ -62,5 +70,67 @@ Public Class DbOperations
         Next
 
         Return owners
+    End Function
+
+    Public Function UpdateOwner(owner As Owner) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from owner where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = owner.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.BeginEdit()
+        dr("Id") = owner.Id
+        dr("first_name") = owner.FirstName
+        dr("last_name") = owner.LastName
+        dr("nif") = owner.Nif
+        dr("address") = owner.Address
+        dr("city") = owner.City
+        dr("zip") = owner.Zip
+        dr("type") = owner.Type
+        dr("province") = owner.Province
+        dr("phone") = owner.Phone
+        dr("email") = owner.Email
+        dr("path_logo") = owner.PathLogo
+        dr.EndEdit()
+
+        da.Update(dt)
+
+
+        Return result
+    End Function
+
+    'Ref: https://stackoverflow.com/questions/129389/how-do-you-do-a-deep-copy-of-an-object-in-net
+    Public Shared Function DeepClone(Of T)(obj As T)
+        Using ms = New MemoryStream()
+            Dim formatter = New BinaryFormatter()
+            formatter.Serialize(ms, obj)
+            ms.Position = 0
+            Return formatter.Deserialize(ms)
+        End Using
     End Function
 End Class

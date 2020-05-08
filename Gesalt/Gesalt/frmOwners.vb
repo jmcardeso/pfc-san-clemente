@@ -1,16 +1,17 @@
 ﻿Imports System.Resources
 
 Public Class frmOwners
+    Dim dbo As DbOperations
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwners).Assembly)
-    Dim cm As CurrencyManager
+    Dim bs As New BindingSource()
     Dim owners As New List(Of Owner)
 
     Private Sub frmOwners_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dbo As DbOperations
-
         Try
             dbo = DbOperations.GetInstance(My.Settings.dbType)
             owners = dbo.GetAllOwners()
+
+            bs.DataSource = owners
 
             With dgvOwners
                 .AutoGenerateColumns = False
@@ -32,23 +33,20 @@ Public Class frmOwners
                 .Columns(3).HeaderText = LocRM.GetString("fieldType")
                 .Columns(3).DataPropertyName = "Type"
 
-                .DataSource = owners
+                .DataSource = bs
             End With
 
-            ' Uso de CurrencyManager con objetos: https://support.microsoft.com/en-us/help/315786/how-to-bind-a-datagrid-control-to-an-array-of-objects-or-of-structures
-            cm = dgvOwners.BindingContext(owners)
-
-            lblLastName.DataBindings.Add("Text", owners, "LastName")
-            lblFirstName.DataBindings.Add("Text", owners, "FirstName")
-            lblAddress.DataBindings.Add("Text", owners, "Address")
-            lblCity.DataBindings.Add("Text", owners, "City")
-            lblEmail.DataBindings.Add("Text", owners, "Email")
-            lblLogo.DataBindings.Add("Text", owners, "PathLogo")
-            lblNif.DataBindings.Add("Text", owners, "Nif")
-            lblPhone.DataBindings.Add("Text", owners, "Phone")
-            lblProvince.DataBindings.Add("Text", owners, "Province")
-            lblType.DataBindings.Add("Text", owners, "Type")
-            lblZip.DataBindings.Add("Text", owners, "Zip")
+            lblLastName.DataBindings.Add("Text", bs, "LastName")
+            lblFirstName.DataBindings.Add("Text", bs, "FirstName")
+            lblAddress.DataBindings.Add("Text", bs, "Address")
+            lblCity.DataBindings.Add("Text", bs, "City")
+            lblEmail.DataBindings.Add("Text", bs, "Email")
+            lblLogo.DataBindings.Add("Text", bs, "PathLogo")
+            lblNif.DataBindings.Add("Text", bs, "Nif")
+            lblPhone.DataBindings.Add("Text", bs, "Phone")
+            lblProvince.DataBindings.Add("Text", bs, "Province")
+            lblType.DataBindings.Add("Text", bs, "Type")
+            lblZip.DataBindings.Add("Text", bs, "Zip")
 
         Catch err As InvalidOperationException
             MsgBox(err.Message)
@@ -62,18 +60,48 @@ Public Class frmOwners
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        cm.Position += 1
+        bs.Position += 1
     End Sub
 
     Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
-        cm.Position -= 1
+        bs.Position -= 1
     End Sub
 
     Private Sub btnFirst_Click(sender As Object, e As EventArgs) Handles btnFirst.Click
-        cm.Position = 0
+        bs.Position = 0
     End Sub
 
     Private Sub btnLast_Click(sender As Object, e As EventArgs) Handles btnLast.Click
-        cm.Position = owners.Count - 1
+        bs.Position = owners.Count - 1
+    End Sub
+
+    Private Sub AddAnOwnerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAnOwnerToolStripMenuItem.Click
+        Dim frmAux As New frmOwnersAux With {
+            .editOwner = Nothing
+        }
+
+        If frmAux.ShowDialog = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+
+
+    End Sub
+
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        Dim frmAux As New frmOwnersAux With {
+            .Text = LocRM.GetString("editOwnerTitle"),
+            .editOwner = bs.Current
+        }
+
+        If frmAux.ShowDialog = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        owners.Item(bs.Position) = DbOperations.DeepClone(frmAux.editOwner)
+        bs.ResetBindings(False)
+
+        dbo = DbOperations.GetInstance(My.Settings.dbType)
+        dbo.UpdateOwner(owners.Item(bs.Position))
     End Sub
 End Class

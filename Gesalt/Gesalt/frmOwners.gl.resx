@@ -153,4 +153,55 @@
   <data name="Label9.Text" xml:space="preserve">
     <value>NIF:</value>
   </data>
+  <data name="lblAddress.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblCity.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblFirstName.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblLastName.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblLogo.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblNif.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblPhone.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblProvince.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblZip.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Borrar</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Modificar</value>
+  </data>
+  <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
+    <value>M&amp;ailing</value>
+  </data>
+  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Propietarios</value>
+  </data>
+  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Informes</value>
+  </data>
+  <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Engadir</value>
+  </data>
 </root>

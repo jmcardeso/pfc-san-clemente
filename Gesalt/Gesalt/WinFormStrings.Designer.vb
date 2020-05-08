@@ -155,6 +155,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Edit an Owner - Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property editOwnerTitle() As String
+            Get
+                Return ResourceManager.GetString("editOwnerTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a An error occurred while connecting to the database. The Connection Wizard will open for you to check if the settings are correct..
         '''</summary>
         Friend Shared ReadOnly Property fatalErrorDB() As String

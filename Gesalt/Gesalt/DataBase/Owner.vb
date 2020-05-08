@@ -1,4 +1,5 @@
-﻿Public Class Owner
+﻿<Serializable()>
+Public Class Owner
 
     Public ReadOnly Property Id As Integer
 

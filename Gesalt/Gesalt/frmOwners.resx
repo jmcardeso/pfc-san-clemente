@@ -143,6 +143,42 @@
   <metadata name="mnsOwners.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="AddAnOwnerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Add</value>
+  </data>
+  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="OwnersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Owners</value>
+  </data>
+  <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Reports</value>
+  </data>
+  <data name="MailingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 20</value>
+  </data>
+  <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Email &amp;Marketing</value>
+  </data>
   <data name="mnsOwners.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -637,13 +673,13 @@
     <value>667, 95</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblEmail.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="lblEmail.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblEmail.Name" xml:space="preserve">
     <value>lblEmail</value>
@@ -667,13 +703,13 @@
     <value>667, 72</value>
   </data>
   <data name="lblPhone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblPhone.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
   </data>
   <data name="lblPhone.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblPhone.Name" xml:space="preserve">
     <value>lblPhone</value>
@@ -697,13 +733,13 @@
     <value>667, 49</value>
   </data>
   <data name="lblProvince.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblProvince.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="lblProvince.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblProvince.Name" xml:space="preserve">
     <value>lblProvince</value>
@@ -727,13 +763,13 @@
     <value>370, 118</value>
   </data>
   <data name="lblLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblLogo.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="lblLogo.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblLogo.Name" xml:space="preserve">
     <value>lblLogo</value>
@@ -757,13 +793,13 @@
     <value>369, 95</value>
   </data>
   <data name="lblCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblCity.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
   </data>
   <data name="lblCity.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblCity.Name" xml:space="preserve">
     <value>lblCity</value>
@@ -787,13 +823,13 @@
     <value>369, 72</value>
   </data>
   <data name="lblZip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblZip.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
   <data name="lblZip.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblZip.Name" xml:space="preserve">
     <value>lblZip</value>
@@ -817,13 +853,13 @@
     <value>370, 50</value>
   </data>
   <data name="lblAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblAddress.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="lblAddress.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblAddress.Name" xml:space="preserve">
     <value>lblAddress</value>
@@ -847,13 +883,13 @@
     <value>88, 118</value>
   </data>
   <data name="lblType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblType.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="lblType.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblType.Name" xml:space="preserve">
     <value>lblType</value>
@@ -877,13 +913,13 @@
     <value>87, 95</value>
   </data>
   <data name="lblNif.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblNif.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
   <data name="lblNif.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblNif.Name" xml:space="preserve">
     <value>lblNif</value>
@@ -907,13 +943,13 @@
     <value>87, 72</value>
   </data>
   <data name="lblFirstName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblFirstName.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
   <data name="lblFirstName.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblFirstName.Name" xml:space="preserve">
     <value>lblFirstName</value>
@@ -937,13 +973,13 @@
     <value>88, 50</value>
   </data>
   <data name="lblLastName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="lblLastName.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="lblLastName.Text" xml:space="preserve">
-    <value>Last Name:</value>
+    <value>&lt;Empty&gt;</value>
   </data>
   <data name="&gt;&gt;lblLastName.Name" xml:space="preserve">
     <value>lblLastName</value>
@@ -1649,6 +1685,42 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Owners - Gesalt</value>
+  </data>
+  <data name="&gt;&gt;OwnersToolStripMenuItem.Name" xml:space="preserve">
+    <value>OwnersToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;OwnersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddAnOwnerToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddAnOwnerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AddAnOwnerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditToolStripMenuItem.Name" xml:space="preserve">
+    <value>EditToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;EditToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteToolStripMenuItem.Name" xml:space="preserve">
+    <value>DeleteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DeleteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReportsToolStripMenuItem.Name" xml:space="preserve">
+    <value>ReportsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ReportsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MailingToolStripMenuItem.Name" xml:space="preserve">
+    <value>MailingToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;MailingToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmOwners</value>

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmOwners
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,18 @@ Partial Class frmOwners
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwners))
         Me.dgvOwners = New System.Windows.Forms.DataGridView()
         Me.mnsOwners = New System.Windows.Forms.MenuStrip()
+        Me.OwnersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddAnOwnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MailingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsOwners = New System.Windows.Forms.ToolStrip()
         Me.btnFirst = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
@@ -54,6 +60,7 @@ Partial Class frmOwners
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mnsOwners.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvOwners
@@ -71,8 +78,40 @@ Partial Class frmOwners
         '
         'mnsOwners
         '
+        Me.mnsOwners.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OwnersToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.MailingToolStripMenuItem})
         resources.ApplyResources(Me.mnsOwners, "mnsOwners")
         Me.mnsOwners.Name = "mnsOwners"
+        '
+        'OwnersToolStripMenuItem
+        '
+        Me.OwnersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAnOwnerToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.OwnersToolStripMenuItem.Name = "OwnersToolStripMenuItem"
+        resources.ApplyResources(Me.OwnersToolStripMenuItem, "OwnersToolStripMenuItem")
+        '
+        'AddAnOwnerToolStripMenuItem
+        '
+        Me.AddAnOwnerToolStripMenuItem.Name = "AddAnOwnerToolStripMenuItem"
+        resources.ApplyResources(Me.AddAnOwnerToolStripMenuItem, "AddAnOwnerToolStripMenuItem")
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        resources.ApplyResources(Me.EditToolStripMenuItem, "EditToolStripMenuItem")
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        resources.ApplyResources(Me.DeleteToolStripMenuItem, "DeleteToolStripMenuItem")
+        '
+        'ReportsToolStripMenuItem
+        '
+        Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
+        resources.ApplyResources(Me.ReportsToolStripMenuItem, "ReportsToolStripMenuItem")
+        '
+        'MailingToolStripMenuItem
+        '
+        Me.MailingToolStripMenuItem.Name = "MailingToolStripMenuItem"
+        resources.ApplyResources(Me.MailingToolStripMenuItem, "MailingToolStripMenuItem")
         '
         'tlsOwners
         '
@@ -249,6 +288,8 @@ Partial Class frmOwners
         Me.MainMenuStrip = Me.mnsOwners
         Me.Name = "frmOwners"
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mnsOwners.ResumeLayout(False)
+        Me.mnsOwners.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -283,4 +324,10 @@ Partial Class frmOwners
     Friend WithEvents lblNif As Label
     Friend WithEvents lblFirstName As Label
     Friend WithEvents lblLastName As Label
+    Friend WithEvents OwnersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddAnOwnerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MailingToolStripMenuItem As ToolStripMenuItem
 End Class

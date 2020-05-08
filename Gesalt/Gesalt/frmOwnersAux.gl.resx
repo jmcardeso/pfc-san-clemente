@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Propietarios - Gesalt</value>
-  </data>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Apellidos:</value>
+    <value>Apelidos:</value>
   </data>
   <data name="Label10.Text" xml:space="preserve">
     <value>Provincia/País:</value>
@@ -130,7 +127,7 @@
     <value>Tipo:</value>
   </data>
   <data name="Label12.Text" xml:space="preserve">
-    <value>Nombre:</value>
+    <value>Nome:</value>
   </data>
   <data name="Label3.Text" xml:space="preserve">
     <value>Logo:</value>
@@ -145,63 +142,21 @@
     <value>Cód. Postal:</value>
   </data>
   <data name="Label7.Text" xml:space="preserve">
-    <value>Localidad:</value>
+    <value>Localidade:</value>
   </data>
   <data name="Label8.Text" xml:space="preserve">
-    <value>Dirección:</value>
+    <value>Enderezo:</value>
   </data>
   <data name="Label9.Text" xml:space="preserve">
     <value>NIF:</value>
   </data>
-  <data name="lblAddress.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
+  <data name="bntCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="lblCity.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
   </data>
-  <data name="lblEmail.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblFirstName.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblLastName.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblLogo.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblNif.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblPhone.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblProvince.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblType.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblZip.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Borrar</value>
-  </data>
-  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Editar</value>
-  </data>
-  <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Mailing</value>
-  </data>
-  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Propietarios</value>
-  </data>
-  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Informes</value>
-  </data>
-  <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Añadir</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Engadir un propietario - Gesalt</value>
   </data>
 </root>
