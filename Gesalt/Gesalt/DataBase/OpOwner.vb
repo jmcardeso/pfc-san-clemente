@@ -36,7 +36,7 @@ Public Class OpOwner
     ''' </summary>
     ''' <param name="sql">Opcional. Cadena de texto con la sentencia de selección de la tabla owner de la base de datos.</param>
     ''' <param name="parameters">Opcional. Colección de parámetros para la sentencia de selección de la tabla owner de la base de datos.</param>
-    ''' <returns></returns>
+    ''' <returns>Lista con los objetos de la case <c>Owner</c> obtenidos de la tabla owner de la base de datos.</returns>
     Public Function GetAllOwners(Optional sql As String = "select * from owner order by last_name", Optional parameters As DbParameterCollection = Nothing) As List(Of Owner)
         Dim owners As New List(Of Owner)
         Dim owner As Owner

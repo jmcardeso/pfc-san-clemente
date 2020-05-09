@@ -83,6 +83,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Contains.
+        '''</summary>
+        Friend Shared ReadOnly Property Contains() As String
+            Get
+                Return ResourceManager.GetString("Contains", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Thing.
         '''</summary>
         Friend Shared ReadOnly Property Cosa() As String
@@ -155,11 +164,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Different from.
+        '''</summary>
+        Friend Shared ReadOnly Property DifferentFrom() As String
+            Get
+                Return ResourceManager.GetString("DifferentFrom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Edit an Owner - Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property editOwnerTitle() As String
             Get
                 Return ResourceManager.GetString("editOwnerTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Enter correct data..
+        '''</summary>
+        Friend Shared ReadOnly Property EnterCorrectData() As String
+            Get
+                Return ResourceManager.GetString("EnterCorrectData", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Equal to.
+        '''</summary>
+        Friend Shared ReadOnly Property EqualTo() As String
+            Get
+                Return ResourceManager.GetString("EqualTo", resourceCulture)
             End Get
         End Property
         
@@ -281,6 +317,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a AND.
+        '''</summary>
+        Friend Shared ReadOnly Property filterAnd() As String
+            Get
+                Return ResourceManager.GetString("filterAnd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a OR.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOR() As String
+            Get
+                Return ResourceManager.GetString("filterOR", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Gesalt is running for the first time. You must enter some data..
         '''</summary>
         Friend Shared ReadOnly Property firstTimeMsg() As String
@@ -295,6 +349,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property firstTimeTitle() As String
             Get
                 Return ResourceManager.GetString("firstTimeTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Invalid filter data..
+        '''</summary>
+        Friend Shared ReadOnly Property InvalidFilterData() As String
+            Get
+                Return ResourceManager.GetString("InvalidFilterData", resourceCulture)
             End Get
         End Property
         
@@ -349,6 +412,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property rowRemovedTitle() As String
             Get
                 Return ResourceManager.GetString("rowRemovedTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Starts with.
+        '''</summary>
+        Friend Shared ReadOnly Property StartsWith() As String
+            Get
+                Return ResourceManager.GetString("StartsWith", resourceCulture)
             End Get
         End Property
     End Class

@@ -203,4 +203,28 @@
   <data name="opFailedTitle" xml:space="preserve">
     <value>Operation failed</value>
   </data>
+  <data name="EqualTo" xml:space="preserve">
+    <value>Equal to</value>
+  </data>
+  <data name="DifferentFrom" xml:space="preserve">
+    <value>Different from</value>
+  </data>
+  <data name="StartsWith" xml:space="preserve">
+    <value>Starts with</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>Contains</value>
+  </data>
+  <data name="InvalidFilterData" xml:space="preserve">
+    <value>Invalid filter data.</value>
+  </data>
+  <data name="EnterCorrectData" xml:space="preserve">
+    <value>Enter correct data.</value>
+  </data>
+  <data name="filterAnd" xml:space="preserve">
+    <value>AND</value>
+  </data>
+  <data name="filterOR" xml:space="preserve">
+    <value>OR</value>
+  </data>
 </root>
