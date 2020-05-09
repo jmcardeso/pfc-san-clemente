@@ -10,12 +10,20 @@ Public Class Connection
     Private _Con As DbConnection
     Private _Factory As DbProviderFactory
 
+    ''' <summary>
+    ''' Representa una conexión a una base de datos.
+    ''' </summary>
+    ''' <returns>Obtiene la conexión a una base de datos.</returns>
     ReadOnly Property Con As DbConnection
         Get
             Return _Con
         End Get
     End Property
 
+    ''' <summary>
+    ''' Representa un conjunto de métodos para crear instancias de la implementación de un proveedor de las clases de origen de datos.
+    ''' </summary>
+    ''' <returns>Obtiene un objeto que representa un conjunto de métodos para crear instancias de la implementación de un proveedor de las clases de origen de datos.</returns>
     ReadOnly Property Factory As DbProviderFactory
         Get
             Return _Factory
@@ -30,9 +38,9 @@ Public Class Connection
     End Sub
 
     ''' <summary>
-    ''' Devuelve la única instancia del objeto <c>Connection</c>.
+    ''' Devuelve la única instancia de la clase <c>Connection</c>.
     ''' </summary>
-    ''' <returns>Instancia al objeto <c>Connection</c></returns>
+    ''' <returns>Instancia a la clase <c>Connection</c></returns>
     Public Shared Function GetInstance() As Connection
         If objConnection Is Nothing Then
             objConnection = New Connection()

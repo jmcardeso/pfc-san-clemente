@@ -1,9 +1,15 @@
 ﻿Imports System.Data.Common
 
+''' <summary>
+''' Representa un conjunto de métodos para realizar operaciones en la tabla owner de la base de datos.
+''' </summary>
 Public Class OpOwner
     Private Shared objOpOwner As OpOwner
     Private con As Connection = Connection.GetInstance()
 
+    ''' <summary>
+    ''' Inicializa una nueva instancia de la clase <c>OpOwner</c>, que permite realizar operaciones en la tabla owner de la base de datos.
+    ''' </summary>
     Private Sub New()
         If con.Open() Is Nothing Then
             'My.Settings.appStatus = "dbError"
@@ -13,6 +19,10 @@ Public Class OpOwner
         End If
     End Sub
 
+    ''' <summary>
+    ''' Devuelve la única instancia de la clase <c>OpOwner</c>.
+    ''' </summary>
+    ''' <returns>Instancia a la clase <c>OpOwner</c></returns>
     Public Shared Function GetInstance() As OpOwner
         If objOpOwner Is Nothing Then
             objOpOwner = New OpOwner()
@@ -21,6 +31,12 @@ Public Class OpOwner
         Return objOpOwner
     End Function
 
+    ''' <summary>
+    ''' Obtiene una lista con las filas de datos de la tabla owner de la base de datos.
+    ''' </summary>
+    ''' <param name="sql">Opcional. Cadena de texto con la sentencia de selección de la tabla owner de la base de datos.</param>
+    ''' <param name="parameters">Opcional. Colección de parámetros para la sentencia de selección de la tabla owner de la base de datos.</param>
+    ''' <returns></returns>
     Public Function GetAllOwners(Optional sql As String = "select * from owner order by last_name", Optional parameters As DbParameterCollection = Nothing) As List(Of Owner)
         Dim owners As New List(Of Owner)
         Dim owner As Owner
@@ -56,6 +72,11 @@ Public Class OpOwner
         Return owners
     End Function
 
+    ''' <summary>
+    ''' Borra una fila de datos de la tabla owner de la base de datos.
+    ''' </summary>
+    ''' <param name="owner">El objeto de la clase <c>Owner</c> que se va a borrar de la tabla owner de la base de datos.</param>
+    ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function DeleteOwner(owner As Owner) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -96,6 +117,11 @@ Public Class OpOwner
         Return result
     End Function
 
+    ''' <summary>
+    ''' Añade una nueva fila a la tabla owner de la base de datos.
+    ''' </summary>
+    ''' <param name="owner">El objeto de la clase <c>Owner</c> que se va a añadir en la tabla owner de la base de datos.</param>
+    ''' <returns><c>True</c> si la inserción ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function AddOwner(owner As Owner) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -130,6 +156,11 @@ Public Class OpOwner
         Return result
     End Function
 
+    ''' <summary>
+    ''' Modifica los datos de una fila de la tabla owner de la base de datos.
+    ''' </summary>
+    ''' <param name="owner">El objeto de la clase <c>Owner</c> que se va a modificar en la tabla owner de la base de datos.</param>
+    ''' <returns><c>True</c> si la modificación ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function UpdateOwner(owner As Owner) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -172,6 +203,11 @@ Public Class OpOwner
         Return result
     End Function
 
+    ''' <summary>
+    ''' Introduce los datos de las propiedades de un objeto de la clase <c>Owner</c> en los campos de una fila de la tabla owner de la base de datos.
+    ''' </summary>
+    ''' <param name="dr">Representa una fila de datos de la tabla owner de la base de datos.</param>
+    ''' <param name="owner">El objeto de la clase Owner cuyos parámetros se van a introducir en la fila.</param>
     Private Sub FillRow(dr As DataRow, owner As Owner)
         dr("Id") = owner.Id
         dr("first_name") = owner.FirstName
