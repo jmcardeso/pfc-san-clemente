@@ -335,6 +335,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Owner has no logo.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOwnerLogoFalse() As String
+            Get
+                Return ResourceManager.GetString("filterOwnerLogoFalse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Owner has logo.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOwnerLogoTrue() As String
+            Get
+                Return ResourceManager.GetString("filterOwnerLogoTrue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Gesalt is running for the first time. You must enter some data..
         '''</summary>
         Friend Shared ReadOnly Property firstTimeMsg() As String

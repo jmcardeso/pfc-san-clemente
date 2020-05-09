@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Data.Common
+Imports System.IO
 Imports System.Runtime.Serialization.Formatters.Binary
 
 ''' <summary>
@@ -20,5 +21,17 @@ Public Class Utils
             ms.Position = 0
             Return formatter.Deserialize(ms)
         End Using
+    End Function
+
+    Public Shared Function AddFilterParameter(parameterName As String, value As Object, dbType As DbType) As DbParameter
+        Dim con As Connection = Connection.GetInstance()
+        Dim p As DbParameter
+
+        p = con.Factory.CreateParameter()
+        p.ParameterName = parameterName
+        p.Value = value
+        p.DbType = dbType
+
+        Return p
     End Function
 End Class

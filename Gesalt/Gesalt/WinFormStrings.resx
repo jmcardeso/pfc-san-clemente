@@ -227,4 +227,10 @@
   <data name="filterOR" xml:space="preserve">
     <value>OR</value>
   </data>
+  <data name="filterOwnerLogoTrue" xml:space="preserve">
+    <value>Owner has logo</value>
+  </data>
+  <data name="filterOwnerLogoFalse" xml:space="preserve">
+    <value>Owner has no logo</value>
+  </data>
 </root>

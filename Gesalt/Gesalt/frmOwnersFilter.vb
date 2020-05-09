@@ -1,18 +1,41 @@
 ﻿Imports System.Resources
+Imports System.Data.Common
 
 Public Class frmOwnersFilter
+    Private _resultSQL As String
+    Public ReadOnly Property resultSQL As String
+        Get
+            Return _resultSQL
+        End Get
+    End Property
+
+    Private _resultReadable As String
+    Public ReadOnly Property resultReadable As String
+        Get
+            Return _resultReadable
+        End Get
+    End Property
+
+    Private _resultParameters As List(Of DbParameter)
+    Public ReadOnly Property resultParameters As List(Of DbParameter)
+        Get
+            Return _resultParameters
+        End Get
+    End Property
+
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwnersFilter).Assembly)
 
     Dim Position As New Point(10, 10)
     Dim FiltersPanel As New List(Of Panel)
     Dim ContainerPanel As New FlowLayoutPanel
-    Dim FieldsOwner As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
+    Dim FieldsOwnerName As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
         LocRM.GetString("fieldAddress"), LocRM.GetString("fieldCity"), LocRM.GetString("fieldZip"), LocRM.GetString("fieldProvince"),
         LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldPahtLogo")}
+    Dim FieldsOwner As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "paht_logo"}
     Dim NumberOperators As String() = {"=", "<>", "<", ">", "<=", ">="}
     Dim StringOperators As String() = {LocRM.GetString("EqualTo"), LocRM.GetString("DifferentFrom"), LocRM.GetString("StartsWith"), LocRM.GetString("Contains")}
-    Const MATRICULA As Integer = 0, MARCA As Integer = 1, MODELO As Integer = 2, CARGA_MAX As Integer = 3, N_BASTIDOR As Integer = 4, FECHA_MAT As Integer = 5, FOTO As Integer = 6
-    Dim FilterError As Boolean = False
+    Const TYPE As Integer = 0, LAST_NAME As Integer = 1, FIRST_NAME As Integer = 2, NIF As Integer = 3, ADDRESS As Integer = 4, CITY As Integer = 5, ZIP As Integer = 6,
+        PROVINCE As Integer = 7, PHONE As Integer = 8, EMAIL As Integer = 9, PATH_LOGO As Integer = 10
 
     Private Sub FrmFiltros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ContainerPanel.FlowDirection = FlowDirection.TopDown
@@ -23,12 +46,12 @@ Public Class frmOwnersFilter
         AddFilterLine()
     End Sub
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        Dim SelectionAux As String() = ValidateFilter()
-
-        If FilterError Then
-            MsgBox(LocRM.GetString("InvalidFilterData") + vbNewLine + LocRM.GetString("EnterCorrectData"), MsgBoxStyle.Exclamation, "Atención")
+        If Not ValidateFilter() Then
+            MsgBox(LocRM.GetString("InvalidFilterData") + vbNewLine + LocRM.GetString("EnterCorrectData"), MsgBoxStyle.Exclamation, "Gesalt")
+            _resultParameters.Clear()
+            _resultReadable = ""
+            _resultSQL = ""
         Else
-            SeleccionSociosFiltro = SelectionAux
             Me.DialogResult = DialogResult.OK
         End If
     End Sub
@@ -46,31 +69,11 @@ Public Class frmOwnersFilter
         End If
 
         Select Case sender.SelectedIndex
-            Case MATRICULA
+            Case TYPE, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
                 CmbCurrentOperator.Items.AddRange(StringOperators)
                 CmbCurrentOperator.SelectedIndex = 0
                 ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
-            Case MARCA
-                CmbCurrentOperator.Items.AddRange(StringOperators)
-                CmbCurrentOperator.SelectedIndex = 0
-                ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
-            Case MODELO
-                CmbCurrentOperator.Items.AddRange(StringOperators)
-                CmbCurrentOperator.SelectedIndex = 0
-                ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
-            Case CARGA_MAX
-                CmbCurrentOperator.Items.AddRange(NumberOperators)
-                CmbCurrentOperator.SelectedIndex = 0
-                ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
-            Case N_BASTIDOR
-                CmbCurrentOperator.Items.AddRange(StringOperators)
-                CmbCurrentOperator.SelectedIndex = 0
-                ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
-            Case FECHA_MAT
-                CmbCurrentOperator.Items.AddRange(NumberOperators)
-                CmbCurrentOperator.SelectedIndex = 0
-                ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VDateTimePicker_" & index, True)(0))
-            Case FOTO
+            Case PATH_LOGO
                 CmbCurrentOperator.Visible = False
                 ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VCheckBox_" & index, True)(0))
         End Select
@@ -110,7 +113,7 @@ Public Class frmOwnersFilter
         CmbFields.Location = New Point(0, 0)
         CmbFields.Name = "CmbFields_" & FiltersPanel.Count
         CmbFields.DropDownStyle = ComboBoxStyle.DropDownList
-        CmbFields.Items.AddRange(FieldsOwner)
+        CmbFields.Items.AddRange(FieldsOwnerName)
         CmbFields.SelectedIndex = 0
         AddHandler CmbFields.SelectedIndexChanged, AddressOf Me.CmbCampos_SelectedIndexChanged
         pnlFilter.Controls.Add(CmbFields)
@@ -131,7 +134,7 @@ Public Class frmOwnersFilter
 
         Dim VCheckBox As New CheckBox
         VCheckBox.Location = New Point(273, 0)
-        VCheckBox.Text = "Foto"
+        VCheckBox.Text = LocRM.GetString("fieldPathLogo")
         VCheckBox.Name = "VCheckBox_" & FiltersPanel.Count
         VCheckBox.Visible = False
         pnlFilter.Controls.Add(VCheckBox)
@@ -180,135 +183,56 @@ Public Class frmOwnersFilter
 
         objControl.Visible = True
     End Sub
-    Private Function ValidateFilter() As String()
-        Dim result As String() = {"", ""}
-        Dim resultSQL As String = ""
-        Dim resultReadable As String = ""
+    Private Function ValidateFilter() As Boolean
+        _resultSQL = ""
+        _resultReadable = ""
+        _resultParameters.Clear()
+
         Dim resultAux As String = ""
-        FilterError = False
+        Dim controlIndex As Integer
+        Dim FilterOK As Boolean = True
 
-        For indice As Integer = 0 To ContainerPanel.Controls.Count - 1
-
-            Select Case CType(ContainerPanel.Controls.Item(indice).Controls.Item(0), ComboBox).SelectedIndex
-                Case MATRICULA
-                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(indice).Controls.Find("VTextBox_" & indice + 1, True)(0)
-
-                    If VTextBox.TextLength = 0 Then
-                        VTextBox.BackColor = Color.Red
-                        FilterError = True
-                    Else
-                        resultSQL += "Matricula "
-                        Select Case CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedIndex
-                            Case 0
-                                resultSQL += "like '" & VTextBox.Text & "'"
-                            Case 1
-                                resultSQL += "not like '" & VTextBox.Text & "'"
-                            Case 2
-                                resultSQL += "like '" & VTextBox.Text & "%'"
-                            Case 3
-                                resultSQL += "like '%" & VTextBox.Text & "%'"
-                        End Select
-                        resultReadable += "Matrícula " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " '" &
-                            VTextBox.Text & "'"
-                    End If
-                Case MARCA
-                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(indice).Controls.Find("VTextBox_" & indice + 1, True)(0)
+        For i As Integer = 0 To ContainerPanel.Controls.Count - 1
+            controlIndex = CType(ContainerPanel.Controls.Item(i).Controls.Item(0), ComboBox).SelectedIndex
+            Select Case controlIndex
+                Case TYPE, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
+                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i + 1, True)(0)
 
                     If VTextBox.TextLength = 0 Then
                         VTextBox.BackColor = Color.Red
-                        FilterError = True
+                        FilterOK = False
                     Else
-                        resultSQL += "Marca "
-                        Select Case CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedIndex
+                        _resultSQL += FieldsOwner(controlIndex) & " "
+                        Select Case CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedIndex
                             Case 0
-                                resultSQL += "like '" & VTextBox.Text & "'"
+                                _resultSQL += "like @" & VTextBox.Name
                             Case 1
-                                resultSQL += "not like '" & VTextBox.Text & "'"
+                                _resultSQL += "not like @" & VTextBox.Name
                             Case 2
-                                resultSQL += "like '" & VTextBox.Text & "%'"
+                                _resultSQL += "like @" & VTextBox.Name & "'%'"
                             Case 3
-                                resultSQL += "like '%" & VTextBox.Text & "%'"
+                                _resultSQL += "like '%'@" & VTextBox.Name & "'%'"
                         End Select
-                        resultReadable += "Marca " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " '" &
+                        _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, VTextBox.Text, DbType.String))
+                        _resultReadable += FieldsOwnerName(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " '" &
                             VTextBox.Text & "'"
                     End If
-                Case MODELO
-                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(indice).Controls.Find("VTextBox_" & indice + 1, True)(0)
+                Case PATH_LOGO
+                    Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(i).Controls.Find("VCheckBox_" & i + 1, True)(0)
 
-                    If VTextBox.TextLength = 0 Then
-                        VTextBox.BackColor = Color.Red
-                        FilterError = True
-                    Else
-                        resultSQL += "Modelo "
-                        Select Case CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedIndex
-                            Case 0
-                                resultSQL += "like '" & VTextBox.Text & "'"
-                            Case 1
-                                resultSQL += "not like '" & VTextBox.Text & "'"
-                            Case 2
-                                resultSQL += "like '" & VTextBox.Text & "%'"
-                            Case 3
-                                resultSQL += "like '%" & VTextBox.Text & "%'"
-                        End Select
-                        resultReadable += "Modelo " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " '" &
-                            VTextBox.Text & "'"
-                    End If
-                Case CARGA_MAX
-                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(indice).Controls.Find("VTextBox_" & indice + 1, True)(0)
-
-                    If Not IsNumeric(VTextBox.Text) Then
-                        VTextBox.BackColor = Color.Red
-                        FilterError = True
-                    Else
-                        resultAux = "CargaMax " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " "
-                        resultAux += VTextBox.Text
-                        resultSQL += resultAux
-                        resultReadable += "Carga máxima " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " " & VTextBox.Text
-                    End If
-                Case N_BASTIDOR
-                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(indice).Controls.Find("VTextBox_" & indice + 1, True)(0)
-
-                    If VTextBox.TextLength = 0 Then
-                        VTextBox.BackColor = Color.Red
-                        FilterError = True
-                    Else
-                        resultSQL += "nBastidor "
-                        Select Case CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedIndex
-                            Case 0
-                                resultSQL += "like '" & VTextBox.Text & "'"
-                            Case 1
-                                resultSQL += "not like '" & VTextBox.Text & "'"
-                            Case 2
-                                resultSQL += "like '" & VTextBox.Text & "%'"
-                            Case 3
-                                resultSQL += "like '%" & VTextBox.Text & "%'"
-                        End Select
-                        resultReadable += "Nº de bastidor " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " '" &
-                            VTextBox.Text & "'"
-                    End If
-                Case FECHA_MAT
-                    Dim VDateTimePicker As DateTimePicker = ContainerPanel.Controls.Item(indice).Controls.Find("VDateTimePicker_" & indice + 1, True)(0)
-
-                    resultAux = "Fechamatric " & CType(ContainerPanel.Controls.Item(indice).Controls.Item(1), ComboBox).SelectedItem & " '"
-                    resultAux += VDateTimePicker.Value.ToShortDateString & "'"
-                    resultSQL += resultAux
-                    resultReadable += resultAux
-                Case FOTO
-                    Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(indice).Controls.Find("VCheckBox_" & indice + 1, True)(0)
-
-                    resultSQL += "Foto IS "
-                    resultSQL += IIf(VCheckBox.Checked, "NOT NULL", "NULL")
-                    resultReadable += IIf(VCheckBox.Checked, "'Vehículo tiene foto'", "'Vehículo no tiene foto'")
+                    _resultSQL += FieldsOwner(controlIndex)
+                    _resultSQL += IIf(VCheckBox.Checked, " like @", " not like @") & VCheckBox.Name
+                    _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, "", DbType.String))
+                    _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterOwnerLogoTrue") & "'", "'" & LocRM.GetString("filterOwnerLogoFalse") & "'")
             End Select
 
-            If indice < ContainerPanel.Controls.Count - 1 Then
-                resultSQL += IIf(CType(ContainerPanel.Controls.Item(indice).Controls.Item(5), ComboBox).SelectedItem.Equals("Y"), " and ", " or ")
-                resultReadable += IIf(CType(ContainerPanel.Controls.Item(indice).Controls.Item(5), ComboBox).SelectedItem.Equals("Y"), " Y ", " O ")
+            If i < ContainerPanel.Controls.Count - 1 Then
+                _resultSQL += IIf(CType(ContainerPanel.Controls.Item(i).Controls.Item(5), ComboBox).SelectedItem.Equals(LocRM.GetString("filterAND")), " and ", " or ")
+                _resultReadable += IIf(CType(ContainerPanel.Controls.Item(i).Controls.Item(5), ComboBox).SelectedItem.Equals(LocRM.GetString("filterAND")),
+                                      " " & LocRM.GetString("filterAND") & " ", " " & LocRM.GetString("filterOR") & " ")
             End If
         Next
 
-        result(0) = resultSQL
-        result(1) = resultReadable
-        Return result
+        Return FilterOK
     End Function
 End Class

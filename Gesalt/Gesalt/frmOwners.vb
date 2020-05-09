@@ -132,6 +132,22 @@ Public Class frmOwners
     End Sub
 
     Private Sub FilterDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterDataToolStripMenuItem.Click
-
+        'If BtnSelVehiculos.Text.Equals("Seleccionar vehículos") Then
+        '    FrmFlt = New FrmFiltros
+        '    If FrmFlt.ShowDialog() = DialogResult.Cancel Then
+        '        Exit Sub
+        '    End If
+        '    LblFiltro.Text = "FILTRO: " & SeleccionSociosFiltro(1)
+        '    LblFiltro.BackColor = Color.Red
+        '    LblFiltro.ForeColor = Color.White
+        '    BtnSelVehiculos.Text = "Borrar selección"
+        '    DtsTransporte.Tables("Vehiculos").DefaultView.RowFilter = SeleccionSociosFiltro(0)
+        'Else
+        '    LblFiltro.Text = "Vehículos:"
+        '    LblFiltro.BackColor = SystemColors.Control
+        '    LblFiltro.ForeColor = SystemColors.ControlText
+        '    BtnSelVehiculos.Text = "Seleccionar vehículos"
+        '    DtsTransporte.Tables("Vehiculos").DefaultView.RowFilter = ""
+        'End If
     End Sub
 End Class
