@@ -12,6 +12,7 @@ Public Class frmOwners
 
             bs.DataSource = owners
 
+            Dim column As DataGridViewColumn
             With dgvOwners
                 .AutoGenerateColumns = False
                 .ColumnCount = 6
@@ -20,10 +21,14 @@ Public Class frmOwners
                 .Columns(0).HeaderText = LocRM.GetString("fieldType")
                 .Columns(0).DataPropertyName = "Type"
 
+                column = .Columns(1)
+                column.Width = 180
                 .Columns(1).Name = "LastName"
                 .Columns(1).HeaderText = LocRM.GetString("fieldLastName")
                 .Columns(1).DataPropertyName = "LastName"
 
+                column = .Columns(2)
+                column.Width = 135
                 .Columns(2).Name = "FirstName"
                 .Columns(2).HeaderText = LocRM.GetString("fieldFirstName")
                 .Columns(2).DataPropertyName = "FirstName"
