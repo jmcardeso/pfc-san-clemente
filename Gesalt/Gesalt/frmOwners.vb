@@ -114,7 +114,7 @@ Public Class frmOwners
         bs.Position = owners.Count - 1
     End Sub
 
-    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvOwners.DoubleClick
         Dim frmAux As New frmOwnersAux With {
             .Text = LocRM.GetString("editOwnerTitle"),
             .editOwner = bs.Current

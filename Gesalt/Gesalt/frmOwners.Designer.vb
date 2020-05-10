@@ -22,7 +22,7 @@ Partial Class frmOwners
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwners))
         Me.dgvOwners = New System.Windows.Forms.DataGridView()
         Me.mnsOwners = New System.Windows.Forms.MenuStrip()
@@ -80,13 +80,14 @@ Partial Class frmOwners
         '
         Me.dgvOwners.AllowUserToAddRows = False
         Me.dgvOwners.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvOwners, "dgvOwners")
         Me.dgvOwners.MultiSelect = False
         Me.dgvOwners.Name = "dgvOwners"
         Me.dgvOwners.ReadOnly = True
+        Me.dgvOwners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvOwners.ShowEditingIcon = False
         '
         'mnsOwners
