@@ -210,4 +210,22 @@
   <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Filtrar datos</value>
   </data>
+  <data name="ToolStripDelete.Text" xml:space="preserve">
+    <value>Borrar propietario</value>
+  </data>
+  <data name="ToolStripEdit.Text" xml:space="preserve">
+    <value>Editar propietario</value>
+  </data>
+  <data name="ToolStripExit.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="ToolStripMailing.Text" xml:space="preserve">
+    <value>Mailing</value>
+  </data>
+  <data name="ToolStripReports.Text" xml:space="preserve">
+    <value>Informes</value>
+  </data>
+  <data name="ToolStripAdd.Text" xml:space="preserve">
+    <value>Añadir propietario</value>
+  </data>
 </root>

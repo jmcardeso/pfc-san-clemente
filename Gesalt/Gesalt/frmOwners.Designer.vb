@@ -22,7 +22,7 @@ Partial Class frmOwners
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwners))
         Me.dgvOwners = New System.Windows.Forms.DataGridView()
         Me.mnsOwners = New System.Windows.Forms.MenuStrip()
@@ -61,16 +61,26 @@ Partial Class frmOwners
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblFilter = New System.Windows.Forms.Label()
+        Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripMailing = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsOwners.SuspendLayout()
+        Me.tlsOwners.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvOwners
         '
         Me.dgvOwners.AllowUserToAddRows = False
         Me.dgvOwners.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvOwners, "dgvOwners")
         Me.dgvOwners.MultiSelect = False
@@ -122,6 +132,7 @@ Partial Class frmOwners
         '
         'tlsOwners
         '
+        Me.tlsOwners.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripMailing, Me.ToolStripSeparator3, Me.ToolStripExit})
         resources.ApplyResources(Me.tlsOwners, "tlsOwners")
         Me.tlsOwners.Name = "tlsOwners"
         '
@@ -264,6 +275,57 @@ Partial Class frmOwners
         resources.ApplyResources(Me.lblFilter, "lblFilter")
         Me.lblFilter.Name = "lblFilter"
         '
+        'ToolStripAdd
+        '
+        Me.ToolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripAdd, "ToolStripAdd")
+        Me.ToolStripAdd.Name = "ToolStripAdd"
+        '
+        'ToolStripEdit
+        '
+        Me.ToolStripEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripEdit, "ToolStripEdit")
+        Me.ToolStripEdit.Name = "ToolStripEdit"
+        '
+        'ToolStripDelete
+        '
+        Me.ToolStripDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripDelete, "ToolStripDelete")
+        Me.ToolStripDelete.Name = "ToolStripDelete"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
+        '
+        'ToolStripReports
+        '
+        Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
+        Me.ToolStripReports.Name = "ToolStripReports"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
+        '
+        'ToolStripMailing
+        '
+        Me.ToolStripMailing.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripMailing, "ToolStripMailing")
+        Me.ToolStripMailing.Name = "ToolStripMailing"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
+        '
+        'ToolStripExit
+        '
+        Me.ToolStripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripExit, "ToolStripExit")
+        Me.ToolStripExit.Name = "ToolStripExit"
+        '
         'frmOwners
         '
         resources.ApplyResources(Me, "$this")
@@ -303,6 +365,8 @@ Partial Class frmOwners
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mnsOwners.ResumeLayout(False)
         Me.mnsOwners.PerformLayout()
+        Me.tlsOwners.ResumeLayout(False)
+        Me.tlsOwners.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -345,4 +409,13 @@ Partial Class frmOwners
     Friend WithEvents MailingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblFilter As Label
+    Friend WithEvents ToolStripAdd As ToolStripButton
+    Friend WithEvents ToolStripEdit As ToolStripButton
+    Friend WithEvents ToolStripDelete As ToolStripButton
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripReports As ToolStripDropDownButton
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripMailing As ToolStripButton
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripExit As ToolStripButton
 End Class

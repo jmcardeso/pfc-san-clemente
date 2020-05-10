@@ -184,6 +184,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WinFormStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="WinFormStrings.es.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WinFormStrings.gl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinFormStrings.gl.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmMain.es.resx">
@@ -231,8 +241,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinFormStrings.es.resx" />
-    <EmbeddedResource Include="WinFormStrings.gl.resx" />
+    <EmbeddedResource Include="WinFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormStrings.es.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinFormStrings.gl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormStrings.gl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinFormStrings.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>

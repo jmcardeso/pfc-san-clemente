@@ -74,7 +74,7 @@ Public Class frmOwners
         bs.Position = owners.Count - 1
     End Sub
 
-    Private Sub AddAnOwnerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAnOwnerToolStripMenuItem.Click
+    Private Sub AddAnOwnerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAnOwnerToolStripMenuItem.Click, ToolStripAdd.Click
         If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuON")) Then
             If MsgBox(LocRM.GetString("addWhenFilterOnMsg"), MsgBoxStyle.Information Or MsgBoxStyle.YesNo, "Gesalt") = MsgBoxResult.No Then
                 Exit Sub
@@ -101,7 +101,7 @@ Public Class frmOwners
         bs.Position = owners.Count - 1
     End Sub
 
-    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click
         Dim frmAux As New frmOwnersAux With {
             .Text = LocRM.GetString("editOwnerTitle"),
             .editOwner = bs.Current
@@ -123,7 +123,7 @@ Public Class frmOwners
         bs.ResetBindings(False)
     End Sub
 
-    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click, ToolStripDelete.Click
         If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
                   MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
                   LocRM.GetString("rewRemovedTitle")) = MsgBoxResult.No Then
@@ -161,5 +161,9 @@ Public Class frmOwners
         End If
 
         bs.DataSource = owners
+    End Sub
+
+    Private Sub ToolStripExit_Click(sender As Object, e As EventArgs) Handles ToolStripExit.Click
+        Close()
     End Sub
 End Class
