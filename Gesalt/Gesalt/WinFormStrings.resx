@@ -245,4 +245,7 @@
   <data name="filterOwnersLabelON" xml:space="preserve">
     <value>FILTER</value>
   </data>
+  <data name="addWhenFilterOnMsg" xml:space="preserve">
+    <value>There is an active filter. If you add a record, the filter will be reset. Are you sure?</value>
+  </data>
 </root>

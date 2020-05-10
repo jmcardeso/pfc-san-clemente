@@ -245,4 +245,7 @@
   <data name="filterOwnersLabelON" xml:space="preserve">
     <value>FILTRO</value>
   </data>
+  <data name="addWhenFilterOnMsg" xml:space="preserve">
+    <value>Hay un filtro activo. Si añade un registro, el filtro se eliminará. ¿Está seguro?</value>
+  </data>
 </root>

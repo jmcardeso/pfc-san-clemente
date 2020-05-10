@@ -75,6 +75,14 @@ Public Class frmOwners
     End Sub
 
     Private Sub AddAnOwnerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAnOwnerToolStripMenuItem.Click
+        If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuON")) Then
+            If MsgBox(LocRM.GetString("addWhenFilterOnMsg"), MsgBoxStyle.Information Or MsgBoxStyle.YesNo, "Gesalt") = MsgBoxResult.No Then
+                Exit Sub
+            Else
+                FilterDataToolStripMenuItem_Click(Nothing, Nothing)
+            End If
+        End If
+
         Dim frmAux As New frmOwnersAux With {
             .editOwner = Nothing
         }
@@ -87,7 +95,7 @@ Public Class frmOwners
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
-        ' si añade y hay filtro, ¿qué hace, borra el filtro o añade sin más o k  ase?
+
         owners.Add(frmAux.editOwner)
         bs.ResetBindings(False)
         bs.Position = owners.Count - 1

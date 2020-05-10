@@ -96,6 +96,10 @@ Public Class frmOwnersFilter
         Dim cont As Integer = 0
         For Each item As Panel In FiltersPanel
             item.Name = "Panel_" & cont
+            For Each subitem As Control In item.Controls
+                Dim splitName As String() = subitem.Name.Split("_")
+                subitem.Name = splitName(0) & "_" & cont
+            Next
             cont += 1
         Next
     End Sub
@@ -199,8 +203,8 @@ Public Class frmOwnersFilter
             controlIndex = CType(ContainerPanel.Controls.Item(i).Controls.Item(0), ComboBox).SelectedIndex
             Select Case controlIndex
                 Case TYPE, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
-                    ' Excepción
-                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i + 1, True)(0)
+
+                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i, True)(0)
 
                     If VTextBox.TextLength = 0 Then
                         VTextBox.BackColor = Color.Red
