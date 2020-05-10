@@ -38,7 +38,6 @@ Partial Class frmOwnersAux
         Me.tbxEmail = New System.Windows.Forms.TextBox()
         Me.tbxPhone = New System.Windows.Forms.TextBox()
         Me.tbxProvince = New System.Windows.Forms.TextBox()
-        Me.tbxLogo = New System.Windows.Forms.TextBox()
         Me.tbxCity = New System.Windows.Forms.TextBox()
         Me.tbxAddress = New System.Windows.Forms.TextBox()
         Me.tbxZip = New System.Windows.Forms.TextBox()
@@ -47,6 +46,10 @@ Partial Class frmOwnersAux
         Me.tbxFirstName = New System.Windows.Forms.TextBox()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.bntCancel = New System.Windows.Forms.Button()
+        Me.pbxLogo = New System.Windows.Forms.PictureBox()
+        Me.btnAddLogo = New System.Windows.Forms.Button()
+        Me.ofdLogo = New System.Windows.Forms.OpenFileDialog()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label12
@@ -124,11 +127,6 @@ Partial Class frmOwnersAux
         resources.ApplyResources(Me.tbxProvince, "tbxProvince")
         Me.tbxProvince.Name = "tbxProvince"
         '
-        'tbxLogo
-        '
-        resources.ApplyResources(Me.tbxLogo, "tbxLogo")
-        Me.tbxLogo.Name = "tbxLogo"
-        '
         'tbxCity
         '
         resources.ApplyResources(Me.tbxCity, "tbxCity")
@@ -172,12 +170,30 @@ Partial Class frmOwnersAux
         Me.bntCancel.Name = "bntCancel"
         Me.bntCancel.UseVisualStyleBackColor = True
         '
+        'pbxLogo
+        '
+        resources.ApplyResources(Me.pbxLogo, "pbxLogo")
+        Me.pbxLogo.Name = "pbxLogo"
+        Me.pbxLogo.TabStop = False
+        '
+        'btnAddLogo
+        '
+        resources.ApplyResources(Me.btnAddLogo, "btnAddLogo")
+        Me.btnAddLogo.Name = "btnAddLogo"
+        Me.btnAddLogo.UseVisualStyleBackColor = True
+        '
+        'ofdLogo
+        '
+        Me.ofdLogo.FileName = "OpenFileDialog1"
+        '
         'frmOwnersAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.btnAddLogo)
+        Me.Controls.Add(Me.pbxLogo)
         Me.Controls.Add(Me.bntCancel)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.tbxFirstName)
@@ -186,7 +202,6 @@ Partial Class frmOwnersAux
         Me.Controls.Add(Me.tbxZip)
         Me.Controls.Add(Me.tbxAddress)
         Me.Controls.Add(Me.tbxCity)
-        Me.Controls.Add(Me.tbxLogo)
         Me.Controls.Add(Me.tbxProvince)
         Me.Controls.Add(Me.tbxPhone)
         Me.Controls.Add(Me.tbxEmail)
@@ -204,6 +219,7 @@ Partial Class frmOwnersAux
         Me.Controls.Add(Me.Label1)
         Me.MaximizeBox = False
         Me.Name = "frmOwnersAux"
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -224,7 +240,6 @@ Partial Class frmOwnersAux
     Friend WithEvents tbxEmail As TextBox
     Friend WithEvents tbxPhone As TextBox
     Friend WithEvents tbxProvince As TextBox
-    Friend WithEvents tbxLogo As TextBox
     Friend WithEvents tbxCity As TextBox
     Friend WithEvents tbxAddress As TextBox
     Friend WithEvents tbxZip As TextBox
@@ -233,4 +248,7 @@ Partial Class frmOwnersAux
     Friend WithEvents tbxFirstName As TextBox
     Friend WithEvents btnOK As Button
     Friend WithEvents bntCancel As Button
+    Friend WithEvents pbxLogo As PictureBox
+    Friend WithEvents btnAddLogo As Button
+    Friend WithEvents ofdLogo As OpenFileDialog
 End Class

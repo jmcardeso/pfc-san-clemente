@@ -183,7 +183,7 @@
     <value>Email</value>
   </data>
   <data name="fieldPathLogo" xml:space="preserve">
-    <value>Ruta al logotipo</value>
+    <value>Logotipo</value>
   </data>
   <data name="fieldType" xml:space="preserve">
     <value>Tipo</value>
@@ -228,10 +228,10 @@
     <value>O</value>
   </data>
   <data name="filterOwnerLogoTrue" xml:space="preserve">
-    <value>El propietario tiene logo</value>
+    <value>El propietario tiene logotipo</value>
   </data>
   <data name="filterOwnerLogoFalse" xml:space="preserve">
-    <value>El propietario no tiene logo</value>
+    <value>El propietario no tiene logotipo</value>
   </data>
   <data name="filterOwnersMenuOFF" xml:space="preserve">
     <value>&amp;Filtrar datos</value>
@@ -247,5 +247,8 @@
   </data>
   <data name="addWhenFilterOnMsg" xml:space="preserve">
     <value>Hay un filtro activo. Si añade un registro, el filtro se eliminará. ¿Está seguro?</value>
+  </data>
+  <data name="ofdLogoFilter" xml:space="preserve">
+    <value>Ficheros JPG (*.jpg)|*.jpg|Todos los ficheros (*.*)|*.*</value>
   </data>
 </root>

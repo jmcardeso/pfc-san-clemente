@@ -183,7 +183,7 @@
     <value>Email</value>
   </data>
   <data name="fieldPathLogo" xml:space="preserve">
-    <value>Path Logo</value>
+    <value>Logo</value>
   </data>
   <data name="fieldType" xml:space="preserve">
     <value>Type</value>
@@ -247,5 +247,8 @@
   </data>
   <data name="addWhenFilterOnMsg" xml:space="preserve">
     <value>There is an active filter. If you add a record, the filter will be reset. Are you sure?</value>
+  </data>
+  <data name="ofdLogoFilter" xml:space="preserve">
+    <value>JPG files (*.jpg)|*.jpg|All files (*.*)|*.*</value>
   </data>
 </root>

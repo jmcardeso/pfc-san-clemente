@@ -174,25 +174,25 @@
     <value>&amp;Owners</value>
   </data>
   <data name="AddAnOwnerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Add</value>
   </data>
   <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="EditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Edit</value>
   </data>
   <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Delete</value>
   </data>
   <data name="FilterDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Filter data</value>
@@ -212,6 +212,30 @@
   <metadata name="tlsOwners.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
   </metadata>
+  <data name="tlsOwners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tlsOwners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 25</value>
+  </data>
+  <data name="tlsOwners.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tlsOwners.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tlsOwners.Name" xml:space="preserve">
+    <value>tlsOwners</value>
+  </data>
+  <data name="&gt;&gt;tlsOwners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsOwners.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsOwners.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
   <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -323,30 +347,6 @@
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="tlsOwners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="tlsOwners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 25</value>
-  </data>
-  <data name="tlsOwners.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tlsOwners.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tlsOwners.Name" xml:space="preserve">
-    <value>tlsOwners</value>
-  </data>
-  <data name="&gt;&gt;tlsOwners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsOwners.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsOwners.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
   <data name="btnFirst.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 442</value>
   </data>
@@ -457,7 +457,7 @@
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 49</value>
+    <value>22, 72</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -487,7 +487,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 118</value>
+    <value>514, 95</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -517,7 +517,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 95</value>
+    <value>513, 72</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -547,7 +547,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 72</value>
+    <value>513, 49</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -577,7 +577,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 72</value>
+    <value>22, 186</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -607,7 +607,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 95</value>
+    <value>22, 163</value>
   </data>
   <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -637,7 +637,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 49</value>
+    <value>22, 139</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -667,7 +667,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 95</value>
+    <value>22, 117</value>
   </data>
   <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -697,7 +697,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 49</value>
+    <value>22, 211</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -727,7 +727,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 118</value>
+    <value>22, 49</value>
   </data>
   <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -757,7 +757,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 72</value>
+    <value>22, 95</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -787,7 +787,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>667, 95</value>
+    <value>560, 72</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -817,7 +817,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>667, 72</value>
+    <value>560, 49</value>
   </data>
   <data name="lblPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -847,7 +847,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProvince.Location" type="System.Drawing.Point, System.Drawing">
-    <value>667, 49</value>
+    <value>121, 211</value>
   </data>
   <data name="lblProvince.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -870,36 +870,6 @@
   <data name="&gt;&gt;lblProvince.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="lblLogo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 118</value>
-  </data>
-  <data name="lblLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
-  </data>
-  <data name="lblLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="lblLogo.Text" xml:space="preserve">
-    <value>&lt;Empty&gt;</value>
-  </data>
-  <data name="&gt;&gt;lblLogo.Name" xml:space="preserve">
-    <value>lblLogo</value>
-  </data>
-  <data name="&gt;&gt;lblLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLogo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblLogo.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="lblCity.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -907,7 +877,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 95</value>
+    <value>121, 163</value>
   </data>
   <data name="lblCity.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -928,7 +898,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCity.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblZip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -937,7 +907,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblZip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 72</value>
+    <value>121, 186</value>
   </data>
   <data name="lblZip.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -958,7 +928,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblZip.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblAddress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -967,7 +937,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 50</value>
+    <value>121, 139</value>
   </data>
   <data name="lblAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -988,7 +958,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAddress.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -997,7 +967,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 118</value>
+    <value>121, 49</value>
   </data>
   <data name="lblType.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1018,7 +988,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblType.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblNif.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1027,7 +997,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNif.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 95</value>
+    <value>121, 117</value>
   </data>
   <data name="lblNif.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1048,7 +1018,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblNif.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblFirstName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1057,7 +1027,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 72</value>
+    <value>121, 95</value>
   </data>
   <data name="lblFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1078,7 +1048,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFirstName.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblLastName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1087,7 +1057,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblLastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 50</value>
+    <value>121, 72</value>
   </data>
   <data name="lblLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1108,7 +1078,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblLastName.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1135,6 +1105,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pbxLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 111</value>
+  </data>
+  <data name="pbxLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 142</value>
+  </data>
+  <data name="pbxLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pbxLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.Name" xml:space="preserve">
+    <value>pbxLogo</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

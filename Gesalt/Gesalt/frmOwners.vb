@@ -14,23 +14,31 @@ Public Class frmOwners
 
             With dgvOwners
                 .AutoGenerateColumns = False
-                .ColumnCount = 4
+                .ColumnCount = 6
 
-                .Columns(0).Name = "LastName"
-                .Columns(0).HeaderText = LocRM.GetString("fieldLastName")
-                .Columns(0).DataPropertyName = "LastName"
+                .Columns(0).Name = "Type"
+                .Columns(0).HeaderText = LocRM.GetString("fieldType")
+                .Columns(0).DataPropertyName = "Type"
 
-                .Columns(1).Name = "FirstName"
-                .Columns(1).HeaderText = LocRM.GetString("fieldFirstName")
-                .Columns(1).DataPropertyName = "FirstName"
+                .Columns(1).Name = "LastName"
+                .Columns(1).HeaderText = LocRM.GetString("fieldLastName")
+                .Columns(1).DataPropertyName = "LastName"
 
-                .Columns(2).Name = "Nif"
-                .Columns(2).HeaderText = LocRM.GetString("fieldNif")
-                .Columns(2).DataPropertyName = "Nif"
+                .Columns(2).Name = "FirstName"
+                .Columns(2).HeaderText = LocRM.GetString("fieldFirstName")
+                .Columns(2).DataPropertyName = "FirstName"
 
-                .Columns(3).Name = "Type"
-                .Columns(3).HeaderText = LocRM.GetString("fieldType")
-                .Columns(3).DataPropertyName = "Type"
+                .Columns(3).Name = "Nif"
+                .Columns(3).HeaderText = LocRM.GetString("fieldNif")
+                .Columns(3).DataPropertyName = "Nif"
+
+                .Columns(4).Name = "City"
+                .Columns(4).HeaderText = LocRM.GetString("fieldCity")
+                .Columns(4).DataPropertyName = "City"
+
+                .Columns(5).Name = "Province"
+                .Columns(5).HeaderText = LocRM.GetString("fieldProvince")
+                .Columns(5).DataPropertyName = "Province"
 
                 .DataSource = bs
             End With
@@ -40,7 +48,7 @@ Public Class frmOwners
             lblAddress.DataBindings.Add("Text", bs, "Address")
             lblCity.DataBindings.Add("Text", bs, "City")
             lblEmail.DataBindings.Add("Text", bs, "Email")
-            lblLogo.DataBindings.Add("Text", bs, "PathLogo")
+            pbxLogo.DataBindings.Add("ImageLocation", bs, "PathLogo")
             lblNif.DataBindings.Add("Text", bs, "Nif")
             lblPhone.DataBindings.Add("Text", bs, "Phone")
             lblProvince.DataBindings.Add("Text", bs, "Province")

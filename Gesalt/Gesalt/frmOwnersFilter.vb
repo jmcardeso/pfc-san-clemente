@@ -34,7 +34,7 @@ Public Class frmOwnersFilter
     Dim FieldsOwnerName As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
         LocRM.GetString("fieldAddress"), LocRM.GetString("fieldCity"), LocRM.GetString("fieldZip"), LocRM.GetString("fieldProvince"),
         LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldPathLogo")}
-    Dim FieldsOwner As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "paht_logo"}
+    Dim FieldsOwner As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "path_logo"}
     Dim NumberOperators As String() = {"=", "<>", "<", ">", "<=", ">="}
     Dim StringOperators As String() = {LocRM.GetString("EqualTo"), LocRM.GetString("DifferentFrom"), LocRM.GetString("StartsWith"), LocRM.GetString("Contains")}
     Const TYPE As Integer = 0, LAST_NAME As Integer = 1, FIRST_NAME As Integer = 2, NIF As Integer = 3, ADDRESS As Integer = 4, CITY As Integer = 5, ZIP As Integer = 6,
@@ -141,7 +141,8 @@ Public Class frmOwnersFilter
 
         Dim VCheckBox As New CheckBox
         VCheckBox.Location = New Point(273, 0)
-        VCheckBox.Text = LocRM.GetString("fieldPathLogo")
+        VCheckBox.Size = New Size(190, 20)
+        VCheckBox.Text = LocRM.GetString("filterOwnerLogoTrue")
         VCheckBox.Name = "VCheckBox_" & FiltersPanel.Count - 1
         VCheckBox.Visible = False
         pnlFilter.Controls.Add(VCheckBox)
@@ -229,10 +230,10 @@ Public Class frmOwnersFilter
                             VTextBox.Text & "'"
                     End If
                 Case PATH_LOGO
-                    Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(i).Controls.Find("VCheckBox_" & i + 1, True)(0)
+                    Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(i).Controls.Find("VCheckBox_" & i, True)(0)
 
                     _resultSQL += FieldsOwner(controlIndex)
-                    _resultSQL += IIf(VCheckBox.Checked, " like @", " not like @") & VCheckBox.Name
+                    _resultSQL += IIf(VCheckBox.Checked, " not like @", " like @") & VCheckBox.Name
                     _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, "", DbType.String))
                     _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterOwnerLogoTrue") & "'", "'" & LocRM.GetString("filterOwnerLogoFalse") & "'")
             End Select

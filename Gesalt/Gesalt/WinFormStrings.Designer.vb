@@ -281,7 +281,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Path Logo.
+        '''  Busca una cadena traducida similar a Logo.
         '''</summary>
         Friend Shared ReadOnly Property fieldPathLogo() As String
             Get
@@ -439,6 +439,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property noDBMsg() As String
             Get
                 Return ResourceManager.GetString("noDBMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a JPG files (*.jpg)|*.jpg|All files (*.*)|*.*.
+        '''</summary>
+        Friend Shared ReadOnly Property ofdLogoFilter() As String
+            Get
+                Return ResourceManager.GetString("ofdLogoFilter", resourceCulture)
             End Get
         End Property
         

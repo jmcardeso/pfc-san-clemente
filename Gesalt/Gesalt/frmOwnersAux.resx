@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 44</value>
+    <value>12, 64</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 90</value>
+    <value>12, 18</value>
   </data>
   <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -187,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 142</value>
+    <value>11, 189</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,7 +217,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 67</value>
+    <value>11, 87</value>
   </data>
   <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -238,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 21</value>
+    <value>12, 111</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 67</value>
+    <value>11, 135</value>
   </data>
   <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -298,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -307,7 +307,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 44</value>
+    <value>12, 160</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -328,7 +328,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,7 +337,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 165</value>
+    <value>445, 18</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -358,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 188</value>
+    <value>445, 41</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -388,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 90</value>
+    <value>445, 64</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -418,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 21</value>
+    <value>11, 41</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -448,13 +448,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="tbxLastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 18</value>
+    <value>110, 38</value>
   </data>
   <data name="tbxLastName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxLastName.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -469,13 +469,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxLastName.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="tbxEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 185</value>
+    <value>492, 38</value>
   </data>
   <data name="tbxEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>308, 20</value>
   </data>
   <data name="tbxEmail.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -490,13 +490,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxEmail.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="tbxPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 162</value>
+    <value>492, 15</value>
   </data>
   <data name="tbxPhone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxPhone.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -511,13 +511,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxPhone.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="tbxProvince.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 139</value>
+    <value>110, 183</value>
   </data>
   <data name="tbxProvince.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxProvince.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -532,34 +532,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxProvince.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tbxLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 87</value>
-  </data>
-  <data name="tbxLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
-  </data>
-  <data name="tbxLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="&gt;&gt;tbxLogo.Name" xml:space="preserve">
-    <value>tbxLogo</value>
-  </data>
-  <data name="&gt;&gt;tbxLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbxLogo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tbxLogo.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="tbxCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 64</value>
+    <value>110, 132</value>
   </data>
   <data name="tbxCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxCity.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -574,13 +553,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxCity.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="tbxAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 18</value>
+    <value>110, 108</value>
   </data>
   <data name="tbxAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxAddress.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
@@ -595,13 +574,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxAddress.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="tbxZip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 41</value>
+    <value>110, 157</value>
   </data>
   <data name="tbxZip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxZip.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -616,13 +595,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxZip.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="tbxType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 87</value>
+    <value>110, 15</value>
   </data>
   <data name="tbxType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxType.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
@@ -637,13 +616,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxType.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tbxNif.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 64</value>
+    <value>110, 84</value>
   </data>
   <data name="tbxNif.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxNif.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>
@@ -658,13 +637,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxNif.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="tbxFirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 41</value>
+    <value>110, 61</value>
   </data>
   <data name="tbxFirstName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 20</value>
+    <value>307, 20</value>
   </data>
   <data name="tbxFirstName.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -679,10 +658,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxFirstName.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 246</value>
+    <value>725, 252</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -703,13 +682,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="bntCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="bntCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 246</value>
+    <value>637, 252</value>
   </data>
   <data name="bntCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -730,8 +709,62 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bntCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pbxLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>492, 96</value>
+  </data>
+  <data name="pbxLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 142</value>
+  </data>
+  <data name="pbxLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pbxLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.Name" xml:space="preserve">
+    <value>pbxLogo</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbxLogo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAddLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>492, 64</value>
+  </data>
+  <data name="btnAddLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 26</value>
+  </data>
+  <data name="btnAddLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="btnAddLogo.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnAddLogo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;btnAddLogo.Name" xml:space="preserve">
+    <value>btnAddLogo</value>
+  </data>
+  <data name="&gt;&gt;btnAddLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddLogo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAddLogo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="ofdLogo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -739,13 +772,19 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>560, 287</value>
+    <value>812, 286</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Add an Owner - Gesalt</value>
+  </data>
+  <data name="&gt;&gt;ofdLogo.Name" xml:space="preserve">
+    <value>ofdLogo</value>
+  </data>
+  <data name="&gt;&gt;ofdLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmOwnersAux</value>

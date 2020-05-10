@@ -34,6 +34,15 @@ Partial Class frmOwners
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MailingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsOwners = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripMailing = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
         Me.btnFirst = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
@@ -52,7 +61,6 @@ Partial Class frmOwners
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.lblPhone = New System.Windows.Forms.Label()
         Me.lblProvince = New System.Windows.Forms.Label()
-        Me.lblLogo = New System.Windows.Forms.Label()
         Me.lblCity = New System.Windows.Forms.Label()
         Me.lblZip = New System.Windows.Forms.Label()
         Me.lblAddress = New System.Windows.Forms.Label()
@@ -61,18 +69,11 @@ Partial Class frmOwners
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblFilter = New System.Windows.Forms.Label()
-        Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMailing = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
+        Me.pbxLogo = New System.Windows.Forms.PictureBox()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsOwners.SuspendLayout()
         Me.tlsOwners.SuspendLayout()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvOwners
@@ -135,6 +136,57 @@ Partial Class frmOwners
         Me.tlsOwners.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripMailing, Me.ToolStripSeparator3, Me.ToolStripExit})
         resources.ApplyResources(Me.tlsOwners, "tlsOwners")
         Me.tlsOwners.Name = "tlsOwners"
+        '
+        'ToolStripAdd
+        '
+        Me.ToolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripAdd, "ToolStripAdd")
+        Me.ToolStripAdd.Name = "ToolStripAdd"
+        '
+        'ToolStripEdit
+        '
+        Me.ToolStripEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripEdit, "ToolStripEdit")
+        Me.ToolStripEdit.Name = "ToolStripEdit"
+        '
+        'ToolStripDelete
+        '
+        Me.ToolStripDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripDelete, "ToolStripDelete")
+        Me.ToolStripDelete.Name = "ToolStripDelete"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
+        '
+        'ToolStripReports
+        '
+        Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
+        Me.ToolStripReports.Name = "ToolStripReports"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
+        '
+        'ToolStripMailing
+        '
+        Me.ToolStripMailing.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripMailing, "ToolStripMailing")
+        Me.ToolStripMailing.Name = "ToolStripMailing"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
+        '
+        'ToolStripExit
+        '
+        Me.ToolStripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripExit, "ToolStripExit")
+        Me.ToolStripExit.Name = "ToolStripExit"
         '
         'btnFirst
         '
@@ -230,11 +282,6 @@ Partial Class frmOwners
         resources.ApplyResources(Me.lblProvince, "lblProvince")
         Me.lblProvince.Name = "lblProvince"
         '
-        'lblLogo
-        '
-        resources.ApplyResources(Me.lblLogo, "lblLogo")
-        Me.lblLogo.Name = "lblLogo"
-        '
         'lblCity
         '
         resources.ApplyResources(Me.lblCity, "lblCity")
@@ -275,61 +322,17 @@ Partial Class frmOwners
         resources.ApplyResources(Me.lblFilter, "lblFilter")
         Me.lblFilter.Name = "lblFilter"
         '
-        'ToolStripAdd
+        'pbxLogo
         '
-        Me.ToolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripAdd, "ToolStripAdd")
-        Me.ToolStripAdd.Name = "ToolStripAdd"
-        '
-        'ToolStripEdit
-        '
-        Me.ToolStripEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripEdit, "ToolStripEdit")
-        Me.ToolStripEdit.Name = "ToolStripEdit"
-        '
-        'ToolStripDelete
-        '
-        Me.ToolStripDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripDelete, "ToolStripDelete")
-        Me.ToolStripDelete.Name = "ToolStripDelete"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
-        '
-        'ToolStripReports
-        '
-        Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
-        Me.ToolStripReports.Name = "ToolStripReports"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
-        '
-        'ToolStripMailing
-        '
-        Me.ToolStripMailing.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripMailing, "ToolStripMailing")
-        Me.ToolStripMailing.Name = "ToolStripMailing"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
-        '
-        'ToolStripExit
-        '
-        Me.ToolStripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripExit, "ToolStripExit")
-        Me.ToolStripExit.Name = "ToolStripExit"
+        resources.ApplyResources(Me.pbxLogo, "pbxLogo")
+        Me.pbxLogo.Name = "pbxLogo"
+        Me.pbxLogo.TabStop = False
         '
         'frmOwners
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.pbxLogo)
         Me.Controls.Add(Me.lblFilter)
         Me.Controls.Add(Me.lblLastName)
         Me.Controls.Add(Me.lblFirstName)
@@ -338,7 +341,6 @@ Partial Class frmOwners
         Me.Controls.Add(Me.lblAddress)
         Me.Controls.Add(Me.lblZip)
         Me.Controls.Add(Me.lblCity)
-        Me.Controls.Add(Me.lblLogo)
         Me.Controls.Add(Me.lblProvince)
         Me.Controls.Add(Me.lblPhone)
         Me.Controls.Add(Me.lblEmail)
@@ -367,6 +369,7 @@ Partial Class frmOwners
         Me.mnsOwners.PerformLayout()
         Me.tlsOwners.ResumeLayout(False)
         Me.tlsOwners.PerformLayout()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -393,7 +396,6 @@ Partial Class frmOwners
     Friend WithEvents lblEmail As Label
     Friend WithEvents lblPhone As Label
     Friend WithEvents lblProvince As Label
-    Friend WithEvents lblLogo As Label
     Friend WithEvents lblCity As Label
     Friend WithEvents lblZip As Label
     Friend WithEvents lblAddress As Label
@@ -418,4 +420,5 @@ Partial Class frmOwners
     Friend WithEvents ToolStripMailing As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripExit As ToolStripButton
+    Friend WithEvents pbxLogo As PictureBox
 End Class

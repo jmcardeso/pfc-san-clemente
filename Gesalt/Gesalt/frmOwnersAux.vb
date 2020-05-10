@@ -20,7 +20,7 @@ Public Class frmOwnersAux
         tbxAddress.DataBindings.Add("Text", ownerAux, "Address")
         tbxCity.DataBindings.Add("Text", ownerAux, "City")
         tbxEmail.DataBindings.Add("Text", ownerAux, "Email")
-        tbxLogo.DataBindings.Add("Text", ownerAux, "PathLogo")
+        pbxLogo.DataBindings.Add("ImageLocation", ownerAux, "PathLogo")
         tbxNif.DataBindings.Add("Text", ownerAux, "Nif")
         tbxPhone.DataBindings.Add("Text", ownerAux, "Phone")
         tbxProvince.DataBindings.Add("Text", ownerAux, "Province")
@@ -35,5 +35,17 @@ Public Class frmOwnersAux
 
     Private Sub bntCancel_Click(sender As Object, e As EventArgs) Handles bntCancel.Click
         Me.DialogResult = DialogResult.Cancel
+    End Sub
+
+    Private Sub btnAddLogo_Click(sender As Object, e As EventArgs) Handles btnAddLogo.Click
+        ofdLogo.Filter = LocRM.GetString("ofdLogoFilter")
+        ofdLogo.FilterIndex = 1
+        ofdLogo.FileName = ""
+        ofdLogo.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures
+
+        If ofdLogo.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            pbxLogo.Image = Image.FromFile(ofdLogo.FileName)
+            ownerAux.PathLogo = ofdLogo.FileName
+        End If
     End Sub
 End Class
