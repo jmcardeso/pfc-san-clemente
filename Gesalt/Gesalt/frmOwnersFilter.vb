@@ -16,12 +16,15 @@ Public Class frmOwnersFilter
         End Get
     End Property
 
-    Private _resultParameters As List(Of DbParameter)
+    Private _resultParameters As New List(Of DbParameter)
     Public ReadOnly Property resultParameters As List(Of DbParameter)
         Get
             Return _resultParameters
         End Get
     End Property
+
+    Const SELECT_OWNER As String = "select * from owner where "
+    Const ORDERBY_OWNER As String = " order by last_name"
 
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwnersFilter).Assembly)
 
@@ -30,7 +33,7 @@ Public Class frmOwnersFilter
     Dim ContainerPanel As New FlowLayoutPanel
     Dim FieldsOwnerName As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
         LocRM.GetString("fieldAddress"), LocRM.GetString("fieldCity"), LocRM.GetString("fieldZip"), LocRM.GetString("fieldProvince"),
-        LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldPahtLogo")}
+        LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldPathLogo")}
     Dim FieldsOwner As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "paht_logo"}
     Dim NumberOperators As String() = {"=", "<>", "<", ">", "<=", ">="}
     Dim StringOperators As String() = {LocRM.GetString("EqualTo"), LocRM.GetString("DifferentFrom"), LocRM.GetString("StartsWith"), LocRM.GetString("Contains")}
@@ -184,7 +187,7 @@ Public Class frmOwnersFilter
         objControl.Visible = True
     End Sub
     Private Function ValidateFilter() As Boolean
-        _resultSQL = ""
+        _resultSQL = SELECT_OWNER
         _resultReadable = ""
         _resultParameters.Clear()
 
@@ -196,6 +199,7 @@ Public Class frmOwnersFilter
             controlIndex = CType(ContainerPanel.Controls.Item(i).Controls.Item(0), ComboBox).SelectedIndex
             Select Case controlIndex
                 Case TYPE, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
+                    ' Excepción
                     Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i + 1, True)(0)
 
                     If VTextBox.TextLength = 0 Then
@@ -206,14 +210,17 @@ Public Class frmOwnersFilter
                         Select Case CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedIndex
                             Case 0
                                 _resultSQL += "like @" & VTextBox.Name
+                                _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, VTextBox.Text, DbType.String))
                             Case 1
                                 _resultSQL += "not like @" & VTextBox.Name
+                                _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, VTextBox.Text, DbType.String))
                             Case 2
-                                _resultSQL += "like @" & VTextBox.Name & "'%'"
+                                _resultSQL += "like @" & VTextBox.Name
+                                _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, VTextBox.Text & "%", DbType.String))
                             Case 3
-                                _resultSQL += "like '%'@" & VTextBox.Name & "'%'"
+                                _resultSQL += "like @" & VTextBox.Name
+                                _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, "%" & VTextBox.Text & "%", DbType.String))
                         End Select
-                        _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, VTextBox.Text, DbType.String))
                         _resultReadable += FieldsOwnerName(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " '" &
                             VTextBox.Text & "'"
                     End If
@@ -227,12 +234,13 @@ Public Class frmOwnersFilter
             End Select
 
             If i < ContainerPanel.Controls.Count - 1 Then
-                _resultSQL += IIf(CType(ContainerPanel.Controls.Item(i).Controls.Item(5), ComboBox).SelectedItem.Equals(LocRM.GetString("filterAND")), " and ", " or ")
-                _resultReadable += IIf(CType(ContainerPanel.Controls.Item(i).Controls.Item(5), ComboBox).SelectedItem.Equals(LocRM.GetString("filterAND")),
-                                      " " & LocRM.GetString("filterAND") & " ", " " & LocRM.GetString("filterOR") & " ")
+                _resultSQL += IIf(CType(ContainerPanel.Controls.Item(i).Controls.Item(5), ComboBox).SelectedItem.Equals(LocRM.GetString("filterAnd")), " and ", " or ")
+                _resultReadable += IIf(CType(ContainerPanel.Controls.Item(i).Controls.Item(5), ComboBox).SelectedItem.Equals(LocRM.GetString("filterAnd")),
+                                      " " & LocRM.GetString("filterAnd") & " ", " " & LocRM.GetString("filterOr") & " ")
             End If
         Next
 
+        _resultSQL &= ORDERBY_OWNER
         Return FilterOK
     End Function
 End Class

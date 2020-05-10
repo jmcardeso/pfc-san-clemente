@@ -204,4 +204,10 @@
   <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Engadir</value>
   </data>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Propietarios:</value>
+  </data>
+  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Filtrar datos</value>
+  </data>
 </root>

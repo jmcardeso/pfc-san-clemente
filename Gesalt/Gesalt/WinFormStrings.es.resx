@@ -224,7 +224,7 @@
   <data name="filterAnd" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="filterOR" xml:space="preserve">
+  <data name="filterOr" xml:space="preserve">
     <value>O</value>
   </data>
   <data name="filterOwnerLogoTrue" xml:space="preserve">
@@ -232,5 +232,17 @@
   </data>
   <data name="filterOwnerLogoFalse" xml:space="preserve">
     <value>El propietario no tiene logo</value>
+  </data>
+  <data name="filterOwnersMenuOFF" xml:space="preserve">
+    <value>&amp;Filtrar datos</value>
+  </data>
+  <data name="filterOwnersMenuON" xml:space="preserve">
+    <value>Borrar &amp;filtro</value>
+  </data>
+  <data name="filterOwnersLabelOFF" xml:space="preserve">
+    <value>Propietarios:</value>
+  </data>
+  <data name="filterOwnersLabelON" xml:space="preserve">
+    <value>FILTRO</value>
   </data>
 </root>

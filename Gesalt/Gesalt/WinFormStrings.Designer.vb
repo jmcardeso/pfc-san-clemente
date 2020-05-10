@@ -328,9 +328,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca una cadena traducida similar a OR.
         '''</summary>
-        Friend Shared ReadOnly Property filterOR() As String
+        Friend Shared ReadOnly Property filterOr() As String
             Get
-                Return ResourceManager.GetString("filterOR", resourceCulture)
+                Return ResourceManager.GetString("filterOr", resourceCulture)
             End Get
         End Property
         
@@ -349,6 +349,42 @@ Namespace My.Resources
         Friend Shared ReadOnly Property filterOwnerLogoTrue() As String
             Get
                 Return ResourceManager.GetString("filterOwnerLogoTrue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Owners:.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOwnersLabelOFF() As String
+            Get
+                Return ResourceManager.GetString("filterOwnersLabelOFF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a FILTER.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOwnersLabelON() As String
+            Get
+                Return ResourceManager.GetString("filterOwnersLabelON", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a &amp;Filter data.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOwnersMenuOFF() As String
+            Get
+                Return ResourceManager.GetString("filterOwnersMenuOFF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Clear &amp;filter.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOwnersMenuON() As String
+            Get
+                Return ResourceManager.GetString("filterOwnersMenuON", resourceCulture)
             End Get
         End Property
         

@@ -8,7 +8,7 @@ Public Class frmOwners
 
     Private Sub frmOwners_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            owners = opOwner.GetAllOwners()
+            owners = opOwner.GetOwners()
 
             bs.DataSource = owners
 
@@ -87,7 +87,7 @@ Public Class frmOwners
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
-
+        ' si añade y hay filtro, ¿qué hace, borra el filtro o añade sin más o k  ase?
         owners.Add(frmAux.editOwner)
         bs.ResetBindings(False)
         bs.Position = owners.Count - 1
@@ -132,22 +132,26 @@ Public Class frmOwners
     End Sub
 
     Private Sub FilterDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterDataToolStripMenuItem.Click
-        'If BtnSelVehiculos.Text.Equals("Seleccionar vehículos") Then
-        '    FrmFlt = New FrmFiltros
-        '    If FrmFlt.ShowDialog() = DialogResult.Cancel Then
-        '        Exit Sub
-        '    End If
-        '    LblFiltro.Text = "FILTRO: " & SeleccionSociosFiltro(1)
-        '    LblFiltro.BackColor = Color.Red
-        '    LblFiltro.ForeColor = Color.White
-        '    BtnSelVehiculos.Text = "Borrar selección"
-        '    DtsTransporte.Tables("Vehiculos").DefaultView.RowFilter = SeleccionSociosFiltro(0)
-        'Else
-        '    LblFiltro.Text = "Vehículos:"
-        '    LblFiltro.BackColor = SystemColors.Control
-        '    LblFiltro.ForeColor = SystemColors.ControlText
-        '    BtnSelVehiculos.Text = "Seleccionar vehículos"
-        '    DtsTransporte.Tables("Vehiculos").DefaultView.RowFilter = ""
-        'End If
+        If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuOFF")) Then
+            Dim frmFlt As frmOwnersFilter = New frmOwnersFilter()
+            If frmFlt.ShowDialog() = DialogResult.Cancel Then
+                Exit Sub
+            End If
+            lblFilter.Text = LocRM.GetString("filterOwnersLabelON") & " " & frmFlt.resultReadable
+            lblFilter.BackColor = Color.Red
+            lblFilter.ForeColor = Color.White
+            FilterDataToolStripMenuItem.Text = LocRM.GetString("filterOwnersMenuON")
+
+            owners = opOwner.GetOwners(frmFlt.resultSQL, frmFlt.resultParameters)
+        Else
+            lblFilter.Text = LocRM.GetString("filterOwnersLabelOFF")
+            lblFilter.BackColor = SystemColors.Control
+            lblFilter.ForeColor = SystemColors.ControlText
+            FilterDataToolStripMenuItem.Text = LocRM.GetString("filterOwnersMenuOFF")
+
+            owners = opOwner.GetOwners()
+        End If
+
+        bs.DataSource = owners
     End Sub
 End Class
