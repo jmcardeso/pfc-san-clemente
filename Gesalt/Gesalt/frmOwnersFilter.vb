@@ -118,7 +118,7 @@ Public Class frmOwnersFilter
 
         Dim CmbFields As New ComboBox
         CmbFields.Location = New Point(0, 0)
-        CmbFields.Name = "CmbFields_" & FiltersPanel.Count
+        CmbFields.Name = "CmbFields_" & FiltersPanel.Count - 1
         CmbFields.DropDownStyle = ComboBoxStyle.DropDownList
         CmbFields.Items.AddRange(FieldsOwnerName)
         CmbFields.SelectedIndex = 0
@@ -127,7 +127,7 @@ Public Class frmOwnersFilter
 
         Dim cmbOperators As New ComboBox
         cmbOperators.Location = New Point(130, 0)
-        cmbOperators.Name = "CmbOperators_" & FiltersPanel.Count
+        cmbOperators.Name = "CmbOperators_" & FiltersPanel.Count - 1
         cmbOperators.Items.AddRange(StringOperators)
         cmbOperators.SelectedIndex = 0
         cmbOperators.DropDownStyle = ComboBoxStyle.DropDownList
@@ -135,27 +135,27 @@ Public Class frmOwnersFilter
 
         Dim VTextBox As New TextBox
         VTextBox.Location = New Point(273, 0)
-        VTextBox.Name = "VTextBox_" & FiltersPanel.Count
+        VTextBox.Name = "VTextBox_" & FiltersPanel.Count - 1
         AddHandler VTextBox.KeyDown, AddressOf Me.VTextBox_KeyDown
         pnlFilter.Controls.Add(VTextBox)
 
         Dim VCheckBox As New CheckBox
         VCheckBox.Location = New Point(273, 0)
         VCheckBox.Text = LocRM.GetString("fieldPathLogo")
-        VCheckBox.Name = "VCheckBox_" & FiltersPanel.Count
+        VCheckBox.Name = "VCheckBox_" & FiltersPanel.Count - 1
         VCheckBox.Visible = False
         pnlFilter.Controls.Add(VCheckBox)
 
         Dim VDateTimePicker As New DateTimePicker
         VDateTimePicker.Location = New Point(273, 0)
-        VDateTimePicker.Name = "VDateTimePicker_" & FiltersPanel.Count
+        VDateTimePicker.Name = "VDateTimePicker_" & FiltersPanel.Count - 1
         VDateTimePicker.Format = DateTimePickerFormat.Short
         VDateTimePicker.Visible = False
         pnlFilter.Controls.Add(VDateTimePicker)
 
         Dim cmbAdd As New ComboBox
         cmbAdd.Location = New Point(500, 0)
-        cmbAdd.Name = "CmbAdd_" & FiltersPanel.Count
+        cmbAdd.Name = "CmbAdd_" & FiltersPanel.Count - 1
         cmbAdd.DropDownStyle = ComboBoxStyle.DropDownList
         cmbAdd.Items.Add(LocRM.GetString("filterAnd"))
         cmbAdd.Items.Add(LocRM.GetString("filterOr"))
@@ -164,14 +164,14 @@ Public Class frmOwnersFilter
 
         Dim btnPlus As New Button
         btnPlus.Location = New Point(650, 0)
-        btnPlus.Name = "BtnPlus_" & FiltersPanel.Count
+        btnPlus.Name = "BtnPlus_" & FiltersPanel.Count - 1
         btnPlus.Text = "+"
         AddHandler btnPlus.Click, AddressOf Me.BtnMas_Click
         pnlFilter.Controls.Add(btnPlus)
 
         Dim btnMinus As New Button
         btnMinus.Location = New Point(750, 0)
-        btnMinus.Name = "BtnMinus_" & FiltersPanel.Count
+        btnMinus.Name = "BtnMinus_" & FiltersPanel.Count - 1
         btnMinus.Text = "-"
         AddHandler btnMinus.Click, AddressOf Me.BtnMenos_Click
         pnlFilter.Controls.Add(btnMinus)
