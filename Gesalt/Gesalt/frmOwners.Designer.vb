@@ -70,6 +70,7 @@ Partial Class frmOwners
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblFilter = New System.Windows.Forms.Label()
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
+        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsOwners.SuspendLayout()
         Me.tlsOwners.SuspendLayout()
@@ -124,6 +125,7 @@ Partial Class frmOwners
         '
         'ReportsToolStripMenuItem
         '
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PruebaToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         resources.ApplyResources(Me.ReportsToolStripMenuItem, "ReportsToolStripMenuItem")
         '
@@ -329,6 +331,11 @@ Partial Class frmOwners
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.TabStop = False
         '
+        'PruebaToolStripMenuItem
+        '
+        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
+        resources.ApplyResources(Me.PruebaToolStripMenuItem, "PruebaToolStripMenuItem")
+        '
         'frmOwners
         '
         resources.ApplyResources(Me, "$this")
@@ -422,4 +429,5 @@ Partial Class frmOwners
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripExit As ToolStripButton
     Friend WithEvents pbxLogo As PictureBox
+    Friend WithEvents PruebaToolStripMenuItem As ToolStripMenuItem
 End Class

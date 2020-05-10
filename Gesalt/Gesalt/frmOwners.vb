@@ -1,4 +1,5 @@
 ﻿Imports System.Resources
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmOwners
     Dim opOwner As OpOwner = OpOwner.GetInstance()
@@ -178,5 +179,15 @@ Public Class frmOwners
 
     Private Sub ToolStripExit_Click(sender As Object, e As EventArgs) Handles ToolStripExit.Click
         Close()
+    End Sub
+
+    Private Sub PruebaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebaToolStripMenuItem.Click
+        Dim frmRpt As New frmReportOwner()
+        Dim rpd As New ReportDataSource("dsOwner", bs)
+        frmRpt.rpvOwner.LocalReport.DataSources.Clear()
+        frmRpt.rpvOwner.LocalReport.DataSources.Add(rpd)
+        frmRpt.rpvOwner.LocalReport.ReportEmbeddedResource = "Gesalt.rptOwner.rdlc"
+        frmRpt.rpvOwner.RefreshReport()
+        frmRpt.ShowDialog()
     End Sub
 End Class

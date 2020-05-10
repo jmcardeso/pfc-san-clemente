@@ -126,7 +126,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dgvOwners.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;dgvOwners.Name" xml:space="preserve">
     <value>dgvOwners</value>
@@ -173,6 +173,12 @@
   <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Owners</value>
   </data>
+  <data name="PruebaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
+    <value>prueba</value>
+  </data>
   <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
   </data>
@@ -192,7 +198,7 @@
     <value>800, 24</value>
   </data>
   <data name="mnsOwners.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="mnsOwners.Text" xml:space="preserve">
     <value>MenuStrip1</value>
@@ -330,7 +336,7 @@
     <value>800, 25</value>
   </data>
   <data name="tlsOwners.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="tlsOwners.Text" xml:space="preserve">
     <value>ToolStrip1</value>
@@ -1919,6 +1925,12 @@
   </data>
   <data name="&gt;&gt;ToolStripExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PruebaToolStripMenuItem.Name" xml:space="preserve">
+    <value>PruebaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;PruebaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmOwners</value>

@@ -28,7 +28,7 @@ Partial Class frmOwnersFilter
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(623, 415)
+        Me.btnCancel.Location = New System.Drawing.Point(670, 260)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 0
@@ -37,7 +37,7 @@ Partial Class frmOwnersFilter
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(713, 415)
+        Me.btnOK.Location = New System.Drawing.Point(760, 260)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.TabIndex = 1
@@ -48,7 +48,7 @@ Partial Class frmOwnersFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(847, 295)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.btnCancel)
         Me.MaximizeBox = False

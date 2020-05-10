@@ -457,7 +457,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxLastName.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tbxLastName.Name" xml:space="preserve">
     <value>tbxLastName</value>
@@ -478,7 +478,7 @@
     <value>308, 20</value>
   </data>
   <data name="tbxEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;tbxEmail.Name" xml:space="preserve">
     <value>tbxEmail</value>
@@ -499,7 +499,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxPhone.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;tbxPhone.Name" xml:space="preserve">
     <value>tbxPhone</value>
@@ -520,7 +520,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxProvince.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;tbxProvince.Name" xml:space="preserve">
     <value>tbxProvince</value>
@@ -541,7 +541,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxCity.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;tbxCity.Name" xml:space="preserve">
     <value>tbxCity</value>
@@ -562,7 +562,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;tbxAddress.Name" xml:space="preserve">
     <value>tbxAddress</value>
@@ -583,7 +583,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxZip.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;tbxZip.Name" xml:space="preserve">
     <value>tbxZip</value>
@@ -604,7 +604,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxType.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tbxType.Name" xml:space="preserve">
     <value>tbxType</value>
@@ -625,7 +625,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxNif.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tbxNif.Name" xml:space="preserve">
     <value>tbxNif</value>
@@ -646,7 +646,7 @@
     <value>307, 20</value>
   </data>
   <data name="tbxFirstName.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;tbxFirstName.Name" xml:space="preserve">
     <value>tbxFirstName</value>
@@ -667,7 +667,7 @@
     <value>75, 23</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
+    <value>11</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -694,7 +694,7 @@
     <value>75, 23</value>
   </data>
   <data name="bntCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
+    <value>12</value>
   </data>
   <data name="bntCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -742,7 +742,7 @@
     <value>39, 26</value>
   </data>
   <data name="btnAddLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>10</value>
   </data>
   <data name="btnAddLogo.Text" xml:space="preserve">
     <value>...</value>
