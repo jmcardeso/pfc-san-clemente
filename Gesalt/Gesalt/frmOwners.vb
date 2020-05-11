@@ -2,7 +2,7 @@
 Imports Microsoft.Reporting.WinForms
 
 Public Class frmOwners
-    Dim opOwner As OpOwner = OpOwner.GetInstance()
+    Dim opOwner As OpOwner = opOwner.GetInstance()
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwners).Assembly)
     Dim bs As New BindingSource()
     Dim owners As New List(Of Owner)
@@ -67,8 +67,6 @@ Public Class frmOwners
         Catch err As Net.Sockets.SocketException
             MsgBox(err.Message)
             Close()
-        Finally
-
         End Try
     End Sub
 
