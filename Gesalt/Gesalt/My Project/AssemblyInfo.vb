@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 ' Revisar los valores de los atributos del ensamblado
 
 <Assembly: AssemblyTitle("Gesalt")>
-<Assembly: AssemblyDescription("Prueba de descripción de info de ensamblado")>
+<Assembly: AssemblyDescription("Gestión de alquileres turísticos.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Gesalt")>
 <Assembly: AssemblyCopyright("Copyright © Juan Manuel Cardeso García 2020")>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' mediante el carácter '*', como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.3.2.181")>
-<Assembly: AssemblyFileVersion("0.3.2.181")>
+<Assembly: AssemblyVersion("0.3.3.200")>
+<Assembly: AssemblyFileVersion("0.3.3.200")>
 <Assembly: NeutralResourcesLanguage("en")>

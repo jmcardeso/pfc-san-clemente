@@ -751,7 +751,7 @@
     <value>307, 21</value>
   </data>
   <data name="cbxType.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbxType.Name" xml:space="preserve">
     <value>cbxType</value>

@@ -192,12 +192,7 @@ Public Class frmOwners
             New ReportParameter("p_rptOwnersFieldLastName", LocRM.GetString("fieldLastName")),
             New ReportParameter("p_rptOwnersFieldFirstName", LocRM.GetString("fieldFirstName")),
             New ReportParameter("p_rptOwnersFieldNif", LocRM.GetString("fieldNif")),
-            New ReportParameter("p_rptOwnersFieldAddress", LocRM.GetString("fieldAddress")),
-            New ReportParameter("p_rptOwnersFieldCity", LocRM.GetString("fieldCity")),
-            New ReportParameter("p_rptOwnersFieldZip", LocRM.GetString("fieldZip")),
-            New ReportParameter("p_rptOwnersFieldProvince", LocRM.GetString("fieldProvince")),
-            New ReportParameter("p_rptOwnersFieldPhone", LocRM.GetString("fieldPhone")),
-            New ReportParameter("p_rptOwnersFieldEmail", LocRM.GetString("fieldEmail"))
+            New ReportParameter("p_rptOwnersFieldPhone", LocRM.GetString("fieldPhone"))
         }
 
         frmRpt.rpvOwner.LocalReport.DataSources.Clear()

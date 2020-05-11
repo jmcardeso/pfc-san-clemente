@@ -36,6 +36,10 @@ Public Class frmOwnersAux
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+        If Not ValidateFields() Then
+            Exit Sub
+        End If
+
         editOwner = Utils.DeepClone(ownerAux)
         Me.DialogResult = DialogResult.OK
     End Sub
@@ -55,4 +59,29 @@ Public Class frmOwnersAux
             ownerAux.PathLogo = ofdLogo.FileName
         End If
     End Sub
+
+    Private Function ValidateFields() As Boolean
+        Dim result As Boolean = True
+        Dim fieldName As String = ""
+
+        If cbxType.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldType")
+            result = False
+        ElseIf tbxLastName.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldLastName")
+            result = False
+        ElseIf tbxFirstName.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldFirstName")
+            result = False
+        ElseIf tbxNif.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldNif")
+            result = False
+        End If
+
+        If Not result Then
+            MsgBox(fieldName & ". " & LocRM.GetString("fieldRequired"), MsgBoxStyle.Exclamation, "Gesalt")
+        End If
+
+        Return result
+    End Function
 End Class

@@ -254,4 +254,7 @@
   <data name="rptOwnersHeaderTitle" xml:space="preserve">
     <value>Owners Report</value>
   </data>
+  <data name="fieldRequired" xml:space="preserve">
+    <value>This field is required</value>
+  </data>
 </root>

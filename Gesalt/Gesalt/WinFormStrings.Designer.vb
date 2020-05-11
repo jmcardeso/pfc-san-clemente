@@ -308,6 +308,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a This field is required.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldRequired() As String
+            Get
+                Return ResourceManager.GetString("fieldRequired", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Type.
         '''</summary>
         Friend Shared ReadOnly Property fieldType() As String

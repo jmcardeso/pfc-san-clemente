@@ -207,7 +207,7 @@ Public Class frmOwnersFilter
 
                     Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i, True)(0)
 
-                    If VTextBox.TextLength = 0 Then
+                    If VTextBox.TextLength = 0 And (controlIndex = TYPE Or controlIndex = NIF Or controlIndex = LAST_NAME Or controlIndex = FIRST_NAME) Then
                         VTextBox.BackColor = Color.Red
                         FilterOK = False
                     Else

@@ -144,9 +144,6 @@
   <data name="tbpLogin.Text" xml:space="preserve">
     <value>Base de datos</value>
   </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>La aplicación se reiniciará.</value>
-  </data>
   <data name="cbxSSH.Text" xml:space="preserve">
     <value>Túnel SSH</value>
   </data>

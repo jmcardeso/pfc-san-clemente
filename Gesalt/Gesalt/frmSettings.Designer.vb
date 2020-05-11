@@ -52,7 +52,6 @@ Partial Class frmSettings
         Me.tbxUser = New System.Windows.Forms.TextBox()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.tbpLanguage = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.rbEnglish = New System.Windows.Forms.RadioButton()
         Me.rbSpanish = New System.Windows.Forms.RadioButton()
         Me.rbGalician = New System.Windows.Forms.RadioButton()
@@ -253,7 +252,6 @@ Partial Class frmSettings
         '
         'tbpLanguage
         '
-        Me.tbpLanguage.Controls.Add(Me.Label1)
         Me.tbpLanguage.Controls.Add(Me.rbEnglish)
         Me.tbpLanguage.Controls.Add(Me.rbSpanish)
         Me.tbpLanguage.Controls.Add(Me.rbGalician)
@@ -261,11 +259,6 @@ Partial Class frmSettings
         resources.ApplyResources(Me.tbpLanguage, "tbpLanguage")
         Me.tbpLanguage.Name = "tbpLanguage"
         Me.tbpLanguage.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
         '
         'rbEnglish
         '
@@ -327,7 +320,6 @@ Partial Class frmSettings
     Friend WithEvents rbSpanish As RadioButton
     Friend WithEvents rbGalician As RadioButton
     Friend WithEvents lblIdioma As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents tbxUser As TextBox
     Friend WithEvents lblUser As Label
     Friend WithEvents tbxPass As TextBox
