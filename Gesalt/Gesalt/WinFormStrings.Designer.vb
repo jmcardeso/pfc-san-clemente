@@ -488,6 +488,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Owners Report.
+        '''</summary>
+        Friend Shared ReadOnly Property rptOwnersHeaderTitle() As String
+            Get
+                Return ResourceManager.GetString("rptOwnersHeaderTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Starts with.
         '''</summary>
         Friend Shared ReadOnly Property StartsWith() As String

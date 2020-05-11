@@ -181,12 +181,29 @@ Public Class frmOwners
         Close()
     End Sub
 
-    Private Sub PruebaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebaToolStripMenuItem.Click
+    Private Sub OwnersReport_Click(sender As Object, e As EventArgs) Handles PruebaToolStripMenuItem.Click, OwnersReportToolStripMenuItem.Click
         Dim frmRpt As New frmReportOwner()
         Dim rpd As New ReportDataSource("dsOwner", bs)
+        Dim parameters As New List(Of ReportParameter) From {
+            New ReportParameter("p_RptOwnersHeaderTitle", LocRM.GetString("rptOwnersHeaderTitle")),
+            New ReportParameter("p_RptOwnersHeaderSubtitle",
+                                If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuON")), lblFilter.Text, " ")),
+            New ReportParameter("p_rptOwnersFieldType", LocRM.GetString("fieldType")),
+            New ReportParameter("p_rptOwnersFieldLastName", LocRM.GetString("fieldLastName")),
+            New ReportParameter("p_rptOwnersFieldFirstName", LocRM.GetString("fieldFirstName")),
+            New ReportParameter("p_rptOwnersFieldNif", LocRM.GetString("fieldNif")),
+            New ReportParameter("p_rptOwnersFieldAddress", LocRM.GetString("fieldAddress")),
+            New ReportParameter("p_rptOwnersFieldCity", LocRM.GetString("fieldCity")),
+            New ReportParameter("p_rptOwnersFieldZip", LocRM.GetString("fieldZip")),
+            New ReportParameter("p_rptOwnersFieldProvince", LocRM.GetString("fieldProvince")),
+            New ReportParameter("p_rptOwnersFieldPhone", LocRM.GetString("fieldPhone")),
+            New ReportParameter("p_rptOwnersFieldEmail", LocRM.GetString("fieldEmail"))
+        }
+
         frmRpt.rpvOwner.LocalReport.DataSources.Clear()
         frmRpt.rpvOwner.LocalReport.DataSources.Add(rpd)
         frmRpt.rpvOwner.LocalReport.ReportEmbeddedResource = "Gesalt.rptOwner.rdlc"
+        frmRpt.rpvOwner.LocalReport.SetParameters(parameters)
         frmRpt.rpvOwner.RefreshReport()
         frmRpt.ShowDialog()
     End Sub

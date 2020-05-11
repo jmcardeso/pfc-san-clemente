@@ -74,6 +74,32 @@ Public Class OpOwner
     End Function
 
     ''' <summary>
+    ''' Obtiene una lista de valores únicos del campo type de la tabla owner de la base de datos.
+    ''' </summary>
+    ''' <returns>Lista con los valores del campo type de la tabla owner de la base de datos.</returns>
+    Public Function GetOwnersType() As List(Of String)
+        Dim types As New List(Of String)
+
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        sqlCommand.CommandText = "select distinct type from owner order by type"
+        sqlCommand.Connection = con.Con
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        For Each dr As DataRow In dt.Rows
+            types.Add(dr.Item(0))
+        Next
+
+        Return types
+    End Function
+
+    ''' <summary>
     ''' Borra una fila de datos de la tabla owner de la base de datos.
     ''' </summary>
     ''' <param name="owner">El objeto de la clase <c>Owner</c> que se va a borrar de la tabla owner de la base de datos.</param>

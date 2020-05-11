@@ -225,4 +225,10 @@
   <data name="ToolStripAdd.Text" xml:space="preserve">
     <value>Añadir propietario</value>
   </data>
+  <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Informe de propietarios</value>
+  </data>
+  <data name="OwnersReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Informe de propietarios</value>
+  </data>
 </root>

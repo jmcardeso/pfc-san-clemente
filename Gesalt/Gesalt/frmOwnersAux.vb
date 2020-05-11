@@ -6,6 +6,8 @@ Public Class frmOwnersAux
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwnersAux).Assembly)
 
     Private Sub frmOwnersAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim opOwner As OpOwner = OpOwner.GetInstance()
+        Dim types As New List(Of String)
 
         If editOwner IsNot Nothing Then
             Me.Text = LocRM.GetString("editOwnerTitle")
@@ -14,6 +16,11 @@ Public Class frmOwnersAux
         End If
 
         ownerAux = Utils.DeepClone(editOwner)
+
+        types = opOwner.GetOwnersType()
+        For Each t As String In types
+            cbxType.Items.Add(t)
+        Next
 
         tbxLastName.DataBindings.Add("Text", ownerAux, "LastName")
         tbxFirstName.DataBindings.Add("Text", ownerAux, "FirstName")
@@ -24,7 +31,7 @@ Public Class frmOwnersAux
         tbxNif.DataBindings.Add("Text", ownerAux, "Nif")
         tbxPhone.DataBindings.Add("Text", ownerAux, "Phone")
         tbxProvince.DataBindings.Add("Text", ownerAux, "Province")
-        tbxType.DataBindings.Add("Text", ownerAux, "Type")
+        cbxType.DataBindings.Add("Text", ownerAux, "Type")
         tbxZip.DataBindings.Add("Text", ownerAux, "Zip")
     End Sub
 

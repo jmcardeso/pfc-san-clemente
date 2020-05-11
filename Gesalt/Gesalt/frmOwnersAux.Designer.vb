@@ -41,7 +41,6 @@ Partial Class frmOwnersAux
         Me.tbxCity = New System.Windows.Forms.TextBox()
         Me.tbxAddress = New System.Windows.Forms.TextBox()
         Me.tbxZip = New System.Windows.Forms.TextBox()
-        Me.tbxType = New System.Windows.Forms.TextBox()
         Me.tbxNif = New System.Windows.Forms.TextBox()
         Me.tbxFirstName = New System.Windows.Forms.TextBox()
         Me.btnOK = New System.Windows.Forms.Button()
@@ -49,6 +48,7 @@ Partial Class frmOwnersAux
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
         Me.btnAddLogo = New System.Windows.Forms.Button()
         Me.ofdLogo = New System.Windows.Forms.OpenFileDialog()
+        Me.cbxType = New System.Windows.Forms.ComboBox()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -142,11 +142,6 @@ Partial Class frmOwnersAux
         resources.ApplyResources(Me.tbxZip, "tbxZip")
         Me.tbxZip.Name = "tbxZip"
         '
-        'tbxType
-        '
-        resources.ApplyResources(Me.tbxType, "tbxType")
-        Me.tbxType.Name = "tbxType"
-        '
         'tbxNif
         '
         resources.ApplyResources(Me.tbxNif, "tbxNif")
@@ -186,19 +181,25 @@ Partial Class frmOwnersAux
         '
         Me.ofdLogo.FileName = "OpenFileDialog1"
         '
+        'cbxType
+        '
+        Me.cbxType.FormattingEnabled = True
+        resources.ApplyResources(Me.cbxType, "cbxType")
+        Me.cbxType.Name = "cbxType"
+        '
         'frmOwnersAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.cbxType)
         Me.Controls.Add(Me.btnAddLogo)
         Me.Controls.Add(Me.pbxLogo)
         Me.Controls.Add(Me.bntCancel)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.tbxFirstName)
         Me.Controls.Add(Me.tbxNif)
-        Me.Controls.Add(Me.tbxType)
         Me.Controls.Add(Me.tbxZip)
         Me.Controls.Add(Me.tbxAddress)
         Me.Controls.Add(Me.tbxCity)
@@ -243,7 +244,6 @@ Partial Class frmOwnersAux
     Friend WithEvents tbxCity As TextBox
     Friend WithEvents tbxAddress As TextBox
     Friend WithEvents tbxZip As TextBox
-    Friend WithEvents tbxType As TextBox
     Friend WithEvents tbxNif As TextBox
     Friend WithEvents tbxFirstName As TextBox
     Friend WithEvents btnOK As Button
@@ -251,4 +251,5 @@ Partial Class frmOwnersAux
     Friend WithEvents pbxLogo As PictureBox
     Friend WithEvents btnAddLogo As Button
     Friend WithEvents ofdLogo As OpenFileDialog
+    Friend WithEvents cbxType As ComboBox
 End Class

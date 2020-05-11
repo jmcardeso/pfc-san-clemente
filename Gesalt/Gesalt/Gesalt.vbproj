@@ -250,6 +250,12 @@
     <EmbeddedResource Include="frmOwnersFilter.resx">
       <DependentUpon>frmOwnersFilter.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportOwner.es.resx">
+      <DependentUpon>frmReportOwner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportOwner.gl.resx">
+      <DependentUpon>frmReportOwner.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.es.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>
     </EmbeddedResource>

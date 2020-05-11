@@ -143,6 +143,36 @@
   <metadata name="mnsOwners.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="mnsOwners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mnsOwners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 24</value>
+  </data>
+  <data name="mnsOwners.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mnsOwners.Text" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mnsOwners.Name" xml:space="preserve">
+    <value>mnsOwners</value>
+  </data>
+  <data name="&gt;&gt;mnsOwners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnsOwners.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mnsOwners.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="OwnersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Owners</value>
+  </data>
   <data name="AddAnOwnerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -167,53 +197,23 @@
   <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Filter data</value>
   </data>
-  <data name="OwnersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
-  </data>
-  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Owners</value>
-  </data>
-  <data name="PruebaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
-    <value>prueba</value>
-  </data>
   <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
   </data>
   <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Reports</value>
   </data>
+  <data name="PruebaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Owners Report</value>
+  </data>
   <data name="MailingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 20</value>
   </data>
   <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
     <value>Email &amp;Marketing</value>
-  </data>
-  <data name="mnsOwners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mnsOwners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 24</value>
-  </data>
-  <data name="mnsOwners.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mnsOwners.Text" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;mnsOwners.Name" xml:space="preserve">
-    <value>mnsOwners</value>
-  </data>
-  <data name="&gt;&gt;mnsOwners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnsOwners.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mnsOwners.ZOrder" xml:space="preserve">
-    <value>29</value>
   </data>
   <metadata name="tlsOwners.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
@@ -271,6 +271,12 @@
   </data>
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
+  </data>
+  <data name="OwnersReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OwnersReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Owners Report</value>
   </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1866,6 +1872,12 @@
   <data name="&gt;&gt;ReportsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;PruebaToolStripMenuItem.Name" xml:space="preserve">
+    <value>PruebaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;PruebaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;MailingToolStripMenuItem.Name" xml:space="preserve">
     <value>MailingToolStripMenuItem</value>
   </data>
@@ -1926,10 +1938,10 @@
   <data name="&gt;&gt;ToolStripExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PruebaToolStripMenuItem.Name" xml:space="preserve">
-    <value>PruebaToolStripMenuItem</value>
+  <data name="&gt;&gt;OwnersReportToolStripMenuItem.Name" xml:space="preserve">
+    <value>OwnersReportToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;PruebaToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OwnersReportToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -22,7 +22,7 @@ Partial Class frmOwners
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwners))
         Me.dgvOwners = New System.Windows.Forms.DataGridView()
         Me.mnsOwners = New System.Windows.Forms.MenuStrip()
@@ -32,6 +32,7 @@ Partial Class frmOwners
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FilterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MailingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsOwners = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -70,7 +71,7 @@ Partial Class frmOwners
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblFilter = New System.Windows.Forms.Label()
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
-        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OwnersReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsOwners.SuspendLayout()
         Me.tlsOwners.SuspendLayout()
@@ -81,8 +82,8 @@ Partial Class frmOwners
         '
         Me.dgvOwners.AllowUserToAddRows = False
         Me.dgvOwners.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvOwners, "dgvOwners")
         Me.dgvOwners.MultiSelect = False
@@ -129,6 +130,11 @@ Partial Class frmOwners
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         resources.ApplyResources(Me.ReportsToolStripMenuItem, "ReportsToolStripMenuItem")
         '
+        'PruebaToolStripMenuItem
+        '
+        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
+        resources.ApplyResources(Me.PruebaToolStripMenuItem, "PruebaToolStripMenuItem")
+        '
         'MailingToolStripMenuItem
         '
         Me.MailingToolStripMenuItem.Name = "MailingToolStripMenuItem"
@@ -166,6 +172,7 @@ Partial Class frmOwners
         'ToolStripReports
         '
         Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OwnersReportToolStripMenuItem})
         resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
         Me.ToolStripReports.Name = "ToolStripReports"
         '
@@ -331,10 +338,10 @@ Partial Class frmOwners
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.TabStop = False
         '
-        'PruebaToolStripMenuItem
+        'OwnersReportToolStripMenuItem
         '
-        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
-        resources.ApplyResources(Me.PruebaToolStripMenuItem, "PruebaToolStripMenuItem")
+        Me.OwnersReportToolStripMenuItem.Name = "OwnersReportToolStripMenuItem"
+        resources.ApplyResources(Me.OwnersReportToolStripMenuItem, "OwnersReportToolStripMenuItem")
         '
         'frmOwners
         '
@@ -430,4 +437,5 @@ Partial Class frmOwners
     Friend WithEvents ToolStripExit As ToolStripButton
     Friend WithEvents pbxLogo As PictureBox
     Friend WithEvents PruebaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OwnersReportToolStripMenuItem As ToolStripMenuItem
 End Class

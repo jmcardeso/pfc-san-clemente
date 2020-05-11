@@ -23,36 +23,33 @@ Partial Class frmReportOwner
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReportOwner))
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.OwnerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rpvOwner = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.OwnerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.OwnerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'rpvOwner
+        '
+        resources.ApplyResources(Me.rpvOwner, "rpvOwner")
+        ReportDataSource1.Name = "dsOwner"
+        ReportDataSource1.Value = Me.OwnerBindingSource
+        Me.rpvOwner.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.rpvOwner.LocalReport.ReportEmbeddedResource = "Gesalt.rptOwner.rdlc"
+        Me.rpvOwner.Name = "rpvOwner"
+        Me.rpvOwner.ServerReport.BearerToken = Nothing
         '
         'OwnerBindingSource
         '
         Me.OwnerBindingSource.DataSource = GetType(Gesalt.Owner)
         '
-        'rpvOwner
-        '
-        ReportDataSource1.Name = "dsOwner"
-        ReportDataSource1.Value = Me.OwnerBindingSource
-        Me.rpvOwner.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.rpvOwner.LocalReport.ReportEmbeddedResource = "Gesalt.rptOwner.rdlc"
-        Me.rpvOwner.Location = New System.Drawing.Point(12, 12)
-        Me.rpvOwner.Name = "rpvOwner"
-        Me.rpvOwner.ServerReport.BearerToken = Nothing
-        Me.rpvOwner.Size = New System.Drawing.Size(776, 426)
-        Me.rpvOwner.TabIndex = 0
-        '
         'frmReportOwner
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.rpvOwner)
         Me.Name = "frmReportOwner"
-        Me.Text = "frmReportOwner"
         CType(Me.OwnerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

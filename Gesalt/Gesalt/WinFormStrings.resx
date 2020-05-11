@@ -251,4 +251,7 @@
   <data name="ofdLogoFilter" xml:space="preserve">
     <value>JPG files (*.jpg)|*.jpg|All files (*.*)|*.*</value>
   </data>
+  <data name="rptOwnersHeaderTitle" xml:space="preserve">
+    <value>Owners Report</value>
+  </data>
 </root>
