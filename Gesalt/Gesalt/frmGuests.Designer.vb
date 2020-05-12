@@ -22,7 +22,7 @@ Partial Class frmGuests
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGuests))
         Me.dgvGuests = New System.Windows.Forms.DataGridView()
         Me.mnsGuests = New System.Windows.Forms.MenuStrip()
@@ -34,14 +34,8 @@ Partial Class frmGuests
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsGuests = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.GuestsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
         Me.btnFirst = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
@@ -68,17 +62,34 @@ Partial Class frmGuests
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cbxAcceptAd = New System.Windows.Forms.CheckBox()
+        Me.pbxRating5 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating4 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating3 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating2 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating1 = New System.Windows.Forms.PictureBox()
+        Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.GuestsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
+        Me.lblComments = New System.Windows.Forms.Label()
         CType(Me.dgvGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsGuests.SuspendLayout()
         Me.tlsGuests.SuspendLayout()
+        CType(Me.pbxRating5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxRating4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxRating3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxRating2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxRating1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvGuests
         '
         Me.dgvGuests.AllowUserToAddRows = False
         Me.dgvGuests.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvGuests.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvGuests.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvGuests, "dgvGuests")
         Me.dgvGuests.MultiSelect = False
@@ -136,51 +147,15 @@ Partial Class frmGuests
         resources.ApplyResources(Me.tlsGuests, "tlsGuests")
         Me.tlsGuests.Name = "tlsGuests"
         '
-        'ToolStripAdd
-        '
-        Me.ToolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripAdd, "ToolStripAdd")
-        Me.ToolStripAdd.Name = "ToolStripAdd"
-        '
-        'ToolStripEdit
-        '
-        Me.ToolStripEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripEdit, "ToolStripEdit")
-        Me.ToolStripEdit.Name = "ToolStripEdit"
-        '
-        'ToolStripDelete
-        '
-        Me.ToolStripDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripDelete, "ToolStripDelete")
-        Me.ToolStripDelete.Name = "ToolStripDelete"
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
         '
-        'ToolStripReports
-        '
-        Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GuestsReportToolStripMenuItem})
-        resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
-        Me.ToolStripReports.Name = "ToolStripReports"
-        '
-        'GuestsReportToolStripMenuItem
-        '
-        Me.GuestsReportToolStripMenuItem.Name = "GuestsReportToolStripMenuItem"
-        resources.ApplyResources(Me.GuestsReportToolStripMenuItem, "GuestsReportToolStripMenuItem")
-        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
-        '
-        'ToolStripExit
-        '
-        Me.ToolStripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripExit, "ToolStripExit")
-        Me.ToolStripExit.Name = "ToolStripExit"
         '
         'btnFirst
         '
@@ -317,10 +292,92 @@ Partial Class frmGuests
         Me.cbxAcceptAd.Name = "cbxAcceptAd"
         Me.cbxAcceptAd.UseVisualStyleBackColor = True
         '
+        'pbxRating5
+        '
+        Me.pbxRating5.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating5, "pbxRating5")
+        Me.pbxRating5.Name = "pbxRating5"
+        Me.pbxRating5.TabStop = False
+        '
+        'pbxRating4
+        '
+        Me.pbxRating4.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating4, "pbxRating4")
+        Me.pbxRating4.Name = "pbxRating4"
+        Me.pbxRating4.TabStop = False
+        '
+        'pbxRating3
+        '
+        Me.pbxRating3.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating3, "pbxRating3")
+        Me.pbxRating3.Name = "pbxRating3"
+        Me.pbxRating3.TabStop = False
+        '
+        'pbxRating2
+        '
+        Me.pbxRating2.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating2, "pbxRating2")
+        Me.pbxRating2.Name = "pbxRating2"
+        Me.pbxRating2.TabStop = False
+        '
+        'pbxRating1
+        '
+        Me.pbxRating1.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating1, "pbxRating1")
+        Me.pbxRating1.Name = "pbxRating1"
+        Me.pbxRating1.TabStop = False
+        '
+        'ToolStripAdd
+        '
+        Me.ToolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripAdd, "ToolStripAdd")
+        Me.ToolStripAdd.Name = "ToolStripAdd"
+        '
+        'ToolStripEdit
+        '
+        Me.ToolStripEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripEdit, "ToolStripEdit")
+        Me.ToolStripEdit.Name = "ToolStripEdit"
+        '
+        'ToolStripDelete
+        '
+        Me.ToolStripDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripDelete, "ToolStripDelete")
+        Me.ToolStripDelete.Name = "ToolStripDelete"
+        '
+        'ToolStripReports
+        '
+        Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GuestsReportToolStripMenuItem})
+        resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
+        Me.ToolStripReports.Name = "ToolStripReports"
+        '
+        'GuestsReportToolStripMenuItem
+        '
+        Me.GuestsReportToolStripMenuItem.Name = "GuestsReportToolStripMenuItem"
+        resources.ApplyResources(Me.GuestsReportToolStripMenuItem, "GuestsReportToolStripMenuItem")
+        '
+        'ToolStripExit
+        '
+        Me.ToolStripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripExit, "ToolStripExit")
+        Me.ToolStripExit.Name = "ToolStripExit"
+        '
+        'lblComments
+        '
+        resources.ApplyResources(Me.lblComments, "lblComments")
+        Me.lblComments.Name = "lblComments"
+        '
         'frmGuests
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblComments)
+        Me.Controls.Add(Me.pbxRating5)
+        Me.Controls.Add(Me.pbxRating4)
+        Me.Controls.Add(Me.pbxRating3)
+        Me.Controls.Add(Me.pbxRating2)
+        Me.Controls.Add(Me.pbxRating1)
         Me.Controls.Add(Me.cbxAcceptAd)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label2)
@@ -357,6 +414,11 @@ Partial Class frmGuests
         Me.mnsGuests.PerformLayout()
         Me.tlsGuests.ResumeLayout(False)
         Me.tlsGuests.PerformLayout()
+        CType(Me.pbxRating5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxRating4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxRating3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxRating2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxRating1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -406,4 +468,10 @@ Partial Class frmGuests
     Friend WithEvents Label2 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents cbxAcceptAd As CheckBox
+    Friend WithEvents pbxRating1 As PictureBox
+    Friend WithEvents pbxRating2 As PictureBox
+    Friend WithEvents pbxRating3 As PictureBox
+    Friend WithEvents pbxRating4 As PictureBox
+    Friend WithEvents pbxRating5 As PictureBox
+    Friend WithEvents lblComments As Label
 End Class

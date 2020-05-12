@@ -17,10 +17,10 @@ Public Class frmGuestsAux
 
         GuestAux = Utils.DeepClone(editGuest)
 
-        types = opGuest.GetGuestsType()
-        For Each t As String In types
-            cbxType.Items.Add(t)
-        Next
+        'types = opGuest.GetGuestsType()
+        'For Each t As String In types
+        '    cbxType.Items.Add(t)
+        'Next
 
         tbxLastName.DataBindings.Add("Text", GuestAux, "LastName")
         tbxFirstName.DataBindings.Add("Text", GuestAux, "FirstName")
@@ -54,10 +54,10 @@ Public Class frmGuestsAux
         ofdLogo.FileName = ""
         ofdLogo.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures
 
-        If ofdLogo.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            pbxLogo.Image = Image.FromFile(ofdLogo.FileName)
-            GuestAux.PathLogo = ofdLogo.FileName
-        End If
+        'If ofdLogo.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+        '    pbxLogo.Image = Image.FromFile(ofdLogo.FileName)
+        '    GuestAux.PathLogo = ofdLogo.FileName
+        'End If
     End Sub
 
     Private Function ValidateFields() As Boolean

@@ -50,11 +50,11 @@ Public Class frmGuests
             lblAddress.DataBindings.Add("Text", bs, "Address")
             lblCity.DataBindings.Add("Text", bs, "City")
             lblEmail.DataBindings.Add("Text", bs, "Email")
-            pbxLogo.DataBindings.Add("ImageLocation", bs, "PathLogo")
+            '   pbxLogo.DataBindings.Add("ImageLocation", bs, "PathLogo")
             lblNif.DataBindings.Add("Text", bs, "Nif")
             lblPhone.DataBindings.Add("Text", bs, "Phone")
             lblProvince.DataBindings.Add("Text", bs, "Province")
-            lblType.DataBindings.Add("Text", bs, "Type")
+            '  lblType.DataBindings.Add("Text", bs, "Type")
             lblZip.DataBindings.Add("Text", bs, "Zip")
         Catch err As InvalidOperationException
             MsgBox(err.Message)

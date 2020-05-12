@@ -352,7 +352,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSources\Owner.datasource" />
+    <None Include="My Project\DataSources\Owner.datasource" />
+    <None Include="My Project\DataSources\Guest.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -365,6 +366,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gesalt.ico" />
+    <None Include="Resources\star-off.png" />
+    <None Include="Resources\star-on.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

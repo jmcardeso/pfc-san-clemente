@@ -25,10 +25,14 @@ Partial Class frmReportGuest
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReportGuest))
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.rpvGuest = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.GuestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.rpvGuest = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.GuestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'GuestBindingSource
+        '
+        Me.GuestBindingSource.DataSource = GetType(Gesalt.Guest)
         '
         'rpvGuest
         '
@@ -39,10 +43,6 @@ Partial Class frmReportGuest
         Me.rpvGuest.LocalReport.ReportEmbeddedResource = "Gesalt.rptGuest.rdlc"
         Me.rpvGuest.Name = "rpvGuest"
         Me.rpvGuest.ServerReport.BearerToken = Nothing
-        '
-        'GuestBindingSource
-        '
-        Me.GuestBindingSource.DataSource = GetType(Gesalt.Guest)
         '
         'frmReportGuest
         '

@@ -132,9 +132,6 @@
   <data name="Label12.Text" xml:space="preserve">
     <value>Nome:</value>
   </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Logo:</value>
-  </data>
   <data name="Label4.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -177,9 +174,6 @@
   <data name="lblProvince.Text" xml:space="preserve">
     <value>&lt;Baleiro&gt;</value>
   </data>
-  <data name="lblType.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
-  </data>
   <data name="lblZip.Text" xml:space="preserve">
     <value>&lt;Baleiro&gt;</value>
   </data>
@@ -189,17 +183,8 @@
   <data name="EditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Modificar</value>
   </data>
-  <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
-    <value>M&amp;ailing</value>
-  </data>
-  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Propietarios</value>
-  </data>
   <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Informes</value>
-  </data>
-  <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Engadir</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>Propietarios:</value>
@@ -216,9 +201,6 @@
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Sair</value>
   </data>
-  <data name="ToolStripMailing.Text" xml:space="preserve">
-    <value>Mailing</value>
-  </data>
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Informes</value>
   </data>
@@ -226,9 +208,15 @@
     <value>Engadir propietario</value>
   </data>
   <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informe de propietarios</value>
+    <value>Informe de clientes</value>
   </data>
-  <data name="OwnersReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informe de propietarios</value>
+  <data name="AddAGuestToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Engadir</value>
+  </data>
+  <data name="GuestsReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Informe de clientes</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Valoración:</value>
   </data>
 </root>
