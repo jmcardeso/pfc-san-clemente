@@ -257,4 +257,19 @@
   <data name="fieldRequired" xml:space="preserve">
     <value>Este campo es requerido</value>
   </data>
+  <data name="fieldComments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="fieldRating" xml:space="preserve">
+    <value>Valoración</value>
+  </data>
+  <data name="fieldAcceptAd" xml:space="preserve">
+    <value>Acepta publicidad</value>
+  </data>
+  <data name="filterGuestAcceptAdTrue" xml:space="preserve">
+    <value>El cliente acepta publicidad</value>
+  </data>
+  <data name="fieldGuestAcceptAdFalse" xml:space="preserve">
+    <value>El cliente no acepta publicidad</value>
+  </data>
 </root>

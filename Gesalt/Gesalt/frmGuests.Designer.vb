@@ -74,6 +74,7 @@ Partial Class frmGuests
         Me.GuestsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
         Me.lblComments = New System.Windows.Forms.Label()
+        Me.lblRating = New System.Windows.Forms.Label()
         CType(Me.dgvGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsGuests.SuspendLayout()
         Me.tlsGuests.SuspendLayout()
@@ -368,10 +369,16 @@ Partial Class frmGuests
         resources.ApplyResources(Me.lblComments, "lblComments")
         Me.lblComments.Name = "lblComments"
         '
+        'lblRating
+        '
+        resources.ApplyResources(Me.lblRating, "lblRating")
+        Me.lblRating.Name = "lblRating"
+        '
         'frmGuests
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblRating)
         Me.Controls.Add(Me.lblComments)
         Me.Controls.Add(Me.pbxRating5)
         Me.Controls.Add(Me.pbxRating4)
@@ -474,4 +481,5 @@ Partial Class frmGuests
     Friend WithEvents pbxRating4 As PictureBox
     Friend WithEvents pbxRating5 As PictureBox
     Friend WithEvents lblComments As Label
+    Friend WithEvents lblRating As Label
 End Class

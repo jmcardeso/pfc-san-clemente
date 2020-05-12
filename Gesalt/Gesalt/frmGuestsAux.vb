@@ -17,22 +17,18 @@ Public Class frmGuestsAux
 
         GuestAux = Utils.DeepClone(editGuest)
 
-        'types = opGuest.GetGuestsType()
-        'For Each t As String In types
-        '    cbxType.Items.Add(t)
-        'Next
-
         tbxLastName.DataBindings.Add("Text", GuestAux, "LastName")
         tbxFirstName.DataBindings.Add("Text", GuestAux, "FirstName")
         tbxAddress.DataBindings.Add("Text", GuestAux, "Address")
         tbxCity.DataBindings.Add("Text", GuestAux, "City")
         tbxEmail.DataBindings.Add("Text", GuestAux, "Email")
-        pbxLogo.DataBindings.Add("ImageLocation", GuestAux, "PathLogo")
         tbxNif.DataBindings.Add("Text", GuestAux, "Nif")
         tbxPhone.DataBindings.Add("Text", GuestAux, "Phone")
         tbxProvince.DataBindings.Add("Text", GuestAux, "Province")
-        cbxType.DataBindings.Add("Text", GuestAux, "Type")
+        lblRating.DataBindings.Add("Text", GuestAux, "Rating")
         tbxZip.DataBindings.Add("Text", GuestAux, "Zip")
+        tbxComments.DataBindings.Add("Text", GuestAux, "Comments")
+        cbxAcceptAd.DataBindings.Add("Checked", GuestAux, "AcceptAd")
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -48,26 +44,11 @@ Public Class frmGuestsAux
         Me.DialogResult = DialogResult.Cancel
     End Sub
 
-    Private Sub btnAddLogo_Click(sender As Object, e As EventArgs) Handles btnAddLogo.Click
-        ofdLogo.Filter = LocRM.GetString("ofdLogoFilter")
-        ofdLogo.FilterIndex = 1
-        ofdLogo.FileName = ""
-        ofdLogo.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures
-
-        'If ofdLogo.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-        '    pbxLogo.Image = Image.FromFile(ofdLogo.FileName)
-        '    GuestAux.PathLogo = ofdLogo.FileName
-        'End If
-    End Sub
-
     Private Function ValidateFields() As Boolean
         Dim result As Boolean = True
         Dim fieldName As String = ""
 
-        If cbxType.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldType")
-            result = False
-        ElseIf tbxLastName.Text.Trim.Length = 0 Then
+        If tbxLastName.Text.Trim.Length = 0 Then
             fieldName = LocRM.GetString("fieldLastName")
             result = False
         ElseIf tbxFirstName.Text.Trim.Length = 0 Then
@@ -84,4 +65,8 @@ Public Class frmGuestsAux
 
         Return result
     End Function
+
+    Private Sub lblRating_BindingContextChanged(sender As Object, e As EventArgs) Handles lblRating.BindingContextChanged
+
+    End Sub
 End Class

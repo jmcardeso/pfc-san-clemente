@@ -37,7 +37,7 @@ Public Class OpGuest
     ''' <param name="sql">Opcional. Cadena de texto con la sentencia de selección de la tabla guest de la base de datos.</param>
     ''' <param name="parameters">Opcional. Colección de parámetros para la sentencia de selección de la tabla guest de la base de datos.</param>
     ''' <returns>Lista con los objetos de la case <c>guest</c> obtenidos de la tabla guest de la base de datos.</returns>
-    Public Function Getguests(Optional sql As String = "select * from guest order by last_name",
+    Public Function GetGuests(Optional sql As String = "select * from guest order by last_name",
                                  Optional parameters As List(Of DbParameter) = Nothing) As List(Of Guest)
         Dim guests As New List(Of Guest)
         Dim guest As Guest
@@ -79,7 +79,7 @@ Public Class OpGuest
     ''' </summary>
     ''' <param name="guest">El objeto de la clase <c>guest</c> que se va a borrar de la tabla guest de la base de datos.</param>
     ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function Deleteguest(guest As Guest) As Boolean
+    Public Function DeleteGuest(guest As Guest) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
@@ -124,7 +124,7 @@ Public Class OpGuest
     ''' </summary>
     ''' <param name="guest">El objeto de la clase <c>guest</c> que se va a añadir en la tabla guest de la base de datos.</param>
     ''' <returns><c>True</c> si la inserción ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function Addguest(guest As Guest) As Boolean
+    Public Function AddGuest(guest As Guest) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
@@ -163,7 +163,7 @@ Public Class OpGuest
     ''' </summary>
     ''' <param name="guest">El objeto de la clase <c>guest</c> que se va a modificar en la tabla guest de la base de datos.</param>
     ''' <returns><c>True</c> si la modificación ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function Updateguest(guest As Guest) As Boolean
+    Public Function UpdateGuest(guest As Guest) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder

@@ -50,12 +50,13 @@ Public Class frmGuests
             lblAddress.DataBindings.Add("Text", bs, "Address")
             lblCity.DataBindings.Add("Text", bs, "City")
             lblEmail.DataBindings.Add("Text", bs, "Email")
-            '   pbxLogo.DataBindings.Add("ImageLocation", bs, "PathLogo")
+            lblRating.DataBindings.Add("Text", bs, "Rating")
             lblNif.DataBindings.Add("Text", bs, "Nif")
             lblPhone.DataBindings.Add("Text", bs, "Phone")
             lblProvince.DataBindings.Add("Text", bs, "Province")
-            '  lblType.DataBindings.Add("Text", bs, "Type")
+            lblComments.DataBindings.Add("Text", bs, "Comments")
             lblZip.DataBindings.Add("Text", bs, "Zip")
+            cbxAcceptAd.DataBindings.Add("Checked", bs, "AcceptAd")
         Catch err As InvalidOperationException
             MsgBox(err.Message)
             Close()
@@ -81,7 +82,7 @@ Public Class frmGuests
         bs.Position = Guests.Count - 1
     End Sub
 
-    Private Sub AddAnGuestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAGuestToolStripMenuItem.Click, ToolStripAdd.Click
+    Private Sub AddAGuestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAGuestToolStripMenuItem.Click, ToolStripAdd.Click
         If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterGuestsMenuON")) Then
             If MsgBox(LocRM.GetString("addWhenFilterOnMsg"), MsgBoxStyle.Information Or MsgBoxStyle.YesNo, "Gesalt") = MsgBoxResult.No Then
                 Exit Sub
@@ -98,14 +99,14 @@ Public Class frmGuests
             Exit Sub
         End If
 
-        If Not opGuest.Addguest(frmAux.editGuest) Then
+        If Not opGuest.AddGuest(frmAux.editGuest) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
 
-        Guests.Add(frmAux.editGuest)
+        Guests = opGuest.GetGuests()
+        bs.DataSource = Guests
         bs.ResetBindings(False)
-        bs.Position = Guests.Count - 1
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvGuests.DoubleClick
@@ -194,5 +195,9 @@ Public Class frmGuests
         frmRpt.rpvGuest.LocalReport.SetParameters(parameters)
         frmRpt.rpvGuest.RefreshReport()
         frmRpt.ShowDialog()
+    End Sub
+
+    Private Sub lblRating_BindingContextChanged(sender As Object, e As EventArgs) Handles lblRating.BindingContextChanged
+        MsgBox(lblRating.Text)
     End Sub
 End Class

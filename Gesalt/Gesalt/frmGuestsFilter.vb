@@ -31,14 +31,14 @@ Public Class frmGuestsFilter
     Dim Position As New Point(10, 10)
     Dim FiltersPanel As New List(Of Panel)
     Dim ContainerPanel As New FlowLayoutPanel
-    Dim FieldsGuestName As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
+    Dim FieldsGuestName As String() = {LocRM.GetString("fieldComments"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
         LocRM.GetString("fieldAddress"), LocRM.GetString("fieldCity"), LocRM.GetString("fieldZip"), LocRM.GetString("fieldProvince"),
-        LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldPathLogo")}
-    Dim FieldsGuest As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "path_logo"}
+        LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldRating"), LocRM.GetString("fieldAcceptAd")}
+    Dim FieldsGuest As String() = {"comments", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "rating", "accept_ad"}
     Dim NumberOperators As String() = {"=", "<>", "<", ">", "<=", ">="}
     Dim StringOperators As String() = {LocRM.GetString("EqualTo"), LocRM.GetString("DifferentFrom"), LocRM.GetString("StartsWith"), LocRM.GetString("Contains")}
-    Const TYPE As Integer = 0, LAST_NAME As Integer = 1, FIRST_NAME As Integer = 2, NIF As Integer = 3, ADDRESS As Integer = 4, CITY As Integer = 5, ZIP As Integer = 6,
-        PROVINCE As Integer = 7, PHONE As Integer = 8, EMAIL As Integer = 9, PATH_LOGO As Integer = 10
+    Const COMMENTS As Integer = 0, LAST_NAME As Integer = 1, FIRST_NAME As Integer = 2, NIF As Integer = 3, ADDRESS As Integer = 4, CITY As Integer = 5, ZIP As Integer = 6,
+        PROVINCE As Integer = 7, PHONE As Integer = 8, EMAIL As Integer = 9, RATING As Integer = 10, ACCEPT_AD As Integer = 11
 
     Private Sub FrmFiltros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ContainerPanel.FlowDirection = FlowDirection.TopDown
@@ -72,11 +72,11 @@ Public Class frmGuestsFilter
         End If
 
         Select Case sender.SelectedIndex
-            Case TYPE, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
+            Case COMMENTS, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL, RATING
                 CmbCurrentOperator.Items.AddRange(StringOperators)
                 CmbCurrentOperator.SelectedIndex = 0
                 ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
-            Case PATH_LOGO
+            Case ACCEPT_AD
                 CmbCurrentOperator.Visible = False
                 ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VCheckBox_" & index, True)(0))
         End Select
@@ -142,7 +142,7 @@ Public Class frmGuestsFilter
         Dim VCheckBox As New CheckBox
         VCheckBox.Location = New Point(273, 0)
         VCheckBox.Size = New Size(190, 20)
-        VCheckBox.Text = LocRM.GetString("filterGuestLogoTrue")
+        VCheckBox.Text = LocRM.GetString("filterGuestAcceptAdTrue")
         VCheckBox.Name = "VCheckBox_" & FiltersPanel.Count - 1
         VCheckBox.Visible = False
         pnlFilter.Controls.Add(VCheckBox)
@@ -203,11 +203,10 @@ Public Class frmGuestsFilter
         For i As Integer = 0 To ContainerPanel.Controls.Count - 1
             controlIndex = CType(ContainerPanel.Controls.Item(i).Controls.Item(0), ComboBox).SelectedIndex
             Select Case controlIndex
-                Case TYPE, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
-
+                Case COMMENTS, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
                     Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i, True)(0)
 
-                    If VTextBox.TextLength = 0 And (controlIndex = TYPE Or controlIndex = NIF Or controlIndex = LAST_NAME Or controlIndex = FIRST_NAME) Then
+                    If VTextBox.TextLength = 0 And (controlIndex = NIF Or controlIndex = LAST_NAME Or controlIndex = FIRST_NAME) Then
                         VTextBox.BackColor = Color.Red
                         FilterOK = False
                     Else
@@ -229,13 +228,25 @@ Public Class frmGuestsFilter
                         _resultReadable += FieldsGuestName(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " '" &
                             VTextBox.Text & "'"
                     End If
-                Case PATH_LOGO
+                Case RATING
+                    Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i, True)(0)
+
+                    If Not IsNumeric(VTextBox.Text) Then
+                        VTextBox.BackColor = Color.Red
+                        FilterOK = False
+                    Else
+                        _resultSQL += FieldsGuest(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " @"
+                        _resultSQL += VTextBox.Name
+                        _resultReadable += FieldsGuestName(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " " & VTextBox.Text
+                        _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, VTextBox.Text, DbType.Int32))
+                    End If
+                Case ACCEPT_AD
                     Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(i).Controls.Find("VCheckBox_" & i, True)(0)
 
                     _resultSQL += FieldsGuest(controlIndex)
-                    _resultSQL += IIf(VCheckBox.Checked, " not like @", " like @") & VCheckBox.Name
-                    _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, "", DbType.String))
-                    _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterGuestLogoTrue") & "'", "'" & LocRM.GetString("filterGuestLogoFalse") & "'")
+                    _resultSQL += "@" & VCheckBox.Name & IIf(VCheckBox.Checked, " = true", " = false")
+                    _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, "", DbType.Boolean))
+                    _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterGuestAcceptAdTrue") & "'", "'" & LocRM.GetString("filterGuestAcceptAdFalse") & "'")
             End Select
 
             If i < ContainerPanel.Controls.Count - 1 Then
