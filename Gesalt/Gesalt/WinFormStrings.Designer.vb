@@ -182,6 +182,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Edit a Guest - Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property editGuestTitle() As String
+            Get
+                Return ResourceManager.GetString("editGuestTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Edit an Owner - Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property editOwnerTitle() As String
@@ -227,6 +236,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Accept advertising.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldAcceptAd() As String
+            Get
+                Return ResourceManager.GetString("fieldAcceptAd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Address.
         '''</summary>
         Friend Shared ReadOnly Property fieldAddress() As String
@@ -241,6 +259,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property fieldCity() As String
             Get
                 Return ResourceManager.GetString("fieldCity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Comments.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldComments() As String
+            Get
+                Return ResourceManager.GetString("fieldComments", resourceCulture)
             End Get
         End Property
         
@@ -308,6 +335,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Rating.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldRating() As String
+            Get
+                Return ResourceManager.GetString("fieldRating", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a This field is required.
         '''</summary>
         Friend Shared ReadOnly Property fieldRequired() As String
@@ -340,6 +376,60 @@ Namespace My.Resources
         Friend Shared ReadOnly Property filterAnd() As String
             Get
                 Return ResourceManager.GetString("filterAnd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Guest don&apos;t accept ad.
+        '''</summary>
+        Friend Shared ReadOnly Property filterGuestAcceptAdFalse() As String
+            Get
+                Return ResourceManager.GetString("filterGuestAcceptAdFalse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Guest accept ad.
+        '''</summary>
+        Friend Shared ReadOnly Property filterGuestAcceptAdTrue() As String
+            Get
+                Return ResourceManager.GetString("filterGuestAcceptAdTrue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Guests:.
+        '''</summary>
+        Friend Shared ReadOnly Property filterGuestsLabelOFF() As String
+            Get
+                Return ResourceManager.GetString("filterGuestsLabelOFF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a FILTER.
+        '''</summary>
+        Friend Shared ReadOnly Property filterGuestsLabelON() As String
+            Get
+                Return ResourceManager.GetString("filterGuestsLabelON", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a &amp;Filter data.
+        '''</summary>
+        Friend Shared ReadOnly Property filterGuestsMenuOFF() As String
+            Get
+                Return ResourceManager.GetString("filterGuestsMenuOFF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Clear &amp;filter.
+        '''</summary>
+        Friend Shared ReadOnly Property filterGuestsMenuON() As String
+            Get
+                Return ResourceManager.GetString("filterGuestsMenuON", resourceCulture)
             End Get
         End Property
         
@@ -493,6 +583,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property rowRemovedTitle() As String
             Get
                 Return ResourceManager.GetString("rowRemovedTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Guests Report.
+        '''</summary>
+        Friend Shared ReadOnly Property rptGuestsHeaderTitle() As String
+            Get
+                Return ResourceManager.GetString("rptGuestsHeaderTitle", resourceCulture)
             End Get
         End Property
         

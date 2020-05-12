@@ -257,4 +257,37 @@
   <data name="fieldRequired" xml:space="preserve">
     <value>Este campo es requerido</value>
   </data>
+  <data name="fieldComments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="fieldRating" xml:space="preserve">
+    <value>Valoración</value>
+  </data>
+  <data name="fieldAcceptAd" xml:space="preserve">
+    <value>Acepta publicidad</value>
+  </data>
+  <data name="filterGuestAcceptAdTrue" xml:space="preserve">
+    <value>El cliente acepta publicidad</value>
+  </data>
+  <data name="filterGuestAcceptAdFalse" xml:space="preserve">
+    <value>El cliente no acepta publicidad</value>
+  </data>
+  <data name="editGuestTitle" xml:space="preserve">
+    <value>Editar un cliente - Gesalt</value>
+  </data>
+  <data name="filterGuestsMenuON" xml:space="preserve">
+    <value>Borrar &amp;filtro</value>
+  </data>
+  <data name="filterGuestsMenuOFF" xml:space="preserve">
+    <value>&amp;Filtrar datos</value>
+  </data>
+  <data name="filterGuestsLabelON" xml:space="preserve">
+    <value>FILTRO</value>
+  </data>
+  <data name="filterGuestsLabelOFF" xml:space="preserve">
+    <value>Clientes:</value>
+  </data>
+  <data name="rptGuestsHeaderTitle" xml:space="preserve">
+    <value>Informe de clientes</value>
+  </data>
 </root>

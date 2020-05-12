@@ -147,4 +147,10 @@ Public Class frmMain
 
         frmOwn.ShowDialog()
     End Sub
+
+    Private Sub btnGuests_Click(sender As Object, e As EventArgs) Handles btnGuests.Click
+        Dim frmGst As New frmGuests
+
+        frmGst.ShowDialog()
+    End Sub
 End Class

@@ -117,14 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="star-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Clientes - Gesalt</value>
   </data>
-  <data name="Database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gesalt.accdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Apelidos:</value>
   </data>
-  <data name="star-on" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star-on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>Provincia/País:</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>Comentarios:</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Cód. Postal:</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Localidade:</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>Enderezo:</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>NIF:</value>
+  </data>
+  <data name="lblAddress.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblCity.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblFirstName.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblLastName.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblNif.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblPhone.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblProvince.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblZip.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Borrar</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Modificar</value>
+  </data>
+  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Informes</value>
+  </data>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Clientes:</value>
+  </data>
+  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Filtrar datos</value>
+  </data>
+  <data name="ToolStripDelete.Text" xml:space="preserve">
+    <value>Borrar cliente</value>
+  </data>
+  <data name="ToolStripEdit.Text" xml:space="preserve">
+    <value>Modificar cliente</value>
+  </data>
+  <data name="ToolStripExit.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="ToolStripReports.Text" xml:space="preserve">
+    <value>Informes</value>
+  </data>
+  <data name="ToolStripAdd.Text" xml:space="preserve">
+    <value>Engadir cliente</value>
+  </data>
+  <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Informe de clientes</value>
+  </data>
+  <data name="AddAGuestToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Engadir</value>
+  </data>
+  <data name="GuestsReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Informe de clientes</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Valoración:</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblRating.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clientes</value>
+  </data>
+  <data name="cbxAcceptAd.Text" xml:space="preserve">
+    <value>Acepta publicidade</value>
   </data>
 </root>

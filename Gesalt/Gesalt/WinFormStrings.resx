@@ -257,4 +257,37 @@
   <data name="fieldRequired" xml:space="preserve">
     <value>This field is required</value>
   </data>
+  <data name="fieldComments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="fieldRating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="fieldAcceptAd" xml:space="preserve">
+    <value>Accept advertising</value>
+  </data>
+  <data name="filterGuestAcceptAdTrue" xml:space="preserve">
+    <value>Guest accept ad</value>
+  </data>
+  <data name="filterGuestAcceptAdFalse" xml:space="preserve">
+    <value>Guest don't accept ad</value>
+  </data>
+  <data name="editGuestTitle" xml:space="preserve">
+    <value>Edit a Guest - Gesalt</value>
+  </data>
+  <data name="filterGuestsMenuON" xml:space="preserve">
+    <value>Clear &amp;filter</value>
+  </data>
+  <data name="filterGuestsMenuOFF" xml:space="preserve">
+    <value>&amp;Filter data</value>
+  </data>
+  <data name="filterGuestsLabelON" xml:space="preserve">
+    <value>FILTER</value>
+  </data>
+  <data name="filterGuestsLabelOFF" xml:space="preserve">
+    <value>Guests:</value>
+  </data>
+  <data name="rptGuestsHeaderTitle" xml:space="preserve">
+    <value>Guests Report</value>
+  </data>
 </root>
