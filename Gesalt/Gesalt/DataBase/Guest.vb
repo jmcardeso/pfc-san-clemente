@@ -43,7 +43,7 @@ Public Class Guest
         Me.Province = ""
         Me.Phone = ""
         Me.Email = ""
-        Me.Rating = 0
+        Me.Rating = 3
         Me.Comments = ""
         Me.AcceptAd = True
     End Sub

@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 55</value>
+    <value>13, 32</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>17</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 177</value>
+    <value>13, 154</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>18</value>
   </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -187,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 78</value>
+    <value>12, 55</value>
   </data>
   <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>19</value>
   </data>
   <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,7 +217,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 102</value>
+    <value>13, 79</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -238,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>20</value>
   </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 126</value>
+    <value>12, 103</value>
   </data>
   <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>21</value>
   </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 151</value>
+    <value>13, 128</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -298,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>22</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -307,7 +307,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 203</value>
+    <value>13, 180</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -328,7 +328,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>23</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,7 +337,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 229</value>
+    <value>13, 206</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -358,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>24</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 32</value>
+    <value>12, 9</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -388,10 +388,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>25</value>
   </data>
   <data name="tbxLastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 29</value>
+    <value>111, 6</value>
   </data>
   <data name="tbxLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -409,10 +409,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxLastName.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>16</value>
   </data>
   <data name="tbxEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 226</value>
+    <value>110, 203</value>
   </data>
   <data name="tbxEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>308, 20</value>
@@ -430,10 +430,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxEmail.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>15</value>
   </data>
   <data name="tbxPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 200</value>
+    <value>111, 177</value>
   </data>
   <data name="tbxPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -451,10 +451,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxPhone.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>14</value>
   </data>
   <data name="tbxProvince.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 174</value>
+    <value>111, 151</value>
   </data>
   <data name="tbxProvince.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -472,10 +472,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxProvince.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>13</value>
   </data>
   <data name="tbxCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 123</value>
+    <value>111, 100</value>
   </data>
   <data name="tbxCity.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -493,10 +493,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxCity.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>12</value>
   </data>
   <data name="tbxAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 99</value>
+    <value>111, 76</value>
   </data>
   <data name="tbxAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -514,10 +514,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxAddress.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>11</value>
   </data>
   <data name="tbxZip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 148</value>
+    <value>111, 125</value>
   </data>
   <data name="tbxZip.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -535,10 +535,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxZip.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>10</value>
   </data>
   <data name="tbxNif.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 75</value>
+    <value>111, 52</value>
   </data>
   <data name="tbxNif.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -556,10 +556,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxNif.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>9</value>
   </data>
   <data name="tbxFirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 52</value>
+    <value>111, 29</value>
   </data>
   <data name="tbxFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -577,7 +577,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxFirstName.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>8</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>725, 252</value>
@@ -601,7 +601,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>7</value>
   </data>
   <data name="bntCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -628,126 +628,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bntCancel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="pbxRating5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbxRating5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>630, 33</value>
-  </data>
-  <data name="pbxRating5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbxRating5.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="&gt;&gt;pbxRating5.Name" xml:space="preserve">
-    <value>pbxRating5</value>
-  </data>
-  <data name="&gt;&gt;pbxRating5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbxRating5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbxRating5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pbxRating4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbxRating4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 33</value>
-  </data>
-  <data name="pbxRating4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbxRating4.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="&gt;&gt;pbxRating4.Name" xml:space="preserve">
-    <value>pbxRating4</value>
-  </data>
-  <data name="&gt;&gt;pbxRating4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbxRating4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbxRating4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pbxRating3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbxRating3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 33</value>
-  </data>
-  <data name="pbxRating3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbxRating3.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="&gt;&gt;pbxRating3.Name" xml:space="preserve">
-    <value>pbxRating3</value>
-  </data>
-  <data name="&gt;&gt;pbxRating3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbxRating3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbxRating3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pbxRating2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbxRating2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 33</value>
-  </data>
-  <data name="pbxRating2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbxRating2.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
-  </data>
-  <data name="&gt;&gt;pbxRating2.Name" xml:space="preserve">
-    <value>pbxRating2</value>
-  </data>
-  <data name="&gt;&gt;pbxRating2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbxRating2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbxRating2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="pbxRating1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbxRating1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 33</value>
-  </data>
-  <data name="pbxRating1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbxRating1.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="&gt;&gt;pbxRating1.Name" xml:space="preserve">
-    <value>pbxRating1</value>
-  </data>
-  <data name="&gt;&gt;pbxRating1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbxRating1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbxRating1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="cbxAcceptAd.AutoSize" type="System.Boolean, mscorlib">
@@ -757,7 +637,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbxAcceptAd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>478, 225</value>
+    <value>506, 206</value>
   </data>
   <data name="cbxAcceptAd.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 17</value>
@@ -778,7 +658,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxAcceptAd.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -787,7 +667,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 69</value>
+    <value>503, 46</value>
   </data>
   <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -808,7 +688,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -817,7 +697,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 36</value>
+    <value>503, 13</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -838,137 +718,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <metadata name="tlsGuests.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>229, 17</value>
-  </metadata>
-  <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABfSURBVDhPzcoxDgAhEELRuf+lNQg2i6KFxf5kMgWvXtYO
-        d6ztwqaLiXtzwx9y00CrsH1umXgOjtwTycGReyI5OHJPJAdH7onk4Mg9kRwcuSeSgyP3RHJw5N4cb+43
-        VXWxN5h2GtXL+gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolStripAdd.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Add owner</value>
-  </data>
-  <data name="ToolStripEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABkSURBVDhPzctBCsAwCERR73/plFFTBpxoFl30wVCIv/al
-        NWy0TnDLtTKv9g1fLw84en8CfstJmffQRV5xIEd3yYMJusgrDuToLnkwQRd5xYEc3SUPJugirzLpoYu8
-        2seb/YbZA//WUL73/myGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ToolStripEdit.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Edit owner</value>
-  </data>
-  <data name="ToolStripDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVDhPzY3RCgAgCAP9/58uggaDlhpJdLAXdad9Q5vJ
-        IG8xlEvC3bNAHe3mC0qSKjIsQY4pKx9LVCktUWUQSrwyuBYMQskTqh6ZdaGmNMwKZsvLAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
-  <data name="ToolStripDelete.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="ToolStripDelete.Text" xml:space="preserve">
-    <value>Delete owner</value>
-  </data>
-  <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="GuestsReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
-  </data>
-  <data name="GuestsReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Guests Report</value>
-  </data>
-  <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVDhPtZABCsAgDAN9uk/zZ85UUlqx1cF2cMhi2o2V
-        v+gXhvQT6MzqHltymjxEShnozOoeW3IGuUNKGei01tyJQcCH1M0wnMGNdpinLHirXTiMv6DWqjJjn8NA
-        L1fHb1OZoW8U1vCoWaToGzLZwylTC7y48StKeQAU0nkCzH8xHgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolStripReports.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 22</value>
-  </data>
-  <data name="ToolStripReports.Text" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="ToolStripExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABpSURBVDhPpY4BCsAgDAP79P7ckahjrcWW9SAwXXIoi5Ek
-        hcWI9S9lqMYS3LFh0OOOgkiCMxsvGF8EXoJvNsgefzMpCKIxMikIQFsA7HBjxshmnR0XQf6CE5a8IEmI
-        F/yiLQBtAWgLiog8FUPpPE8tbkcAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ToolStripExit.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="ToolStripExit.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="tlsGuests.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tlsGuests.Size" type="System.Drawing.Size, System.Drawing">
-    <value>812, 25</value>
-  </data>
-  <data name="tlsGuests.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="&gt;&gt;tlsGuests.Name" xml:space="preserve">
-    <value>tlsGuests</value>
-  </data>
-  <data name="&gt;&gt;tlsGuests.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsGuests.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsGuests.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>5</value>
   </data>
   <data name="tbxComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 66</value>
+    <value>570, 43</value>
   </data>
   <data name="tbxComments.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="tbxComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 150</value>
+    <value>231, 141</value>
   </data>
   <data name="tbxComments.TabIndex" type="System.Int32, mscorlib">
     <value>65</value>
@@ -983,22 +742,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbxComments.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblRating.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblRating.Location" type="System.Drawing.Point, System.Drawing">
-    <value>652, 32</value>
+    <value>653, 9</value>
   </data>
   <data name="lblRating.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+    <value>13, 13</value>
   </data>
   <data name="lblRating.TabIndex" type="System.Int32, mscorlib">
     <value>66</value>
   </data>
   <data name="lblRating.Text" xml:space="preserve">
-    <value>lblRating</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblRating.Name" xml:space="preserve">
     <value>lblRating</value>
@@ -1010,6 +769,147 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblRating.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pbxRating1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbxRating1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pbxRating1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbxRating1.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;pbxRating1.Name" xml:space="preserve">
+    <value>pbxRating1</value>
+  </data>
+  <data name="&gt;&gt;pbxRating1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxRating1.Parent" xml:space="preserve">
+    <value>pnlRating</value>
+  </data>
+  <data name="&gt;&gt;pbxRating1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pbxRating2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbxRating2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 3</value>
+  </data>
+  <data name="pbxRating2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbxRating2.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;pbxRating2.Name" xml:space="preserve">
+    <value>pbxRating2</value>
+  </data>
+  <data name="&gt;&gt;pbxRating2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxRating2.Parent" xml:space="preserve">
+    <value>pnlRating</value>
+  </data>
+  <data name="&gt;&gt;pbxRating2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pbxRating3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbxRating3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 3</value>
+  </data>
+  <data name="pbxRating3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbxRating3.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;pbxRating3.Name" xml:space="preserve">
+    <value>pbxRating3</value>
+  </data>
+  <data name="&gt;&gt;pbxRating3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxRating3.Parent" xml:space="preserve">
+    <value>pnlRating</value>
+  </data>
+  <data name="&gt;&gt;pbxRating3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pbxRating5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbxRating5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 3</value>
+  </data>
+  <data name="pbxRating5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbxRating5.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;pbxRating5.Name" xml:space="preserve">
+    <value>pbxRating5</value>
+  </data>
+  <data name="&gt;&gt;pbxRating5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxRating5.Parent" xml:space="preserve">
+    <value>pnlRating</value>
+  </data>
+  <data name="&gt;&gt;pbxRating5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pbxRating4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbxRating4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 3</value>
+  </data>
+  <data name="pbxRating4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbxRating4.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;pbxRating4.Name" xml:space="preserve">
+    <value>pbxRating4</value>
+  </data>
+  <data name="&gt;&gt;pbxRating4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxRating4.Parent" xml:space="preserve">
+    <value>pnlRating</value>
+  </data>
+  <data name="&gt;&gt;pbxRating4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pnlRating.Location" type="System.Drawing.Point, System.Drawing">
+    <value>570, 6</value>
+  </data>
+  <data name="pnlRating.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
+  </data>
+  <data name="pnlRating.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;pnlRating.Name" xml:space="preserve">
+    <value>pnlRating</value>
+  </data>
+  <data name="&gt;&gt;pnlRating.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlRating.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlRating.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1701,54 +1601,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Add a Guest - Gesalt</value>
-  </data>
-  <data name="&gt;&gt;ToolStripAdd.Name" xml:space="preserve">
-    <value>ToolStripAdd</value>
-  </data>
-  <data name="&gt;&gt;ToolStripAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripEdit.Name" xml:space="preserve">
-    <value>ToolStripEdit</value>
-  </data>
-  <data name="&gt;&gt;ToolStripEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripDelete.Name" xml:space="preserve">
-    <value>ToolStripDelete</value>
-  </data>
-  <data name="&gt;&gt;ToolStripDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripSeparator1.Name" xml:space="preserve">
-    <value>ToolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;ToolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripReports.Name" xml:space="preserve">
-    <value>ToolStripReports</value>
-  </data>
-  <data name="&gt;&gt;ToolStripReports.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GuestsReportToolStripMenuItem.Name" xml:space="preserve">
-    <value>GuestsReportToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;GuestsReportToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripSeparator2.Name" xml:space="preserve">
-    <value>ToolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;ToolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripExit.Name" xml:space="preserve">
-    <value>ToolStripExit</value>
-  </data>
-  <data name="&gt;&gt;ToolStripExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmGuestsAux</value>

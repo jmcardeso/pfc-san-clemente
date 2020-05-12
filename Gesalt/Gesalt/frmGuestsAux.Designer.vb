@@ -43,31 +43,23 @@ Partial Class frmGuestsAux
         Me.tbxFirstName = New System.Windows.Forms.TextBox()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.bntCancel = New System.Windows.Forms.Button()
-        Me.pbxRating5 = New System.Windows.Forms.PictureBox()
-        Me.pbxRating4 = New System.Windows.Forms.PictureBox()
-        Me.pbxRating3 = New System.Windows.Forms.PictureBox()
-        Me.pbxRating2 = New System.Windows.Forms.PictureBox()
-        Me.pbxRating1 = New System.Windows.Forms.PictureBox()
         Me.cbxAcceptAd = New System.Windows.Forms.CheckBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.tlsGuests = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.GuestsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
         Me.tbxComments = New System.Windows.Forms.TextBox()
         Me.lblRating = New System.Windows.Forms.Label()
+        Me.pnlRating = New System.Windows.Forms.Panel()
+        Me.pbxRating1 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating2 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating3 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating5 = New System.Windows.Forms.PictureBox()
+        Me.pbxRating4 = New System.Windows.Forms.PictureBox()
+        Me.pnlRating.SuspendLayout()
+        CType(Me.pbxRating1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxRating2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxRating3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxRating5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxRating4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxRating3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxRating2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxRating1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tlsGuests.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label12
@@ -173,41 +165,6 @@ Partial Class frmGuestsAux
         Me.bntCancel.Name = "bntCancel"
         Me.bntCancel.UseVisualStyleBackColor = True
         '
-        'pbxRating5
-        '
-        Me.pbxRating5.Image = Global.Gesalt.My.Resources.Resources.star_off
-        resources.ApplyResources(Me.pbxRating5, "pbxRating5")
-        Me.pbxRating5.Name = "pbxRating5"
-        Me.pbxRating5.TabStop = False
-        '
-        'pbxRating4
-        '
-        Me.pbxRating4.Image = Global.Gesalt.My.Resources.Resources.star_off
-        resources.ApplyResources(Me.pbxRating4, "pbxRating4")
-        Me.pbxRating4.Name = "pbxRating4"
-        Me.pbxRating4.TabStop = False
-        '
-        'pbxRating3
-        '
-        Me.pbxRating3.Image = Global.Gesalt.My.Resources.Resources.star_off
-        resources.ApplyResources(Me.pbxRating3, "pbxRating3")
-        Me.pbxRating3.Name = "pbxRating3"
-        Me.pbxRating3.TabStop = False
-        '
-        'pbxRating2
-        '
-        Me.pbxRating2.Image = Global.Gesalt.My.Resources.Resources.star_off
-        resources.ApplyResources(Me.pbxRating2, "pbxRating2")
-        Me.pbxRating2.Name = "pbxRating2"
-        Me.pbxRating2.TabStop = False
-        '
-        'pbxRating1
-        '
-        Me.pbxRating1.Image = Global.Gesalt.My.Resources.Resources.star_off
-        resources.ApplyResources(Me.pbxRating1, "pbxRating1")
-        Me.pbxRating1.Name = "pbxRating1"
-        Me.pbxRating1.TabStop = False
-        '
         'cbxAcceptAd
         '
         resources.ApplyResources(Me.cbxAcceptAd, "cbxAcceptAd")
@@ -224,58 +181,6 @@ Partial Class frmGuestsAux
         resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
         '
-        'tlsGuests
-        '
-        Me.tlsGuests.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripExit})
-        resources.ApplyResources(Me.tlsGuests, "tlsGuests")
-        Me.tlsGuests.Name = "tlsGuests"
-        '
-        'ToolStripAdd
-        '
-        Me.ToolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripAdd, "ToolStripAdd")
-        Me.ToolStripAdd.Name = "ToolStripAdd"
-        '
-        'ToolStripEdit
-        '
-        Me.ToolStripEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripEdit, "ToolStripEdit")
-        Me.ToolStripEdit.Name = "ToolStripEdit"
-        '
-        'ToolStripDelete
-        '
-        Me.ToolStripDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripDelete, "ToolStripDelete")
-        Me.ToolStripDelete.Name = "ToolStripDelete"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
-        '
-        'ToolStripReports
-        '
-        Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GuestsReportToolStripMenuItem})
-        resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
-        Me.ToolStripReports.Name = "ToolStripReports"
-        '
-        'GuestsReportToolStripMenuItem
-        '
-        Me.GuestsReportToolStripMenuItem.Name = "GuestsReportToolStripMenuItem"
-        resources.ApplyResources(Me.GuestsReportToolStripMenuItem, "GuestsReportToolStripMenuItem")
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
-        '
-        'ToolStripExit
-        '
-        Me.ToolStripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripExit, "ToolStripExit")
-        Me.ToolStripExit.Name = "ToolStripExit"
-        '
         'tbxComments
         '
         resources.ApplyResources(Me.tbxComments, "tbxComments")
@@ -284,25 +189,65 @@ Partial Class frmGuestsAux
         'lblRating
         '
         resources.ApplyResources(Me.lblRating, "lblRating")
+        Me.lblRating.ForeColor = System.Drawing.SystemColors.Control
         Me.lblRating.Name = "lblRating"
+        '
+        'pnlRating
+        '
+        Me.pnlRating.Controls.Add(Me.pbxRating1)
+        Me.pnlRating.Controls.Add(Me.pbxRating2)
+        Me.pnlRating.Controls.Add(Me.pbxRating3)
+        Me.pnlRating.Controls.Add(Me.pbxRating5)
+        Me.pnlRating.Controls.Add(Me.pbxRating4)
+        resources.ApplyResources(Me.pnlRating, "pnlRating")
+        Me.pnlRating.Name = "pnlRating"
+        '
+        'pbxRating1
+        '
+        Me.pbxRating1.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating1, "pbxRating1")
+        Me.pbxRating1.Name = "pbxRating1"
+        Me.pbxRating1.TabStop = False
+        '
+        'pbxRating2
+        '
+        Me.pbxRating2.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating2, "pbxRating2")
+        Me.pbxRating2.Name = "pbxRating2"
+        Me.pbxRating2.TabStop = False
+        '
+        'pbxRating3
+        '
+        Me.pbxRating3.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating3, "pbxRating3")
+        Me.pbxRating3.Name = "pbxRating3"
+        Me.pbxRating3.TabStop = False
+        '
+        'pbxRating5
+        '
+        Me.pbxRating5.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating5, "pbxRating5")
+        Me.pbxRating5.Name = "pbxRating5"
+        Me.pbxRating5.TabStop = False
+        '
+        'pbxRating4
+        '
+        Me.pbxRating4.Image = Global.Gesalt.My.Resources.Resources.star_off
+        resources.ApplyResources(Me.pbxRating4, "pbxRating4")
+        Me.pbxRating4.Name = "pbxRating4"
+        Me.pbxRating4.TabStop = False
         '
         'frmGuestsAux
         '
-        Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.pnlRating)
         Me.Controls.Add(Me.lblRating)
         Me.Controls.Add(Me.tbxComments)
-        Me.Controls.Add(Me.pbxRating5)
-        Me.Controls.Add(Me.pbxRating4)
-        Me.Controls.Add(Me.pbxRating3)
-        Me.Controls.Add(Me.pbxRating2)
-        Me.Controls.Add(Me.pbxRating1)
         Me.Controls.Add(Me.cbxAcceptAd)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.tlsGuests)
         Me.Controls.Add(Me.bntCancel)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.tbxFirstName)
@@ -325,13 +270,12 @@ Partial Class frmGuestsAux
         Me.Controls.Add(Me.Label1)
         Me.MaximizeBox = False
         Me.Name = "frmGuestsAux"
+        Me.pnlRating.ResumeLayout(False)
+        CType(Me.pbxRating1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxRating2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxRating3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxRating5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxRating4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxRating3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxRating2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxRating1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tlsGuests.ResumeLayout(False)
-        Me.tlsGuests.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -357,23 +301,15 @@ Partial Class frmGuestsAux
     Friend WithEvents tbxFirstName As TextBox
     Friend WithEvents btnOK As Button
     Friend WithEvents bntCancel As Button
-    Friend WithEvents pbxRating5 As PictureBox
-    Friend WithEvents pbxRating4 As PictureBox
-    Friend WithEvents pbxRating3 As PictureBox
-    Friend WithEvents pbxRating2 As PictureBox
-    Friend WithEvents pbxRating1 As PictureBox
     Friend WithEvents cbxAcceptAd As CheckBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents tlsGuests As ToolStrip
-    Friend WithEvents ToolStripAdd As ToolStripButton
-    Friend WithEvents ToolStripEdit As ToolStripButton
-    Friend WithEvents ToolStripDelete As ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripReports As ToolStripDropDownButton
-    Friend WithEvents GuestsReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripExit As ToolStripButton
     Friend WithEvents tbxComments As TextBox
     Friend WithEvents lblRating As Label
+    Friend WithEvents pnlRating As Panel
+    Friend WithEvents pbxRating1 As PictureBox
+    Friend WithEvents pbxRating2 As PictureBox
+    Friend WithEvents pbxRating3 As PictureBox
+    Friend WithEvents pbxRating5 As PictureBox
+    Friend WithEvents pbxRating4 As PictureBox
 End Class

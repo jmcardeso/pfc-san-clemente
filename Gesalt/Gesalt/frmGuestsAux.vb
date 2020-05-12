@@ -66,7 +66,34 @@ Public Class frmGuestsAux
         Return result
     End Function
 
-    Private Sub lblRating_BindingContextChanged(sender As Object, e As EventArgs) Handles lblRating.BindingContextChanged
+    Private Sub lblRating_TextChanged(sender As Object, e As EventArgs) Handles lblRating.TextChanged
+        For Each star As PictureBox In pnlRating.Controls
+            star.Image = My.Resources.star_off
+            If star.Name.Last <= lblRating.Text Then
+                star.Image = My.Resources.star_on
+            End If
+        Next
+    End Sub
 
+    Private Sub Rating_MouseEnter(sender As PictureBox, e As EventArgs) Handles pbxRating1.MouseEnter, pbxRating2.MouseEnter,
+            pbxRating3.MouseEnter, pbxRating4.MouseEnter, pbxRating5.MouseEnter
+        For Each star As PictureBox In pnlRating.Controls
+            If star.Name.Last <= sender.Name.Last Then
+                star.Image = My.Resources.star_on
+            Else
+                star.Image = My.Resources.star_off
+            End If
+        Next
+    End Sub
+
+    Private Sub Rating_MouseLeave(sender As PictureBox, e As EventArgs) Handles pbxRating1.MouseLeave, pbxRating2.MouseLeave,
+            pbxRating3.MouseLeave, pbxRating4.MouseLeave, pbxRating5.MouseLeave
+        lblRating_TextChanged(Nothing, Nothing)
+    End Sub
+
+    Private Sub Rating_Click(sender As PictureBox, e As EventArgs) Handles pbxRating1.Click, pbxRating2.Click, pbxRating3.Click,
+            pbxRating4.Click, pbxRating5.Click
+        GuestAux.Rating = Val(sender.Name.Last)
+        lblRating.Text = sender.Name.Last
     End Sub
 End Class

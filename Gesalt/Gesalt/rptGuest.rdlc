@@ -85,16 +85,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.65868cm</Width>
+                  <Width>7.37306cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.97347cm</Width>
+                  <Width>5.28756cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.65875cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.71167cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -371,7 +371,7 @@
             <DataSetName>dsGuest</DataSetName>
             <Top>0.17639cm</Top>
             <Height>1.43812cm</Height>
-            <Width>15.63215cm</Width>
+            <Width>18.03103cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -528,10 +528,6 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptGuestsFieldType">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="p_rptGuestsFieldLastName">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
@@ -562,11 +558,6 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>p_RptGuestsHeaderTitle</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>p_rptGuestsFieldType</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>

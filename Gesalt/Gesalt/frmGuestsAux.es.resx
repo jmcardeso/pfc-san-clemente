@@ -124,13 +124,10 @@
     <value>Provincia/País:</value>
   </data>
   <data name="Label11.Text" xml:space="preserve">
-    <value>Tipo:</value>
+    <value>Comentarios:</value>
   </data>
   <data name="Label12.Text" xml:space="preserve">
     <value>Nombre:</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Logo:</value>
   </data>
   <data name="Label4.Text" xml:space="preserve">
     <value>Email:</value>
@@ -157,6 +154,15 @@
     <value>Aceptar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Añadir un propietario - Gesalt</value>
+    <value>Añadir un cliente - Gesalt</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Valoración:</value>
+  </data>
+  <data name="cbxAcceptAd.Text" xml:space="preserve">
+    <value>Acepta publicidad</value>
+  </data>
+  <data name="lblRating.Text" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

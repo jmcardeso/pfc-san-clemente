@@ -16,16 +16,16 @@ Public Class frmGuests
             Dim column As DataGridViewColumn
             With dgvGuests
                 .AutoGenerateColumns = False
-                .ColumnCount = 6
+                .ColumnCount = 5
 
                 column = .Columns(0)
-                column.Width = 180
+                column.Width = 200
                 .Columns(0).Name = "LastName"
                 .Columns(0).HeaderText = LocRM.GetString("fieldLastName")
                 .Columns(0).DataPropertyName = "LastName"
 
                 column = .Columns(1)
-                column.Width = 135
+                column.Width = 170
                 .Columns(1).Name = "FirstName"
                 .Columns(1).HeaderText = LocRM.GetString("fieldFirstName")
                 .Columns(1).DataPropertyName = "FirstName"
@@ -34,6 +34,8 @@ Public Class frmGuests
                 .Columns(2).HeaderText = LocRM.GetString("fieldNif")
                 .Columns(2).DataPropertyName = "Nif"
 
+                column = .Columns(3)
+                column.Width = 145
                 .Columns(3).Name = "City"
                 .Columns(3).HeaderText = LocRM.GetString("fieldCity")
                 .Columns(3).DataPropertyName = "City"
@@ -182,7 +184,6 @@ Public Class frmGuests
             New ReportParameter("p_RptGuestsHeaderTitle", LocRM.GetString("rptGuestsHeaderTitle")),
             New ReportParameter("p_RptGuestsHeaderSubtitle",
                                 If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterGuestsMenuON")), lblFilter.Text, " ")),
-            New ReportParameter("p_rptGuestsFieldType", LocRM.GetString("fieldType")),
             New ReportParameter("p_rptGuestsFieldLastName", LocRM.GetString("fieldLastName")),
             New ReportParameter("p_rptGuestsFieldFirstName", LocRM.GetString("fieldFirstName")),
             New ReportParameter("p_rptGuestsFieldNif", LocRM.GetString("fieldNif")),
@@ -197,7 +198,12 @@ Public Class frmGuests
         frmRpt.ShowDialog()
     End Sub
 
-    Private Sub lblRating_BindingContextChanged(sender As Object, e As EventArgs) Handles lblRating.BindingContextChanged
-        MsgBox(lblRating.Text)
+    Private Sub lblRating_TextChanged(sender As Object, e As EventArgs) Handles lblRating.TextChanged
+        For Each star As PictureBox In pnlRating.Controls
+            star.Image = My.Resources.star_off
+            If IsNumeric(lblRating.Text) AndAlso star.Name.Last <= lblRating.Text Then
+                star.Image = My.Resources.star_on
+            End If
+        Next
     End Sub
 End Class

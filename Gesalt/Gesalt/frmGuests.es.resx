@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Propietarios - Gesalt</value>
+    <value>Clientes - Gesalt</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>Apellidos:</value>
@@ -127,7 +127,7 @@
     <value>Provincia/País:</value>
   </data>
   <data name="Label11.Text" xml:space="preserve">
-    <value>Tipo:</value>
+    <value>Comentarios:</value>
   </data>
   <data name="Label12.Text" xml:space="preserve">
     <value>Nombre:</value>
@@ -187,16 +187,16 @@
     <value>&amp;Informes</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
-    <value>Propietarios:</value>
+    <value>Clientes:</value>
   </data>
   <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Filtrar datos</value>
   </data>
   <data name="ToolStripDelete.Text" xml:space="preserve">
-    <value>Borrar propietario</value>
+    <value>Borrar cliente</value>
   </data>
   <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Editar propietario</value>
+    <value>Editar cliente</value>
   </data>
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Salir</value>
@@ -205,7 +205,7 @@
     <value>Informes</value>
   </data>
   <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Añadir propietario</value>
+    <value>Añadir cliente</value>
   </data>
   <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
     <value>Informe de clientes</value>
@@ -218,5 +218,17 @@
   </data>
   <data name="Label2.Text" xml:space="preserve">
     <value>Valoración:</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>&lt;Vacío&gt;</value>
+  </data>
+  <data name="lblRating.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clientes</value>
+  </data>
+  <data name="cbxAcceptAd.Text" xml:space="preserve">
+    <value>Acepta publicidad</value>
   </data>
 </root>

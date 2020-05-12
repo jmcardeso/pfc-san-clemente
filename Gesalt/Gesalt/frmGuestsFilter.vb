@@ -31,14 +31,15 @@ Public Class frmGuestsFilter
     Dim Position As New Point(10, 10)
     Dim FiltersPanel As New List(Of Panel)
     Dim ContainerPanel As New FlowLayoutPanel
-    Dim FieldsGuestName As String() = {LocRM.GetString("fieldComments"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
+    Dim FieldsGuestName As String() = {LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
         LocRM.GetString("fieldAddress"), LocRM.GetString("fieldCity"), LocRM.GetString("fieldZip"), LocRM.GetString("fieldProvince"),
-        LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldRating"), LocRM.GetString("fieldAcceptAd")}
-    Dim FieldsGuest As String() = {"comments", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "rating", "accept_ad"}
+        LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldRating"), LocRM.GetString("fieldComments"),
+        LocRM.GetString("fieldAcceptAd")}
+    Dim FieldsGuest As String() = {"last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "rating", "comments", "accept_ad"}
     Dim NumberOperators As String() = {"=", "<>", "<", ">", "<=", ">="}
     Dim StringOperators As String() = {LocRM.GetString("EqualTo"), LocRM.GetString("DifferentFrom"), LocRM.GetString("StartsWith"), LocRM.GetString("Contains")}
-    Const COMMENTS As Integer = 0, LAST_NAME As Integer = 1, FIRST_NAME As Integer = 2, NIF As Integer = 3, ADDRESS As Integer = 4, CITY As Integer = 5, ZIP As Integer = 6,
-        PROVINCE As Integer = 7, PHONE As Integer = 8, EMAIL As Integer = 9, RATING As Integer = 10, ACCEPT_AD As Integer = 11
+    Const LAST_NAME As Integer = 0, FIRST_NAME As Integer = 1, NIF As Integer = 2, ADDRESS As Integer = 3, CITY As Integer = 4, ZIP As Integer = 5,
+        PROVINCE As Integer = 6, PHONE As Integer = 7, EMAIL As Integer = 8, RATING As Integer = 9, COMMENTS As Integer = 10, ACCEPT_AD As Integer = 11
 
     Private Sub FrmFiltros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ContainerPanel.FlowDirection = FlowDirection.TopDown
@@ -72,8 +73,12 @@ Public Class frmGuestsFilter
         End If
 
         Select Case sender.SelectedIndex
-            Case COMMENTS, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL, RATING
+            Case COMMENTS, LAST_NAME, FIRST_NAME, NIF, ADDRESS, CITY, ZIP, PROVINCE, PHONE, EMAIL
                 CmbCurrentOperator.Items.AddRange(StringOperators)
+                CmbCurrentOperator.SelectedIndex = 0
+                ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
+            Case RATING
+                CmbCurrentOperator.Items.AddRange(NumberOperators)
                 CmbCurrentOperator.SelectedIndex = 0
                 ShowControl(sender.SelectedIndex, sender.Parent.Controls.Find("VTextBox_" & index, True)(0))
             Case ACCEPT_AD
@@ -231,7 +236,7 @@ Public Class frmGuestsFilter
                 Case RATING
                     Dim VTextBox As TextBox = ContainerPanel.Controls.Item(i).Controls.Find("VTextBox_" & i, True)(0)
 
-                    If Not IsNumeric(VTextBox.Text) Then
+                    If Not IsNumeric(VTextBox.Text) OrElse VTextBox.Text < 1 OrElse VTextBox.Text > 5 Then
                         VTextBox.BackColor = Color.Red
                         FilterOK = False
                     Else
@@ -244,8 +249,8 @@ Public Class frmGuestsFilter
                     Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(i).Controls.Find("VCheckBox_" & i, True)(0)
 
                     _resultSQL += FieldsGuest(controlIndex)
-                    _resultSQL += "@" & VCheckBox.Name & IIf(VCheckBox.Checked, " = true", " = false")
-                    _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, "", DbType.Boolean))
+                    _resultSQL += " = @" & VCheckBox.Name
+                    _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, VCheckBox.Checked, DbType.Boolean))
                     _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterGuestAcceptAdTrue") & "'", "'" & LocRM.GetString("filterGuestAcceptAdFalse") & "'")
             End Select
 
