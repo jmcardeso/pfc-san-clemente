@@ -57,7 +57,8 @@ de GNU junto con este programa. Si no, ve a http://www.gnu.org/licenses/.
 
 ***
 
-Icono diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de [Flaticon](https://www.flaticon.es/)
+Icono de la aplicación diseñado por [Payungkead](https://www.flaticon.es/autores/payungkead) de [Flaticon](https://www.flaticon.es/)
+Iconos de estrellas para valoración de clientes de [iconsDB](https://www.iconsdb.com/) - [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/deed.es).
 
 
 ## Índice
