@@ -110,9 +110,9 @@ Public Class frmOwners
             Exit Sub
         End If
 
-        owners.Add(frmAux.editOwner)
+        owners = opOwner.GetOwners()
+        bs.DataSource = owners
         bs.ResetBindings(False)
-        bs.Position = owners.Count - 1
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvOwners.DoubleClick
