@@ -12,7 +12,7 @@ Si el usuario es un pequeño propietario, Gesalt puede utilizar una base de dato
 
 Esta característica -ser DB Agnostic, esto es, independiente del SGBD- es la piedra angular del programa. Y si bien, inicialmente, sólo están implementados dos SGBD -Access en local, MySQL en remoto-, es posible añadir cualquier otro sin afectar al núcleo del código.
 
-Gesalt está desarrolado en Visual Basic, que une a su facilidad de uso la potencia del framework .NET y del paradigma de la programación orientada a objetos.
+Gesalt está desarrolado en Visual Basic, que une a su fácilidad de uso la potencia del framework .NET y del paradigma de la programación orientada a objetos.
 
 Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no puede aprovecharse de las ventajas  de la colaboración que ofrecen plataformas como GitLab -donde está alojado-, pero está preparado para hacerlo en un futuro (gestión de incidencias, etc.).
 
@@ -30,13 +30,13 @@ Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no pu
         
 2.	Competencia.
 
-	Existen algunas webs que, pagando una cuota, permiten realizar funciones similares. Algunas incluso tienen un servicio gratuito, pero muy limitado. Gesalt sería una alternativa gratuita, de código libre y, por tanto, facilmente adaptable por otros desarrolladores. Para un usuario típico, por ejemplo un pequeño propietario, sería una opción a coste cero para llevar la gestión de su vivienda turística.
+	Existen algunas webs que, pagando una cuota, permiten realizar funciones similares. Algunas incluso tienen un servicio gratuito, pero muy limitado. Gesalt sería una alternativa gratuita, de código libre y, por tanto, fácilmente adaptable por otros desarrolladores. Para un usuario típico, por ejemplo un pequeño propietario, sería una opción a coste cero para llevar la gestión de su vivienda turística.
 
 ## Ideas para su comercialización.
 
 1. Modelo de negocio.
 
-	Gesalt es un programa de código libre, un proyecto de fin de ciclo realizado en un ámbito académico. No obstante, sería viable convertirlo a un modelo freemium, gratuito para el público general y de pago, por ejemplo, a las inmobiliarias u otras empresas que necesitasen soporte técnico o la puesta a punto de la base de datos en el servidor.
+	Gesalt es un programa de código libre, un proyecto de fin de ciclo realizado en un ámbito académico. No obstante, sería viable convertirlo a un modelo freemium, gratuito para el público general y de pago, por ejemplo, para las inmobiliarias u otras empresas que necesitasen soporte técnico o la puesta a punto de la base de datos en el servidor.
 
 2. Promoción.
 
