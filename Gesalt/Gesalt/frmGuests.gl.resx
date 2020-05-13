@@ -223,12 +223,24 @@
     <value>&lt;Baleiro&gt;</value>
   </data>
   <data name="lblRating.Text" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Clientes</value>
   </data>
   <data name="cbxAcceptAd.Text" xml:space="preserve">
     <value>Acepta publicidade</value>
+  </data>
+  <data name="btnPrevious.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="btnNext.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="btnLast.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="btnFirst.Text" xml:space="preserve">
+    <value>&lt;&lt;</value>
   </data>
 </root>

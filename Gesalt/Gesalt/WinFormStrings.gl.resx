@@ -189,7 +189,7 @@
     <value>Tipo</value>
   </data>
   <data name="editOwnerTitle" xml:space="preserve">
-    <value>Modificar un propietario - Gesalt</value>
+    <value>Modificar un arrendador - Gesalt</value>
   </data>
   <data name="rowRemovedMsg" xml:space="preserve">
     <value>vaise eliminar da base de datos. Está seguro?</value>
@@ -228,10 +228,10 @@
     <value>OU</value>
   </data>
   <data name="filterOwnerLogoTrue" xml:space="preserve">
-    <value>O propietario ten logotipo</value>
+    <value>O arrendador ten logotipo</value>
   </data>
   <data name="filterOwnerLogoFalse" xml:space="preserve">
-    <value>O propietario non ten logotipo</value>
+    <value>O arrendador non ten logotipo</value>
   </data>
   <data name="filterOwnersMenuOFF" xml:space="preserve">
     <value>&amp;Filtrar datos</value>
@@ -240,7 +240,7 @@
     <value>Borrar &amp;filtro</value>
   </data>
   <data name="filterOwnersLabelOFF" xml:space="preserve">
-    <value>Propietarios:</value>
+    <value>Arrendadores:</value>
   </data>
   <data name="filterOwnersLabelON" xml:space="preserve">
     <value>FILTRO</value>
@@ -252,7 +252,7 @@
     <value>Ficheiros JPG (*.jpg)|*.jpg|Todos os ficheiros (*.*)|*.*</value>
   </data>
   <data name="rptOwnersHeaderTitle" xml:space="preserve">
-    <value>Informe de propietarios</value>
+    <value>Informe de arrendadores</value>
   </data>
   <data name="fieldRequired" xml:space="preserve">
     <value>Este campo é requerido</value>

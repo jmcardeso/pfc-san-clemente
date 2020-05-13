@@ -171,7 +171,7 @@
     <value>59, 20</value>
   </data>
   <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Owners</value>
+    <value>&amp;Lessors</value>
   </data>
   <data name="AddAnOwnerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
@@ -207,7 +207,7 @@
     <value>180, 22</value>
   </data>
   <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Owners Report</value>
+    <value>Lessors Report</value>
   </data>
   <data name="MailingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 20</value>
@@ -233,7 +233,7 @@
     <value>23, 22</value>
   </data>
   <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Add owner</value>
+    <value>Add lessor</value>
   </data>
   <data name="ToolStripEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -250,7 +250,7 @@
     <value>23, 22</value>
   </data>
   <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Edit owner</value>
+    <value>Edit lessor</value>
   </data>
   <data name="ToolStripDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -267,7 +267,7 @@
     <value>23, 22</value>
   </data>
   <data name="ToolStripDelete.Text" xml:space="preserve">
-    <value>Delete owner</value>
+    <value>Delete lessor</value>
   </data>
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -276,7 +276,7 @@
     <value>180, 22</value>
   </data>
   <data name="OwnersReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Owners Report</value>
+    <value>Lessors Report</value>
   </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1105,7 +1105,7 @@
     <value>41</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
-    <value>Owners:</value>
+    <value>Lessors:</value>
   </data>
   <data name="&gt;&gt;lblFilter.Name" xml:space="preserve">
     <value>lblFilter</value>
@@ -1834,7 +1834,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Owners - Gesalt</value>
+    <value>Lessors - Gesalt</value>
   </data>
   <data name="&gt;&gt;OwnersToolStripMenuItem.Name" xml:space="preserve">
     <value>OwnersToolStripMenuItem</value>

@@ -189,7 +189,7 @@
     <value>Type</value>
   </data>
   <data name="editOwnerTitle" xml:space="preserve">
-    <value>Edit an Owner - Gesalt</value>
+    <value>Edit an Lessor - Gesalt</value>
   </data>
   <data name="rowRemovedMsg" xml:space="preserve">
     <value>is going to be removed from the database. Are you sure?</value>
@@ -228,10 +228,10 @@
     <value>OR</value>
   </data>
   <data name="filterOwnerLogoTrue" xml:space="preserve">
-    <value>Owner has logo</value>
+    <value>Lessor has logo</value>
   </data>
   <data name="filterOwnerLogoFalse" xml:space="preserve">
-    <value>Owner has no logo</value>
+    <value>Lessor has no logo</value>
   </data>
   <data name="filterOwnersMenuOFF" xml:space="preserve">
     <value>&amp;Filter data</value>
@@ -240,7 +240,7 @@
     <value>Clear &amp;filter</value>
   </data>
   <data name="filterOwnersLabelOFF" xml:space="preserve">
-    <value>Owners:</value>
+    <value>Lessors:</value>
   </data>
   <data name="filterOwnersLabelON" xml:space="preserve">
     <value>FILTER</value>
@@ -252,7 +252,7 @@
     <value>JPG files (*.jpg)|*.jpg|All files (*.*)|*.*</value>
   </data>
   <data name="rptOwnersHeaderTitle" xml:space="preserve">
-    <value>Owners Report</value>
+    <value>Lessors Report</value>
   </data>
   <data name="fieldRequired" xml:space="preserve">
     <value>This field is required</value>

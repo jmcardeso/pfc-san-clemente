@@ -925,7 +925,7 @@
     <value>0</value>
   </data>
   <data name="lblIdioma.Text" xml:space="preserve">
-    <value>Choose the language and bla, bla, bla</value>
+    <value>Choose the language</value>
   </data>
   <data name="&gt;&gt;lblIdioma.Name" xml:space="preserve">
     <value>lblIdioma</value>

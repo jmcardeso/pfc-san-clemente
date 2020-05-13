@@ -806,9 +806,12 @@
     <value>Clientes</value>
   </data>
   <data name="btnOwners.Text" xml:space="preserve">
-    <value>Propietarios</value>
+    <value>Arrendadores</value>
   </data>
   <data name="btnProperties.Text" xml:space="preserve">
     <value>Inmuebles</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Gesalt</value>
   </data>
 </root>
