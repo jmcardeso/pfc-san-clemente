@@ -16,51 +16,43 @@ Gesalt está desarrolado en Visual Basic, que une a su facilidad de uso la poten
 
 Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no puede aprovecharse de las ventajas  de la colaboración que ofrecen plataformas como GitLab -donde está alojado-, pero está preparado para hacerlo en un futuro (gestión de incidencias, etc.).
 
-## Posibilidades de comercialización (viabilidade, competidores…).
-1.	Viabilidade.
+## Posibilidades de comercialización (viabilidad, competidores…).
 
-    1.1	Viabilidade técnica.
-    
-        1.1.a) Será posible dispoñer dos recursos humanos e medios de produción necesarios (materias primas, maquinaria, instalacións…)?
+1.	Viabilidad.
+
+    1.1	Viabilidad técnica.
+	
+		El proyecto es viable técnicamente. No se necesita más infraestructura que un ordenador con las herramientas necesarias. La única dificultad viene marcada por el tiempo, al ser hecho por un único desarrollador.
         
-        1.1.b) Existe algún impedimento técnico que dificulte o proceso produtivo?
-        
-    1.2	Viabilidade económica
-    
-        1.2.a) Os beneficios do proyecto son superiores aos costes?
-        
-        1.2.b) As perdas poden cubrirse vía financiamento (por parte da administración pública, con subvencións, etc)?
+    1.2	Viabilidad económica
+	
+		Todas las herramientas necesarias para el desarrollo de la aplicación son gratuítas, tanto el IDE empleado (Visual Studio) como los sistemas gestores de las bases de datos. La única variable económica a tener en cuenta es el tiempo de desarrollo, pero al tratarse de un proyecto de fin de ciclo tampoco se puede considerar.
         
 2.	Competencia.
 
-    2.1. Identificación da competencia, as súas características e a súa posición no mercado.
-    
-    2.2. Existencia de productos/servizos substitutivos.
+	Existen algunas webs que, pagando una cuota, permiten realizar funciones similares. Algunas incluso tienen un servicio gratuíto, pero muy limitado. Gesalt sería una alternativa gratuíta, de código libre y, por tanto, facilmente adaptable por otros desarrolladores. Para un usuario típico, por ejemplo un pequeño propietario, sería una opción a coste cero para llevar la gestión de su vivienda turística.
 
-## Ideas para a súa comercialización.
-1.	Promoción.
+## Ideas para su comercialización.
 
-    1.1.	Técnicas elixidas (redes sociais, plataformas multimedia, páxina web, posicionamento web SEO, patrocinios, participación en eventos, prácticas de responsabilidade social corporativa, outras).
-    
-    1.2.	Xustifica a elección.
-    
-2.	Modelo de negocio.
+1. Modelo de negocio.
 
-    2.1.Modelo elixido (Modelo de pago / Freemium (é de balde pero as funcionalidades extras son de pago) / In house (desenvolvementos a medida para contornos empresariais / De subscrición / Por publicidade / Outros)
-    
-    2.2. Xustifica a elección.
+	Gesalt es un programa de código libre, un proyecto de fin de ciclo realizado en un ámbito académico. No obstante, sería viable convertirlo a un modelo freemium, gratuíto para el público general y de pago, por ejemplo, a las inmobiliarias u otras empresas que necesitasen soporte técnico o la puesta a punto de la base de datos en el servidor.
+
+2. Promoción.
+
+	Optando por un modelo freemium, la promoción sería contactando con las agencias y profesionales del sector inmobiliario bien personalmente, bien acudiendo a eventos del sector.
 
 # Webgrafía
 
-Xustificación de necesidades, viabilidade:
+Justificación de necesidades, viabilidad:
 
-**Guía para a elaboración de proyectos. Gobierno Vasco.**
+**Guía para la elaboración de proyectos. Gobierno Vasco.**
 
-https://www.pluralismoyconvivencia.es/upload/19/71/guia_elaboracion_proyectos_c.pdf  (páxina 26 e seguintes)
+https://www.pluralismoyconvivencia.es/upload/19/71/guia_elaboracion_proyectos_c.pdf  (página 26 y siguientes)
 
 Competencia:
 
 **Modelo de plan de negocios. Empresa de servicios informáticos. IGAPE**
 
 http://www.igape.es/images/crear-unha-empresa/Recursos/PlansdeNegocio/16ServiciosInformaticos12_5_cas.pdf 
-(páxina 45 e seguintes)
+(página 45 y siguientes)
