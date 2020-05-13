@@ -1,28 +1,20 @@
-# ESTUDO DE NECESIDADES E MODELO DE NEGOCIO
+# ESTUDIO DE NECESIDADES Y MODELO DE NEGOCIO
 
-## Xustificación das necesidades detectadas que cubre o sistema a desenvolver
-1.	Describe o problema ou a necesidade.
-2.	Por que é necesaria a posta en marcha dun proxecto que aborde dita necesidade?
-3.	Cal é o obxectivo xeral que persegue o proxecto?
-4.	Responde a estas preguntas concretas:
+## Justificación de las necesidades detectadas que cubre el sistema a desarrollar
 
-    4.1.Como se pode responder a esta necesidade? 
-    
-    4.2. Que pode facerse para cambiar este estado de cousas? 
-    
-    4.3. Como podemos contribuír desde a nosa situación a que o problema se resolva? 
-    
-    4.4. Que medios, actividades e recursos van poñer en xogo? 
-    
-    4.5. Que actividades van realizar? 
-    
-    4.6. Con que metodoloxía vai levar a cabo o traballo?
-    
-    4.7. Que persoas serían precisas para realizar o proxecto con éxito? 
-    
-    4.8 Con canto tempo cóntase? 
-    
-    4.9 Canto tempo se necesita?
+A lo largo de los últimos años cada vez más propietarios de viviendas deshabitadas o en alquiler tradicional se pasan al alquiler vacacional o turístico, por su mayor beneficio económico. Para publicitar sus inmuebles, hacen uso de webs especializadas en este tipo de alquiler -Airbnb o Booking entre muchas otras-, que les permiten acceder a los posibles clientes interesados de cualquier lugar del mundo.
+
+Sin embargo, estas webs están fundamentalmente enfocadas en el cliente y raramente ofrecen al propietario características tan necesarias como la emisión de facturas o la posibilidad de hacer campañas publicitarias u ofertas de forma personalizada.
+
+Ante esta situación, nace Gesalt -gestión de alquileres turísticos-. Gesalt pretende ser una apliación que ayude tanto al pequeño propietario como a las agencias inmobiliarias en la gestión de aquellas tareas que no contemplan las webs antes señaladas. Para ello, hace uso de un doble enfoque que viene marcado por el tipo y la ubicación de la base de datos, pilar fundamental de cualquier aplicación.
+
+Si el usuario es un pequeño propietario, Gesalt puede utilizar una base de datos local alojada en el ordenador en el que se ejecuta el programa; si se trata de una agencia inmobiliaria con varios ordenadores trabajando a la vez, Gesalt puede conectarse con una base de datos ubicada en un servidor remoto.
+
+Esta característica -ser DB Agnostic, esto es, independiente del SGBD- es la piedra angular del programa. Y si bien, inicialmente, sólo están implementados dos SGBD -Access en local, MySQL en remoto-, es posible añadir cualquier otro sin afectar al núcleo del código.
+
+Gesalt está desarrolado en Visual Basic, que une a su facilidad de uso la potencia del framework .NET y del paradigma de la programación orientada a objetos.
+
+Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no puede aprovecharse de las ventajas  de la colaboración que ofrecen plataformas como GitLab -donde está alojado-, pero está preparado para hacerlo en un futuro (gestión de incidencias, etc.).
 
 ## Posibilidades de comercialización (viabilidade, competidores…).
 1.	Viabilidade.
