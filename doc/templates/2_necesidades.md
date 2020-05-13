@@ -22,11 +22,11 @@ Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no pu
 
     1.1	Viabilidad técnica.
 	
-		El proyecto es viable técnicamente. No se necesita más infraestructura que un ordenador con las herramientas necesarias. La única dificultad viene marcada por el tiempo, al ser hecho por un único desarrollador.
+	El proyecto es viable técnicamente. No se necesita más infraestructura que un ordenador con las herramientas necesarias. La única dificultad viene marcada por el tiempo, al ser hecho por un único desarrollador.
         
     1.2	Viabilidad económica
 	
-		Todas las herramientas necesarias para el desarrollo de la aplicación son gratuítas, tanto el IDE empleado (Visual Studio) como los sistemas gestores de las bases de datos. La única variable económica a tener en cuenta es el tiempo de desarrollo, pero al tratarse de un proyecto de fin de ciclo tampoco se puede considerar.
+	Todas las herramientas necesarias para el desarrollo de la aplicación son gratuítas, tanto el IDE empleado (Visual Studio) como los sistemas gestores de las bases de datos. La única variable económica a tener en cuenta es el tiempo de desarrollo, pero al tratarse de un proyecto de fin de ciclo tampoco se puede considerar.
         
 2.	Competencia.
 
