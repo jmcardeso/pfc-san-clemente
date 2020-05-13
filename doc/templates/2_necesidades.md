@@ -26,17 +26,17 @@ Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no pu
         
     1.2	Viabilidad económica
 	
-	Todas las herramientas necesarias para el desarrollo de la aplicación son gratuítas, tanto el IDE empleado (Visual Studio) como los sistemas gestores de las bases de datos. La única variable económica a tener en cuenta es el tiempo de desarrollo, pero al tratarse de un proyecto de fin de ciclo tampoco se puede considerar.
+	Todas las herramientas necesarias para el desarrollo de la aplicación son gratuitas, tanto el IDE empleado (Visual Studio) como los sistemas gestores de las bases de datos. La única variable económica a tener en cuenta es el tiempo de desarrollo, pero al tratarse de un proyecto de fin de ciclo tampoco se puede considerar.
         
 2.	Competencia.
 
-	Existen algunas webs que, pagando una cuota, permiten realizar funciones similares. Algunas incluso tienen un servicio gratuíto, pero muy limitado. Gesalt sería una alternativa gratuíta, de código libre y, por tanto, facilmente adaptable por otros desarrolladores. Para un usuario típico, por ejemplo un pequeño propietario, sería una opción a coste cero para llevar la gestión de su vivienda turística.
+	Existen algunas webs que, pagando una cuota, permiten realizar funciones similares. Algunas incluso tienen un servicio gratuito, pero muy limitado. Gesalt sería una alternativa gratuita, de código libre y, por tanto, facilmente adaptable por otros desarrolladores. Para un usuario típico, por ejemplo un pequeño propietario, sería una opción a coste cero para llevar la gestión de su vivienda turística.
 
 ## Ideas para su comercialización.
 
 1. Modelo de negocio.
 
-	Gesalt es un programa de código libre, un proyecto de fin de ciclo realizado en un ámbito académico. No obstante, sería viable convertirlo a un modelo freemium, gratuíto para el público general y de pago, por ejemplo, a las inmobiliarias u otras empresas que necesitasen soporte técnico o la puesta a punto de la base de datos en el servidor.
+	Gesalt es un programa de código libre, un proyecto de fin de ciclo realizado en un ámbito académico. No obstante, sería viable convertirlo a un modelo freemium, gratuito para el público general y de pago, por ejemplo, a las inmobiliarias u otras empresas que necesitasen soporte técnico o la puesta a punto de la base de datos en el servidor.
 
 2. Promoción.
 
