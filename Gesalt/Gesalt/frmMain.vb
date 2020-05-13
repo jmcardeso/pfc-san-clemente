@@ -153,4 +153,10 @@ Public Class frmMain
 
         frmGst.ShowDialog()
     End Sub
+
+    Private Sub btnProperties_Click(sender As Object, e As EventArgs) Handles btnProperties.Click
+        Dim frmProp As New frmProperty
+
+        frmProp.ShowDialog()
+    End Sub
 End Class
