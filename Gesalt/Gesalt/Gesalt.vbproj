@@ -146,13 +146,14 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
-    <Compile Include="DataBase\Connection.vb" />
-    <Compile Include="DataBase\Guest.vb" />
-    <Compile Include="DataBase\OpGuest.vb" />
-    <Compile Include="DataBase\OpOwner.vb" />
-    <Compile Include="DataBase\OpProp.vb" />
-    <Compile Include="DataBase\Owner.vb" />
-    <Compile Include="DataBase\Utils.vb" />
+    <Compile Include="Modules\DataBase\Connection.vb" />
+    <Compile Include="Modules\DataBase\Guest.vb" />
+    <Compile Include="Modules\DataBase\OpGuest.vb" />
+    <Compile Include="Modules\DataBase\OpOwner.vb" />
+    <Compile Include="Modules\DataBase\OpProp.vb" />
+    <Compile Include="Modules\DataBase\Owner.vb" />
+    <Compile Include="Modules\DataBase\Photo.vb" />
+    <Compile Include="Modules\DataBase\Utils.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,52 +161,64 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGuests.Designer.vb">
+    <Compile Include="Modules\Guests\frmGuests.Designer.vb">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmGuests.vb">
+    <Compile Include="Modules\Guests\frmGuests.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOwners.Designer.vb">
+    <Compile Include="Modules\Owners\frmOwners.Designer.vb">
       <DependentUpon>frmOwners.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmOwners.vb">
+    <Compile Include="Modules\Owners\frmOwners.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGuestsAux.Designer.vb">
+    <Compile Include="Modules\Guests\frmGuestsAux.Designer.vb">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmGuestsAux.vb">
+    <Compile Include="Modules\Guests\frmGuestsAux.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOwnersAux.Designer.vb">
+    <Compile Include="Modules\Properties\frmPropertiesFilter.Designer.vb">
+      <DependentUpon>frmPropertiesFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmPropertiesFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Properties\frmPropertiesAux.Designer.vb">
+      <DependentUpon>frmPropertiesAux.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmPropertiesAux.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Owners\frmOwnersAux.Designer.vb">
       <DependentUpon>frmOwnersAux.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmOwnersAux.vb">
+    <Compile Include="Modules\Owners\frmOwnersAux.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGuestsFilter.Designer.vb">
+    <Compile Include="Modules\Guests\frmGuestsFilter.Designer.vb">
       <DependentUpon>frmGuestsFilter.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmGuestsFilter.vb">
+    <Compile Include="Modules\Guests\frmGuestsFilter.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOwnersFilter.Designer.vb">
+    <Compile Include="Modules\Owners\frmOwnersFilter.Designer.vb">
       <DependentUpon>frmOwnersFilter.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmOwnersFilter.vb">
+    <Compile Include="Modules\Owners\frmOwnersFilter.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProperty.Designer.vb">
+    <Compile Include="Modules\Properties\frmProperty.Designer.vb">
       <DependentUpon>frmProperty.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmProperty.vb">
+    <Compile Include="Modules\Properties\frmProperty.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportGuest.Designer.vb">
+    <Compile Include="Modules\Guests\frmReportGuest.Designer.vb">
       <DependentUpon>frmReportGuest.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReportGuest.vb">
+    <Compile Include="Modules\Guests\frmReportGuest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSettings.Designer.vb">
@@ -214,15 +227,21 @@
     <Compile Include="frmSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Properties\frmReportProperty.Designer.vb">
+      <DependentUpon>frmReportProperty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmReportProperty.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="frmReportOwner.Designer.vb">
+    <Compile Include="Modules\Owners\frmReportOwner.Designer.vb">
       <DependentUpon>frmReportOwner.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReportOwner.vb">
+    <Compile Include="Modules\Owners\frmReportOwner.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -262,64 +281,82 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuests.es.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuests.es.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuests.gl.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuests.gl.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuests.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuests.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwners.es.resx">
+    <EmbeddedResource Include="Modules\Owners\frmOwners.es.resx">
       <DependentUpon>frmOwners.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwners.gl.resx">
+    <EmbeddedResource Include="Modules\Owners\frmOwners.gl.resx">
       <DependentUpon>frmOwners.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwners.resx">
+    <EmbeddedResource Include="Modules\Owners\frmOwners.resx">
       <DependentUpon>frmOwners.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuestsAux.es.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuestsAux.es.resx">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuestsAux.gl.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuestsAux.gl.resx">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuestsAux.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuestsAux.resx">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwnersAux.es.resx">
+    <EmbeddedResource Include="Modules\Properties\frmPropertiesFilter.resx">
+      <DependentUpon>frmPropertiesFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmPropertiesAux.es.resx">
+      <DependentUpon>frmPropertiesAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmPropertiesAux.gl.resx">
+      <DependentUpon>frmPropertiesAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmPropertiesAux.resx">
+      <DependentUpon>frmPropertiesAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Owners\frmOwnersAux.es.resx">
       <DependentUpon>frmOwnersAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwnersAux.gl.resx">
+    <EmbeddedResource Include="Modules\Owners\frmOwnersAux.gl.resx">
       <DependentUpon>frmOwnersAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwnersAux.resx">
+    <EmbeddedResource Include="Modules\Owners\frmOwnersAux.resx">
       <DependentUpon>frmOwnersAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuestsFilter.resx">
+    <EmbeddedResource Include="Modules\Guests\frmGuestsFilter.resx">
       <DependentUpon>frmGuestsFilter.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOwnersFilter.resx">
+    <EmbeddedResource Include="Modules\Owners\frmOwnersFilter.resx">
       <DependentUpon>frmOwnersFilter.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProperty.resx">
+    <EmbeddedResource Include="Modules\Properties\frmProperty.es.resx">
       <DependentUpon>frmProperty.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportGuest.es.resx">
+    <EmbeddedResource Include="Modules\Properties\frmProperty.gl.resx">
+      <DependentUpon>frmProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmProperty.resx">
+      <DependentUpon>frmProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Guests\frmReportGuest.es.resx">
       <DependentUpon>frmReportGuest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportGuest.gl.resx">
+    <EmbeddedResource Include="Modules\Guests\frmReportGuest.gl.resx">
       <DependentUpon>frmReportGuest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportGuest.resx">
+    <EmbeddedResource Include="Modules\Guests\frmReportGuest.resx">
       <DependentUpon>frmReportGuest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportOwner.es.resx">
+    <EmbeddedResource Include="Modules\Owners\frmReportOwner.es.resx">
       <DependentUpon>frmReportOwner.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportOwner.gl.resx">
+    <EmbeddedResource Include="Modules\Owners\frmReportOwner.gl.resx">
       <DependentUpon>frmReportOwner.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.es.resx">
@@ -331,17 +368,27 @@
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportOwner.resx">
+    <EmbeddedResource Include="Modules\Owners\frmReportOwner.resx">
       <DependentUpon>frmReportOwner.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmReportProperty.es.resx">
+      <DependentUpon>frmReportProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmReportProperty.gl.resx">
+      <DependentUpon>frmReportProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmReportProperty.resx">
+      <DependentUpon>frmReportProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\rptProperty.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptGuest.rdlc" />
-    <EmbeddedResource Include="rptOwner.rdlc" />
+    <EmbeddedResource Include="Modules\Guests\rptGuest.rdlc" />
+    <EmbeddedResource Include="Modules\Owners\rptOwner.rdlc" />
     <EmbeddedResource Include="WinFormStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WinFormStrings.es.Designer.vb</LastGenOutput>
@@ -357,7 +404,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase\Prop.vb" />
+    <Compile Include="Modules\DataBase\Prop.vb" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

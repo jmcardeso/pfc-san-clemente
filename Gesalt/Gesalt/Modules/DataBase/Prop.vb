@@ -8,9 +8,10 @@ Public Class Prop
     Public Property Province As String
     Public Property MaxGuests As Integer
     Public Property Size As Decimal
-    Public Property BedRooms As Integer
+    Public Property Bedrooms As Integer
     Public Property Baths As Integer
     Public Property Description As String
+    Public Property Photos As New List(Of Photo)
 
     Public Sub New()
         Me.Id = 0
@@ -21,9 +22,10 @@ Public Class Prop
         Me.Province = ""
         Me.MaxGuests = 0
         Me.Size = 0
-        Me.BedRooms = 0
+        Me.Bedrooms = 0
         Me.Baths = 0
         Me.Description = ""
+        Me.Photos = Nothing
     End Sub
 
     Public Sub New(id As Integer, cadRef As String, address As String, zip As String, city As String,
@@ -37,8 +39,17 @@ Public Class Prop
         Me.Province = province
         Me.MaxGuests = maxGuests
         Me.Size = size
-        Me.BedRooms = bedRooms
+        Me.Bedrooms = bedRooms
         Me.Baths = baths
         Me.Description = description
     End Sub
+
+    Public Sub AddPhoto(photo As Photo)
+        Me.Photos.Add(photo)
+    End Sub
+
+    Public Sub RemovePhoto(photo As Photo)
+        Me.Photos.Remove(photo)
+    End Sub
+
 End Class

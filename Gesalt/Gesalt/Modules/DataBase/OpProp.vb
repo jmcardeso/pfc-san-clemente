@@ -37,7 +37,7 @@ Public Class OpProp
     ''' <param name="sql">Opcional. Cadena de texto con la sentencia de selección de la tabla property de la base de datos.</param>
     ''' <param name="parameters">Opcional. Colección de parámetros para la sentencia de selección de la tabla property de la base de datos.</param>
     ''' <returns>Lista con los objetos de la case <c>Prop</c> obtenidos de la tabla property de la base de datos.</returns>
-    Public Function GetProps(Optional sql As String = "select * from property order by last_name",
+    Public Function GetProps(Optional sql As String = "select * from property order by city",
                                  Optional parameters As List(Of DbParameter) = Nothing) As List(Of Prop)
         Dim Props As New List(Of Prop)
         Dim Prop As Prop
@@ -67,6 +67,9 @@ Public Class OpProp
                               dr.Item(6), dr.Item(7),
                               dr.Item(8), dr.Item(9),
                               dr.Item(10))
+
+            Prop.Photos = GetAllPhotos(Prop.Id)
+
             Props.Add(Prop)
         Next
 
@@ -105,6 +108,10 @@ Public Class OpProp
 
         Dim dt As New DataTable()
         da.Fill(dt)
+
+        For Each photo As Photo In prop.Photos
+            DeletePhoto(photo)
+        Next
 
         Dim dr As DataRow
         dr = dt.Rows.Item(0)
@@ -204,6 +211,113 @@ Public Class OpProp
         Return result
     End Function
 
+    Public Function GetAllPhotos(propertyId As Integer) As List(Of Photo)
+        Dim photos As New List(Of Photo)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@property_id"
+        parameter.Value = propertyId
+        parameter.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(parameter)
+        sqlCommand.CommandText = "select * from photo where property_id = @property_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        For Each dr As DataRow In dt.Rows
+            photos.Add(New Photo(dr.Item(0), dr.Item(1), dr.Item(2)))
+        Next
+
+        Return photos
+    End Function
+
+    Public Function AddPhoto(photo As Photo) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+
+        Dim sql As String = "select * from photo"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        dr("Id") = photo.Id
+        dr("property_id") = photo.PropertyId
+        dr("path") = photo.Path
+
+        dt.Rows.Add(dr)
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Public Function DeletePhoto(photo As Photo) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from photo where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = photo.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.Delete()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
     ''' <summary>
     ''' Introduce los datos de las propiedades de un objeto de la clase <c>Prop</c> en los campos de una fila de la tabla property de la base de datos.
     ''' </summary>
@@ -218,7 +332,7 @@ Public Class OpProp
         dr("province") = prop.Province
         dr("max_guests") = prop.MaxGuests
         dr("size") = prop.Size
-        dr("bed_rooms") = prop.BedRooms
+        dr("bedrooms") = prop.Bedrooms
         dr("baths") = prop.Baths
         dr("description") = prop.Description
     End Sub
