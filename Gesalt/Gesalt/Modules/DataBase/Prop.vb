@@ -1,6 +1,6 @@
 ﻿<Serializable()>
 Public Class Prop
-    Public ReadOnly Property Id As Integer
+    Public Property Id As Integer
     Public Property CadRef As String
     Public Property Address As String
     Public Property Zip As String

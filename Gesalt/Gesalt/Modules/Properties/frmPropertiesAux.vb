@@ -53,11 +53,6 @@ Public Class frmPropertiesAux
     End Sub
 
     Private Sub btnAddPhoto_Click(sender As Object, e As EventArgs) Handles btnAddPhoto.Click
-        If propAux.Id = 0 Then
-            MsgBox("No se puede, coleguita")
-            Exit Sub
-        End If
-
         ofdPhotos.Filter = LocRM.GetString("ofdImageFilter")
         ofdPhotos.FilterIndex = 1
         ofdPhotos.FileName = ""
@@ -68,12 +63,12 @@ Public Class frmPropertiesAux
             pbxPhotos.Image = Image.FromFile(ofdPhotos.FileName)
             Dim photo As New Photo(0, propAux.Id, ofdPhotos.FileName)
             propAux.Photos.Add(photo)
-            opProp.AddPhoto(photo)
+            If propAux.Photos.Count = 1 Then
+                bs.DataSource = propAux.Photos
+            End If
+            bs.ResetBindings(False)
+            bs.Position = bs.Count - 1
         End If
-
-        propAux.Photos = opProp.GetAllPhotos(propAux.Id)
-        bs.DataSource = propAux.Photos
-        bs.Position = bs.Count - 1
 
         If Not btnDeletePhoto.Enabled Then
             btnDeletePhoto.Enabled = True
@@ -81,10 +76,15 @@ Public Class frmPropertiesAux
     End Sub
 
     Private Sub btnDeletePhoto_Click(sender As Object, e As EventArgs) Handles btnDeletePhoto.Click
-        opProp.DeletePhoto(bs.Current)
-        propAux.Photos.Clear()
-        propAux.Photos = opProp.GetAllPhotos(propAux.Id)
-        bs.DataSource = propAux.Photos
+        If bs.Current.Id <> 0 Then
+            opProp.DeletePhoto(bs.Current)
+        End If
+
+        propAux.Photos.Remove(bs.Current)
+
+        'propAux.Photos.Clear()
+        'propAux.Photos = opProp.GetAllPhotos(propAux.Id)
+        'bs.DataSource = propAux.Photos
         bs.ResetBindings(False)
 
         If propAux.Photos.Count = 0 Then
@@ -99,13 +99,13 @@ Public Class frmPropertiesAux
         Dim fieldName As String = ""
 
         If tbxCadRef.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldLastName")
+            fieldName = LocRM.GetString("fieldCadRef")
+            result = False
+        ElseIf tbxAddress.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldAddress")
             result = False
         ElseIf tbxMaxGuests.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldFirstName")
-            result = False
-        ElseIf tbxSize.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldNif")
+            fieldName = LocRM.GetString("fieldMaxGuests")
             result = False
         End If
 

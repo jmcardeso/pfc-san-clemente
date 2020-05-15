@@ -188,7 +188,7 @@
   <data name="fieldType" xml:space="preserve">
     <value>Type</value>
   </data>
-  <data name="editOwnerTitle" xml:space="preserve">
+  <data name="editLessorTitle" xml:space="preserve">
     <value>Edit an Lessor - Gesalt</value>
   </data>
   <data name="rowRemovedMsg" xml:space="preserve">
@@ -227,22 +227,22 @@
   <data name="filterOr" xml:space="preserve">
     <value>OR</value>
   </data>
-  <data name="filterOwnerLogoTrue" xml:space="preserve">
+  <data name="filterLessorLogoTrue" xml:space="preserve">
     <value>Lessor has logo</value>
   </data>
-  <data name="filterOwnerLogoFalse" xml:space="preserve">
+  <data name="filterLessorLogoFalse" xml:space="preserve">
     <value>Lessor has no logo</value>
   </data>
-  <data name="filterOwnersMenuOFF" xml:space="preserve">
+  <data name="filterLessorsMenuOFF" xml:space="preserve">
     <value>&amp;Filter data</value>
   </data>
-  <data name="filterOwnersMenuON" xml:space="preserve">
+  <data name="filterLessorsMenuON" xml:space="preserve">
     <value>Clear &amp;filter</value>
   </data>
-  <data name="filterOwnersLabelOFF" xml:space="preserve">
+  <data name="filterLessorsLabelOFF" xml:space="preserve">
     <value>Lessors:</value>
   </data>
-  <data name="filterOwnersLabelON" xml:space="preserve">
+  <data name="filterLessorsLabelON" xml:space="preserve">
     <value>FILTER</value>
   </data>
   <data name="addWhenFilterOnMsg" xml:space="preserve">
@@ -251,7 +251,7 @@
   <data name="ofdImageFilter" xml:space="preserve">
     <value>JPG files (*.jpg)|*.jpg|All files (*.*)|*.*</value>
   </data>
-  <data name="rptOwnersHeaderTitle" xml:space="preserve">
+  <data name="rptLessorsHeaderTitle" xml:space="preserve">
     <value>Lessors Report</value>
   </data>
   <data name="fieldRequired" xml:space="preserve">

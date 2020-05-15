@@ -129,9 +129,9 @@ Public Class OpProp
     ''' Añade una nueva fila a la tabla property de la base de datos.
     ''' </summary>
     ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a añadir en la tabla property de la base de datos.</param>
-    ''' <returns><c>True</c> si la inserción ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function AddProp(prop As Prop) As Boolean
-        Dim result As Boolean = False
+    ''' <returns>El índice de la clave primaria de la fila añadida. -1 si ha habido un problema al calcular el índice. -2 si ha habido un problema al añadir la fila</returns>
+    Public Function AddProp(prop As Prop) As Integer
+        Dim result As Integer
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
@@ -154,11 +154,17 @@ Public Class OpProp
         Dim dr As DataRow
         dr = dt.NewRow()
 
-        FillRow(dr, prop)
-        dt.Rows.Add(dr)
+        result = GetId()
 
-        If da.Update(dt) = 1 Then
-            result = True
+        If result <> -1 Then
+            prop.Id = result
+
+            FillRow(dr, prop)
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
         End If
 
         Return result
@@ -241,8 +247,8 @@ Public Class OpProp
         Return photos
     End Function
 
-    Public Function AddPhoto(photo As Photo) As Boolean
-        Dim result As Boolean = False
+    Public Function AddPhoto(photo As Photo) As Integer
+        Dim result As Integer
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
@@ -265,14 +271,17 @@ Public Class OpProp
         Dim dr As DataRow
         dr = dt.NewRow()
 
-        dr("Id") = 0
-        dr("property_id") = photo.PropertyId
-        dr("path") = photo.Path
+        result = GetPhotoId()
+        If result <> -1 Then
+            dr("Id") = result
+            dr("property_id") = photo.PropertyId
+            dr("path") = photo.Path
 
-        dt.Rows.Add(dr)
+            dt.Rows.Add(dr)
 
-        If da.Update(dt) = 1 Then
-            result = True
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
         End If
 
         Return result
@@ -336,4 +345,34 @@ Public Class OpProp
         dr("baths") = prop.Baths
         dr("description") = prop.Description
     End Sub
+
+    Private Function GetId() As Integer
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from property"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            Return Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1
+        Catch err As Exception
+            Return -1
+        End Try
+    End Function
+
+    Private Function GetPhotoId() As Integer
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from photo"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            Return Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1
+        Catch err As Exception
+            Return -1
+        End Try
+    End Function
 End Class

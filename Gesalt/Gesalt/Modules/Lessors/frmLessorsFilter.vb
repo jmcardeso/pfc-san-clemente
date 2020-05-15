@@ -1,7 +1,7 @@
 ﻿Imports System.Resources
 Imports System.Data.Common
 
-Public Class frmOwnersFilter
+Public Class frmLessorsFilter
     Private _resultSQL As String
     Public ReadOnly Property resultSQL As String
         Get
@@ -23,18 +23,18 @@ Public Class frmOwnersFilter
         End Get
     End Property
 
-    Const SELECT_OWNER As String = "select * from owner where "
+    Const SELECT_OWNER As String = "select * from lessor where "
     Const ORDERBY_OWNER As String = " order by last_name"
 
-    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwnersFilter).Assembly)
+    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmLessorsFilter).Assembly)
 
     Dim Position As New Point(10, 10)
     Dim FiltersPanel As New List(Of Panel)
     Dim ContainerPanel As New FlowLayoutPanel
-    Dim FieldsOwnerName As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
+    Dim FieldsLessorName As String() = {LocRM.GetString("fieldType"), LocRM.GetString("fieldLastName"), LocRM.GetString("fieldFirstName"), LocRM.GetString("fieldNif"),
         LocRM.GetString("fieldAddress"), LocRM.GetString("fieldCity"), LocRM.GetString("fieldZip"), LocRM.GetString("fieldProvince"),
         LocRM.GetString("fieldPhone"), LocRM.GetString("fieldEmail"), LocRM.GetString("fieldPathLogo")}
-    Dim FieldsOwner As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "path_logo"}
+    Dim FieldsLessor As String() = {"type", "last_name", "first_name", "nif", "address", "city", "zip", "province", "phone", "email", "path_logo"}
     Dim NumberOperators As String() = {"=", "<>", "<", ">", "<=", ">="}
     Dim StringOperators As String() = {LocRM.GetString("EqualTo"), LocRM.GetString("DifferentFrom"), LocRM.GetString("StartsWith"), LocRM.GetString("Contains")}
     Const TYPE As Integer = 0, LAST_NAME As Integer = 1, FIRST_NAME As Integer = 2, NIF As Integer = 3, ADDRESS As Integer = 4, CITY As Integer = 5, ZIP As Integer = 6,
@@ -120,7 +120,7 @@ Public Class frmOwnersFilter
         CmbFields.Location = New Point(0, 0)
         CmbFields.Name = "CmbFields_" & FiltersPanel.Count - 1
         CmbFields.DropDownStyle = ComboBoxStyle.DropDownList
-        CmbFields.Items.AddRange(FieldsOwnerName)
+        CmbFields.Items.AddRange(FieldsLessorName)
         CmbFields.SelectedIndex = 0
         AddHandler CmbFields.SelectedIndexChanged, AddressOf Me.CmbCampos_SelectedIndexChanged
         pnlFilter.Controls.Add(CmbFields)
@@ -142,7 +142,7 @@ Public Class frmOwnersFilter
         Dim VCheckBox As New CheckBox
         VCheckBox.Location = New Point(273, 0)
         VCheckBox.Size = New Size(190, 20)
-        VCheckBox.Text = LocRM.GetString("filterOwnerLogoTrue")
+        VCheckBox.Text = LocRM.GetString("filterLessorLogoTrue")
         VCheckBox.Name = "VCheckBox_" & FiltersPanel.Count - 1
         VCheckBox.Visible = False
         pnlFilter.Controls.Add(VCheckBox)
@@ -211,7 +211,7 @@ Public Class frmOwnersFilter
                         VTextBox.BackColor = Color.Red
                         FilterOK = False
                     Else
-                        _resultSQL += FieldsOwner(controlIndex) & " "
+                        _resultSQL += FieldsLessor(controlIndex) & " "
                         Select Case CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedIndex
                             Case 0
                                 _resultSQL += "like @" & VTextBox.Name
@@ -226,16 +226,16 @@ Public Class frmOwnersFilter
                                 _resultSQL += "like @" & VTextBox.Name
                                 _resultParameters.Add(Utils.AddFilterParameter("@" & VTextBox.Name, "%" & VTextBox.Text & "%", DbType.String))
                         End Select
-                        _resultReadable += FieldsOwnerName(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " '" &
+                        _resultReadable += FieldsLessorName(controlIndex) & " " & CType(ContainerPanel.Controls.Item(i).Controls.Item(1), ComboBox).SelectedItem & " '" &
                             VTextBox.Text & "'"
                     End If
                 Case PATH_LOGO
                     Dim VCheckBox As CheckBox = ContainerPanel.Controls.Item(i).Controls.Find("VCheckBox_" & i, True)(0)
 
-                    _resultSQL += FieldsOwner(controlIndex)
+                    _resultSQL += FieldsLessor(controlIndex)
                     _resultSQL += IIf(VCheckBox.Checked, " not like @", " like @") & VCheckBox.Name
                     _resultParameters.Add(Utils.AddFilterParameter("@" & VCheckBox.Name, "", DbType.String))
-                    _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterOwnerLogoTrue") & "'", "'" & LocRM.GetString("filterOwnerLogoFalse") & "'")
+                    _resultReadable += IIf(VCheckBox.Checked, "'" & LocRM.GetString("filterLessorLogoTrue") & "'", "'" & LocRM.GetString("filterLessorLogoFalse") & "'")
             End Select
 
             If i < ContainerPanel.Controls.Count - 1 Then

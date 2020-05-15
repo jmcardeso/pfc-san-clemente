@@ -112,6 +112,10 @@ Public Class frmGuests
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvGuests.DoubleClick
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
         Dim frmAux As New frmGuestsAux With {
             .Text = LocRM.GetString("editGuestTitle"),
             .editGuest = bs.Current
@@ -124,7 +128,7 @@ Public Class frmGuests
         Dim GuestAux As Guest = Utils.DeepClone(Guests.Item(bs.Position))
         Guests.Item(bs.Position) = Utils.DeepClone(frmAux.editGuest)
 
-        If Not opGuest.Updateguest(Guests.Item(bs.Position)) Then
+        If Not opGuest.UpdateGuest(Guests.Item(bs.Position)) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Guests.Item(bs.Position) = Utils.DeepClone(GuestAux)
             Exit Sub
@@ -134,13 +138,17 @@ Public Class frmGuests
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click, ToolStripDelete.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
         If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
                   MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
                   LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
             Exit Sub
         End If
 
-        If Not opGuest.Deleteguest(bs.Current) Then
+        If Not opGuest.DeleteGuest(bs.Current) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If

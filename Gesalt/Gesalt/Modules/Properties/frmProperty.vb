@@ -56,7 +56,14 @@ Public Class frmProperty
             lblBaths.DataBindings.Add("Text", bs, "Baths")
             lblDescription.DataBindings.Add("Text", bs, "Description")
 
-            bsPhotos.DataSource = bs.Current.Photos
+            If bs.Current IsNot Nothing Then
+                bsPhotos.DataSource = bs.Current.Photos
+            Else
+                bsPhotos.DataSource = New List(Of Photo)
+                pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
+                pbxPhotos.Image = My.Resources.noImage
+            End If
+
             pbxPhotos.DataBindings.Add("ImageLocation", bsPhotos, "Path")
 
         Catch err As InvalidOperationException
@@ -101,17 +108,36 @@ Public Class frmProperty
             Exit Sub
         End If
 
-        If Not opProp.AddProp(frmAux.editProp) Then
+        Dim id As Integer = opProp.AddProp(frmAux.editProp)
+        If id < 1 Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
 
-        props = opProp.GetProps()
-        bs.DataSource = props
+        Dim newProp As New Prop()
+        newProp = Utils.DeepClone(frmAux.editProp)
+        newProp.Id = id
+        props.Add(newProp)
+
+        For Each photo As Photo In newProp.Photos
+            If photo.Id = 0 Then
+                Dim idPhoto As Integer = opProp.AddPhoto(photo)
+                If idPhoto < 1 Then
+                    MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+                    Exit Sub
+                End If
+                photo.Id = idPhoto
+            End If
+        Next
+
         bs.ResetBindings(False)
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvProperties.DoubleClick
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
         Dim frmAux As New frmPropertiesAux With {
         .Text = LocRM.GetString("editPropTitle"),
         .editProp = bs.Current
@@ -150,6 +176,10 @@ Public Class frmProperty
     End Sub
 
     Private Sub FilterDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterDataToolStripMenuItem.Click
+        'If bs.Current Is Nothing Then
+        '    Exit Sub
+        'End If
+
         If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterPropertiesMenuOFF")) Then
             Dim frmFlt As frmPropertiesFilter = New frmPropertiesFilter()
             If frmFlt.ShowDialog() = DialogResult.Cancel Then
@@ -228,7 +258,7 @@ Public Class frmProperty
     End Sub
 
     Private Sub pbxPhotos_Click(sender As Object, e As EventArgs) Handles pbxPhotos.Click
-        If bs.Current.Photos.Count = 0 Then
+        If bs.Current Is Nothing OrElse bs.Current.Photos.Count = 0 Then
             Exit Sub
         End If
 

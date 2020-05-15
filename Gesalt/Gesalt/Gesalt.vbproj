@@ -37,7 +37,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.3.3.201</ApplicationVersion>
+    <ApplicationVersion>0.3.4.201</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -149,9 +149,9 @@
     <Compile Include="Modules\DataBase\Connection.vb" />
     <Compile Include="Modules\DataBase\Guest.vb" />
     <Compile Include="Modules\DataBase\OpGuest.vb" />
-    <Compile Include="Modules\DataBase\OpOwner.vb" />
+    <Compile Include="Modules\DataBase\OpLessor.vb" />
     <Compile Include="Modules\DataBase\OpProp.vb" />
-    <Compile Include="Modules\DataBase\Owner.vb" />
+    <Compile Include="Modules\DataBase\Lessor.vb" />
     <Compile Include="Modules\DataBase\Photo.vb" />
     <Compile Include="Modules\DataBase\Utils.vb" />
     <Compile Include="frmMain.vb">
@@ -167,10 +167,10 @@
     <Compile Include="Modules\Guests\frmGuests.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Owners\frmOwners.Designer.vb">
-      <DependentUpon>frmOwners.vb</DependentUpon>
+    <Compile Include="Modules\Lessors\frmLessors.Designer.vb">
+      <DependentUpon>frmLessors.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Owners\frmOwners.vb">
+    <Compile Include="Modules\Lessors\frmLessors.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Guests\frmGuestsAux.Designer.vb">
@@ -197,10 +197,10 @@
     <Compile Include="Modules\Properties\frmPropertiesAux.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Owners\frmOwnersAux.Designer.vb">
-      <DependentUpon>frmOwnersAux.vb</DependentUpon>
+    <Compile Include="Modules\Lessors\frmLessorsAux.Designer.vb">
+      <DependentUpon>frmLessorsAux.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Owners\frmOwnersAux.vb">
+    <Compile Include="Modules\Lessors\frmLessorsAux.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Guests\frmGuestsFilter.Designer.vb">
@@ -209,10 +209,10 @@
     <Compile Include="Modules\Guests\frmGuestsFilter.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Owners\frmOwnersFilter.Designer.vb">
-      <DependentUpon>frmOwnersFilter.vb</DependentUpon>
+    <Compile Include="Modules\Lessors\frmLessorsFilter.Designer.vb">
+      <DependentUpon>frmLessorsFilter.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Owners\frmOwnersFilter.vb">
+    <Compile Include="Modules\Lessors\frmLessorsFilter.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Properties\frmProperty.Designer.vb">
@@ -244,10 +244,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Owners\frmReportOwner.Designer.vb">
-      <DependentUpon>frmReportOwner.vb</DependentUpon>
+    <Compile Include="Modules\Lessors\frmReportLessor.Designer.vb">
+      <DependentUpon>frmReportLessor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Owners\frmReportOwner.vb">
+    <Compile Include="Modules\Lessors\frmReportLessor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -296,14 +296,14 @@
     <EmbeddedResource Include="Modules\Guests\frmGuests.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwners.es.resx">
-      <DependentUpon>frmOwners.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessors.es.resx">
+      <DependentUpon>frmLessors.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwners.gl.resx">
-      <DependentUpon>frmOwners.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessors.gl.resx">
+      <DependentUpon>frmLessors.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwners.resx">
-      <DependentUpon>frmOwners.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessors.resx">
+      <DependentUpon>frmLessors.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\frmGuestsAux.es.resx">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
@@ -329,20 +329,20 @@
     <EmbeddedResource Include="Modules\Properties\frmPropertiesAux.resx">
       <DependentUpon>frmPropertiesAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwnersAux.es.resx">
-      <DependentUpon>frmOwnersAux.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessorsAux.es.resx">
+      <DependentUpon>frmLessorsAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwnersAux.gl.resx">
-      <DependentUpon>frmOwnersAux.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessorsAux.gl.resx">
+      <DependentUpon>frmLessorsAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwnersAux.resx">
-      <DependentUpon>frmOwnersAux.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessorsAux.resx">
+      <DependentUpon>frmLessorsAux.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\frmGuestsFilter.resx">
       <DependentUpon>frmGuestsFilter.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmOwnersFilter.resx">
-      <DependentUpon>frmOwnersFilter.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmLessorsFilter.resx">
+      <DependentUpon>frmLessorsFilter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Properties\frmProperty.es.resx">
       <DependentUpon>frmProperty.vb</DependentUpon>
@@ -362,11 +362,11 @@
     <EmbeddedResource Include="Modules\Guests\frmReportGuest.resx">
       <DependentUpon>frmReportGuest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmReportOwner.es.resx">
-      <DependentUpon>frmReportOwner.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmReportLessor.es.resx">
+      <DependentUpon>frmReportLessor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmReportOwner.gl.resx">
-      <DependentUpon>frmReportOwner.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmReportLessor.gl.resx">
+      <DependentUpon>frmReportLessor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.es.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>
@@ -377,8 +377,8 @@
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Owners\frmReportOwner.resx">
-      <DependentUpon>frmReportOwner.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\Lessors\frmReportLessor.resx">
+      <DependentUpon>frmReportLessor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Properties\frmReportProperty.es.resx">
       <DependentUpon>frmReportProperty.vb</DependentUpon>
@@ -397,7 +397,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\rptGuest.rdlc" />
-    <EmbeddedResource Include="Modules\Owners\rptOwner.rdlc" />
+    <EmbeddedResource Include="Modules\Lessors\rptLessor.rdlc" />
     <EmbeddedResource Include="WinFormStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WinFormStrings.es.Designer.vb</LastGenOutput>
@@ -436,11 +436,11 @@
     <Content Include="gesalt.ico" />
     <None Include="Resources\star-off.png" />
     <None Include="Resources\star-on.png" />
+    <None Include="Resources\noImage.bmp" />
+    <None Include="Resources\llave.png" />
     <None Include="Resources\gesalt.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\noImage.bmp" />
-    <None Include="Resources\llave.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

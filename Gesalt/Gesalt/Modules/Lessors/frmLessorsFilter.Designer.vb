@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmOwnersFilter
+Partial Class frmLessorsFilter
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -44,7 +44,7 @@ Partial Class frmOwnersFilter
         Me.btnOK.Text = "OK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
-        'frmOwnersFilter
+        'frmLessorsFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -52,9 +52,9 @@ Partial Class frmOwnersFilter
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.btnCancel)
         Me.MaximizeBox = False
-        Me.Name = "frmOwnersFilter"
+        Me.Name = "frmLessorsFilter"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Owners Filter - Gesalt"
+        Me.Text = "Lessors Filter - Gesalt"
         Me.ResumeLayout(False)
 
     End Sub

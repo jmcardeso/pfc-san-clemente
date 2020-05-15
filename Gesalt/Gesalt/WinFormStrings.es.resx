@@ -188,7 +188,7 @@
   <data name="fieldType" xml:space="preserve">
     <value>Tipo</value>
   </data>
-  <data name="editOwnerTitle" xml:space="preserve">
+  <data name="editLessorTitle" xml:space="preserve">
     <value>Editar un arrendador - Gesalt</value>
   </data>
   <data name="rowRemovedMsg" xml:space="preserve">
@@ -227,22 +227,22 @@
   <data name="filterOr" xml:space="preserve">
     <value>O</value>
   </data>
-  <data name="filterOwnerLogoTrue" xml:space="preserve">
+  <data name="filterLessorLogoTrue" xml:space="preserve">
     <value>El arrendador tiene logotipo</value>
   </data>
-  <data name="filterOwnerLogoFalse" xml:space="preserve">
+  <data name="filterLessorLogoFalse" xml:space="preserve">
     <value>El arrendador no tiene logotipo</value>
   </data>
-  <data name="filterOwnersMenuOFF" xml:space="preserve">
+  <data name="filterLessorsMenuOFF" xml:space="preserve">
     <value>&amp;Filtrar datos</value>
   </data>
-  <data name="filterOwnersMenuON" xml:space="preserve">
+  <data name="filterLessorsMenuON" xml:space="preserve">
     <value>Borrar &amp;filtro</value>
   </data>
-  <data name="filterOwnersLabelOFF" xml:space="preserve">
+  <data name="filterLessorsLabelOFF" xml:space="preserve">
     <value>Arrendadores:</value>
   </data>
-  <data name="filterOwnersLabelON" xml:space="preserve">
+  <data name="filterLessorsLabelON" xml:space="preserve">
     <value>FILTRO</value>
   </data>
   <data name="addWhenFilterOnMsg" xml:space="preserve">
@@ -251,7 +251,7 @@
   <data name="ofdImageFilter" xml:space="preserve">
     <value>Ficheros JPG (*.jpg)|*.jpg|Todos los ficheros (*.*)|*.*</value>
   </data>
-  <data name="rptOwnersHeaderTitle" xml:space="preserve">
+  <data name="rptLessorsHeaderTitle" xml:space="preserve">
     <value>Informe de arrendadores</value>
   </data>
   <data name="fieldRequired" xml:space="preserve">

@@ -1,7 +1,7 @@
 ﻿<Serializable()>
 Public Class Photo
-    Public ReadOnly Property Id As Integer
-    Public ReadOnly Property PropertyId As Integer
+    Public Property Id As Integer
+    Public Property PropertyId As Integer
     Public Property Path As String
 
     Public Sub New()

@@ -143,7 +143,7 @@ Public Class frmMain
     End Sub
 
     Private Sub btnOwners_Click(sender As Object, e As EventArgs) Handles btnOwners.Click
-        Dim frmOwn As New frmOwners
+        Dim frmOwn As New frmLessors
 
         frmOwn.ShowDialog()
     End Sub

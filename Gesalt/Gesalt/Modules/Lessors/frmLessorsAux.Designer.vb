@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmOwnersAux
+Partial Class frmLessorsAux
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class frmOwnersAux
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwnersAux))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLessorsAux))
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -187,7 +187,7 @@ Partial Class frmOwnersAux
         resources.ApplyResources(Me.cbxType, "cbxType")
         Me.cbxType.Name = "cbxType"
         '
-        'frmOwnersAux
+        'frmLessorsAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
@@ -219,7 +219,7 @@ Partial Class frmOwnersAux
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.MaximizeBox = False
-        Me.Name = "frmOwnersAux"
+        Me.Name = "frmLessorsAux"
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

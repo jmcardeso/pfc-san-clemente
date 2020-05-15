@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Arrendadoress - Gesalt</value>
+    <value>Arrendadores - Gesalt</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Apelidos:</value>
+    <value>Apellidos:</value>
   </data>
   <data name="Label10.Text" xml:space="preserve">
     <value>Provincia/País:</value>
@@ -130,7 +130,7 @@
     <value>Tipo:</value>
   </data>
   <data name="Label12.Text" xml:space="preserve">
-    <value>Nome:</value>
+    <value>Nombre:</value>
   </data>
   <data name="Label3.Text" xml:space="preserve">
     <value>Logo:</value>
@@ -145,61 +145,61 @@
     <value>Cód. Postal:</value>
   </data>
   <data name="Label7.Text" xml:space="preserve">
-    <value>Localidade:</value>
+    <value>Localidad:</value>
   </data>
   <data name="Label8.Text" xml:space="preserve">
-    <value>Enderezo:</value>
+    <value>Dirección:</value>
   </data>
   <data name="Label9.Text" xml:space="preserve">
     <value>NIF:</value>
   </data>
   <data name="lblAddress.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblCity.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblEmail.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblFirstName.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblLastName.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblNif.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblPhone.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblProvince.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblType.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblZip.Text" xml:space="preserve">
-    <value>&lt;Baleiro&gt;</value>
+    <value>&lt;Vacío&gt;</value>
   </data>
   <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Borrar</value>
   </data>
   <data name="EditToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Modificar</value>
+    <value>&amp;Editar</value>
   </data>
   <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
-    <value>M&amp;ailing</value>
+    <value>&amp;Mailing</value>
   </data>
-  <data name="OwnersToolStripMenuItem.Text" xml:space="preserve">
+  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Arrendadores</value>
   </data>
   <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Informes</value>
   </data>
-  <data name="AddAnOwnerToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Engadir</value>
+  <data name="AddAnLessorToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Añadir</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>Arrendadores:</value>
@@ -211,10 +211,10 @@
     <value>Borrar arrendador</value>
   </data>
   <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Modificar arrendador</value>
+    <value>Editar arrendador</value>
   </data>
   <data name="ToolStripExit.Text" xml:space="preserve">
-    <value>Sair</value>
+    <value>Salir</value>
   </data>
   <data name="ToolStripMailing.Text" xml:space="preserve">
     <value>Mailing</value>
@@ -223,12 +223,12 @@
     <value>Informes</value>
   </data>
   <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Engadir arrendador</value>
+    <value>Añadir arrendador</value>
   </data>
   <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
     <value>Informe de arrendadores</value>
   </data>
-  <data name="OwnersReportToolStripMenuItem.Text" xml:space="preserve">
+  <data name="LessorsReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Informe de arrendadores</value>
   </data>
   <data name="btnPrevious.Text" xml:space="preserve">

@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsOwner">
+    <DataSet Name="dsLessor">
       <Query>
         <DataSourceName>Gesalt</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -68,8 +68,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Gesalt</rd:DataSetName>
-        <rd:TableName>Owner</rd:TableName>
-        <rd:ObjectDataSourceType>Gesalt.Owner, Gesalt, Version=0.3.2.181, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Lessor</rd:TableName>
+        <rd:ObjectDataSourceType>Gesalt.Lessor, Gesalt, Version=0.3.2.181, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -109,7 +109,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptOwnersFieldType.Value</Value>
+                                  <Value>=Parameters!p_rptLessorsFieldType.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -139,7 +139,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptOwnersFieldLastName.Value</Value>
+                                  <Value>=Parameters!p_rptLessorsFieldLastName.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -169,7 +169,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptOwnersFieldFirstName.Value</Value>
+                                  <Value>=Parameters!p_rptLessorsFieldFirstName.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -199,7 +199,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptOwnersFieldNif.Value</Value>
+                                  <Value>=Parameters!p_rptLessorsFieldNif.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -229,7 +229,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptOwnersFieldPhone.Value</Value>
+                                  <Value>=Parameters!p_rptLessorsFieldPhone.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -428,7 +428,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>dsOwner</DataSetName>
+            <DataSetName>dsLessor</DataSetName>
             <Top>0.17639cm</Top>
             <Height>1.43813cm</Height>
             <Width>18.03103cm</Width>
@@ -456,7 +456,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!p_RptOwnersHeaderTitle.Value</Value>
+                      <Value>=Parameters!p_RptLessorsHeaderTitle.Value</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                         <Color>Blue</Color>
@@ -488,7 +488,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!p_RptOwnersHeaderSubtitle.Value</Value>
+                      <Value>=Parameters!p_RptLessorsHeaderSubtitle.Value</Value>
                       <Style>
                         <FontSize>15pt</FontSize>
                         <Color>Maroon</Color>
@@ -584,31 +584,31 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="p_RptOwnersHeaderTitle">
+    <ReportParameter Name="p_RptLessorsHeaderTitle">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptOwnersFieldType">
+    <ReportParameter Name="p_rptLessorsFieldType">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptOwnersFieldLastName">
+    <ReportParameter Name="p_rptLessorsFieldLastName">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptOwnersFieldFirstName">
+    <ReportParameter Name="p_rptLessorsFieldFirstName">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptOwnersFieldNif">
+    <ReportParameter Name="p_rptLessorsFieldNif">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptOwnersFieldPhone">
+    <ReportParameter Name="p_rptLessorsFieldPhone">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_RptOwnersHeaderSubtitle">
+    <ReportParameter Name="p_RptLessorsHeaderSubtitle">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -621,37 +621,37 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_RptOwnersHeaderTitle</ParameterName>
+          <ParameterName>p_RptLessorsHeaderTitle</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_rptOwnersFieldType</ParameterName>
+          <ParameterName>p_rptLessorsFieldType</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_rptOwnersFieldLastName</ParameterName>
+          <ParameterName>p_rptLessorsFieldLastName</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_rptOwnersFieldFirstName</ParameterName>
+          <ParameterName>p_rptLessorsFieldFirstName</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>p_rptOwnersFieldNif</ParameterName>
+          <ParameterName>p_rptLessorsFieldNif</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>p_rptOwnersFieldPhone</ParameterName>
+          <ParameterName>p_rptLessorsFieldPhone</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>p_RptOwnersHeaderSubtitle</ParameterName>
+          <ParameterName>p_RptLessorsHeaderSubtitle</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

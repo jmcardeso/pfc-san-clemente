@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmOwners
+Partial Class frmLessors
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,18 +23,18 @@ Partial Class frmOwners
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOwners))
-        Me.dgvOwners = New System.Windows.Forms.DataGridView()
-        Me.mnsOwners = New System.Windows.Forms.MenuStrip()
-        Me.OwnersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddAnOwnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLessors))
+        Me.dgvLessors = New System.Windows.Forms.DataGridView()
+        Me.mnsLessors = New System.Windows.Forms.MenuStrip()
+        Me.LessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddALessorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FilterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MailingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tlsOwners = New System.Windows.Forms.ToolStrip()
+        Me.tlsLessors = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
@@ -71,43 +71,43 @@ Partial Class frmOwners
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblFilter = New System.Windows.Forms.Label()
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
-        Me.OwnersReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.mnsOwners.SuspendLayout()
-        Me.tlsOwners.SuspendLayout()
+        Me.LessorsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mnsLessors.SuspendLayout()
+        Me.tlsLessors.SuspendLayout()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dgvOwners
+        'dgvLessors
         '
-        Me.dgvOwners.AllowUserToAddRows = False
-        Me.dgvOwners.AllowUserToDeleteRows = False
+        Me.dgvLessors.AllowUserToAddRows = False
+        Me.dgvLessors.AllowUserToDeleteRows = False
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvOwners.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        resources.ApplyResources(Me.dgvOwners, "dgvOwners")
-        Me.dgvOwners.MultiSelect = False
-        Me.dgvOwners.Name = "dgvOwners"
-        Me.dgvOwners.ReadOnly = True
-        Me.dgvOwners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvOwners.ShowEditingIcon = False
+        Me.dgvLessors.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        resources.ApplyResources(Me.dgvLessors, "dgvLessors")
+        Me.dgvLessors.MultiSelect = False
+        Me.dgvLessors.Name = "dgvLessors"
+        Me.dgvLessors.ReadOnly = True
+        Me.dgvLessors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvLessors.ShowEditingIcon = False
         '
-        'mnsOwners
+        'mnsLessors
         '
-        Me.mnsOwners.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OwnersToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.MailingToolStripMenuItem})
-        resources.ApplyResources(Me.mnsOwners, "mnsOwners")
-        Me.mnsOwners.Name = "mnsOwners"
+        Me.mnsLessors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LessorsToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.MailingToolStripMenuItem})
+        resources.ApplyResources(Me.mnsLessors, "mnsLessors")
+        Me.mnsLessors.Name = "mnsLessors"
         '
-        'OwnersToolStripMenuItem
+        'LessorsToolStripMenuItem
         '
-        Me.OwnersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAnOwnerToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.FilterDataToolStripMenuItem})
-        Me.OwnersToolStripMenuItem.Name = "OwnersToolStripMenuItem"
-        resources.ApplyResources(Me.OwnersToolStripMenuItem, "OwnersToolStripMenuItem")
+        Me.LessorsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddALessorToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.FilterDataToolStripMenuItem})
+        Me.LessorsToolStripMenuItem.Name = "LessorsToolStripMenuItem"
+        resources.ApplyResources(Me.LessorsToolStripMenuItem, "LessorsToolStripMenuItem")
         '
-        'AddAnOwnerToolStripMenuItem
+        'AddAnLessorToolStripMenuItem
         '
-        Me.AddAnOwnerToolStripMenuItem.Name = "AddAnOwnerToolStripMenuItem"
-        resources.ApplyResources(Me.AddAnOwnerToolStripMenuItem, "AddAnOwnerToolStripMenuItem")
+        Me.AddALessorToolStripMenuItem.Name = "AddAnLessorToolStripMenuItem"
+        resources.ApplyResources(Me.AddALessorToolStripMenuItem, "AddAnLessorToolStripMenuItem")
         '
         'EditToolStripMenuItem
         '
@@ -140,11 +140,11 @@ Partial Class frmOwners
         Me.MailingToolStripMenuItem.Name = "MailingToolStripMenuItem"
         resources.ApplyResources(Me.MailingToolStripMenuItem, "MailingToolStripMenuItem")
         '
-        'tlsOwners
+        'tlsLessors
         '
-        Me.tlsOwners.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripMailing, Me.ToolStripSeparator3, Me.ToolStripExit})
-        resources.ApplyResources(Me.tlsOwners, "tlsOwners")
-        Me.tlsOwners.Name = "tlsOwners"
+        Me.tlsLessors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripMailing, Me.ToolStripSeparator3, Me.ToolStripExit})
+        resources.ApplyResources(Me.tlsLessors, "tlsLessors")
+        Me.tlsLessors.Name = "tlsLessors"
         '
         'ToolStripAdd
         '
@@ -172,7 +172,7 @@ Partial Class frmOwners
         'ToolStripReports
         '
         Me.ToolStripReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OwnersReportToolStripMenuItem})
+        Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LessorsReportToolStripMenuItem})
         resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
         Me.ToolStripReports.Name = "ToolStripReports"
         '
@@ -338,12 +338,12 @@ Partial Class frmOwners
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.TabStop = False
         '
-        'OwnersReportToolStripMenuItem
+        'LessorsReportToolStripMenuItem
         '
-        Me.OwnersReportToolStripMenuItem.Name = "OwnersReportToolStripMenuItem"
-        resources.ApplyResources(Me.OwnersReportToolStripMenuItem, "OwnersReportToolStripMenuItem")
+        Me.LessorsReportToolStripMenuItem.Name = "LessorsReportToolStripMenuItem"
+        resources.ApplyResources(Me.LessorsReportToolStripMenuItem, "LessorsReportToolStripMenuItem")
         '
-        'frmOwners
+        'frmLessors
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -374,25 +374,25 @@ Partial Class frmOwners
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.btnFirst)
-        Me.Controls.Add(Me.tlsOwners)
-        Me.Controls.Add(Me.dgvOwners)
-        Me.Controls.Add(Me.mnsOwners)
-        Me.MainMenuStrip = Me.mnsOwners
-        Me.Name = "frmOwners"
-        CType(Me.dgvOwners, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.mnsOwners.ResumeLayout(False)
-        Me.mnsOwners.PerformLayout()
-        Me.tlsOwners.ResumeLayout(False)
-        Me.tlsOwners.PerformLayout()
+        Me.Controls.Add(Me.tlsLessors)
+        Me.Controls.Add(Me.dgvLessors)
+        Me.Controls.Add(Me.mnsLessors)
+        Me.MainMenuStrip = Me.mnsLessors
+        Me.Name = "frmLessors"
+        CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mnsLessors.ResumeLayout(False)
+        Me.mnsLessors.PerformLayout()
+        Me.tlsLessors.ResumeLayout(False)
+        Me.tlsLessors.PerformLayout()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents dgvOwners As DataGridView
-    Friend WithEvents mnsOwners As MenuStrip
-    Friend WithEvents tlsOwners As ToolStrip
+    Friend WithEvents dgvLessors As DataGridView
+    Friend WithEvents mnsLessors As MenuStrip
+    Friend WithEvents tlsLessors As ToolStrip
     Friend WithEvents btnFirst As Button
     Friend WithEvents btnPrevious As Button
     Friend WithEvents btnNext As Button
@@ -418,8 +418,8 @@ Partial Class frmOwners
     Friend WithEvents lblNif As Label
     Friend WithEvents lblFirstName As Label
     Friend WithEvents lblLastName As Label
-    Friend WithEvents OwnersToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddAnOwnerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LessorsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddALessorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
@@ -437,5 +437,5 @@ Partial Class frmOwners
     Friend WithEvents ToolStripExit As ToolStripButton
     Friend WithEvents pbxLogo As PictureBox
     Friend WithEvents PruebaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OwnersReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LessorsReportToolStripMenuItem As ToolStripMenuItem
 End Class

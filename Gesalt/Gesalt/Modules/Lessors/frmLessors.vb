@@ -1,20 +1,20 @@
 ﻿Imports System.Resources
 Imports Microsoft.Reporting.WinForms
 
-Public Class frmOwners
-    Dim opOwner As OpOwner = opOwner.GetInstance()
-    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwners).Assembly)
+Public Class frmLessors
+    Dim opLessor As OpLessor = OpLessor.GetInstance()
+    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmLessors).Assembly)
     Dim bs As New BindingSource()
-    Dim owners As New List(Of Owner)
+    Dim lessors As New List(Of Lessor)
 
-    Private Sub frmOwners_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmLessors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            owners = opOwner.GetOwners()
+            lessors = opLessor.GetLessors()
 
-            bs.DataSource = owners
+            bs.DataSource = lessors
 
             Dim column As DataGridViewColumn
-            With dgvOwners
+            With dgvLessors
                 .AutoGenerateColumns = False
                 .ColumnCount = 6
 
@@ -83,11 +83,11 @@ Public Class frmOwners
     End Sub
 
     Private Sub btnLast_Click(sender As Object, e As EventArgs) Handles btnLast.Click
-        bs.Position = owners.Count - 1
+        bs.Position = lessors.Count - 1
     End Sub
 
-    Private Sub AddAnOwnerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAnOwnerToolStripMenuItem.Click, ToolStripAdd.Click
-        If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuON")) Then
+    Private Sub AddALessorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddALessorToolStripMenuItem.Click, ToolStripAdd.Click
+        If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterLessorsMenuON")) Then
             If MsgBox(LocRM.GetString("addWhenFilterOnMsg"), MsgBoxStyle.Information Or MsgBoxStyle.YesNo, "Gesalt") = MsgBoxResult.No Then
                 Exit Sub
             Else
@@ -95,40 +95,44 @@ Public Class frmOwners
             End If
         End If
 
-        Dim frmAux As New frmOwnersAux With {
-            .editOwner = Nothing
+        Dim frmAux As New frmLessorsAux With {
+            .editLessor = Nothing
         }
 
         If frmAux.ShowDialog = DialogResult.Cancel Then
             Exit Sub
         End If
 
-        If Not opOwner.AddOwner(frmAux.editOwner) Then
+        If Not opLessor.AddLessor(frmAux.editLessor) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
 
-        owners = opOwner.GetOwners()
-        bs.DataSource = owners
+        lessors = opLessor.GetLessors()
+        bs.DataSource = lessors
         bs.ResetBindings(False)
     End Sub
 
-    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvOwners.DoubleClick
-        Dim frmAux As New frmOwnersAux With {
-            .Text = LocRM.GetString("editOwnerTitle"),
-            .editOwner = bs.Current
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click, ToolStripEdit.Click, dgvLessors.DoubleClick
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmAux As New frmLessorsAux With {
+            .Text = LocRM.GetString("editLessorTitle"),
+            .editLessor = bs.Current
         }
 
         If frmAux.ShowDialog = DialogResult.Cancel Then
             Exit Sub
         End If
 
-        Dim ownerAux As Owner = Utils.DeepClone(owners.Item(bs.Position))
-        owners.Item(bs.Position) = Utils.DeepClone(frmAux.editOwner)
+        Dim lessorAux As Lessor = Utils.DeepClone(lessors.Item(bs.Position))
+        lessors.Item(bs.Position) = Utils.DeepClone(frmAux.editLessor)
 
-        If Not opOwner.UpdateOwner(owners.Item(bs.Position)) Then
+        If Not opLessor.UpdateLessor(lessors.Item(bs.Position)) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
-            owners.Item(bs.Position) = Utils.DeepClone(ownerAux)
+            lessors.Item(bs.Position) = Utils.DeepClone(lessorAux)
             Exit Sub
         End If
 
@@ -136,68 +140,72 @@ Public Class frmOwners
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click, ToolStripDelete.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
         If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
                   MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
                   LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
             Exit Sub
         End If
 
-        If Not opOwner.DeleteOwner(bs.Current) Then
+        If Not opLessor.DeleteLessor(bs.Current) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
 
-        owners.Remove(bs.Current)
+        lessors.Remove(bs.Current)
         bs.ResetBindings(False)
     End Sub
 
     Private Sub FilterDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterDataToolStripMenuItem.Click
-        If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuOFF")) Then
-            Dim frmFlt As frmOwnersFilter = New frmOwnersFilter()
+        If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterLessorsMenuOFF")) Then
+            Dim frmFlt As frmLessorsFilter = New frmLessorsFilter()
             If frmFlt.ShowDialog() = DialogResult.Cancel Then
                 Exit Sub
             End If
-            lblFilter.Text = LocRM.GetString("filterOwnersLabelON") & " " & frmFlt.resultReadable
+            lblFilter.Text = LocRM.GetString("filterLessorsLabelON") & " " & frmFlt.resultReadable
             lblFilter.BackColor = Color.Red
             lblFilter.ForeColor = Color.White
-            FilterDataToolStripMenuItem.Text = LocRM.GetString("filterOwnersMenuON")
+            FilterDataToolStripMenuItem.Text = LocRM.GetString("filterLessorsMenuON")
 
-            owners = opOwner.GetOwners(frmFlt.resultSQL, frmFlt.resultParameters)
+            lessors = opLessor.GetLessors(frmFlt.resultSQL, frmFlt.resultParameters)
         Else
-            lblFilter.Text = LocRM.GetString("filterOwnersLabelOFF")
+            lblFilter.Text = LocRM.GetString("filterLessorsLabelOFF")
             lblFilter.BackColor = SystemColors.Control
             lblFilter.ForeColor = SystemColors.ControlText
-            FilterDataToolStripMenuItem.Text = LocRM.GetString("filterOwnersMenuOFF")
+            FilterDataToolStripMenuItem.Text = LocRM.GetString("filterLessorsMenuOFF")
 
-            owners = opOwner.GetOwners()
+            lessors = opLessor.GetLessors()
         End If
 
-        bs.DataSource = owners
+        bs.DataSource = lessors
     End Sub
 
     Private Sub ToolStripExit_Click(sender As Object, e As EventArgs) Handles ToolStripExit.Click
         Close()
     End Sub
 
-    Private Sub OwnersReport_Click(sender As Object, e As EventArgs) Handles PruebaToolStripMenuItem.Click, OwnersReportToolStripMenuItem.Click
-        Dim frmRpt As New frmReportOwner()
-        Dim rpd As New ReportDataSource("dsOwner", bs)
+    Private Sub LessorsReport_Click(sender As Object, e As EventArgs) Handles PruebaToolStripMenuItem.Click, LessorsReportToolStripMenuItem.Click
+        Dim frmRpt As New frmReportLessor()
+        Dim rpd As New ReportDataSource("dsLessor", bs)
         Dim parameters As New List(Of ReportParameter) From {
-            New ReportParameter("p_RptOwnersHeaderTitle", LocRM.GetString("rptOwnersHeaderTitle")),
-            New ReportParameter("p_RptOwnersHeaderSubtitle",
-                                If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterOwnersMenuON")), lblFilter.Text, " ")),
-            New ReportParameter("p_rptOwnersFieldType", LocRM.GetString("fieldType")),
-            New ReportParameter("p_rptOwnersFieldLastName", LocRM.GetString("fieldLastName")),
-            New ReportParameter("p_rptOwnersFieldFirstName", LocRM.GetString("fieldFirstName")),
-            New ReportParameter("p_rptOwnersFieldNif", LocRM.GetString("fieldNif")),
-            New ReportParameter("p_rptOwnersFieldPhone", LocRM.GetString("fieldPhone"))
+            New ReportParameter("p_RptLessorsHeaderTitle", LocRM.GetString("rptLessorsHeaderTitle")),
+            New ReportParameter("p_RptLessorsHeaderSubtitle",
+                                If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterLessorsMenuON")), lblFilter.Text, " ")),
+            New ReportParameter("p_rptLessorsFieldType", LocRM.GetString("fieldType")),
+            New ReportParameter("p_rptLessorsFieldLastName", LocRM.GetString("fieldLastName")),
+            New ReportParameter("p_rptLessorsFieldFirstName", LocRM.GetString("fieldFirstName")),
+            New ReportParameter("p_rptLessorsFieldNif", LocRM.GetString("fieldNif")),
+            New ReportParameter("p_rptLessorsFieldPhone", LocRM.GetString("fieldPhone"))
         }
 
-        frmRpt.rpvOwner.LocalReport.DataSources.Clear()
-        frmRpt.rpvOwner.LocalReport.DataSources.Add(rpd)
-        frmRpt.rpvOwner.LocalReport.ReportEmbeddedResource = "Gesalt.rptOwner.rdlc"
-        frmRpt.rpvOwner.LocalReport.SetParameters(parameters)
-        frmRpt.rpvOwner.RefreshReport()
+        frmRpt.rpvLessor.LocalReport.DataSources.Clear()
+        frmRpt.rpvLessor.LocalReport.DataSources.Add(rpd)
+        frmRpt.rpvLessor.LocalReport.ReportEmbeddedResource = "Gesalt.rptLessor.rdlc"
+        frmRpt.rpvLessor.LocalReport.SetParameters(parameters)
+        frmRpt.rpvLessor.RefreshReport()
         frmRpt.ShowDialog()
     End Sub
 End Class

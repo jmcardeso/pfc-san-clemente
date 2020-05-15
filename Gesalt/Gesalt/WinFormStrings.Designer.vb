@@ -193,9 +193,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca una cadena traducida similar a Edit an Lessor - Gesalt.
         '''</summary>
-        Friend Shared ReadOnly Property editOwnerTitle() As String
+        Friend Shared ReadOnly Property editLessorTitle() As String
             Get
-                Return ResourceManager.GetString("editOwnerTitle", resourceCulture)
+                Return ResourceManager.GetString("editLessorTitle", resourceCulture)
             End Get
         End Property
         
@@ -499,54 +499,54 @@ Namespace My.Resources
         '''<summary>
         '''  Busca una cadena traducida similar a Lessor has no logo.
         '''</summary>
-        Friend Shared ReadOnly Property filterOwnerLogoFalse() As String
+        Friend Shared ReadOnly Property filterLessorLogoFalse() As String
             Get
-                Return ResourceManager.GetString("filterOwnerLogoFalse", resourceCulture)
+                Return ResourceManager.GetString("filterLessorLogoFalse", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Busca una cadena traducida similar a Lessor has logo.
         '''</summary>
-        Friend Shared ReadOnly Property filterOwnerLogoTrue() As String
+        Friend Shared ReadOnly Property filterLessorLogoTrue() As String
             Get
-                Return ResourceManager.GetString("filterOwnerLogoTrue", resourceCulture)
+                Return ResourceManager.GetString("filterLessorLogoTrue", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Busca una cadena traducida similar a Lessors:.
         '''</summary>
-        Friend Shared ReadOnly Property filterOwnersLabelOFF() As String
+        Friend Shared ReadOnly Property filterLessorsLabelOFF() As String
             Get
-                Return ResourceManager.GetString("filterOwnersLabelOFF", resourceCulture)
+                Return ResourceManager.GetString("filterLessorsLabelOFF", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Busca una cadena traducida similar a FILTER.
         '''</summary>
-        Friend Shared ReadOnly Property filterOwnersLabelON() As String
+        Friend Shared ReadOnly Property filterLessorsLabelON() As String
             Get
-                Return ResourceManager.GetString("filterOwnersLabelON", resourceCulture)
+                Return ResourceManager.GetString("filterLessorsLabelON", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Busca una cadena traducida similar a &amp;Filter data.
         '''</summary>
-        Friend Shared ReadOnly Property filterOwnersMenuOFF() As String
+        Friend Shared ReadOnly Property filterLessorsMenuOFF() As String
             Get
-                Return ResourceManager.GetString("filterOwnersMenuOFF", resourceCulture)
+                Return ResourceManager.GetString("filterLessorsMenuOFF", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Busca una cadena traducida similar a Clear &amp;filter.
         '''</summary>
-        Friend Shared ReadOnly Property filterOwnersMenuON() As String
+        Friend Shared ReadOnly Property filterLessorsMenuON() As String
             Get
-                Return ResourceManager.GetString("filterOwnersMenuON", resourceCulture)
+                Return ResourceManager.GetString("filterLessorsMenuON", resourceCulture)
             End Get
         End Property
         
@@ -688,9 +688,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca una cadena traducida similar a Lessors Report.
         '''</summary>
-        Friend Shared ReadOnly Property rptOwnersHeaderTitle() As String
+        Friend Shared ReadOnly Property rptLessorsHeaderTitle() As String
             Get
-                Return ResourceManager.GetString("rptOwnersHeaderTitle", resourceCulture)
+                Return ResourceManager.GetString("rptLessorsHeaderTitle", resourceCulture)
             End Get
         End Property
         

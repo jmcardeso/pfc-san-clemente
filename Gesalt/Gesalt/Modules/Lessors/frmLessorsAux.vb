@@ -1,38 +1,38 @@
 ﻿Imports System.Resources
 
-Public Class frmOwnersAux
-    Public Property editOwner As Owner
-    Dim ownerAux As Owner
-    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmOwnersAux).Assembly)
+Public Class frmLessorsAux
+    Public Property editLessor As Lessor
+    Dim lessorAux As Lessor
+    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmLessorsAux).Assembly)
 
-    Private Sub frmOwnersAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim opOwner As OpOwner = OpOwner.GetInstance()
+    Private Sub frmLessorsAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim opLessor As OpLessor = OpLessor.GetInstance()
         Dim types As New List(Of String)
 
-        If editOwner IsNot Nothing Then
-            Me.Text = LocRM.GetString("editOwnerTitle")
+        If editLessor IsNot Nothing Then
+            Me.Text = LocRM.GetString("editLessorTitle")
         Else
-            editOwner = New Owner()
+            editLessor = New Lessor()
         End If
 
-        ownerAux = Utils.DeepClone(editOwner)
+        lessorAux = Utils.DeepClone(editLessor)
 
-        types = opOwner.GetOwnersType()
+        types = opLessor.GetLessorsType()
         For Each t As String In types
             cbxType.Items.Add(t)
         Next
 
-        tbxLastName.DataBindings.Add("Text", ownerAux, "LastName")
-        tbxFirstName.DataBindings.Add("Text", ownerAux, "FirstName")
-        tbxAddress.DataBindings.Add("Text", ownerAux, "Address")
-        tbxCity.DataBindings.Add("Text", ownerAux, "City")
-        tbxEmail.DataBindings.Add("Text", ownerAux, "Email")
-        pbxLogo.DataBindings.Add("ImageLocation", ownerAux, "PathLogo")
-        tbxNif.DataBindings.Add("Text", ownerAux, "Nif")
-        tbxPhone.DataBindings.Add("Text", ownerAux, "Phone")
-        tbxProvince.DataBindings.Add("Text", ownerAux, "Province")
-        cbxType.DataBindings.Add("Text", ownerAux, "Type")
-        tbxZip.DataBindings.Add("Text", ownerAux, "Zip")
+        tbxLastName.DataBindings.Add("Text", lessorAux, "LastName")
+        tbxFirstName.DataBindings.Add("Text", lessorAux, "FirstName")
+        tbxAddress.DataBindings.Add("Text", lessorAux, "Address")
+        tbxCity.DataBindings.Add("Text", lessorAux, "City")
+        tbxEmail.DataBindings.Add("Text", lessorAux, "Email")
+        pbxLogo.DataBindings.Add("ImageLocation", lessorAux, "PathLogo")
+        tbxNif.DataBindings.Add("Text", lessorAux, "Nif")
+        tbxPhone.DataBindings.Add("Text", lessorAux, "Phone")
+        tbxProvince.DataBindings.Add("Text", lessorAux, "Province")
+        cbxType.DataBindings.Add("Text", lessorAux, "Type")
+        tbxZip.DataBindings.Add("Text", lessorAux, "Zip")
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -40,7 +40,7 @@ Public Class frmOwnersAux
             Exit Sub
         End If
 
-        editOwner = Utils.DeepClone(ownerAux)
+        editLessor = Utils.DeepClone(lessorAux)
         Me.DialogResult = DialogResult.OK
     End Sub
 
@@ -56,7 +56,7 @@ Public Class frmOwnersAux
 
         If ofdLogo.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
             pbxLogo.Image = Image.FromFile(ofdLogo.FileName)
-            ownerAux.PathLogo = ofdLogo.FileName
+            lessorAux.PathLogo = ofdLogo.FileName
         End If
     End Sub
 
