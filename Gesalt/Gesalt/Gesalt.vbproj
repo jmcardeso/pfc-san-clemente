@@ -37,7 +37,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.3.3.200</ApplicationVersion>
+    <ApplicationVersion>0.3.3.201</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -179,6 +179,12 @@
     <Compile Include="Modules\Guests\frmGuestsAux.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Properties\frmPictureViewer.Designer.vb">
+      <DependentUpon>frmPictureViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmPictureViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Properties\frmPropertiesFilter.Designer.vb">
       <DependentUpon>frmPropertiesFilter.vb</DependentUpon>
     </Compile>
@@ -308,6 +314,9 @@
     <EmbeddedResource Include="Modules\Guests\frmGuestsAux.resx">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmPictureViewer.resx">
+      <DependentUpon>frmPictureViewer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Properties\frmPropertiesFilter.resx">
       <DependentUpon>frmPropertiesFilter.vb</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +421,7 @@
     </None>
     <None Include="My Project\DataSources\Owner.datasource" />
     <None Include="My Project\DataSources\Guest.datasource" />
+    <None Include="My Project\DataSources\Prop.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -426,6 +436,11 @@
     <Content Include="gesalt.ico" />
     <None Include="Resources\star-off.png" />
     <None Include="Resources\star-on.png" />
+    <None Include="Resources\gesalt.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\noImage.bmp" />
+    <None Include="Resources\llave.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -440,9 +455,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\gesalt.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

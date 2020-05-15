@@ -21,45 +21,41 @@
           <DataField>Address</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Baths">
+          <DataField>Baths</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BedRooms">
+          <DataField>BedRooms</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CadRef">
+          <DataField>CadRef</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="City">
           <DataField>City</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Email">
-          <DataField>Email</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FirstName">
-          <DataField>FirstName</DataField>
+        <Field Name="Description">
+          <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="LastName">
-          <DataField>LastName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Nif">
-          <DataField>Nif</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PathLogo">
-          <DataField>PathLogo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Phone">
-          <DataField>Phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="MaxGuests">
+          <DataField>MaxGuests</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Province">
           <DataField>Province</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Size">
+          <DataField>Size</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Zip">
           <DataField>Zip</DataField>
@@ -69,7 +65,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>Gesalt</rd:DataSetName>
         <rd:TableName>Prop</rd:TableName>
-        <rd:ObjectDataSourceType>Gesalt.Prop, Gesalt, Version=0.3.2.181, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>Gesalt.Prop, Gesalt, Version=0.3.3.200, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -109,7 +105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptPropsFieldType.Value</Value>
+                                  <Value>=Parameters!p_RptPropertiesFieldCadRef.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -139,7 +135,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptPropsFieldLastName.Value</Value>
+                                  <Value>=Parameters!p_RptPropertiesFieldAddress.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -169,7 +165,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptPropsFieldFirstName.Value</Value>
+                                  <Value>=Parameters!p_RptPropertiesFieldCity.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -199,7 +195,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptPropsFieldNif.Value</Value>
+                                  <Value>=Parameters!p_RptPropertiesFieldZip.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -229,7 +225,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!p_rptPropsFieldPhone.Value</Value>
+                                  <Value>=Parameters!p_RptPropertiesFieldProvince.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -257,21 +253,21 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Type">
+                        <Textbox Name="CadRef">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Type.Value</Value>
+                                  <Value>=Fields!CadRef.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Type</rd:DefaultName>
+                          <rd:DefaultName>CadRef</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -287,21 +283,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="LastName">
+                        <Textbox Name="Address">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LastName.Value</Value>
+                                  <Value>=Fields!Address.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>LastName</rd:DefaultName>
+                          <rd:DefaultName>Address</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -317,21 +313,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="FirstName">
+                        <Textbox Name="City">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FirstName.Value</Value>
+                                  <Value>=Fields!City.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>FirstName</rd:DefaultName>
+                          <rd:DefaultName>City</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -347,21 +343,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Nif">
+                        <Textbox Name="Zip">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Nif.Value</Value>
+                                  <Value>=Fields!Zip.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Nif</rd:DefaultName>
+                          <rd:DefaultName>Zip</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -377,21 +373,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Phone">
+                        <Textbox Name="Province">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Phone.Value</Value>
+                                  <Value>=Fields!Province.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Phone</rd:DefaultName>
+                          <rd:DefaultName>Province</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -430,8 +426,8 @@
             </TablixRowHierarchy>
             <DataSetName>dsProp</DataSetName>
             <Top>0.17639cm</Top>
-            <Height>1.43813cm</Height>
-            <Width>18.03103cm</Width>
+            <Height>1.43812cm</Height>
+            <Width>18.03104cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -456,7 +452,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!p_RptPropsHeaderTitle.Value</Value>
+                      <Value>=Parameters!p_RptPropertiesHeaderTitle.Value</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                         <Color>Blue</Color>
@@ -488,7 +484,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!p_RptPropsHeaderSubtitle.Value</Value>
+                      <Value>=Parameters!p_RptPropertiesHeaderSubtitle.Value</Value>
                       <Style>
                         <FontSize>15pt</FontSize>
                         <Color>Maroon</Color>
@@ -584,31 +580,31 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="p_RptPropsHeaderTitle">
+    <ReportParameter Name="p_RptPropertiesHeaderTitle">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptPropsFieldType">
+    <ReportParameter Name="p_RptPropertiesFieldCadRef">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptPropsFieldLastName">
+    <ReportParameter Name="p_RptPropertiesFieldAddress">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptPropsFieldFirstName">
+    <ReportParameter Name="p_RptPropertiesFieldCity">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptPropsFieldNif">
+    <ReportParameter Name="p_RptPropertiesFieldZip">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_rptPropsFieldPhone">
+    <ReportParameter Name="p_RptPropertiesFieldProvince">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_RptPropsHeaderSubtitle">
+    <ReportParameter Name="p_RptPropertiesHeaderSubtitle">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -621,37 +617,37 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_RptPropsHeaderTitle</ParameterName>
+          <ParameterName>p_RptPropertiesHeaderTitle</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_rptPropsFieldType</ParameterName>
+          <ParameterName>p_RptPropertiesFieldCadRef</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_rptPropsFieldLastName</ParameterName>
+          <ParameterName>p_RptPropertiesFieldAddress</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>p_rptPropsFieldFirstName</ParameterName>
+          <ParameterName>p_RptPropertiesFieldCity</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>p_rptPropsFieldNif</ParameterName>
+          <ParameterName>p_RptPropertiesFieldZip</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>p_rptPropsFieldPhone</ParameterName>
+          <ParameterName>p_RptPropertiesFieldProvince</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>p_RptPropsHeaderSubtitle</ParameterName>
+          <ParameterName>p_RptPropertiesHeaderSubtitle</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

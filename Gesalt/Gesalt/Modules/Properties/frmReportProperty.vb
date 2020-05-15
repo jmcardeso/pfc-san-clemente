@@ -1,10 +1,10 @@
-﻿Public Class frmReportOwner
-    Private Sub frmReportOwner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Public Class frmReportProperty
+    Private Sub frmReportProperty_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.rpvOwner.RefreshReport()
+        Me.rpvProp.RefreshReport()
     End Sub
 
-    Private Sub OwnerBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles OwnerBindingSource.CurrentChanged
+    Private Sub OwnerBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles PropBindingSource.CurrentChanged
 
     End Sub
 End Class

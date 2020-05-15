@@ -47,12 +47,13 @@ Partial Class frmPropertiesAux
         Me.pbxPhotos = New System.Windows.Forms.PictureBox()
         Me.btnAddPhoto = New System.Windows.Forms.Button()
         Me.ofdPhotos = New System.Windows.Forms.OpenFileDialog()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbxDescription = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnPhotosLast = New System.Windows.Forms.Button()
         Me.btnPhotosPrevious = New System.Windows.Forms.Button()
         Me.btnPhotosNext = New System.Windows.Forms.Button()
         Me.btnPhotosFirst = New System.Windows.Forms.Button()
+        Me.btnDeletePhoto = New System.Windows.Forms.Button()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -166,6 +167,7 @@ Partial Class frmPropertiesAux
         '
         'pbxPhotos
         '
+        Me.pbxPhotos.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.pbxPhotos, "pbxPhotos")
         Me.pbxPhotos.Name = "pbxPhotos"
         Me.pbxPhotos.TabStop = False
@@ -180,10 +182,10 @@ Partial Class frmPropertiesAux
         '
         Me.ofdPhotos.FileName = "OpenFileDialog1"
         '
-        'TextBox1
+        'tbxDescription
         '
-        resources.ApplyResources(Me.TextBox1, "TextBox1")
-        Me.TextBox1.Name = "TextBox1"
+        resources.ApplyResources(Me.tbxDescription, "tbxDescription")
+        Me.tbxDescription.Name = "tbxDescription"
         '
         'Label2
         '
@@ -214,17 +216,24 @@ Partial Class frmPropertiesAux
         Me.btnPhotosFirst.Name = "btnPhotosFirst"
         Me.btnPhotosFirst.UseVisualStyleBackColor = True
         '
+        'btnDeletePhoto
+        '
+        resources.ApplyResources(Me.btnDeletePhoto, "btnDeletePhoto")
+        Me.btnDeletePhoto.Name = "btnDeletePhoto"
+        Me.btnDeletePhoto.UseVisualStyleBackColor = True
+        '
         'frmPropertiesAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.btnDeletePhoto)
         Me.Controls.Add(Me.btnPhotosLast)
         Me.Controls.Add(Me.btnPhotosPrevious)
         Me.Controls.Add(Me.btnPhotosNext)
         Me.Controls.Add(Me.btnPhotosFirst)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tbxDescription)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnAddPhoto)
         Me.Controls.Add(Me.pbxPhotos)
@@ -281,10 +290,11 @@ Partial Class frmPropertiesAux
     Friend WithEvents pbxPhotos As PictureBox
     Friend WithEvents btnAddPhoto As Button
     Friend WithEvents ofdPhotos As OpenFileDialog
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbxDescription As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnPhotosLast As Button
     Friend WithEvents btnPhotosPrevious As Button
     Friend WithEvents btnPhotosNext As Button
     Friend WithEvents btnPhotosFirst As Button
+    Friend WithEvents btnDeletePhoto As Button
 End Class

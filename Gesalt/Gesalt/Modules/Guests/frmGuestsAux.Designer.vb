@@ -199,6 +199,7 @@ Partial Class frmGuestsAux
         Me.pnlRating.Controls.Add(Me.pbxRating3)
         Me.pnlRating.Controls.Add(Me.pbxRating5)
         Me.pnlRating.Controls.Add(Me.pbxRating4)
+        Me.pnlRating.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.pnlRating, "pnlRating")
         Me.pnlRating.Name = "pnlRating"
         '

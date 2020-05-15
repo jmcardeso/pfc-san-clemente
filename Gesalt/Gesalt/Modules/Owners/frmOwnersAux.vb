@@ -49,7 +49,7 @@ Public Class frmOwnersAux
     End Sub
 
     Private Sub btnAddLogo_Click(sender As Object, e As EventArgs) Handles btnAddLogo.Click
-        ofdLogo.Filter = LocRM.GetString("ofdLogoFilter")
+        ofdLogo.Filter = LocRM.GetString("ofdImageFilter")
         ofdLogo.FilterIndex = 1
         ofdLogo.FileName = ""
         ofdLogo.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures

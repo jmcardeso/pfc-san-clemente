@@ -248,7 +248,7 @@
   <data name="addWhenFilterOnMsg" xml:space="preserve">
     <value>Hai un filtro activo. Se engade un rexistro, o filtro será eliminado. Está seguro?</value>
   </data>
-  <data name="ofdLogoFilter" xml:space="preserve">
+  <data name="ofdImageFilter" xml:space="preserve">
     <value>Ficheiros JPG (*.jpg)|*.jpg|Todos os ficheiros (*.*)|*.*</value>
   </data>
   <data name="rptOwnersHeaderTitle" xml:space="preserve">
@@ -289,5 +289,38 @@
   </data>
   <data name="rptGuestsHeaderTitle" xml:space="preserve">
     <value>Informe de clientes</value>
+  </data>
+  <data name="fieldCadRef" xml:space="preserve">
+    <value>Ref. catastral</value>
+  </data>
+  <data name="fieldBedrooms" xml:space="preserve">
+    <value>Dormitorios</value>
+  </data>
+  <data name="fieldMaxGuests" xml:space="preserve">
+    <value>Máx. prazas</value>
+  </data>
+  <data name="fieldBaths" xml:space="preserve">
+    <value>Baños</value>
+  </data>
+  <data name="fieldSize" xml:space="preserve">
+    <value>Superficie</value>
+  </data>
+  <data name="filterPropertiesLabelOFF" xml:space="preserve">
+    <value>Inmobles:</value>
+  </data>
+  <data name="filterPropertiesLabelON" xml:space="preserve">
+    <value>FILTRO</value>
+  </data>
+  <data name="filterPropertiesMenuOFF" xml:space="preserve">
+    <value>&amp;Filtrar datos</value>
+  </data>
+  <data name="filterPropertiesMenuON" xml:space="preserve">
+    <value>Borrar &amp;filtro</value>
+  </data>
+  <data name="rptPropertiesHeaderTitle" xml:space="preserve">
+    <value>Informe de inmobles</value>
+  </data>
+  <data name="editPropTitle" xml:space="preserve">
+    <value>Modificar un inmoble - Gesalt</value>
   </data>
 </root>

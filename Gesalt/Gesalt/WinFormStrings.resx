@@ -248,7 +248,7 @@
   <data name="addWhenFilterOnMsg" xml:space="preserve">
     <value>There is an active filter. If you add a record, the filter will be reset. Are you sure?</value>
   </data>
-  <data name="ofdLogoFilter" xml:space="preserve">
+  <data name="ofdImageFilter" xml:space="preserve">
     <value>JPG files (*.jpg)|*.jpg|All files (*.*)|*.*</value>
   </data>
   <data name="rptOwnersHeaderTitle" xml:space="preserve">
@@ -289,5 +289,38 @@
   </data>
   <data name="rptGuestsHeaderTitle" xml:space="preserve">
     <value>Guests Report</value>
+  </data>
+  <data name="fieldCadRef" xml:space="preserve">
+    <value>Cadastral Ref.</value>
+  </data>
+  <data name="fieldBedrooms" xml:space="preserve">
+    <value>Bedrooms</value>
+  </data>
+  <data name="fieldMaxGuests" xml:space="preserve">
+    <value>Max. Guests</value>
+  </data>
+  <data name="fieldBaths" xml:space="preserve">
+    <value>Baths</value>
+  </data>
+  <data name="fieldSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="filterPropertiesLabelOFF" xml:space="preserve">
+    <value>Properties:</value>
+  </data>
+  <data name="filterPropertiesLabelON" xml:space="preserve">
+    <value>FILTER</value>
+  </data>
+  <data name="filterPropertiesMenuOFF" xml:space="preserve">
+    <value>&amp;Filter data</value>
+  </data>
+  <data name="filterPropertiesMenuON" xml:space="preserve">
+    <value>Clear &amp;filter</value>
+  </data>
+  <data name="rptPropertiesHeaderTitle" xml:space="preserve">
+    <value>Properties Report</value>
+  </data>
+  <data name="editPropTitle" xml:space="preserve">
+    <value>Edit a Property - Gesalt</value>
   </data>
 </root>

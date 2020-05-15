@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmReportOwner
+Partial Class frmReportProperty
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class frmReportOwner
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReportOwner))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReportProperty))
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.PropBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rpvProp = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -44,12 +44,12 @@ Partial Class frmReportOwner
         Me.rpvProp.Name = "rpvProp"
         Me.rpvProp.ServerReport.BearerToken = Nothing
         '
-        'frmReportOwner
+        'frmReportProperty
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.rpvProp)
-        Me.Name = "frmReportOwner"
+        Me.Name = "frmReportProperty"
         CType(Me.PropBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

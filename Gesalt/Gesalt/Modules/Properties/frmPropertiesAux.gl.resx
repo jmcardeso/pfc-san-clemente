@@ -118,25 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Apelidos:</value>
+    <value>Ref. catastral:</value>
   </data>
   <data name="Label10.Text" xml:space="preserve">
     <value>Provincia/País:</value>
   </data>
-  <data name="Label11.Text" xml:space="preserve">
-    <value>Tipo:</value>
-  </data>
   <data name="Label12.Text" xml:space="preserve">
-    <value>Nome:</value>
+    <value>Máx. prazas:</value>
   </data>
   <data name="Label3.Text" xml:space="preserve">
-    <value>Logo:</value>
+    <value>Fotos:</value>
   </data>
   <data name="Label4.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Baños:</value>
   </data>
   <data name="Label5.Text" xml:space="preserve">
-    <value>Teléfono:</value>
+    <value>Dormitorios:</value>
   </data>
   <data name="Label6.Text" xml:space="preserve">
     <value>Cód. Postal:</value>
@@ -148,7 +145,7 @@
     <value>Enderezo:</value>
   </data>
   <data name="Label9.Text" xml:space="preserve">
-    <value>NIF:</value>
+    <value>Superficie:</value>
   </data>
   <data name="bntCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -157,9 +154,15 @@
     <value>Aceptar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Engadir un arrendador - Gesalt</value>
+    <value>Engadir un inmoble - Gesalt</value>
   </data>
-  <data name="btnAddLogo.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="btnAddPhoto.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="btnDeletePhoto.Text" xml:space="preserve">
+    <value>-</value>
   </data>
 </root>

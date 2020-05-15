@@ -269,6 +269,7 @@ Partial Class frmProperty
         '
         'pbxPhotos
         '
+        Me.pbxPhotos.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.pbxPhotos, "pbxPhotos")
         Me.pbxPhotos.Name = "pbxPhotos"
         Me.pbxPhotos.TabStop = False

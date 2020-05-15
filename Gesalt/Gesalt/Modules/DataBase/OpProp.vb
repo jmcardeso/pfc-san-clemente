@@ -265,7 +265,7 @@ Public Class OpProp
         Dim dr As DataRow
         dr = dt.NewRow()
 
-        dr("Id") = photo.Id
+        dr("Id") = 0
         dr("property_id") = photo.PropertyId
         dr("path") = photo.Path
 
@@ -331,7 +331,7 @@ Public Class OpProp
         dr("city") = prop.City
         dr("province") = prop.Province
         dr("max_guests") = prop.MaxGuests
-        dr("size") = prop.Size
+        dr("siz") = prop.Size
         dr("bedrooms") = prop.Bedrooms
         dr("baths") = prop.Baths
         dr("description") = prop.Description

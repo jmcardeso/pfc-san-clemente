@@ -138,7 +138,7 @@ Public Class frmOwners
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click, ToolStripDelete.Click
         If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
                   MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
-                  LocRM.GetString("rewRemovedTitle")) = MsgBoxResult.No Then
+                  LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
             Exit Sub
         End If
 
