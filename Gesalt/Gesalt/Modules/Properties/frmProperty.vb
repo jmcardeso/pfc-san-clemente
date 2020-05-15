@@ -114,13 +114,16 @@ Public Class frmProperty
             Exit Sub
         End If
 
+        ' Se añade el objeto a la lista, incluyendo la id que obtuvimos al insertarlo en la base de datos
         Dim newProp As New Prop()
         newProp = Utils.DeepClone(frmAux.editProp)
         newProp.Id = id
         props.Add(newProp)
 
+        ' Añade las fotos a la base de datos
         For Each photo As Photo In newProp.Photos
             If photo.Id = 0 Then
+                photo.PropertyId = newProp.Id
                 Dim idPhoto As Integer = opProp.AddPhoto(photo)
                 If idPhoto < 1 Then
                     MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
@@ -155,6 +158,19 @@ Public Class frmProperty
             props.Item(bs.Position) = Utils.DeepClone(PropAux)
             Exit Sub
         End If
+
+        ' Si hay alguna foto nueva, la añade a la base de datos
+        For Each photo As Photo In props.Item(bs.Position).Photos
+            If photo.Id = 0 Then
+                photo.PropertyId = props.Item(bs.Position).Id
+                Dim idPhoto As Integer = opProp.AddPhoto(photo)
+                If idPhoto < 1 Then
+                    MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+                    Exit Sub
+                End If
+                photo.Id = idPhoto
+            End If
+        Next
 
         bs.ResetBindings(False)
     End Sub

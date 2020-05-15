@@ -347,6 +347,7 @@ Public Class OpProp
     End Sub
 
     Private Function GetId() As Integer
+        Dim result As Object
         Dim sqlCommand As DbCommand
         Dim sql As String = "select max(Id) from property"
 
@@ -355,13 +356,21 @@ Public Class OpProp
         sqlCommand.Connection = con.Con
 
         Try
-            Return Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
         Catch err As Exception
-            Return -1
+            result = -1
         End Try
+
+        Return result
     End Function
 
     Private Function GetPhotoId() As Integer
+        Dim result As Object
         Dim sqlCommand As DbCommand
         Dim sql As String = "select max(Id) from photo"
 
@@ -370,9 +379,16 @@ Public Class OpProp
         sqlCommand.Connection = con.Con
 
         Try
-            Return Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
         Catch err As Exception
-            Return -1
+            result = -1
         End Try
+
+        Return result
     End Function
 End Class
