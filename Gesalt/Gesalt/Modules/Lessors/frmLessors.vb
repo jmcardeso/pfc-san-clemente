@@ -61,6 +61,11 @@ Public Class frmLessors
             lblType.DataBindings.Add("Text", bs, "Type")
             lblZip.DataBindings.Add("Text", bs, "Zip")
 
+            If bs.Current Is Nothing Then
+                pbxLogo.SizeMode = PictureBoxSizeMode.CenterImage
+                pbxLogo.Image = My.Resources.noImage
+            End If
+
         Catch err As InvalidOperationException
             MsgBox(err.Message)
             Close()
@@ -212,5 +217,14 @@ Public Class frmLessors
         frmRpt.rpvLessor.LocalReport.SetParameters(parameters)
         frmRpt.rpvLessor.RefreshReport()
         frmRpt.ShowDialog()
+    End Sub
+
+    Private Sub dgvLessors_SelectionChanged(sender As Object, e As EventArgs) Handles dgvLessors.SelectionChanged
+        If bs.Current Is Nothing OrElse bs.Current.PathLogo.Length = 0 Then
+            pbxLogo.SizeMode = PictureBoxSizeMode.CenterImage
+            pbxLogo.Image = My.Resources.noImage
+        Else
+            pbxLogo.SizeMode = PictureBoxSizeMode.Zoom
+        End If
     End Sub
 End Class
