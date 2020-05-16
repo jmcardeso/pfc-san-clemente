@@ -65,6 +65,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Version {0}.
+        '''</summary>
+        Friend Shared ReadOnly Property aboutVersion() As String
+            Get
+                Return ResourceManager.GetString("aboutVersion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a There is an active filter. If you add a record, the filter will be reset. Are you sure?.
         '''</summary>
         Friend Shared ReadOnly Property addWhenFilterOnMsg() As String

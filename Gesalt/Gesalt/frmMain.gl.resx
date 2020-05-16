@@ -793,12 +793,6 @@
         //4H/////////////////////////////////w==
 </value>
   </data>
-  <data name="mnuAyuda.Text" xml:space="preserve">
-    <value>Axuda</value>
-  </data>
-  <data name="mnuAyuda_Preferencias.Text" xml:space="preserve">
-    <value>Preferencias</value>
-  </data>
   <data name="btnGuests.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
@@ -810,5 +804,14 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Gesalt</value>
+  </data>
+  <data name="mnuHelp.Text" xml:space="preserve">
+    <value>Axuda</value>
+  </data>
+  <data name="mnuHelp_About.Text" xml:space="preserve">
+    <value>Acerca de Gesalt</value>
+  </data>
+  <data name="mnuHelp_Settings.Text" xml:space="preserve">
+    <value>Preferencias</value>
   </data>
 </root>

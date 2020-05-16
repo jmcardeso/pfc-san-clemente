@@ -167,6 +167,12 @@
     <Compile Include="Modules\Guests\frmGuests.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Lessors\frmLessors.Designer.vb">
       <DependentUpon>frmLessors.vb</DependentUpon>
     </Compile>
@@ -278,6 +284,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAbout.es.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.gl.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.es.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\frmGuests.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lessors\frmLessors.es.resx">
       <DependentUpon>frmLessors.vb</DependentUpon>
@@ -441,6 +456,7 @@
     <None Include="Resources\gesalt.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\llave %282%29.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -23,8 +23,9 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.mnuAyuda = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuAyuda_Preferencias = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelp_Settings = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelp_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.btnOwners = New System.Windows.Forms.Button()
         Me.btnGuests = New System.Windows.Forms.Button()
@@ -32,20 +33,25 @@ Partial Class frmMain
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'mnuAyuda
+        'mnuHelp
         '
-        Me.mnuAyuda.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAyuda_Preferencias})
-        Me.mnuAyuda.Name = "mnuAyuda"
-        resources.ApplyResources(Me.mnuAyuda, "mnuAyuda")
+        Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelp_Settings, Me.mnuHelp_About})
+        Me.mnuHelp.Name = "mnuHelp"
+        resources.ApplyResources(Me.mnuHelp, "mnuHelp")
         '
-        'mnuAyuda_Preferencias
+        'mnuHelp_Settings
         '
-        Me.mnuAyuda_Preferencias.Name = "mnuAyuda_Preferencias"
-        resources.ApplyResources(Me.mnuAyuda_Preferencias, "mnuAyuda_Preferencias")
+        Me.mnuHelp_Settings.Name = "mnuHelp_Settings"
+        resources.ApplyResources(Me.mnuHelp_Settings, "mnuHelp_Settings")
+        '
+        'mnuHelp_About
+        '
+        Me.mnuHelp_About.Name = "mnuHelp_About"
+        resources.ApplyResources(Me.mnuHelp_About, "mnuHelp_About")
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAyuda})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelp})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -86,10 +92,11 @@ Partial Class frmMain
 
     End Sub
 
-    Friend WithEvents mnuAyuda As ToolStripMenuItem
-    Friend WithEvents mnuAyuda_Preferencias As ToolStripMenuItem
+    Friend WithEvents mnuHelp As ToolStripMenuItem
+    Friend WithEvents mnuHelp_Settings As ToolStripMenuItem
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents btnOwners As Button
     Friend WithEvents btnGuests As Button
     Friend WithEvents btnProperties As Button
+    Friend WithEvents mnuHelp_About As ToolStripMenuItem
 End Class

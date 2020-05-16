@@ -329,4 +329,7 @@
   <data name="fieldDescription" xml:space="preserve">
     <value>Descrición</value>
   </data>
+  <data name="aboutVersion" xml:space="preserve">
+    <value>Versión {0}</value>
+  </data>
 </root>

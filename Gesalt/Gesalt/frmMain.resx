@@ -118,16 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="mnuAyuda_Preferencias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+  <data name="mnuHelp_Settings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="mnuAyuda_Preferencias.Text" xml:space="preserve">
+  <data name="mnuHelp_Settings.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="mnuAyuda.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="mnuHelp_About.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="mnuHelp_About.Text" xml:space="preserve">
+    <value>About Gesalt</value>
+  </data>
+  <data name="mnuHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
-  <data name="mnuAyuda.Text" xml:space="preserve">
+  <data name="mnuHelp.Text" xml:space="preserve">
     <value>Help</value>
   </data>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -933,16 +939,22 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Gesalt</value>
   </data>
-  <data name="&gt;&gt;mnuAyuda.Name" xml:space="preserve">
-    <value>mnuAyuda</value>
+  <data name="&gt;&gt;mnuHelp.Name" xml:space="preserve">
+    <value>mnuHelp</value>
   </data>
-  <data name="&gt;&gt;mnuAyuda.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuHelp.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mnuAyuda_Preferencias.Name" xml:space="preserve">
-    <value>mnuAyuda_Preferencias</value>
+  <data name="&gt;&gt;mnuHelp_Settings.Name" xml:space="preserve">
+    <value>mnuHelp_Settings</value>
   </data>
-  <data name="&gt;&gt;mnuAyuda_Preferencias.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuHelp_Settings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnuHelp_About.Name" xml:space="preserve">
+    <value>mnuHelp_About</value>
+  </data>
+  <data name="&gt;&gt;mnuHelp_About.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

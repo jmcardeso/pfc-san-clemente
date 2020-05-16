@@ -94,7 +94,7 @@ Public Class frmMain
         'con.Close()
     End Sub
 
-    Private Sub mnuAyuda_Preferencias_Click(sender As Object, e As EventArgs) Handles mnuAyuda_Preferencias.Click
+    Private Sub mnuAyuda_Preferencias_Click(sender As Object, e As EventArgs) Handles mnuHelp_Settings.Click
         Dim frmPref As New frmSettings
 
         frmPref.ShowDialog()
@@ -158,5 +158,11 @@ Public Class frmMain
         Dim frmProp As New frmProperty
 
         frmProp.ShowDialog()
+    End Sub
+
+    Private Sub mnuHelp_About_Click(sender As Object, e As EventArgs) Handles mnuHelp_About.Click
+        Dim frmAbout As New frmAbout
+
+        frmAbout.ShowDialog()
     End Sub
 End Class

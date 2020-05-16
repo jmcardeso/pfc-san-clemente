@@ -22,7 +22,7 @@ Partial Class frmLessors
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLessors))
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
         Me.mnsLessors = New System.Windows.Forms.MenuStrip()
@@ -40,6 +40,7 @@ Partial Class frmLessors
         Me.ToolStripDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.LessorsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripMailing = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -71,7 +72,6 @@ Partial Class frmLessors
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblFilter = New System.Windows.Forms.Label()
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
-        Me.LessorsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnsLessors.SuspendLayout()
         Me.tlsLessors.SuspendLayout()
@@ -82,8 +82,8 @@ Partial Class frmLessors
         '
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvLessors.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvLessors.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
@@ -104,10 +104,10 @@ Partial Class frmLessors
         Me.LessorsToolStripMenuItem.Name = "LessorsToolStripMenuItem"
         resources.ApplyResources(Me.LessorsToolStripMenuItem, "LessorsToolStripMenuItem")
         '
-        'AddAnLessorToolStripMenuItem
+        'AddALessorToolStripMenuItem
         '
-        Me.AddALessorToolStripMenuItem.Name = "AddAnLessorToolStripMenuItem"
-        resources.ApplyResources(Me.AddALessorToolStripMenuItem, "AddAnLessorToolStripMenuItem")
+        Me.AddALessorToolStripMenuItem.Name = "AddALessorToolStripMenuItem"
+        resources.ApplyResources(Me.AddALessorToolStripMenuItem, "AddALessorToolStripMenuItem")
         '
         'EditToolStripMenuItem
         '
@@ -175,6 +175,11 @@ Partial Class frmLessors
         Me.ToolStripReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LessorsReportToolStripMenuItem})
         resources.ApplyResources(Me.ToolStripReports, "ToolStripReports")
         Me.ToolStripReports.Name = "ToolStripReports"
+        '
+        'LessorsReportToolStripMenuItem
+        '
+        Me.LessorsReportToolStripMenuItem.Name = "LessorsReportToolStripMenuItem"
+        resources.ApplyResources(Me.LessorsReportToolStripMenuItem, "LessorsReportToolStripMenuItem")
         '
         'ToolStripSeparator2
         '
@@ -337,11 +342,6 @@ Partial Class frmLessors
         resources.ApplyResources(Me.pbxLogo, "pbxLogo")
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.TabStop = False
-        '
-        'LessorsReportToolStripMenuItem
-        '
-        Me.LessorsReportToolStripMenuItem.Name = "LessorsReportToolStripMenuItem"
-        resources.ApplyResources(Me.LessorsReportToolStripMenuItem, "LessorsReportToolStripMenuItem")
         '
         'frmLessors
         '

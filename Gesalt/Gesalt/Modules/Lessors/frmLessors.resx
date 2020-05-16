@@ -168,15 +168,15 @@
     <value>29</value>
   </data>
   <data name="LessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+    <value>57, 20</value>
   </data>
   <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Lessors</value>
   </data>
-  <data name="AddAnLessorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AddALessorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
-  <data name="AddAnLessorToolStripMenuItem.Text" xml:space="preserve">
+  <data name="AddALessorToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Add</value>
   </data>
   <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -204,7 +204,7 @@
     <value>&amp;Reports</value>
   </data>
   <data name="PruebaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>150, 22</value>
   </data>
   <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
     <value>Lessors Report</value>
@@ -218,6 +218,30 @@
   <metadata name="tlsLessors.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
   </metadata>
+  <data name="tlsLessors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tlsLessors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 25</value>
+  </data>
+  <data name="tlsLessors.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlsLessors.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tlsLessors.Name" xml:space="preserve">
+    <value>tlsLessors</value>
+  </data>
+  <data name="&gt;&gt;tlsLessors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsLessors.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsLessors.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
   <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -272,12 +296,6 @@
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="LessorsReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="LessorsReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lessors Report</value>
-  </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -294,6 +312,12 @@
   </data>
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Reports</value>
+  </data>
+  <data name="LessorsReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="LessorsReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lessors Report</value>
   </data>
   <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -334,30 +358,6 @@
   </data>
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Exit</value>
-  </data>
-  <data name="tlsLessors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="tlsLessors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 25</value>
-  </data>
-  <data name="tlsLessors.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlsLessors.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tlsLessors.Name" xml:space="preserve">
-    <value>tlsLessors</value>
-  </data>
-  <data name="&gt;&gt;tlsLessors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsLessors.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsLessors.ZOrder" xml:space="preserve">
-    <value>27</value>
   </data>
   <data name="btnFirst.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 442</value>
@@ -1842,10 +1842,10 @@
   <data name="&gt;&gt;LessorsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AddAnLessorToolStripMenuItem.Name" xml:space="preserve">
-    <value>AddAnLessorToolStripMenuItem</value>
+  <data name="&gt;&gt;AddALessorToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddALessorToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;AddAnLessorToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;AddALessorToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditToolStripMenuItem.Name" xml:space="preserve">
@@ -1914,6 +1914,12 @@
   <data name="&gt;&gt;ToolStripReports.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;LessorsReportToolStripMenuItem.Name" xml:space="preserve">
+    <value>LessorsReportToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;LessorsReportToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ToolStripSeparator2.Name" xml:space="preserve">
     <value>ToolStripSeparator2</value>
   </data>
@@ -1937,12 +1943,6 @@
   </data>
   <data name="&gt;&gt;ToolStripExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LessorsReportToolStripMenuItem.Name" xml:space="preserve">
-    <value>LessorsReportToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;LessorsReportToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmLessors</value>
