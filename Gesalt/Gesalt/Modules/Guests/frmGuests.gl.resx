@@ -223,7 +223,7 @@
     <value>&lt;Baleiro&gt;</value>
   </data>
   <data name="lblRating.Text" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Clientes</value>

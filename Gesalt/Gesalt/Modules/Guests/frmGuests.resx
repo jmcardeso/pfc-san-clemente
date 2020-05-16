@@ -144,25 +144,25 @@
     <value>17, 17</value>
   </metadata>
   <data name="AddAGuestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="AddAGuestToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Add</value>
   </data>
   <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="EditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Edit</value>
   </data>
   <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Delete</value>
   </data>
   <data name="FilterDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Filter data</value>
@@ -1244,7 +1244,7 @@
     <value>True</value>
   </data>
   <data name="lblRating.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 49</value>
+    <value>677, 44</value>
   </data>
   <data name="lblRating.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -1253,7 +1253,7 @@
     <value>56</value>
   </data>
   <data name="lblRating.Text" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblRating.Name" xml:space="preserve">
     <value>lblRating</value>
