@@ -148,9 +148,9 @@ Public Class OpLessor
     ''' Añade una nueva fila a la tabla lessor de la base de datos.
     ''' </summary>
     ''' <param name="lessor">El objeto de la clase <c>Lessor</c> que se va a añadir en la tabla lessor de la base de datos.</param>
-    ''' <returns><c>True</c> si la inserción ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function AddLessor(lessor As Lessor) As Boolean
-        Dim result As Boolean = False
+    ''' <returns>El índice de la clave primaria de la fila añadida. -1 si ha habido un problema al calcular el índice. -2 si ha habido un problema al añadir la fila.</returns>
+    Public Function AddLessor(lessor As Lessor) As Integer
+        Dim result As Integer
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
@@ -173,11 +173,17 @@ Public Class OpLessor
         Dim dr As DataRow
         dr = dt.NewRow()
 
-        FillRow(dr, lessor)
-        dt.Rows.Add(dr)
+        result = GetId()
 
-        If da.Update(dt) = 1 Then
-            result = True
+        If result <> -1 Then
+            lessor.Id = result
+
+            FillRow(dr, lessor)
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
         End If
 
         Return result
@@ -249,4 +255,26 @@ Public Class OpLessor
         dr("email") = lessor.Email
         dr("path_logo") = lessor.PathLogo
     End Sub
+    Private Function GetId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from lessor"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
 End Class

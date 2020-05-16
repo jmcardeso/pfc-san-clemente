@@ -103,13 +103,18 @@ Public Class frmLessors
             Exit Sub
         End If
 
-        If Not opLessor.AddLessor(frmAux.editLessor) Then
+        Dim id As Integer = opLessor.AddLessor(frmAux.editLessor)
+        If id < 1 Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
 
-        lessors = opLessor.GetLessors()
-        bs.DataSource = lessors
+        ' Se añade el objeto a la lista, incluyendo la id que obtuvimos al insertarlo en la base de datos
+        Dim newLessor As New Lessor()
+        newLessor = Utils.DeepClone(frmAux.editLessor)
+        newLessor.Id = id
+        lessors.Add(newLessor)
+
         bs.ResetBindings(False)
     End Sub
 

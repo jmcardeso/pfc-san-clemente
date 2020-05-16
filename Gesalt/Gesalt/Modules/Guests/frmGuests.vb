@@ -101,13 +101,18 @@ Public Class frmGuests
             Exit Sub
         End If
 
-        If Not opGuest.AddGuest(frmAux.editGuest) Then
+        Dim id As Integer = opGuest.AddGuest(frmAux.editGuest)
+        If id < 1 Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
             Exit Sub
         End If
 
-        Guests = opGuest.GetGuests()
-        bs.DataSource = Guests
+        ' Se añade el objeto a la lista, incluyendo la id que obtuvimos al insertarlo en la base de datos
+        Dim newGuest As New Guest()
+        newGuest = Utils.DeepClone(frmAux.editGuest)
+        newGuest.Id = id
+        Guests.Add(newGuest)
+
         bs.ResetBindings(False)
     End Sub
 

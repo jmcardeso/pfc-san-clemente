@@ -323,4 +323,10 @@
   <data name="editPropTitle" xml:space="preserve">
     <value>Modificar un inmoble - Gesalt</value>
   </data>
+  <data name="rowRemovedPropMsg" xml:space="preserve">
+    <value>O inmoble situado en </value>
+  </data>
+  <data name="fieldDescription" xml:space="preserve">
+    <value>Descrición</value>
+  </data>
 </root>

@@ -176,7 +176,11 @@ Public Class frmProperty
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click, ToolStripDelete.Click
-        If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        If MsgBox(LocRM.GetString("rowRemovedPropMsg") & "'" & bs.Current.Address & "' " & LocRM.GetString("rowRemovedMsg"),
               MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
               LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
             Exit Sub
@@ -192,10 +196,6 @@ Public Class frmProperty
     End Sub
 
     Private Sub FilterDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterDataToolStripMenuItem.Click
-        'If bs.Current Is Nothing Then
-        '    Exit Sub
-        'End If
-
         If FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterPropertiesMenuOFF")) Then
             Dim frmFlt As frmPropertiesFilter = New frmPropertiesFilter()
             If frmFlt.ShowDialog() = DialogResult.Cancel Then
@@ -246,7 +246,7 @@ Public Class frmProperty
     End Sub
 
     Private Sub dgvProperties_SelectionChanged(sender As Object, e As EventArgs) Handles dgvProperties.SelectionChanged
-        If bs.Current.Photos.Count = 0 Then
+        If bs.Current Is Nothing OrElse bs.Current.Photos.Count = 0 Then
             pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
             pbxPhotos.Image = My.Resources.noImage
             bsPhotos.DataSource = New List(Of Photo)

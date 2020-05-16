@@ -323,4 +323,10 @@
   <data name="editPropTitle" xml:space="preserve">
     <value>Editar un inmueble - Gesalt</value>
   </data>
+  <data name="rowRemovedPropMsg" xml:space="preserve">
+    <value>El inmueble situado en </value>
+  </data>
+  <data name="fieldDescription" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
 </root>

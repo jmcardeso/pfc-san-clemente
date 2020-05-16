@@ -82,9 +82,6 @@ Public Class frmPropertiesAux
 
         propAux.Photos.Remove(bs.Current)
 
-        'propAux.Photos.Clear()
-        'propAux.Photos = opProp.GetAllPhotos(propAux.Id)
-        'bs.DataSource = propAux.Photos
         bs.ResetBindings(False)
 
         If propAux.Photos.Count = 0 Then

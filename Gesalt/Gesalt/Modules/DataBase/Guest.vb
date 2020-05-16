@@ -3,7 +3,7 @@
 ''' </summary>
 <Serializable()>
 Public Class Guest
-    Public ReadOnly Property Id As Integer
+    Public Property Id As Integer
 
     Public Property FirstName As String
 

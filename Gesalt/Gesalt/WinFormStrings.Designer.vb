@@ -308,6 +308,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Description.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldDescription() As String
+            Get
+                Return ResourceManager.GetString("fieldDescription", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Email.
         '''</summary>
         Friend Shared ReadOnly Property fieldEmail() As String
@@ -488,15 +497,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a OR.
-        '''</summary>
-        Friend Shared ReadOnly Property filterOr() As String
-            Get
-                Return ResourceManager.GetString("filterOr", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Busca una cadena traducida similar a Lessor has no logo.
         '''</summary>
         Friend Shared ReadOnly Property filterLessorLogoFalse() As String
@@ -547,6 +547,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property filterLessorsMenuON() As String
             Get
                 Return ResourceManager.GetString("filterLessorsMenuON", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a OR.
+        '''</summary>
+        Friend Shared ReadOnly Property filterOr() As String
+            Get
+                Return ResourceManager.GetString("filterOr", resourceCulture)
             End Get
         End Property
         
@@ -664,6 +673,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property rowRemovedMsg() As String
             Get
                 Return ResourceManager.GetString("rowRemovedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The property located on .
+        '''</summary>
+        Friend Shared ReadOnly Property rowRemovedPropMsg() As String
+            Get
+                Return ResourceManager.GetString("rowRemovedPropMsg", resourceCulture)
             End Get
         End Property
         

@@ -323,4 +323,10 @@
   <data name="editPropTitle" xml:space="preserve">
     <value>Edit a Property - Gesalt</value>
   </data>
+  <data name="rowRemovedPropMsg" xml:space="preserve">
+    <value>The property located on </value>
+  </data>
+  <data name="fieldDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
 </root>

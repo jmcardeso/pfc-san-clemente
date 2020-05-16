@@ -36,7 +36,7 @@ Public Class OpGuest
     ''' </summary>
     ''' <param name="sql">Opcional. Cadena de texto con la sentencia de selección de la tabla guest de la base de datos.</param>
     ''' <param name="parameters">Opcional. Colección de parámetros para la sentencia de selección de la tabla guest de la base de datos.</param>
-    ''' <returns>Lista con los objetos de la case <c>guest</c> obtenidos de la tabla guest de la base de datos.</returns>
+    ''' <returns>Lista con los objetos de la clase <c>Guest</c> obtenidos de la tabla guest de la base de datos.</returns>
     Public Function GetGuests(Optional sql As String = "select * from guest order by last_name",
                                  Optional parameters As List(Of DbParameter) = Nothing) As List(Of Guest)
         Dim guests As New List(Of Guest)
@@ -77,7 +77,7 @@ Public Class OpGuest
     ''' <summary>
     ''' Borra una fila de datos de la tabla guest de la base de datos.
     ''' </summary>
-    ''' <param name="guest">El objeto de la clase <c>guest</c> que se va a borrar de la tabla guest de la base de datos.</param>
+    ''' <param name="guest">El objeto de la clase <c>Guest</c> que se va a borrar de la tabla guest de la base de datos.</param>
     ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function DeleteGuest(guest As Guest) As Boolean
         Dim result As Boolean = False
@@ -122,10 +122,10 @@ Public Class OpGuest
     ''' <summary>
     ''' Añade una nueva fila a la tabla guest de la base de datos.
     ''' </summary>
-    ''' <param name="guest">El objeto de la clase <c>guest</c> que se va a añadir en la tabla guest de la base de datos.</param>
-    ''' <returns><c>True</c> si la inserción ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function AddGuest(guest As Guest) As Boolean
-        Dim result As Boolean = False
+    ''' <param name="guest">El objeto de la clase <c>Guest</c> que se va a añadir en la tabla guest de la base de datos.</param>
+    ''' <returns>El índice de la clave primaria de la fila añadida. -1 si ha habido un problema al calcular el índice. -2 si ha habido un problema al añadir la fila.</returns>
+    Public Function AddGuest(guest As Guest) As Integer
+        Dim result As Integer
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
@@ -148,11 +148,17 @@ Public Class OpGuest
         Dim dr As DataRow
         dr = dt.NewRow()
 
-        FillRow(dr, guest)
-        dt.Rows.Add(dr)
+        result = GetId()
 
-        If da.Update(dt) = 1 Then
-            result = True
+        If result <> -1 Then
+            guest.Id = result
+
+            FillRow(dr, guest)
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
         End If
 
         Return result
@@ -225,4 +231,27 @@ Public Class OpGuest
         dr("comments") = guest.Comments
         dr("accept_ad") = guest.AcceptAd
     End Sub
+
+    Private Function GetId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from guest"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
 End Class
