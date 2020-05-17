@@ -9,7 +9,7 @@ Public Class frmLessors
 
     Private Sub frmLessors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            lessors = opLessor.GetLessors()
+            lessors = opLessor.GetAllLessors()
 
             bs.DataSource = lessors
 
@@ -180,14 +180,14 @@ Public Class frmLessors
             lblFilter.ForeColor = Color.White
             FilterDataToolStripMenuItem.Text = LocRM.GetString("filterLessorsMenuON")
 
-            lessors = opLessor.GetLessors(frmFlt.resultSQL, frmFlt.resultParameters)
+            lessors = opLessor.GetAllLessors(frmFlt.resultSQL, frmFlt.resultParameters)
         Else
             lblFilter.Text = LocRM.GetString("filterLessorsLabelOFF")
             lblFilter.BackColor = SystemColors.Control
             lblFilter.ForeColor = SystemColors.ControlText
             FilterDataToolStripMenuItem.Text = LocRM.GetString("filterLessorsMenuOFF")
 
-            lessors = opLessor.GetLessors()
+            lessors = opLessor.GetAllLessors()
         End If
 
         bs.DataSource = lessors

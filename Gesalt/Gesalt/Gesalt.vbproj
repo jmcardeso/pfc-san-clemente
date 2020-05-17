@@ -148,6 +148,7 @@
     <Compile Include="Constants.vb" />
     <Compile Include="Modules\DataBase\Connection.vb" />
     <Compile Include="Modules\DataBase\Guest.vb" />
+    <Compile Include="Modules\DataBase\LessorProp.vb" />
     <Compile Include="Modules\DataBase\OpGuest.vb" />
     <Compile Include="Modules\DataBase\OpLessor.vb" />
     <Compile Include="Modules\DataBase\OpProp.vb" />

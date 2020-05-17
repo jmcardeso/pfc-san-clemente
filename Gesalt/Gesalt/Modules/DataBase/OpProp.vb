@@ -1,4 +1,5 @@
 ﻿Imports System.Data.Common
+Imports Gesalt
 
 ''' <summary>
 ''' Representa un conjunto de métodos para realizar operaciones en la tabla property de la base de datos.
@@ -69,6 +70,7 @@ Public Class OpProp
                               dr.Item(10))
 
             Prop.Photos = GetAllPhotos(Prop.Id)
+            Prop.Lessors = GetLessors(Prop.Id)
 
             Props.Add(Prop)
         Next
@@ -325,6 +327,38 @@ Public Class OpProp
         End If
 
         Return result
+    End Function
+
+    Public Function GetLessors(propertyId As Integer) As List(Of LessorProp)
+        Dim lessors As New List(Of LessorProp)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@property_id"
+        parameter.Value = propertyId
+        parameter.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(parameter)
+        sqlCommand.CommandText = "select * from lessor_prop where property_id = @property_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim opLessor As OpLessor = OpLessor.GetInstance()
+
+        For Each dr As DataRow In dt.Rows
+            lessors.Add(New LessorProp(opLessor.GetLessor(dr.Item("lessor_id")), dr.Item("percent_property")))
+        Next
+
+        Return lessors
     End Function
 
     ''' <summary>

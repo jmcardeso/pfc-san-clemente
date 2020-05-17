@@ -5,6 +5,7 @@ Public Class frmProperty
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmProperty).Assembly)
     Dim bs As New BindingSource()
     Dim bsPhotos As New BindingSource()
+    Dim bsLessors As New BindingSource()
     Dim props As New List(Of Prop)
 
     Private Sub frmprops_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -65,6 +66,10 @@ Public Class frmProperty
             End If
 
             pbxPhotos.DataBindings.Add("ImageLocation", bsPhotos, "Path")
+
+            bsLessors.DataSource = bs.Current.Lessors
+            dgvLessors.DataSource = bsLessors
+
 
         Catch err As InvalidOperationException
             MsgBox(err.Message)
@@ -255,6 +260,8 @@ Public Class frmProperty
             bsPhotos.DataSource = bs.Current.Photos
             bsPhotos.ResetBindings(False)
         End If
+        bsLessors.DataSource = bs.Current.Lessors
+        bsLessors.ResetBindings(False)
     End Sub
 
     Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click

@@ -12,6 +12,7 @@ Public Class Prop
     Public Property Baths As Integer
     Public Property Description As String
     Public Property Photos As New List(Of Photo)
+    Public Property Lessors As New List(Of LessorProp)
 
     Public Sub New()
         Me.Id = 0
@@ -26,6 +27,7 @@ Public Class Prop
         Me.Baths = 0
         Me.Description = ""
         Me.Photos = New List(Of Photo)
+        Me.Lessors = New List(Of LessorProp)
     End Sub
 
     Public Sub New(id As Integer, cadRef As String, address As String, zip As String, city As String,

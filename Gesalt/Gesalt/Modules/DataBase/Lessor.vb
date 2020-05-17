@@ -78,4 +78,7 @@ Public Class Lessor
         Me.PathLogo = pathLogo
     End Sub
 
+    Public Overrides Function ToString() As String
+        Return Me.LastName & ", " & Me.FirstName
+    End Function
 End Class

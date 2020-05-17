@@ -225,4 +225,25 @@
   <data name="ToolStripEdit.Text" xml:space="preserve">
     <value>Editar inmueble</value>
   </data>
+  <data name="AddALessorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Añadir arrendador</value>
+  </data>
+  <data name="FirstName.Text" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="gbxLessors.Text" xml:space="preserve">
+    <value>Arrendadores</value>
+  </data>
+  <data name="LastName.Text" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Arrendadores</value>
+  </data>
+  <data name="Percentage.Text" xml:space="preserve">
+    <value>Porcentaje</value>
+  </data>
+  <data name="DeleteALessorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Borrar arrendador</value>
+  </data>
 </root>

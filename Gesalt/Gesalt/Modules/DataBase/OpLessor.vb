@@ -37,7 +37,7 @@ Public Class OpLessor
     ''' <param name="sql">Opcional. Cadena de texto con la sentencia de selección de la tabla lessor de la base de datos.</param>
     ''' <param name="parameters">Opcional. Colección de parámetros para la sentencia de selección de la tabla lessor de la base de datos.</param>
     ''' <returns>Lista con los objetos de la case <c>Lessor</c> obtenidos de la tabla lessor de la base de datos.</returns>
-    Public Function GetLessors(Optional sql As String = "select * from lessor order by last_name",
+    Public Function GetAllLessors(Optional sql As String = "select * from lessor order by last_name",
                                  Optional parameters As List(Of DbParameter) = Nothing) As List(Of Lessor)
         Dim lessors As New List(Of Lessor)
         Dim lessor As Lessor
@@ -71,6 +71,40 @@ Public Class OpLessor
         Next
 
         Return lessors
+    End Function
+
+    Public Function GetLessor(id As Integer) As Lessor
+        Dim lessor As Lessor
+
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+        Dim dr As DataRow
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        sqlCommand.CommandText = "select * from lessor where Id = @p_id"
+        sqlCommand.Connection = con.Con
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        dr = dt.Rows.Item(0)
+        lessor = New Lessor(dr.Item(0), dr.Item(1),
+                              dr.Item(2), dr.Item(3),
+                              dr.Item(4), dr.Item(5),
+                              dr.Item(6), dr.Item(7),
+                              dr.Item(8), dr.Item(9),
+                              dr.Item(10), dr.Item(11))
+
+        Return lessor
     End Function
 
     ''' <summary>
