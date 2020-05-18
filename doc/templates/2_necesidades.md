@@ -12,7 +12,7 @@ Si el usuario es un pequeño propietario, Gesalt puede utilizar una base de dato
 
 Esta característica -ser DB Agnostic, esto es, independiente del SGBD- es la piedra angular del programa. Y si bien, inicialmente, sólo están implementados dos SGBD -Access en local, MySQL en remoto-, es posible añadir cualquier otro sin afectar al núcleo del código.
 
-Gesalt está desarrolado en Visual Basic, que une a su facilidad de uso la potencia del framework .NET y del paradigma de la programación orientada a objetos.
+Gesalt está desarrollado en Visual Basic, que une a su facilidad de uso la potencia del framework .NET y del paradigma de la programación orientada a objetos.
 
 Al tratarse del proyecto de fin de ciclo de un único alumno, inicialmente no puede aprovecharse de las ventajas  de la colaboración que ofrecen plataformas como GitLab -donde está alojado-, pero está preparado para hacerlo en un futuro (gestión de incidencias, etc.).
 
