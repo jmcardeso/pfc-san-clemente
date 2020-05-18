@@ -314,4 +314,10 @@ Public Class frmProperty
         frmPV.index = bsPhotos.Position
         frmPV.ShowDialog()
     End Sub
+
+    Private Sub BookTypeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BookTypeToolStripMenuItem1.Click
+        Dim frmBT As New frmBookType()
+
+        frmBT.ShowDialog()
+    End Sub
 End Class

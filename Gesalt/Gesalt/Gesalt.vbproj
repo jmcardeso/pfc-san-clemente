@@ -146,6 +146,12 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
+    <Compile Include="Modules\Books\frmBookType.Designer.vb">
+      <DependentUpon>frmBookType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Books\frmBookType.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\DataBase\Tables\Book.vb" />
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
     <Compile Include="Modules\DataBase\Operations\Connection.vb" />
@@ -308,6 +314,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookType.es.resx">
+      <DependentUpon>frmBookType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookType.gl.resx">
+      <DependentUpon>frmBookType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookType.resx">
+      <DependentUpon>frmBookType.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\frmGuests.es.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
