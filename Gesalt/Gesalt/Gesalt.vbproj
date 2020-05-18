@@ -146,14 +146,17 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
-    <Compile Include="Modules\DataBase\Connection.vb" />
-    <Compile Include="Modules\DataBase\Guest.vb" />
-    <Compile Include="Modules\DataBase\LessorProp.vb" />
-    <Compile Include="Modules\DataBase\OpGuest.vb" />
-    <Compile Include="Modules\DataBase\OpLessor.vb" />
-    <Compile Include="Modules\DataBase\OpProp.vb" />
-    <Compile Include="Modules\DataBase\Lessor.vb" />
-    <Compile Include="Modules\DataBase\Photo.vb" />
+    <Compile Include="Modules\DataBase\Tables\Book.vb" />
+    <Compile Include="Modules\DataBase\Tables\BookType.vb" />
+    <Compile Include="Modules\DataBase\Operations\Connection.vb" />
+    <Compile Include="Modules\DataBase\Tables\Guest.vb" />
+    <Compile Include="Modules\DataBase\Tables\LessorProp.vb" />
+    <Compile Include="Modules\DataBase\Operations\OpGuest.vb" />
+    <Compile Include="Modules\DataBase\Operations\OpLessor.vb" />
+    <Compile Include="Modules\DataBase\Operations\OpProp.vb" />
+    <Compile Include="Modules\DataBase\Tables\Lessor.vb" />
+    <Compile Include="Modules\DataBase\Tables\Photo.vb" />
+    <Compile Include="Modules\DataBase\Tables\Price.vb" />
     <Compile Include="Modules\DataBase\Utils.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
@@ -450,7 +453,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\DataBase\Prop.vb" />
+    <Compile Include="Modules\DataBase\Tables\Prop.vb" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

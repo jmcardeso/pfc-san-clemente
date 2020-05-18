@@ -76,7 +76,11 @@ Public Class Connection
                 _Con.ConnectionString = css.ConnectionString
             End If
 
-            Con.Open()
+            Try
+                Con.Open()
+            Catch err As System.Net.Sockets.SocketException
+                Return Nothing
+            End Try
         End If
         Return Con
     End Function

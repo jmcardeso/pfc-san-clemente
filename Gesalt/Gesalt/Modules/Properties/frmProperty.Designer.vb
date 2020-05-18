@@ -76,6 +76,8 @@ Partial Class frmProperty
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.BookTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BookTypeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,7 +144,7 @@ Partial Class frmProperty
         '
         'mnsProperties
         '
-        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.BookTypeToolStripMenuItem, Me.ReportsToolStripMenuItem})
         resources.ApplyResources(Me.mnsProperties, "mnsProperties")
         Me.mnsProperties.Name = "mnsProperties"
         '
@@ -383,6 +385,17 @@ Partial Class frmProperty
         resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
         '
+        'BookTypeToolStripMenuItem
+        '
+        Me.BookTypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BookTypeToolStripMenuItem1})
+        Me.BookTypeToolStripMenuItem.Name = "BookTypeToolStripMenuItem"
+        resources.ApplyResources(Me.BookTypeToolStripMenuItem, "BookTypeToolStripMenuItem")
+        '
+        'BookTypeToolStripMenuItem1
+        '
+        Me.BookTypeToolStripMenuItem1.Name = "BookTypeToolStripMenuItem1"
+        resources.ApplyResources(Me.BookTypeToolStripMenuItem1, "BookTypeToolStripMenuItem1")
+        '
         'frmProperty
         '
         resources.ApplyResources(Me, "$this")
@@ -488,4 +501,6 @@ Partial Class frmProperty
     Friend WithEvents lblAddress As Label
     Friend WithEvents dgvLessors As DataGridView
     Friend WithEvents Label11 As Label
+    Friend WithEvents BookTypeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BookTypeToolStripMenuItem1 As ToolStripMenuItem
 End Class

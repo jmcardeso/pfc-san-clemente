@@ -228,4 +228,10 @@
   <data name="Label11.Text" xml:space="preserve">
     <value>Arrendadores:</value>
   </data>
+  <data name="BookTypeToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Reservas</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Tipo de reservas</value>
+  </data>
 </root>
