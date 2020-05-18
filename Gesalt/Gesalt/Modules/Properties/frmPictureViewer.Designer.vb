@@ -71,6 +71,7 @@ Partial Class frmPictureViewer
         Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.btnFirst)
         Me.Controls.Add(Me.pbxPhoto)
+        Me.MaximizeBox = False
         Me.Name = "frmPictureViewer"
         CType(Me.pbxPhoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

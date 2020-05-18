@@ -186,6 +186,12 @@
     <Compile Include="Modules\Guests\frmGuestsAux.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Properties\frmLessorProp.Designer.vb">
+      <DependentUpon>frmLessorProp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmLessorProp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Properties\frmPictureViewer.Designer.vb">
       <DependentUpon>frmPictureViewer.vb</DependentUpon>
     </Compile>
@@ -329,6 +335,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\frmGuestsAux.resx">
       <DependentUpon>frmGuestsAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmLessorProp.es.resx">
+      <DependentUpon>frmLessorProp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmLessorProp.gl.resx">
+      <DependentUpon>frmLessorProp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmLessorProp.resx">
+      <DependentUpon>frmLessorProp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmPictureViewer.es.resx">
+      <DependentUpon>frmPictureViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmPictureViewer.gl.resx">
+      <DependentUpon>frmPictureViewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Properties\frmPictureViewer.resx">
       <DependentUpon>frmPictureViewer.vb</DependentUpon>

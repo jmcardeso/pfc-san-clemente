@@ -209,6 +209,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Edit the Property&apos;s Lessor -  Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property editLP() As String
+            Get
+                Return ResourceManager.GetString("editLP", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Edit a Property - Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property editPropTitle() As String
@@ -353,6 +362,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Lessors.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldLessors() As String
+            Get
+                Return ResourceManager.GetString("fieldLessors", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Max. Guests.
         '''</summary>
         Friend Shared ReadOnly Property fieldMaxGuests() As String
@@ -376,6 +394,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property fieldPathLogo() As String
             Get
                 Return ResourceManager.GetString("fieldPathLogo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Percentage.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldPercentage() As String
+            Get
+                Return ResourceManager.GetString("fieldPercentage", resourceCulture)
             End Get
         End Property
         
@@ -632,6 +659,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Error - Adding a lessor twice.
+        '''</summary>
+        Friend Shared ReadOnly Property lpEqualsError() As String
+            Get
+                Return ResourceManager.GetString("lpEqualsError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The lessor is going to be removed from this property. Are you sure?.
+        '''</summary>
+        Friend Shared ReadOnly Property lpRemovedMsg() As String
+            Get
+                Return ResourceManager.GetString("lpRemovedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property msgTitle() As String
@@ -673,6 +718,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property opFailedTitle() As String
             Get
                 Return ResourceManager.GetString("opFailedTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Error - The percentage is greater than 100.
+        '''</summary>
+        Friend Shared ReadOnly Property percentError() As String
+            Get
+                Return ResourceManager.GetString("percentError", resourceCulture)
             End Get
         End Property
         

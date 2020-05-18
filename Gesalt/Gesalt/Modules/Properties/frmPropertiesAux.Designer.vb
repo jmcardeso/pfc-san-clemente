@@ -54,7 +54,14 @@ Partial Class frmPropertiesAux
         Me.btnPhotosNext = New System.Windows.Forms.Button()
         Me.btnPhotosFirst = New System.Windows.Forms.Button()
         Me.btnDeletePhoto = New System.Windows.Forms.Button()
+        Me.gbxLessors = New System.Windows.Forms.GroupBox()
+        Me.btnEditLessor = New System.Windows.Forms.Button()
+        Me.dgvLessors = New System.Windows.Forms.DataGridView()
+        Me.bntDeleteLessor = New System.Windows.Forms.Button()
+        Me.btnAddLessor = New System.Windows.Forms.Button()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxLessors.SuspendLayout()
+        CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label12
@@ -222,12 +229,53 @@ Partial Class frmPropertiesAux
         Me.btnDeletePhoto.Name = "btnDeletePhoto"
         Me.btnDeletePhoto.UseVisualStyleBackColor = True
         '
+        'gbxLessors
+        '
+        Me.gbxLessors.Controls.Add(Me.btnEditLessor)
+        Me.gbxLessors.Controls.Add(Me.dgvLessors)
+        Me.gbxLessors.Controls.Add(Me.bntDeleteLessor)
+        Me.gbxLessors.Controls.Add(Me.btnAddLessor)
+        resources.ApplyResources(Me.gbxLessors, "gbxLessors")
+        Me.gbxLessors.Name = "gbxLessors"
+        Me.gbxLessors.TabStop = False
+        '
+        'btnEditLessor
+        '
+        resources.ApplyResources(Me.btnEditLessor, "btnEditLessor")
+        Me.btnEditLessor.Name = "btnEditLessor"
+        Me.btnEditLessor.UseVisualStyleBackColor = True
+        '
+        'dgvLessors
+        '
+        Me.dgvLessors.AllowUserToAddRows = False
+        Me.dgvLessors.AllowUserToDeleteRows = False
+        Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        resources.ApplyResources(Me.dgvLessors, "dgvLessors")
+        Me.dgvLessors.MultiSelect = False
+        Me.dgvLessors.Name = "dgvLessors"
+        Me.dgvLessors.ReadOnly = True
+        Me.dgvLessors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvLessors.ShowEditingIcon = False
+        '
+        'bntDeleteLessor
+        '
+        resources.ApplyResources(Me.bntDeleteLessor, "bntDeleteLessor")
+        Me.bntDeleteLessor.Name = "bntDeleteLessor"
+        Me.bntDeleteLessor.UseVisualStyleBackColor = True
+        '
+        'btnAddLessor
+        '
+        resources.ApplyResources(Me.btnAddLessor, "btnAddLessor")
+        Me.btnAddLessor.Name = "btnAddLessor"
+        Me.btnAddLessor.UseVisualStyleBackColor = True
+        '
         'frmPropertiesAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.gbxLessors)
         Me.Controls.Add(Me.btnDeletePhoto)
         Me.Controls.Add(Me.btnPhotosLast)
         Me.Controls.Add(Me.btnPhotosPrevious)
@@ -261,6 +309,8 @@ Partial Class frmPropertiesAux
         Me.MaximizeBox = False
         Me.Name = "frmPropertiesAux"
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxLessors.ResumeLayout(False)
+        CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,4 +347,9 @@ Partial Class frmPropertiesAux
     Friend WithEvents btnPhotosNext As Button
     Friend WithEvents btnPhotosFirst As Button
     Friend WithEvents btnDeletePhoto As Button
+    Friend WithEvents gbxLessors As GroupBox
+    Friend WithEvents dgvLessors As DataGridView
+    Friend WithEvents bntDeleteLessor As Button
+    Friend WithEvents btnAddLessor As Button
+    Friend WithEvents btnEditLessor As Button
 End Class

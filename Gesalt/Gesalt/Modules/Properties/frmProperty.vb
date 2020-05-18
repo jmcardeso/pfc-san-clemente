@@ -19,18 +19,20 @@ Public Class frmProperty
                 .AutoGenerateColumns = False
                 .ColumnCount = 5
 
+                column = .Columns(0)
+                column.Width = 120
                 .Columns(0).Name = "CadRed"
                 .Columns(0).HeaderText = LocRM.GetString("fieldCadRef")
                 .Columns(0).DataPropertyName = "CadRef"
 
                 column = .Columns(1)
-                column.Width = 180
+                column.Width = 250
                 .Columns(1).Name = "Address"
                 .Columns(1).HeaderText = LocRM.GetString("fieldAddress")
                 .Columns(1).DataPropertyName = "Address"
 
                 column = .Columns(2)
-                column.Width = 135
+                column.Width = 150
                 .Columns(2).Name = "City"
                 .Columns(2).HeaderText = LocRM.GetString("fieldCity")
                 .Columns(2).DataPropertyName = "City"
@@ -68,8 +70,24 @@ Public Class frmProperty
             pbxPhotos.DataBindings.Add("ImageLocation", bsPhotos, "Path")
 
             bsLessors.DataSource = bs.Current.Lessors
-            dgvLessors.DataSource = bsLessors
 
+            With dgvLessors
+                .AutoGenerateColumns = False
+                .ColumnCount = 2
+
+                column = .Columns(0)
+                column.Width = 250
+                .Columns(0).Name = "Lessor"
+                .Columns(0).HeaderText = LocRM.GetString("fieldLessors")
+                .Columns(0).DataPropertyName = "Lessor"
+
+                column = .Columns(1)
+                column.Width = 90
+                .Columns(1).Name = "Percentage"
+                .Columns(1).HeaderText = LocRM.GetString("fieldPercentage")
+                .Columns(1).DataPropertyName = "Percentage"
+                .DataSource = bsLessors
+            End With
 
         Catch err As InvalidOperationException
             MsgBox(err.Message)
@@ -137,6 +155,8 @@ Public Class frmProperty
                 photo.Id = idPhoto
             End If
         Next
+
+
 
         bs.ResetBindings(False)
     End Sub

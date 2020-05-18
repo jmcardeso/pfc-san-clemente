@@ -165,4 +165,7 @@
   <data name="btnDeletePhoto.Text" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="gbxLessors.Text" xml:space="preserve">
+    <value>Arrendadores</value>
+  </data>
 </root>

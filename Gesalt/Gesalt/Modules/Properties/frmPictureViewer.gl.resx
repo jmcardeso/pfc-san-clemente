@@ -117,55 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Ref. catastral:</value>
-  </data>
-  <data name="Label10.Text" xml:space="preserve">
-    <value>Provincia/País:</value>
-  </data>
-  <data name="Label12.Text" xml:space="preserve">
-    <value>Máx. plazas:</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Fotos:</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>Baños:</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Dormitorios:</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>Cód. Postal:</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>Localidad:</value>
-  </data>
-  <data name="Label8.Text" xml:space="preserve">
-    <value>Dirección:</value>
-  </data>
-  <data name="Label9.Text" xml:space="preserve">
-    <value>Superficie:</value>
-  </data>
-  <data name="bntCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Aceptar</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Añadir un inmueble - Gesalt</value>
-  </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Descripción:</value>
-  </data>
-  <data name="btnAddPhoto.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="btnDeletePhoto.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="gbxLessors.Text" xml:space="preserve">
-    <value>Arrendadores</value>
+    <value>Visor de imaxes - Gesalt</value>
   </data>
 </root>

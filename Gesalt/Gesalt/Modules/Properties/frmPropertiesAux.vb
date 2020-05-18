@@ -2,9 +2,12 @@
 
 Public Class frmPropertiesAux
     Public Property editProp As Prop
+    Public Property newLessors As New List(Of LessorProp)
+    Public Property deletedLessors As New List(Of LessorProp)
     Dim propAux As Prop
     Dim opProp As OpProp = OpProp.GetInstance()
-    Dim bs As New BindingSource()
+    Dim bsPhotos As New BindingSource()
+    Dim bsLessors As New BindingSource()
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPropertiesAux).Assembly)
 
     Private Sub frmPropertiesAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -17,21 +20,42 @@ Public Class frmPropertiesAux
         End If
 
         propAux = Utils.DeepClone(editProp)
-
+   
         If propAux.Photos.Count = 0 Then
             pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
             pbxPhotos.Image = My.Resources.noImage
             btnDeletePhoto.Enabled = False
         End If
 
-        bs.DataSource = propAux.Photos
+        bsPhotos.DataSource = propAux.Photos
+
+        bsLessors.DataSource = propAux.Lessors
+
+        Dim column As DataGridViewColumn
+        With dgvLessors
+            .AutoGenerateColumns = False
+            .ColumnCount = 2
+
+            column = .Columns(0)
+            column.Width = 250
+            .Columns(0).Name = "Lessor"
+            .Columns(0).HeaderText = LocRM.GetString("fieldLessors")
+            .Columns(0).DataPropertyName = "Lessor"
+
+            column = .Columns(1)
+            column.Width = 90
+            .Columns(1).Name = "Percentage"
+            .Columns(1).HeaderText = LocRM.GetString("fieldPercentage")
+            .Columns(1).DataPropertyName = "Percentage"
+            .DataSource = bsLessors
+        End With
 
         tbxCadRef.DataBindings.Add("Text", propAux, "CadRef")
         tbxMaxGuests.DataBindings.Add("Text", propAux, "MaxGuests")
         tbxAddress.DataBindings.Add("Text", propAux, "Address")
         tbxCity.DataBindings.Add("Text", propAux, "City")
         tbxBaths.DataBindings.Add("Text", propAux, "Baths")
-        pbxPhotos.DataBindings.Add("ImageLocation", bs, "Path")
+        pbxPhotos.DataBindings.Add("ImageLocation", bsPhotos, "Path")
         tbxSize.DataBindings.Add("Text", propAux, "Size")
         tbxBedrooms.DataBindings.Add("Text", propAux, "Bedrooms")
         tbxProvince.DataBindings.Add("Text", propAux, "Province")
@@ -64,10 +88,10 @@ Public Class frmPropertiesAux
             Dim photo As New Photo(0, propAux.Id, ofdPhotos.FileName)
             propAux.Photos.Add(photo)
             If propAux.Photos.Count = 1 Then
-                bs.DataSource = propAux.Photos
+                bsPhotos.DataSource = propAux.Photos
             End If
-            bs.ResetBindings(False)
-            bs.Position = bs.Count - 1
+            bsPhotos.ResetBindings(False)
+            bsPhotos.Position = bsPhotos.Count - 1
         End If
 
         If Not btnDeletePhoto.Enabled Then
@@ -76,13 +100,13 @@ Public Class frmPropertiesAux
     End Sub
 
     Private Sub btnDeletePhoto_Click(sender As Object, e As EventArgs) Handles btnDeletePhoto.Click
-        If bs.Current.Id <> 0 Then
-            opProp.DeletePhoto(bs.Current)
+        If bsPhotos.Current.Id <> 0 Then
+            opProp.DeletePhoto(bsPhotos.Current)
         End If
 
-        propAux.Photos.Remove(bs.Current)
+        propAux.Photos.Remove(bsPhotos.Current)
 
-        bs.ResetBindings(False)
+        bsPhotos.ResetBindings(False)
 
         If propAux.Photos.Count = 0 Then
             btnDeletePhoto.Enabled = False
@@ -114,29 +138,116 @@ Public Class frmPropertiesAux
     End Function
 
     Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
-        bs.Position = 0
+        bsPhotos.Position = 0
     End Sub
 
     Private Sub btnPhotosPrevious_Click(sender As Object, e As EventArgs) Handles btnPhotosPrevious.Click
-        bs.Position -= 1
+        bsPhotos.Position -= 1
     End Sub
 
     Private Sub btnPhotosNext_Click(sender As Object, e As EventArgs) Handles btnPhotosNext.Click
-        bs.Position += 1
+        bsPhotos.Position += 1
     End Sub
 
     Private Sub btnPhotosLast_Click(sender As Object, e As EventArgs) Handles btnPhotosLast.Click
-        bs.Position = propAux.Photos.Count - 1
+        bsPhotos.Position = propAux.Photos.Count - 1
     End Sub
 
     Private Sub pbxPhotos_Click(sender As Object, e As EventArgs) Handles pbxPhotos.Click
-        If bs.Count = 0 Then
+        If bsPhotos.Count = 0 Then
             Exit Sub
         End If
 
         Dim frmPV = New frmPictureViewer()
-        frmPV.photos = bs.List
-        frmPV.index = bs.Position
+        frmPV.photos = bsPhotos.List
+        frmPV.index = bsPhotos.Position
         frmPV.ShowDialog()
     End Sub
+
+    Private Sub btnAddLessor_Click(sender As Object, e As EventArgs) Handles btnAddLessor.Click
+        Dim frmLP = New frmLessorProp With {
+            .editLessorProp = Nothing
+        }
+
+        If frmLP.ShowDialog() = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        If Not ValidateEquality(frmLP.editLessorProp) Then
+            MsgBox(LocRM.GetString("lpEqualsError"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
+        If Not ValidatePercent(frmLP.editLessorProp.Percentage) Then
+            MsgBox(LocRM.GetString("percentError"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
+        Dim lp As LessorProp = New LessorProp(frmLP.editLessorProp.Lessor, frmLP.editLessorProp.Percentage)
+        newLessors.Add(lp)
+        propAux.Lessors.Add(lp)
+        bsLessors.ResetBindings(False)
+    End Sub
+
+    Private Sub bntDeleteLessor_Click(sender As Object, e As EventArgs) Handles bntDeleteLessor.Click
+        If MsgBox(LocRM.GetString("lpRemovedMsg"), MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton1, "Gesalt") = MsgBoxResult.No Then
+            Exit Sub
+        End If
+
+        deletedLessors.Add(bsLessors.Current)
+        propAux.Lessors.Remove(bsLessors.Current)
+        bsLessors.ResetBindings(False)
+    End Sub
+
+    Private Sub btnEditLessor_Click(sender As Object, e As EventArgs) Handles btnEditLessor.Click
+        Dim frmLP = New frmLessorProp With {
+            .editLessorProp = bsLessors.Current
+        }
+
+        If frmLP.ShowDialog() = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        Dim percentAux As Decimal = bsLessors.Current.Percentage
+        bsLessors.Current.Percentage = frmLP.editLessorProp.Percentage
+
+        If Not ValidatePercent() Then
+            bsLessors.Current.Percentage = percentAux
+            MsgBox(LocRM.GetString("percentError"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
+        bsLessors.ResetBindings(False)
+    End Sub
+
+    Private Function ValidatePercent(Optional newPercentage As Decimal = 0) As Boolean
+        Dim percentTotal As Decimal = 0
+        For Each lessor As LessorProp In propAux.Lessors
+            percentTotal += lessor.Percentage
+        Next
+        For Each lessor As LessorProp In newLessors
+            percentTotal += lessor.Percentage
+        Next
+
+        If percentTotal + newPercentage > 100 Then
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Function ValidateEquality(lp As LessorProp) As Boolean
+        For Each lessor As LessorProp In propAux.Lessors
+            If lp.Equals(lessor) Then
+                Return False
+            End If
+        Next
+        For Each lessor As LessorProp In newLessors
+            If lp.Equals(lessor) Then
+                Return False
+            End If
+        Next
+
+        Return True
+    End Function
 End Class

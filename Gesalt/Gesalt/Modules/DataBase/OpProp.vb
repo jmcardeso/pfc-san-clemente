@@ -338,12 +338,12 @@ Public Class OpProp
         sqlCommand = con.Factory.CreateCommand()
         parameter = con.Factory.CreateParameter()
 
-        parameter.ParameterName = "@property_id"
+        parameter.ParameterName = "@p_property_id"
         parameter.Value = propertyId
         parameter.DbType = DbType.Int32
 
         sqlCommand.Parameters.Add(parameter)
-        sqlCommand.CommandText = "select * from lessor_prop where property_id = @property_id"
+        sqlCommand.CommandText = "select * from lessor_prop where property_id = @p_property_id"
         sqlCommand.Connection = con.Con
 
         da = con.Factory.CreateDataAdapter()
@@ -359,6 +359,48 @@ Public Class OpProp
         Next
 
         Return lessors
+    End Function
+
+    Public Function AddLessor(propertyId As Integer, lessorId As Integer, percentage As Decimal) As Boolean
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@p_property_id"
+        parameter.Value = propertyId
+        parameter.DbType = DbType.Int32
+
+        Dim sql As String = "select * from lessor_prop where property_id = @p_property_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+        dr.Item("property_id") = propertyId
+        dr.Item("lessor_id") = lessorId
+        dr.Item("percent_property") = percentage
+
+        dt.Rows.Add(dr)
+
+        If da.Update(dt) <> 1 Then
+            Return False
+        End If
+
+        Return True
     End Function
 
     ''' <summary>

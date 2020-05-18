@@ -332,4 +332,22 @@
   <data name="aboutVersion" xml:space="preserve">
     <value>Versión {0}</value>
   </data>
+  <data name="fieldLessors" xml:space="preserve">
+    <value>Arrendadores</value>
+  </data>
+  <data name="fieldPercentage" xml:space="preserve">
+    <value>Porcentaje</value>
+  </data>
+  <data name="editLP" xml:space="preserve">
+    <value>Editar el arrendador del inmueble - Gesalt</value>
+  </data>
+  <data name="percentError" xml:space="preserve">
+    <value>Error - El porcentaje es mayor que 100</value>
+  </data>
+  <data name="lpEqualsError" xml:space="preserve">
+    <value>Error - Se intenta añadir el mismo arrendador dos veces</value>
+  </data>
+  <data name="lpRemovedMsg" xml:space="preserve">
+    <value>El arrendador se va a eliminar de este inmueble. ¿Está seguro?</value>
+  </data>
 </root>

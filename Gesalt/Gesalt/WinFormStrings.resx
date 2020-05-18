@@ -332,4 +332,22 @@
   <data name="aboutVersion" xml:space="preserve">
     <value>Version {0}</value>
   </data>
+  <data name="fieldLessors" xml:space="preserve">
+    <value>Lessors</value>
+  </data>
+  <data name="fieldPercentage" xml:space="preserve">
+    <value>Percentage</value>
+  </data>
+  <data name="editLP" xml:space="preserve">
+    <value>Edit the Property's Lessor -  Gesalt</value>
+  </data>
+  <data name="percentError" xml:space="preserve">
+    <value>Error - The percentage is greater than 100</value>
+  </data>
+  <data name="lpEqualsError" xml:space="preserve">
+    <value>Error - Adding a lessor twice</value>
+  </data>
+  <data name="lpRemovedMsg" xml:space="preserve">
+    <value>The lessor is going to be removed from this property. Are you sure?</value>
+  </data>
 </root>

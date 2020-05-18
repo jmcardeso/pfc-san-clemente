@@ -23,7 +23,7 @@ Partial Class frmProperty
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProperty))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -73,18 +73,12 @@ Partial Class frmProperty
         Me.lblZip = New System.Windows.Forms.Label()
         Me.lblCity = New System.Windows.Forms.Label()
         Me.lblAddress = New System.Windows.Forms.Label()
-        Me.LessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddALessorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteALessorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.gbxLessors = New System.Windows.Forms.GroupBox()
-        Me.btnAddLessor = New System.Windows.Forms.Button()
-        Me.bntDeleteLessor = New System.Windows.Forms.Button()
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbxLessors.SuspendLayout()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -147,7 +141,7 @@ Partial Class frmProperty
         '
         'mnsProperties
         '
-        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.LessorsToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.ReportsToolStripMenuItem})
         resources.ApplyResources(Me.mnsProperties, "mnsProperties")
         Me.mnsProperties.Name = "mnsProperties"
         '
@@ -266,8 +260,8 @@ Partial Class frmProperty
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -363,43 +357,6 @@ Partial Class frmProperty
         resources.ApplyResources(Me.lblAddress, "lblAddress")
         Me.lblAddress.Name = "lblAddress"
         '
-        'LessorsToolStripMenuItem
-        '
-        Me.LessorsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddALessorToolStripMenuItem, Me.DeleteALessorToolStripMenuItem})
-        Me.LessorsToolStripMenuItem.Name = "LessorsToolStripMenuItem"
-        resources.ApplyResources(Me.LessorsToolStripMenuItem, "LessorsToolStripMenuItem")
-        '
-        'AddALessorToolStripMenuItem
-        '
-        Me.AddALessorToolStripMenuItem.Name = "AddALessorToolStripMenuItem"
-        resources.ApplyResources(Me.AddALessorToolStripMenuItem, "AddALessorToolStripMenuItem")
-        '
-        'DeleteALessorToolStripMenuItem
-        '
-        Me.DeleteALessorToolStripMenuItem.Name = "DeleteALessorToolStripMenuItem"
-        resources.ApplyResources(Me.DeleteALessorToolStripMenuItem, "DeleteALessorToolStripMenuItem")
-        '
-        'gbxLessors
-        '
-        Me.gbxLessors.Controls.Add(Me.dgvLessors)
-        Me.gbxLessors.Controls.Add(Me.bntDeleteLessor)
-        Me.gbxLessors.Controls.Add(Me.btnAddLessor)
-        resources.ApplyResources(Me.gbxLessors, "gbxLessors")
-        Me.gbxLessors.Name = "gbxLessors"
-        Me.gbxLessors.TabStop = False
-        '
-        'btnAddLessor
-        '
-        resources.ApplyResources(Me.btnAddLessor, "btnAddLessor")
-        Me.btnAddLessor.Name = "btnAddLessor"
-        Me.btnAddLessor.UseVisualStyleBackColor = True
-        '
-        'bntDeleteLessor
-        '
-        resources.ApplyResources(Me.bntDeleteLessor, "bntDeleteLessor")
-        Me.bntDeleteLessor.Name = "bntDeleteLessor"
-        Me.bntDeleteLessor.UseVisualStyleBackColor = True
-        '
         'dgvLessors
         '
         Me.dgvLessors.AllowUserToAddRows = False
@@ -412,11 +369,17 @@ Partial Class frmProperty
         Me.dgvLessors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLessors.ShowEditingIcon = False
         '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
         'frmProperty
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.gbxLessors)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.dgvLessors)
         Me.Controls.Add(Me.lblAddress)
         Me.Controls.Add(Me.lblCity)
         Me.Controls.Add(Me.lblZip)
@@ -459,7 +422,6 @@ Partial Class frmProperty
         Me.mnsProperties.PerformLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbxLessors.ResumeLayout(False)
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -515,11 +477,6 @@ Partial Class frmProperty
     Friend WithEvents lblZip As Label
     Friend WithEvents lblCity As Label
     Friend WithEvents lblAddress As Label
-    Friend WithEvents LessorsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddALessorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DeleteALessorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents gbxLessors As GroupBox
-    Friend WithEvents bntDeleteLessor As Button
-    Friend WithEvents btnAddLessor As Button
     Friend WithEvents dgvLessors As DataGridView
+    Friend WithEvents Label11 As Label
 End Class

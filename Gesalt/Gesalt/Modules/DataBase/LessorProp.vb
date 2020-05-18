@@ -14,4 +14,10 @@ Public Class LessorProp
         Me.Lessor = New Lessor()
         Me.Percentage = 100
     End Sub
+
+    Public Overrides Function Equals(obj As Object) As Boolean
+        Dim prop = TryCast(obj, LessorProp)
+        Return prop IsNot Nothing AndAlso
+            Lessor.Id = prop.Lessor.Id
+    End Function
 End Class
