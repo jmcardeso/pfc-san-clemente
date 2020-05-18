@@ -7,5 +7,5 @@
 <!-- Expón por qué consideras necesaria esta nueva función y, si lo deseas, de qué forma se podría implementar -->
 
 <!-- ¡No borres esto! -->
-/label ~feature
+/label ~new_feature
 /assign @a18juancg
