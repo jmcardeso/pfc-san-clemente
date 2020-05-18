@@ -659,6 +659,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a cannot be removed: has properties..
+        '''</summary>
+        Friend Shared ReadOnly Property lessorHasPropertyErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("lessorHasPropertyErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Error - Adding a lessor twice.
         '''</summary>
         Friend Shared ReadOnly Property lpEqualsError() As String
@@ -691,6 +700,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property noDBMsg() As String
             Get
                 Return ResourceManager.GetString("noDBMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a There are no lessors in the database..
+        '''</summary>
+        Friend Shared ReadOnly Property noLessorsErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("noLessorsErrorMsg", resourceCulture)
             End Get
         End Property
         

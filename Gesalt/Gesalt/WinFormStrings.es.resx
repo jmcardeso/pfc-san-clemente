@@ -350,4 +350,10 @@
   <data name="lpRemovedMsg" xml:space="preserve">
     <value>El arrendador se va a eliminar de este inmueble. ¿Está seguro?</value>
   </data>
+  <data name="lessorHasPropertyErrorMsg" xml:space="preserve">
+    <value>no puede ser borrado: tiene inmuebles.</value>
+  </data>
+  <data name="noLessorsErrorMsg" xml:space="preserve">
+    <value>No hay arrendadores en la base de datos.</value>
+  </data>
 </root>

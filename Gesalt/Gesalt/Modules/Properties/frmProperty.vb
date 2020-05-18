@@ -61,15 +61,15 @@ Public Class frmProperty
 
             If bs.Current IsNot Nothing Then
                 bsPhotos.DataSource = bs.Current.Photos
+                bsLessors.DataSource = bs.Current.Lessors
             Else
                 bsPhotos.DataSource = New List(Of Photo)
                 pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
                 pbxPhotos.Image = My.Resources.noImage
+                bsLessors.DataSource = New List(Of LessorProp)
             End If
 
             pbxPhotos.DataBindings.Add("ImageLocation", bsPhotos, "Path")
-
-            bsLessors.DataSource = bs.Current.Lessors
 
             With dgvLessors
                 .AutoGenerateColumns = False
@@ -155,8 +155,6 @@ Public Class frmProperty
                 photo.Id = idPhoto
             End If
         Next
-
-
 
         bs.ResetBindings(False)
     End Sub
@@ -280,7 +278,13 @@ Public Class frmProperty
             bsPhotos.DataSource = bs.Current.Photos
             bsPhotos.ResetBindings(False)
         End If
-        bsLessors.DataSource = bs.Current.Lessors
+
+        If bs.Current Is Nothing OrElse bs.Current.Lessors.Count = 0 Then
+            bsLessors.DataSource = New List(Of LessorProp)
+        Else
+            bsLessors.DataSource = bs.Current.Lessors
+        End If
+
         bsLessors.ResetBindings(False)
     End Sub
 

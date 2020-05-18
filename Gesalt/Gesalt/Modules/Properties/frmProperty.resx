@@ -304,7 +304,7 @@
     <value>&amp;Properties</value>
   </data>
   <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Properties Report</value>

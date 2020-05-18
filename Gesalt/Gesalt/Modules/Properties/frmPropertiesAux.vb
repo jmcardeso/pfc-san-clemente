@@ -2,8 +2,7 @@
 
 Public Class frmPropertiesAux
     Public Property editProp As Prop
-    Public Property newLessors As New List(Of LessorProp)
-    Public Property deletedLessors As New List(Of LessorProp)
+
     Dim propAux As Prop
     Dim opProp As OpProp = OpProp.GetInstance()
     Dim bsPhotos As New BindingSource()
@@ -169,6 +168,12 @@ Public Class frmPropertiesAux
             .editLessorProp = Nothing
         }
 
+        Dim opLessor As OpLessor = OpLessor.GetInstance()
+        If opLessor.GetAllLessors().Count = 0 Then
+            MsgBox(LocRM.GetString("noLessorsErrorMsg"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
         If frmLP.ShowDialog() = DialogResult.Cancel Then
             Exit Sub
         End If
@@ -184,22 +189,28 @@ Public Class frmPropertiesAux
         End If
 
         Dim lp As LessorProp = New LessorProp(frmLP.editLessorProp.Lessor, frmLP.editLessorProp.Percentage)
-        newLessors.Add(lp)
         propAux.Lessors.Add(lp)
         bsLessors.ResetBindings(False)
     End Sub
 
     Private Sub bntDeleteLessor_Click(sender As Object, e As EventArgs) Handles bntDeleteLessor.Click
+        If bsLessors.Current Is Nothing Then
+            Exit Sub
+        End If
+
         If MsgBox(LocRM.GetString("lpRemovedMsg"), MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton1, "Gesalt") = MsgBoxResult.No Then
             Exit Sub
         End If
 
-        deletedLessors.Add(bsLessors.Current)
         propAux.Lessors.Remove(bsLessors.Current)
         bsLessors.ResetBindings(False)
     End Sub
 
-    Private Sub btnEditLessor_Click(sender As Object, e As EventArgs) Handles btnEditLessor.Click
+    Private Sub btnEditLessor_Click(sender As Object, e As EventArgs) Handles btnEditLessor.Click, dgvLessors.DoubleClick
+        If bsLessors.Current Is Nothing Then
+            Exit Sub
+        End If
+
         Dim frmLP = New frmLessorProp With {
             .editLessorProp = bsLessors.Current
         }
@@ -225,9 +236,6 @@ Public Class frmPropertiesAux
         For Each lessor As LessorProp In propAux.Lessors
             percentTotal += lessor.Percentage
         Next
-        For Each lessor As LessorProp In newLessors
-            percentTotal += lessor.Percentage
-        Next
 
         If percentTotal + newPercentage > 100 Then
             Return False
@@ -238,11 +246,6 @@ Public Class frmPropertiesAux
 
     Private Function ValidateEquality(lp As LessorProp) As Boolean
         For Each lessor As LessorProp In propAux.Lessors
-            If lp.Equals(lessor) Then
-                Return False
-            End If
-        Next
-        For Each lessor As LessorProp In newLessors
             If lp.Equals(lessor) Then
                 Return False
             End If

@@ -350,4 +350,10 @@
   <data name="lpRemovedMsg" xml:space="preserve">
     <value>The lessor is going to be removed from this property. Are you sure?</value>
   </data>
+  <data name="lessorHasPropertyErrorMsg" xml:space="preserve">
+    <value>cannot be removed: has properties.</value>
+  </data>
+  <data name="noLessorsErrorMsg" xml:space="preserve">
+    <value>There are no lessors in the database.</value>
+  </data>
 </root>

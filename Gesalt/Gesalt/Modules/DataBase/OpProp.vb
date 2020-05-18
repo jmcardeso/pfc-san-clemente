@@ -115,6 +115,10 @@ Public Class OpProp
             DeletePhoto(photo)
         Next
 
+        For Each lessor As LessorProp In prop.Lessors
+            DeleteLessor(prop.Id, lessor.Lessor.Id)
+        Next
+
         Dim dr As DataRow
         dr = dt.Rows.Item(0)
         'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE RESERVAS)
@@ -131,7 +135,8 @@ Public Class OpProp
     ''' Añade una nueva fila a la tabla property de la base de datos.
     ''' </summary>
     ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a añadir en la tabla property de la base de datos.</param>
-    ''' <returns>El índice de la clave primaria de la fila añadida. -1 si ha habido un problema al calcular el índice. -2 si ha habido un problema al añadir la fila</returns>
+    ''' <returns>El índice de la clave primaria de la fila añadida. -1 si ha habido un problema al calcular el índice.
+    ''' -2 si ha habido un problema al añadir la fila. -3 si ha habido un problema al refrescar la tabla lessor_prop</returns>
     Public Function AddProp(prop As Prop) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
@@ -167,6 +172,10 @@ Public Class OpProp
             If da.Update(dt) <> 1 Then
                 result = -2
             End If
+        End If
+
+        If Not RefreshLessors(prop) Then
+            result = -3
         End If
 
         Return result
@@ -214,6 +223,10 @@ Public Class OpProp
 
         If da.Update(dt) = 1 Then
             result = True
+        End If
+
+        If Not RefreshLessors(prop) Then
+            result = False
         End If
 
         Return result
@@ -361,21 +374,89 @@ Public Class OpProp
         Return lessors
     End Function
 
-    Public Function AddLessor(propertyId As Integer, lessorId As Integer, percentage As Decimal) As Boolean
+    Private Function RefreshLessors(prop As Prop) As Boolean
+        Dim oldLessors As New List(Of LessorProp)
+        oldLessors = GetLessors(prop.Id)
+
+        For Each lessor As LessorProp In oldLessors
+            If Not DeleteLessor(prop.Id, lessor.Lessor.Id) Then
+                Return False
+            End If
+        Next
+
+        For Each lessor As LessorProp In prop.Lessors
+            If Not AddLessor(prop.Id, lessor.Lessor.Id, lessor.Percentage) Then
+                Return False
+            End If
+        Next
+
+        Return True
+    End Function
+
+    Private Function DeleteLessor(propertyId As Integer, lessorId As Integer) As Boolean
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim pPropertyId As DbParameter
+        Dim pLessorId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        pPropertyId = con.Factory.CreateParameter()
+        pLessorId = con.Factory.CreateParameter()
+
+        pPropertyId.ParameterName = "@p_property_id"
+        pPropertyId.Value = propertyId
+        pPropertyId.DbType = DbType.Int32
+        sqlCommand.Parameters.Add(pPropertyId)
+
+        pLessorId.ParameterName = "@p_lessor_id"
+        pLessorId.Value = lessorId
+        pLessorId.DbType = DbType.Int32
+        sqlCommand.Parameters.Add(pLessorId)
+
+        Dim sql As String = "select * from lessor_prop where property_id = @p_property_id and lessor_id = @p_lessor_id"
+
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.Delete()
+
+        If da.Update(dt) <> 1 Then
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Function AddLessor(propertyId As Integer, lessorId As Integer, percentage As Decimal) As Boolean
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
         Dim parameter As DbParameter
 
+        sqlCommand = con.Factory.CreateCommand()
         parameter = con.Factory.CreateParameter()
 
         parameter.ParameterName = "@p_property_id"
         parameter.Value = propertyId
         parameter.DbType = DbType.Int32
+        sqlCommand.Parameters.Add(parameter)
 
         Dim sql As String = "select * from lessor_prop where property_id = @p_property_id"
 
-        sqlCommand = con.Factory.CreateCommand()
         sqlCommand.CommandText = sql
         sqlCommand.Connection = con.Con
 

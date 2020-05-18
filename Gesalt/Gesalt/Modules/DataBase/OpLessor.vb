@@ -270,6 +270,36 @@ Public Class OpLessor
         Return result
     End Function
 
+    Public Function LessorHasProperty(id As Integer) As Boolean
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@p_lessor_id"
+        parameter.Value = id
+        parameter.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(parameter)
+        sqlCommand.CommandText = "select * from lessor_prop where lessor_id = @p_lessor_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        If dt.Rows.Count <> 0 Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
+
     ''' <summary>
     ''' Introduce los datos de las propiedades de un objeto de la clase <c>Lessor</c> en los campos de una fila de la tabla lessor de la base de datos.
     ''' </summary>

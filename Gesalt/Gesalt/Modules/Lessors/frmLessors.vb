@@ -154,6 +154,12 @@ Public Class frmLessors
             Exit Sub
         End If
 
+        If opLessor.LessorHasProperty(bs.Current.Id) Then
+            MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("lessorHasPropertyErrorMsg"),
+                  MsgBoxStyle.Information, LocRM.GetString("rowRemovedTitle"))
+            Exit Sub
+        End If
+
         If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
                   MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
                   LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
