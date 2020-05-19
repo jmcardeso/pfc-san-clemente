@@ -164,6 +164,7 @@
     <Compile Include="Modules\Books\frmPrice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\DataBase\Operations\OpBook.vb" />
     <Compile Include="Modules\DataBase\Tables\Book.vb" />
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
     <Compile Include="Modules\DataBase\Operations\Connection.vb" />

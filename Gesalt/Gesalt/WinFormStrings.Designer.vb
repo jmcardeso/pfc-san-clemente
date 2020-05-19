@@ -299,6 +299,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Name.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldBTName() As String
+            Get
+                Return ResourceManager.GetString("fieldBTName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Cadastral Ref..
         '''</summary>
         Friend Shared ReadOnly Property fieldCadRef() As String
@@ -340,6 +349,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property fieldEmail() As String
             Get
                 Return ResourceManager.GetString("fieldEmail", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a End Date.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldEndDate() As String
+            Get
+                Return ResourceManager.GetString("fieldEndDate", resourceCulture)
             End Get
         End Property
         
@@ -452,11 +470,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Start Date.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldStartDate() As String
+            Get
+                Return ResourceManager.GetString("fieldStartDate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Type.
         '''</summary>
         Friend Shared ReadOnly Property fieldType() As String
             Get
                 Return ResourceManager.GetString("fieldType", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a URL Calendar.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldUrlICalendar() As String
+            Get
+                Return ResourceManager.GetString("fieldUrlICalendar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a URL Web.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldUrlWeb() As String
+            Get
+                Return ResourceManager.GetString("fieldUrlWeb", resourceCulture)
             End Get
         End Property
         

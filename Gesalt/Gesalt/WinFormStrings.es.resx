@@ -356,4 +356,19 @@
   <data name="noLessorsErrorMsg" xml:space="preserve">
     <value>No hay arrendadores en la base de datos.</value>
   </data>
+  <data name="fieldBTName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="fieldStartDate" xml:space="preserve">
+    <value>Fecha de alta</value>
+  </data>
+  <data name="fieldEndDate" xml:space="preserve">
+    <value>Fecha de baja</value>
+  </data>
+  <data name="fieldUrlWeb" xml:space="preserve">
+    <value>URL Web</value>
+  </data>
+  <data name="fieldUrlICalendar" xml:space="preserve">
+    <value>URL Calendario</value>
+  </data>
 </root>

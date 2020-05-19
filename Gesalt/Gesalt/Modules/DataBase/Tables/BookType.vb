@@ -22,9 +22,9 @@
         Me.Id = 0
         Me.PropertyId = 0
         Me.BTName = ""
-        Me.StartDate = Now()
+        Me.StartDate = Nothing
         Me.EndDate = Nothing
         Me.UrlWeb = ""
-        Me.UrlWeb = ""
+        Me.UrlICalendar = ""
     End Sub
 End Class

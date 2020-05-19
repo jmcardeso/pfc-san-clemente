@@ -356,4 +356,19 @@
   <data name="noLessorsErrorMsg" xml:space="preserve">
     <value>There are no lessors in the database.</value>
   </data>
+  <data name="fieldBTName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="fieldStartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="fieldEndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="fieldUrlWeb" xml:space="preserve">
+    <value>URL Web</value>
+  </data>
+  <data name="fieldUrlICalendar" xml:space="preserve">
+    <value>URL Calendar</value>
+  </data>
 </root>

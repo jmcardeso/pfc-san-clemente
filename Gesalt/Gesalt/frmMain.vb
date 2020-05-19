@@ -343,8 +343,15 @@ Public Class frmMain
     End Sub
 
     Private Sub BookTypeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BookTypeToolStripMenuItem1.Click
-        Dim frmBT As New frmBookType()
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
 
+        Dim frmBT As New frmBookType With {
+            .propertyId = bs.Current.Id
+        }
+
+        frmBT.lblProperty.Text = bs.Current.Address
         frmBT.ShowDialog()
     End Sub
 
