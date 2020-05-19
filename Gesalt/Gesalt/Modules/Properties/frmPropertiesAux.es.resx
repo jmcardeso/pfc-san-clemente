@@ -168,4 +168,13 @@
   <data name="gbxLessors.Text" xml:space="preserve">
     <value>Arrendadores</value>
   </data>
+  <data name="bntDeleteLessor.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="btnAddLessor.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="btnEditLessor.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
 </root>

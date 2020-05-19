@@ -149,7 +149,9 @@ Public Class frmSettings
             con.Close()
         End Try
 
-        oldCon.Open()
+        If Not My.Settings.appStatus.Equals("first_start") Then
+            oldCon.Open()
+        End If
     End Sub
 
     Private Sub rbDBType_CheckedChanged(sender As Object, e As EventArgs) Handles rbLocal.CheckedChanged, rbServer.CheckedChanged

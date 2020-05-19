@@ -213,9 +213,6 @@
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Informes</value>
   </data>
-  <data name="ToolStripExit.Text" xml:space="preserve">
-    <value>Salir</value>
-  </data>
   <data name="ToolStripAdd.Text" xml:space="preserve">
     <value>Añadir inmueble</value>
   </data>

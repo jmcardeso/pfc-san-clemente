@@ -387,6 +387,7 @@ Public Class frmMain
         Dim frmLsr As New frmLessors
 
         frmLsr.ShowDialog()
+        RefreshData()
     End Sub
 
     Private Sub ManageGuestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageGuestsToolStripMenuItem.Click
@@ -409,6 +410,22 @@ Public Class frmMain
         Dim frmAbout As New frmAbout
 
         frmAbout.ShowDialog()
+    End Sub
+
+    Private Sub RefreshData()
+        props = opProp.GetProps()
+
+        bs.DataSource = props
+
+        If bs.Current IsNot Nothing Then
+            bsPhotos.DataSource = bs.Current.Photos
+            bsLessors.DataSource = bs.Current.Lessors
+        Else
+            bsPhotos.DataSource = New List(Of Photo)
+            pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
+            pbxPhotos.Image = My.Resources.noImage
+            bsLessors.DataSource = New List(Of LessorProp)
+        End If
     End Sub
     Private Sub CloseSplash()
 
