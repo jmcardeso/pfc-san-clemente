@@ -23,8 +23,8 @@ Partial Class frmProperty
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProperty))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -78,6 +78,13 @@ Partial Class frmProperty
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.LessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageLessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,7 +151,7 @@ Partial Class frmProperty
         '
         'mnsProperties
         '
-        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.BookTypeToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.BookTypeToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.LessorsToolStripMenuItem, Me.GuestsToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.mnsProperties, "mnsProperties")
         Me.mnsProperties.Name = "mnsProperties"
         '
@@ -274,8 +281,8 @@ Partial Class frmProperty
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -376,14 +383,14 @@ Partial Class frmProperty
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle8
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
         Me.dgvLessors.Name = "dgvLessors"
@@ -395,6 +402,44 @@ Partial Class frmProperty
         '
         resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
+        '
+        'LessorsToolStripMenuItem
+        '
+        Me.LessorsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageLessorsToolStripMenuItem})
+        Me.LessorsToolStripMenuItem.Name = "LessorsToolStripMenuItem"
+        resources.ApplyResources(Me.LessorsToolStripMenuItem, "LessorsToolStripMenuItem")
+        '
+        'ManageLessorsToolStripMenuItem
+        '
+        Me.ManageLessorsToolStripMenuItem.Name = "ManageLessorsToolStripMenuItem"
+        resources.ApplyResources(Me.ManageLessorsToolStripMenuItem, "ManageLessorsToolStripMenuItem")
+        '
+        'GuestsToolStripMenuItem
+        '
+        Me.GuestsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem})
+        Me.GuestsToolStripMenuItem.Name = "GuestsToolStripMenuItem"
+        resources.ApplyResources(Me.GuestsToolStripMenuItem, "GuestsToolStripMenuItem")
+        '
+        'ManageGuestsToolStripMenuItem
+        '
+        Me.ManageGuestsToolStripMenuItem.Name = "ManageGuestsToolStripMenuItem"
+        resources.ApplyResources(Me.ManageGuestsToolStripMenuItem, "ManageGuestsToolStripMenuItem")
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        resources.ApplyResources(Me.HelpToolStripMenuItem, "HelpToolStripMenuItem")
+        '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        resources.ApplyResources(Me.SettingsToolStripMenuItem, "SettingsToolStripMenuItem")
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
         '
         'frmProperty
         '
@@ -503,4 +548,11 @@ Partial Class frmProperty
     Friend WithEvents Label11 As Label
     Friend WithEvents BookTypeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookTypeToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents LessorsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManageLessorsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GuestsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManageGuestsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class

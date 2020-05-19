@@ -37,7 +37,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.3.4.201</ApplicationVersion>
+    <ApplicationVersion>0.3.5.201</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -176,13 +176,6 @@
     <Compile Include="Modules\DataBase\Tables\Photo.vb" />
     <Compile Include="Modules\DataBase\Tables\Price.vb" />
     <Compile Include="Modules\DataBase\Utils.vb" />
-    <Compile Include="frmMain.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.vb">
-      <DependentUpon>frmMain.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Modules\Guests\frmGuests.Designer.vb">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </Compile>
@@ -295,6 +288,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.vb" />
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WinFormStrings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,15 +316,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.gl.resx">
       <DependentUpon>frmAbout.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.es.resx">
-      <DependentUpon>frmMain.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.gl.resx">
-      <DependentUpon>frmMain.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Books\frmBookType.es.resx">
       <DependentUpon>frmBookType.vb</DependentUpon>
@@ -483,6 +473,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\rptGuest.rdlc" />
     <EmbeddedResource Include="Modules\Lessors\rptLessor.rdlc" />
+    <EmbeddedResource Include="SplashScreen.es.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.gl.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinFormStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WinFormStrings.es.Designer.vb</LastGenOutput>

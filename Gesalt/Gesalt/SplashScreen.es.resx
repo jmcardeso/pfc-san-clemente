@@ -117,130 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Arrendadores - Gesalt</value>
+  <data name="Version.Text" xml:space="preserve">
+    <value>Versión {0}.{1:00}</value>
   </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Apellidos:</value>
+  <data name="Copyright.Text" xml:space="preserve">
+    <value>Copyright</value>
   </data>
-  <data name="Label10.Text" xml:space="preserve">
-    <value>Provincia/País:</value>
-  </data>
-  <data name="Label11.Text" xml:space="preserve">
-    <value>Tipo:</value>
-  </data>
-  <data name="Label12.Text" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Logo:</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Teléfono:</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>Cód. Postal:</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>Localidad:</value>
-  </data>
-  <data name="Label8.Text" xml:space="preserve">
-    <value>Dirección:</value>
-  </data>
-  <data name="Label9.Text" xml:space="preserve">
-    <value>NIF:</value>
-  </data>
-  <data name="lblAddress.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblCity.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblEmail.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblFirstName.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblLastName.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblNif.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblPhone.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblProvince.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblType.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="lblZip.Text" xml:space="preserve">
-    <value>&lt;Vacío&gt;</value>
-  </data>
-  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Borrar</value>
-  </data>
-  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Editar</value>
-  </data>
-  <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Mailing</value>
-  </data>
-  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Arrendadores</value>
-  </data>
-  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Informes</value>
-  </data>
-  <data name="lblFilter.Text" xml:space="preserve">
-    <value>Arrendadores:</value>
-  </data>
-  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Filtrar datos</value>
-  </data>
-  <data name="ToolStripDelete.Text" xml:space="preserve">
-    <value>Borrar arrendador</value>
-  </data>
-  <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Editar arrendador</value>
-  </data>
-  <data name="ToolStripExit.Text" xml:space="preserve">
-    <value>Salir</value>
-  </data>
-  <data name="ToolStripMailing.Text" xml:space="preserve">
-    <value>Mailing</value>
-  </data>
-  <data name="ToolStripReports.Text" xml:space="preserve">
-    <value>Informes</value>
-  </data>
-  <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Añadir arrendador</value>
-  </data>
-  <data name="PruebaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informe de arrendadores</value>
-  </data>
-  <data name="LessorsReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informe de arrendadores</value>
-  </data>
-  <data name="btnPrevious.Text" xml:space="preserve">
-    <value>&lt;</value>
-  </data>
-  <data name="btnNext.Text" xml:space="preserve">
-    <value>&gt;</value>
-  </data>
-  <data name="btnLast.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
-  <data name="btnFirst.Text" xml:space="preserve">
-    <value>&lt;&lt;</value>
-  </data>
-  <data name="AddALessorToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Añadir</value>
+  <data name="ApplicationTitle.Text" xml:space="preserve">
+    <value>Título de la aplicación</value>
   </data>
 </root>

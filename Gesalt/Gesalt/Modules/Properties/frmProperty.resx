@@ -149,6 +149,30 @@
   <metadata name="tlsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>238, 17</value>
   </metadata>
+  <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tlsProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 25</value>
+  </data>
+  <data name="tlsProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlsProperties.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Name" xml:space="preserve">
+    <value>tlsProperties</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
   <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -203,12 +227,6 @@
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties Report</value>
-  </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -225,6 +243,12 @@
   </data>
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Reports</value>
+  </data>
+  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Properties Report</value>
   </data>
   <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -246,68 +270,14 @@
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="tlsProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 25</value>
-  </data>
-  <data name="tlsProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlsProperties.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Name" xml:space="preserve">
-    <value>tlsProperties</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.ZOrder" xml:space="preserve">
-    <value>33</value>
-  </data>
   <metadata name="mnsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>343, 17</value>
   </metadata>
-  <data name="AddAPropertyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="AddAPropertyToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Add</value>
-  </data>
-  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
-  </data>
-  <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Delete</value>
-  </data>
-  <data name="FilterDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Filter data</value>
-  </data>
   <data name="PropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
   </data>
   <data name="PropertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Properties</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Book &amp;Type</value>
   </data>
   <data name="BookTypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
@@ -315,17 +285,41 @@
   <data name="BookTypeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Books</value>
   </data>
-  <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties Report</value>
-  </data>
   <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
   </data>
   <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Reports</value>
+  </data>
+  <data name="LessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Lessors</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Guests</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>About Gesalt</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
   </data>
   <data name="mnsProperties.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -350,6 +344,42 @@
   </data>
   <data name="&gt;&gt;mnsProperties.ZOrder" xml:space="preserve">
     <value>34</value>
+  </data>
+  <data name="AddAPropertyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="AddAPropertyToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Add</value>
+  </data>
+  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="FilterDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Filter data</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Book &amp;Type</value>
+  </data>
+  <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Properties Report</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1279,6 +1309,18 @@
   <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ManageLessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ManageLessorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manage Lessors</value>
+  </data>
+  <data name="ManageGuestsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ManageGuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manage Guests</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2072,6 +2114,48 @@
     <value>PropertiesReportToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;PropertiesReportToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LessorsToolStripMenuItem.Name" xml:space="preserve">
+    <value>LessorsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;LessorsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ManageLessorsToolStripMenuItem.Name" xml:space="preserve">
+    <value>ManageLessorsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ManageLessorsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GuestsToolStripMenuItem.Name" xml:space="preserve">
+    <value>GuestsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;GuestsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ManageGuestsToolStripMenuItem.Name" xml:space="preserve">
+    <value>ManageGuestsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ManageGuestsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HelpToolStripMenuItem.Name" xml:space="preserve">
+    <value>HelpToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;HelpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>SettingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;SettingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>AboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

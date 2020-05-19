@@ -198,9 +198,6 @@
   <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Informes</value>
   </data>
-  <data name="AddAnLessorToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Engadir</value>
-  </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>Arrendadores:</value>
   </data>
@@ -242,5 +239,8 @@
   </data>
   <data name="btnFirst.Text" xml:space="preserve">
     <value>&lt;&lt;</value>
+  </data>
+  <data name="AddALessorToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Engadir</value>
   </data>
 </root>

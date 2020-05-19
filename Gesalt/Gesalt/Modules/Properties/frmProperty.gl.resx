@@ -234,4 +234,25 @@
   <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
     <value>&amp;Tipo de reservas</value>
   </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Acerca de Gesalt</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clientes</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>A&amp;xuda</value>
+  </data>
+  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>A&amp;rrendadores</value>
+  </data>
+  <data name="ManageGuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xestionar clientes</value>
+  </data>
+  <data name="ManageLessorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xestionar arrendadores</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Preferencias</value>
+  </data>
 </root>

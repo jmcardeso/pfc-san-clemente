@@ -8,7 +8,37 @@ Public Class frmProperty
     Dim bsLessors As New BindingSource()
     Dim props As New List(Of Prop)
 
+    Public Sub New()
+        Dim strIdioma As String = My.Settings.language
+        Dim cultura As Globalization.CultureInfo
+
+        ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
+        If My.Settings.appStatus.Equals("first_start") Then
+            cultura = Threading.Thread.CurrentThread.CurrentUICulture
+
+            Select Case cultura.TwoLetterISOLanguageName
+                Case "es", "gl"
+                    strIdioma = cultura.TwoLetterISOLanguageName
+                Case Else
+                    strIdioma = "en"
+            End Select
+            My.Settings.language = strIdioma
+        End If
+
+        ' Para forzar el cambio de idioma por código
+        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(strIdioma)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
+
     Private Sub frmprops_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.appStatus.Equals("first_start") Then
+            ConnectionWizard()
+        End If
+
         Try
             props = opProp.GetProps()
 
@@ -319,5 +349,66 @@ Public Class frmProperty
         Dim frmBT As New frmBookType()
 
         frmBT.ShowDialog()
+    End Sub
+
+    ''' <summary>
+    ''' Vuelve a cargar el formulario.
+    ''' </summary>
+    ''' <param name="language">El idioma en el que se mostrará el formulario.
+    ''' <para>Ver: <see cref="Globalization.CultureInfo.GetCultureInfo(String)"/>.</para></param>
+    Private Sub ReLoadMain(language As String)
+        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(language)
+        Me.Controls.Clear()
+        Me.InitializeComponent()
+        frmprops_Load(Nothing, Nothing)
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario de preferencias de la aplicación.
+    ''' <para>Se utiliza en caso de error en la conexión o cuando el programa se ejecuta por primera vez.</para>
+    ''' </summary>
+    Private Sub ConnectionWizard()
+        Dim frmPref As New frmSettings
+
+        If My.Settings.appStatus.Equals("dbError") Then
+            frmPref.Text = LocRM.GetString("dbErrorTitle")
+        ElseIf My.Settings.appStatus.Equals("first_start") Then
+            MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
+            frmPref.Text = LocRM.GetString("firstTimeTitle")
+        End If
+
+        frmPref.ShowDialog()
+
+        If frmPref.LanguageChanged Then
+            ReLoadMain(My.Settings.language)
+        End If
+    End Sub
+
+    Private Sub ManageLessorsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageLessorsToolStripMenuItem.Click
+        Dim frmLsr As New frmLessors
+
+        frmLsr.ShowDialog()
+    End Sub
+
+    Private Sub ManageGuestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageGuestsToolStripMenuItem.Click
+        Dim frmGst As New frmGuests
+
+        frmGst.ShowDialog()
+    End Sub
+
+    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
+        Dim frmPref As New frmSettings
+
+        frmPref.ShowDialog()
+
+        If frmPref.LanguageChanged Then
+            ReLoadMain(My.Settings.language)
+        End If
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Dim frmAbout As New frmAbout
+
+        frmAbout.ShowDialog()
     End Sub
 End Class
