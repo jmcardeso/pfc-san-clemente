@@ -152,6 +152,18 @@
     <Compile Include="Modules\Books\frmBookType.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Books\frmBookTypeAux.Designer.vb">
+      <DependentUpon>frmBookTypeAux.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Books\frmBookTypeAux.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Books\frmPrice.Designer.vb">
+      <DependentUpon>frmPrice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Books\frmPrice.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\DataBase\Tables\Book.vb" />
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
     <Compile Include="Modules\DataBase\Operations\Connection.vb" />
@@ -323,6 +335,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Books\frmBookType.resx">
       <DependentUpon>frmBookType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookTypeAux.es.resx">
+      <DependentUpon>frmBookTypeAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookTypeAux.gl.resx">
+      <DependentUpon>frmBookTypeAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookTypeAux.resx">
+      <DependentUpon>frmBookTypeAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmPrice.es.resx">
+      <DependentUpon>frmPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmPrice.gl.resx">
+      <DependentUpon>frmPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmPrice.resx">
+      <DependentUpon>frmPrice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Guests\frmGuests.es.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
