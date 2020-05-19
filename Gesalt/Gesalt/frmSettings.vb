@@ -135,6 +135,9 @@ Public Class frmSettings
     End Sub
 
     Private Sub btnTestCon_Click(sender As Object, e As EventArgs) Handles btnTestCon.Click
+        Dim oldCon As Connection = Connection.GetInstance()
+        oldCon.Close()
+
         Dim con As MySqlConnection = New MySqlConnection(buildMySQLConnectionString.ConnectionString)
         Try
             con.Open()
@@ -145,6 +148,8 @@ Public Class frmSettings
         Finally
             con.Close()
         End Try
+
+        oldCon.Open()
     End Sub
 
     Private Sub rbDBType_CheckedChanged(sender As Object, e As EventArgs) Handles rbLocal.CheckedChanged, rbServer.CheckedChanged
