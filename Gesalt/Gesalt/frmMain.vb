@@ -1,8 +1,8 @@
 ﻿Imports System.Resources
 Imports Microsoft.Reporting.WinForms
-Public Class frmProperty
-    Dim opProp As OpProp = OpProp.GetInstance()
-    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmProperty).Assembly)
+Public Class frmMain
+    Dim opProp As OpProp
+    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
     Dim bs As New BindingSource()
     Dim bsPhotos As New BindingSource()
     Dim bsLessors As New BindingSource()
@@ -40,6 +40,7 @@ Public Class frmProperty
         End If
 
         Try
+            opProp = OpProp.GetInstance()
             props = opProp.GetProps()
 
             bs.DataSource = props
@@ -272,10 +273,6 @@ Public Class frmProperty
         bs.DataSource = props
     End Sub
 
-    Private Sub ToolStripExit_Click(sender As Object, e As EventArgs) Handles ToolStripExit.Click
-        Close()
-    End Sub
-
     Private Sub PropReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PropReportToolStripMenuItem.Click, PropertiesReportToolStripMenuItem.Click
         Dim frmRpt As New frmReportProperty()
         Dim rpd As New ReportDataSource("dsProp", bs)
@@ -372,7 +369,9 @@ Public Class frmProperty
 
         If My.Settings.appStatus.Equals("dbError") Then
             frmPref.Text = LocRM.GetString("dbErrorTitle")
+            CloseSplash()
         ElseIf My.Settings.appStatus.Equals("first_start") Then
+            CloseSplash()
             MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
             frmPref.Text = LocRM.GetString("firstTimeTitle")
         End If
@@ -410,5 +409,19 @@ Public Class frmProperty
         Dim frmAbout As New frmAbout
 
         frmAbout.ShowDialog()
+    End Sub
+    Private Sub CloseSplash()
+
+        Dim mySplash = My.Application.OpenForms.Item("SplashScreen")
+
+        If mySplash Is Nothing Then
+            Exit Sub
+        End If
+
+        mySplash.Invoke(New MethodInvoker(Sub()
+                                              mySplash.Close()
+                                              mySplash.Dispose()
+                                          End Sub))
+
     End Sub
 End Class
