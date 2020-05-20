@@ -380,4 +380,10 @@
   <data name="fieldValue" xml:space="preserve">
     <value>Valor</value>
   </data>
+  <data name="editBTTitle" xml:space="preserve">
+    <value>Modificar un tipo de reserva - Gesalt</value>
+  </data>
+  <data name="startDateAfterEndDate" xml:space="preserve">
+    <value>A data de alta é posterior á de baixa.</value>
+  </data>
 </root>

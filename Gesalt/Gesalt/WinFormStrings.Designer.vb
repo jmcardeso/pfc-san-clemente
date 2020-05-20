@@ -191,6 +191,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Edit a Book Type - Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property editBTTitle() As String
+            Get
+                Return ResourceManager.GetString("editBTTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Edit a Guest - Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property editGuestTitle() As String
@@ -871,6 +880,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property rptPropertiesHeaderTitle() As String
             Get
                 Return ResourceManager.GetString("rptPropertiesHeaderTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Start date is after end date..
+        '''</summary>
+        Friend Shared ReadOnly Property startDateAfterEndDate() As String
+            Get
+                Return ResourceManager.GetString("startDateAfterEndDate", resourceCulture)
             End Get
         End Property
         

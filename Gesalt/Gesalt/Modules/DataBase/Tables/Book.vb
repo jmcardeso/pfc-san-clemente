@@ -1,4 +1,5 @@
-﻿Public Class Book
+﻿<Serializable()>
+Public Class Book
     Public Property Id As Integer
     Public Property GuestId As Integer
     Public Property PropertyId As Integer
@@ -28,7 +29,7 @@
         Me.BookTypeId = 0
         Me.Status = ""
         Me.CheckIn = Now()
-        Me.CheckOut = Nothing
+        Me.CheckOut = New Date(1970, 12, 1)
         Me.InvoiceNumber = ""
     End Sub
 End Class

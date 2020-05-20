@@ -32,7 +32,6 @@ Partial Class frmBookTypeAux
         Me.tbxUrlICalendar = New System.Windows.Forms.TextBox()
         Me.tbxUrlWeb = New System.Windows.Forms.TextBox()
         Me.dtpStartDate = New System.Windows.Forms.DateTimePicker()
-        Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.bntCancel = New System.Windows.Forms.Button()
         Me.dgvPrices = New System.Windows.Forms.DataGridView()
@@ -40,6 +39,10 @@ Partial Class frmBookTypeAux
         Me.bntDeletePrice = New System.Windows.Forms.Button()
         Me.btnAddPrice = New System.Windows.Forms.Button()
         Me.gbxPrices = New System.Windows.Forms.GroupBox()
+        Me.tbxEndDate = New System.Windows.Forms.TextBox()
+        Me.tbxStartDate = New System.Windows.Forms.TextBox()
+        Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
+        Me.btnDeleteEndDate = New System.Windows.Forms.Button()
         CType(Me.dgvPrices, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxPrices.SuspendLayout()
         Me.SuspendLayout()
@@ -86,13 +89,10 @@ Partial Class frmBookTypeAux
         '
         'dtpStartDate
         '
+        Me.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         resources.ApplyResources(Me.dtpStartDate, "dtpStartDate")
+        Me.dtpStartDate.MinDate = New Date(1971, 1, 1, 0, 0, 0, 0)
         Me.dtpStartDate.Name = "dtpStartDate"
-        '
-        'dtpEndDate
-        '
-        resources.ApplyResources(Me.dtpEndDate, "dtpEndDate")
-        Me.dtpEndDate.Name = "dtpEndDate"
         '
         'btnOK
         '
@@ -145,14 +145,40 @@ Partial Class frmBookTypeAux
         Me.gbxPrices.Name = "gbxPrices"
         Me.gbxPrices.TabStop = False
         '
+        'tbxEndDate
+        '
+        resources.ApplyResources(Me.tbxEndDate, "tbxEndDate")
+        Me.tbxEndDate.Name = "tbxEndDate"
+        '
+        'tbxStartDate
+        '
+        resources.ApplyResources(Me.tbxStartDate, "tbxStartDate")
+        Me.tbxStartDate.Name = "tbxStartDate"
+        '
+        'dtpEndDate
+        '
+        Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        resources.ApplyResources(Me.dtpEndDate, "dtpEndDate")
+        Me.dtpEndDate.MinDate = New Date(1971, 1, 1, 0, 0, 0, 0)
+        Me.dtpEndDate.Name = "dtpEndDate"
+        '
+        'btnDeleteEndDate
+        '
+        resources.ApplyResources(Me.btnDeleteEndDate, "btnDeleteEndDate")
+        Me.btnDeleteEndDate.Name = "btnDeleteEndDate"
+        Me.btnDeleteEndDate.UseVisualStyleBackColor = True
+        '
         'frmBookTypeAux
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnDeleteEndDate)
+        Me.Controls.Add(Me.dtpEndDate)
+        Me.Controls.Add(Me.tbxStartDate)
+        Me.Controls.Add(Me.tbxEndDate)
         Me.Controls.Add(Me.gbxPrices)
         Me.Controls.Add(Me.bntCancel)
         Me.Controls.Add(Me.btnOK)
-        Me.Controls.Add(Me.dtpEndDate)
         Me.Controls.Add(Me.dtpStartDate)
         Me.Controls.Add(Me.tbxUrlWeb)
         Me.Controls.Add(Me.tbxUrlICalendar)
@@ -180,7 +206,6 @@ Partial Class frmBookTypeAux
     Friend WithEvents tbxUrlICalendar As TextBox
     Friend WithEvents tbxUrlWeb As TextBox
     Friend WithEvents dtpStartDate As DateTimePicker
-    Friend WithEvents dtpEndDate As DateTimePicker
     Friend WithEvents btnOK As Button
     Friend WithEvents bntCancel As Button
     Friend WithEvents dgvPrices As DataGridView
@@ -188,4 +213,8 @@ Partial Class frmBookTypeAux
     Friend WithEvents bntDeletePrice As Button
     Friend WithEvents btnAddPrice As Button
     Friend WithEvents gbxPrices As GroupBox
+    Friend WithEvents tbxEndDate As TextBox
+    Friend WithEvents tbxStartDate As TextBox
+    Friend WithEvents dtpEndDate As DateTimePicker
+    Friend WithEvents btnDeleteEndDate As Button
 End Class

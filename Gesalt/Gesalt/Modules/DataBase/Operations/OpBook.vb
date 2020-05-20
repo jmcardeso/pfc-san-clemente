@@ -58,7 +58,8 @@ Public Class OpBook
         Dim bt As BookType
         For Each dr As DataRow In dt.Rows
             bt = New BookType(dr.Item("Id"), dr.Item("property_id"), dr.Item("bt_name"), dr.Item("start_date"),
-                dr.Item("end_date"), dr.Item("url_web"), dr.Item("url_icalendar"))
+                IIf(dr.Item("end_date").Equals(New Date(1970, 12, 1)), Nothing, dr.Item("end_date")),
+                dr.Item("url_web"), dr.Item("url_icalendar"))
             bt.Prices = GetPrices(bt.Id)
             bookTypes.Add(bt)
         Next
@@ -90,10 +91,80 @@ Public Class OpBook
         da.Fill(dt)
 
         For Each dr As DataRow In dt.Rows
-            prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("value"), dr.Item("type"),
-                                 dr.Item("start_date"), dr.Item("end_date"), dr.Item("percentage")))
+            prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("value"), dr.Item("type"), dr.Item("start_date"),
+                                 IIf(dr.Item("end_date").Equals(New Date(1970, 12, 1)), Nothing, dr.Item("end_date")),
+                                 dr.Item("percentage")))
         Next
 
         Return prices
+    End Function
+
+    Private Function GetId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from book"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
+
+    Private Function GetBookTypeId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from booktype"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
+
+    Private Function GetPriceId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from price"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
     End Function
 End Class

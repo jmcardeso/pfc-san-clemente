@@ -4,7 +4,7 @@ Public Class frmPropertiesAux
     Public Property editProp As Prop
 
     Dim propAux As Prop
-    Dim opProp As OpProp = OpProp.GetInstance()
+    Dim opProp As OpProp
     Dim bsPhotos As New BindingSource()
     Dim bsLessors As New BindingSource()
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPropertiesAux).Assembly)

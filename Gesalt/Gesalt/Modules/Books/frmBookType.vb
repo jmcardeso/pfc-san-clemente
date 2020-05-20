@@ -116,6 +116,22 @@ Public Class frmBookType
             bsPrices.DataSource = bs.Current.Prices
         End If
 
+        If bs.Current.EndDate.Equals(New Date(1, 1, 1)) Then
+            lblEndDate.Text = ""
+        End If
+
         bsPrices.ResetBindings(False)
+    End Sub
+
+    Private Sub ToolStripAdd_Click(sender As Object, e As EventArgs) Handles ToolStripAdd.Click, dgvBooksTypes.DoubleClick
+        Dim frmAux As New frmBookTypeAux With {
+            .editBT = Nothing
+        }
+
+        If frmAux.ShowDialog = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+
     End Sub
 End Class

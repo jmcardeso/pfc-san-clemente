@@ -1,4 +1,5 @@
-﻿Public Class BookType
+﻿<Serializable()>
+Public Class BookType
     Public Property Id As Integer
     Public Property PropertyId As Integer
     Public Property BTName As String
@@ -25,7 +26,7 @@
         Me.PropertyId = 0
         Me.BTName = ""
         Me.StartDate = Now()
-        Me.EndDate = Nothing
+        Me.EndDate = New Date(1970, 12, 1)
         Me.UrlWeb = ""
         Me.UrlICalendar = ""
     End Sub

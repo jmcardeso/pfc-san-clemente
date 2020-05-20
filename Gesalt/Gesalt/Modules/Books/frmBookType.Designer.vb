@@ -125,6 +125,7 @@ Partial Class frmBookType
         Me.dgvBooksTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvBooksTypes, "dgvBooksTypes")
         Me.dgvBooksTypes.Name = "dgvBooksTypes"
+        Me.dgvBooksTypes.ReadOnly = True
         Me.dgvBooksTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
         'btnFirst
@@ -215,6 +216,7 @@ Partial Class frmBookType
         Me.dgvPrices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvPrices, "dgvPrices")
         Me.dgvPrices.Name = "dgvPrices"
+        Me.dgvPrices.ReadOnly = True
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window

@@ -1,4 +1,5 @@
-﻿Public Class Price
+﻿<Serializable()>
+Public Class Price
     Public Property Id As Integer
     Public Property BookTypeId As Integer
     Public Property Value As Decimal
@@ -24,7 +25,7 @@
         Me.Value = 0
         Me.Type = ""
         Me.StartDate = Now()
-        Me.EndDate = Nothing
+        Me.EndDate = New Date(1970, 12, 1)
         Me.Percentage = False
     End Sub
 End Class
