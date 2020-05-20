@@ -138,7 +138,55 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cbxPercentage.Name" xml:space="preserve">
+    <value>cbxPercentage</value>
+  </data>
+  <data name="&gt;&gt;cbxPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbxPercentage.Parent" xml:space="preserve">
+    <value>gbxPrice</value>
+  </data>
+  <data name="&gt;&gt;cbxPercentage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;nudValue.Name" xml:space="preserve">
+    <value>nudValue</value>
+  </data>
+  <data name="&gt;&gt;nudValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudValue.Parent" xml:space="preserve">
+    <value>gbxPrice</value>
+  </data>
+  <data name="&gt;&gt;nudValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbxPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 39</value>
+  </data>
+  <data name="gbxPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 86</value>
+  </data>
+  <data name="gbxPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbxPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.Name" xml:space="preserve">
+    <value>gbxPrice</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="cbxPercentage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -188,30 +236,6 @@
   <data name="&gt;&gt;nudValue.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="gbxPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 39</value>
-  </data>
-  <data name="gbxPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 86</value>
-  </data>
-  <data name="gbxPrice.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbxPrice.Text" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.Name" xml:space="preserve">
-    <value>gbxPrice</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -237,7 +261,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -264,7 +288,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -291,13 +315,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="dtpStartDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 131</value>
+    <value>230, 131</value>
   </data>
   <data name="dtpStartDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
+    <value>19, 20</value>
   </data>
   <data name="dtpStartDate.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -312,13 +336,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpStartDate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="dtpEndDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 157</value>
+    <value>205, 160</value>
   </data>
   <data name="dtpEndDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
+    <value>19, 20</value>
   </data>
   <data name="dtpEndDate.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -333,7 +357,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpEndDate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="bntCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 201</value>
@@ -357,7 +381,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bntCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 201</value>
@@ -381,6 +405,72 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbxStartDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 134</value>
+  </data>
+  <data name="tbxStartDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 20</value>
+  </data>
+  <data name="tbxStartDate.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tbxStartDate.Name" xml:space="preserve">
+    <value>tbxStartDate</value>
+  </data>
+  <data name="&gt;&gt;tbxStartDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxStartDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbxStartDate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbxEndDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 160</value>
+  </data>
+  <data name="tbxEndDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tbxEndDate.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;tbxEndDate.Name" xml:space="preserve">
+    <value>tbxEndDate</value>
+  </data>
+  <data name="&gt;&gt;tbxEndDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxEndDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbxEndDate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnDeleteEndDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 160</value>
+  </data>
+  <data name="btnDeleteEndDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 20</value>
+  </data>
+  <data name="btnDeleteEndDate.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnDeleteEndDate.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEndDate.Name" xml:space="preserve">
+    <value>btnDeleteEndDate</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEndDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEndDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEndDate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

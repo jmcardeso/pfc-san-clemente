@@ -386,4 +386,22 @@
   <data name="startDateAfterEndDate" xml:space="preserve">
     <value>A data de alta é posterior á de baixa.</value>
   </data>
+  <data name="priceType1" xml:space="preserve">
+    <value>Temporada alta</value>
+  </data>
+  <data name="priceType2" xml:space="preserve">
+    <value>Temporada baixa</value>
+  </data>
+  <data name="priceType3" xml:space="preserve">
+    <value>Temporada media</value>
+  </data>
+  <data name="priceType4" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="priceType5" xml:space="preserve">
+    <value>Desconto</value>
+  </data>
+  <data name="editPrice" xml:space="preserve">
+    <value>Modificar prezo/oferta - Gesalt</value>
+  </data>
 </root>

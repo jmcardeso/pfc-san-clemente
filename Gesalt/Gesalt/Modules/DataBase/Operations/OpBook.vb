@@ -145,6 +145,70 @@ Public Class OpBook
         Return result
     End Function
 
+
+    Public Function AddBookType(bt As BookType) As Integer
+        Dim result As Integer
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+
+        Dim sql As String = "select * from booktype"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        result = GetBookTypeId()
+
+        If result <> -1 Then
+            bt.Id = result
+
+            FillBTRow(dr, bt)
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
+        End If
+
+        If Not RefreshPrices(bt) Then
+            result = -3
+        End If
+
+        Return result
+    End Function
+
+    Private Function RefreshPrices(bt As BookType) As Boolean
+        Return True
+    End Function
+
+    ''' <summary>
+    ''' Introduce los datos de las propiedades de un objeto de la clase <c>BookType</c> en los campos de una fila de la tabla booktype de la base de datos.
+    ''' </summary>
+    ''' <param name="dr">Representa una fila de datos de la tabla booktype de la base de datos.</param>
+    ''' <param name="bt">El objeto de la clase BookType cuyos parámetros se van a introducir en la fila.</param>
+    Private Sub FillBTRow(dr As DataRow, bt As BookType)
+        dr.Item("Id") = bt.Id
+        dr.Item("property_id") = bt.PropertyId
+        dr.Item("bt_name") = bt.BTName
+        dr.Item("start_date") = bt.StartDate
+        dr.Item("end_date") = bt.EndDate
+        dr.Item("url_web") = bt.UrlWeb
+        dr.Item("url_icalendar") = bt.UrlICalendar
+    End Sub
+
     Private Function GetPriceId() As Integer
         Dim result As Object
         Dim sqlCommand As DbCommand

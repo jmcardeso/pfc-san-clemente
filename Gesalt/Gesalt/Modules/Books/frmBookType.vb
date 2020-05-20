@@ -102,7 +102,9 @@ Public Class frmBookType
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        bs.Position += 1
+        If bs.Position < bs.Count - 1 Then
+            bs.Position += 1
+        End If
     End Sub
 
     Private Sub bntLast_Click(sender As Object, e As EventArgs) Handles bntLast.Click
@@ -116,14 +118,14 @@ Public Class frmBookType
             bsPrices.DataSource = bs.Current.Prices
         End If
 
-        If bs.Current.EndDate.Equals(New Date(1, 1, 1)) Then
+        If bs.Current.EndDate.Equals(New Date(1, 1, 1)) OrElse bs.Current.EndDate.Year = 1970 Then
             lblEndDate.Text = ""
         End If
 
         bsPrices.ResetBindings(False)
     End Sub
 
-    Private Sub ToolStripAdd_Click(sender As Object, e As EventArgs) Handles ToolStripAdd.Click, dgvBooksTypes.DoubleClick
+    Private Sub ToolStripAdd_Click(sender As Object, e As EventArgs) Handles ToolStripAdd.Click
         Dim frmAux As New frmBookTypeAux With {
             .editBT = Nothing
         }
@@ -132,6 +134,25 @@ Public Class frmBookType
             Exit Sub
         End If
 
+        frmAux.editBT.PropertyId = propertyId
 
+        Dim id As Integer = opBook.AddBookType(frmAux.editBT)
+        If id < 1 Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            Exit Sub
+        End If
+
+        ' Se añade el objeto a la lista, incluyendo la id que obtuvimos al insertarlo en la base de datos
+        Dim newBT As New BookType()
+        newBT = Utils.DeepClone(frmAux.editBT)
+        newBT.Id = id
+
+        If newBT.EndDate.Year = 1970 Then
+            newBT.EndDate = Nothing
+        End If
+
+        bookTypes.Add(newBT)
+
+        bs.ResetBindings(False)
     End Sub
 End Class

@@ -149,11 +149,13 @@ Partial Class frmBookTypeAux
         '
         resources.ApplyResources(Me.tbxEndDate, "tbxEndDate")
         Me.tbxEndDate.Name = "tbxEndDate"
+        Me.tbxEndDate.ReadOnly = True
         '
         'tbxStartDate
         '
         resources.ApplyResources(Me.tbxStartDate, "tbxStartDate")
         Me.tbxStartDate.Name = "tbxStartDate"
+        Me.tbxStartDate.ReadOnly = True
         '
         'dtpEndDate
         '

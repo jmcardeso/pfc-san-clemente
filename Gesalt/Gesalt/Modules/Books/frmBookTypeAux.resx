@@ -531,9 +531,6 @@
   <data name="&gt;&gt;gbxPrices.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tbxEndDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="tbxEndDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 61</value>
   </data>
@@ -554,9 +551,6 @@
   </data>
   <data name="&gt;&gt;tbxEndDate.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="tbxStartDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="tbxStartDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 35</value>

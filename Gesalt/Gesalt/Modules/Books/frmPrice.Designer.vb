@@ -25,6 +25,7 @@ Partial Class frmPrice
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrice))
         Me.cbxType = New System.Windows.Forms.ComboBox()
         Me.gbxPrice = New System.Windows.Forms.GroupBox()
+        Me.cbxPercentage = New System.Windows.Forms.CheckBox()
         Me.nudValue = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,7 +34,9 @@ Partial Class frmPrice
         Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
         Me.bntCancel = New System.Windows.Forms.Button()
         Me.btnOK = New System.Windows.Forms.Button()
-        Me.cbxPercentage = New System.Windows.Forms.CheckBox()
+        Me.tbxStartDate = New System.Windows.Forms.TextBox()
+        Me.tbxEndDate = New System.Windows.Forms.TextBox()
+        Me.btnDeleteEndDate = New System.Windows.Forms.Button()
         Me.gbxPrice.SuspendLayout()
         CType(Me.nudValue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,6 +55,12 @@ Partial Class frmPrice
         resources.ApplyResources(Me.gbxPrice, "gbxPrice")
         Me.gbxPrice.Name = "gbxPrice"
         Me.gbxPrice.TabStop = False
+        '
+        'cbxPercentage
+        '
+        resources.ApplyResources(Me.cbxPercentage, "cbxPercentage")
+        Me.cbxPercentage.Name = "cbxPercentage"
+        Me.cbxPercentage.UseVisualStyleBackColor = True
         '
         'nudValue
         '
@@ -95,16 +104,31 @@ Partial Class frmPrice
         Me.btnOK.Name = "btnOK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
-        'cbxPercentage
+        'tbxStartDate
         '
-        resources.ApplyResources(Me.cbxPercentage, "cbxPercentage")
-        Me.cbxPercentage.Name = "cbxPercentage"
-        Me.cbxPercentage.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.tbxStartDate, "tbxStartDate")
+        Me.tbxStartDate.Name = "tbxStartDate"
+        Me.tbxStartDate.ReadOnly = True
+        '
+        'tbxEndDate
+        '
+        resources.ApplyResources(Me.tbxEndDate, "tbxEndDate")
+        Me.tbxEndDate.Name = "tbxEndDate"
+        Me.tbxEndDate.ReadOnly = True
+        '
+        'btnDeleteEndDate
+        '
+        resources.ApplyResources(Me.btnDeleteEndDate, "btnDeleteEndDate")
+        Me.btnDeleteEndDate.Name = "btnDeleteEndDate"
+        Me.btnDeleteEndDate.UseVisualStyleBackColor = True
         '
         'frmPrice
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnDeleteEndDate)
+        Me.Controls.Add(Me.tbxEndDate)
+        Me.Controls.Add(Me.tbxStartDate)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.bntCancel)
         Me.Controls.Add(Me.dtpEndDate)
@@ -135,4 +159,7 @@ Partial Class frmPrice
     Friend WithEvents bntCancel As Button
     Friend WithEvents btnOK As Button
     Friend WithEvents cbxPercentage As CheckBox
+    Friend WithEvents tbxStartDate As TextBox
+    Friend WithEvents tbxEndDate As TextBox
+    Friend WithEvents btnDeleteEndDate As Button
 End Class

@@ -71,8 +71,6 @@ Public Class frmBookTypeAux
         End If
     End Sub
 
-
-
     Private Sub bntCancel_Click(sender As Object, e As EventArgs) Handles bntCancel.Click
         Me.DialogResult = DialogResult.Cancel
     End Sub
@@ -119,4 +117,14 @@ Public Class frmBookTypeAux
 
         Return result
     End Function
+
+    Private Sub btnAddPrice_Click(sender As Object, e As EventArgs) Handles btnAddPrice.Click
+        Dim frmAux As New frmPrice With {
+            .editPrice = Nothing
+        }
+
+        If frmAux.ShowDialog = DialogResult.Cancel Then
+            Exit Sub
+        End If
+    End Sub
 End Class

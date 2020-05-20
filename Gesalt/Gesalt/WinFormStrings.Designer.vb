@@ -227,6 +227,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Edit a Price/Offer - Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property editPrice() As String
+            Get
+                Return ResourceManager.GetString("editPrice", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Edit a Property - Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property editPropTitle() As String
@@ -826,6 +835,51 @@ Namespace My.Resources
         Friend Shared ReadOnly Property percentError() As String
             Get
                 Return ResourceManager.GetString("percentError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a High season.
+        '''</summary>
+        Friend Shared ReadOnly Property priceType1() As String
+            Get
+                Return ResourceManager.GetString("priceType1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Low season.
+        '''</summary>
+        Friend Shared ReadOnly Property priceType2() As String
+            Get
+                Return ResourceManager.GetString("priceType2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Middle season.
+        '''</summary>
+        Friend Shared ReadOnly Property priceType3() As String
+            Get
+                Return ResourceManager.GetString("priceType3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Offer.
+        '''</summary>
+        Friend Shared ReadOnly Property priceType4() As String
+            Get
+                Return ResourceManager.GetString("priceType4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Discount.
+        '''</summary>
+        Friend Shared ReadOnly Property priceType5() As String
+            Get
+                Return ResourceManager.GetString("priceType5", resourceCulture)
             End Get
         End Property
         
