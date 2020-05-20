@@ -7,6 +7,8 @@
     Public Property UrlWeb As String
     Public Property UrlICalendar As String
 
+    Public Property Prices As New List(Of Price)
+
     Public Sub New(id As Integer, propertyId As Integer, bTName As String,
                    startDate As Date, endDate As Date, urlWeb As String, urlICalendar As String)
         Me.Id = id
@@ -22,7 +24,7 @@
         Me.Id = 0
         Me.PropertyId = 0
         Me.BTName = ""
-        Me.StartDate = Nothing
+        Me.StartDate = Now()
         Me.EndDate = Nothing
         Me.UrlWeb = ""
         Me.UrlICalendar = ""

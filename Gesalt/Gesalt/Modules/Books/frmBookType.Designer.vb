@@ -23,6 +23,7 @@ Partial Class frmBookType
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBookType))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblProperty = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -119,9 +120,12 @@ Partial Class frmBookType
         '
         'dgvBooksTypes
         '
+        Me.dgvBooksTypes.AllowUserToAddRows = False
+        Me.dgvBooksTypes.AllowUserToDeleteRows = False
         Me.dgvBooksTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvBooksTypes, "dgvBooksTypes")
         Me.dgvBooksTypes.Name = "dgvBooksTypes"
+        Me.dgvBooksTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
         'btnFirst
         '
@@ -206,9 +210,17 @@ Partial Class frmBookType
         '
         'dgvPrices
         '
+        Me.dgvPrices.AllowUserToAddRows = False
+        Me.dgvPrices.AllowUserToDeleteRows = False
         Me.dgvPrices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvPrices, "dgvPrices")
         Me.dgvPrices.Name = "dgvPrices"
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvPrices.RowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvPrices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
         'Label3
         '
@@ -240,6 +252,7 @@ Partial Class frmBookType
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblProperty)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmBookType"
         CType(Me.dgvBooksTypes, System.ComponentModel.ISupportInitialize).EndInit()

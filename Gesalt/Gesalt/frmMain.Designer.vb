@@ -428,7 +428,7 @@ Partial Class frmMain
         resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
         '
-        'frmProperty
+        'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -468,8 +468,9 @@ Partial Class frmMain
         Me.Controls.Add(Me.tlsProperties)
         Me.Controls.Add(Me.mnsProperties)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "frmProperty"
+        Me.Name = "frmMain"
         Me.tlsProperties.ResumeLayout(False)
         Me.tlsProperties.PerformLayout()
         Me.mnsProperties.ResumeLayout(False)

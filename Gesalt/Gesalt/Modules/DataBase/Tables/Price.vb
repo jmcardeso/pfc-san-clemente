@@ -5,7 +5,7 @@
     Public Property Type As String
     Public Property StartDate As Date
     Public Property EndDate As Date
-    Public Property Percentage As Decimal
+    Public Property Percentage As Boolean
 
     Public Sub New(id As Integer, bookTypeId As Integer, value As Decimal,
                    type As String, startDate As Date, endDate As Date, percentage As Decimal)
@@ -25,6 +25,6 @@
         Me.Type = ""
         Me.StartDate = Now()
         Me.EndDate = Nothing
-        Me.Percentage = 0
+        Me.Percentage = False
     End Sub
 End Class

@@ -371,4 +371,13 @@
   <data name="fieldUrlICalendar" xml:space="preserve">
     <value>URL Calendario</value>
   </data>
+  <data name="fieldStartDate2" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="fieldEndDate2" xml:space="preserve">
+    <value>Hasta</value>
+  </data>
+  <data name="fieldValue" xml:space="preserve">
+    <value>Valor</value>
+  </data>
 </root>

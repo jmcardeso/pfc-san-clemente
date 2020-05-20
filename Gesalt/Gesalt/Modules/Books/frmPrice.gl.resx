@@ -138,10 +138,7 @@
   <data name="gbxPrice.Text" xml:space="preserve">
     <value>Prezo</value>
   </data>
-  <data name="rbtPercentage.Text" xml:space="preserve">
+  <data name="cbxPercentage.Text" xml:space="preserve">
     <value>Porcentaxe</value>
-  </data>
-  <data name="rbtValue.Text" xml:space="preserve">
-    <value>Valor</value>
   </data>
 </root>

@@ -523,10 +523,10 @@
     <None Include="Resources\star-on.png" />
     <None Include="Resources\noImage.bmp" />
     <None Include="Resources\llave.png" />
+    <None Include="Resources\llave %282%29.png" />
     <None Include="Resources\gesalt.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\llave %282%29.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

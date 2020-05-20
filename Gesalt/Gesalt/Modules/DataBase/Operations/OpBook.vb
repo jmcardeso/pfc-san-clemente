@@ -55,11 +55,45 @@ Public Class OpBook
         Dim dt As New DataTable()
         da.Fill(dt)
 
+        Dim bt As BookType
         For Each dr As DataRow In dt.Rows
-            bookTypes.Add(New BookType(dr.Item("Id"), dr.Item("property_id"), dr.Item("bt_name"), dr.Item("start_date"),
-                dr.Item("end_date"), dr.Item("url_web"), dr.Item("url_icalendar")))
+            bt = New BookType(dr.Item("Id"), dr.Item("property_id"), dr.Item("bt_name"), dr.Item("start_date"),
+                dr.Item("end_date"), dr.Item("url_web"), dr.Item("url_icalendar"))
+            bt.Prices = GetPrices(bt.Id)
+            bookTypes.Add(bt)
         Next
 
         Return bookTypes
+    End Function
+
+    Private Function GetPrices(bookTypeId As Integer) As List(Of Price)
+        Dim prices As New List(Of Price)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@p_booktype_id"
+        parameter.Value = bookTypeId
+        parameter.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(parameter)
+        sqlCommand.CommandText = "select * from price where booktype_id = @p_booktype_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        For Each dr As DataRow In dt.Rows
+            prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("value"), dr.Item("type"),
+                                 dr.Item("start_date"), dr.Item("end_date"), dr.Item("percentage")))
+        Next
+
+        Return prices
     End Function
 End Class

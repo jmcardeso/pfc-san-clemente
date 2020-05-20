@@ -481,7 +481,7 @@
     <value>12, 220</value>
   </data>
   <data name="dgvBooksTypes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 138</value>
+    <value>692, 138</value>
   </data>
   <data name="dgvBooksTypes.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -633,30 +633,6 @@
   <metadata name="tlsBookType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="tlsBookType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tlsBookType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>631, 25</value>
-  </data>
-  <data name="tlsBookType.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="tlsBookType.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tlsBookType.Name" xml:space="preserve">
-    <value>tlsBookType</value>
-  </data>
-  <data name="&gt;&gt;tlsBookType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsBookType.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsBookType.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -711,6 +687,12 @@
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
+  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Books Types Report</value>
+  </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -727,12 +709,6 @@
   </data>
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Reports</value>
-  </data>
-  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
-  </data>
-  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Books Types Report</value>
   </data>
   <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -754,11 +730,35 @@
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="tlsBookType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlsBookType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>716, 25</value>
+  </data>
+  <data name="tlsBookType.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="tlsBookType.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tlsBookType.Name" xml:space="preserve">
+    <value>tlsBookType</value>
+  </data>
+  <data name="&gt;&gt;tlsBookType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsBookType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsBookType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="dgvPrices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 79</value>
+    <value>326, 79</value>
   </data>
   <data name="dgvPrices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 123</value>
+    <value>378, 123</value>
   </data>
   <data name="dgvPrices.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -779,7 +779,7 @@
     <value>True</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>373, 57</value>
+    <value>323, 57</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -809,7 +809,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>631, 401</value>
+    <value>716, 401</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

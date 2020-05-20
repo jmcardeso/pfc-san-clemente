@@ -26,8 +26,6 @@ Partial Class frmPrice
         Me.cbxType = New System.Windows.Forms.ComboBox()
         Me.gbxPrice = New System.Windows.Forms.GroupBox()
         Me.nudValue = New System.Windows.Forms.NumericUpDown()
-        Me.rbtPercentage = New System.Windows.Forms.RadioButton()
-        Me.rbtValue = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,6 +33,7 @@ Partial Class frmPrice
         Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
         Me.bntCancel = New System.Windows.Forms.Button()
         Me.btnOK = New System.Windows.Forms.Button()
+        Me.cbxPercentage = New System.Windows.Forms.CheckBox()
         Me.gbxPrice.SuspendLayout()
         CType(Me.nudValue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,9 +47,8 @@ Partial Class frmPrice
         '
         'gbxPrice
         '
+        Me.gbxPrice.Controls.Add(Me.cbxPercentage)
         Me.gbxPrice.Controls.Add(Me.nudValue)
-        Me.gbxPrice.Controls.Add(Me.rbtPercentage)
-        Me.gbxPrice.Controls.Add(Me.rbtValue)
         resources.ApplyResources(Me.gbxPrice, "gbxPrice")
         Me.gbxPrice.Name = "gbxPrice"
         Me.gbxPrice.TabStop = False
@@ -59,20 +57,6 @@ Partial Class frmPrice
         '
         resources.ApplyResources(Me.nudValue, "nudValue")
         Me.nudValue.Name = "nudValue"
-        '
-        'rbtPercentage
-        '
-        resources.ApplyResources(Me.rbtPercentage, "rbtPercentage")
-        Me.rbtPercentage.Name = "rbtPercentage"
-        Me.rbtPercentage.TabStop = True
-        Me.rbtPercentage.UseVisualStyleBackColor = True
-        '
-        'rbtValue
-        '
-        resources.ApplyResources(Me.rbtValue, "rbtValue")
-        Me.rbtValue.Name = "rbtValue"
-        Me.rbtValue.TabStop = True
-        Me.rbtValue.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -111,6 +95,12 @@ Partial Class frmPrice
         Me.btnOK.Name = "btnOK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
+        'cbxPercentage
+        '
+        resources.ApplyResources(Me.cbxPercentage, "cbxPercentage")
+        Me.cbxPercentage.Name = "cbxPercentage"
+        Me.cbxPercentage.UseVisualStyleBackColor = True
+        '
         'frmPrice
         '
         resources.ApplyResources(Me, "$this")
@@ -137,8 +127,6 @@ Partial Class frmPrice
     Friend WithEvents cbxType As ComboBox
     Friend WithEvents gbxPrice As GroupBox
     Friend WithEvents nudValue As NumericUpDown
-    Friend WithEvents rbtPercentage As RadioButton
-    Friend WithEvents rbtValue As RadioButton
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -146,4 +134,5 @@ Partial Class frmPrice
     Friend WithEvents dtpEndDate As DateTimePicker
     Friend WithEvents bntCancel As Button
     Friend WithEvents btnOK As Button
+    Friend WithEvents cbxPercentage As CheckBox
 End Class

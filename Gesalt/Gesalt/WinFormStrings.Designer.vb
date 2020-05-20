@@ -362,6 +362,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a To.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldEndDate2() As String
+            Get
+                Return ResourceManager.GetString("fieldEndDate2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a First Name.
         '''</summary>
         Friend Shared ReadOnly Property fieldFirstName() As String
@@ -479,6 +488,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a From.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldStartDate2() As String
+            Get
+                Return ResourceManager.GetString("fieldStartDate2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Type.
         '''</summary>
         Friend Shared ReadOnly Property fieldType() As String
@@ -502,6 +520,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property fieldUrlWeb() As String
             Get
                 Return ResourceManager.GetString("fieldUrlWeb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Value.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldValue() As String
+            Get
+                Return ResourceManager.GetString("fieldValue", resourceCulture)
             End Get
         End Property
         
