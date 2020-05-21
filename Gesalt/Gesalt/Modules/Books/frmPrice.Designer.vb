@@ -65,6 +65,8 @@ Partial Class frmPrice
         'nudValue
         '
         resources.ApplyResources(Me.nudValue, "nudValue")
+        Me.nudValue.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
+        Me.nudValue.Minimum = New Decimal(New Integer() {99999, 0, 0, -2147483648})
         Me.nudValue.Name = "nudValue"
         '
         'Label1

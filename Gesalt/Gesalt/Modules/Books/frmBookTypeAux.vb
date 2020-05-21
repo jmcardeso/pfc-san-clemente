@@ -126,5 +126,13 @@ Public Class frmBookTypeAux
         If frmAux.ShowDialog = DialogResult.Cancel Then
             Exit Sub
         End If
+
+        If frmAux.editPrice.EndDate.Year = 1970 Then
+            frmAux.editPrice.EndDate = Nothing
+        End If
+
+        btAux.Prices.Add(frmAux.editPrice)
+        bsPrices.ResetBindings(False)
     End Sub
+
 End Class

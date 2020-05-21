@@ -342,7 +342,7 @@
     <value>Editar el arrendador del inmueble - Gesalt</value>
   </data>
   <data name="percentError" xml:space="preserve">
-    <value>Error - El porcentaje es mayor que 100</value>
+    <value>Error - El porcentaje es mayor que 100 o menor que 0</value>
   </data>
   <data name="lpEqualsError" xml:space="preserve">
     <value>Error - Se intenta añadir el mismo arrendador dos veces</value>
@@ -403,5 +403,11 @@
   </data>
   <data name="editPrice" xml:space="preserve">
     <value>Editar precio/oferta - Gesalt</value>
+  </data>
+  <data name="startDateAfterEndDate2" xml:space="preserve">
+    <value>La fecha de inicio es posterior a la de fin.</value>
+  </data>
+  <data name="percentageError" xml:space="preserve">
+    <value>El valor es mayor que 100 o menor que 0</value>
   </data>
 </root>

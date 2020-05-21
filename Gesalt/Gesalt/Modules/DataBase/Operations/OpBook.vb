@@ -91,7 +91,7 @@ Public Class OpBook
         da.Fill(dt)
 
         For Each dr As DataRow In dt.Rows
-            prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("value"), dr.Item("type"), dr.Item("start_date"),
+            prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("p_value"), dr.Item("type"), dr.Item("start_date"),
                                  IIf(dr.Item("end_date").Equals(New Date(1970, 12, 1)), Nothing, dr.Item("end_date")),
                                  dr.Item("percentage")))
         Next
@@ -145,7 +145,6 @@ Public Class OpBook
         Return result
     End Function
 
-
     Public Function AddBookType(bt As BookType) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
@@ -191,6 +190,111 @@ Public Class OpBook
     End Function
 
     Private Function RefreshPrices(bt As BookType) As Boolean
+        Dim oldPrices As New List(Of Price)
+        oldPrices = GetPrices(bt.Id)
+
+        For Each price As Price In oldPrices
+            If Not DeletePrice(price) Then
+                Return False
+            End If
+        Next
+
+        For Each price As Price In bt.Prices
+            If Not AddPrice(price, bt.Id) Then
+                Return False
+            End If
+        Next
+
+        Return True
+    End Function
+
+    Private Function AddPrice(ByRef price As Price, bookTypeId As Integer) As Boolean
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        Dim sql As String = "select * from price"
+
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        price.Id = GetPriceId()
+        dr.Item("Id") = price.Id
+        dr.Item("booktype_id") = bookTypeId
+        dr.Item("p_value") = price.Value
+        dr.Item("type") = price.Type
+        dr.Item("start_date") = price.StartDate
+        dr.Item("end_date") = IIf(price.EndDate.Year < 1971, New Date(1970, 12, 1), price.EndDate)
+        dr.Item("percentage") = price.Percentage
+
+        dt.Rows.Add(dr)
+
+        If da.Update(dt) <> 1 Then
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Function DeletePrice(price As Price) As Boolean
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim pId As DbParameter
+        Dim pBookTypeId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        pId = con.Factory.CreateParameter()
+        pBookTypeId = con.Factory.CreateParameter()
+
+        pId.ParameterName = "@p_id"
+        pId.Value = price.Id
+        pId.DbType = DbType.Int32
+        sqlCommand.Parameters.Add(pId)
+
+        pBookTypeId.ParameterName = "@p_booktype_id"
+        pBookTypeId.Value = price.BookTypeId
+        pBookTypeId.DbType = DbType.Int32
+        sqlCommand.Parameters.Add(pBookTypeId)
+
+        Dim sql As String = "select * from price where Id = @p_id and booktype_id = @p_booktype_id"
+
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.Delete()
+
+        If da.Update(dt) <> 1 Then
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -204,7 +308,7 @@ Public Class OpBook
         dr.Item("property_id") = bt.PropertyId
         dr.Item("bt_name") = bt.BTName
         dr.Item("start_date") = bt.StartDate
-        dr.Item("end_date") = bt.EndDate
+        dr.Item("end_date") = IIf(bt.EndDate.Year < 1971, New Date(1970, 12, 1), bt.EndDate)
         dr.Item("url_web") = bt.UrlWeb
         dr.Item("url_icalendar") = bt.UrlICalendar
     End Sub

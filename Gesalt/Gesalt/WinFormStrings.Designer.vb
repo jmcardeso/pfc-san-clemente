@@ -830,7 +830,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Error - The percentage is greater than 100.
+        '''  Busca una cadena traducida similar a Value is greater than 100 or less than 0.
+        '''</summary>
+        Friend Shared ReadOnly Property percentageError() As String
+            Get
+                Return ResourceManager.GetString("percentageError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Value is greater than 100 or less than 0.
         '''</summary>
         Friend Shared ReadOnly Property percentError() As String
             Get
@@ -943,6 +952,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property startDateAfterEndDate() As String
             Get
                 Return ResourceManager.GetString("startDateAfterEndDate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Start date is after end date..
+        '''</summary>
+        Friend Shared ReadOnly Property startDateAfterEndDate2() As String
+            Get
+                Return ResourceManager.GetString("startDateAfterEndDate2", resourceCulture)
             End Get
         End Property
         

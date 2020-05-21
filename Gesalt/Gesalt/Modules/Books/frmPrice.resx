@@ -140,54 +140,6 @@
   <data name="&gt;&gt;cbxType.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;cbxPercentage.Name" xml:space="preserve">
-    <value>cbxPercentage</value>
-  </data>
-  <data name="&gt;&gt;cbxPercentage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbxPercentage.Parent" xml:space="preserve">
-    <value>gbxPrice</value>
-  </data>
-  <data name="&gt;&gt;cbxPercentage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;nudValue.Name" xml:space="preserve">
-    <value>nudValue</value>
-  </data>
-  <data name="&gt;&gt;nudValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudValue.Parent" xml:space="preserve">
-    <value>gbxPrice</value>
-  </data>
-  <data name="&gt;&gt;nudValue.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="gbxPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 39</value>
-  </data>
-  <data name="gbxPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 86</value>
-  </data>
-  <data name="gbxPrice.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbxPrice.Text" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.Name" xml:space="preserve">
-    <value>gbxPrice</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbxPrice.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="cbxPercentage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -235,6 +187,30 @@
   </data>
   <data name="&gt;&gt;nudValue.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="gbxPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 39</value>
+  </data>
+  <data name="gbxPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 86</value>
+  </data>
+  <data name="gbxPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbxPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.Name" xml:space="preserve">
+    <value>gbxPrice</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbxPrice.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
