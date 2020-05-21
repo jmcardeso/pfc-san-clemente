@@ -155,4 +155,33 @@ Public Class frmBookType
 
         bs.ResetBindings(False)
     End Sub
+
+    Private Sub ToolStripEdit_Click(sender As Object, e As EventArgs) Handles ToolStripEdit.Click, dgvBooksTypes.DoubleClick
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmAux As New frmBookTypeAux With {
+            .editBT = bs.Current
+        }
+
+        If frmAux.ShowDialog = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        Dim btAux As BookType = Utils.DeepClone(bookTypes.Item(bs.Position))
+        bookTypes.Item(bs.Position) = Utils.DeepClone(frmAux.editBT)
+
+        If Not opBook.UpdateBookType(bookTypes.Item(bs.Position)) Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            bookTypes.Item(bs.Position) = Utils.DeepClone(btAux)
+            Exit Sub
+        End If
+
+        If bookTypes.Item(bs.Position).EndDate.Year = 1970 Then
+            bookTypes.Item(bs.Position).EndDate = Nothing
+        End If
+
+        bs.ResetBindings(False)
+    End Sub
 End Class

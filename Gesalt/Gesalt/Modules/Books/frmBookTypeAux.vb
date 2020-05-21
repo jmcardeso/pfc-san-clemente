@@ -64,7 +64,7 @@ Public Class frmBookTypeAux
         tbxUrlWeb.DataBindings.Add("Text", btAux, "UrlWeb")
         tbxUrlICalendar.DataBindings.Add("Text", btAux, "UrlICalendar")
 
-        If btAux.EndDate.Year = 1970 Then
+        If btAux.EndDate.Year = 1970 OrElse btAux.EndDate.Year = 1 Then
             tbxEndDate.Text = ""
         Else
             tbxEndDate.Text = btAux.EndDate
@@ -135,4 +135,27 @@ Public Class frmBookTypeAux
         bsPrices.ResetBindings(False)
     End Sub
 
+    Private Sub bntEditPrice_Click(sender As Object, e As EventArgs) Handles bntEditPrice.Click, dgvPrices.DoubleClick
+        If bsPrices.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmAux As New frmPrice With {
+             .editPrice = bsPrices.Current
+         }
+
+        If frmAux.ShowDialog = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        With bsPrices.Current
+            .Type = frmAux.editPrice.Type
+            .Value = frmAux.editPrice.Value
+            .Percentage = frmAux.editPrice.Percentage
+            .StartDate = frmAux.editPrice.StartDate
+            .EndDate = IIf(frmAux.editPrice.EndDate.Year = 1970, Nothing, frmAux.editPrice.EndDate)
+        End With
+
+        bsPrices.ResetBindings(False)
+    End Sub
 End Class
