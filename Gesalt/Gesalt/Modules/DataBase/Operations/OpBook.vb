@@ -58,7 +58,7 @@ Public Class OpBook
         Dim bt As BookType
         For Each dr As DataRow In dt.Rows
             bt = New BookType(dr.Item("Id"), dr.Item("property_id"), dr.Item("bt_name"), dr.Item("start_date"),
-                              Utils.SetEndDate(dr.Item("end_date")), dr.Item("url_web"), dr.Item("url_icalendar"))
+                              Utils.EndDateToObject(dr.Item("end_date")), dr.Item("url_web"), dr.Item("url_icalendar"))
             bt.Prices = GetPrices(bt.Id)
             bookTypes.Add(bt)
         Next
@@ -91,7 +91,7 @@ Public Class OpBook
 
         For Each dr As DataRow In dt.Rows
             prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("p_value"), dr.Item("type"), dr.Item("start_date"),
-                                Utils.SetEndDate(dr.Item("end_date")), dr.Item("percentage")))
+                                Utils.EndDateToObject(dr.Item("end_date")), dr.Item("percentage")))
         Next
 
         Return prices
@@ -281,7 +281,7 @@ Public Class OpBook
         dr.Item("p_value") = price.Value
         dr.Item("type") = price.Type
         dr.Item("start_date") = price.StartDate
-        dr.Item("end_date") = Utils.GetEndDate(price.EndDate)
+        dr.Item("end_date") = Utils.EndDateToDB(price.EndDate)
         dr.Item("percentage") = price.Percentage
 
         dt.Rows.Add(dr)
@@ -351,7 +351,7 @@ Public Class OpBook
         dr.Item("property_id") = bt.PropertyId
         dr.Item("bt_name") = bt.BTName
         dr.Item("start_date") = bt.StartDate
-        dr.Item("end_date") = Utils.GetEndDate(bt.EndDate)
+        dr.Item("end_date") = Utils.EndDateToDB(bt.EndDate)
         dr.Item("url_web") = bt.UrlWeb
         dr.Item("url_icalendar") = bt.UrlICalendar
     End Sub

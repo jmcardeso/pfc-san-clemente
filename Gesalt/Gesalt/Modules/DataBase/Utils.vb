@@ -23,6 +23,13 @@ Public Class Utils
         End Using
     End Function
 
+    ''' <summary>
+    ''' Obtiene un objeto de tipo <c>DBParameter</c>.
+    ''' </summary>
+    ''' <param name="parameterName">El nombre del parámetro.</param>
+    ''' <param name="value">El valor del parámetro.</param>
+    ''' <param name="dbType">El tipo del valor del parámetro.</param>
+    ''' <returns></returns>
     Public Shared Function AddFilterParameter(parameterName As String, value As Object, dbType As DbType) As DbParameter
         Dim con As Connection = Connection.GetInstance()
         Dim p As DbParameter
@@ -35,14 +42,30 @@ Public Class Utils
         Return p
     End Function
 
-    Public Shared Function SetEndDate(endDate As Date) As Date
+    ''' <summary>
+    ''' Asigna la fecha de baja/fin a un atributo de un objeto comprobando si debe ser nula.
+    ''' </summary>
+    ''' <param name="endDate">La fecha de baja/fin.</param>
+    ''' <returns>La fecha, si se ha dado de baja el elemento, o Nothing si todavía está activo.</returns>
+    Public Shared Function EndDateToObject(endDate As Date) As Date
         Return IIf(endDate.Year = 1970 Or endDate.Year = 1, Nothing, endDate)
     End Function
 
-    Public Shared Function GetEndDate(endDate As Date) As Date
+    ''' <summary>
+    ''' Asigna la fecha de baja/fin al campo de una fila de la base de datos. Si aún no se ha producido la baja, inserta un valor semejante a null.
+    ''' </summary>
+    ''' <param name="endDate">La fecha de baja/fin.</param>
+    ''' <returns>La fecha, si se ha dado de baja el elemento, o un valor semejante a null si todavía está activo.</returns>
+    Public Shared Function EndDateToDB(endDate As Date) As Date
         Return IIf(endDate.Year < 1971, New Date(1970, 12, 1), endDate)
     End Function
 
+
+    ''' <summary>
+    ''' Comprueba si la fecha de baja/fin existe.
+    ''' </summary>
+    ''' <param name="endDate">La fecha de baja/fin.</param>
+    ''' <returns><c>True</c> si no se ha dado de baja el elemento, <c>False</c> en caso contrario.</returns>
     Public Shared Function IsEndDateEmpty(endDate As Date) As Boolean
         Return endDate.Year = 1 OrElse endDate.Year = 1970
     End Function

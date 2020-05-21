@@ -127,7 +127,7 @@ Public Class frmBookTypeAux
             Exit Sub
         End If
 
-        frmAux.editPrice.EndDate = Utils.SetEndDate(frmAux.editPrice.EndDate)
+        frmAux.editPrice.EndDate = Utils.EndDateToObject(frmAux.editPrice.EndDate)
 
         btAux.Prices.Add(frmAux.editPrice)
         bsPrices.ResetBindings(False)
@@ -151,7 +151,7 @@ Public Class frmBookTypeAux
             .Value = frmAux.editPrice.Value
             .Percentage = frmAux.editPrice.Percentage
             .StartDate = frmAux.editPrice.StartDate
-            .EndDate = Utils.SetEndDate(frmAux.editPrice.EndDate)
+            .EndDate = Utils.EndDateToObject(frmAux.editPrice.EndDate)
         End With
 
         bsPrices.ResetBindings(False)

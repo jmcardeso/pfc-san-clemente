@@ -147,7 +147,7 @@ Public Class frmBookType
         newBT = Utils.DeepClone(frmAux.editBT)
         newBT.Id = id
 
-        newBT.EndDate = Utils.SetEndDate(newBT.EndDate)
+        newBT.EndDate = Utils.EndDateToObject(newBT.EndDate)
 
         bookTypes.Add(newBT)
 
@@ -176,7 +176,7 @@ Public Class frmBookType
             Exit Sub
         End If
 
-        bookTypes.Item(bs.Position).EndDate = Utils.SetEndDate(bookTypes.Item(bs.Position).EndDate)
+        bookTypes.Item(bs.Position).EndDate = Utils.EndDateToObject(bookTypes.Item(bs.Position).EndDate)
 
         bs.ResetBindings(False)
     End Sub
