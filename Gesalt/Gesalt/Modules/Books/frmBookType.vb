@@ -118,7 +118,7 @@ Public Class frmBookType
             bsPrices.DataSource = bs.Current.Prices
         End If
 
-        If bs.Current.EndDate.Equals(New Date(1, 1, 1)) OrElse bs.Current.EndDate.Year = 1970 Then
+        If Utils.IsEndDateEmpty(bs.Current.EndDate) Then
             lblEndDate.Text = ""
         End If
 
@@ -147,9 +147,7 @@ Public Class frmBookType
         newBT = Utils.DeepClone(frmAux.editBT)
         newBT.Id = id
 
-        If newBT.EndDate.Year = 1970 Then
-            newBT.EndDate = Nothing
-        End If
+        newBT.EndDate = Utils.SetEndDate(newBT.EndDate)
 
         bookTypes.Add(newBT)
 
@@ -178,9 +176,7 @@ Public Class frmBookType
             Exit Sub
         End If
 
-        If bookTypes.Item(bs.Position).EndDate.Year = 1970 Then
-            bookTypes.Item(bs.Position).EndDate = Nothing
-        End If
+        bookTypes.Item(bs.Position).EndDate = Utils.SetEndDate(bookTypes.Item(bs.Position).EndDate)
 
         bs.ResetBindings(False)
     End Sub

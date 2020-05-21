@@ -25,7 +25,7 @@ Public Class frmPrice
         tbxStartDate.DataBindings.Add("Text", priceAux, "StartDate")
         nudValue.DataBindings.Add("Value", priceAux, "Value")
 
-        If priceAux.EndDate.Year = 1970 Then
+        If Utils.IsEndDateEmpty(priceAux.EndDate) Then
             tbxEndDate.Text = ""
         Else
             tbxEndDate.Text = priceAux.EndDate
@@ -56,7 +56,7 @@ Public Class frmPrice
             result = False
         End If
 
-        If priceAux.EndDate.Year <> 1970 AndAlso priceAux.StartDate > priceAux.EndDate Then
+        If Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso priceAux.StartDate > priceAux.EndDate Then
             MsgBox(LocRM.GetString("startDateAfterEndDate2"), MsgBoxStyle.Exclamation, "Gesalt")
             result = False
         End If

@@ -34,4 +34,16 @@ Public Class Utils
 
         Return p
     End Function
+
+    Public Shared Function SetEndDate(endDate As Date) As Date
+        Return IIf(endDate.Year = 1970 Or endDate.Year = 1, Nothing, endDate)
+    End Function
+
+    Public Shared Function GetEndDate(endDate As Date) As Date
+        Return IIf(endDate.Year < 1971, New Date(1970, 12, 1), endDate)
+    End Function
+
+    Public Shared Function IsEndDateEmpty(endDate As Date) As Boolean
+        Return endDate.Year = 1 OrElse endDate.Year = 1970
+    End Function
 End Class

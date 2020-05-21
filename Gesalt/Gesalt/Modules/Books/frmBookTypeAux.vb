@@ -64,7 +64,7 @@ Public Class frmBookTypeAux
         tbxUrlWeb.DataBindings.Add("Text", btAux, "UrlWeb")
         tbxUrlICalendar.DataBindings.Add("Text", btAux, "UrlICalendar")
 
-        If btAux.EndDate.Year = 1970 OrElse btAux.EndDate.Year = 1 Then
+        If Utils.IsEndDateEmpty(btAux.EndDate) Then
             tbxEndDate.Text = ""
         Else
             tbxEndDate.Text = btAux.EndDate
@@ -127,9 +127,7 @@ Public Class frmBookTypeAux
             Exit Sub
         End If
 
-        If frmAux.editPrice.EndDate.Year = 1970 Then
-            frmAux.editPrice.EndDate = Nothing
-        End If
+        frmAux.editPrice.EndDate = Utils.SetEndDate(frmAux.editPrice.EndDate)
 
         btAux.Prices.Add(frmAux.editPrice)
         bsPrices.ResetBindings(False)
@@ -153,7 +151,7 @@ Public Class frmBookTypeAux
             .Value = frmAux.editPrice.Value
             .Percentage = frmAux.editPrice.Percentage
             .StartDate = frmAux.editPrice.StartDate
-            .EndDate = IIf(frmAux.editPrice.EndDate.Year = 1970, Nothing, frmAux.editPrice.EndDate)
+            .EndDate = Utils.SetEndDate(frmAux.editPrice.EndDate)
         End With
 
         bsPrices.ResetBindings(False)
