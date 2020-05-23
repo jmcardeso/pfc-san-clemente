@@ -410,4 +410,10 @@
   <data name="percentageError" xml:space="preserve">
     <value>El valor es mayor que 100 o menor que 0</value>
   </data>
+  <data name="rowRemovedBookTypeMsg" xml:space="preserve">
+    <value>El tipo de reserva</value>
+  </data>
+  <data name="priceRemovedMsg" xml:space="preserve">
+    <value>El precio se va a eliminar de este tipo de reserva. ¿Está seguro?</value>
+  </data>
 </root>

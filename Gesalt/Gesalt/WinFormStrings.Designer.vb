@@ -848,6 +848,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The price is going to be removed from this book type. Are you sure?.
+        '''</summary>
+        Friend Shared ReadOnly Property priceRemovedMsg() As String
+            Get
+                Return ResourceManager.GetString("priceRemovedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a High season.
         '''</summary>
         Friend Shared ReadOnly Property priceType1() As String
@@ -889,6 +898,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property priceType5() As String
             Get
                 Return ResourceManager.GetString("priceType5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The book type.
+        '''</summary>
+        Friend Shared ReadOnly Property rowRemovedBookTypeMsg() As String
+            Get
+                Return ResourceManager.GetString("rowRemovedBookTypeMsg", resourceCulture)
             End Get
         End Property
         

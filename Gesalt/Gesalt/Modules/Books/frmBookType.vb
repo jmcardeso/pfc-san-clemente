@@ -116,10 +116,9 @@ Public Class frmBookType
             bsPrices.DataSource = New List(Of Price)
         Else
             bsPrices.DataSource = bs.Current.Prices
-        End If
-
-        If Utils.IsEndDateEmpty(bs.Current.EndDate) Then
-            lblEndDate.Text = ""
+            If Utils.IsEndDateEmpty(bs.Current.EndDate) Then
+                lblEndDate.Text = ""
+            End If
         End If
 
         bsPrices.ResetBindings(False)
@@ -146,6 +145,10 @@ Public Class frmBookType
         Dim newBT As New BookType()
         newBT = Utils.DeepClone(frmAux.editBT)
         newBT.Id = id
+
+        For Each price As Price In newBT.Prices
+            price.BookTypeId = id
+        Next
 
         newBT.EndDate = Utils.EndDateToObject(newBT.EndDate)
 
@@ -178,6 +181,26 @@ Public Class frmBookType
 
         bookTypes.Item(bs.Position).EndDate = Utils.EndDateToObject(bookTypes.Item(bs.Position).EndDate)
 
+        bs.ResetBindings(False)
+    End Sub
+
+    Private Sub ToolStripDelete_Click(sender As Object, e As EventArgs) Handles ToolStripDelete.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        If MsgBox(LocRM.GetString("rowRemovedBookTypeMsg") & "'" & bs.Current.BTName & "' " & LocRM.GetString("rowRemovedMsg"),
+      MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
+      LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
+            Exit Sub
+        End If
+
+        If Not opBook.DeleteBookType(bs.Current) Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            Exit Sub
+        End If
+
+        bookTypes.Remove(bs.Current)
         bs.ResetBindings(False)
     End Sub
 End Class

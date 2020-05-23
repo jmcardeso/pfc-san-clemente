@@ -156,4 +156,17 @@ Public Class frmBookTypeAux
 
         bsPrices.ResetBindings(False)
     End Sub
+
+    Private Sub bntDeletePrice_Click(sender As Object, e As EventArgs) Handles bntDeletePrice.Click
+        If bsPrices.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        If MsgBox(LocRM.GetString("priceRemovedMsg"), MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton1, "Gesalt") = MsgBoxResult.No Then
+            Exit Sub
+        End If
+
+        btAux.Prices.Remove(bsPrices.Current)
+        bsPrices.ResetBindings(False)
+    End Sub
 End Class

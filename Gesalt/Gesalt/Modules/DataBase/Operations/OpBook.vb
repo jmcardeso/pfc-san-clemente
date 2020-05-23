@@ -186,6 +186,7 @@ Public Class OpBook
 
         Return result
     End Function
+
     Public Function UpdateBookType(bt As BookType) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -227,6 +228,55 @@ Public Class OpBook
 
         If Not RefreshPrices(bt) Then
             result = False
+        End If
+
+        Return result
+    End Function
+
+    ''' <summary>
+    ''' Borra una fila de datos de la tabla booktype de la base de datos.
+    ''' </summary>
+    ''' <param name="bt">El objeto de la clase <c>BookType</c> que se va a borrar de la tabla booktype de la base de datos.</param>
+    ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
+    Public Function DeleteBookType(bt As BookType) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from booktype where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = bt.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        For Each price As Price In bt.Prices
+            DeletePrice(price)
+        Next
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+        'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE RESERVAS)
+        dr.Delete()
+
+        If da.Update(dt) = 1 Then
+            result = True
         End If
 
         Return result

@@ -81,7 +81,7 @@ Public Class OpProp
     ''' <summary>
     ''' Borra una fila de datos de la tabla property de la base de datos.
     ''' </summary>
-    ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a borrar de la tabla Prop de la base de datos.</param>
+    ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a borrar de la tabla property de la base de datos.</param>
     ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function DeleteProp(prop As Prop) As Boolean
         Dim result As Boolean = False
