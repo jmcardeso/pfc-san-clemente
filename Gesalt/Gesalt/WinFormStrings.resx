@@ -107,14 +107,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Cosa" xml:space="preserve">
-    <value>Thing</value>
-  </data>
   <data name="msgTitle" xml:space="preserve">
     <value>Gesalt</value>
   </data>
   <data name="csNotFound" xml:space="preserve">
-    <value>No connection bd.</value>
+    <value>No connection to the database has been defined.</value>
   </data>
   <data name="conError" xml:space="preserve">
     <value>Connection Error</value>
@@ -336,7 +333,7 @@
     <value>Lessors</value>
   </data>
   <data name="fieldPercentage" xml:space="preserve">
-    <value>Percentage</value>
+    <value>%</value>
   </data>
   <data name="editLP" xml:space="preserve">
     <value>Edit the Property's Lessor -  Gesalt</value>
@@ -421,5 +418,11 @@
   </data>
   <data name="priceEndDateOutOfLimitsMsg" xml:space="preserve">
     <value>The end date is not within the limits of the book type.</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
   </data>
 </root>

@@ -18,7 +18,7 @@ Public Class frmBookType
             .ColumnCount = 3
 
             column = .Columns(0)
-            column.Width = 250
+            column.Width = 280
             .Columns(0).Name = "BTName"
             .Columns(0).HeaderText = LocRM.GetString("fieldBTName")
             .Columns(0).DataPropertyName = "BTName"
@@ -39,8 +39,15 @@ Public Class frmBookType
         End With
 
         lblBTName.DataBindings.Add("Text", bs, "BTName")
-        lblStartDate.DataBindings.Add("Text", bs, "StartDate")
-        lblEndDate.DataBindings.Add("Text", bs, "EndDate")
+
+        Dim bindingStartDate As Binding = New Binding("Text", bs, "StartDate")
+        AddHandler bindingStartDate.Format, AddressOf DateWihtoutTime
+        lblStartDate.DataBindings.Add(bindingStartDate)
+
+        Dim bindingEndDate As Binding = New Binding("Text", bs, "EndDate")
+        AddHandler bindingEndDate.Format, AddressOf DateWihtoutTime
+        lblEndDate.DataBindings.Add(bindingEndDate)
+
         lblUrlWeb.DataBindings.Add("Text", bs, "UrlWeb")
         lblUrlICalendar.DataBindings.Add("Text", bs, "UrlICalendar")
 
@@ -55,19 +62,19 @@ Public Class frmBookType
             .ColumnCount = 5
 
             column = .Columns(0)
-            column.Width = 60
+            column.Width = 100
             .Columns(0).Name = "Type"
             .Columns(0).HeaderText = LocRM.GetString("fieldType")
             .Columns(0).DataPropertyName = "Type"
 
             column = .Columns(1)
-            column.Width = 60
+            column.Width = 70
             .Columns(1).Name = "StartDate"
             .Columns(1).HeaderText = LocRM.GetString("fieldStartDate2")
             .Columns(1).DataPropertyName = "StartDate"
 
             column = .Columns(2)
-            column.Width = 60
+            column.Width = 70
             .Columns(2).Name = "EndDate"
             .Columns(2).HeaderText = LocRM.GetString("fieldEndDate2")
             .Columns(2).DataPropertyName = "EndDate"
@@ -79,7 +86,7 @@ Public Class frmBookType
             .Columns(3).DataPropertyName = "Value"
 
             column = .Columns(4)
-            column.Width = 50
+            column.Width = 30
             .Columns(4).Name = "Percentage"
             .Columns(4).HeaderText = LocRM.GetString("fieldPercentage")
             .Columns(4).DataPropertyName = "Percentage"
@@ -202,5 +209,46 @@ Public Class frmBookType
 
         bookTypes.Remove(bs.Current)
         bs.ResetBindings(False)
+    End Sub
+
+    Private Sub DateWihtoutTime(sender As Object, dateEvent As ConvertEventArgs)
+        'If dateEvent.DesiredType IsNot GetType(Date) Then
+        '    Exit Sub
+        'End If
+
+        dateEvent.Value = FormatDateTime(dateEvent.Value, DateFormat.ShortDate)
+    End Sub
+
+    Private Sub DateWithTime(sender As Object, dateEvent As ConvertEventArgs)
+        'If dateEvent.DesiredType IsNot GetType(Date) Then
+        '    Exit Sub
+        'End If
+
+        dateEvent.Value = dateEvent.Value.Date + New TimeSpan(0, 0, 0)
+    End Sub
+
+    Private Sub dgvBooksTypes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvBooksTypes.CellFormatting
+        If dgvBooksTypes.Columns(e.ColumnIndex).ValueType Is GetType(Date) Then
+            e.Value = FormatDateTime(e.Value, DateFormat.ShortDate)
+        End If
+    End Sub
+
+    Private Sub dgvPrices_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvPrices.CellFormatting
+        If dgvPrices.Columns(e.ColumnIndex).ValueType Is GetType(Date) Then
+            If dgvPrices.Columns(e.ColumnIndex).DataPropertyName.Equals("EndDate") AndAlso Utils.IsEndDateEmpty(e.Value) Then
+                e.Value = Nothing
+            Else
+                e.Value = FormatDateTime(Utils.EndDateToObject(e.Value), DateFormat.ShortDate)
+            End If
+        End If
+
+        If dgvPrices.Columns(e.ColumnIndex).Name.Equals("Percentage") Then
+            If e.Value Then
+                e.Value = LocRM.GetString("Yes")
+            Else
+                e.Value = LocRM.GetString("No")
+            End If
+        Else
+        End If
     End Sub
 End Class

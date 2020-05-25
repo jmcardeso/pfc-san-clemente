@@ -110,16 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Thing.
-        '''</summary>
-        Friend Shared ReadOnly Property Cosa() As String
-            Get
-                Return ResourceManager.GetString("Cosa", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca una cadena traducida similar a No connection bd..
+        '''  Busca una cadena traducida similar a No connection to the database has been defined..
         '''</summary>
         Friend Shared ReadOnly Property csNotFound() As String
             Get
@@ -443,7 +434,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Percentage.
+        '''  Busca una cadena traducida similar a %.
         '''</summary>
         Friend Shared ReadOnly Property fieldPercentage() As String
             Get
@@ -785,6 +776,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a No.
+        '''</summary>
+        Friend Shared ReadOnly Property No() As String
+            Get
+                Return ResourceManager.GetString("No", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a You must choose a database location.
         '''</summary>
         Friend Shared ReadOnly Property noDBMsg() As String
@@ -1006,6 +1006,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property StartsWith() As String
             Get
                 Return ResourceManager.GetString("StartsWith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Yes.
+        '''</summary>
+        Friend Shared ReadOnly Property Yes() As String
+            Get
+                Return ResourceManager.GetString("Yes", resourceCulture)
             End Get
         End Property
     End Class
