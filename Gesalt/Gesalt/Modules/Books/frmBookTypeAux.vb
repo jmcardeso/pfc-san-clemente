@@ -120,7 +120,9 @@ Public Class frmBookTypeAux
 
     Private Sub btnAddPrice_Click(sender As Object, e As EventArgs) Handles btnAddPrice.Click
         Dim frmAux As New frmPrice With {
-            .editPrice = Nothing
+            .editPrice = Nothing,
+            .btStartDate = btAux.StartDate,
+            .btEndDate = btAux.EndDate
         }
 
         If frmAux.ShowDialog = DialogResult.Cancel Then
@@ -139,7 +141,9 @@ Public Class frmBookTypeAux
         End If
 
         Dim frmAux As New frmPrice With {
-             .editPrice = bsPrices.Current
+             .editPrice = bsPrices.Current,
+             .btStartDate = btAux.StartDate,
+             .btEndDate = btAux.EndDate
          }
 
         If frmAux.ShowDialog = DialogResult.Cancel Then

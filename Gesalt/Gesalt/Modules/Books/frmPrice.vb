@@ -2,6 +2,9 @@
 
 Public Class frmPrice
     Public Property editPrice As Price
+    Public Property btStartDate As Date
+    Public Property btEndDate As Date
+
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPrice).Assembly)
     Dim priceAux As Price
     Dim opBook As OpBook
@@ -49,19 +52,27 @@ Public Class frmPrice
     End Sub
 
     Private Function ValidateFields() As Boolean
-        Dim result As Boolean = True
-
         If cbxPercentage.Checked AndAlso (nudValue.Value < 0 Or nudValue.Value > 100) Then
             MsgBox(LocRM.GetString("percentError"), MsgBoxStyle.Exclamation, "Gesalt")
-            result = False
+            Return False
+        End If
+
+        If priceAux.StartDate < btStartDate OrElse priceAux.StartDate > btEndDate Then
+            MsgBox("fecha de alta mal")
+            Return False
+        End If
+
+        If Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso (priceAux.EndDate < btStartDate OrElse priceAux.EndDate > btEndDate) Then
+            MsgBox("fecha de baja mal")
+            Return False
         End If
 
         If Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso priceAux.StartDate > priceAux.EndDate Then
             MsgBox(LocRM.GetString("startDateAfterEndDate2"), MsgBoxStyle.Exclamation, "Gesalt")
-            result = False
+            Return False
         End If
 
-        Return result
+        Return True
     End Function
 
     Private Sub bntCancel_Click(sender As Object, e As EventArgs) Handles bntCancel.Click
@@ -74,11 +85,19 @@ Public Class frmPrice
     End Sub
 
     Private Sub dtpStartDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpStartDate.ValueChanged
+        If priceAux Is Nothing Then
+            Exit Sub
+        End If
+
         priceAux.StartDate = dtpStartDate.Value
         tbxStartDate.Text = priceAux.StartDate
     End Sub
 
     Private Sub dtpEndDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpEndDate.ValueChanged
+        If priceAux Is Nothing Then
+            Exit Sub
+        End If
+
         priceAux.EndDate = dtpEndDate.Value
         tbxEndDate.Text = priceAux.EndDate
     End Sub
