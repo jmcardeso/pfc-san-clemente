@@ -416,4 +416,10 @@
   <data name="priceRemovedMsg" xml:space="preserve">
     <value>El precio se va a eliminar de este tipo de reserva. ¿Está seguro?</value>
   </data>
+  <data name="priceStartDateOutOfLimitsMsg" xml:space="preserve">
+    <value>La fecha de inicio no está entre los límites de las del tipo de reserva.</value>
+  </data>
+  <data name="priceEndDateOutOfLimitsMsg" xml:space="preserve">
+    <value>La fecha de fin no está entre los límites de las del tipo de reserva.</value>
+  </data>
 </root>

@@ -58,12 +58,12 @@ Public Class frmPrice
         End If
 
         If priceAux.StartDate < btStartDate OrElse priceAux.StartDate > btEndDate Then
-            MsgBox("fecha de alta mal")
+            MsgBox(LocRM.GetString("priceStartDateOutOfLimitsMsg"), MsgBoxStyle.Exclamation, "Gesalt")
             Return False
         End If
 
         If Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso (priceAux.EndDate < btStartDate OrElse priceAux.EndDate > btEndDate) Then
-            MsgBox("fecha de baja mal")
+            MsgBox(LocRM.GetString("priceEndDateOutOfLimitsMsg"), MsgBoxStyle.Exclamation, "Gesalt")
             Return False
         End If
 

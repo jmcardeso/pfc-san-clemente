@@ -848,11 +848,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The end date is not within the limits of the book type..
+        '''</summary>
+        Friend Shared ReadOnly Property priceEndDateOutOfLimitsMsg() As String
+            Get
+                Return ResourceManager.GetString("priceEndDateOutOfLimitsMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a The price is going to be removed from this book type. Are you sure?.
         '''</summary>
         Friend Shared ReadOnly Property priceRemovedMsg() As String
             Get
                 Return ResourceManager.GetString("priceRemovedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The start date is not within the limits of the book type..
+        '''</summary>
+        Friend Shared ReadOnly Property priceStartDateOutOfLimitsMsg() As String
+            Get
+                Return ResourceManager.GetString("priceStartDateOutOfLimitsMsg", resourceCulture)
             End Get
         End Property
         

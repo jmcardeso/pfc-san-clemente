@@ -416,4 +416,10 @@
   <data name="priceRemovedMsg" xml:space="preserve">
     <value>The price is going to be removed from this book type. Are you sure?</value>
   </data>
+  <data name="priceStartDateOutOfLimitsMsg" xml:space="preserve">
+    <value>The start date is not within the limits of the book type.</value>
+  </data>
+  <data name="priceEndDateOutOfLimitsMsg" xml:space="preserve">
+    <value>The end date is not within the limits of the book type.</value>
+  </data>
 </root>
