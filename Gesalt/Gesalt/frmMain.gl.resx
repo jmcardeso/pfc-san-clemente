@@ -229,7 +229,7 @@
     <value>&amp;Reservas</value>
   </data>
   <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
-    <value>&amp;Tipo de reservas</value>
+    <value>&amp;Modos de reserva</value>
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Acerca de Gesalt</value>

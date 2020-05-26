@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Tipo de reserva - Gesalt</value>
+    <value>Modos de reserva - Gesalt</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>Inmoble:</value>
@@ -157,19 +157,19 @@
     <value>&lt;Baleiro&gt;</value>
   </data>
   <data name="lblBooksTypes.Text" xml:space="preserve">
-    <value>Tipos de reserva:</value>
+    <value>Modos de reserva:</value>
   </data>
   <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informe de tipos de reserva</value>
+    <value>Informe de modos de reserva</value>
   </data>
   <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Engadir un tipo de reserva</value>
+    <value>Engadir un modo de reserva</value>
   </data>
   <data name="ToolStripDelete.Text" xml:space="preserve">
-    <value>Borrar un tipo de reserva</value>
+    <value>Borrar un modo de reserva</value>
   </data>
   <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Modificar un tipo de reserva</value>
+    <value>Modificar un modo de reserva</value>
   </data>
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Sair</value>

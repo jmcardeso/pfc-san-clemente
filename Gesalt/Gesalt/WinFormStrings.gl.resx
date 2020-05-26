@@ -378,7 +378,7 @@
     <value>Valor</value>
   </data>
   <data name="editBTTitle" xml:space="preserve">
-    <value>Modificar un tipo de reserva - Gesalt</value>
+    <value>Modificar un modo de reserva - Gesalt</value>
   </data>
   <data name="startDateAfterEndDate" xml:space="preserve">
     <value>A data de alta é posterior á de baixa.</value>
@@ -408,16 +408,16 @@
     <value>O valor é maior que 100 ou menor que 0</value>
   </data>
   <data name="rowRemovedBookTypeMsg" xml:space="preserve">
-    <value>O tipo de reserva</value>
+    <value>O modo de reserva</value>
   </data>
   <data name="priceRemovedMsg" xml:space="preserve">
-    <value>O prezo vaise eliminar deste tipo de reserva. Está seguro?</value>
+    <value>O prezo vaise eliminar deste modo de reserva. Está seguro?</value>
   </data>
   <data name="priceStartDateOutOfLimitsMsg" xml:space="preserve">
-    <value>A data de inicio non está entre os límites das do tipo de reserva.</value>
+    <value>A data de inicio non está entre os límites das do modo de reserva.</value>
   </data>
   <data name="priceEndDateOutOfLimitsMsg" xml:space="preserve">
-    <value>A data de fin non está entre os límites das do tipo de reserva.</value>
+    <value>A data de fin non está entre os límites das do modo de reserva.</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Si</value>
