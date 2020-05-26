@@ -40,6 +40,7 @@ Public Class frmBookType
 
         lblBTName.DataBindings.Add("Text", bs, "BTName")
 
+        ' Creamos un Binding para este control que genere un evento cada vez que tiene que dar formato a los datos
         Dim bindingStartDate As Binding = New Binding("Text", bs, "StartDate")
         AddHandler bindingStartDate.Format, AddressOf DateWihtoutTime
         lblStartDate.DataBindings.Add(bindingStartDate)
@@ -84,6 +85,7 @@ Public Class frmBookType
             .Columns(3).Name = "Value"
             .Columns(3).HeaderText = LocRM.GetString("fieldValue")
             .Columns(3).DataPropertyName = "Value"
+            .Columns(3).DefaultCellStyle.Format = "N2"
 
             column = .Columns(4)
             column.Width = 30
@@ -211,28 +213,41 @@ Public Class frmBookType
         bs.ResetBindings(False)
     End Sub
 
+    ' Evento que se dispara cada vez que el control vinculado a una fuente de datos escribe el dato.
+    ' En este caso, hace que sólo se muestre la fecha sin la hora.
     Private Sub DateWihtoutTime(sender As Object, dateEvent As ConvertEventArgs)
-        'If dateEvent.DesiredType IsNot GetType(Date) Then
-        '    Exit Sub
-        'End If
-
-        dateEvent.Value = FormatDateTime(dateEvent.Value, DateFormat.ShortDate)
-    End Sub
-
-    Private Sub DateWithTime(sender As Object, dateEvent As ConvertEventArgs)
-        'If dateEvent.DesiredType IsNot GetType(Date) Then
-        '    Exit Sub
-        'End If
-
-        dateEvent.Value = dateEvent.Value.Date + New TimeSpan(0, 0, 0)
-    End Sub
-
-    Private Sub dgvBooksTypes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvBooksTypes.CellFormatting
-        If dgvBooksTypes.Columns(e.ColumnIndex).ValueType Is GetType(Date) Then
-            e.Value = FormatDateTime(e.Value, DateFormat.ShortDate)
+        If sender.BindingMemberInfo.BindingField.Equals("EndDate") Then
+            If Utils.IsEndDateEmpty(dateEvent.Value) Then
+                dateEvent.Value = Nothing
+            Else
+                dateEvent.Value = FormatDateTime(Utils.EndDateToObject(dateEvent.Value), DateFormat.ShortDate)
+            End If
+        Else
+            dateEvent.Value = FormatDateTime(dateEvent.Value, DateFormat.ShortDate)
         End If
     End Sub
 
+    'Private Sub DateWithTime(sender As Object, dateEvent As ConvertEventArgs)
+    '    'If dateEvent.DesiredType IsNot GetType(Date) Then
+    '    '    Exit Sub
+    '    'End If
+
+    '    dateEvent.Value = dateEvent.Value.Date + New TimeSpan(0, 0, 0)
+    'End Sub
+
+    ' El DataGridView ya implementa sus propios eventos para dar formato a los datos.
+    ' En el tipo de reserva, hacemos que se muestre la fecha sin la hora.
+    Private Sub dgvBooksTypes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvBooksTypes.CellFormatting
+        If dgvBooksTypes.Columns(e.ColumnIndex).ValueType Is GetType(Date) Then
+            If dgvBooksTypes.Columns(e.ColumnIndex).DataPropertyName.Equals("EndDate") AndAlso Utils.IsEndDateEmpty(e.Value) Then
+                e.Value = Nothing
+            Else
+                e.Value = FormatDateTime(Utils.EndDateToObject(e.Value), DateFormat.ShortDate)
+            End If
+        End If
+    End Sub
+
+    ' En el dgv de los precios, además de formatear la fecha, convierte el True/False del booleano "Percentage" en Sí/No.
     Private Sub dgvPrices_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvPrices.CellFormatting
         If dgvPrices.Columns(e.ColumnIndex).ValueType Is GetType(Date) Then
             If dgvPrices.Columns(e.ColumnIndex).DataPropertyName.Equals("EndDate") AndAlso Utils.IsEndDateEmpty(e.Value) Then
@@ -242,13 +257,13 @@ Public Class frmBookType
             End If
         End If
 
+        ' TODO: Se puede hacer, y quedaría mucho más visual, que esta celda sea de tipo imagen y, en lugar de texto, apareciera un símbolo gráfico.
         If dgvPrices.Columns(e.ColumnIndex).Name.Equals("Percentage") Then
             If e.Value Then
                 e.Value = LocRM.GetString("Yes")
             Else
                 e.Value = LocRM.GetString("No")
             End If
-        Else
         End If
     End Sub
 End Class

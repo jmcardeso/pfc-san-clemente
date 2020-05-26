@@ -25,14 +25,18 @@ Public Class frmPrice
 
         cbxType.DataBindings.Add("SelectedItem", priceAux, "Type")
         cbxPercentage.DataBindings.Add("Checked", priceAux, "Percentage")
-        tbxStartDate.DataBindings.Add("Text", priceAux, "StartDate")
-        nudValue.DataBindings.Add("Value", priceAux, "Value")
 
-        If Utils.IsEndDateEmpty(priceAux.EndDate) Then
-            tbxEndDate.Text = ""
-        Else
-            tbxEndDate.Text = priceAux.EndDate
-        End If
+        ' Creamos un Binding para este control que genere un evento cada vez que tiene que dar formato a los datos
+        Dim bindingStartDate As Binding = New Binding("Text", priceAux, "StartDate")
+        AddHandler bindingStartDate.Format, AddressOf DateWihtoutTime
+        tbxStartDate.DataBindings.Add(bindingStartDate)
+
+        Dim bindingEndDate As Binding = New Binding("Text", priceAux, "EndDate")
+        AddHandler bindingEndDate.Format, AddressOf DateWihtoutTime
+        tbxEndDate.DataBindings.Add(bindingEndDate)
+
+        nudValue.DataBindings.Add("Value", priceAux, "Value")
+        nudValue.DecimalPlaces = 2
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -57,12 +61,18 @@ Public Class frmPrice
             Return False
         End If
 
-        If priceAux.StartDate < btStartDate OrElse priceAux.StartDate > btEndDate Then
+        If priceAux.StartDate < btStartDate OrElse (
+            Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso
+            Not Utils.IsEndDateEmpty(btEndDate) AndAlso
+            priceAux.StartDate > btEndDate) Then
             MsgBox(LocRM.GetString("priceStartDateOutOfLimitsMsg"), MsgBoxStyle.Exclamation, "Gesalt")
             Return False
         End If
 
-        If Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso (priceAux.EndDate < btStartDate OrElse priceAux.EndDate > btEndDate) Then
+        If Not Utils.IsEndDateEmpty(priceAux.EndDate) AndAlso (
+            priceAux.EndDate < btStartDate OrElse (
+            Not Utils.IsEndDateEmpty(btEndDate) AndAlso
+            priceAux.EndDate > btEndDate)) Then
             MsgBox(LocRM.GetString("priceEndDateOutOfLimitsMsg"), MsgBoxStyle.Exclamation, "Gesalt")
             Return False
         End If
@@ -89,8 +99,9 @@ Public Class frmPrice
             Exit Sub
         End If
 
-        priceAux.StartDate = dtpStartDate.Value
-        tbxStartDate.Text = priceAux.StartDate
+        priceAux.StartDate = dtpStartDate.Value.Date
+        tbxStartDate.Text = priceAux.StartDate.Date
+
     End Sub
 
     Private Sub dtpEndDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpEndDate.ValueChanged
@@ -98,7 +109,21 @@ Public Class frmPrice
             Exit Sub
         End If
 
-        priceAux.EndDate = dtpEndDate.Value
-        tbxEndDate.Text = priceAux.EndDate
+        priceAux.EndDate = dtpEndDate.Value.Date
+        tbxEndDate.Text = priceAux.EndDate.Date
+    End Sub
+
+    ' Evento que se dispara cada vez que el control vinculado a una fuente de datos escribe el dato.
+    ' En este caso, hace que sólo se muestre la fecha sin la hora.
+    Private Sub DateWihtoutTime(sender As Object, dateEvent As ConvertEventArgs)
+        If sender.BindingMemberInfo.BindingField.Equals("EndDate") Then
+            If Utils.IsEndDateEmpty(dateEvent.Value) Then
+                dateEvent.Value = Nothing
+            Else
+                dateEvent.Value = FormatDateTime(Utils.EndDateToObject(dateEvent.Value), DateFormat.ShortDate)
+            End If
+        Else
+            dateEvent.Value = FormatDateTime(dateEvent.Value, DateFormat.ShortDate)
+        End If
     End Sub
 End Class

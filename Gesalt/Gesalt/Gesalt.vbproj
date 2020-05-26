@@ -146,6 +146,7 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
+    <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="Modules\Books\frmBookType.Designer.vb">
       <DependentUpon>frmBookType.vb</DependentUpon>
     </Compile>

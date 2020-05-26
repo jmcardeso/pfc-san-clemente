@@ -49,6 +49,7 @@ Public Class frmBookTypeAux
             .Columns(3).Name = "Value"
             .Columns(3).HeaderText = LocRM.GetString("fieldValue")
             .Columns(3).DataPropertyName = "Value"
+            .Columns(3).DefaultCellStyle.Format = "N2"
 
             column = .Columns(4)
             column.Width = 50
@@ -60,15 +61,18 @@ Public Class frmBookTypeAux
         End With
 
         tbxName.DataBindings.Add("Text", btAux, "BTName")
-        tbxStartDate.DataBindings.Add("Text", btAux, "StartDate")
+
+        ' Creamos un Binding para este control que genere un evento cada vez que tiene que dar formato a los datos
+        Dim bindingStartDate As Binding = New Binding("Text", btAux, "StartDate")
+        AddHandler bindingStartDate.Format, AddressOf DateWihtoutTime
+        tbxStartDate.DataBindings.Add(bindingStartDate)
+
+        Dim bindingEndDate As Binding = New Binding("Text", btAux, "EndDate")
+        AddHandler bindingEndDate.Format, AddressOf DateWihtoutTime
+        tbxEndDate.DataBindings.Add(bindingEndDate)
+
         tbxUrlWeb.DataBindings.Add("Text", btAux, "UrlWeb")
         tbxUrlICalendar.DataBindings.Add("Text", btAux, "UrlICalendar")
-
-        If Utils.IsEndDateEmpty(btAux.EndDate) Then
-            tbxEndDate.Text = ""
-        Else
-            tbxEndDate.Text = btAux.EndDate
-        End If
     End Sub
 
     Private Sub bntCancel_Click(sender As Object, e As EventArgs) Handles bntCancel.Click
@@ -91,13 +95,13 @@ Public Class frmBookTypeAux
     End Sub
 
     Private Sub dtpStartDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpStartDate.ValueChanged
-        btAux.StartDate = dtpStartDate.Value
-        tbxStartDate.Text = btAux.StartDate
+        btAux.StartDate = dtpStartDate.Value.Date
+        tbxStartDate.Text = btAux.StartDate.Date
     End Sub
 
     Private Sub dtpEndDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpEndDate.ValueChanged
-        btAux.EndDate = dtpEndDate.Value
-        tbxEndDate.Text = btAux.EndDate
+        btAux.EndDate = dtpEndDate.Value.Date
+        tbxEndDate.Text = btAux.EndDate.Date
     End Sub
 
     Private Sub btnDeleteEndDate_Click(sender As Object, e As EventArgs) Handles btnDeleteEndDate.Click
@@ -172,5 +176,38 @@ Public Class frmBookTypeAux
 
         btAux.Prices.Remove(bsPrices.Current)
         bsPrices.ResetBindings(False)
+    End Sub
+
+    ' Evento que se dispara cada vez que el control vinculado a una fuente de datos escribe el dato.
+    ' En este caso, hace que sólo se muestre la fecha sin la hora.
+    Private Sub DateWihtoutTime(sender As Object, dateEvent As ConvertEventArgs)
+        If sender.BindingMemberInfo.BindingField.Equals("EndDate") Then
+            If Utils.IsEndDateEmpty(dateEvent.Value) Then
+                dateEvent.Value = Nothing
+            Else
+                dateEvent.Value = FormatDateTime(Utils.EndDateToObject(dateEvent.Value), DateFormat.ShortDate)
+            End If
+        Else
+            dateEvent.Value = FormatDateTime(dateEvent.Value, DateFormat.ShortDate)
+        End If
+    End Sub
+
+    Private Sub dgvPrices_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvPrices.CellFormatting
+        If dgvPrices.Columns(e.ColumnIndex).ValueType Is GetType(Date) Then
+            If dgvPrices.Columns(e.ColumnIndex).DataPropertyName.Equals("EndDate") AndAlso Utils.IsEndDateEmpty(e.Value) Then
+                e.Value = Nothing
+            Else
+                e.Value = FormatDateTime(Utils.EndDateToObject(e.Value), DateFormat.ShortDate)
+            End If
+        End If
+
+        ' TODO: Se puede hacer, y quedaría mucho más visual, que esta celda sea de tipo imagen y, en lugar de texto, apareciera un símbolo gráfico.
+        If dgvPrices.Columns(e.ColumnIndex).Name.Equals("Percentage") Then
+            If e.Value Then
+                e.Value = LocRM.GetString("Yes")
+            Else
+                e.Value = LocRM.GetString("No")
+            End If
+        End If
     End Sub
 End Class
