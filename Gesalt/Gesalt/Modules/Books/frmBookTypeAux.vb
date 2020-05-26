@@ -27,19 +27,19 @@ Public Class frmBookTypeAux
             .ColumnCount = 5
 
             column = .Columns(0)
-            column.Width = 60
+            column.Width = 100
             .Columns(0).Name = "Type"
             .Columns(0).HeaderText = LocRM.GetString("fieldType")
             .Columns(0).DataPropertyName = "Type"
 
             column = .Columns(1)
-            column.Width = 60
+            column.Width = 70
             .Columns(1).Name = "StartDate"
             .Columns(1).HeaderText = LocRM.GetString("fieldStartDate2")
             .Columns(1).DataPropertyName = "StartDate"
 
             column = .Columns(2)
-            column.Width = 60
+            column.Width = 70
             .Columns(2).Name = "EndDate"
             .Columns(2).HeaderText = LocRM.GetString("fieldEndDate2")
             .Columns(2).DataPropertyName = "EndDate"
@@ -52,7 +52,7 @@ Public Class frmBookTypeAux
             .Columns(3).DefaultCellStyle.Format = "N2"
 
             column = .Columns(4)
-            column.Width = 50
+            column.Width = 30
             .Columns(4).Name = "Percentage"
             .Columns(4).HeaderText = LocRM.GetString("fieldPercentage")
             .Columns(4).DataPropertyName = "Percentage"
@@ -183,7 +183,7 @@ Public Class frmBookTypeAux
     Private Sub DateWihtoutTime(sender As Object, dateEvent As ConvertEventArgs)
         If sender.BindingMemberInfo.BindingField.Equals("EndDate") Then
             If Utils.IsEndDateEmpty(dateEvent.Value) Then
-                dateEvent.Value = Nothing
+                dateEvent.Value = ""
             Else
                 dateEvent.Value = FormatDateTime(Utils.EndDateToObject(dateEvent.Value), DateFormat.ShortDate)
             End If

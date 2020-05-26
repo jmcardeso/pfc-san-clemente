@@ -118,7 +118,7 @@ Public Class frmPrice
     Private Sub DateWihtoutTime(sender As Object, dateEvent As ConvertEventArgs)
         If sender.BindingMemberInfo.BindingField.Equals("EndDate") Then
             If Utils.IsEndDateEmpty(dateEvent.Value) Then
-                dateEvent.Value = Nothing
+                dateEvent.Value = ""
             Else
                 dateEvent.Value = FormatDateTime(Utils.EndDateToObject(dateEvent.Value), DateFormat.ShortDate)
             End If

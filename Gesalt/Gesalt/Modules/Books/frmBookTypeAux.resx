@@ -274,10 +274,10 @@
     <value>115, 9</value>
   </data>
   <data name="tbxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 20</value>
+    <value>279, 20</value>
   </data>
   <data name="tbxName.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tbxName.Name" xml:space="preserve">
     <value>tbxName</value>
@@ -295,10 +295,10 @@
     <value>115, 113</value>
   </data>
   <data name="tbxUrlICalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 20</value>
+    <value>279, 20</value>
   </data>
   <data name="tbxUrlICalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;tbxUrlICalendar.Name" xml:space="preserve">
     <value>tbxUrlICalendar</value>
@@ -316,10 +316,10 @@
     <value>115, 87</value>
   </data>
   <data name="tbxUrlWeb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 20</value>
+    <value>279, 20</value>
   </data>
   <data name="tbxUrlWeb.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;tbxUrlWeb.Name" xml:space="preserve">
     <value>tbxUrlWeb</value>
@@ -334,13 +334,13 @@
     <value>8</value>
   </data>
   <data name="dtpStartDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 35</value>
+    <value>375, 35</value>
   </data>
   <data name="dtpStartDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 20</value>
   </data>
   <data name="dtpStartDate.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;dtpStartDate.Name" xml:space="preserve">
     <value>dtpStartDate</value>
@@ -355,13 +355,13 @@
     <value>7</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 373</value>
+    <value>319, 373</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>10</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -382,13 +382,13 @@
     <value>NoControl</value>
   </data>
   <data name="bntCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 373</value>
+    <value>238, 373</value>
   </data>
   <data name="bntCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="bntCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>9</value>
   </data>
   <data name="bntCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -409,7 +409,7 @@
     <value>6, 19</value>
   </data>
   <data name="dgvPrices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 150</value>
+    <value>370, 150</value>
   </data>
   <data name="dgvPrices.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -430,13 +430,13 @@
     <value>NoControl</value>
   </data>
   <data name="bntEditPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 175</value>
+    <value>154, 175</value>
   </data>
   <data name="bntEditPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="bntEditPrice.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>1</value>
   </data>
   <data name="bntEditPrice.Text" xml:space="preserve">
     <value>Edit</value>
@@ -457,13 +457,13 @@
     <value>NoControl</value>
   </data>
   <data name="bntDeletePrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>234, 175</value>
+    <value>301, 175</value>
   </data>
   <data name="bntDeletePrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="bntDeletePrice.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>2</value>
   </data>
   <data name="bntDeletePrice.Text" xml:space="preserve">
     <value>Delete</value>
@@ -490,7 +490,7 @@
     <value>75, 23</value>
   </data>
   <data name="btnAddPrice.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>0</value>
   </data>
   <data name="btnAddPrice.Text" xml:space="preserve">
     <value>Add</value>
@@ -511,10 +511,10 @@
     <value>12, 136</value>
   </data>
   <data name="gbxPrices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 206</value>
+    <value>382, 206</value>
   </data>
   <data name="gbxPrices.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>8</value>
   </data>
   <data name="gbxPrices.Text" xml:space="preserve">
     <value>Prices/Offers</value>
@@ -535,10 +535,10 @@
     <value>115, 61</value>
   </data>
   <data name="tbxEndDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 20</value>
+    <value>229, 20</value>
   </data>
   <data name="tbxEndDate.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tbxEndDate.Name" xml:space="preserve">
     <value>tbxEndDate</value>
@@ -556,10 +556,10 @@
     <value>115, 35</value>
   </data>
   <data name="tbxStartDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
+    <value>254, 20</value>
   </data>
   <data name="tbxStartDate.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tbxStartDate.Name" xml:space="preserve">
     <value>tbxStartDate</value>
@@ -574,13 +574,13 @@
     <value>2</value>
   </data>
   <data name="dtpEndDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 61</value>
+    <value>350, 63</value>
   </data>
   <data name="dtpEndDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 20</value>
   </data>
   <data name="dtpEndDate.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;dtpEndDate.Name" xml:space="preserve">
     <value>dtpEndDate</value>
@@ -595,13 +595,13 @@
     <value>1</value>
   </data>
   <data name="btnDeleteEndDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 61</value>
+    <value>375, 63</value>
   </data>
   <data name="btnDeleteEndDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 20</value>
   </data>
   <data name="btnDeleteEndDate.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>5</value>
   </data>
   <data name="btnDeleteEndDate.Text" xml:space="preserve">
     <value>X</value>
@@ -625,7 +625,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>338, 406</value>
+    <value>406, 406</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
