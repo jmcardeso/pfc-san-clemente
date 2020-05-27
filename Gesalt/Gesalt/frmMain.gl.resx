@@ -252,4 +252,7 @@
   <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Preferencias</value>
   </data>
+  <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xestionar reservas</value>
+  </data>
 </root>
