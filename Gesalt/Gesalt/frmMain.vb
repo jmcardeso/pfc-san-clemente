@@ -39,6 +39,10 @@ Public Class frmMain
             ConnectionWizard()
         End If
 
+        ' 1ª aproximación a poner un tooltip con los datos de la reserva
+        mclBooks.AddBoldedDate(New Date(2020, 5, 29))
+        ToolTip1.SetToolTip(mclBooks, "hohohoh")
+
         Try
             opProp = OpProp.GetInstance()
             props = opProp.GetProps()

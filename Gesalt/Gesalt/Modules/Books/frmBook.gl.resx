@@ -120,4 +120,52 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Engadir unha reserva - Gesalt</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Inmoble:</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Modo de reserva:</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Cliente:</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Inicio:</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Fin:</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Prezo:</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>IVA*:</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="lblAmount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProperty.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblTotal.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblVat.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>(*) Se é necesario</value>
+  </data>
 </root>
