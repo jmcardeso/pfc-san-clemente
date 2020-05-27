@@ -144,35 +144,11 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>36</value>
   </data>
   <metadata name="tlsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>238, 17</value>
   </metadata>
-  <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="tlsProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 25</value>
-  </data>
-  <data name="tlsProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlsProperties.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Name" xml:space="preserve">
-    <value>tlsProperties</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.ZOrder" xml:space="preserve">
-    <value>33</value>
-  </data>
   <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -227,6 +203,12 @@
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
+  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Properties Report</value>
+  </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -244,87 +226,33 @@
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Reports</value>
   </data>
-  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+  <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
   </data>
-  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties Report</value>
+  <data name="tlsProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>805, 25</value>
+  </data>
+  <data name="tlsProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlsProperties.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Name" xml:space="preserve">
+    <value>tlsProperties</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.ZOrder" xml:space="preserve">
+    <value>34</value>
   </data>
   <metadata name="mnsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>343, 17</value>
   </metadata>
-  <data name="PropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
-  </data>
-  <data name="PropertiesToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Properties</value>
-  </data>
-  <data name="ManageBooksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manage Books</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Book &amp;Types</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Books</value>
-  </data>
-  <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
-  </data>
-  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Reports</value>
-  </data>
-  <data name="LessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Lessors</value>
-  </data>
-  <data name="GuestsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
-  </data>
-  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Guests</value>
-  </data>
-  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
-  <data name="mnsProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mnsProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 24</value>
-  </data>
-  <data name="mnsProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mnsProperties.Text" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;mnsProperties.Name" xml:space="preserve">
-    <value>mnsProperties</value>
-  </data>
-  <data name="&gt;&gt;mnsProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnsProperties.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mnsProperties.ZOrder" xml:space="preserve">
-    <value>34</value>
-  </data>
   <data name="AddAPropertyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -349,23 +277,65 @@
   <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Filter data</value>
   </data>
+  <data name="PropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="PropertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Properties</value>
+  </data>
+  <data name="ManageBooksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manage Books</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Book &amp;Types</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Books</value>
+  </data>
   <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 22</value>
   </data>
   <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Properties Report</value>
   </data>
+  <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="ReportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Reports</value>
+  </data>
   <data name="ManageLessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="ManageLessorsToolStripMenuItem.Text" xml:space="preserve">
     <value>Manage Lessors</value>
+  </data>
+  <data name="LessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Lessors</value>
   </data>
   <data name="ManageGuestsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
   </data>
   <data name="ManageGuestsToolStripMenuItem.Text" xml:space="preserve">
     <value>Manage Guests</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Guests</value>
   </data>
   <data name="SettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 22</value>
@@ -378,6 +348,36 @@
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About Gesalt</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="mnsProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mnsProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>805, 24</value>
+  </data>
+  <data name="mnsProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mnsProperties.Text" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mnsProperties.Name" xml:space="preserve">
+    <value>mnsProperties</value>
+  </data>
+  <data name="&gt;&gt;mnsProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnsProperties.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mnsProperties.ZOrder" xml:space="preserve">
+    <value>35</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -408,7 +408,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>33</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -438,7 +438,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>32</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -468,7 +468,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>31</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -498,7 +498,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -528,7 +528,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -558,7 +558,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -588,7 +588,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -618,7 +618,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -627,7 +627,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 49</value>
+    <value>12, 268</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -648,7 +648,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="lblFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -657,7 +657,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 421</value>
+    <value>9, 461</value>
   </data>
   <data name="lblFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -678,13 +678,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilter.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="btnLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 606</value>
+    <value>714, 646</value>
   </data>
   <data name="btnLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -705,13 +705,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLast.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="btnNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 606</value>
+    <value>480, 646</value>
   </data>
   <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -732,13 +732,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNext.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="btnPrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 606</value>
+    <value>246, 646</value>
   </data>
   <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -759,13 +759,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPrevious.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="btnFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 606</value>
+    <value>12, 646</value>
   </data>
   <data name="btnFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -786,10 +786,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnFirst.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="dgvProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 437</value>
+    <value>12, 477</value>
   </data>
   <data name="dgvProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>778, 161</value>
@@ -807,13 +807,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvProperties.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="pbxPhotos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 176</value>
+    <value>489, 216</value>
   </data>
   <data name="pbxPhotos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 140</value>
+    <value>301, 195</value>
   </data>
   <data name="pbxPhotos.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -831,13 +831,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbxPhotos.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 49</value>
+    <value>112, 267</value>
   </data>
   <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 118</value>
+    <value>287, 80</value>
   </data>
   <data name="lblDescription.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
@@ -855,13 +855,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDescription.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="Label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 176</value>
+    <value>440, 216</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -882,10 +882,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnPhotosFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 322</value>
+    <value>489, 417</value>
   </data>
   <data name="btnPhotosFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -906,13 +906,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPhotosFirst.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="btnPhotosNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPhotosNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>672, 322</value>
+    <value>665, 417</value>
   </data>
   <data name="btnPhotosNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -933,13 +933,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPhotosNext.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnPhotosPrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPhotosPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 322</value>
+    <value>577, 417</value>
   </data>
   <data name="btnPhotosPrevious.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -960,13 +960,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPhotosPrevious.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnPhotosLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPhotosLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>751, 322</value>
+    <value>753, 417</value>
   </data>
   <data name="btnPhotosLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -987,7 +987,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPhotosLast.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblCadRef.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1014,7 +1014,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCadRef.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblProvince.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1044,7 +1044,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProvince.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblBaths.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1074,7 +1074,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBaths.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblBedrooms.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1104,7 +1104,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBedrooms.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1134,7 +1134,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblMaxGuests.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1164,7 +1164,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMaxGuests.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblZip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1194,7 +1194,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblZip.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblCity.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1224,7 +1224,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCity.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblAddress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1254,10 +1254,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAddress.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="dgvLessors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 295</value>
+    <value>15, 362</value>
   </data>
   <data name="dgvLessors.Size" type="System.Drawing.Size, System.Drawing">
     <value>384, 79</value>
@@ -1275,7 +1275,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvLessors.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1284,7 +1284,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 279</value>
+    <value>12, 346</value>
   </data>
   <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -1305,6 +1305,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="mclBooks.BoldedDates" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAPAQAAAAIAAAANAH/44uUB2AgAAJ8QmgLYCAs=</value>
+  </data>
+  <data name="mclBooks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mclBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 42</value>
+  </data>
+  <data name="mclBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;mclBooks.Name" xml:space="preserve">
+    <value>mclBooks</value>
+  </data>
+  <data name="&gt;&gt;mclBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mclBooks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mclBooks.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1317,7 +1341,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 642</value>
+    <value>805, 680</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2072,6 +2096,12 @@
   <data name="&gt;&gt;BookTypeToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ManageBooksToolStripMenuItem.Name" xml:space="preserve">
+    <value>ManageBooksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ManageBooksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;BookTypeToolStripMenuItem1.Name" xml:space="preserve">
     <value>BookTypeToolStripMenuItem1</value>
   </data>
@@ -2130,12 +2160,6 @@
     <value>AboutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ManageBooksToolStripMenuItem.Name" xml:space="preserve">
-    <value>ManageBooksToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ManageBooksToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

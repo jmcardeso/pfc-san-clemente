@@ -23,8 +23,8 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -40,6 +40,7 @@ Partial Class frmMain
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FilterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageBooksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookTypeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PropertiesReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -83,7 +84,7 @@ Partial Class frmMain
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.ManageBooksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mclBooks = New System.Windows.Forms.MonthCalendar()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -174,6 +175,11 @@ Partial Class frmMain
         Me.BookTypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageBooksToolStripMenuItem, Me.BookTypeToolStripMenuItem1})
         Me.BookTypeToolStripMenuItem.Name = "BookTypeToolStripMenuItem"
         resources.ApplyResources(Me.BookTypeToolStripMenuItem, "BookTypeToolStripMenuItem")
+        '
+        'ManageBooksToolStripMenuItem
+        '
+        Me.ManageBooksToolStripMenuItem.Name = "ManageBooksToolStripMenuItem"
+        resources.ApplyResources(Me.ManageBooksToolStripMenuItem, "ManageBooksToolStripMenuItem")
         '
         'BookTypeToolStripMenuItem1
         '
@@ -307,8 +313,8 @@ Partial Class frmMain
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -409,14 +415,14 @@ Partial Class frmMain
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle2
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
         Me.dgvLessors.Name = "dgvLessors"
@@ -429,15 +435,19 @@ Partial Class frmMain
         resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
         '
-        'ManageBooksToolStripMenuItem
+        'mclBooks
         '
-        Me.ManageBooksToolStripMenuItem.Name = "ManageBooksToolStripMenuItem"
-        resources.ApplyResources(Me.ManageBooksToolStripMenuItem, "ManageBooksToolStripMenuItem")
+        resources.ApplyResources(Me.mclBooks, "mclBooks")
+        Me.mclBooks.MaxSelectionCount = 1
+        Me.mclBooks.Name = "mclBooks"
+        Me.mclBooks.ShowToday = False
+        Me.mclBooks.ShowTodayCircle = False
         '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.mclBooks)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.dgvLessors)
         Me.Controls.Add(Me.lblAddress)
@@ -548,4 +558,5 @@ Partial Class frmMain
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageBooksToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mclBooks As MonthCalendar
 End Class

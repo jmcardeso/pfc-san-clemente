@@ -448,4 +448,19 @@ Public Class frmMain
                                           End Sub))
 
     End Sub
+
+    Private Sub ManageBooksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageBooksToolStripMenuItem.Click
+        Dim frmBk As New frmBook()
+
+        frmBk.ShowDialog()
+    End Sub
+
+    Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclBooks.DateChanged
+        If mclBooks.BoldedDates.Contains(e.Start) Then
+            mclBooks.RemoveBoldedDate(e.Start)
+        Else
+            mclBooks.AddBoldedDate(e.Start)
+        End If
+        mclBooks.UpdateBoldedDates()
+    End Sub
 End Class

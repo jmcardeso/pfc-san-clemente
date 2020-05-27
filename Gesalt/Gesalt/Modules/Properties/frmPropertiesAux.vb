@@ -10,7 +10,7 @@ Public Class frmPropertiesAux
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPropertiesAux).Assembly)
 
     Private Sub frmPropertiesAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim opProp As OpProp = OpProp.GetInstance()
+        opProp = OpProp.GetInstance()
 
         If editProp IsNot Nothing Then
             Me.Text = LocRM.GetString("editPropTitle")
