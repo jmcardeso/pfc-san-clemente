@@ -785,6 +785,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a There are no book types for this property. Impossible to add a book..
+        '''</summary>
+        Friend Shared ReadOnly Property noBookTypesErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("noBookTypesErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a You must choose a database location.
         '''</summary>
         Friend Shared ReadOnly Property noDBMsg() As String
@@ -794,11 +803,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a There are no guests in the database. Impossible to add a book..
+        '''</summary>
+        Friend Shared ReadOnly Property noGuestsErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("noGuestsErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a There are no lessors in the database..
         '''</summary>
         Friend Shared ReadOnly Property noLessorsErrorMsg() As String
             Get
                 Return ResourceManager.GetString("noLessorsErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a There are no lessors for this property. Impossible to add a book..
+        '''</summary>
+        Friend Shared ReadOnly Property noLessorsForBookingErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("noLessorsForBookingErrorMsg", resourceCulture)
             End Get
         End Property
         

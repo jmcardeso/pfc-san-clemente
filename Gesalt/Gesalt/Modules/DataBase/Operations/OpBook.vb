@@ -32,6 +32,131 @@ Public Class OpBook
         Return objOpBook
     End Function
 
+    Public Function GetBooksByPropertyId(propertyId As Integer) As List(Of Book)
+        Dim books As New List(Of Book)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pPropId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pPropId = con.Factory.CreateParameter()
+
+        pPropId.ParameterName = "@p_property_id"
+        pPropId.Value = propertyId
+        pPropId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pPropId)
+
+        sqlCommand.CommandText = "select * from book where property_id = @p_property_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim book As Book
+        For Each dr As DataRow In dt.Rows
+            book = New Book(dr.Item("Id"), dr.Item("guest_id"), dr.Item("property_id"),
+                            dr.Item("booktype_id"), dr.Item("status"), dr.Item("checkin"),
+                            dr.Item("chekout"), dr.Item("invoice_number"))
+            books.Add(book)
+        Next
+
+        Return books
+    End Function
+
+    'Public Function GetMonthBooks(month As Integer, year As Integer, propertyId As Integer) As List(Of Book)
+    '    Dim monthBooks As New List(Of Book)
+    '    Dim da As DbDataAdapter
+    '    Dim sqlCommand As DbCommand
+    '    Dim pPropId, pFirstDay, pLastDay As DbParameter
+
+    '    Dim firstDay As Date = New Date(year, month, 1)
+    '    Dim lastDay As Date = firstDay.AddMonths(1)
+
+    '    sqlCommand = con.Factory.CreateCommand()
+    '    pPropId = con.Factory.CreateParameter()
+    '    pFirstDay = con.Factory.CreateParameter()
+    '    pLastDay = con.Factory.CreateParameter()
+
+    '    pPropId.ParameterName = "@p_property_id"
+    '    pPropId.Value = propertyId
+    '    pPropId.DbType = DbType.Int32
+
+    '    pFirstDay.ParameterName = "@p_first_day"
+    '    pFirstDay.Value = firstDay
+    '    pFirstDay.DbType = DbType.Date
+
+    '    pLastDay.ParameterName = "@p_last_day"
+    '    pLastDay.Value = lastDay
+    '    pLastDay.DbType = DbType.Date
+
+    '    sqlCommand.Parameters.Add(pPropId)
+    '    sqlCommand.Parameters.Add(pFirstDay)
+    '    sqlCommand.Parameters.Add(pLastDay)
+
+    '    sqlCommand.CommandText = "select * from book where property_id = @p_property_id and (checkin >= @p_first_day and checkin < @p_last_day) or (chekout >= @p_first_day and chekout < @p_last_day)"
+    '    sqlCommand.Connection = con.Con
+
+    '    da = con.Factory.CreateDataAdapter()
+    '    da.SelectCommand = sqlCommand
+
+    '    Dim dt As New DataTable()
+    '    da.Fill(dt)
+
+    '    Dim book As Book
+    '    For Each dr As DataRow In dt.Rows
+    '        book = New Book(dr.Item("Id"), dr.Item("guest_id"), dr.Item("property_id"),
+    '                        dr.Item("booktype_id"), dr.Item("status"), dr.Item("checkin"),
+    '                        dr.Item("chekout"), dr.Item("invoice_number"))
+    '        monthBooks.Add(book)
+    '    Next
+
+    '    Return monthBooks
+    'End Function
+
+    Public Function AddBook(book As Book) As Integer
+        Dim result As Integer
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+
+        Dim sql As String = "select * from book"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        result = GetId()
+
+        If result <> -1 Then
+            book.Id = result
+
+            FillRow(dr, book)
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
+        End If
+
+        Return result
+    End Function
+
     Public Function GetBookTypes(propertyId As Integer) As List(Of BookType)
         Dim bookTypes As New List(Of BookType)
         Dim da As DbDataAdapter
@@ -404,6 +529,17 @@ Public Class OpBook
         dr.Item("end_date") = Utils.EndDateToDB(bt.EndDate)
         dr.Item("url_web") = bt.UrlWeb
         dr.Item("url_icalendar") = bt.UrlICalendar
+    End Sub
+
+    Private Sub FillRow(dr As DataRow, book As Book)
+        dr.Item("Id") = book.Id
+        dr.Item("property_id") = book.PropertyId
+        dr.Item("booktype_id") = book.BookTypeId
+        dr.Item("guest_id") = book.GuestId
+        dr.Item("status") = book.Status
+        dr.Item("checkin") = book.CheckIn
+        dr.Item("chekout") = book.CheckOut
+        dr.Item("invoice_number") = book.InvoiceNumber
     End Sub
 
     Private Function GetPriceId() As Integer

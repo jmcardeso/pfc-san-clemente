@@ -425,4 +425,13 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="noBookTypesErrorMsg" xml:space="preserve">
+    <value>There are no book types for this property. Impossible to add a book.</value>
+  </data>
+  <data name="noGuestsErrorMsg" xml:space="preserve">
+    <value>There are no guests in the database. Impossible to add a book.</value>
+  </data>
+  <data name="noLessorsForBookingErrorMsg" xml:space="preserve">
+    <value>There are no lessors for this property. Impossible to add a book.</value>
+  </data>
 </root>

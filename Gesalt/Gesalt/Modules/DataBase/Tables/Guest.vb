@@ -82,4 +82,8 @@ Public Class Guest
         Me.Comments = comments
         Me.AcceptAd = acceptAd
     End Sub
+
+    Public Overrides Function ToString() As String
+        Return Me.LastName & ", " & Me.FirstName
+    End Function
 End Class

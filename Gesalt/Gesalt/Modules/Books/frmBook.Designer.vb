@@ -66,6 +66,7 @@ Partial Class frmBook
         '
         'cbxBookTypes
         '
+        Me.cbxBookTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxBookTypes.FormattingEnabled = True
         resources.ApplyResources(Me.cbxBookTypes, "cbxBookTypes")
         Me.cbxBookTypes.Name = "cbxBookTypes"
@@ -77,6 +78,7 @@ Partial Class frmBook
         '
         'cbxGuests
         '
+        Me.cbxGuests.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxGuests.FormattingEnabled = True
         resources.ApplyResources(Me.cbxGuests, "cbxGuests")
         Me.cbxGuests.Name = "cbxGuests"
@@ -120,6 +122,7 @@ Partial Class frmBook
         '
         'cbxStatus
         '
+        Me.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxStatus.FormattingEnabled = True
         resources.ApplyResources(Me.cbxStatus, "cbxStatus")
         Me.cbxStatus.Name = "cbxStatus"

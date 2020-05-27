@@ -45,6 +45,7 @@ Public Class OpProp
 
         Dim da As DbDataAdapter
         Dim sqlCommand As DbCommand
+        Dim opBook As OpBook = OpBook.GetInstance()
 
         sqlCommand = con.Factory.CreateCommand()
 
@@ -89,6 +90,7 @@ Public Class OpProp
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
         Dim p As DbParameter
+        Dim opBook As OpBook = OpBook.GetInstance()
 
         Dim sql As String = "select * from property where Id = @p_id"
 
@@ -111,21 +113,27 @@ Public Class OpProp
         Dim dt As New DataTable()
         da.Fill(dt)
 
-        For Each photo As Photo In prop.Photos
-            DeletePhoto(photo)
-        Next
-
-        For Each lessor As LessorProp In prop.Lessors
-            DeleteLessor(prop.Id, lessor.Lessor.Id)
-        Next
-
-        Dim dr As DataRow
-        dr = dt.Rows.Item(0)
         'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE RESERVAS)
-        dr.Delete()
+        If True Then
+            For Each photo As Photo In prop.Photos
+                DeletePhoto(photo)
+            Next
 
-        If da.Update(dt) = 1 Then
-            result = True
+            For Each lessor As LessorProp In prop.Lessors
+                DeleteLessor(prop.Id, lessor.Lessor.Id)
+            Next
+
+            For Each bt As BookType In opBook.GetBookTypes(prop.Id)
+                opBook.DeleteBookType(bt)
+            Next
+
+            Dim dr As DataRow
+            dr = dt.Rows.Item(0)
+            dr.Delete()
+
+            If da.Update(dt) = 1 Then
+                result = True
+            End If
         End If
 
         Return result

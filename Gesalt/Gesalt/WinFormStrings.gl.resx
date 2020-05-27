@@ -425,4 +425,13 @@
   <data name="No" xml:space="preserve">
     <value>Non</value>
   </data>
+  <data name="noBookTypesErrorMsg" xml:space="preserve">
+    <value>Non hai modos de reserva para este inmoble. Imposible engadir unha reserva.</value>
+  </data>
+  <data name="noGuestsErrorMsg" xml:space="preserve">
+    <value>Non hai clientes na base de datos. Imposible engadir unha reserva.</value>
+  </data>
+  <data name="noLessorsForBookingErrorMsg" xml:space="preserve">
+    <value>Non hai arrendadores para este inmoble. Imposible engadir unha reserva.</value>
+  </data>
 </root>

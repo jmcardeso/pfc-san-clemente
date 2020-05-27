@@ -30,4 +30,8 @@ Public Class BookType
         Me.UrlWeb = ""
         Me.UrlICalendar = ""
     End Sub
+
+    Public Overrides Function ToString() As String
+        Return Me.BTName
+    End Function
 End Class
