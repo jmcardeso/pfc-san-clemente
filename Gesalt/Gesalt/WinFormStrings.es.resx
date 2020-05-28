@@ -434,4 +434,16 @@
   <data name="noLessorsForBookingErrorMsg" xml:space="preserve">
     <value>No hay arrendadores para este inmueble. Imposible añadir una reserva.</value>
   </data>
+  <data name="bookGuest" xml:space="preserve">
+    <value>Cliente:</value>
+  </data>
+  <data name="bookBT" xml:space="preserve">
+    <value>Modo de reserva:</value>
+  </data>
+  <data name="bookDays" xml:space="preserve">
+    <value>Días:</value>
+  </data>
+  <data name="bookStatus" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
 </root>

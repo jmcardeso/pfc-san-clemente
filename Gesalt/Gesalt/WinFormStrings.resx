@@ -434,4 +434,16 @@
   <data name="noLessorsForBookingErrorMsg" xml:space="preserve">
     <value>There are no lessors for this property. Impossible to add a book.</value>
   </data>
+  <data name="bookGuest" xml:space="preserve">
+    <value>Guest:</value>
+  </data>
+  <data name="bookBT" xml:space="preserve">
+    <value>Book Type:</value>
+  </data>
+  <data name="bookDays" xml:space="preserve">
+    <value>Days:</value>
+  </data>
+  <data name="bookStatus" xml:space="preserve">
+    <value>Status:</value>
+  </data>
 </root>

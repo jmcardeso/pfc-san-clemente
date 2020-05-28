@@ -461,28 +461,6 @@
   <data name="&gt;&gt;cbxStatus.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mclBooks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="mclBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 74</value>
-  </data>
-  <data name="mclBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>72</value>
-  </data>
-  <data name="&gt;&gt;mclBooks.Name" xml:space="preserve">
-    <value>mclBooks</value>
-  </data>
-  <data name="&gt;&gt;mclBooks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mclBooks.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mclBooks.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -508,7 +486,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblAmount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -535,7 +513,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAmount.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>377, 392</value>
@@ -559,8 +537,9 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -586,7 +565,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -613,7 +592,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -643,7 +622,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -673,7 +652,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblVat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -700,7 +679,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblVat.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -733,6 +712,153 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="tstCalendar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="tstCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="tsbAddCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABfSURBVDhPzcoxDgAhEELRuf+lNQg2i6KFxf5kMgWvXtYO
+        d6ztwqaLiXtzwx9y00CrsH1umXgOjtwTycGReyI5OHJPJAdH7onk4Mg9kRwcuSeSgyP3RHJw5N4cb+43
+        VXWxN5h2GtXL+gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbAddCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbAddCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbAddCalendar.Text" xml:space="preserve">
+    <value>Add book</value>
+  </data>
+  <data name="tsbEditCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABkSURBVDhPzctBCsAwCERR73/plFFTBpxoFl30wVCIv/al
+        NWy0TnDLtTKv9g1fLw84en8CfstJmffQRV5xIEd3yYMJusgrDuToLnkwQRd5xYEc3SUPJugirzLpoYu8
+        2seb/YbZA//WUL73/myGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="tsbEditCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbEditCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbEditCalendar.Text" xml:space="preserve">
+    <value>Edit book</value>
+  </data>
+  <data name="tsbDeleteCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVDhPzY3RCgAgCAP9/58uggaDlhpJdLAXdad9Q5vJ
+        IG8xlEvC3bNAHe3mC0qSKjIsQY4pKx9LVCktUWUQSrwyuBYMQskTqh6ZdaGmNMwKZsvLAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="tsbDeleteCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbDeleteCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbDeleteCalendar.Text" xml:space="preserve">
+    <value>Delete book</value>
+  </data>
+  <data name="tstCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 157</value>
+  </data>
+  <data name="tstCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 25</value>
+  </data>
+  <data name="tstCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="tstCalendar.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Name" xml:space="preserve">
+    <value>tstCalendar</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Parent" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCalendar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 0</value>
+  </data>
+  <data name="lblCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 157</value>
+  </data>
+  <data name="lblCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;lblCalendar.Name" xml:space="preserve">
+    <value>lblCalendar</value>
+  </data>
+  <data name="&gt;&gt;lblCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCalendar.Parent" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;lblCalendar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="mclCalendar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mclCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, -5</value>
+  </data>
+  <data name="mclCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;mclCalendar.Name" xml:space="preserve">
+    <value>mclCalendar</value>
+  </data>
+  <data name="&gt;&gt;mclCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mclCalendar.Parent" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;mclCalendar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 74</value>
+  </data>
+  <data name="pnlCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 182</value>
+  </data>
+  <data name="pnlCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.Name" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1424,6 +1550,24 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Add a book  - Gesalt</value>
+  </data>
+  <data name="&gt;&gt;tsbAddCalendar.Name" xml:space="preserve">
+    <value>tsbAddCalendar</value>
+  </data>
+  <data name="&gt;&gt;tsbAddCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbEditCalendar.Name" xml:space="preserve">
+    <value>tsbEditCalendar</value>
+  </data>
+  <data name="&gt;&gt;tsbEditCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbDeleteCalendar.Name" xml:space="preserve">
+    <value>tsbDeleteCalendar</value>
+  </data>
+  <data name="&gt;&gt;tsbDeleteCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmBook</value>

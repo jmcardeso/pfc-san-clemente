@@ -9,6 +9,7 @@ Public Class frmMain
     Dim bsLessors As New BindingSource()
     Dim props As New List(Of Prop)
     ' Dim books As New List(Of Book)
+    Private lastClickTick As Integer
 
     Public Sub New()
         Dim strIdioma As String = My.Settings.language
@@ -124,6 +125,7 @@ Public Class frmMain
                 .DataSource = bsLessors
             End With
 
+            lastClickTick = Environment.TickCount - SystemInformation.DoubleClickTime
         Catch err As InvalidOperationException
             MsgBox(err.Message)
             Close()
@@ -318,9 +320,9 @@ Public Class frmMain
 
         bsLessors.ResetBindings(False)
 
-        mclBooks.RemoveAllBoldedDates()
+        mclCalendar.RemoveAllBoldedDates()
         ' books = opBook.GetBooksByPropertyId(bs.Current.Id)
-        Utils.MarkBooksInCalendar(bs.Current.Books, mclBooks)
+        Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
     End Sub
 
     Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
@@ -497,11 +499,38 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclBooks.DateChanged
-        If mclBooks.BoldedDates.Contains(e.Start) Then
+    Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
+        If mclCalendar.BoldedDates.Contains(e.Start) Then
             lblCalendar.Text = Utils.GetBookInfo(bs.Current, e.Start)
         Else
             lblCalendar.Text = ""
         End If
+
+
+    End Sub
+
+    ' Ref: https://stackoverflow.com/questions/8498014/capture-doubleclick-for-monthcalendar-control-in-windows-forms-app
+    Private Sub mclCalendar_MouseDown(sender As Object, e As MouseEventArgs) Handles mclCalendar.MouseDown
+        Dim info As MonthCalendar.HitTestInfo = mclCalendar.HitTest(e.X, e.Y)
+
+        If info.HitArea = MonthCalendar.HitArea.Date Then
+            Dim tick As Integer
+
+            tick = Environment.TickCount
+            If tick - lastClickTick <= SystemInformation.DoubleClickTime Then
+                calendarDoubleClick()
+            Else
+                lastClickTick = tick
+            End If
+        End If
+    End Sub
+
+    Private Sub calendarDoubleClick()
+        MsgBox(mclCalendar.SelectionStart)
+    End Sub
+
+    Private Sub tsbAddCalendar_Click(sender As Object, e As EventArgs) Handles tsbAddCalendar.Click
+        MsgBox(mclCalendar.SelectionStart & " - " & mclCalendar.SelectionEnd)
+        '  If mclCalendar.SelectionRange Then
     End Sub
 End Class

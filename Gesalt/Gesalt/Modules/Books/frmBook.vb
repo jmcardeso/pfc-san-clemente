@@ -6,7 +6,6 @@
 
     Dim opBook As OpBook
     Dim bookAux As Book
-    Dim books As New List(Of Book)
 
     Private Sub frmBook_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxBookTypes.DataSource = bookTypes
@@ -14,11 +13,7 @@
 
         lblProperty.Text = prop.Address
 
-        opBook = OpBook.GetInstance()
-        books = opBook.GetBooksByPropertyId(prop.Id)
-
-        Utils.MarkBooksInCalendar(books, mclBooks)
-
+        Utils.MarkBooksInCalendar(prop.Books, mclCalendar)
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -27,5 +22,12 @@
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.DialogResult = DialogResult.Cancel
+    End Sub
+    Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
+        If mclCalendar.BoldedDates.Contains(e.Start) Then
+            lblCalendar.Text = Utils.GetBookInfo(prop, e.Start)
+        Else
+            lblCalendar.Text = ""
+        End If
     End Sub
 End Class

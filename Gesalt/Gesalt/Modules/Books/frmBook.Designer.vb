@@ -37,7 +37,6 @@ Partial Class frmBook
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbxStatus = New System.Windows.Forms.ComboBox()
-        Me.mclBooks = New System.Windows.Forms.MonthCalendar()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblAmount = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -47,6 +46,15 @@ Partial Class frmBook
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblVat = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
+        Me.pnlCalendar = New System.Windows.Forms.Panel()
+        Me.tstCalendar = New System.Windows.Forms.ToolStrip()
+        Me.tsbAddCalendar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEditCalendar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbDeleteCalendar = New System.Windows.Forms.ToolStripButton()
+        Me.lblCalendar = New System.Windows.Forms.Label()
+        Me.mclCalendar = New System.Windows.Forms.MonthCalendar()
+        Me.pnlCalendar.SuspendLayout()
+        Me.tstCalendar.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -127,14 +135,6 @@ Partial Class frmBook
         resources.ApplyResources(Me.cbxStatus, "cbxStatus")
         Me.cbxStatus.Name = "cbxStatus"
         '
-        'mclBooks
-        '
-        resources.ApplyResources(Me.mclBooks, "mclBooks")
-        Me.mclBooks.MaxSelectionCount = 1
-        Me.mclBooks.Name = "mclBooks"
-        Me.mclBooks.ShowToday = False
-        Me.mclBooks.ShowTodayCircle = False
-        '
         'Label7
         '
         resources.ApplyResources(Me.Label7, "Label7")
@@ -182,10 +182,57 @@ Partial Class frmBook
         resources.ApplyResources(Me.lblTotal, "lblTotal")
         Me.lblTotal.Name = "lblTotal"
         '
+        'pnlCalendar
+        '
+        Me.pnlCalendar.Controls.Add(Me.tstCalendar)
+        Me.pnlCalendar.Controls.Add(Me.lblCalendar)
+        Me.pnlCalendar.Controls.Add(Me.mclCalendar)
+        resources.ApplyResources(Me.pnlCalendar, "pnlCalendar")
+        Me.pnlCalendar.Name = "pnlCalendar"
+        '
+        'tstCalendar
+        '
+        resources.ApplyResources(Me.tstCalendar, "tstCalendar")
+        Me.tstCalendar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddCalendar, Me.tsbEditCalendar, Me.tsbDeleteCalendar})
+        Me.tstCalendar.Name = "tstCalendar"
+        '
+        'tsbAddCalendar
+        '
+        Me.tsbAddCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbAddCalendar, "tsbAddCalendar")
+        Me.tsbAddCalendar.Name = "tsbAddCalendar"
+        '
+        'tsbEditCalendar
+        '
+        Me.tsbEditCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbEditCalendar, "tsbEditCalendar")
+        Me.tsbEditCalendar.Name = "tsbEditCalendar"
+        '
+        'tsbDeleteCalendar
+        '
+        Me.tsbDeleteCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbDeleteCalendar, "tsbDeleteCalendar")
+        Me.tsbDeleteCalendar.Name = "tsbDeleteCalendar"
+        '
+        'lblCalendar
+        '
+        Me.lblCalendar.BackColor = System.Drawing.SystemColors.Info
+        resources.ApplyResources(Me.lblCalendar, "lblCalendar")
+        Me.lblCalendar.Name = "lblCalendar"
+        '
+        'mclCalendar
+        '
+        resources.ApplyResources(Me.mclCalendar, "mclCalendar")
+        Me.mclCalendar.MaxSelectionCount = 1
+        Me.mclCalendar.Name = "mclCalendar"
+        Me.mclCalendar.ShowTodayCircle = False
+        '
         'frmBook
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.pnlCalendar)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.lblVat)
         Me.Controls.Add(Me.Label10)
@@ -195,7 +242,6 @@ Partial Class frmBook
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.lblAmount)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.mclBooks)
         Me.Controls.Add(Me.cbxStatus)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -212,6 +258,10 @@ Partial Class frmBook
         Me.Controls.Add(Me.Label1)
         Me.MaximizeBox = False
         Me.Name = "frmBook"
+        Me.pnlCalendar.ResumeLayout(False)
+        Me.pnlCalendar.PerformLayout()
+        Me.tstCalendar.ResumeLayout(False)
+        Me.tstCalendar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -231,7 +281,6 @@ Partial Class frmBook
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents cbxStatus As ComboBox
-    Friend WithEvents mclBooks As MonthCalendar
     Friend WithEvents Label7 As Label
     Friend WithEvents lblAmount As Label
     Friend WithEvents btnCancel As Button
@@ -241,4 +290,11 @@ Partial Class frmBook
     Friend WithEvents Label10 As Label
     Friend WithEvents lblVat As Label
     Friend WithEvents lblTotal As Label
+    Friend WithEvents pnlCalendar As Panel
+    Friend WithEvents tstCalendar As ToolStrip
+    Friend WithEvents tsbAddCalendar As ToolStripButton
+    Friend WithEvents tsbEditCalendar As ToolStripButton
+    Friend WithEvents tsbDeleteCalendar As ToolStripButton
+    Friend WithEvents lblCalendar As Label
+    Friend WithEvents mclCalendar As MonthCalendar
 End Class

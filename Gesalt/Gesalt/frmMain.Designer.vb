@@ -24,8 +24,8 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -85,14 +85,21 @@ Partial Class frmMain
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.mclBooks = New System.Windows.Forms.MonthCalendar()
+        Me.mclCalendar = New System.Windows.Forms.MonthCalendar()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblCalendar = New System.Windows.Forms.Label()
+        Me.pnlCalendar = New System.Windows.Forms.Panel()
+        Me.tstCalendar = New System.Windows.Forms.ToolStrip()
+        Me.tsbAddCalendar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEditCalendar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbDeleteCalendar = New System.Windows.Forms.ToolStripButton()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlCalendar.SuspendLayout()
+        Me.tstCalendar.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -316,8 +323,8 @@ Partial Class frmMain
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -418,14 +425,14 @@ Partial Class frmMain
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle8
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
         Me.dgvLessors.Name = "dgvLessors"
@@ -438,13 +445,12 @@ Partial Class frmMain
         resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
         '
-        'mclBooks
+        'mclCalendar
         '
-        resources.ApplyResources(Me.mclBooks, "mclBooks")
-        Me.mclBooks.MaxSelectionCount = 1
-        Me.mclBooks.Name = "mclBooks"
-        Me.mclBooks.ShowToday = False
-        Me.mclBooks.ShowTodayCircle = False
+        resources.ApplyResources(Me.mclCalendar, "mclCalendar")
+        Me.mclCalendar.MaxSelectionCount = 31
+        Me.mclCalendar.Name = "mclCalendar"
+        Me.mclCalendar.ShowTodayCircle = False
         '
         'lblCalendar
         '
@@ -452,12 +458,44 @@ Partial Class frmMain
         resources.ApplyResources(Me.lblCalendar, "lblCalendar")
         Me.lblCalendar.Name = "lblCalendar"
         '
+        'pnlCalendar
+        '
+        Me.pnlCalendar.Controls.Add(Me.tstCalendar)
+        Me.pnlCalendar.Controls.Add(Me.lblCalendar)
+        Me.pnlCalendar.Controls.Add(Me.mclCalendar)
+        resources.ApplyResources(Me.pnlCalendar, "pnlCalendar")
+        Me.pnlCalendar.Name = "pnlCalendar"
+        '
+        'tstCalendar
+        '
+        resources.ApplyResources(Me.tstCalendar, "tstCalendar")
+        Me.tstCalendar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddCalendar, Me.tsbEditCalendar, Me.tsbDeleteCalendar})
+        Me.tstCalendar.Name = "tstCalendar"
+        '
+        'tsbAddCalendar
+        '
+        Me.tsbAddCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbAddCalendar, "tsbAddCalendar")
+        Me.tsbAddCalendar.Name = "tsbAddCalendar"
+        '
+        'tsbEditCalendar
+        '
+        Me.tsbEditCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbEditCalendar, "tsbEditCalendar")
+        Me.tsbEditCalendar.Name = "tsbEditCalendar"
+        '
+        'tsbDeleteCalendar
+        '
+        Me.tsbDeleteCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbDeleteCalendar, "tsbDeleteCalendar")
+        Me.tsbDeleteCalendar.Name = "tsbDeleteCalendar"
+        '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.lblCalendar)
-        Me.Controls.Add(Me.mclBooks)
+        Me.Controls.Add(Me.pnlCalendar)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.dgvLessors)
         Me.Controls.Add(Me.lblAddress)
@@ -504,6 +542,10 @@ Partial Class frmMain
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlCalendar.ResumeLayout(False)
+        Me.pnlCalendar.PerformLayout()
+        Me.tstCalendar.ResumeLayout(False)
+        Me.tstCalendar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -568,7 +610,12 @@ Partial Class frmMain
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageBooksToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents mclBooks As MonthCalendar
+    Friend WithEvents mclCalendar As MonthCalendar
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents lblCalendar As Label
+    Friend WithEvents pnlCalendar As Panel
+    Friend WithEvents tstCalendar As ToolStrip
+    Friend WithEvents tsbAddCalendar As ToolStripButton
+    Friend WithEvents tsbEditCalendar As ToolStripButton
+    Friend WithEvents tsbDeleteCalendar As ToolStripButton
 End Class

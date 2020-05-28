@@ -1,5 +1,6 @@
 ﻿Imports System.Data.Common
 Imports System.IO
+Imports System.Resources
 Imports System.Runtime.Serialization.Formatters.Binary
 
 ''' <summary>
@@ -101,7 +102,14 @@ Public Class Utils
         Return datesIB
     End Function
 
+    ''' <summary>
+    ''' Crea una cadena de texto con la información básica de las reservas de un día concreto.
+    ''' </summary>
+    ''' <param name="prop">Un objeto de la clase <c>Prop</c> que representa el inmueble que tiene las reservas.</param>
+    ''' <param name="day">El día sobre el que se quiere obtener la infomación de las reservas.</param>
+    ''' <returns>Una cadena de texto con la información básica de las reservas de un día concreto.</returns>
     Public Shared Function GetBookInfo(prop As Prop, day As Date) As String
+        Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(Utils).Assembly)
         Dim strInfo As String = ""
         Dim opBook As OpBook = OpBook.GetInstance()
         Dim opGuest As OpGuest = OpGuest.GetInstance()
@@ -109,14 +117,16 @@ Public Class Utils
 
         For Each book As Book In prop.Books
             If book.CheckIn <= day And book.CheckOut >= day Then
-                strInfo &= opBook.GetBookTypeById(book.BookTypeId).BTName & vbNewLine
+                strInfo &= LocRM.GetString("bookBT") & " "
+                strInfo &= opBook.GetBookTypeById(book.BookTypeId).BTName & vbNewLine & LocRM.GetString("bookGuest") & " "
                 guest = opGuest.GuetGuestById(book.GuestId)
                 strInfo &= guest.LastName & ", " & guest.FirstName & vbNewLine
+                strInfo &= LocRM.GetString("bookDays") & " "
                 strInfo &= book.CheckIn.ToShortDateString & " - " & book.CheckOut.ToShortDateString & vbNewLine
-                strInfo &= book.Status & vbNewLine & vbNewLine
+                strInfo &= LocRM.GetString("bookStatus") & " " & book.Status & vbNewLine & "---------------------------------------------------" & vbNewLine
             End If
         Next
 
-        Return strInfo
+        Return strInfo.Substring(0, strInfo.Length - 54)
     End Function
 End Class

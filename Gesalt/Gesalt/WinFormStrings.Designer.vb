@@ -83,6 +83,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Book Type:.
+        '''</summary>
+        Friend Shared ReadOnly Property bookBT() As String
+            Get
+                Return ResourceManager.GetString("bookBT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Days:.
+        '''</summary>
+        Friend Shared ReadOnly Property bookDays() As String
+            Get
+                Return ResourceManager.GetString("bookDays", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Guest:.
+        '''</summary>
+        Friend Shared ReadOnly Property bookGuest() As String
+            Get
+                Return ResourceManager.GetString("bookGuest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Status:.
+        '''</summary>
+        Friend Shared ReadOnly Property bookStatus() As String
+            Get
+                Return ResourceManager.GetString("bookStatus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Connection Error.
         '''</summary>
         Friend Shared ReadOnly Property conError() As String
