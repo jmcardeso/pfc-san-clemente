@@ -157,6 +157,39 @@ Public Class OpBook
         Return result
     End Function
 
+    Public Function GetBookTypeById(id As Integer) As BookType
+        Dim bookType As BookType
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@p_Id"
+        parameter.Value = id
+        parameter.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(parameter)
+        sqlCommand.CommandText = "select * from booktype where Id = @p_Id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        bookType = New BookType(dr.Item("Id"), dr.Item("property_id"), dr.Item("bt_name"), dr.Item("start_date"),
+                              Utils.EndDateToObject(dr.Item("end_date")), dr.Item("url_web"), dr.Item("url_icalendar")) With {
+                    .Prices = GetPrices(id)
+                   }
+
+        Return bookType
+    End Function
+
     Public Function GetBookTypes(propertyId As Integer) As List(Of BookType)
         Dim bookTypes As New List(Of BookType)
         Dim da As DbDataAdapter

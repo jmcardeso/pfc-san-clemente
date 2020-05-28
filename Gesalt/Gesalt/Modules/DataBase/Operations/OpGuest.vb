@@ -31,6 +31,42 @@ Public Class OpGuest
         Return objOpGuest
     End Function
 
+    Public Function GuetGuestById(id As Integer) As Guest
+        Dim guest As Guest
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
+
+        parameter.ParameterName = "@p_Id"
+        parameter.Value = id
+        parameter.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(parameter)
+        sqlCommand.CommandText = "select * from guest where Id = @p_Id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        guest = New Guest(dr.Item(0), dr.Item(1),
+                            dr.Item(2), dr.Item(3),
+                            dr.Item(4), dr.Item(5),
+                            dr.Item(6), dr.Item(7),
+                            dr.Item(8), dr.Item(9),
+                            dr.Item(10), dr.Item(11),
+                            dr.Item(12))
+
+        Return guest
+    End Function
+
     ''' <summary>
     ''' Obtiene una lista con las filas de datos de la tabla guest de la base de datos.
     ''' </summary>

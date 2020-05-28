@@ -72,6 +72,7 @@ Public Class OpProp
 
             Prop.Photos = GetAllPhotos(Prop.Id)
             Prop.Lessors = GetLessors(Prop.Id)
+            Prop.Books = opBook.GetBooksByPropertyId(Prop.Id)
 
             Props.Add(Prop)
         Next

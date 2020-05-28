@@ -2,13 +2,13 @@
 Imports Microsoft.Reporting.WinForms
 Public Class frmMain
     Dim opProp As OpProp
-    Dim opBook As OpBook
+    '  Dim opBook As OpBook
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
     Dim bs As New BindingSource()
     Dim bsPhotos As New BindingSource()
     Dim bsLessors As New BindingSource()
     Dim props As New List(Of Prop)
-    Dim books As New List(Of Book)
+    ' Dim books As New List(Of Book)
 
     Public Sub New()
         Dim strIdioma As String = My.Settings.language
@@ -41,12 +41,9 @@ Public Class frmMain
             ConnectionWizard()
         End If
 
-        ' 1ª aproximación a poner un tooltip con los datos de la reserva
-        ToolTip1.SetToolTip(mclBooks, "hohohoh")
-
         Try
             opProp = OpProp.GetInstance()
-            opBook = OpBook.GetInstance()
+            ' opBook = OpBook.GetInstance()
 
             props = opProp.GetProps()
 
@@ -322,8 +319,8 @@ Public Class frmMain
         bsLessors.ResetBindings(False)
 
         mclBooks.RemoveAllBoldedDates()
-        books = opBook.GetBooksByPropertyId(bs.Current.Id)
-        Utils.MarkBooksInCalendar(books, mclBooks)
+        ' books = opBook.GetBooksByPropertyId(bs.Current.Id)
+        Utils.MarkBooksInCalendar(bs.Current.Books, mclBooks)
     End Sub
 
     Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
@@ -500,12 +497,11 @@ Public Class frmMain
 
     End Sub
 
-    'Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclBooks.DateChanged
-    '    If mclBooks.BoldedDates.Contains(e.Start) Then
-    '        mclBooks.RemoveBoldedDate(e.Start)
-    '    Else
-    '        mclBooks.AddBoldedDate(e.Start)
-    '    End If
-    '    mclBooks.UpdateBoldedDates()
-    'End Sub
+    Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclBooks.DateChanged
+        If mclBooks.BoldedDates.Contains(e.Start) Then
+            lblCalendar.Text = Utils.GetBookInfo(bs.Current, e.Start)
+        Else
+            lblCalendar.Text = ""
+        End If
+    End Sub
 End Class

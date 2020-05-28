@@ -100,4 +100,23 @@ Public Class Utils
 
         Return datesIB
     End Function
+
+    Public Shared Function GetBookInfo(prop As Prop, day As Date) As String
+        Dim strInfo As String = ""
+        Dim opBook As OpBook = OpBook.GetInstance()
+        Dim opGuest As OpGuest = OpGuest.GetInstance()
+        Dim guest As Guest
+
+        For Each book As Book In prop.Books
+            If book.CheckIn <= day And book.CheckOut >= day Then
+                strInfo &= opBook.GetBookTypeById(book.BookTypeId).BTName & vbNewLine
+                guest = opGuest.GuetGuestById(book.GuestId)
+                strInfo &= guest.LastName & ", " & guest.FirstName & vbNewLine
+                strInfo &= book.CheckIn.ToShortDateString & " - " & book.CheckOut.ToShortDateString & vbNewLine
+                strInfo &= book.Status & vbNewLine & vbNewLine
+            End If
+        Next
+
+        Return strInfo
+    End Function
 End Class

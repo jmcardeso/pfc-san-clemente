@@ -87,6 +87,7 @@ Partial Class frmMain
         Me.Label11 = New System.Windows.Forms.Label()
         Me.mclBooks = New System.Windows.Forms.MonthCalendar()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.lblCalendar = New System.Windows.Forms.Label()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -445,10 +446,17 @@ Partial Class frmMain
         Me.mclBooks.ShowToday = False
         Me.mclBooks.ShowTodayCircle = False
         '
+        'lblCalendar
+        '
+        Me.lblCalendar.BackColor = System.Drawing.SystemColors.Info
+        resources.ApplyResources(Me.lblCalendar, "lblCalendar")
+        Me.lblCalendar.Name = "lblCalendar"
+        '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblCalendar)
         Me.Controls.Add(Me.mclBooks)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.dgvLessors)
@@ -562,4 +570,5 @@ Partial Class frmMain
     Friend WithEvents ManageBooksToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents mclBooks As MonthCalendar
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents lblCalendar As Label
 End Class
