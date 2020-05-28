@@ -69,4 +69,35 @@ Public Class Utils
     Public Shared Function IsEndDateEmpty(endDate As Date) As Boolean
         Return endDate.Year = 1 OrElse endDate.Year = 1970
     End Function
+
+    ''' <summary>
+    ''' Marca en negrita en el calendario los días con reserva de un inmueble.
+    ''' </summary>
+    ''' <param name="books">Lista de objetos de la clase <c>Book</c>.</param>
+    ''' <param name="mclBooks">Control <c>MonthCalendar</c> en donde se van a marcar las reservas.</param>
+    Public Shared Sub MarkBooksInCalendar(books As List(Of Book), mclBooks As MonthCalendar)
+        For Each book As Book In books
+            For Each d As Date In InBetween(book.CheckIn, book.CheckOut)
+                mclBooks.AddBoldedDate(d)
+            Next
+        Next
+        mclBooks.UpdateBoldedDates()
+    End Sub
+
+    ''' <summary>
+    ''' Crea una lista de <c>Date</c> entre las fechas suministradas.
+    ''' </summary>
+    ''' <param name="d1">La fecha de inicio.</param>
+    ''' <param name="d2">La fecha de fin.</param>
+    ''' <returns>Lista de <c>Date</c> con el intervalo de fechas entre las suministradas.</returns>
+    Private Shared Function InBetween(d1 As Date, d2 As Date) As List(Of Date)
+        Dim datesIB As New List(Of Date)
+
+        While d1 <= d2
+            datesIB.Add(d1)
+            d1 = d1.AddDays(1)
+        End While
+
+        Return datesIB
+    End Function
 End Class

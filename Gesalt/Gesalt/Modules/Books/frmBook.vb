@@ -17,12 +17,7 @@
         opBook = OpBook.GetInstance()
         books = opBook.GetBooksByPropertyId(prop.Id)
 
-        For Each book As Book In books
-            For Each d As Date In InBetween(book.CheckIn, book.CheckOut)
-                mclBooks.AddBoldedDate(d)
-            Next
-        Next
-        mclBooks.UpdateBoldedDates()
+        Utils.MarkBooksInCalendar(books, mclBooks)
 
     End Sub
 
@@ -33,14 +28,4 @@
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.DialogResult = DialogResult.Cancel
     End Sub
-    Private Function InBetween(d1 As Date, d2 As Date) As List(Of Date)
-        Dim datesIB As New List(Of Date)
-
-        While d1 <= d2
-            datesIB.Add(d1)
-            d1 = d1.AddDays(1)
-        End While
-
-        Return datesIB
-    End Function
 End Class
