@@ -30,8 +30,6 @@ Partial Class frmBook
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbxGuests = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.tbxCheckout = New System.Windows.Forms.TextBox()
-        Me.tbxCheckin = New System.Windows.Forms.TextBox()
         Me.dtpCheckout = New System.Windows.Forms.DateTimePicker()
         Me.dtpCheckin = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -94,18 +92,6 @@ Partial Class frmBook
         '
         resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        '
-        'tbxCheckout
-        '
-        resources.ApplyResources(Me.tbxCheckout, "tbxCheckout")
-        Me.tbxCheckout.Name = "tbxCheckout"
-        Me.tbxCheckout.ReadOnly = True
-        '
-        'tbxCheckin
-        '
-        resources.ApplyResources(Me.tbxCheckin, "tbxCheckin")
-        Me.tbxCheckin.Name = "tbxCheckin"
-        Me.tbxCheckin.ReadOnly = True
         '
         'dtpCheckout
         '
@@ -238,8 +224,6 @@ Partial Class frmBook
         Me.Controls.Add(Me.cbxStatus)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.tbxCheckout)
-        Me.Controls.Add(Me.tbxCheckin)
         Me.Controls.Add(Me.dtpCheckout)
         Me.Controls.Add(Me.dtpCheckin)
         Me.Controls.Add(Me.Label4)
@@ -267,8 +251,6 @@ Partial Class frmBook
     Friend WithEvents Label3 As Label
     Friend WithEvents cbxGuests As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents tbxCheckout As TextBox
-    Friend WithEvents tbxCheckin As TextBox
     Friend WithEvents dtpCheckout As DateTimePicker
     Friend WithEvents dtpCheckin As DateTimePicker
     Friend WithEvents Label5 As Label

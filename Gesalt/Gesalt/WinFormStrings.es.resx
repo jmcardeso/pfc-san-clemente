@@ -452,4 +452,19 @@
   <data name="newBooking" xml:space="preserve">
     <value>Nueva reserva</value>
   </data>
+  <data name="bookingStatus3" xml:space="preserve">
+    <value>Confirmada</value>
+  </data>
+  <data name="bookingStatus2" xml:space="preserve">
+    <value>Bloqueada</value>
+  </data>
+  <data name="bookingStatus4" xml:space="preserve">
+    <value>Finalizada</value>
+  </data>
+  <data name="bookingStatus5" xml:space="preserve">
+    <value>Cancelada</value>
+  </data>
+  <data name="bookingStatus1" xml:space="preserve">
+    <value>Pendiente</value>
+  </data>
 </root>

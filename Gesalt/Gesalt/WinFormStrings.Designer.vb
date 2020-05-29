@@ -119,6 +119,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Pending.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingStatus1() As String
+            Get
+                Return ResourceManager.GetString("bookingStatus1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Blocked.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingStatus2() As String
+            Get
+                Return ResourceManager.GetString("bookingStatus2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Confirmed.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingStatus3() As String
+            Get
+                Return ResourceManager.GetString("bookingStatus3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Completed.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingStatus4() As String
+            Get
+                Return ResourceManager.GetString("bookingStatus4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Cancelled.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingStatus5() As String
+            Get
+                Return ResourceManager.GetString("bookingStatus5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Status:.
         '''</summary>
         Friend Shared ReadOnly Property bookStatus() As String

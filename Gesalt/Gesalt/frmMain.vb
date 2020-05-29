@@ -557,7 +557,6 @@ Public Class frmMain
                     showfrmSelect = True
                 Else
                     frmBk.editBook = bookDayMatch.Item(IIf(bookDayMatch.Item(0).CheckIn = mclCalendar.SelectionStart, 0, 1))
-                    MsgBox(bookDayMatch.Item(IIf(bookDayMatch.Item(0).CheckIn = mclCalendar.SelectionStart, 0, 1)).ToString())
                 End If
             Else
                 If bookDayMatch.Item(0).CheckIn <> mclCalendar.SelectionStart And
