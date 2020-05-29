@@ -83,7 +83,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Book Type:.
+        '''  Busca una cadena traducida similar a Some of the selected dates are already booked..
+        '''</summary>
+        Friend Shared ReadOnly Property bookAlreadyReservedErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("bookAlreadyReservedErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Booking Type:.
         '''</summary>
         Friend Shared ReadOnly Property bookBT() As String
             Get
@@ -218,7 +227,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a Edit a Book Type - Gesalt.
+        '''  Busca una cadena traducida similar a Edit a Booking Type - Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property editBTTitle() As String
             Get
@@ -812,6 +821,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a New Booking.
+        '''</summary>
+        Friend Shared ReadOnly Property newBooking() As String
+            Get
+                Return ResourceManager.GetString("newBooking", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a No.
         '''</summary>
         Friend Shared ReadOnly Property No() As String
@@ -821,7 +839,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a There are no book types for this property. Impossible to add a book..
+        '''  Busca una cadena traducida similar a There are no booking types for this property. Impossible to add a booking..
         '''</summary>
         Friend Shared ReadOnly Property noBookTypesErrorMsg() As String
             Get
@@ -857,7 +875,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a There are no lessors for this property. Impossible to add a book..
+        '''  Busca una cadena traducida similar a There are no lessors for this property. Impossible to add a booking..
         '''</summary>
         Friend Shared ReadOnly Property noLessorsForBookingErrorMsg() As String
             Get
@@ -911,7 +929,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a The end date is not within the limits of the book type..
+        '''  Busca una cadena traducida similar a The end date is not within the limits of the booking type..
         '''</summary>
         Friend Shared ReadOnly Property priceEndDateOutOfLimitsMsg() As String
             Get
@@ -929,7 +947,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a The start date is not within the limits of the book type..
+        '''  Busca una cadena traducida similar a The start date is not within the limits of the booking type..
         '''</summary>
         Friend Shared ReadOnly Property priceStartDateOutOfLimitsMsg() As String
             Get
@@ -983,7 +1001,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca una cadena traducida similar a The book type.
+        '''  Busca una cadena traducida similar a The booking type.
         '''</summary>
         Friend Shared ReadOnly Property rowRemovedBookTypeMsg() As String
             Get

@@ -24,8 +24,8 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -90,8 +90,7 @@ Partial Class frmMain
         Me.lblCalendar = New System.Windows.Forms.Label()
         Me.pnlCalendar = New System.Windows.Forms.Panel()
         Me.tstCalendar = New System.Windows.Forms.ToolStrip()
-        Me.tsbAddCalendar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbEditCalendar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbAddEditCalendar = New System.Windows.Forms.ToolStripButton()
         Me.tsbDeleteCalendar = New System.Windows.Forms.ToolStripButton()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
@@ -323,8 +322,8 @@ Partial Class frmMain
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -425,14 +424,14 @@ Partial Class frmMain
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle4
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
         Me.dgvLessors.Name = "dgvLessors"
@@ -470,20 +469,14 @@ Partial Class frmMain
         '
         resources.ApplyResources(Me.tstCalendar, "tstCalendar")
         Me.tstCalendar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddCalendar, Me.tsbEditCalendar, Me.tsbDeleteCalendar})
+        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddEditCalendar, Me.tsbDeleteCalendar})
         Me.tstCalendar.Name = "tstCalendar"
         '
-        'tsbAddCalendar
+        'tsbAddEditCalendar
         '
-        Me.tsbAddCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.tsbAddCalendar, "tsbAddCalendar")
-        Me.tsbAddCalendar.Name = "tsbAddCalendar"
-        '
-        'tsbEditCalendar
-        '
-        Me.tsbEditCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.tsbEditCalendar, "tsbEditCalendar")
-        Me.tsbEditCalendar.Name = "tsbEditCalendar"
+        Me.tsbAddEditCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.tsbAddEditCalendar, "tsbAddEditCalendar")
+        Me.tsbAddEditCalendar.Name = "tsbAddEditCalendar"
         '
         'tsbDeleteCalendar
         '
@@ -615,7 +608,6 @@ Partial Class frmMain
     Friend WithEvents lblCalendar As Label
     Friend WithEvents pnlCalendar As Panel
     Friend WithEvents tstCalendar As ToolStrip
-    Friend WithEvents tsbAddCalendar As ToolStripButton
-    Friend WithEvents tsbEditCalendar As ToolStripButton
+    Friend WithEvents tsbAddEditCalendar As ToolStripButton
     Friend WithEvents tsbDeleteCalendar As ToolStripButton
 End Class

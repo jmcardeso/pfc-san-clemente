@@ -32,4 +32,8 @@ Public Class Book
         Me.CheckOut = New Date(1970, 12, 1)
         Me.InvoiceNumber = ""
     End Sub
+
+    Public Overrides Function ToString() As String
+        Return Me.CheckIn.Date & " - " & Me.CheckOut.Date
+    End Function
 End Class

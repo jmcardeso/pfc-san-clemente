@@ -308,22 +308,22 @@
     <value>&amp;Filter data</value>
   </data>
   <data name="BookTypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
+    <value>68, 20</value>
   </data>
   <data name="BookTypeToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Books</value>
+    <value>&amp;Bookings</value>
   </data>
   <data name="ManageBooksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manage Books</value>
+    <value>Add/Edit Bookings</value>
   </data>
   <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Book &amp;Types</value>
+    <value>Booking &amp;Types</value>
   </data>
   <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
@@ -1358,39 +1358,22 @@
   <data name="tstCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="tsbAddCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsbAddEditCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABfSURBVDhPzcoxDgAhEELRuf+lNQg2i6KFxf5kMgWvXtYO
-        d6ztwqaLiXtzwx9y00CrsH1umXgOjtwTycGReyI5OHJPJAdH7onk4Mg9kRwcuSeSgyP3RHJw5N4cb+43
-        VXWxN5h2GtXL+gAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABySURBVDhPxZCLCoAwCEX9dD9tf2ZeRajRXS6CDhzmwteS
+        vzA4xsC5jaloiDg/7RGFbxuYmRfrpRiXrqQBqCQWeyJu9eNgUQlP3k4HGl1XehKbDrKBByGLyXTQ2+Dk
+        TG+DNDaY6W2QJ2mAt3WkDfb8FJEDPsMha6qoMBwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsbAddCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsbAddEditCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsbAddCalendar.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsbAddEditCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="tsbAddCalendar.Text" xml:space="preserve">
-    <value>Add book</value>
-  </data>
-  <data name="tsbEditCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABkSURBVDhPzctBCsAwCERR73/plFFTBpxoFl30wVCIv/al
-        NWy0TnDLtTKv9g1fLw84en8CfstJmffQRV5xIEd3yYMJusgrDuToLnkwQRd5xYEc3SUPJugirzLpoYu8
-        2seb/YbZA//WUL73/myGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="tsbEditCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbEditCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbEditCalendar.Text" xml:space="preserve">
-    <value>Edit book</value>
+  <data name="tsbAddEditCalendar.Text" xml:space="preserve">
+    <value>Add/Edit Booking</value>
   </data>
   <data name="tsbDeleteCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1407,7 +1390,7 @@
     <value>23, 22</value>
   </data>
   <data name="tsbDeleteCalendar.Text" xml:space="preserve">
-    <value>Delete book</value>
+    <value>Delete Booking</value>
   </data>
   <data name="tstCalendar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 161</value>
@@ -2291,16 +2274,10 @@
   <data name="&gt;&gt;ToolTip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbAddCalendar.Name" xml:space="preserve">
-    <value>tsbAddCalendar</value>
+  <data name="&gt;&gt;tsbAddEditCalendar.Name" xml:space="preserve">
+    <value>tsbAddEditCalendar</value>
   </data>
-  <data name="&gt;&gt;tsbAddCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbEditCalendar.Name" xml:space="preserve">
-    <value>tsbEditCalendar</value>
-  </data>
-  <data name="&gt;&gt;tsbEditCalendar.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsbAddEditCalendar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbDeleteCalendar.Name" xml:space="preserve">

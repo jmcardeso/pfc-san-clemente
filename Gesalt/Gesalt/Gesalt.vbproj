@@ -153,6 +153,12 @@
     <Compile Include="Modules\Books\frmBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Books\frmBookingSelect.Designer.vb">
+      <DependentUpon>frmBookingSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Books\frmBookingSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Books\frmBookType.Designer.vb">
       <DependentUpon>frmBookType.vb</DependentUpon>
     </Compile>
@@ -333,6 +339,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Books\frmBook.resx">
       <DependentUpon>frmBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookingSelect.es.resx">
+      <DependentUpon>frmBookingSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookingSelect.gl.resx">
+      <DependentUpon>frmBookingSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Books\frmBookingSelect.resx">
+      <DependentUpon>frmBookingSelect.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Books\frmBookType.es.resx">
       <DependentUpon>frmBookType.vb</DependentUpon>

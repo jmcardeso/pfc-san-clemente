@@ -23,7 +23,7 @@
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.DialogResult = DialogResult.Cancel
     End Sub
-    Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
+    Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs)
         If mclCalendar.BoldedDates.Contains(e.Start) Then
             lblCalendar.Text = Utils.GetBookInfo(prop, e.Start)
         Else

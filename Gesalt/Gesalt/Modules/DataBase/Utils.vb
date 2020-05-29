@@ -130,16 +130,23 @@ Public Class Utils
         Return strInfo.Substring(0, strInfo.Length - 54)
     End Function
 
+    ''' <summary>
+    ''' Devuelve un array de <c>Date</c> con la fecha de inicio y fin de la reserva del día suministrado. 
+    ''' Si hay dos reservas ese día (una que acaba y otra que empieza), devuelve la fecha de inicio de la primera y la de fin de la segunda.
+    ''' </summary>
+    ''' <param name="prop">Un objeto de la clase <c>Prop</c> que representa un inmueble con sus reservas.</param>
+    ''' <param name="day">El día del que se quiere comprobar si está reservado.</param>
+    ''' <returns>Un array de <c>Date</c> con la fecha de inicio y fin de la reserva o reservas.</returns>
     Public Shared Function GetBookLimits(prop As Prop, day As Date) As Date()
-        Dim limits() As Date = {New Date(1, 1, 1), New Date(9999, 12, 31)}
+        Dim limits() As Date = {New Date(9999, 12, 31), New Date(1, 1, 1)}
 
         For Each book As Book In prop.Books
             If book.CheckIn <= day And book.CheckOut >= day Then
-                If limits(0) < book.CheckIn Then
+                If limits(0) > book.CheckIn Then
                     limits(0) = book.CheckIn
                 End If
 
-                If limits(1) > book.CheckOut Then
+                If limits(1) < book.CheckOut Then
                     limits(1) = book.CheckOut
                 End If
             End If

@@ -192,7 +192,7 @@
     <value>2</value>
   </data>
   <data name="Label2.Text" xml:space="preserve">
-    <value>Book Type:</value>
+    <value>Booking Type:</value>
   </data>
   <data name="&gt;&gt;Label2.Name" xml:space="preserve">
     <value>Label2</value>
@@ -723,9 +723,9 @@
   <data name="tsbAddCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABfSURBVDhPzcoxDgAhEELRuf+lNQg2i6KFxf5kMgWvXtYO
-        d6ztwqaLiXtzwx9y00CrsH1umXgOjtwTycGReyI5OHJPJAdH7onk4Mg9kRwcuSeSgyP3RHJw5N4cb+43
-        VXWxN5h2GtXL+gAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABySURBVDhPxZCLCoAwCEX9dD9tf2ZeRajRXS6CDhzmwteS
+        vzA4xsC5jaloiDg/7RGFbxuYmRfrpRiXrqQBqCQWeyJu9eNgUQlP3k4HGl1XehKbDrKBByGLyXTQ2+Dk
+        TG+DNDaY6W2QJ2mAt3WkDfb8FJEDPsMha6qoMBwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="tsbAddCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -735,24 +735,7 @@
     <value>23, 22</value>
   </data>
   <data name="tsbAddCalendar.Text" xml:space="preserve">
-    <value>Add book</value>
-  </data>
-  <data name="tsbEditCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABkSURBVDhPzctBCsAwCERR73/plFFTBpxoFl30wVCIv/al
-        NWy0TnDLtTKv9g1fLw84en8CfstJmffQRV5xIEd3yYMJusgrDuToLnkwQRd5xYEc3SUPJugirzLpoYu8
-        2seb/YbZA//WUL73/myGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="tsbEditCalendar.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbEditCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbEditCalendar.Text" xml:space="preserve">
-    <value>Edit book</value>
+    <value>Add/Edit booking</value>
   </data>
   <data name="tsbDeleteCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -769,10 +752,10 @@
     <value>23, 22</value>
   </data>
   <data name="tsbDeleteCalendar.Text" xml:space="preserve">
-    <value>Delete book</value>
+    <value>Delete booking</value>
   </data>
   <data name="tstCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 157</value>
+    <value>0, 161</value>
   </data>
   <data name="tstCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>382, 25</value>
@@ -799,7 +782,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 0</value>
+    <value>193, 3</value>
   </data>
   <data name="lblCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 157</value>
@@ -823,7 +806,7 @@
     <value>NoControl</value>
   </data>
   <data name="mclCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, -5</value>
+    <value>0, 0</value>
   </data>
   <data name="mclCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -841,10 +824,10 @@
     <value>2</value>
   </data>
   <data name="pnlCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 74</value>
+    <value>365, 83</value>
   </data>
   <data name="pnlCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 182</value>
+    <value>382, 186</value>
   </data>
   <data name="pnlCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -1549,18 +1532,12 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Add a book  - Gesalt</value>
+    <value>Add a booking  - Gesalt</value>
   </data>
   <data name="&gt;&gt;tsbAddCalendar.Name" xml:space="preserve">
     <value>tsbAddCalendar</value>
   </data>
   <data name="&gt;&gt;tsbAddCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbEditCalendar.Name" xml:space="preserve">
-    <value>tsbEditCalendar</value>
-  </data>
-  <data name="&gt;&gt;tsbEditCalendar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbDeleteCalendar.Name" xml:space="preserve">

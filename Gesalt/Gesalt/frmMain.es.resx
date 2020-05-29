@@ -253,15 +253,12 @@
     <value>Preferencias</value>
   </data>
   <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestionar reservas</value>
-  </data>
-  <data name="tsbAddCalendar.Text" xml:space="preserve">
-    <value>Añadir reserva</value>
+    <value>Añadir/Editar reservas</value>
   </data>
   <data name="tsbDeleteCalendar.Text" xml:space="preserve">
     <value>Borrar reserva</value>
   </data>
-  <data name="tsbEditCalendar.Text" xml:space="preserve">
-    <value>Editar reserva</value>
+  <data name="tsbAddEditCalendar.Text" xml:space="preserve">
+    <value>Añadir/Editar reservas</value>
   </data>
 </root>

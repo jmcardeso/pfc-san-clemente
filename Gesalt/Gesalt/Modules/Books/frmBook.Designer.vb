@@ -49,7 +49,6 @@ Partial Class frmBook
         Me.pnlCalendar = New System.Windows.Forms.Panel()
         Me.tstCalendar = New System.Windows.Forms.ToolStrip()
         Me.tsbAddCalendar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbEditCalendar = New System.Windows.Forms.ToolStripButton()
         Me.tsbDeleteCalendar = New System.Windows.Forms.ToolStripButton()
         Me.lblCalendar = New System.Windows.Forms.Label()
         Me.mclCalendar = New System.Windows.Forms.MonthCalendar()
@@ -194,7 +193,7 @@ Partial Class frmBook
         '
         resources.ApplyResources(Me.tstCalendar, "tstCalendar")
         Me.tstCalendar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddCalendar, Me.tsbEditCalendar, Me.tsbDeleteCalendar})
+        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddCalendar, Me.tsbDeleteCalendar})
         Me.tstCalendar.Name = "tstCalendar"
         '
         'tsbAddCalendar
@@ -202,12 +201,6 @@ Partial Class frmBook
         Me.tsbAddCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         resources.ApplyResources(Me.tsbAddCalendar, "tsbAddCalendar")
         Me.tsbAddCalendar.Name = "tsbAddCalendar"
-        '
-        'tsbEditCalendar
-        '
-        Me.tsbEditCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.tsbEditCalendar, "tsbEditCalendar")
-        Me.tsbEditCalendar.Name = "tsbEditCalendar"
         '
         'tsbDeleteCalendar
         '
@@ -224,7 +217,7 @@ Partial Class frmBook
         'mclCalendar
         '
         resources.ApplyResources(Me.mclCalendar, "mclCalendar")
-        Me.mclCalendar.MaxSelectionCount = 1
+        Me.mclCalendar.MaxSelectionCount = 31
         Me.mclCalendar.Name = "mclCalendar"
         Me.mclCalendar.ShowTodayCircle = False
         '
@@ -293,7 +286,6 @@ Partial Class frmBook
     Friend WithEvents pnlCalendar As Panel
     Friend WithEvents tstCalendar As ToolStrip
     Friend WithEvents tsbAddCalendar As ToolStripButton
-    Friend WithEvents tsbEditCalendar As ToolStripButton
     Friend WithEvents tsbDeleteCalendar As ToolStripButton
     Friend WithEvents lblCalendar As Label
     Friend WithEvents mclCalendar As MonthCalendar

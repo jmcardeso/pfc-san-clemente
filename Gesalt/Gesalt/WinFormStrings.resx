@@ -378,7 +378,7 @@
     <value>Value</value>
   </data>
   <data name="editBTTitle" xml:space="preserve">
-    <value>Edit a Book Type - Gesalt</value>
+    <value>Edit a Booking Type - Gesalt</value>
   </data>
   <data name="startDateAfterEndDate" xml:space="preserve">
     <value>Start date is after end date.</value>
@@ -408,16 +408,16 @@
     <value>Value is greater than 100 or less than 0</value>
   </data>
   <data name="rowRemovedBookTypeMsg" xml:space="preserve">
-    <value>The book type</value>
+    <value>The booking type</value>
   </data>
   <data name="priceRemovedMsg" xml:space="preserve">
     <value>The price is going to be removed from this book type. Are you sure?</value>
   </data>
   <data name="priceStartDateOutOfLimitsMsg" xml:space="preserve">
-    <value>The start date is not within the limits of the book type.</value>
+    <value>The start date is not within the limits of the booking type.</value>
   </data>
   <data name="priceEndDateOutOfLimitsMsg" xml:space="preserve">
-    <value>The end date is not within the limits of the book type.</value>
+    <value>The end date is not within the limits of the booking type.</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
@@ -426,24 +426,30 @@
     <value>No</value>
   </data>
   <data name="noBookTypesErrorMsg" xml:space="preserve">
-    <value>There are no book types for this property. Impossible to add a book.</value>
+    <value>There are no booking types for this property. Impossible to add a booking.</value>
   </data>
   <data name="noGuestsErrorMsg" xml:space="preserve">
     <value>There are no guests in the database. Impossible to add a book.</value>
   </data>
   <data name="noLessorsForBookingErrorMsg" xml:space="preserve">
-    <value>There are no lessors for this property. Impossible to add a book.</value>
+    <value>There are no lessors for this property. Impossible to add a booking.</value>
   </data>
   <data name="bookGuest" xml:space="preserve">
     <value>Guest:</value>
   </data>
   <data name="bookBT" xml:space="preserve">
-    <value>Book Type:</value>
+    <value>Booking Type:</value>
   </data>
   <data name="bookDays" xml:space="preserve">
     <value>Days:</value>
   </data>
   <data name="bookStatus" xml:space="preserve">
     <value>Status:</value>
+  </data>
+  <data name="bookAlreadyReservedErrorMsg" xml:space="preserve">
+    <value>Some of the selected dates are already booked.</value>
+  </data>
+  <data name="newBooking" xml:space="preserve">
+    <value>New Booking</value>
   </data>
 </root>

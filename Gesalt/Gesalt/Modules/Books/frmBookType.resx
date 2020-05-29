@@ -631,7 +631,7 @@
     <value>17</value>
   </data>
   <data name="lblBooksTypes.Text" xml:space="preserve">
-    <value>Books Types:</value>
+    <value>Booking Types:</value>
   </data>
   <data name="&gt;&gt;lblBooksTypes.Name" xml:space="preserve">
     <value>lblBooksTypes</value>
@@ -663,7 +663,7 @@
     <value>23, 22</value>
   </data>
   <data name="ToolStripAdd.Text" xml:space="preserve">
-    <value>Add a book type</value>
+    <value>Add a booking type</value>
   </data>
   <data name="ToolStripEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -680,7 +680,7 @@
     <value>23, 22</value>
   </data>
   <data name="ToolStripEdit.Text" xml:space="preserve">
-    <value>Edit a book type</value>
+    <value>Edit a booking type</value>
   </data>
   <data name="ToolStripDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -697,7 +697,7 @@
     <value>23, 22</value>
   </data>
   <data name="ToolStripDelete.Text" xml:space="preserve">
-    <value>Delete a book type</value>
+    <value>Delete a booking type</value>
   </data>
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -706,7 +706,7 @@
     <value>176, 22</value>
   </data>
   <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Books Types Report</value>
+    <value>Booking Types Report</value>
   </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1508,7 +1508,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Book Type - Gesalt</value>
+    <value>Booking Types - Gesalt</value>
   </data>
   <data name="&gt;&gt;ToolStripAdd.Name" xml:space="preserve">
     <value>ToolStripAdd</value>

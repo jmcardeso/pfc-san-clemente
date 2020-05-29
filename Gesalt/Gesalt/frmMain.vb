@@ -321,6 +321,8 @@ Public Class frmMain
         bsLessors.ResetBindings(False)
 
         mclCalendar.RemoveAllBoldedDates()
+        mclCalendar.SelectionStart = Now()
+        mclCalendar.SelectionEnd = Now()
         Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
     End Sub
 
@@ -458,7 +460,52 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub ManageBooksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageBooksToolStripMenuItem.Click
+    Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
+        ' Se elimina el evento para que no se dispare dentro de él (al añadir una BoldedDate)
+        RemoveHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
+
+        If mclCalendar.BoldedDates.Contains(e.Start.Date) And mclCalendar.BoldedDates.Contains(e.End.Date) Then
+            Dim limits(2) As Date
+
+            lblCalendar.Text = Utils.GetBookInfo(bs.Current, e.Start)
+
+            limits = Utils.GetBookLimits(bs.Current, e.Start)
+            mclCalendar.SelectionStart = limits(0)
+            mclCalendar.SelectionEnd = limits(1)
+        Else
+            lblCalendar.Text = ""
+        End If
+
+        ' Se vuelve a añadir el evento al salir
+        AddHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
+    End Sub
+
+    ' Ref: https://stackoverflow.com/questions/8498014/capture-doubleclick-for-monthcalendar-control-in-windows-forms-app
+    Private Sub mclCalendar_MouseDown(sender As Object, e As MouseEventArgs) Handles mclCalendar.MouseDown
+        Dim info As MonthCalendar.HitTestInfo = mclCalendar.HitTest(e.X, e.Y)
+
+        ' Si se pulsa en una zona que se corresponda con una fecha
+        If info.HitArea = MonthCalendar.HitArea.Date Then
+            Dim tick As Integer
+
+            ' Cuenta los ticks que son necesarios para hacer doble click (MonthCalendar no lanza el evento DoubleClick)
+            tick = Environment.TickCount
+            If tick - lastClickTick <= SystemInformation.DoubleClickTime Then
+                calendarDoubleClick()
+            Else
+                lastClickTick = tick
+            End If
+        End If
+    End Sub
+
+    Private Sub calendarDoubleClick()
+        tsbAddEditCalendar_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub tsbAddEditCalendar_Click(sender As Object, e As EventArgs) Handles tsbAddEditCalendar.Click, ManageBooksToolStripMenuItem.Click
+        Dim frmBk As frmBook
+        Dim frmSlct As New frmBookingSelect
+
         If bs.Current Is Nothing Then
             Exit Sub
         End If
@@ -486,66 +533,60 @@ Public Class frmMain
             Exit Sub
         End If
 
-        Dim frmBk As New frmBook With {
+        frmBk = New frmBook With {
             .prop = bs.Current,
             .bookTypes = bookTypes,
             .guests = guests
         }
 
+        Dim books As List(Of Book) = bs.Current.Books
+
+        Dim showfrmSelect As Boolean = False
+
+        Dim dayMatch = From book In books
+                       Where mclCalendar.SelectionStart.Date <= book.CheckOut And
+                               book.CheckIn <= mclCalendar.SelectionEnd.Date
+
+        Dim bookDayMatch As List(Of Book) = dayMatch.ToList()
+
+        If bookDayMatch.Count > 0 Then
+            If bookDayMatch.Count = 2 Then
+                If mclCalendar.SelectionStart = bookDayMatch.Item(0).CheckIn And
+                    mclCalendar.SelectionEnd.Date = bookDayMatch.Item(1).CheckOut Then
+                    frmSlct.bookings = bookDayMatch.ToList()
+                    showfrmSelect = True
+                Else
+                    frmBk.editBook = bookDayMatch.Item(IIf(bookDayMatch.Item(0).CheckIn = mclCalendar.SelectionStart, 0, 1))
+                    MsgBox(bookDayMatch.Item(IIf(bookDayMatch.Item(0).CheckIn = mclCalendar.SelectionStart, 0, 1)).ToString())
+                End If
+            Else
+                If bookDayMatch.Item(0).CheckIn <> mclCalendar.SelectionStart And
+                    bookDayMatch.Item(0).CheckOut <> mclCalendar.SelectionEnd.Date Then
+                    If bookDayMatch.Item(0).CheckIn = mclCalendar.SelectionEnd.Date Or
+                        bookDayMatch.Item(0).CheckOut = mclCalendar.SelectionStart Then
+                        frmSlct.bookings.Add(bookDayMatch.First)
+                        frmSlct.bookings.Add(Nothing)
+                        showfrmSelect = True
+                    Else
+                        MsgBox(LocRM.GetString("bookAlreadyReservedErrorMsg"), MsgBoxStyle.Exclamation, "Gesalt")
+                        Exit Sub
+                    End If
+                End If
+            End If
+
+            If showfrmSelect Then
+                If frmSlct.ShowDialog() = DialogResult.Cancel Then
+                    Exit Sub
+                Else
+                    frmBk.editBook = frmSlct.bookingSelected
+                End If
+            End If
+        Else
+            frmBk.editBook = Nothing
+        End If
+
         If frmBk.ShowDialog() = DialogResult.Cancel Then
             Exit Sub
         End If
-
-    End Sub
-
-    Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
-        RemoveHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
-
-        If mclCalendar.BoldedDates.Contains(e.Start) Then
-            Dim limits(2) As Date
-
-            lblCalendar.Text = Utils.GetBookInfo(bs.Current, e.Start)
-
-            limits = Utils.GetBookLimits(bs.Current, e.Start)
-            mclCalendar.SelectionStart = limits(0)
-            mclCalendar.SelectionEnd = limits(1)
-        Else
-            lblCalendar.Text = ""
-        End If
-
-        AddHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
-    End Sub
-
-    ' Ref: https://stackoverflow.com/questions/8498014/capture-doubleclick-for-monthcalendar-control-in-windows-forms-app
-    Private Sub mclCalendar_MouseDown(sender As Object, e As MouseEventArgs) Handles mclCalendar.MouseDown
-        Dim info As MonthCalendar.HitTestInfo = mclCalendar.HitTest(e.X, e.Y)
-
-        If info.HitArea = MonthCalendar.HitArea.Date Then
-            Dim tick As Integer
-
-            tick = Environment.TickCount
-            If tick - lastClickTick <= SystemInformation.DoubleClickTime Then
-                calendarDoubleClick()
-            Else
-                lastClickTick = tick
-            End If
-        End If
-    End Sub
-
-    Private Sub calendarDoubleClick()
-        MsgBox(mclCalendar.SelectionStart)
-    End Sub
-
-    Private Sub tsbAddCalendar_Click(sender As Object, e As EventArgs) Handles tsbAddCalendar.Click
-        Dim books As List(Of Book) = bs.Current.Books
-
-        Dim bookDayMatch = From book In books
-                           Where mclCalendar.SelectionStart.Date < book.CheckOut And
-                               book.CheckIn < mclCalendar.SelectionEnd.Date
-
-        If bookDayMatch.Count > 0 Then
-            MsgBox("Ya hay una reserva")
-        End If
-
     End Sub
 End Class

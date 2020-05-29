@@ -446,4 +446,10 @@
   <data name="bookStatus" xml:space="preserve">
     <value>Estado:</value>
   </data>
+  <data name="bookAlreadyReservedErrorMsg" xml:space="preserve">
+    <value>Algunas de las fechas seleccionadas ya están reservadas.</value>
+  </data>
+  <data name="newBooking" xml:space="preserve">
+    <value>Nueva reserva</value>
+  </data>
 </root>
