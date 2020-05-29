@@ -129,4 +129,22 @@ Public Class Utils
 
         Return strInfo.Substring(0, strInfo.Length - 54)
     End Function
+
+    Public Shared Function GetBookLimits(prop As Prop, day As Date) As Date()
+        Dim limits() As Date = {New Date(1, 1, 1), New Date(9999, 12, 31)}
+
+        For Each book As Book In prop.Books
+            If book.CheckIn <= day And book.CheckOut >= day Then
+                If limits(0) < book.CheckIn Then
+                    limits(0) = book.CheckIn
+                End If
+
+                If limits(1) > book.CheckOut Then
+                    limits(1) = book.CheckOut
+                End If
+            End If
+        Next
+
+        Return limits
+    End Function
 End Class

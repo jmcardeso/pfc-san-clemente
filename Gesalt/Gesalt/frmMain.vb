@@ -321,7 +321,6 @@ Public Class frmMain
         bsLessors.ResetBindings(False)
 
         mclCalendar.RemoveAllBoldedDates()
-        ' books = opBook.GetBooksByPropertyId(bs.Current.Id)
         Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
     End Sub
 
@@ -500,13 +499,21 @@ Public Class frmMain
     End Sub
 
     Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
+        RemoveHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
+
         If mclCalendar.BoldedDates.Contains(e.Start) Then
+            Dim limits(2) As Date
+
             lblCalendar.Text = Utils.GetBookInfo(bs.Current, e.Start)
+
+            limits = Utils.GetBookLimits(bs.Current, e.Start)
+            mclCalendar.SelectionStart = limits(0)
+            mclCalendar.SelectionEnd = limits(1)
         Else
             lblCalendar.Text = ""
         End If
 
-
+        AddHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
     End Sub
 
     ' Ref: https://stackoverflow.com/questions/8498014/capture-doubleclick-for-monthcalendar-control-in-windows-forms-app
@@ -530,7 +537,15 @@ Public Class frmMain
     End Sub
 
     Private Sub tsbAddCalendar_Click(sender As Object, e As EventArgs) Handles tsbAddCalendar.Click
-        MsgBox(mclCalendar.SelectionStart & " - " & mclCalendar.SelectionEnd)
-        '  If mclCalendar.SelectionRange Then
+        Dim books As List(Of Book) = bs.Current.Books
+
+        Dim bookDayMatch = From book In books
+                           Where mclCalendar.SelectionStart.Date < book.CheckOut And
+                               book.CheckIn < mclCalendar.SelectionEnd.Date
+
+        If bookDayMatch.Count > 0 Then
+            MsgBox("Ya hay una reserva")
+        End If
+
     End Sub
 End Class
