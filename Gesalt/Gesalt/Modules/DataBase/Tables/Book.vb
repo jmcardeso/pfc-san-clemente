@@ -27,9 +27,9 @@ Public Class Book
         Me.GuestId = 0
         Me.PropertyId = 0
         Me.BookTypeId = 0
-        Me.Status = ""
+        Me.Status = 0
         Me.CheckIn = Now()
-        Me.CheckOut = New Date(1970, 12, 1)
+        Me.CheckOut = Now()
         Me.InvoiceNumber = ""
     End Sub
 

@@ -173,6 +173,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The booking is finished, if the status changes, errors can occur in the database. Are you sure?.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingCompletedErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("bookingCompletedErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Pending.
         '''</summary>
         Friend Shared ReadOnly Property bookingStatus1() As String

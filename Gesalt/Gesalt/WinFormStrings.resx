@@ -485,4 +485,7 @@
   <data name="aboutDesc6" xml:space="preserve">
     <value>Star icons for customer rating from iconsDB - CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.</value>
   </data>
+  <data name="bookingCompletedErrorMsg" xml:space="preserve">
+    <value>The booking is finished, if the status changes, errors can occur in the database. Are you sure?</value>
+  </data>
 </root>

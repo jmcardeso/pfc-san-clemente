@@ -485,4 +485,7 @@
   <data name="aboutDesc6" xml:space="preserve">
     <value>Iconos de estrellas para valoración de clientes de iconsDB - CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.</value>
   </data>
+  <data name="bookingCompletedErrorMsg" xml:space="preserve">
+    <value>La reserva está finalizada, si le cambia el estado pueden producirse errores en la base de datos. ¿Está seguro?</value>
+  </data>
 </root>

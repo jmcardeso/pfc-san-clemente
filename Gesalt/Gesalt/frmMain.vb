@@ -570,6 +570,8 @@ Public Class frmMain
                         MsgBox(LocRM.GetString("bookAlreadyReservedErrorMsg"), MsgBoxStyle.Exclamation, "Gesalt")
                         Exit Sub
                     End If
+                Else
+                    frmBk.editBook = bookDayMatch.First
                 End If
             End If
 
@@ -577,11 +579,19 @@ Public Class frmMain
                 If frmSlct.ShowDialog() = DialogResult.Cancel Then
                     Exit Sub
                 Else
-                    frmBk.editBook = frmSlct.bookingSelected
+                    If frmSlct.bookingSelected Is Nothing Then
+                        frmBk.editBook = New Book()
+                        frmBk.editBook.CheckIn = mclCalendar.SelectionStart
+                        frmBk.editBook.CheckOut = mclCalendar.SelectionEnd
+                    Else
+                        frmBk.editBook = frmSlct.bookingSelected
+                    End If
                 End If
             End If
         Else
-            frmBk.editBook = Nothing
+            frmBk.editBook = New Book()
+            frmBk.editBook.CheckIn = mclCalendar.SelectionStart
+            frmBk.editBook.CheckOut = mclCalendar.SelectionEnd
         End If
 
         If frmBk.ShowDialog() = DialogResult.Cancel Then
