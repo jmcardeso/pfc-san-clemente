@@ -60,7 +60,7 @@ Public Class OpBook
         For Each dr As DataRow In dt.Rows
             book = New Book(dr.Item("Id"), dr.Item("guest_id"), dr.Item("property_id"),
                             dr.Item("booktype_id"), dr.Item("status"), dr.Item("checkin"),
-                            dr.Item("chekout"), dr.Item("invoice_number"))
+                            dr.Item("checkout"), dr.Item("invoice_number"))
             books.Add(book)
         Next
 
@@ -110,7 +110,7 @@ Public Class OpBook
     '    For Each dr As DataRow In dt.Rows
     '        book = New Book(dr.Item("Id"), dr.Item("guest_id"), dr.Item("property_id"),
     '                        dr.Item("booktype_id"), dr.Item("status"), dr.Item("checkin"),
-    '                        dr.Item("chekout"), dr.Item("invoice_number"))
+    '                        dr.Item("checkout"), dr.Item("invoice_number"))
     '        monthBooks.Add(book)
     '    Next
 
@@ -571,7 +571,7 @@ Public Class OpBook
         dr.Item("guest_id") = book.GuestId
         dr.Item("status") = book.Status
         dr.Item("checkin") = book.CheckIn
-        dr.Item("chekout") = book.CheckOut
+        dr.Item("checkout") = book.CheckOut
         dr.Item("invoice_number") = book.InvoiceNumber
     End Sub
 

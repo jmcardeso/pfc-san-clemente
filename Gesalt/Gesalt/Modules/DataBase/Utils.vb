@@ -123,11 +123,27 @@ Public Class Utils
                 strInfo &= guest.LastName & ", " & guest.FirstName & vbNewLine
                 strInfo &= LocRM.GetString("bookDays") & " "
                 strInfo &= book.CheckIn.ToShortDateString & " - " & book.CheckOut.ToShortDateString & vbNewLine
-                strInfo &= LocRM.GetString("bookStatus") & " " & book.Status & vbNewLine & "---------------------------------------------------" & vbNewLine
+                strInfo &= LocRM.GetString("bookStatus") & " " & GetBookStatusString(book.Status) & vbNewLine & "---------------------------------------------------" & vbNewLine
             End If
         Next
 
         Return strInfo.Substring(0, strInfo.Length - 54)
+    End Function
+
+    ''' <summary>
+    ''' Convierte el valor del campo status de la tabla book de la base de datos en su correspondiente cadena de texto.
+    ''' </summary>
+    ''' <param name="index">El valor del campo status de la tabla book de la base de datos.</param>
+    ''' <returns>La cadena de texto que se corresponde con ese valor.</returns>
+    Public Shared Function GetBookStatusString(index As Integer) As String
+        Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(Utils).Assembly)
+        Dim statusString As New List(Of String)
+
+        For i As Integer = 1 To 5
+            statusString.Add(LocRM.GetString("bookingStatus" & i))
+        Next
+
+        Return statusString.Item(index)
     End Function
 
     ''' <summary>

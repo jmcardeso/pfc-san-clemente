@@ -4,13 +4,13 @@ Public Class Book
     Public Property GuestId As Integer
     Public Property PropertyId As Integer
     Public Property BookTypeId As Integer
-    Public Property Status As String
+    Public Property Status As Integer
     Public Property CheckIn As Date
     Public Property CheckOut As Date
     Public Property InvoiceNumber As String
 
     Public Sub New(id As Integer, guestId As Integer, propertyId As Integer,
-                   bookTypeId As Integer, status As String, checkIn As Date,
+                   bookTypeId As Integer, status As Integer, checkIn As Date,
                    checkOut As Date, invoiceNumber As String)
         Me.Id = id
         Me.GuestId = guestId
