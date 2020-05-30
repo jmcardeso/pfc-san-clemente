@@ -126,7 +126,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 26</value>
+    <value>12, 9</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>25</value>
   </data>
   <data name="lblProperty.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -156,7 +156,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="lblProperty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 26</value>
+    <value>90, 9</value>
   </data>
   <data name="lblProperty.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -177,13 +177,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProperty.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>24</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 77</value>
+    <value>12, 57</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 13</value>
@@ -204,10 +204,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>23</value>
   </data>
   <data name="cbxBookTypes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 74</value>
+    <value>104, 54</value>
   </data>
   <data name="cbxBookTypes.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 21</value>
@@ -225,13 +225,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxBookTypes.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>22</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 123</value>
+    <value>12, 84</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -252,10 +252,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="cbxGuests.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 120</value>
+    <value>104, 81</value>
   </data>
   <data name="cbxGuests.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 21</value>
@@ -273,13 +273,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxGuests.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 175</value>
+    <value>13, 114</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -300,10 +300,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="dtpCheckout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 198</value>
+    <value>104, 134</value>
   </data>
   <data name="dtpCheckout.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 20</value>
@@ -321,10 +321,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpCheckout.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="dtpCheckin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 172</value>
+    <value>104, 108</value>
   </data>
   <data name="dtpCheckin.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 20</value>
@@ -342,13 +342,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpCheckin.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 204</value>
+    <value>12, 140</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -369,13 +369,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 256</value>
+    <value>13, 163</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -396,10 +396,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="cbxStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 248</value>
+    <value>104, 160</value>
   </data>
   <data name="cbxStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 21</value>
@@ -417,13 +417,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxStatus.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 308</value>
+    <value>13, 237</value>
   </data>
   <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -444,13 +444,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="lblAmount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblAmount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 308</value>
+    <value>103, 237</value>
   </data>
   <data name="lblAmount.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -471,10 +471,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAmount.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 392</value>
+    <value>382, 318</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -495,14 +495,14 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 392</value>
+    <value>463, 318</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -523,13 +523,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 331</value>
+    <value>13, 260</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -550,7 +550,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -559,7 +559,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 357</value>
+    <value>13, 282</value>
   </data>
   <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 16</value>
@@ -580,7 +580,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -589,7 +589,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 397</value>
+    <value>12, 323</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -610,13 +610,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="lblVat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblVat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 331</value>
+    <value>103, 260</value>
   </data>
   <data name="lblVat.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -637,7 +637,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblVat.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="lblTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -649,7 +649,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 357</value>
+    <value>103, 282</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -670,13 +670,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="mclCalendar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="mclCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 92</value>
+    <value>346, 54</value>
   </data>
   <data name="mclCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -691,7 +691,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mclCalendar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -704,7 +704,7 @@
 </value>
   </data>
   <data name="btnSyncDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 184</value>
+    <value>311, 119</value>
   </data>
   <data name="btnSyncDates.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
@@ -725,11 +725,83 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSyncDates.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 190</value>
+  </data>
+  <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="Label11.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>Invoice Number:</value>
+  </data>
+  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
+    <value>Label11</value>
+  </data>
+  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbxInvoiceNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 187</value>
+  </data>
+  <data name="tbxInvoiceNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 20</value>
+  </data>
+  <data name="tbxInvoiceNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;tbxInvoiceNumber.Name" xml:space="preserve">
+    <value>tbxInvoiceNumber</value>
+  </data>
+  <data name="&gt;&gt;tbxInvoiceNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxInvoiceNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbxInvoiceNumber.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnPrintInvoice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 232</value>
+  </data>
+  <data name="btnPrintInvoice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 23</value>
+  </data>
+  <data name="btnPrintInvoice.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="btnPrintInvoice.Text" xml:space="preserve">
+    <value>Print Invoice</value>
+  </data>
+  <data name="&gt;&gt;btnPrintInvoice.Name" xml:space="preserve">
+    <value>btnPrintInvoice</value>
+  </data>
+  <data name="&gt;&gt;btnPrintInvoice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrintInvoice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPrintInvoice.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -737,7 +809,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>543, 425</value>
+    <value>549, 348</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -157,6 +157,86 @@ Public Class OpBook
         Return result
     End Function
 
+    Public Function UpdateBook(book As Book) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from book where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = book.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.BeginEdit()
+        FillRow(dr, book)
+        dr.EndEdit()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Public Function GetInvoiceNumber(propertyId As Integer) As String
+        Dim invoiceNumber As Object
+        Dim sqlCommand As DbCommand
+        Dim pPropId As DbParameter
+        Dim sql As String = "select max(invoice_number) from book where property_id = @p_property_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        pPropId = con.Factory.CreateParameter()
+        pPropId.ParameterName = "@p_property_id"
+        pPropId.Value = propertyId
+        pPropId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pPropId)
+
+        Try
+            invoiceNumber = sqlCommand.ExecuteScalar()
+            If IsDBNull(invoiceNumber) Then
+                invoiceNumber = Now.Year & "-001"
+            Else
+                Dim invoiceParts() As String
+
+                invoiceParts = CStr(invoiceNumber).Split("-")
+                If Not invoiceParts(0).Equals(Now.Year.ToString()) Then
+                    invoiceNumber = Now.Year & "-001"
+                Else
+                    invoiceNumber = invoiceParts(0) & "-" & (CInt(invoiceParts(1)) + 1).ToString("D3")
+                End If
+            End If
+        Catch err As Exception
+            invoiceNumber = "ERROR"
+        End Try
+
+        Return invoiceNumber
+    End Function
+
     Public Function GetBookTypeById(id As Integer) As BookType
         Dim bookType As BookType
         Dim da As DbDataAdapter

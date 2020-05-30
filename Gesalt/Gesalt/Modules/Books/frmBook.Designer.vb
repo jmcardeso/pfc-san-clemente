@@ -48,6 +48,9 @@ Partial Class frmBook
         Me.mclCalendar = New System.Windows.Forms.MonthCalendar()
         Me.btnSyncDates = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.tbxInvoiceNumber = New System.Windows.Forms.TextBox()
+        Me.btnPrintInvoice = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -177,10 +180,29 @@ Partial Class frmBook
         Me.ToolTip1.SetToolTip(Me.btnSyncDates, resources.GetString("btnSyncDates.ToolTip"))
         Me.btnSyncDates.UseVisualStyleBackColor = True
         '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
+        'tbxInvoiceNumber
+        '
+        resources.ApplyResources(Me.tbxInvoiceNumber, "tbxInvoiceNumber")
+        Me.tbxInvoiceNumber.Name = "tbxInvoiceNumber"
+        '
+        'btnPrintInvoice
+        '
+        resources.ApplyResources(Me.btnPrintInvoice, "btnPrintInvoice")
+        Me.btnPrintInvoice.Name = "btnPrintInvoice"
+        Me.btnPrintInvoice.UseVisualStyleBackColor = True
+        '
         'frmBook
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnPrintInvoice)
+        Me.Controls.Add(Me.tbxInvoiceNumber)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnSyncDates)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.mclCalendar)
@@ -235,4 +257,7 @@ Partial Class frmBook
     Friend WithEvents mclCalendar As MonthCalendar
     Friend WithEvents btnSyncDates As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Label11 As Label
+    Friend WithEvents tbxInvoiceNumber As TextBox
+    Friend WithEvents btnPrintInvoice As Button
 End Class

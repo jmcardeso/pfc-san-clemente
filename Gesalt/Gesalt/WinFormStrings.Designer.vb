@@ -173,11 +173,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a An important information about the booking will change. This could cause database errors. Are you sure?.
+        '''</summary>
+        Friend Shared ReadOnly Property bookingChangeData() As String
+            Get
+                Return ResourceManager.GetString("bookingChangeData", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a The booking is finished, if the status changes, errors can occur in the database. Are you sure?.
         '''</summary>
         Friend Shared ReadOnly Property bookingCompletedErrorMsg() As String
             Get
                 Return ResourceManager.GetString("bookingCompletedErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The invoice cannot be printed. The booking status is not &apos;completed&apos;..
+        '''</summary>
+        Friend Shared ReadOnly Property bookingInvoicePrintErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("bookingInvoicePrintErrorMsg", resourceCulture)
             End Get
         End Property
         
@@ -1186,6 +1204,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property startDateAfterEndDate2() As String
             Get
                 Return ResourceManager.GetString("startDateAfterEndDate2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Checking is after checkout..
+        '''</summary>
+        Friend Shared ReadOnly Property startDateAfterEndDate3() As String
+            Get
+                Return ResourceManager.GetString("startDateAfterEndDate3", resourceCulture)
             End Get
         End Property
         

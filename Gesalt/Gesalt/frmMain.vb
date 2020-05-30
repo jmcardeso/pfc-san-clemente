@@ -597,5 +597,33 @@ Public Class frmMain
         If frmBk.ShowDialog() = DialogResult.Cancel Then
             Exit Sub
         End If
+
+        If frmBk.IsEdited Then
+            Dim thisBooking = From book In CType(bs.Current.Books, List(Of Book)) Where book.Id = frmBk.editBook.Id
+
+            Dim bookAux As Book = thisBooking.First
+
+            If Not opBook.UpdateBook(frmBk.editBook) Then
+                MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+                Exit Sub
+            Else
+                bs.Current.Books.Item(bs.Current.Books.indexOf(bookAux)) = Utils.DeepClone(frmBk.editBook)
+            End If
+        Else
+            frmBk.editBook.PropertyId = bs.Current.Id
+
+            Dim id As Integer = opBook.AddBook(frmBk.editBook)
+            If id < 1 Then
+                MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+                Exit Sub
+            End If
+
+            Dim newBook As New Book()
+            newBook = Utils.DeepClone(frmBk.editBook)
+            newBook.Id = id
+
+            bs.Current.Books.Add(newBook)
+        End If
+        bs.ResetBindings(False)
     End Sub
 End Class

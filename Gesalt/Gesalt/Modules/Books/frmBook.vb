@@ -2,6 +2,13 @@
 
 Public Class frmBook
     Public Property editBook As Book
+    Private _IsEdited As Boolean
+    Public ReadOnly Property IsEdited As Boolean
+        Get
+            Return _IsEdited
+        End Get
+    End Property
+
     Public Property prop As Prop
     Public Property bookTypes As New List(Of BookType)
     Public Property guests As New List(Of Guest)
@@ -24,12 +31,14 @@ Public Class frmBook
         If editBook.Id = 0 Then
             cbxGuests.SelectedIndex = 0
             cbxBookTypes.SelectedIndex = 0
+            _IsEdited = False
         Else
             Dim thisGuest = From guest In guests Where guest.Id = editBook.GuestId
             cbxGuests.SelectedItem = thisGuest.First
 
             Dim thisBooking = From book In bookTypes Where book.Id = editBook.BookTypeId
             cbxBookTypes.SelectedItem = thisBooking.First
+            _IsEdited = True
         End If
 
         bookAux = Utils.DeepClone(editBook)
@@ -39,6 +48,7 @@ Public Class frmBook
         dtpCheckin.DataBindings.Add("Value", bookAux, "CheckIn")
         dtpCheckout.DataBindings.Add("Value", bookAux, "CheckOut")
         cbxStatus.DataBindings.Add("SelectedIndex", bookAux, "Status")
+        tbxInvoiceNumber.DataBindings.Add("Text", bookAux, "InvoiceNumber")
 
         mclCalendar.SelectionStart = bookAux.CheckIn
         mclCalendar.SelectionEnd = bookAux.CheckOut
@@ -60,6 +70,25 @@ Public Class frmBook
         If editBook.Status = BK_COMPLETED AndAlso bookAux.Status <> BK_COMPLETED Then
             If MsgBox(LocRM.GetString("bookingCompletedErrorMsg"),
                    MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
+                Return False
+            End If
+        End If
+
+        If bookAux.CheckIn > bookAux.CheckOut Then
+            MsgBox(LocRM.GetString("startDateAfterEndDate3"), MsgBoxStyle.Exclamation, "Gesalt")
+            Return False
+        End If
+
+        bookAux.BookTypeId = CType(cbxBookTypes.SelectedItem, BookType).Id
+        bookAux.GuestId = CType(cbxGuests.SelectedItem, Guest).Id
+        bookAux.CheckIn = dtpCheckin.Value.Date
+        bookAux.CheckOut = dtpCheckout.Value.Date
+
+        If IsEdited AndAlso (editBook.GuestId <> bookAux.GuestId Or
+            editBook.BookTypeId <> bookAux.BookTypeId Or editBook.CheckIn <> bookAux.CheckIn Or
+            editBook.CheckOut <> bookAux.CheckOut) Then
+            If MsgBox(LocRM.GetString("bookingChangeData"),
+               MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
                 Return False
             End If
         End If
@@ -106,5 +135,22 @@ Public Class frmBook
 
     Private Sub dtpCheckout_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckout.ValueChanged
         mclCalendar.SelectionEnd = dtpCheckout.Value
+    End Sub
+
+    Private Sub cbxStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxStatus.SelectedIndexChanged
+        If cbxStatus.SelectedIndex = BK_COMPLETED AndAlso editBook.Status <> BK_COMPLETED Then
+            Dim opBook As OpBook = OpBook.GetInstance()
+
+            tbxInvoiceNumber.Text = opBook.GetInvoiceNumber(prop.Id)
+        End If
+    End Sub
+
+    Private Sub btnPrintInvoice_Click(sender As Object, e As EventArgs) Handles btnPrintInvoice.Click
+        If cbxStatus.SelectedIndex <> BK_COMPLETED And editBook.Status <> BK_COMPLETED Then
+            MsgBox(LocRM.GetString("bookingInvoicePrintErrorMsg"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
+        MsgBox("Print!")
     End Sub
 End Class

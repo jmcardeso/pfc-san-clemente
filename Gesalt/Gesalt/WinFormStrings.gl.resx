@@ -488,4 +488,13 @@
   <data name="bookingCompletedErrorMsg" xml:space="preserve">
     <value>A reserva está finalizada, se lle cambia o estado poden producirse erros na base de datos. Está seguro?</value>
   </data>
+  <data name="startDateAfterEndDate3" xml:space="preserve">
+    <value>A data de inicio é posterior á de fin.</value>
+  </data>
+  <data name="bookingChangeData" xml:space="preserve">
+    <value>Vai cambiar un dato importante da reserva. Isto podería ocasionar erros na base de datos. Está seguro?</value>
+  </data>
+  <data name="bookingInvoicePrintErrorMsg" xml:space="preserve">
+    <value>Non se pode imprimir a factura. O estado da reserva non é 'finalizada'.</value>
+  </data>
 </root>
