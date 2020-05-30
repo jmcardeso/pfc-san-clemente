@@ -467,4 +467,22 @@
   <data name="bookingStatus1" xml:space="preserve">
     <value>Pending</value>
   </data>
+  <data name="aboutDesc1" xml:space="preserve">
+    <value>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</value>
+  </data>
+  <data name="aboutDesc2" xml:space="preserve">
+    <value>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</value>
+  </data>
+  <data name="aboutDesc3" xml:space="preserve">
+    <value>See the GNU General Public License for more details.</value>
+  </data>
+  <data name="aboutDesc4" xml:space="preserve">
+    <value>You should have received a copy of the GNU General Public License along with this program.  If not, see https://www.gnu.org/licenses/.</value>
+  </data>
+  <data name="aboutDesc5" xml:space="preserve">
+    <value>Application icon designed by  Payungkead de Flaticon.</value>
+  </data>
+  <data name="aboutDesc6" xml:space="preserve">
+    <value>Star icons for customer rating from iconsDB - CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.</value>
+  </data>
 </root>

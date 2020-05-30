@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Engadir unha reserva - Gesalt</value>
+    <value>Xestionar unha reserva - Gesalt</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -168,10 +168,7 @@
   <data name="Label10.Text" xml:space="preserve">
     <value>(*) Se é necesario</value>
   </data>
-  <data name="tsbAddCalendar.Text" xml:space="preserve">
-    <value>Engadir/Editar reserva</value>
-  </data>
-  <data name="tsbDeleteCalendar.Text" xml:space="preserve">
-    <value>Borrar reserva</value>
+  <data name="btnSyncDates.ToolTip" xml:space="preserve">
+    <value>Sincronizar datas</value>
   </data>
 </root>

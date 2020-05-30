@@ -65,6 +65,60 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version..
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc1() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE..
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc2() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a See the GNU General Public License for more details..
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc3() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a You should have received a copy of the GNU General Public License along with this program.  If not, see https://www.gnu.org/licenses/..
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc4() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Application icon designed by  Payungkead de Flaticon..
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc5() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Star icons for customer rating from iconsDB - CC0 1.0 Universal (CC0 1.0) Public Domain Dedication..
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc6() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Version {0}.
         '''</summary>
         Friend Shared ReadOnly Property aboutVersion() As String

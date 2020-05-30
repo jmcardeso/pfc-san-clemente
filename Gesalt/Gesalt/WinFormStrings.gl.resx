@@ -467,4 +467,22 @@
   <data name="bookingStatus1" xml:space="preserve">
     <value>Pendente</value>
   </data>
+  <data name="aboutDesc1" xml:space="preserve">
+    <value>Este programa é software libre: pode redistribuilo e/ou modificalo baixo os termos da Licenza Xeral Pública de GNU publicada pola Free Software Foundation, xa sexa a versión 3 da Licenza, ou (á súa elección) calquera versión posterior.</value>
+  </data>
+  <data name="aboutDesc2" xml:space="preserve">
+    <value>Este programa distribúese coa esperanza de que sexa útil pero SEN NINGUNHA GARANTÍA; incluso sen a garantía implícita de MERCANTIBILIDADE ou CALIFICADA PARA UN PROPÓSITO EN PARTICULAR.</value>
+  </data>
+  <data name="aboutDesc3" xml:space="preserve">
+    <value>Lea a Licenza Xeral Pública de GNU para máis detalles.</value>
+  </data>
+  <data name="aboutDesc4" xml:space="preserve">
+    <value>Debeu recibir unha copia da Licenza Xeral Pública de GNU canda este programa. Se non é así, vaia a http://www.gnu.org/licenses/.</value>
+  </data>
+  <data name="aboutDesc5" xml:space="preserve">
+    <value>Icona da aplicación deseñado por Payungkead de Flaticon.</value>
+  </data>
+  <data name="aboutDesc6" xml:space="preserve">
+    <value>Iconas de estrelas para valoración de clientes de iconsDB - CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.</value>
+  </data>
 </root>

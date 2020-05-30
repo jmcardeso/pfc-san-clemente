@@ -22,6 +22,7 @@ Partial Class frmBook
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBook))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblProperty = New System.Windows.Forms.Label()
@@ -44,14 +45,9 @@ Partial Class frmBook
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblVat = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
-        Me.pnlCalendar = New System.Windows.Forms.Panel()
-        Me.tstCalendar = New System.Windows.Forms.ToolStrip()
-        Me.tsbAddCalendar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbDeleteCalendar = New System.Windows.Forms.ToolStripButton()
-        Me.lblCalendar = New System.Windows.Forms.Label()
         Me.mclCalendar = New System.Windows.Forms.MonthCalendar()
-        Me.pnlCalendar.SuspendLayout()
-        Me.tstCalendar.SuspendLayout()
+        Me.btnSyncDates = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -167,39 +163,6 @@ Partial Class frmBook
         resources.ApplyResources(Me.lblTotal, "lblTotal")
         Me.lblTotal.Name = "lblTotal"
         '
-        'pnlCalendar
-        '
-        Me.pnlCalendar.Controls.Add(Me.tstCalendar)
-        Me.pnlCalendar.Controls.Add(Me.lblCalendar)
-        Me.pnlCalendar.Controls.Add(Me.mclCalendar)
-        resources.ApplyResources(Me.pnlCalendar, "pnlCalendar")
-        Me.pnlCalendar.Name = "pnlCalendar"
-        '
-        'tstCalendar
-        '
-        resources.ApplyResources(Me.tstCalendar, "tstCalendar")
-        Me.tstCalendar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.tstCalendar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbAddCalendar, Me.tsbDeleteCalendar})
-        Me.tstCalendar.Name = "tstCalendar"
-        '
-        'tsbAddCalendar
-        '
-        Me.tsbAddCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.tsbAddCalendar, "tsbAddCalendar")
-        Me.tsbAddCalendar.Name = "tsbAddCalendar"
-        '
-        'tsbDeleteCalendar
-        '
-        Me.tsbDeleteCalendar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.tsbDeleteCalendar, "tsbDeleteCalendar")
-        Me.tsbDeleteCalendar.Name = "tsbDeleteCalendar"
-        '
-        'lblCalendar
-        '
-        Me.lblCalendar.BackColor = System.Drawing.SystemColors.Info
-        resources.ApplyResources(Me.lblCalendar, "lblCalendar")
-        Me.lblCalendar.Name = "lblCalendar"
-        '
         'mclCalendar
         '
         resources.ApplyResources(Me.mclCalendar, "mclCalendar")
@@ -207,12 +170,20 @@ Partial Class frmBook
         Me.mclCalendar.Name = "mclCalendar"
         Me.mclCalendar.ShowTodayCircle = False
         '
+        'btnSyncDates
+        '
+        resources.ApplyResources(Me.btnSyncDates, "btnSyncDates")
+        Me.btnSyncDates.Name = "btnSyncDates"
+        Me.ToolTip1.SetToolTip(Me.btnSyncDates, resources.GetString("btnSyncDates.ToolTip"))
+        Me.btnSyncDates.UseVisualStyleBackColor = True
+        '
         'frmBook
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.pnlCalendar)
+        Me.Controls.Add(Me.btnSyncDates)
         Me.Controls.Add(Me.lblTotal)
+        Me.Controls.Add(Me.mclCalendar)
         Me.Controls.Add(Me.lblVat)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -235,10 +206,6 @@ Partial Class frmBook
         Me.Controls.Add(Me.Label1)
         Me.MaximizeBox = False
         Me.Name = "frmBook"
-        Me.pnlCalendar.ResumeLayout(False)
-        Me.pnlCalendar.PerformLayout()
-        Me.tstCalendar.ResumeLayout(False)
-        Me.tstCalendar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -265,10 +232,7 @@ Partial Class frmBook
     Friend WithEvents Label10 As Label
     Friend WithEvents lblVat As Label
     Friend WithEvents lblTotal As Label
-    Friend WithEvents pnlCalendar As Panel
-    Friend WithEvents tstCalendar As ToolStrip
-    Friend WithEvents tsbAddCalendar As ToolStripButton
-    Friend WithEvents tsbDeleteCalendar As ToolStripButton
-    Friend WithEvents lblCalendar As Label
     Friend WithEvents mclCalendar As MonthCalendar
+    Friend WithEvents btnSyncDates As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
