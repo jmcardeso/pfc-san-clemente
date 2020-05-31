@@ -28,21 +28,20 @@ Public Class frmBook
         lblProperty.Text = prop.Address
 
         Utils.MarkBooksInCalendar(prop.Books, mclCalendar)
+        bookAux = Utils.DeepClone(editBook)
 
-        If editBook.Id = 0 Then
+        If bookAux.Id = 0 Then
             cbxGuests.SelectedIndex = 0
             cbxBookTypes.SelectedIndex = 0
             _IsEdited = False
         Else
-            Dim thisGuest = From guest In guests Where guest.Id = editBook.GuestId
+            Dim thisGuest = From guest In guests Where guest.Id = bookAux.GuestId
             cbxGuests.SelectedItem = thisGuest.First
 
-            Dim thisBooking = From book In bookTypes Where book.Id = editBook.BookTypeId
+            Dim thisBooking = From book In bookTypes Where book.Id = bookAux.BookTypeId
             cbxBookTypes.SelectedItem = thisBooking.First
             _IsEdited = True
         End If
-
-        bookAux = Utils.DeepClone(editBook)
 
         RemoveHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
 
@@ -71,10 +70,55 @@ Public Class frmBook
 
     Private Sub CalculatePrice()
         Dim opBook As OpBook = OpBook.GetInstance()
-        Dim prices As List(Of Price)
+        Dim bookType As BookType
+        Dim today As Date = bookAux.CheckIn
+        Dim amount As Decimal = 0
+        Dim priceAux As Decimal = 0
+        Dim percentAux As Decimal = 0
+        Dim VAT As Decimal = 0
+        Dim total As Decimal = 0
 
-        prices = opBook.GetPricesByBooking(bookAux)
+        bookType = opBook.GetBookTypeById(bookAux.BookTypeId)
+
+        Dim todayprices = From price In bookType.Prices
+                          Where price.Percentage = False And
+                              price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
+                          Select price.Value
+
+        Dim todayPercentages = From price In bookType.Prices
+                               Where price.Percentage = True And
+                                 price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
+                               Select price.Value
+
+        While today <= bookAux.CheckOut
+            If todayprices.Count > 0 Then
+                priceAux = todayprices.Min()
+            Else
+                priceAux = 0
+            End If
+
+            If todayPercentages.Count > 0 Then
+                percentAux = todayPercentages.Max()
+            Else
+                percentAux = 0
+            End If
+
+            amount += priceAux - (priceAux * percentAux / 100)
+
+            today = today.AddDays(1)
+        End While
+
+        VAT = CalculateVAT(amount)
+        total = amount + (amount * VAT / 100)
+
+        lblAmount.Text = amount & " €"
+        lblVat.Text = VAT & " €"
+        lblTotal.Text = total & " €"
     End Sub
+
+    Private Function CalculateVAT(amount As Decimal) As Decimal
+        Return 0
+    End Function
 
     Private Function ValidateFields() As Boolean
         If editBook.Status = BK_COMPLETED AndAlso bookAux.Status <> BK_COMPLETED Then
