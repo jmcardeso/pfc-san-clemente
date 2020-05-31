@@ -240,6 +240,11 @@ Public Class frmMain
             Exit Sub
         End If
 
+        If Not opProp.IsSafeDeleteProp(bs.Current.Id) Then
+            MsgBox(LocRM.GetString("propNoDeleted"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
         If MsgBox(LocRM.GetString("rowRemovedPropMsg") & "'" & bs.Current.Address & "' " & LocRM.GetString("rowRemovedMsg"),
               MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
               LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then

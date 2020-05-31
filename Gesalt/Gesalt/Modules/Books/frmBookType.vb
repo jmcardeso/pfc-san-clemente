@@ -198,6 +198,11 @@ Public Class frmBookType
             Exit Sub
         End If
 
+        If Not opBook.IsSafeDeleteBookType(bs.Current.Id) Then
+            MsgBox(LocRM.GetString("btNoDeleted"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
         If MsgBox(LocRM.GetString("rowRemovedBookTypeMsg") & "'" & bs.Current.BTName & "' " & LocRM.GetString("rowRemovedMsg"),
       MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
       LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then

@@ -497,4 +497,13 @@
   <data name="bookingInvoicePrintErrorMsg" xml:space="preserve">
     <value>Non se pode imprimir a factura. O estado da reserva non é 'finalizada'.</value>
   </data>
+  <data name="btNoDeleted" xml:space="preserve">
+    <value>O modo de reserva non se pode borrar. Ten asociadas reservas.</value>
+  </data>
+  <data name="guestNoDeleted" xml:space="preserve">
+    <value>O cliente non se pode borrar. Ten asociadas reservas.</value>
+  </data>
+  <data name="propNoDeleted" xml:space="preserve">
+    <value>O inmoble non se pode borrar. Ten reservas asociadas.</value>
+  </data>
 </root>

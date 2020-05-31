@@ -497,4 +497,13 @@
   <data name="bookingInvoicePrintErrorMsg" xml:space="preserve">
     <value>The invoice cannot be printed. The booking status is not 'completed'.</value>
   </data>
+  <data name="btNoDeleted" xml:space="preserve">
+    <value>The Booking Type cannot be deleted. It has associated bookings.</value>
+  </data>
+  <data name="guestNoDeleted" xml:space="preserve">
+    <value>The guest cannot be deleted. It has associated bookings.</value>
+  </data>
+  <data name="propNoDeleted" xml:space="preserve">
+    <value>The property cannot be deleted. It has associated bookings.</value>
+  </data>
 </root>

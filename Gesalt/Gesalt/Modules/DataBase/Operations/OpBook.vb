@@ -32,6 +32,80 @@ Public Class OpBook
         Return objOpBook
     End Function
 
+    Public Function GetBooksByGuestId(guestId As Integer) As List(Of Book)
+        Dim books As New List(Of Book)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pPropId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pPropId = con.Factory.CreateParameter()
+
+        pPropId.ParameterName = "@p_guest_id"
+        pPropId.Value = guestId
+        pPropId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pPropId)
+
+        sqlCommand.CommandText = "select * from book where guest_id = @p_guest_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim book As Book
+        For Each dr As DataRow In dt.Rows
+            book = New Book(dr.Item("Id"), dr.Item("guest_id"), dr.Item("property_id"),
+                            dr.Item("booktype_id"), dr.Item("status"), dr.Item("checkin"),
+                            dr.Item("checkout"), dr.Item("invoice_number"))
+            books.Add(book)
+        Next
+
+        Return books
+    End Function
+
+    Public Function GetBooksByBookTypeId(bookTypeId As Integer) As List(Of Book)
+        Dim books As New List(Of Book)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pPropId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pPropId = con.Factory.CreateParameter()
+
+        pPropId.ParameterName = "@p_booktype_id"
+        pPropId.Value = bookTypeId
+        pPropId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pPropId)
+
+        sqlCommand.CommandText = "select * from book where booktype_id = @p_booktype_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim book As Book
+        For Each dr As DataRow In dt.Rows
+            book = New Book(dr.Item("Id"), dr.Item("guest_id"), dr.Item("property_id"),
+                            dr.Item("booktype_id"), dr.Item("status"), dr.Item("checkin"),
+                            dr.Item("checkout"), dr.Item("invoice_number"))
+            books.Add(book)
+        Next
+
+        Return books
+    End Function
+
+    Public Function IsSafeDeleteBookType(bookTypeId As Integer) As Boolean
+        Return GetBooksByBookTypeId(bookTypeId).Count = 0
+    End Function
+
     Public Function GetBooksByPropertyId(propertyId As Integer) As List(Of Book)
         Dim books As New List(Of Book)
         Dim da As DbDataAdapter
@@ -510,7 +584,7 @@ Public Class OpBook
 
         Dim dr As DataRow
         dr = dt.Rows.Item(0)
-        'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE RESERVAS)
+
         dr.Delete()
 
         If da.Update(dt) = 1 Then

@@ -254,6 +254,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The Booking Type cannot be deleted. It has associated bookings..
+        '''</summary>
+        Friend Shared ReadOnly Property btNoDeleted() As String
+            Get
+                Return ResourceManager.GetString("btNoDeleted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Connection Error.
         '''</summary>
         Friend Shared ReadOnly Property conError() As String
@@ -902,6 +911,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The guest cannot be deleted. It has associated bookings..
+        '''</summary>
+        Friend Shared ReadOnly Property guestNoDeleted() As String
+            Get
+                Return ResourceManager.GetString("guestNoDeleted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Invalid filter data..
         '''</summary>
         Friend Shared ReadOnly Property InvalidFilterData() As String
@@ -1123,6 +1141,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property priceType5() As String
             Get
                 Return ResourceManager.GetString("priceType5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The property cannot be deleted. It has associated bookings..
+        '''</summary>
+        Friend Shared ReadOnly Property propNoDeleted() As String
+            Get
+                Return ResourceManager.GetString("propNoDeleted", resourceCulture)
             End Get
         End Property
         

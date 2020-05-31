@@ -145,7 +145,7 @@ Public Class OpGuest
 
         Dim dr As DataRow
         dr = dt.Rows.Item(0)
-        'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE RESERVAS)
+
         dr.Delete()
 
         If da.Update(dt) = 1 Then
@@ -153,6 +153,12 @@ Public Class OpGuest
         End If
 
         Return result
+    End Function
+
+    Public Function IsSafeDeleteGuest(guestId As Integer) As Boolean
+        Dim opBook As OpBook = OpBook.GetInstance()
+
+        Return opBook.GetBooksByGuestId(guestId).Count = 0
     End Function
 
     ''' <summary>

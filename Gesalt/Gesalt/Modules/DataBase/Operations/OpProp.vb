@@ -114,7 +114,6 @@ Public Class OpProp
         Dim dt As New DataTable()
         da.Fill(dt)
 
-        'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE RESERVAS)
         If True Then
             For Each photo As Photo In prop.Photos
                 DeletePhoto(photo)
@@ -138,6 +137,12 @@ Public Class OpProp
         End If
 
         Return result
+    End Function
+
+    Public Function IsSafeDeleteProp(propertyId As Integer) As Boolean
+        Dim opBook As OpBook = OpBook.GetInstance()
+
+        Return opBook.GetBooksByPropertyId(propertyId).Count = 0
     End Function
 
     ''' <summary>

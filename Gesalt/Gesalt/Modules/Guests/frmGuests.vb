@@ -147,6 +147,11 @@ Public Class frmGuests
             Exit Sub
         End If
 
+        If Not opGuest.IsSafeDeleteGuest(bs.Current.Id) Then
+            MsgBox(LocRM.GetString("guestNoDeleted"), MsgBoxStyle.Exclamation, "Gesalt")
+            Exit Sub
+        End If
+
         If MsgBox("'" & bs.Current.LastName & ", " & bs.Current.FirstName & "' " & LocRM.GetString("rowRemovedMsg"),
                   MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
                   LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
