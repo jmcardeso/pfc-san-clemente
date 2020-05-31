@@ -141,7 +141,8 @@ Public Class frmBook
         If cbxStatus.SelectedIndex = BK_COMPLETED AndAlso editBook.Status <> BK_COMPLETED Then
             Dim opBook As OpBook = OpBook.GetInstance()
 
-            tbxInvoiceNumber.Text = opBook.GetInvoiceNumber(prop.Id)
+            bookAux.InvoiceNumber = opBook.GetInvoiceNumber(prop.Id)
+            tbxInvoiceNumber.Text = bookAux.InvoiceNumber
         End If
     End Sub
 

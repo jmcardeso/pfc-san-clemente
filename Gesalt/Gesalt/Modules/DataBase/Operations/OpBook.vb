@@ -203,7 +203,7 @@ Public Class OpBook
         Dim invoiceNumber As Object
         Dim sqlCommand As DbCommand
         Dim pPropId As DbParameter
-        Dim sql As String = "select max(invoice_number) from book where property_id = @p_property_id"
+        Dim sql As String = "select max(invoice_number) from book where property_id = @p_property_id AND invoice_number LIKE '____-___' AND invoice_number >= '0000-000' AND invoice_number <= '9999-999'"
 
         sqlCommand = con.Factory.CreateCommand()
         sqlCommand.CommandText = sql
