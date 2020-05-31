@@ -15,6 +15,7 @@ Public Class frmBook
 
     Dim bookAux As Book
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmBook).Assembly)
+    Dim firstTime As Boolean = True
 
     Private Sub frmBook_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxBookTypes.DataSource = bookTypes
@@ -54,6 +55,8 @@ Public Class frmBook
         mclCalendar.SelectionEnd = bookAux.CheckOut
 
         AddHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
+
+        CalculatePrice()
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -64,6 +67,13 @@ Public Class frmBook
         editBook = Utils.DeepClone(bookAux)
 
         Me.DialogResult = DialogResult.OK
+    End Sub
+
+    Private Sub CalculatePrice()
+        Dim opBook As OpBook = OpBook.GetInstance()
+        Dim prices As List(Of Price)
+
+        prices = opBook.GetPricesByBooking(bookAux)
     End Sub
 
     Private Function ValidateFields() As Boolean
@@ -153,5 +163,14 @@ Public Class frmBook
         End If
 
         MsgBox("Print!")
+    End Sub
+
+    Private Sub cbxBookTypes_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbxBookTypes.SelectedValueChanged
+        If firstTime Then
+            firstTime = False
+            Exit Sub
+        End If
+
+        CalculatePrice()
     End Sub
 End Class

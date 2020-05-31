@@ -335,6 +335,56 @@ Public Class OpBook
         Return prices
     End Function
 
+    Public Function GetPricesByBooking(book As Book) As List(Of Price)
+        Dim prices As New List(Of Price)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pBookTypeId, pCheckIn, pCheckOut, pNoDate As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pBookTypeId = con.Factory.CreateParameter()
+        pCheckIn = con.Factory.CreateParameter()
+        pCheckOut = con.Factory.CreateParameter()
+        pNoDate = con.Factory.CreateParameter()
+
+        pBookTypeId.ParameterName = "@p_booktype_id"
+        pBookTypeId.Value = book.BookTypeId
+        pBookTypeId.DbType = DbType.Int32
+
+        pCheckIn.ParameterName = "@p_checkin"
+        pCheckIn.Value = book.CheckIn
+        pCheckIn.DbType = DbType.Date
+
+        pCheckOut.ParameterName = "@p_checkout"
+        pCheckOut.Value = book.CheckIn
+        pCheckOut.DbType = DbType.Date
+
+        pNoDate.ParameterName = "@p_nodate"
+        pNoDate.Value = New Date(1971, 1, 1)
+        pNoDate.DbType = DbType.Date
+
+        sqlCommand.Parameters.Add(pBookTypeId)
+        sqlCommand.Parameters.Add(pCheckIn)
+        sqlCommand.Parameters.Add(pCheckOut)
+        sqlCommand.Parameters.Add(pNoDate)
+
+        sqlCommand.CommandText = "select * from price where booktype_id = @p_booktype_id  AND (end_date <= @p_checkout AND end_date >= @p_checkin OR end_date < @p_nodate)"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        For Each dr As DataRow In dt.Rows
+            prices.Add(New Price(dr.Item("Id"), dr.Item("booktype_id"), dr.Item("p_value"), dr.Item("type"), dr.Item("start_date"),
+                                Utils.EndDateToObject(dr.Item("end_date")), dr.Item("percentage")))
+        Next
+
+        Return prices
+    End Function
+
     Private Function GetId() As Integer
         Dim result As Object
         Dim sqlCommand As DbCommand
