@@ -154,27 +154,27 @@
     <value>Total:</value>
   </data>
   <data name="lblAmount.Text" xml:space="preserve">
-    <value>0</value>
+    <value>0 €</value>
   </data>
   <data name="lblProperty.Text" xml:space="preserve">
     <value>&lt;Vacío&gt;</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>0</value>
+    <value>0 €</value>
   </data>
   <data name="lblVat.Text" xml:space="preserve">
-    <value>0</value>
+    <value>0 €</value>
   </data>
   <data name="Label10.Text" xml:space="preserve">
     <value>(*) Si es necesario</value>
-  </data>
-  <data name="btnSyncDates.ToolTip" xml:space="preserve">
-    <value>Sincronizar fechas</value>
   </data>
   <data name="Label11.Text" xml:space="preserve">
     <value>Factura Nº:</value>
   </data>
   <data name="btnPrintInvoice.Text" xml:space="preserve">
     <value>Imprimir factura</value>
+  </data>
+  <data name="btnCalculatePrice.ToolTip" xml:space="preserve">
+    <value>Calcular precio</value>
   </data>
 </root>

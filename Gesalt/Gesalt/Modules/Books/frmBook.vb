@@ -40,6 +40,8 @@ Public Class frmBook
 
             Dim thisBooking = From book In bookTypes Where book.Id = bookAux.BookTypeId
             cbxBookTypes.SelectedItem = thisBooking.First
+
+            CalculatePrice()
             _IsEdited = True
         End If
 
@@ -54,8 +56,6 @@ Public Class frmBook
         mclCalendar.SelectionEnd = bookAux.CheckOut
 
         AddHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
-
-        CalculatePrice()
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -154,9 +154,9 @@ Public Class frmBook
         Me.DialogResult = DialogResult.Cancel
     End Sub
 
-    Private Sub btnSyncDates_Click(sender As Object, e As EventArgs) Handles btnSyncDates.Click
-        mclCalendar.SelectionStart = dtpCheckin.Value
-        mclCalendar.SelectionEnd = dtpCheckout.Value
+    Private Sub btnCalculatePrice_Click(sender As Object, e As EventArgs) Handles btnCalculatePrice.Click
+        bookAux.BookTypeId = CType(cbxBookTypes.SelectedItem, BookType).Id
+        CalculatePrice()
     End Sub
 
     Private Sub mclCalendar_DateSelected(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateSelected
@@ -215,6 +215,6 @@ Public Class frmBook
             Exit Sub
         End If
 
-        CalculatePrice()
+        bookAux.BookTypeId = CType(cbxBookTypes.SelectedItem, BookType).Id
     End Sub
 End Class

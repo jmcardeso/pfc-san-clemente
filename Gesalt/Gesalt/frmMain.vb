@@ -585,18 +585,20 @@ Public Class frmMain
                     Exit Sub
                 Else
                     If frmSlct.bookingSelected Is Nothing Then
-                        frmBk.editBook = New Book()
-                        frmBk.editBook.CheckIn = mclCalendar.SelectionStart
-                        frmBk.editBook.CheckOut = mclCalendar.SelectionEnd
+                        frmBk.editBook = New Book With {
+                            .CheckIn = mclCalendar.SelectionStart,
+                            .CheckOut = mclCalendar.SelectionEnd
+                        }
                     Else
                         frmBk.editBook = frmSlct.bookingSelected
                     End If
                 End If
             End If
         Else
-            frmBk.editBook = New Book()
-            frmBk.editBook.CheckIn = mclCalendar.SelectionStart
-            frmBk.editBook.CheckOut = mclCalendar.SelectionEnd
+            frmBk.editBook = New Book With {
+                .CheckIn = mclCalendar.SelectionStart,
+                .CheckOut = mclCalendar.SelectionEnd
+            }
         End If
 
         If frmBk.ShowDialog() = DialogResult.Cancel Then
@@ -630,5 +632,79 @@ Public Class frmMain
             bs.Current.Books.Add(newBook)
         End If
         bs.ResetBindings(False)
+    End Sub
+
+    Private Sub tsbDeleteCalendar_Click(sender As Object, e As EventArgs) Handles tsbDeleteCalendar.Click
+        Dim frmSlct As New frmBookingSelect
+        Dim bookToDel As Book
+
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim books As List(Of Book) = bs.Current.Books
+
+        Dim dayMatch = From book In books
+                       Where mclCalendar.SelectionStart.Date <= book.CheckOut And
+                               book.CheckIn <= mclCalendar.SelectionEnd.Date
+
+        Dim bookDayMatch As List(Of Book) = dayMatch.ToList()
+
+        If bookDayMatch.Count > 0 Then
+            If bookDayMatch.Count = 2 Then
+                If mclCalendar.SelectionStart = bookDayMatch.Item(0).CheckIn And
+                    mclCalendar.SelectionEnd.Date = bookDayMatch.Item(1).CheckOut Then
+                    frmSlct.bookings = bookDayMatch.ToList()
+
+                    If frmSlct.ShowDialog() = DialogResult.Cancel Then
+                        Exit Sub
+                    Else
+                        bookToDel = frmSlct.bookingSelected
+                    End If
+                Else
+                    bookToDel = bookDayMatch.First 'NO SÉ PORQUE TENGO QUE PONER ESTO AQUÍ
+                End If
+            Else
+                bookToDel = bookDayMatch.First
+            End If
+        Else
+            MsgBox("no hay reserva")
+            Exit Sub
+        End If
+
+        If bookToDel.Status <> BK_CANCELLED Then
+            MsgBox("la reserva no está cancelada")
+            Exit Sub
+        End If
+
+        MsgBox("reserva borrada")
+
+        'If frmBk.IsEdited Then
+        '    Dim thisBooking = From book In CType(bs.Current.Books, List(Of Book)) Where book.Id = frmBk.editBook.Id
+
+        '    Dim bookAux As Book = thisBooking.First
+
+        '    If Not opBook.UpdateBook(frmBk.editBook) Then
+        '        MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+        '        Exit Sub
+        '    Else
+        '        bs.Current.Books.Item(bs.Current.Books.indexOf(bookAux)) = Utils.DeepClone(frmBk.editBook)
+        '    End If
+        'Else
+        '    frmBk.editBook.PropertyId = bs.Current.Id
+
+        '    Dim id As Integer = opBook.AddBook(frmBk.editBook)
+        '    If id < 1 Then
+        '        MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+        '        Exit Sub
+        '    End If
+
+        '    Dim newBook As New Book()
+        '    newBook = Utils.DeepClone(frmBk.editBook)
+        '    newBook.Id = id
+
+        '    bs.Current.Books.Add(newBook)
+        'End If
+        'bs.ResetBindings(False)
     End Sub
 End Class

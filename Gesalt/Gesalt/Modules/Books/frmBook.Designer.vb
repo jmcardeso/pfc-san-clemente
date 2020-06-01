@@ -46,7 +46,7 @@ Partial Class frmBook
         Me.lblVat = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.mclCalendar = New System.Windows.Forms.MonthCalendar()
-        Me.btnSyncDates = New System.Windows.Forms.Button()
+        Me.btnCalculatePrice = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbxInvoiceNumber = New System.Windows.Forms.TextBox()
@@ -173,12 +173,12 @@ Partial Class frmBook
         Me.mclCalendar.Name = "mclCalendar"
         Me.mclCalendar.ShowTodayCircle = False
         '
-        'btnSyncDates
+        'btnCalculatePrice
         '
-        resources.ApplyResources(Me.btnSyncDates, "btnSyncDates")
-        Me.btnSyncDates.Name = "btnSyncDates"
-        Me.ToolTip1.SetToolTip(Me.btnSyncDates, resources.GetString("btnSyncDates.ToolTip"))
-        Me.btnSyncDates.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.btnCalculatePrice, "btnCalculatePrice")
+        Me.btnCalculatePrice.Name = "btnCalculatePrice"
+        Me.ToolTip1.SetToolTip(Me.btnCalculatePrice, resources.GetString("btnCalculatePrice.ToolTip"))
+        Me.btnCalculatePrice.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -203,7 +203,7 @@ Partial Class frmBook
         Me.Controls.Add(Me.btnPrintInvoice)
         Me.Controls.Add(Me.tbxInvoiceNumber)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.btnSyncDates)
+        Me.Controls.Add(Me.btnCalculatePrice)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.mclCalendar)
         Me.Controls.Add(Me.lblVat)
@@ -255,7 +255,7 @@ Partial Class frmBook
     Friend WithEvents lblVat As Label
     Friend WithEvents lblTotal As Label
     Friend WithEvents mclCalendar As MonthCalendar
-    Friend WithEvents btnSyncDates As Button
+    Friend WithEvents btnCalculatePrice As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Label11 As Label
     Friend WithEvents tbxInvoiceNumber As TextBox

@@ -453,13 +453,13 @@
     <value>103, 237</value>
   </data>
   <data name="lblAmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
+    <value>22, 13</value>
   </data>
   <data name="lblAmount.TabIndex" type="System.Int32, mscorlib">
     <value>74</value>
   </data>
   <data name="lblAmount.Text" xml:space="preserve">
-    <value>0</value>
+    <value>0 €</value>
   </data>
   <data name="&gt;&gt;lblAmount.Name" xml:space="preserve">
     <value>lblAmount</value>
@@ -619,13 +619,13 @@
     <value>103, 260</value>
   </data>
   <data name="lblVat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
+    <value>22, 13</value>
   </data>
   <data name="lblVat.TabIndex" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="lblVat.Text" xml:space="preserve">
-    <value>0</value>
+    <value>0 €</value>
   </data>
   <data name="&gt;&gt;lblVat.Name" xml:space="preserve">
     <value>lblVat</value>
@@ -652,13 +652,13 @@
     <value>103, 282</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
+    <value>28, 16</value>
   </data>
   <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
     <value>81</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>0</value>
+    <value>0 €</value>
   </data>
   <data name="&gt;&gt;lblTotal.Name" xml:space="preserve">
     <value>lblTotal</value>
@@ -693,43 +693,41 @@
   <data name="&gt;&gt;mclCalendar.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="btnSyncDates.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCalculatePrice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAFVJREFUOE/VjNEKACAIA/30/rwYNFxhpG91MBq0056lzxdoTwOJovY03VqjqP2I
-        jxlIFLUf8FGUxJFViHI5so73XGTAD09BjlChLAMVyjJQoSx/hdkA4tR6rqtLVxUAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABiSURBVDhPxY9RDsAgCEM5OkfjZo4CM36BuCU2eSlB2yj9
+        pXHA1BCRNsh5PArgFWVBpvdeWlCRFnRBzuNRsD5zZ4YrJlsw8zzcmeGKyRZdkPN4FKzP25nhiskWd7/w
+        gesiegCSv7YiZL/kpQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnSyncDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 119</value>
+  <data name="btnCalculatePrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 255</value>
   </data>
-  <data name="btnSyncDates.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnCalculatePrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
   </data>
-  <data name="btnSyncDates.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnCalculatePrice.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
-  </data>
-  <data name="btnSyncDates.ToolTip" xml:space="preserve">
-    <value>Synchronize dates</value>
-  </data>
-  <data name="&gt;&gt;btnSyncDates.Name" xml:space="preserve">
-    <value>btnSyncDates</value>
-  </data>
-  <data name="&gt;&gt;btnSyncDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSyncDates.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnSyncDates.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnCalculatePrice.ToolTip" xml:space="preserve">
+    <value>Calculate price</value>
+  </data>
+  <data name="&gt;&gt;btnCalculatePrice.Name" xml:space="preserve">
+    <value>btnCalculatePrice</value>
+  </data>
+  <data name="&gt;&gt;btnCalculatePrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCalculatePrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCalculatePrice.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
