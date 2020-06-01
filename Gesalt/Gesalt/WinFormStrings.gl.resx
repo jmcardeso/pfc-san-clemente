@@ -506,4 +506,13 @@
   <data name="propNoDeleted" xml:space="preserve">
     <value>O inmoble non se pode borrar. Ten reservas asociadas.</value>
   </data>
+  <data name="noBookingToDeleteErrorMsg" xml:space="preserve">
+    <value>Non hai reserva para borrar.</value>
+  </data>
+  <data name="bookingNotCanceledErrorMsg" xml:space="preserve">
+    <value>A reserva non está cancelada é non se pode borrar.</value>
+  </data>
+  <data name="rowRemovedBookMsg" xml:space="preserve">
+    <value>A reserva comprendida entre os días</value>
+  </data>
 </root>

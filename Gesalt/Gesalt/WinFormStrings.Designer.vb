@@ -200,6 +200,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The booking is not canceled and cannot be deleted..
+        '''</summary>
+        Friend Shared ReadOnly Property bookingNotCanceledErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("bookingNotCanceledErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Pending.
         '''</summary>
         Friend Shared ReadOnly Property bookingStatus1() As String
@@ -983,6 +992,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a No booking to delete..
+        '''</summary>
+        Friend Shared ReadOnly Property noBookingToDeleteErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("noBookingToDeleteErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a There are no booking types for this property. Impossible to add a booking..
         '''</summary>
         Friend Shared ReadOnly Property noBookTypesErrorMsg() As String
@@ -1150,6 +1168,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property propNoDeleted() As String
             Get
                 Return ResourceManager.GetString("propNoDeleted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The booking between the days.
+        '''</summary>
+        Friend Shared ReadOnly Property rowRemovedBookMsg() As String
+            Get
+                Return ResourceManager.GetString("rowRemovedBookMsg", resourceCulture)
             End Get
         End Property
         

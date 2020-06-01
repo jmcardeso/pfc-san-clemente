@@ -147,36 +147,43 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Constants.vb" />
     <Compile Include="GlobalSuppressions.vb" />
-    <Compile Include="Modules\Books\frmBook.Designer.vb">
+    <Compile Include="Modules\Bookings\frmBook.Designer.vb">
       <DependentUpon>frmBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Books\frmBook.vb">
+    <Compile Include="Modules\Bookings\frmBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Books\frmBookingSelect.Designer.vb">
+    <Compile Include="Modules\Bookings\frmBookingSelect.Designer.vb">
       <DependentUpon>frmBookingSelect.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Books\frmBookingSelect.vb">
+    <Compile Include="Modules\Bookings\frmBookingSelect.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Books\frmBookType.Designer.vb">
+    <Compile Include="Modules\Bookings\frmBookType.Designer.vb">
       <DependentUpon>frmBookType.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Books\frmBookType.vb">
+    <Compile Include="Modules\Bookings\frmBookType.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Books\frmBookTypeAux.Designer.vb">
+    <Compile Include="Modules\Bookings\frmBookTypeAux.Designer.vb">
       <DependentUpon>frmBookTypeAux.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Books\frmBookTypeAux.vb">
+    <Compile Include="Modules\Bookings\frmBookTypeAux.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Books\frmPrice.Designer.vb">
+    <Compile Include="Modules\Bookings\frmPrice.Designer.vb">
       <DependentUpon>frmPrice.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Books\frmPrice.vb">
+    <Compile Include="Modules\Bookings\frmPrice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Bookings\frmInvoice.Designer.vb">
+      <DependentUpon>frmInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Bookings\frmInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DataBase\Invoice.vb" />
     <Compile Include="Modules\DataBase\Operations\OpBook.vb" />
     <Compile Include="Modules\DataBase\Tables\Book.vb" />
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
@@ -331,51 +338,61 @@
     <EmbeddedResource Include="frmAbout.gl.resx">
       <DependentUpon>frmAbout.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBook.es.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBook.es.resx">
       <DependentUpon>frmBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBook.gl.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBook.gl.resx">
       <DependentUpon>frmBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBook.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBook.resx">
       <DependentUpon>frmBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookingSelect.es.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookingSelect.es.resx">
       <DependentUpon>frmBookingSelect.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookingSelect.gl.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookingSelect.gl.resx">
       <DependentUpon>frmBookingSelect.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookingSelect.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookingSelect.resx">
       <DependentUpon>frmBookingSelect.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookType.es.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookType.es.resx">
       <DependentUpon>frmBookType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookType.gl.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookType.gl.resx">
       <DependentUpon>frmBookType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookType.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookType.resx">
       <DependentUpon>frmBookType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookTypeAux.es.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookTypeAux.es.resx">
       <DependentUpon>frmBookTypeAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookTypeAux.gl.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookTypeAux.gl.resx">
       <DependentUpon>frmBookTypeAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmBookTypeAux.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmBookTypeAux.resx">
       <DependentUpon>frmBookTypeAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmPrice.es.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmInvoice.es.resx">
+      <DependentUpon>frmInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmInvoice.gl.resx">
+      <DependentUpon>frmInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmPrice.es.resx">
       <DependentUpon>frmPrice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmPrice.gl.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmPrice.gl.resx">
       <DependentUpon>frmPrice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Books\frmPrice.resx">
+    <EmbeddedResource Include="Modules\Bookings\frmPrice.resx">
       <DependentUpon>frmPrice.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmInvoice.resx">
+      <DependentUpon>frmInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\rptInvoice.rdlc" />
     <EmbeddedResource Include="Modules\Guests\frmGuests.es.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
     </EmbeddedResource>

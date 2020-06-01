@@ -506,4 +506,13 @@
   <data name="propNoDeleted" xml:space="preserve">
     <value>The property cannot be deleted. It has associated bookings.</value>
   </data>
+  <data name="noBookingToDeleteErrorMsg" xml:space="preserve">
+    <value>No booking to delete.</value>
+  </data>
+  <data name="bookingNotCanceledErrorMsg" xml:space="preserve">
+    <value>The booking is not canceled and cannot be deleted.</value>
+  </data>
+  <data name="rowRemovedBookMsg" xml:space="preserve">
+    <value>The booking between the days</value>
+  </data>
 </root>

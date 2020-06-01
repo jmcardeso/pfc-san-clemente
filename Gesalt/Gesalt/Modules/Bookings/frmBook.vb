@@ -206,7 +206,25 @@ Public Class frmBook
             Exit Sub
         End If
 
-        MsgBox("Print!")
+        Dim frmRpt As New frmReportProperty()
+        Dim rpd As New ReportDataSource("dsProp", bs)
+        Dim parameters As New List(Of ReportParameter) From {
+        New ReportParameter("p_RptPropertiesHeaderTitle", LocRM.GetString("rptPropertiesHeaderTitle")),
+        New ReportParameter("p_RptPropertiesHeaderSubtitle",
+                            If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterPropertiesMenuON")), lblFilter.Text, " ")),
+        New ReportParameter("p_RptPropertiesFieldCadRef", LocRM.GetString("fieldCadRef")),
+        New ReportParameter("p_RptPropertiesFieldAddress", LocRM.GetString("fieldAddress")),
+        New ReportParameter("p_RptPropertiesFieldCity", LocRM.GetString("fieldCity")),
+        New ReportParameter("p_RptPropertiesFieldZip", LocRM.GetString("fieldZip")),
+        New ReportParameter("p_RptPropertiesFieldProvince", LocRM.GetString("fieldProvince"))
+    }
+
+        frmRpt.rpvProp.LocalReport.DataSources.Clear()
+        frmRpt.rpvProp.LocalReport.DataSources.Add(rpd)
+        frmRpt.rpvProp.LocalReport.ReportEmbeddedResource = "Gesalt.rptProperty.rdlc"
+        frmRpt.rpvProp.LocalReport.SetParameters(parameters)
+        frmRpt.rpvProp.RefreshReport()
+        frmRpt.ShowDialog()
     End Sub
 
     Private Sub cbxBookTypes_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbxBookTypes.SelectedValueChanged

@@ -273,6 +273,46 @@ Public Class OpBook
         Return result
     End Function
 
+    Public Function DeleteBook(book As Book) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from book where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = book.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.Delete()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
     Public Function GetInvoiceNumber(propertyId As Integer) As String
         Dim invoiceNumber As Object
         Dim sqlCommand As DbCommand

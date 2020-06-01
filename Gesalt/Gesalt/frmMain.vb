@@ -631,6 +631,7 @@ Public Class frmMain
 
             bs.Current.Books.Add(newBook)
         End If
+
         bs.ResetBindings(False)
     End Sub
 
@@ -662,49 +663,37 @@ Public Class frmMain
                         bookToDel = frmSlct.bookingSelected
                     End If
                 Else
-                    bookToDel = bookDayMatch.First 'NO SÉ PORQUE TENGO QUE PONER ESTO AQUÍ
+                    bookToDel = bookDayMatch.First 'Revisar esto si hay errores
                 End If
             Else
                 bookToDel = bookDayMatch.First
             End If
         Else
-            MsgBox("no hay reserva")
+            MsgBox(LocRM.GetString("noBookingToDeleteErrorMsg"), MsgBoxStyle.Information, "Gesalt")
             Exit Sub
         End If
 
         If bookToDel.Status <> BK_CANCELLED Then
-            MsgBox("la reserva no está cancelada")
+            MsgBox(LocRM.GetString("bookingNotCanceledErrorMsg"), MsgBoxStyle.Exclamation, "Gesalt")
             Exit Sub
         End If
 
-        MsgBox("reserva borrada")
+        If MsgBox(LocRM.GetString("rowRemovedBookMsg") & " '" & bookToDel.ToString() & "' " & LocRM.GetString("rowRemovedMsg"),
+              MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2,
+              LocRM.GetString("rowRemovedTitle")) = MsgBoxResult.No Then
+            Exit Sub
+        End If
 
-        'If frmBk.IsEdited Then
-        '    Dim thisBooking = From book In CType(bs.Current.Books, List(Of Book)) Where book.Id = frmBk.editBook.Id
+        Dim opBook As OpBook = OpBook.GetInstance()
 
-        '    Dim bookAux As Book = thisBooking.First
+        If Not opBook.DeleteBook(bookToDel) Then
+            MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+            Exit Sub
+        End If
 
-        '    If Not opBook.UpdateBook(frmBk.editBook) Then
-        '        MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
-        '        Exit Sub
-        '    Else
-        '        bs.Current.Books.Item(bs.Current.Books.indexOf(bookAux)) = Utils.DeepClone(frmBk.editBook)
-        '    End If
-        'Else
-        '    frmBk.editBook.PropertyId = bs.Current.Id
+        bs.Current.Books.Remove(bs.Current.Books.Item(bs.Current.Books.indexOf(bookToDel)))
+        Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
 
-        '    Dim id As Integer = opBook.AddBook(frmBk.editBook)
-        '    If id < 1 Then
-        '        MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
-        '        Exit Sub
-        '    End If
-
-        '    Dim newBook As New Book()
-        '    newBook = Utils.DeepClone(frmBk.editBook)
-        '    newBook.Id = id
-
-        '    bs.Current.Books.Add(newBook)
-        'End If
-        'bs.ResetBindings(False)
+        bs.ResetBindings(False)
     End Sub
 End Class
