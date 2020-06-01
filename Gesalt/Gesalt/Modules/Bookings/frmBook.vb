@@ -1,5 +1,6 @@
 ﻿Imports System.Resources
 Imports System.Data.Common
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmBook
     Public Property editBook As Book
@@ -91,7 +92,7 @@ Public Class frmBook
                                  price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
                                Select price.Value
 
-        While today <= bookAux.CheckOut
+        While today < bookAux.CheckOut.Date
             If todayprices.Count > 0 Then
                 priceAux = todayprices.Min()
             Else
@@ -225,35 +226,66 @@ Public Class frmBook
         pPropId.DbType = DbType.Int32
         parameters.Add(pPropId)
 
-        Prop = opProp.GetProps("select from property where Id = @p_property_Id", parameters).Item(0)
+        Prop = opProp.GetProps("select * from property where Id = @p_property_Id", parameters).Item(0)
 
         BookType = opBookType.GetBookTypeById(bookAux.BookTypeId)
 
         Guest = opGuest.GuetGuestById(bookAux.GuestId)
 
-        ''GuestAddress = Guest.Address
-        ''GuestName = Guest.FirstName & " " & Guest.LastName
-        ''GuestNif = Guest.Nif
+        Dim frmRpt As New frmInvoice()
+        Dim pathLogo As String = ""
+        Dim logoVisible As Boolean = False
+        Dim VATVisible As Boolean = False
 
-        '    Dim frmRpt As New frmReportProperty()
-        '    Dim rpd As New ReportDataSource("dsProp", bs)
-        '    Dim parameters As New List(Of ReportParameter) From {
-        '    New ReportParameter("p_RptPropertiesHeaderTitle", LocRM.GetString("rptPropertiesHeaderTitle")),
-        '    New ReportParameter("p_RptPropertiesHeaderSubtitle",
-        '                        If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterPropertiesMenuON")), lblFilter.Text, " ")),
-        '    New ReportParameter("p_RptPropertiesFieldCadRef", LocRM.GetString("fieldCadRef")),
-        '    New ReportParameter("p_RptPropertiesFieldAddress", LocRM.GetString("fieldAddress")),
-        '    New ReportParameter("p_RptPropertiesFieldCity", LocRM.GetString("fieldCity")),
-        '    New ReportParameter("p_RptPropertiesFieldZip", LocRM.GetString("fieldZip")),
-        '    New ReportParameter("p_RptPropertiesFieldProvince", LocRM.GetString("fieldProvince"))
-        '}
+        For i As Integer = 0 To Prop.Lessors.Count - 1
+            If Prop.Lessors.Item(i).Lessor.PathLogo.Length > 0 Then
+                pathLogo = "file:///" & Prop.Lessors.Item(i).Lessor.PathLogo
+                logoVisible = True
+                Exit For
+            End If
+        Next
 
-        '    frmRpt.rpvProp.LocalReport.DataSources.Clear()
-        '    frmRpt.rpvProp.LocalReport.DataSources.Add(rpd)
-        '    frmRpt.rpvProp.LocalReport.ReportEmbeddedResource = "Gesalt.rptProperty.rdlc"
-        '    frmRpt.rpvProp.LocalReport.SetParameters(parameters)
-        '    frmRpt.rpvProp.RefreshReport()
-        '    frmRpt.ShowDialog()
+        If Not lblVat.Text.Equals("0 €") Then ' Falta el IVA
+            VATVisible = True
+        End If
+
+        Dim rptParameters As New List(Of ReportParameter) From {
+            New ReportParameter("p_InvoiceNumberText", LocRM.GetString("fieldInvoiceNumber")),
+            New ReportParameter("p_InvoiceNumber", bookAux.InvoiceNumber),
+            New ReportParameter("p_PathLogo", "file:///" & Prop.Lessors.Item(0).Lessor.PathLogo),
+            New ReportParameter("p_LogoVisible", logoVisible),
+            New ReportParameter("p_LessorName", Prop.Lessors.Item(0).Lessor.FirstName & " " & Prop.Lessors.Item(0).Lessor.LastName),
+            New ReportParameter("p_LessorNif", Prop.Lessors.Item(0).Lessor.Nif),
+            New ReportParameter("p_LessorAddress", Prop.Lessors.Item(0).Lessor.Address),
+            New ReportParameter("p_LessorCity", Prop.Lessors.Item(0).Lessor.City),
+            New ReportParameter("p_LessorZip", Prop.Lessors.Item(0).Lessor.Zip),
+            New ReportParameter("p_LessorProvince", Prop.Lessors.Item(0).Lessor.Province),
+            New ReportParameter("p_LessorPhone", Prop.Lessors.Item(0).Lessor.Phone),
+            New ReportParameter("p_LessorEmail", Prop.Lessors.Item(0).Lessor.Email),
+            New ReportParameter("p_RentalText", LocRM.GetString("invoiceRentalText")),
+            New ReportParameter("p_Guest", LocRM.GetString("invoiceGuest")),
+            New ReportParameter("p_GuestName", Guest.FirstName & " " & Guest.LastName),
+            New ReportParameter("p_GuestNif", Guest.Nif),
+            New ReportParameter("p_PropertyAddress", Prop.Address),
+            New ReportParameter("p_PropertyCity", Prop.City),
+            New ReportParameter("p_From", LocRM.GetString("fieldStartDate2")),
+            New ReportParameter("p_To", LocRM.GetString("fieldEndDate2")),
+            New ReportParameter("p_Checkin", bookAux.CheckIn.ToShortDateString),
+            New ReportParameter("p_Checkout", bookAux.CheckOut.ToShortDateString),
+            New ReportParameter("p_Amount", LocRM.GetString("invoiceAmount")),
+            New ReportParameter("p_AmountValue", lblAmount.Text),
+            New ReportParameter("p_VAT", LocRM.GetString("invoiceVAT")),
+            New ReportParameter("p_VATPercentage", "0"),
+            New ReportParameter("p_VATValue", lblVat.Text),
+            New ReportParameter("p_Total", LocRM.GetString("invoiceTotal")),
+            New ReportParameter("p_TotalValue", lblTotal.Text)
+            }
+
+        frmRpt.rpvInvoice.LocalReport.EnableExternalImages = True
+        frmRpt.rpvInvoice.LocalReport.ReportEmbeddedResource = "Gesalt.rptInvoice.rdlc"
+        frmRpt.rpvInvoice.LocalReport.SetParameters(rptParameters)
+        frmRpt.rpvInvoice.RefreshReport()
+        frmRpt.ShowDialog()
     End Sub
 
     Private Sub cbxBookTypes_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbxBookTypes.SelectedValueChanged

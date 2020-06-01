@@ -515,4 +515,22 @@
   <data name="rowRemovedBookMsg" xml:space="preserve">
     <value>La reserva comprendida entre los días</value>
   </data>
+  <data name="fieldInvoiceNumber" xml:space="preserve">
+    <value>Nº factura:</value>
+  </data>
+  <data name="invoiceRentalText" xml:space="preserve">
+    <value>Alquiler del inmueble sito en</value>
+  </data>
+  <data name="invoiceGuest" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="invoiceAmount" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="invoiceVAT" xml:space="preserve">
+    <value>IVA</value>
+  </data>
+  <data name="invoiceTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>

@@ -23,14 +23,25 @@ Partial Class frmInvoice
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInvoice))
+        Me.rpvInvoice = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
+        '
+        'rpvInvoice
+        '
+        resources.ApplyResources(Me.rpvInvoice, "rpvInvoice")
+        Me.rpvInvoice.LocalReport.ReportEmbeddedResource = "Gesalt.rptInvoice.rdlc"
+        Me.rpvInvoice.Name = "rpvInvoice"
+        Me.rpvInvoice.ServerReport.BearerToken = Nothing
         '
         'frmInvoice
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.rpvInvoice)
         Me.Name = "frmInvoice"
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents rpvInvoice As Microsoft.Reporting.WinForms.ReportViewer
 End Class

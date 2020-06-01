@@ -162,4 +162,10 @@
   <data name="btnAddLogo.Text" xml:space="preserve">
     <value>...</value>
   </data>
+  <data name="btnAddLogo.ToolTip" xml:space="preserve">
+    <value>Añadir logo</value>
+  </data>
+  <data name="bntDeleteLogo.ToolTip" xml:space="preserve">
+    <value>Borrar logo</value>
+  </data>
 </root>

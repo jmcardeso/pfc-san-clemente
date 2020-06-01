@@ -22,6 +22,7 @@ Partial Class frmLessorsAux
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLessorsAux))
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -49,6 +50,8 @@ Partial Class frmLessorsAux
         Me.btnAddLogo = New System.Windows.Forms.Button()
         Me.ofdLogo = New System.Windows.Forms.OpenFileDialog()
         Me.cbxType = New System.Windows.Forms.ComboBox()
+        Me.bntDeleteLogo = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -175,6 +178,7 @@ Partial Class frmLessorsAux
         '
         resources.ApplyResources(Me.btnAddLogo, "btnAddLogo")
         Me.btnAddLogo.Name = "btnAddLogo"
+        Me.ToolTip1.SetToolTip(Me.btnAddLogo, resources.GetString("btnAddLogo.ToolTip"))
         Me.btnAddLogo.UseVisualStyleBackColor = True
         '
         'ofdLogo
@@ -187,12 +191,20 @@ Partial Class frmLessorsAux
         resources.ApplyResources(Me.cbxType, "cbxType")
         Me.cbxType.Name = "cbxType"
         '
+        'bntDeleteLogo
+        '
+        resources.ApplyResources(Me.bntDeleteLogo, "bntDeleteLogo")
+        Me.bntDeleteLogo.Name = "bntDeleteLogo"
+        Me.ToolTip1.SetToolTip(Me.bntDeleteLogo, resources.GetString("bntDeleteLogo.ToolTip"))
+        Me.bntDeleteLogo.UseVisualStyleBackColor = True
+        '
         'frmLessorsAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.bntDeleteLogo)
         Me.Controls.Add(Me.cbxType)
         Me.Controls.Add(Me.btnAddLogo)
         Me.Controls.Add(Me.pbxLogo)
@@ -252,4 +264,6 @@ Partial Class frmLessorsAux
     Friend WithEvents btnAddLogo As Button
     Friend WithEvents ofdLogo As OpenFileDialog
     Friend WithEvents cbxType As ComboBox
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents bntDeleteLogo As Button
 End Class

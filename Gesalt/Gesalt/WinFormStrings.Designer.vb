@@ -578,6 +578,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Invoice Number:.
+        '''</summary>
+        Friend Shared ReadOnly Property fieldInvoiceNumber() As String
+            Get
+                Return ResourceManager.GetString("fieldInvoiceNumber", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Last Name.
         '''</summary>
         Friend Shared ReadOnly Property fieldLastName() As String
@@ -934,6 +943,51 @@ Namespace My.Resources
         Friend Shared ReadOnly Property InvalidFilterData() As String
             Get
                 Return ResourceManager.GetString("InvalidFilterData", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Amount.
+        '''</summary>
+        Friend Shared ReadOnly Property invoiceAmount() As String
+            Get
+                Return ResourceManager.GetString("invoiceAmount", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Guest.
+        '''</summary>
+        Friend Shared ReadOnly Property invoiceGuest() As String
+            Get
+                Return ResourceManager.GetString("invoiceGuest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Rental from the property located in.
+        '''</summary>
+        Friend Shared ReadOnly Property invoiceRentalText() As String
+            Get
+                Return ResourceManager.GetString("invoiceRentalText", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Total.
+        '''</summary>
+        Friend Shared ReadOnly Property invoiceTotal() As String
+            Get
+                Return ResourceManager.GetString("invoiceTotal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a VAT.
+        '''</summary>
+        Friend Shared ReadOnly Property invoiceVAT() As String
+            Get
+                Return ResourceManager.GetString("invoiceVAT", resourceCulture)
             End Get
         End Property
         

@@ -33,6 +33,11 @@ Public Class frmLessorsAux
         tbxProvince.DataBindings.Add("Text", lessorAux, "Province")
         cbxType.DataBindings.Add("Text", lessorAux, "Type")
         tbxZip.DataBindings.Add("Text", lessorAux, "Zip")
+
+        If lessorAux.PathLogo.Length = 0 Then
+            pbxLogo.SizeMode = PictureBoxSizeMode.CenterImage
+            pbxLogo.Image = My.Resources.noImage
+        End If
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -55,9 +60,16 @@ Public Class frmLessorsAux
         ofdLogo.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures
 
         If ofdLogo.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            pbxLogo.SizeMode = PictureBoxSizeMode.Zoom
             pbxLogo.Image = Image.FromFile(ofdLogo.FileName)
             lessorAux.PathLogo = ofdLogo.FileName
         End If
+    End Sub
+
+    Private Sub bntDeleteLogo_Click(sender As Object, e As EventArgs) Handles bntDeleteLogo.Click
+        pbxLogo.SizeMode = PictureBoxSizeMode.CenterImage
+        pbxLogo.Image = My.Resources.noImage
+        lessorAux.PathLogo = ""
     End Sub
 
     Private Function ValidateFields() As Boolean
