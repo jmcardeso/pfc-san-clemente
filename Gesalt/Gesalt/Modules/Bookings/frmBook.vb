@@ -1,4 +1,5 @@
 ﻿Imports System.Resources
+Imports System.Data.Common
 
 Public Class frmBook
     Public Property editBook As Book
@@ -206,25 +207,53 @@ Public Class frmBook
             Exit Sub
         End If
 
-        Dim frmRpt As New frmReportProperty()
-        Dim rpd As New ReportDataSource("dsProp", bs)
-        Dim parameters As New List(Of ReportParameter) From {
-        New ReportParameter("p_RptPropertiesHeaderTitle", LocRM.GetString("rptPropertiesHeaderTitle")),
-        New ReportParameter("p_RptPropertiesHeaderSubtitle",
-                            If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterPropertiesMenuON")), lblFilter.Text, " ")),
-        New ReportParameter("p_RptPropertiesFieldCadRef", LocRM.GetString("fieldCadRef")),
-        New ReportParameter("p_RptPropertiesFieldAddress", LocRM.GetString("fieldAddress")),
-        New ReportParameter("p_RptPropertiesFieldCity", LocRM.GetString("fieldCity")),
-        New ReportParameter("p_RptPropertiesFieldZip", LocRM.GetString("fieldZip")),
-        New ReportParameter("p_RptPropertiesFieldProvince", LocRM.GetString("fieldProvince"))
-    }
+        Dim con As Connection = Connection.GetInstance()
+        Dim opProp As OpProp = OpProp.GetInstance()
+        Dim opBookType As OpBook = OpBook.GetInstance()
+        Dim opGuest As OpGuest = OpGuest.GetInstance()
 
-        frmRpt.rpvProp.LocalReport.DataSources.Clear()
-        frmRpt.rpvProp.LocalReport.DataSources.Add(rpd)
-        frmRpt.rpvProp.LocalReport.ReportEmbeddedResource = "Gesalt.rptProperty.rdlc"
-        frmRpt.rpvProp.LocalReport.SetParameters(parameters)
-        frmRpt.rpvProp.RefreshReport()
-        frmRpt.ShowDialog()
+        Dim parameters As New List(Of DbParameter)
+        Dim pPropId As DbParameter
+
+        Dim BookType As BookType
+        Dim Guest As Guest
+        Dim Prop As Prop
+
+        pPropId = con.Factory.CreateParameter()
+        pPropId.ParameterName = "@p_property_Id"
+        pPropId.Value = bookAux.PropertyId
+        pPropId.DbType = DbType.Int32
+        parameters.Add(pPropId)
+
+        Prop = opProp.GetProps("select from property where Id = @p_property_Id", parameters).Item(0)
+
+        BookType = opBookType.GetBookTypeById(bookAux.BookTypeId)
+
+        Guest = opGuest.GuetGuestById(bookAux.GuestId)
+
+        ''GuestAddress = Guest.Address
+        ''GuestName = Guest.FirstName & " " & Guest.LastName
+        ''GuestNif = Guest.Nif
+
+        '    Dim frmRpt As New frmReportProperty()
+        '    Dim rpd As New ReportDataSource("dsProp", bs)
+        '    Dim parameters As New List(Of ReportParameter) From {
+        '    New ReportParameter("p_RptPropertiesHeaderTitle", LocRM.GetString("rptPropertiesHeaderTitle")),
+        '    New ReportParameter("p_RptPropertiesHeaderSubtitle",
+        '                        If(FilterDataToolStripMenuItem.Text.Equals(LocRM.GetString("filterPropertiesMenuON")), lblFilter.Text, " ")),
+        '    New ReportParameter("p_RptPropertiesFieldCadRef", LocRM.GetString("fieldCadRef")),
+        '    New ReportParameter("p_RptPropertiesFieldAddress", LocRM.GetString("fieldAddress")),
+        '    New ReportParameter("p_RptPropertiesFieldCity", LocRM.GetString("fieldCity")),
+        '    New ReportParameter("p_RptPropertiesFieldZip", LocRM.GetString("fieldZip")),
+        '    New ReportParameter("p_RptPropertiesFieldProvince", LocRM.GetString("fieldProvince"))
+        '}
+
+        '    frmRpt.rpvProp.LocalReport.DataSources.Clear()
+        '    frmRpt.rpvProp.LocalReport.DataSources.Add(rpd)
+        '    frmRpt.rpvProp.LocalReport.ReportEmbeddedResource = "Gesalt.rptProperty.rdlc"
+        '    frmRpt.rpvProp.LocalReport.SetParameters(parameters)
+        '    frmRpt.rpvProp.RefreshReport()
+        '    frmRpt.ShowDialog()
     End Sub
 
     Private Sub cbxBookTypes_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbxBookTypes.SelectedValueChanged

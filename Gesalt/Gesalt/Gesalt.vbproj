@@ -183,7 +183,6 @@
     <Compile Include="Modules\Bookings\frmInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\DataBase\Invoice.vb" />
     <Compile Include="Modules\DataBase\Operations\OpBook.vb" />
     <Compile Include="Modules\DataBase\Tables\Book.vb" />
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
