@@ -78,6 +78,10 @@ Public Class Lessor
         Me.PathLogo = pathLogo
     End Sub
 
+    ''' <summary>
+    ''' Devuelve una cadena de texto que representa un objeto de la clase <c>Lessor</c> (Apellidos, Nombre).
+    ''' </summary>
+    ''' <returns>La cadena de texto que representa un objeto de la clase <c>Lessor</c>.</returns>
     Public Overrides Function ToString() As String
         Return Me.LastName & ", " & Me.FirstName
     End Function

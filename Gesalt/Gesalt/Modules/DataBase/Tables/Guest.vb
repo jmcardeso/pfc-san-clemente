@@ -83,6 +83,10 @@ Public Class Guest
         Me.AcceptAd = acceptAd
     End Sub
 
+    ''' <summary>
+    ''' Devuelve una cadena de texto que representa al objeto de la clase <c>Guest</c> (Apellidos, Nombre).
+    ''' </summary>
+    ''' <returns>La cadena de texto que representa al objeto de la clase <c>Guest</c>.</returns>
     Public Overrides Function ToString() As String
         Return Me.LastName & ", " & Me.FirstName
     End Function

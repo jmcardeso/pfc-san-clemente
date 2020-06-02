@@ -11,12 +11,7 @@ Public Class OpLessor
     ''' Inicializa una nueva instancia de la clase <c>OpLessor</c>, que permite realizar operaciones en la tabla lessor de la base de datos.
     ''' </summary>
     Private Sub New()
-        If con.Open() Is Nothing Then
-            'My.Settings.appStatus = "dbError"
-            'My.Settings.Save()
-            'MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
-            'ConnectionWizard()
-        End If
+        con.Open()
     End Sub
 
     ''' <summary>
@@ -73,6 +68,11 @@ Public Class OpLessor
         Return lessors
     End Function
 
+    ''' <summary>
+    ''' Devuelve un arrendador de la base de datos.
+    ''' </summary>
+    ''' <param name="id">El campo Id de la fila de la tabla lessor que se quiere obtener.</param>
+    ''' <returns>Un objeto de la clase <c>Lessor</c> que representa un arrendador.</returns>
     Public Function GetLessor(id As Integer) As Lessor
         Dim lessor As Lessor
 
@@ -168,7 +168,7 @@ Public Class OpLessor
 
         Dim dr As DataRow
         dr = dt.Rows.Item(0)
-        'COMPROBAR QUE SE PUEDE BORRAR (QUE NO TIENE INMUEBLES)
+
         dr.Delete()
 
         If da.Update(dt) = 1 Then

@@ -11,12 +11,7 @@ Public Class OpGuest
     ''' Inicializa una nueva instancia de la clase <c>OpGuest</c>, que permite realizar operaciones en la tabla guest de la base de datos.
     ''' </summary>
     Private Sub New()
-        If con.Open() Is Nothing Then
-            'My.Settings.appStatus = "dbError"
-            'My.Settings.Save()
-            'MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
-            'ConnectionWizard()
-        End If
+        con.Open()
     End Sub
 
     ''' <summary>
@@ -31,6 +26,11 @@ Public Class OpGuest
         Return objOpGuest
     End Function
 
+    ''' <summary>
+    ''' Devuelve un objeto de la clase <c>Guest</c> que representa un cliente.
+    ''' </summary>
+    ''' <param name="id">El campo Id de la cliente que se quiere recuperar.</param>
+    ''' <returns>Un objeto de la clase <c>Guest</c> que representa un cliente.</returns>
     Public Function GuetGuestById(id As Integer) As Guest
         Dim guest As Guest
         Dim da As DbDataAdapter
@@ -155,6 +155,11 @@ Public Class OpGuest
         Return result
     End Function
 
+    ''' <summary>
+    ''' Comprueba si es seguro borrar un cliente de la base de datos.
+    ''' </summary>
+    ''' <param name="guestId">El campo Id de la fila del cliente.</param>
+    ''' <returns><c>True</c> si es seguro borrar el cliente, <c>False</c> en caso contrario.</returns>
     Public Function IsSafeDeleteGuest(guestId As Integer) As Boolean
         Dim opBook As OpBook = OpBook.GetInstance()
 

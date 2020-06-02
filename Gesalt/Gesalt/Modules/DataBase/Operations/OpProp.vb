@@ -1,5 +1,4 @@
 ﻿Imports System.Data.Common
-Imports Gesalt
 
 ''' <summary>
 ''' Representa un conjunto de métodos para realizar operaciones en la tabla property de la base de datos.
@@ -12,12 +11,7 @@ Public Class OpProp
     ''' Inicializa una nueva instancia de la clase <c>OpProp</c>, que permite realizar operaciones en la tabla property de la base de datos.
     ''' </summary>
     Private Sub New()
-        If con.Open() Is Nothing Then
-            'My.Settings.appStatus = "dbError"
-            'My.Settings.Save()
-            'MsgBox(LocRM.GetString("fatalErrorDB"), MsgBoxStyle.Critical, LocRM.GetString("fatalErrorDBTitle"))
-            'ConnectionWizard()
-        End If
+        con.Open()
     End Sub
 
     ''' <summary>
@@ -32,6 +26,7 @@ Public Class OpProp
         Return objOpProp
     End Function
 
+#Region "Prop"
     ''' <summary>
     ''' Obtiene una lista con las filas de datos de la tabla property de la base de datos.
     ''' </summary>
@@ -78,71 +73,6 @@ Public Class OpProp
         Next
 
         Return Props
-    End Function
-
-    ''' <summary>
-    ''' Borra una fila de datos de la tabla property de la base de datos.
-    ''' </summary>
-    ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a borrar de la tabla property de la base de datos.</param>
-    ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
-    Public Function DeleteProp(prop As Prop) As Boolean
-        Dim result As Boolean = False
-        Dim da As DbDataAdapter
-        Dim cb As DbCommandBuilder
-        Dim sqlCommand As DbCommand
-        Dim p As DbParameter
-        Dim opBook As OpBook = OpBook.GetInstance()
-
-        Dim sql As String = "select * from property where Id = @p_id"
-
-        sqlCommand = con.Factory.CreateCommand()
-        sqlCommand.CommandText = sql
-        sqlCommand.Connection = con.Con
-
-        p = con.Factory.CreateParameter()
-        p.DbType = DbType.Int32
-        p.Value = prop.Id
-        p.ParameterName = "@p_id"
-        sqlCommand.Parameters.Add(p)
-
-        da = con.Factory.CreateDataAdapter()
-        da.SelectCommand = sqlCommand
-
-        cb = con.Factory.CreateCommandBuilder()
-        cb.DataAdapter = da
-
-        Dim dt As New DataTable()
-        da.Fill(dt)
-
-        If True Then
-            For Each photo As Photo In prop.Photos
-                DeletePhoto(photo)
-            Next
-
-            For Each lessor As LessorProp In prop.Lessors
-                DeleteLessor(prop.Id, lessor.Lessor.Id)
-            Next
-
-            For Each bt As BookType In opBook.GetBookTypes(prop.Id)
-                opBook.DeleteBookType(bt)
-            Next
-
-            Dim dr As DataRow
-            dr = dt.Rows.Item(0)
-            dr.Delete()
-
-            If da.Update(dt) = 1 Then
-                result = True
-            End If
-        End If
-
-        Return result
-    End Function
-
-    Public Function IsSafeDeleteProp(propertyId As Integer) As Boolean
-        Dim opBook As OpBook = OpBook.GetInstance()
-
-        Return opBook.GetBooksByPropertyId(propertyId).Count = 0
     End Function
 
     ''' <summary>
@@ -246,6 +176,130 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Borra una fila de datos de la tabla property de la base de datos.
+    ''' </summary>
+    ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a borrar de la tabla property de la base de datos.</param>
+    ''' <returns><c>True</c> si el borrado ha tenido éxito, <c>False</c> en caso contrario.</returns>
+    Public Function DeleteProp(prop As Prop) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+        Dim opBook As OpBook = OpBook.GetInstance()
+
+        Dim sql As String = "select * from property where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = prop.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        If True Then
+            For Each photo As Photo In prop.Photos
+                DeletePhoto(photo)
+            Next
+
+            For Each lessor As LessorProp In prop.Lessors
+                DeleteLessor(prop.Id, lessor.Lessor.Id)
+            Next
+
+            For Each bt As BookType In opBook.GetBookTypes(prop.Id)
+                opBook.DeleteBookType(bt)
+            Next
+
+            Dim dr As DataRow
+            dr = dt.Rows.Item(0)
+            dr.Delete()
+
+            If da.Update(dt) = 1 Then
+                result = True
+            End If
+        End If
+
+        Return result
+    End Function
+
+    ''' <summary>
+    ''' Comprueba si es seguro borrar el inmueble.
+    ''' </summary>
+    ''' <param name="propertyId">El campo Id del inmueble que se quiere comprobar.</param>
+    ''' <returns><c>True</c> si es seguro borrar el inmueble, <c>False</c> en caso contrario.</returns>
+    Public Function IsSafeDeleteProp(propertyId As Integer) As Boolean
+        Dim opBook As OpBook = OpBook.GetInstance()
+
+        Return opBook.GetBooksByPropertyId(propertyId).Count = 0
+    End Function
+
+    ''' <summary>
+    ''' Genera una Id para una nueva fila de la tabla property.
+    ''' </summary>
+    ''' <returns>La nueva Id generada, -1 en caso de error.</returns>
+    Private Function GetId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from property"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
+
+    ''' <summary>
+    ''' Introduce los datos de las propiedades de un objeto de la clase <c>Prop</c> en los campos de una fila de la tabla property de la base de datos.
+    ''' </summary>
+    ''' <param name="dr">Representa una fila de datos de la tabla property de la base de datos.</param>
+    ''' <param name="prop">El objeto de la clase Prop cuyos parámetros se van a introducir en la fila.</param>
+    Private Sub FillRow(dr As DataRow, prop As Prop)
+        dr("Id") = prop.Id
+        dr("cad_ref") = prop.CadRef
+        dr("address") = prop.Address
+        dr("zip") = prop.Zip
+        dr("city") = prop.City
+        dr("province") = prop.Province
+        dr("max_guests") = prop.MaxGuests
+        dr("siz") = prop.Size
+        dr("bedrooms") = prop.Bedrooms
+        dr("baths") = prop.Baths
+        dr("description") = prop.Description
+    End Sub
+
+#End Region
+
+#Region "Photo"
+    ''' <summary>
+    ''' Obtiene una lista con todas las fotos de un inmueble.
+    ''' </summary>
+    ''' <param name="propertyId">El campo Id del inmueble.</param>
+    ''' <returns>Una lista de objetos de la clase <c>Photo</c> que representa las fotos de un inmueble.</returns>
     Public Function GetAllPhotos(propertyId As Integer) As List(Of Photo)
         Dim photos As New List(Of Photo)
         Dim da As DbDataAdapter
@@ -276,6 +330,11 @@ Public Class OpProp
         Return photos
     End Function
 
+    ''' <summary>
+    ''' Añade una nueva fila a la tabla photo de la base de datos.
+    ''' </summary>
+    ''' <param name="photo">El objeto de la clase <c>Photo</c> que se va a añadir a la base de datos.</param>
+    ''' <returns>La Id de la fila de la tabla photoo añadida, -1 si no se ha podido generar una Id, -2 si no se ha podido añadir la fila.</returns>
     Public Function AddPhoto(photo As Photo) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
@@ -316,6 +375,11 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Borra una fila de la tabla photo de la base de datos.
+    ''' </summary>
+    ''' <param name="photo">Un objeto de la clase <c>Photo</c> que representa la foto de un inmueble.</param>
+    ''' <returns><c>True</c> si la operación ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function DeletePhoto(photo As Photo) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -356,6 +420,41 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Genera una nueva Id para añadir una fila de la tabla photo en la base de datos.
+    ''' </summary>
+    ''' <returns>La Id generada, -1 si se ha producido un error.</returns>
+    Private Function GetPhotoId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from photo"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
+
+#End Region
+
+#Region "Lessor"
+    ''' <summary>
+    ''' Obtiene los arrendadores de un inmueble.
+    ''' </summary>
+    ''' <param name="propertyId">El campo Id de la fila de la tabla prop que se quiere obtener.</param>
+    ''' <returns>Una lista de objetos de la clase <c>Prop</c> que representa los arrendadores de un inmueble.</returns>
     Public Function GetLessors(propertyId As Integer) As List(Of LessorProp)
         Dim lessors As New List(Of LessorProp)
         Dim da As DbDataAdapter
@@ -388,25 +487,62 @@ Public Class OpProp
         Return lessors
     End Function
 
-    Private Function RefreshLessors(prop As Prop) As Boolean
-        Dim oldLessors As New List(Of LessorProp)
-        oldLessors = GetLessors(prop.Id)
+    ''' <summary>
+    ''' Crea una asociación entre un arrendador y un inmueble en la base de datos.
+    ''' </summary>
+    ''' <param name="propertyId">El campo Id del inmueble.</param>
+    ''' <param name="lessorId">El campo Id del arrendador.</param>
+    ''' <param name="percentage">El porcentaje en la propiedad del inmueble.</param>
+    ''' <returns><c>True</c> si la operación ha tenido éxito, <c>False</c> en caso contrario.</returns>
+    Private Function AddLessor(propertyId As Integer, lessorId As Integer, percentage As Decimal) As Boolean
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim parameter As DbParameter
 
-        For Each lessor As LessorProp In oldLessors
-            If Not DeleteLessor(prop.Id, lessor.Lessor.Id) Then
-                Return False
-            End If
-        Next
+        sqlCommand = con.Factory.CreateCommand()
+        parameter = con.Factory.CreateParameter()
 
-        For Each lessor As LessorProp In prop.Lessors
-            If Not AddLessor(prop.Id, lessor.Lessor.Id, lessor.Percentage) Then
-                Return False
-            End If
-        Next
+        parameter.ParameterName = "@p_property_id"
+        parameter.Value = propertyId
+        parameter.DbType = DbType.Int32
+        sqlCommand.Parameters.Add(parameter)
+
+        Dim sql As String = "select * from lessor_prop where property_id = @p_property_id"
+
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+        dr.Item("property_id") = propertyId
+        dr.Item("lessor_id") = lessorId
+        dr.Item("percent_property") = percentage
+
+        dt.Rows.Add(dr)
+
+        If da.Update(dt) <> 1 Then
+            Return False
+        End If
 
         Return True
     End Function
 
+    ''' <summary>
+    ''' Borra la asociación entre un arrendador y un inmueble de la base de datos.
+    ''' </summary>
+    ''' <param name="propertyId">El campo Id del inmueble.</param>
+    ''' <param name="lessorId">El campo Id del arrendador.</param>
+    ''' <returns><c>True</c> si la operación ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Private Function DeleteLessor(propertyId As Integer, lessorId As Integer) As Boolean
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
@@ -455,111 +591,30 @@ Public Class OpProp
         Return True
     End Function
 
-    Private Function AddLessor(propertyId As Integer, lessorId As Integer, percentage As Decimal) As Boolean
-        Dim da As DbDataAdapter
-        Dim cb As DbCommandBuilder
-        Dim sqlCommand As DbCommand
-        Dim parameter As DbParameter
+    ''' <summary>
+    ''' Actualiza los arrendadores de un inmueble eliminando los borrados y añadiendo los nuevos.
+    ''' </summary>
+    ''' <param name="prop">Un objeto de la clase <c>Prop</c> que representa un inmueble.</param>
+    ''' <returns><c>True</c> si la operación ha tenido éxito, <c>False</c> en caso contrario.</returns>
+    Private Function RefreshLessors(prop As Prop) As Boolean
+        Dim oldLessors As New List(Of LessorProp)
+        oldLessors = GetLessors(prop.Id)
 
-        sqlCommand = con.Factory.CreateCommand()
-        parameter = con.Factory.CreateParameter()
+        For Each lessor As LessorProp In oldLessors
+            If Not DeleteLessor(prop.Id, lessor.Lessor.Id) Then
+                Return False
+            End If
+        Next
 
-        parameter.ParameterName = "@p_property_id"
-        parameter.Value = propertyId
-        parameter.DbType = DbType.Int32
-        sqlCommand.Parameters.Add(parameter)
-
-        Dim sql As String = "select * from lessor_prop where property_id = @p_property_id"
-
-        sqlCommand.CommandText = sql
-        sqlCommand.Connection = con.Con
-
-        da = con.Factory.CreateDataAdapter()
-        da.SelectCommand = sqlCommand
-
-        cb = con.Factory.CreateCommandBuilder()
-        cb.DataAdapter = da
-
-        Dim dt As New DataTable()
-        da.Fill(dt)
-
-        Dim dr As DataRow
-        dr = dt.NewRow()
-        dr.Item("property_id") = propertyId
-        dr.Item("lessor_id") = lessorId
-        dr.Item("percent_property") = percentage
-
-        dt.Rows.Add(dr)
-
-        If da.Update(dt) <> 1 Then
-            Return False
-        End If
+        For Each lessor As LessorProp In prop.Lessors
+            If Not AddLessor(prop.Id, lessor.Lessor.Id, lessor.Percentage) Then
+                Return False
+            End If
+        Next
 
         Return True
     End Function
 
-    ''' <summary>
-    ''' Introduce los datos de las propiedades de un objeto de la clase <c>Prop</c> en los campos de una fila de la tabla property de la base de datos.
-    ''' </summary>
-    ''' <param name="dr">Representa una fila de datos de la tabla property de la base de datos.</param>
-    ''' <param name="prop">El objeto de la clase Prop cuyos parámetros se van a introducir en la fila.</param>
-    Private Sub FillRow(dr As DataRow, prop As Prop)
-        dr("Id") = prop.Id
-        dr("cad_ref") = prop.CadRef
-        dr("address") = prop.Address
-        dr("zip") = prop.Zip
-        dr("city") = prop.City
-        dr("province") = prop.Province
-        dr("max_guests") = prop.MaxGuests
-        dr("siz") = prop.Size
-        dr("bedrooms") = prop.Bedrooms
-        dr("baths") = prop.Baths
-        dr("description") = prop.Description
-    End Sub
+#End Region
 
-    Private Function GetId() As Integer
-        Dim result As Object
-        Dim sqlCommand As DbCommand
-        Dim sql As String = "select max(Id) from property"
-
-        sqlCommand = con.Factory.CreateCommand()
-        sqlCommand.CommandText = sql
-        sqlCommand.Connection = con.Con
-
-        Try
-            result = sqlCommand.ExecuteScalar()
-            If IsDBNull(result) Then
-                result = 1
-            Else
-                result += 1
-            End If
-        Catch err As Exception
-            result = -1
-        End Try
-
-        Return result
-    End Function
-
-    Private Function GetPhotoId() As Integer
-        Dim result As Object
-        Dim sqlCommand As DbCommand
-        Dim sql As String = "select max(Id) from photo"
-
-        sqlCommand = con.Factory.CreateCommand()
-        sqlCommand.CommandText = sql
-        sqlCommand.Connection = con.Con
-
-        Try
-            result = sqlCommand.ExecuteScalar()
-            If IsDBNull(result) Then
-                result = 1
-            Else
-                result += 1
-            End If
-        Catch err As Exception
-            result = -1
-        End Try
-
-        Return result
-    End Function
 End Class
