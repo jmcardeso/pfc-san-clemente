@@ -339,6 +339,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_265097B9D0F5412CACEC2974274E7565"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_288E87A18FC77183A7880978F178016C"
         "OwnerKey" = "8:_42224BFD4E95F80BC24C6593DD626245"
         "MsmSig" = "8:_UNDEFINED"
@@ -617,12 +623,6 @@
         {
         "MsmKey" = "8:_4F8E96D18FD40D611666638B7C277811"
         "OwnerKey" = "8:_A4CB674ABDFED5B54B4EAFF0464AE91B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4F8E96D18FD40D611666638B7C277811"
-        "OwnerKey" = "8:_6442A15883D12EF4961DE362A7999042"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1431,6 +1431,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A80FA46E019DE8E8217B8F423DCD0125"
+        "OwnerKey" = "8:_6442A15883D12EF4961DE362A7999042"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A84422563ECBC5DC0E048759FAB653FF"
         "OwnerKey" = "8:_0EE6E4B46BC645E380343F6A98C7A169"
         "MsmSig" = "8:_UNDEFINED"
@@ -1895,24 +1901,6 @@
         {
         "MsmKey" = "8:_D6D5421110C1DBBD9F48CBCA963B979D"
         "OwnerKey" = "8:_0EE6E4B46BC645E380343F6A98C7A169"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D6D5421110C1DBBD9F48CBCA963B979D"
-        "OwnerKey" = "8:_F7F09583FAD20B1E46F768E3B93502E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D6D5421110C1DBBD9F48CBCA963B979D"
-        "OwnerKey" = "8:_BD6734AA5CD196CFA87C82324C65AC1D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D6D5421110C1DBBD9F48CBCA963B979D"
-        "OwnerKey" = "8:_BCB71EB9FF0B2C5E2BC71A3AC94A8A75"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2459,6 +2447,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6442A15883D12EF4961DE362A7999042"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A80FA46E019DE8E8217B8F423DCD0125"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3908,6 +3902,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_265097B9D0F5412CACEC2974274E7565"
+            {
+            "SourcePath" = "8:C:\\Users\\jmcar\\Desktop\\Gesalt\\Gesalt_MySQL_script.sql"
+            "TargetName" = "8:Gesalt_MySQL_script.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_288E87A18FC77183A7880978F178016C"
@@ -6109,6 +6123,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A80FA46E019DE8E8217B8F423DCD0125"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A80FA46E019DE8E8217B8F423DCD0125"
+                    {
+                    "Name" = "8:Microsoft.SqlServer.Types.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.SqlServer.Types.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A84422563ECBC5DC0E048759FAB653FF"
             {
             "AssemblyRegister" = "3:1"
@@ -7859,15 +7904,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Gesalt"
-        "ProductCode" = "8:{035DE0C7-8EFF-4F40-AC76-77F830E3181A}"
-        "PackageCode" = "8:{F88CE7A0-F49F-4F4E-835F-1B83EDA8D28A}"
+        "ProductCode" = "8:{9FA118A5-112D-4A34-945C-ED9338E83774}"
+        "PackageCode" = "8:{241B69EF-183F-41A3-858E-4F5441474121}"
         "UpgradeCode" = "8:{101FEDCC-6683-42B8-89DE-C7E26CA0975E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.8.1"
+        "ProductVersion" = "8:0.8.2"
         "Manufacturer" = "8:Juan M. Cardeso"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -8020,6 +8065,20 @@
             "Folder" = "8:_B9360AB7732E4CC6B6992BB0E3709302"
             "WorkingFolder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
             "Icon" = "8:_967F8531EFF6444EA1AE8E65B25734E6"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F2586DEBF79B49E0AF8B7BF90DCFB8D1"
+            {
+            "Name" = "8:Script MySQL"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_265097B9D0F5412CACEC2974274E7565"
+            "Folder" = "8:_B9360AB7732E4CC6B6992BB0E3709302"
+            "WorkingFolder" = "8:_6D8D89DBAAC145C68839C6CECBAF4C53"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
