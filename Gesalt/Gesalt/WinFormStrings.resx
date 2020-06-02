@@ -533,4 +533,7 @@
   <data name="invoiceTotal" xml:space="preserve">
     <value>Total</value>
   </data>
+  <data name="aboutDesc7" xml:space="preserve">
+    <value>ical.NET - an open source iCal library for .NET</value>
+  </data>
 </root>

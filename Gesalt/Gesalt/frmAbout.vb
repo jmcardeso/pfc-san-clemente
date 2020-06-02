@@ -24,7 +24,8 @@ Public NotInheritable Class frmAbout
             LocRM.GetString("aboutDesc3") & vbNewLine &
             LocRM.GetString("aboutDesc4") & vbNewLine &
             vbNewLine & LocRM.GetString("aboutDesc5") & vbNewLine &
-            LocRM.GetString("aboutDesc6")
+            LocRM.GetString("aboutDesc6") & vbNewLine &
+            LocRM.GetString("aboutDesc7")
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click

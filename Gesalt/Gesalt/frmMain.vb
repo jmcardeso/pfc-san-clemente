@@ -1,35 +1,48 @@
-﻿Imports System.Resources
+﻿'****************************************************************************************
+'*                                                                                      *
+'*                       GESALT - Gestión de alquileres turísticos                      *
+'*                                                                                      *
+'*                         (c) Juan Manuel Cardeso García, 2020                         *
+'*                                                                                      *
+'*      Proyecto de fin de ciclo DAM - IES San Clemente - Santiago de Compostela        *
+'*                                                                                      *
+'*     Este programa es software libre: puedes redistribuirlo y/o modificarlo bajo      *
+'*      los términos de la Licencia General Pública de GNU publicada por la Free        *
+'*     Software Foundation, ya sea la versión 3 de la Licencia, o (a tu elección)       *
+'*                             cualquier versión posterior.                             *
+'*                                                                                      *
+'****************************************************************************************
+
+Imports System.Resources
 Imports Microsoft.Reporting.WinForms
 Public Class frmMain
     Dim opProp As OpProp
-    '  Dim opBook As OpBook
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
     Dim bs As New BindingSource()
     Dim bsPhotos As New BindingSource()
     Dim bsLessors As New BindingSource()
     Dim props As New List(Of Prop)
-    ' Dim books As New List(Of Book)
     Private lastClickTick As Integer
 
     Public Sub New()
-        Dim strIdioma As String = My.Settings.language
-        Dim cultura As Globalization.CultureInfo
+        Dim strLanguage As String = My.Settings.language
+        Dim culture As Globalization.CultureInfo
 
         ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
         If My.Settings.appStatus.Equals("first_start") Then
-            cultura = Threading.Thread.CurrentThread.CurrentUICulture
+            culture = Threading.Thread.CurrentThread.CurrentUICulture
 
-            Select Case cultura.TwoLetterISOLanguageName
+            Select Case culture.TwoLetterISOLanguageName
                 Case "es", "gl"
-                    strIdioma = cultura.TwoLetterISOLanguageName
+                    strLanguage = culture.TwoLetterISOLanguageName
                 Case Else
-                    strIdioma = "en"
+                    strLanguage = "en"
             End Select
-            My.Settings.language = strIdioma
+            My.Settings.language = strLanguage
         End If
 
         ' Para forzar el cambio de idioma por código
-        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(strIdioma)
+        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(strLanguage)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -44,8 +57,6 @@ Public Class frmMain
 
         Try
             opProp = OpProp.GetInstance()
-            ' opBook = OpBook.GetInstance()
-
             props = opProp.GetProps()
 
             bs.DataSource = props
@@ -98,6 +109,7 @@ Public Class frmMain
             If bs.Current IsNot Nothing Then
                 bsPhotos.DataSource = bs.Current.Photos
                 bsLessors.DataSource = bs.Current.Lessors
+                mclCalendar_DateChanged(Nothing, New DateRangeEventArgs(Now(), Now()))
             Else
                 bsPhotos.DataSource = New List(Of Photo)
                 pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
@@ -329,6 +341,7 @@ Public Class frmMain
         mclCalendar.SelectionStart = Now()
         mclCalendar.SelectionEnd = Now()
         Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
+        mclCalendar_DateChanged(Nothing, New DateRangeEventArgs(Now(), Now()))
     End Sub
 
     Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
@@ -371,41 +384,6 @@ Public Class frmMain
         frmBT.ShowDialog()
     End Sub
 
-    ''' <summary>
-    ''' Vuelve a cargar el formulario.
-    ''' </summary>
-    ''' <param name="language">El idioma en el que se mostrará el formulario.
-    ''' <para>Ver: <see cref="Globalization.CultureInfo.GetCultureInfo(String)"/>.</para></param>
-    Private Sub ReLoadMain(language As String)
-        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(language)
-        Me.Controls.Clear()
-        Me.InitializeComponent()
-        frmprops_Load(Nothing, Nothing)
-    End Sub
-
-    ''' <summary>
-    ''' Muestra el formulario de preferencias de la aplicación.
-    ''' <para>Se utiliza en caso de error en la conexión o cuando el programa se ejecuta por primera vez.</para>
-    ''' </summary>
-    Private Sub ConnectionWizard()
-        Dim frmPref As New frmSettings
-
-        If My.Settings.appStatus.Equals("dbError") Then
-            frmPref.Text = LocRM.GetString("dbErrorTitle")
-            CloseSplash()
-        ElseIf My.Settings.appStatus.Equals("first_start") Then
-            CloseSplash()
-            MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
-            frmPref.Text = LocRM.GetString("firstTimeTitle")
-        End If
-
-        frmPref.ShowDialog()
-
-        If frmPref.LanguageChanged Then
-            ReLoadMain(My.Settings.language)
-        End If
-    End Sub
-
     Private Sub ManageLessorsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageLessorsToolStripMenuItem.Click
         Dim frmLsr As New frmLessors
 
@@ -433,36 +411,6 @@ Public Class frmMain
         Dim frmAbout As New frmAbout
 
         frmAbout.ShowDialog()
-    End Sub
-
-    Private Sub RefreshData()
-        props = opProp.GetProps()
-
-        bs.DataSource = props
-
-        If bs.Current IsNot Nothing Then
-            bsPhotos.DataSource = bs.Current.Photos
-            bsLessors.DataSource = bs.Current.Lessors
-        Else
-            bsPhotos.DataSource = New List(Of Photo)
-            pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
-            pbxPhotos.Image = My.Resources.noImage
-            bsLessors.DataSource = New List(Of LessorProp)
-        End If
-    End Sub
-    Private Sub CloseSplash()
-
-        Dim mySplash = My.Application.OpenForms.Item("SplashScreen")
-
-        If mySplash Is Nothing Then
-            Exit Sub
-        End If
-
-        mySplash.Invoke(New MethodInvoker(Sub()
-                                              mySplash.Close()
-                                              mySplash.Dispose()
-                                          End Sub))
-
     End Sub
 
     Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
@@ -695,5 +643,77 @@ Public Class frmMain
         Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
 
         bs.ResetBindings(False)
+    End Sub
+
+    ''' <summary>
+    ''' Vuelve a cargar el formulario.
+    ''' </summary>
+    ''' <param name="language">El idioma en el que se mostrará el formulario.
+    ''' <para>Ver: <see cref="Globalization.CultureInfo.GetCultureInfo(String)"/>.</para></param>
+    Private Sub ReLoadMain(language As String)
+        Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(language)
+        Me.Controls.Clear()
+        Me.InitializeComponent()
+        frmprops_Load(Nothing, Nothing)
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario de preferencias de la aplicación.
+    ''' <para>Se utiliza en caso de error en la conexión o cuando el programa se ejecuta por primera vez.</para>
+    ''' </summary>
+    Private Sub ConnectionWizard()
+        Dim frmPref As New frmSettings
+
+        If My.Settings.appStatus.Equals("dbError") Then
+            frmPref.Text = LocRM.GetString("dbErrorTitle")
+            CloseSplash()
+        ElseIf My.Settings.appStatus.Equals("first_start") Then
+            CloseSplash()
+            MsgBox(LocRM.GetString("firstTimeMsg"), MsgBoxStyle.Information, LocRM.GetString("firstTimeTitle"))
+            frmPref.Text = LocRM.GetString("firstTimeTitle")
+        End If
+
+        frmPref.ShowDialog()
+
+        If frmPref.LanguageChanged Then
+            ReLoadMain(My.Settings.language)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Actualiza los datos de las imágenes y los arrendadores. Si no hay imágenes, pone una por defecto.
+    ''' </summary>
+    Private Sub RefreshData()
+        props = opProp.GetProps()
+
+        bs.DataSource = props
+
+        If bs.Current IsNot Nothing Then
+            bsPhotos.DataSource = bs.Current.Photos
+            bsLessors.DataSource = bs.Current.Lessors
+        Else
+            bsPhotos.DataSource = New List(Of Photo)
+            pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
+            pbxPhotos.Image = My.Resources.noImage
+            bsLessors.DataSource = New List(Of LessorProp)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Fuerza el cierre de la ventana de bienvenida de la aplicación.
+    ''' </summary>
+    Private Sub CloseSplash()
+
+        Dim mySplash = My.Application.OpenForms.Item("SplashScreen")
+
+        If mySplash Is Nothing Then
+            Exit Sub
+        End If
+
+        mySplash.Invoke(New MethodInvoker(Sub()
+                                              mySplash.Close()
+                                              mySplash.Dispose()
+                                          End Sub))
+
     End Sub
 End Class

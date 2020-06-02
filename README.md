@@ -61,17 +61,13 @@ Icono de la aplicación diseñado por [Payungkead](https://www.flaticon.es/autor
 
 Iconos de estrellas para valoración de clientes de [iconsDB](https://www.iconsdb.com/) - [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/deed.es).
 
+[ical.NET](https://github.com/rianjs/ical.net) - an open source iCal library for .NET
+
 
 ## Índice
 
-> *TODO*: Simplemente indexa ordenadamente todo tu proyecto.
-
 1. [Idea](doc/templates/1_idea.md)
 2. [Necesidades](doc/templates/2_necesidades.md)
-3. [Análisis](doc/templates/3_analise.md)
-4. [Diseño](doc/templates/4_deseño.md)
-5. [Planificación](doc/templates/5_planificacion.md)
-6. [Implantación](doc/templates/6_implantacion.md)
 
 
 ## Guía de contribución

@@ -119,6 +119,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a ical.NET - an open source iCal library for .NET.
+        '''</summary>
+        Friend Shared ReadOnly Property aboutDesc7() As String
+            Get
+                Return ResourceManager.GetString("aboutDesc7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Version {0}.
         '''</summary>
         Friend Shared ReadOnly Property aboutVersion() As String
