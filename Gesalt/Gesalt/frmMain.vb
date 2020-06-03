@@ -716,4 +716,8 @@ Public Class frmMain
                                           End Sub))
 
     End Sub
+
+    Private Sub ManageVATToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageVATToolStripMenuItem.Click
+
+    End Sub
 End Class

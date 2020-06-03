@@ -261,4 +261,10 @@
   <data name="tsbAddEditCalendar.Text" xml:space="preserve">
     <value>Añadir/Editar reservas</value>
   </data>
+  <data name="ManageVATToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar IVA</value>
+  </data>
+  <data name="VATToolStripMenuItem.Text" xml:space="preserve">
+    <value>I&amp;VA</value>
+  </data>
 </root>
