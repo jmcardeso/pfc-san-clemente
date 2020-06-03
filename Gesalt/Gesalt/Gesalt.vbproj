@@ -188,6 +188,7 @@
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
     <Compile Include="Modules\DataBase\Operations\Connection.vb" />
     <Compile Include="Modules\DataBase\Tables\Guest.vb" />
+    <Compile Include="Modules\DataBase\Tables\LegalClassification.vb" />
     <Compile Include="Modules\DataBase\Tables\LessorProp.vb" />
     <Compile Include="Modules\DataBase\Operations\OpGuest.vb" />
     <Compile Include="Modules\DataBase\Operations\OpLessor.vb" />
@@ -195,6 +196,10 @@
     <Compile Include="Modules\DataBase\Tables\Lessor.vb" />
     <Compile Include="Modules\DataBase\Tables\Photo.vb" />
     <Compile Include="Modules\DataBase\Tables\Price.vb" />
+    <Compile Include="Modules\DataBase\Tables\PropClass.vb" />
+    <Compile Include="Modules\DataBase\Tables\Vat.vb" />
+    <Compile Include="Modules\DataBase\Tables\VatRate.vb" />
+    <Compile Include="Modules\DataBase\Tables\VatRateLegalClass.vb" />
     <Compile Include="Modules\DataBase\Utils.vb" />
     <Compile Include="Modules\Guests\frmGuests.Designer.vb">
       <DependentUpon>frmGuests.vb</DependentUpon>
@@ -206,6 +211,18 @@
       <DependentUpon>frmAbout.vb</DependentUpon>
     </Compile>
     <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Properties\frmDescriptionAux.Designer.vb">
+      <DependentUpon>frmDescriptionAux.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmDescriptionAux.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Properties\frmLegalClassification.Designer.vb">
+      <DependentUpon>frmLegalClassification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Properties\frmLegalClassification.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Lessors\frmLessors.Designer.vb">
@@ -403,6 +420,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmDescriptionAux.es.resx">
+      <DependentUpon>frmDescriptionAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmDescriptionAux.gl.resx">
+      <DependentUpon>frmDescriptionAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmDescriptionAux.resx">
+      <DependentUpon>frmDescriptionAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmLegalClassification.es.resx">
+      <DependentUpon>frmLegalClassification.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmLegalClassification.gl.resx">
+      <DependentUpon>frmLegalClassification.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Properties\frmLegalClassification.resx">
+      <DependentUpon>frmLegalClassification.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lessors\frmLessors.es.resx">
       <DependentUpon>frmLessors.vb</DependentUpon>

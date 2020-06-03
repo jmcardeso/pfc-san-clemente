@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,12 @@ Partial Class frmMain
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -45,10 +45,6 @@ Partial Class frmMain
         Me.BookTypeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PropertiesReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageLessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,7 +63,6 @@ Partial Class frmMain
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnFirst = New System.Windows.Forms.Button()
         Me.dgvProperties = New System.Windows.Forms.DataGridView()
-        Me.pbxPhotos = New System.Windows.Forms.PictureBox()
         Me.lblDescription = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btnPhotosFirst = New System.Windows.Forms.Button()
@@ -92,15 +87,21 @@ Partial Class frmMain
         Me.tstCalendar = New System.Windows.Forms.ToolStrip()
         Me.tsbAddEditCalendar = New System.Windows.Forms.ToolStripButton()
         Me.tsbDeleteCalendar = New System.Windows.Forms.ToolStripButton()
-        Me.VATToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbxPhotos = New System.Windows.Forms.PictureBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblLegalClass = New System.Windows.Forms.Label()
+        Me.ManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageLessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageVATToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LegalClassificationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlCalendar.SuspendLayout()
         Me.tstCalendar.SuspendLayout()
+        CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -151,7 +152,7 @@ Partial Class frmMain
         '
         'mnsProperties
         '
-        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.BookTypeToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.LessorsToolStripMenuItem, Me.GuestsToolStripMenuItem, Me.VATToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.mnsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesToolStripMenuItem, Me.BookTypeToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.ManagementToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.mnsProperties, "mnsProperties")
         Me.mnsProperties.Name = "mnsProperties"
         '
@@ -207,28 +208,6 @@ Partial Class frmMain
         '
         Me.PropertiesReportToolStripMenuItem.Name = "PropertiesReportToolStripMenuItem"
         resources.ApplyResources(Me.PropertiesReportToolStripMenuItem, "PropertiesReportToolStripMenuItem")
-        '
-        'LessorsToolStripMenuItem
-        '
-        Me.LessorsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageLessorsToolStripMenuItem})
-        Me.LessorsToolStripMenuItem.Name = "LessorsToolStripMenuItem"
-        resources.ApplyResources(Me.LessorsToolStripMenuItem, "LessorsToolStripMenuItem")
-        '
-        'ManageLessorsToolStripMenuItem
-        '
-        Me.ManageLessorsToolStripMenuItem.Name = "ManageLessorsToolStripMenuItem"
-        resources.ApplyResources(Me.ManageLessorsToolStripMenuItem, "ManageLessorsToolStripMenuItem")
-        '
-        'GuestsToolStripMenuItem
-        '
-        Me.GuestsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem})
-        Me.GuestsToolStripMenuItem.Name = "GuestsToolStripMenuItem"
-        resources.ApplyResources(Me.GuestsToolStripMenuItem, "GuestsToolStripMenuItem")
-        '
-        'ManageGuestsToolStripMenuItem
-        '
-        Me.ManageGuestsToolStripMenuItem.Name = "ManageGuestsToolStripMenuItem"
-        resources.ApplyResources(Me.ManageGuestsToolStripMenuItem, "ManageGuestsToolStripMenuItem")
         '
         'HelpToolStripMenuItem
         '
@@ -324,8 +303,8 @@ Partial Class frmMain
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -333,13 +312,6 @@ Partial Class frmMain
         Me.dgvProperties.ReadOnly = True
         Me.dgvProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProperties.ShowEditingIcon = False
-        '
-        'pbxPhotos
-        '
-        Me.pbxPhotos.Cursor = System.Windows.Forms.Cursors.Hand
-        resources.ApplyResources(Me.pbxPhotos, "pbxPhotos")
-        Me.pbxPhotos.Name = "pbxPhotos"
-        Me.pbxPhotos.TabStop = False
         '
         'lblDescription
         '
@@ -426,14 +398,14 @@ Partial Class frmMain
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle2
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
         Me.dgvLessors.Name = "dgvLessors"
@@ -487,21 +459,55 @@ Partial Class frmMain
         resources.ApplyResources(Me.tsbDeleteCalendar, "tsbDeleteCalendar")
         Me.tsbDeleteCalendar.Name = "tsbDeleteCalendar"
         '
-        'VATToolStripMenuItem
+        'pbxPhotos
         '
-        Me.VATToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageVATToolStripMenuItem})
-        Me.VATToolStripMenuItem.Name = "VATToolStripMenuItem"
-        resources.ApplyResources(Me.VATToolStripMenuItem, "VATToolStripMenuItem")
+        Me.pbxPhotos.Cursor = System.Windows.Forms.Cursors.Hand
+        resources.ApplyResources(Me.pbxPhotos, "pbxPhotos")
+        Me.pbxPhotos.Name = "pbxPhotos"
+        Me.pbxPhotos.TabStop = False
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'lblLegalClass
+        '
+        resources.ApplyResources(Me.lblLegalClass, "lblLegalClass")
+        Me.lblLegalClass.Name = "lblLegalClass"
+        '
+        'ManagementToolStripMenuItem
+        '
+        Me.ManagementToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem, Me.ManageLessorsToolStripMenuItem, Me.LegalClassificationToolStripMenuItem, Me.ManageVATToolStripMenuItem})
+        Me.ManagementToolStripMenuItem.Name = "ManagementToolStripMenuItem"
+        resources.ApplyResources(Me.ManagementToolStripMenuItem, "ManagementToolStripMenuItem")
+        '
+        'ManageLessorsToolStripMenuItem
+        '
+        Me.ManageLessorsToolStripMenuItem.Name = "ManageLessorsToolStripMenuItem"
+        resources.ApplyResources(Me.ManageLessorsToolStripMenuItem, "ManageLessorsToolStripMenuItem")
+        '
+        'ManageGuestsToolStripMenuItem
+        '
+        Me.ManageGuestsToolStripMenuItem.Name = "ManageGuestsToolStripMenuItem"
+        resources.ApplyResources(Me.ManageGuestsToolStripMenuItem, "ManageGuestsToolStripMenuItem")
         '
         'ManageVATToolStripMenuItem
         '
         Me.ManageVATToolStripMenuItem.Name = "ManageVATToolStripMenuItem"
         resources.ApplyResources(Me.ManageVATToolStripMenuItem, "ManageVATToolStripMenuItem")
         '
+        'LegalClassificationToolStripMenuItem
+        '
+        Me.LegalClassificationToolStripMenuItem.Name = "LegalClassificationToolStripMenuItem"
+        resources.ApplyResources(Me.LegalClassificationToolStripMenuItem, "LegalClassificationToolStripMenuItem")
+        '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblLegalClass)
+        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.pnlCalendar)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.dgvLessors)
@@ -547,12 +553,12 @@ Partial Class frmMain
         Me.mnsProperties.ResumeLayout(False)
         Me.mnsProperties.PerformLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlCalendar.ResumeLayout(False)
         Me.pnlCalendar.PerformLayout()
         Me.tstCalendar.ResumeLayout(False)
         Me.tstCalendar.PerformLayout()
+        CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -609,10 +615,6 @@ Partial Class frmMain
     Friend WithEvents Label11 As Label
     Friend WithEvents BookTypeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookTypeToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents LessorsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ManageLessorsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GuestsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ManageGuestsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
@@ -624,6 +626,11 @@ Partial Class frmMain
     Friend WithEvents tstCalendar As ToolStrip
     Friend WithEvents tsbAddEditCalendar As ToolStripButton
     Friend WithEvents tsbDeleteCalendar As ToolStripButton
-    Friend WithEvents VATToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label13 As Label
+    Friend WithEvents lblLegalClass As Label
+    Friend WithEvents ManagementToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManageGuestsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManageLessorsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LegalClassificationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageVATToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -177,4 +177,7 @@
   <data name="btnEditLessor.Text" xml:space="preserve">
     <value>Modificar</value>
   </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>Clas. legal:</value>
+  </data>
 </root>

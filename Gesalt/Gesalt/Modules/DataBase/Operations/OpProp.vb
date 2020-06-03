@@ -68,6 +68,7 @@ Public Class OpProp
             Prop.Photos = GetAllPhotos(Prop.Id)
             Prop.Lessors = GetLessors(Prop.Id)
             Prop.Books = opBook.GetBooksByPropertyId(Prop.Id)
+            Prop.PropClass = GetPropClassByPropertyId(Prop.Id)
 
             Props.Add(Prop)
         Next
@@ -173,6 +174,8 @@ Public Class OpProp
             result = False
         End If
 
+        ' actualizar propclass
+
         Return result
     End Function
 
@@ -210,26 +213,26 @@ Public Class OpProp
         Dim dt As New DataTable()
         da.Fill(dt)
 
-        If True Then
-            For Each photo As Photo In prop.Photos
-                DeletePhoto(photo)
-            Next
+        For Each photo As Photo In prop.Photos
+            DeletePhoto(photo)
+        Next
 
-            For Each lessor As LessorProp In prop.Lessors
-                DeleteLessor(prop.Id, lessor.Lessor.Id)
-            Next
+        For Each lessor As LessorProp In prop.Lessors
+            DeleteLessor(prop.Id, lessor.Lessor.Id)
+        Next
 
-            For Each bt As BookType In opBook.GetBookTypes(prop.Id)
-                opBook.DeleteBookType(bt)
-            Next
+        For Each bt As BookType In opBook.GetBookTypes(prop.Id)
+            opBook.DeleteBookType(bt)
+        Next
 
-            Dim dr As DataRow
-            dr = dt.Rows.Item(0)
-            dr.Delete()
+        ' borrar propclass
 
-            If da.Update(dt) = 1 Then
-                result = True
-            End If
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+        dr.Delete()
+
+        If da.Update(dt) = 1 Then
+            result = True
         End If
 
         Return result
@@ -613,6 +616,305 @@ Public Class OpProp
         Next
 
         Return True
+    End Function
+
+#End Region
+
+#Region "LegalProp"
+
+    Public Function GetPropClassByPropertyId(propertyId As Integer) As PropClass
+        Dim pc As PropClass
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pPropId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pPropId = con.Factory.CreateParameter()
+
+        pPropId.ParameterName = "@p_property_id"
+        pPropId.Value = propertyId
+        pPropId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pPropId)
+
+        sqlCommand.CommandText = "select * from prop_class where property_id = @p_property_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        If dt.Rows.Count = 0 Then
+            Return Nothing
+        End If
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        dr = dt.Rows.Item(0)
+        pc = New PropClass(dr.Item("property_id"), dr.Item("class_id"), dr.Item("start_date"), dr.Item("keys"))
+        pc.LegalClass = GetLegalClassById(pc.ClassId)
+
+        Return pc
+    End Function
+
+    Public Function GetPropClassByClassId(classId As Integer) As PropClass
+        Dim pc As PropClass
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pClassId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pClassId = con.Factory.CreateParameter()
+
+        pClassId.ParameterName = "@p_class_id"
+        pClassId.Value = classId
+        pClassId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pClassId)
+
+        sqlCommand.CommandText = "select * from prop_class where class_id = @p_class_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        If dt.Rows.Count = 0 Then
+            Return Nothing
+        End If
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        dr = dt.Rows.Item(0)
+        pc = New PropClass(dr.Item("property_id"), dr.Item("class_id"), dr.Item("start_date"), dr.Item("keys"))
+        pc.LegalClass = GetLegalClassById(pc.ClassId)
+
+        Return pc
+    End Function
+
+
+
+#End Region
+
+#Region "LegalClassification"
+
+    Public Function GetLegalClasses(Optional sql As String = "select * from legalclassification",
+                             Optional parameters As List(Of DbParameter) = Nothing) As List(Of LegalClassification)
+        Dim LegalClasses As New List(Of LegalClassification)
+        Dim lc As LegalClassification
+
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim opBook As OpBook = OpBook.GetInstance()
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        If parameters IsNot Nothing Then
+            For Each parameter As DbParameter In parameters
+                sqlCommand.Parameters.Add(parameter)
+            Next
+        End If
+
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        For Each dr As DataRow In dt.Rows
+            lc = New LegalClassification(dr.Item(0), dr.Item(1))
+
+            LegalClasses.Add(lc)
+        Next
+
+        Return LegalClasses
+    End Function
+
+    Public Function GetLegalClassById(Id As Integer) As LegalClassification
+        Dim lc As LegalClassification
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pId = con.Factory.CreateParameter()
+
+        pId.ParameterName = "@p_id"
+        pId.Value = Id
+        pId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pId)
+
+        sqlCommand.CommandText = "select * from legalclassification where Id = @p_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        dr = dt.Rows.Item(0)
+        lc = New LegalClassification(dr.Item("Id"), dr.Item("description"))
+
+        Return lc
+    End Function
+
+    Public Function AddLegalClass(lc As LegalClassification) As Integer
+        Dim result As Integer
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+
+        Dim sql As String = "select * from legalclassification"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        result = GetLegalClassId()
+
+        If result <> -1 Then
+            lc.Id = result
+
+            dr.Item("Id") = result
+            dr.Item("description") = lc.Description
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
+        End If
+
+        Return result
+    End Function
+
+    Public Function UpdateLegalClass(lc As LegalClassification) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from legalclassification where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = lc.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.BeginEdit()
+        dr.Item("description") = lc.Description
+        dr.EndEdit()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Public Function DeleteLegalClass(lc As LegalClassification) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim p As DbParameter
+
+        Dim sql As String = "select * from legalclassification where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        p = con.Factory.CreateParameter()
+        p.DbType = DbType.Int32
+        p.Value = lc.Id
+        p.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(p)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.Delete()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Public Function IsSafeDeleteLegalClass(Id As Integer) As Boolean
+        Return GetPropClassByClassId(Id) Is Nothing
+    End Function
+
+    Private Function GetLegalClassId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from legalclassification"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
     End Function
 
 #End Region

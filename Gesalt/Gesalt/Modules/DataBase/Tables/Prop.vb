@@ -17,6 +17,7 @@ Public Class Prop
     Public Property Photos As New List(Of Photo)
     Public Property Lessors As New List(Of LessorProp)
     Public Property Books As New List(Of Book)
+    Public Property PropClass As PropClass
 
     ''' <summary>
     ''' Crea una nueva instancia de la clase <c>Prop</c>, asignándole los valores por defecto.
@@ -36,6 +37,7 @@ Public Class Prop
         Me.Photos = New List(Of Photo)
         Me.Lessors = New List(Of LessorProp)
         Me.Books = New List(Of Book)
+        Me.PropClass = New PropClass()
     End Sub
 
     ''' <summary>

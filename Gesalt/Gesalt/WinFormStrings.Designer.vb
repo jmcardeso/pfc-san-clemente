@@ -137,6 +137,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Add a Legal Classification - Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property addLegalClassDesc() As String
+            Get
+                Return ResourceManager.GetString("addLegalClassDesc", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a There is an active filter. If you add a record, the filter will be reset. Are you sure?.
         '''</summary>
         Friend Shared ReadOnly Property addWhenFilterOnMsg() As String
@@ -997,6 +1006,24 @@ Namespace My.Resources
         Friend Shared ReadOnly Property invoiceVAT() As String
             Get
                 Return ResourceManager.GetString("invoiceVAT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The Legal Classification cannot be deleted. It has associated properties..
+        '''</summary>
+        Friend Shared ReadOnly Property lcNoDeleted() As String
+            Get
+                Return ResourceManager.GetString("lcNoDeleted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a The description cannot be empty..
+        '''</summary>
+        Friend Shared ReadOnly Property legalClassDescEmptyMsg() As String
+            Get
+                Return ResourceManager.GetString("legalClassDescEmptyMsg", resourceCulture)
             End Get
         End Property
         

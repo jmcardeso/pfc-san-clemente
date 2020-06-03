@@ -536,4 +536,13 @@
   <data name="aboutDesc7" xml:space="preserve">
     <value>ical.NET - an open source iCal library for .NET</value>
   </data>
+  <data name="legalClassDescEmptyMsg" xml:space="preserve">
+    <value>A descrición non pode estar baleira.</value>
+  </data>
+  <data name="addLegalClassDesc" xml:space="preserve">
+    <value>Engadir unha clasificación legal - Gesalt</value>
+  </data>
+  <data name="lcNoDeleted" xml:space="preserve">
+    <value>A clasificación legal non pode ser borrada. Ten asociados inmobles.</value>
+  </data>
 </root>

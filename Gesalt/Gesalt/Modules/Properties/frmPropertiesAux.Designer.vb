@@ -59,6 +59,8 @@ Partial Class frmPropertiesAux
         Me.dgvLessors = New System.Windows.Forms.DataGridView()
         Me.bntDeleteLessor = New System.Windows.Forms.Button()
         Me.btnAddLessor = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbxLegalClass = New System.Windows.Forms.ComboBox()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxLessors.SuspendLayout()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -269,12 +271,26 @@ Partial Class frmPropertiesAux
         Me.btnAddLessor.Name = "btnAddLessor"
         Me.btnAddLessor.UseVisualStyleBackColor = True
         '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
+        'cbxLegalClass
+        '
+        Me.cbxLegalClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxLegalClass.FormattingEnabled = True
+        resources.ApplyResources(Me.cbxLegalClass, "cbxLegalClass")
+        Me.cbxLegalClass.Name = "cbxLegalClass"
+        '
         'frmPropertiesAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.cbxLegalClass)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.gbxLessors)
         Me.Controls.Add(Me.btnDeletePhoto)
         Me.Controls.Add(Me.btnPhotosLast)
@@ -352,4 +368,6 @@ Partial Class frmPropertiesAux
     Friend WithEvents bntDeleteLessor As Button
     Friend WithEvents btnAddLessor As Button
     Friend WithEvents btnEditLessor As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents cbxLegalClass As ComboBox
 End Class

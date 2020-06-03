@@ -105,6 +105,7 @@ Public Class frmMain
             lblBedrooms.DataBindings.Add("Text", bs, "Bedrooms")
             lblBaths.DataBindings.Add("Text", bs, "Baths")
             lblDescription.DataBindings.Add("Text", bs, "Description")
+            lblLegalClass.DataBindings.Add("Text", bs, "PropClass")
 
             If bs.Current IsNot Nothing Then
                 bsPhotos.DataSource = bs.Current.Photos
@@ -718,6 +719,22 @@ Public Class frmMain
     End Sub
 
     Private Sub ManageVATToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageVATToolStripMenuItem.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+    End Sub
 
+    Private Sub LegalClassificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LegalClassificationToolStripMenuItem.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmLC As New frmLegalClassification()
+
+        If frmLC.ShowDialog() = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        RefreshData()
     End Sub
 End Class

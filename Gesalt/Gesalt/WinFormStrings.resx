@@ -536,4 +536,13 @@
   <data name="aboutDesc7" xml:space="preserve">
     <value>ical.NET - an open source iCal library for .NET</value>
   </data>
+  <data name="legalClassDescEmptyMsg" xml:space="preserve">
+    <value>The description cannot be empty.</value>
+  </data>
+  <data name="addLegalClassDesc" xml:space="preserve">
+    <value>Add a Legal Classification - Gesalt</value>
+  </data>
+  <data name="lcNoDeleted" xml:space="preserve">
+    <value>The Legal Classification cannot be deleted. It has associated properties.</value>
+  </data>
 </root>

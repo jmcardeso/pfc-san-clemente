@@ -7,6 +7,7 @@ Public Class frmPropertiesAux
     Dim opProp As OpProp
     Dim bsPhotos As New BindingSource()
     Dim bsLessors As New BindingSource()
+    Dim legalClasses As New List(Of LegalClassification)
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPropertiesAux).Assembly)
 
     Private Sub frmPropertiesAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,6 +30,8 @@ Public Class frmPropertiesAux
         bsPhotos.DataSource = propAux.Photos
 
         bsLessors.DataSource = propAux.Lessors
+
+        legalClasses = opProp.GetLegalClasses()
 
         Dim column As DataGridViewColumn
         With dgvLessors
@@ -60,6 +63,14 @@ Public Class frmPropertiesAux
         tbxProvince.DataBindings.Add("Text", propAux, "Province")
         tbxZip.DataBindings.Add("Text", propAux, "Zip")
         tbxDescription.DataBindings.Add("Text", propAux, "Description")
+        cbxLegalClass.DataSource = legalClasses
+
+        If legalClasses.Count = 0 Then
+            cbxLegalClass.SelectedIndex = 0
+        Else
+            Dim thisLegalClass = From lc In legalClasses Where lc.Id = propAux.PropClass.ClassId
+            cbxLegalClass.SelectedItem = thisLegalClass.First
+        End If
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -253,4 +264,8 @@ Public Class frmPropertiesAux
 
         Return True
     End Function
+
+    Private Sub cbxLegalClass_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxLegalClass.SelectedIndexChanged
+
+    End Sub
 End Class

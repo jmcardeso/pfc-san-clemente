@@ -234,20 +234,14 @@
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Acerca de Gesalt</value>
   </data>
-  <data name="GuestsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Clientes</value>
-  </data>
   <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
     <value>A&amp;xuda</value>
   </data>
-  <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>A&amp;rrendadores</value>
-  </data>
   <data name="ManageGuestsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Xestionar clientes</value>
+    <value>Clientes</value>
   </data>
   <data name="ManageLessorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Xestionar arrendadores</value>
+    <value>Arrendadores</value>
   </data>
   <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Preferencias</value>
@@ -262,9 +256,18 @@
     <value>Engadir/Editar reservas</value>
   </data>
   <data name="ManageVATToolStripMenuItem.Text" xml:space="preserve">
-    <value>Xestionar IVA</value>
+    <value>IVA</value>
   </data>
-  <data name="VATToolStripMenuItem.Text" xml:space="preserve">
-    <value>I&amp;VA</value>
+  <data name="lblLegalClass.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="LegalClassificationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clasificación legal</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>Clas. legal:</value>
+  </data>
+  <data name="ManagementToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xestión</value>
   </data>
 </root>
