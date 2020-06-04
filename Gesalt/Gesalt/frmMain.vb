@@ -648,6 +648,20 @@ Public Class frmMain
         bs.ResetBindings(False)
     End Sub
 
+    Private Sub LegalClassificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LegalClassificationToolStripMenuItem.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmLC As New frmLegalClassification()
+
+        If frmLC.ShowDialog() = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        RefreshData()
+    End Sub
+
     ''' <summary>
     ''' Vuelve a cargar el formulario.
     ''' </summary>
@@ -718,25 +732,5 @@ Public Class frmMain
                                               mySplash.Dispose()
                                           End Sub))
 
-    End Sub
-
-    Private Sub ManageVATToolStripMenuItem_Click(sender As Object, e As EventArgs) 
-        If bs.Current Is Nothing Then
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub LegalClassificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LegalClassificationToolStripMenuItem.Click
-        If bs.Current Is Nothing Then
-            Exit Sub
-        End If
-
-        Dim frmLC As New frmLegalClassification()
-
-        If frmLC.ShowDialog() = DialogResult.Cancel Then
-            Exit Sub
-        End If
-
-        RefreshData()
     End Sub
 End Class

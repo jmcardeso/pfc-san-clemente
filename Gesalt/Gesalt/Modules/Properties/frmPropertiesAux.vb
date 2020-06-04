@@ -101,6 +101,8 @@ Public Class frmPropertiesAux
             End If
 
             propAux.PropClass = pcAux
+        Else
+            propAux.PropClass.LegalClass = opProp.GetLegalClassById(propAux.PropClass.ClassId)
         End If
 
         editProp = Utils.DeepClone(propAux)

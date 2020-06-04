@@ -2404,6 +2404,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A80FA46E019DE8E8217B8F423DCD0125"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A2F5C206C84D5DD69C35A4D16BEFB2F8"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2447,12 +2453,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6442A15883D12EF4961DE362A7999042"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A80FA46E019DE8E8217B8F423DCD0125"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -7904,15 +7904,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Gesalt"
-        "ProductCode" = "8:{9FA118A5-112D-4A34-945C-ED9338E83774}"
-        "PackageCode" = "8:{241B69EF-183F-41A3-858E-4F5441474121}"
+        "ProductCode" = "8:{80C0E200-118E-43A2-AAB7-C7C13C49ECE0}"
+        "PackageCode" = "8:{072A1388-F8BC-4706-A8C9-BEDAEDB0DB0D}"
         "UpgradeCode" = "8:{101FEDCC-6683-42B8-89DE-C7E26CA0975E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.8.2"
+        "ProductVersion" = "8:0.9.0"
         "Manufacturer" = "8:Juan M. Cardeso"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

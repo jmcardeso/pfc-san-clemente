@@ -124,9 +124,13 @@ Public Class frmBook
     Private Function CalculateVAT() As Decimal
         Dim opProp As OpProp = OpProp.GetInstance()
 
-        Dim pc As PropClass = opProp.GetPropClassesByInvoiceDate(bookAux.PropertyId, bookAux.CheckOut)
+        Dim pc As PropClass = opProp.GetPropClassesByInvoiceDate(prop.Id, bookAux.CheckOut)
 
-        Return pc.VAT
+        If pc Is Nothing Then
+            Return 0
+        Else
+            Return pc.VAT
+        End If
     End Function
 
     Private Function ValidateFields() As Boolean
