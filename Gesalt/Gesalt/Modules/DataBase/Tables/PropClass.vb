@@ -21,7 +21,7 @@ Public Class PropClass
         Me.Id = 0
         Me.PropId = 0
         Me.ClassId = 0
-        Me.StartDate = Now.Date()
+        Me.StartDate = Now()
         Me.Keys = 0
         Me.VAT = 0
         Me.LegalClass = New LegalClassification()

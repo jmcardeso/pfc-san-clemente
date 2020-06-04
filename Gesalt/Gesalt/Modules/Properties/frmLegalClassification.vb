@@ -78,6 +78,8 @@ Public Class frmLegalClassification
             Exit Sub
         End If
 
+        CType(bs.Current, LegalClassification).Description = tbxDescription.Text
+
         If Not opProp.UpdateLegalClass(bs.Current) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
         Else

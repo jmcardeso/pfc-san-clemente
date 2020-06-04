@@ -1019,6 +1019,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a The legal classification of the property will change. A new entry will be created in the database and the previous values ​​will be kept for invoicing. Are you sure?.
+        '''</summary>
+        Friend Shared ReadOnly Property legalClassChangedMsg() As String
+            Get
+                Return ResourceManager.GetString("legalClassChangedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a The description cannot be empty..
         '''</summary>
         Friend Shared ReadOnly Property legalClassDescEmptyMsg() As String

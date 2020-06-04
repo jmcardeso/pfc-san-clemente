@@ -124,7 +124,7 @@ Public Class OpProp
             result = -3
         End If
 
-        If Not AddPropClass(prop.PropClass) Then
+        If AddPropClass(prop.PropClass) < 1 Then
             result = -4
         End If
 
@@ -682,7 +682,7 @@ Public Class OpProp
 
         sqlCommand.Parameters.Add(pPropId)
 
-        sqlCommand.CommandText = "select * from prop_class where property_id = @p_property_id"
+        sqlCommand.CommandText = "select * from prop_class where property_id = @p_property_id order by start_date desc"
         sqlCommand.Connection = con.Con
 
         da = con.Factory.CreateDataAdapter()
@@ -720,7 +720,7 @@ Public Class OpProp
 
         sqlCommand.Parameters.Add(pClassId)
 
-        sqlCommand.CommandText = "select * from prop_class where class_id = @p_class_id"
+        sqlCommand.CommandText = "select * from prop_class where class_id = @p_class_id order by start_date desc"
         sqlCommand.Connection = con.Con
 
         da = con.Factory.CreateDataAdapter()
@@ -743,7 +743,7 @@ Public Class OpProp
         Return pc
     End Function
 
-    Public Function AddPropClass(pc As PropClass) As Integer
+    Public Function AddPropClass(ByRef pc As PropClass) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
@@ -839,19 +839,19 @@ Public Class OpProp
         Dim da As DbDataAdapter
         Dim cb As DbCommandBuilder
         Dim sqlCommand As DbCommand
-        Dim pId As DbParameter
+        Dim pPropertyId As DbParameter
 
-        Dim sql As String = "select * from prop_class where Id = @p_id"
+        Dim sql As String = "select * from prop_class where property_id = @p_property_id"
 
         sqlCommand = con.Factory.CreateCommand()
         sqlCommand.CommandText = sql
         sqlCommand.Connection = con.Con
 
-        pId = con.Factory.CreateParameter()
-        pId.DbType = DbType.Int32
-        pId.Value = pc.Id
-        pId.ParameterName = "@p_id"
-        sqlCommand.Parameters.Add(pId)
+        pPropertyId = con.Factory.CreateParameter()
+        pPropertyId.DbType = DbType.Int32
+        pPropertyId.Value = pc.PropId
+        pPropertyId.ParameterName = "@p_property_id"
+        sqlCommand.Parameters.Add(pPropertyId)
 
         da = con.Factory.CreateDataAdapter()
         da.SelectCommand = sqlCommand
@@ -862,10 +862,9 @@ Public Class OpProp
         Dim dt As New DataTable()
         da.Fill(dt)
 
-        Dim dr As DataRow
-        dr = dt.Rows.Item(0)
-
-        dr.Delete()
+        For Each dr As DataRow In dt.Rows
+            dr.Delete()
+        Next
 
         If da.Update(dt) = 1 Then
             result = True

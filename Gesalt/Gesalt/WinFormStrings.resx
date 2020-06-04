@@ -545,4 +545,7 @@
   <data name="lcNoDeleted" xml:space="preserve">
     <value>The Legal Classification cannot be deleted. It has associated properties.</value>
   </data>
+  <data name="legalClassChangedMsg" xml:space="preserve">
+    <value>The legal classification of the property will change. A new entry will be created in the database and the previous values ​​will be kept for invoicing. Are you sure?</value>
+  </data>
 </root>

@@ -9,6 +9,7 @@ Public Class frmPropertiesAux
     Dim bsLessors As New BindingSource()
     Dim legalClasses As New List(Of LegalClassification)
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmPropertiesAux).Assembly)
+    Dim isEdited As Boolean = False
 
     Private Sub frmPropertiesAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         opProp = OpProp.GetInstance()
@@ -17,6 +18,7 @@ Public Class frmPropertiesAux
 
         If editProp IsNot Nothing Then
             Me.Text = LocRM.GetString("editPropTitle")
+            isEdited = True
 
             If legalClasses.Count = 0 Then
                 cbxLegalClass.SelectedIndex = 0
@@ -79,8 +81,28 @@ Public Class frmPropertiesAux
         If Not ValidateFields() Then
             Exit Sub
         End If
-        ' CUANDO CAMBIE DE CLASE LEGAL TIENE QUE CREAR UN NUEVO REGISTRO!!!!
+
         propAux.PropClass.ClassId = CType(cbxLegalClass.SelectedItem, LegalClassification).Id
+
+        If isEdited Then
+            If editProp.PropClass.ClassId <> propAux.PropClass.ClassId Then
+                If MsgBox(LocRM.GetString("legalClassChangedMsg"), MsgBoxStyle.Question Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
+
+            Dim pcAux As PropClass = New PropClass(0, propAux.PropClass.PropId, propAux.PropClass.ClassId,
+                                     Now.Date(), propAux.PropClass.Keys, propAux.PropClass.VAT)
+            pcAux.LegalClass = opProp.GetLegalClassById(pcAux.ClassId)
+
+            If opProp.AddPropClass(pcAux) < 1 Then
+                MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
+                Exit Sub
+            End If
+
+            propAux.PropClass = pcAux
+        End If
+
         editProp = Utils.DeepClone(propAux)
         Me.DialogResult = DialogResult.OK
     End Sub

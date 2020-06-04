@@ -545,4 +545,7 @@
   <data name="lcNoDeleted" xml:space="preserve">
     <value>La clasificación legal no puede ser borrada. Tiene asociados inmuebles.</value>
   </data>
+  <data name="legalClassChangedMsg" xml:space="preserve">
+    <value>Va a cambiar la clasificación legal del inmueble. Se creará una nueva entrada en la base de datos y los valores anteriores se conservarán para la facturación. ¿Está seguro?</value>
+  </data>
 </root>
