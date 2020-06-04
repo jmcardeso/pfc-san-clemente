@@ -255,9 +255,6 @@
   <data name="tsbAddEditCalendar.Text" xml:space="preserve">
     <value>Engadir/Editar reservas</value>
   </data>
-  <data name="ManageVATToolStripMenuItem.Text" xml:space="preserve">
-    <value>IVA</value>
-  </data>
   <data name="lblLegalClass.Text" xml:space="preserve">
     <value>&lt;Baleiro&gt;</value>
   </data>

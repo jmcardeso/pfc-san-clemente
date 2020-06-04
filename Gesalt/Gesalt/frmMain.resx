@@ -153,6 +153,30 @@
   <metadata name="tlsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>238, 17</value>
   </metadata>
+  <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tlsProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>805, 25</value>
+  </data>
+  <data name="tlsProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlsProperties.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Name" xml:space="preserve">
+    <value>tlsProperties</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsProperties.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
   <data name="ToolStripAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -207,12 +231,6 @@
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties Report</value>
-  </data>
   <data name="ToolStripReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -230,86 +248,26 @@
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Reports</value>
   </data>
-  <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
+  <data name="PropReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
   </data>
-  <data name="tlsProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>805, 25</value>
-  </data>
-  <data name="tlsProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlsProperties.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Name" xml:space="preserve">
-    <value>tlsProperties</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsProperties.ZOrder" xml:space="preserve">
-    <value>40</value>
+  <data name="PropReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Properties Report</value>
   </data>
   <metadata name="mnsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>343, 17</value>
   </metadata>
-  <data name="AddAPropertyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="AddAPropertyToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Add</value>
-  </data>
-  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
-  </data>
-  <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Delete</value>
-  </data>
-  <data name="FilterDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Filter data</value>
-  </data>
   <data name="PropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
   </data>
   <data name="PropertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Properties</value>
   </data>
-  <data name="ManageBooksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add/Edit Bookings</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Booking &amp;Types</value>
-  </data>
   <data name="BookTypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 20</value>
   </data>
   <data name="BookTypeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Bookings</value>
-  </data>
-  <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties Report</value>
   </data>
   <data name="ReportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
@@ -318,46 +276,28 @@
     <value>&amp;Reports</value>
   </data>
   <data name="ManageGuestsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>175, 22</value>
   </data>
   <data name="ManageGuestsToolStripMenuItem.Text" xml:space="preserve">
     <value>Guests</value>
   </data>
   <data name="ManageLessorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>175, 22</value>
   </data>
   <data name="ManageLessorsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lessors</value>
   </data>
   <data name="LegalClassificationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>175, 22</value>
   </data>
   <data name="LegalClassificationToolStripMenuItem.Text" xml:space="preserve">
     <value>Legal Classification</value>
-  </data>
-  <data name="ManageVATToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ManageVATToolStripMenuItem.Text" xml:space="preserve">
-    <value>VAT</value>
   </data>
   <data name="ManagementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 20</value>
   </data>
   <data name="ManagementToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Management</value>
-  </data>
-  <data name="SettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
-  </data>
-  <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
-  </data>
-  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About Gesalt</value>
   </data>
   <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -388,6 +328,60 @@
   </data>
   <data name="&gt;&gt;mnsProperties.ZOrder" xml:space="preserve">
     <value>41</value>
+  </data>
+  <data name="AddAPropertyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="AddAPropertyToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Add</value>
+  </data>
+  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="DeleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="FilterDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="FilterDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Filter data</value>
+  </data>
+  <data name="ManageBooksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add/Edit Bookings</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Booking &amp;Types</value>
+  </data>
+  <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Properties Report</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>About Gesalt</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -606,7 +600,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 262</value>
+    <value>238, 244</value>
   </data>
   <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -636,7 +630,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 335</value>
+    <value>12, 287</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -666,7 +660,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 518</value>
+    <value>12, 474</value>
   </data>
   <data name="lblFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -693,7 +687,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>717, 703</value>
+    <value>717, 659</value>
   </data>
   <data name="btnLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -720,7 +714,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>483, 703</value>
+    <value>483, 659</value>
   </data>
   <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -747,7 +741,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 703</value>
+    <value>249, 659</value>
   </data>
   <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -774,7 +768,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 703</value>
+    <value>15, 659</value>
   </data>
   <data name="btnFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -798,7 +792,7 @@
     <value>29</value>
   </data>
   <data name="dgvProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 534</value>
+    <value>15, 490</value>
   </data>
   <data name="dgvProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>778, 161</value>
@@ -822,7 +816,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 334</value>
+    <value>112, 286</value>
   </data>
   <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 80</value>
@@ -852,7 +846,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 244</value>
+    <value>379, 242</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -879,7 +873,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPhotosFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 484</value>
+    <value>428, 436</value>
   </data>
   <data name="btnPhotosFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -906,7 +900,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPhotosNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 484</value>
+    <value>636, 436</value>
   </data>
   <data name="btnPhotosNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -933,7 +927,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPhotosPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>525, 484</value>
+    <value>532, 436</value>
   </data>
   <data name="btnPhotosPrevious.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -960,7 +954,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPhotosLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>753, 484</value>
+    <value>740, 436</value>
   </data>
   <data name="btnPhotosLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 24</value>
@@ -1050,7 +1044,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblBaths.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 262</value>
+    <value>281, 244</value>
   </data>
   <data name="lblBaths.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1254,7 +1248,7 @@
     <value>9</value>
   </data>
   <data name="dgvLessors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 429</value>
+    <value>15, 381</value>
   </data>
   <data name="dgvLessors.Size" type="System.Drawing.Size, System.Drawing">
     <value>384, 79</value>
@@ -1281,7 +1275,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 413</value>
+    <value>12, 365</value>
   </data>
   <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -1355,8 +1349,68 @@
   <metadata name="tstCalendar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>572, 3</value>
   </metadata>
+  <data name="&gt;&gt;tstCalendar.Name" xml:space="preserve">
+    <value>tstCalendar</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Parent" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>411, 52</value>
+  </data>
+  <data name="pnlCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 186</value>
+  </data>
+  <data name="pnlCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.Name" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlCalendar.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="tstCalendar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>572, 3</value>
+  </metadata>
   <data name="tstCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="tstCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 161</value>
+  </data>
+  <data name="tstCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 25</value>
+  </data>
+  <data name="tstCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="tstCalendar.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Name" xml:space="preserve">
+    <value>tstCalendar</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.Parent" xml:space="preserve">
+    <value>pnlCalendar</value>
+  </data>
+  <data name="&gt;&gt;tstCalendar.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="tsbAddEditCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1392,59 +1446,14 @@
   <data name="tsbDeleteCalendar.Text" xml:space="preserve">
     <value>Delete Booking</value>
   </data>
-  <data name="tstCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 161</value>
-  </data>
-  <data name="tstCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 25</value>
-  </data>
-  <data name="tstCalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
-  </data>
-  <data name="tstCalendar.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;tstCalendar.Name" xml:space="preserve">
-    <value>tstCalendar</value>
-  </data>
-  <data name="&gt;&gt;tstCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tstCalendar.Parent" xml:space="preserve">
-    <value>pnlCalendar</value>
-  </data>
-  <data name="&gt;&gt;tstCalendar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pnlCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 52</value>
-  </data>
-  <data name="pnlCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 186</value>
-  </data>
-  <data name="pnlCalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
-  </data>
-  <data name="&gt;&gt;pnlCalendar.Name" xml:space="preserve">
-    <value>pnlCalendar</value>
-  </data>
-  <data name="&gt;&gt;pnlCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlCalendar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pnlCalendar.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="pbxPhotos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pbxPhotos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 244</value>
+    <value>428, 242</value>
   </data>
   <data name="pbxPhotos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 234</value>
+    <value>350, 183</value>
   </data>
   <data name="pbxPhotos.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -1522,7 +1531,7 @@
     <value>True</value>
   </data>
   <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 284</value>
+    <value>12, 264</value>
   </data>
   <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -1552,7 +1561,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblKeys.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 311</value>
+    <value>281, 264</value>
   </data>
   <data name="lblKeys.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1582,7 +1591,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 284</value>
+    <value>111, 264</value>
   </data>
   <data name="lblVat.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -1612,7 +1621,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 311</value>
+    <value>238, 264</value>
   </data>
   <data name="Label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -1645,7 +1654,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>805, 738</value>
+    <value>805, 690</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2446,12 +2455,6 @@
     <value>LegalClassificationToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;LegalClassificationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ManageVATToolStripMenuItem.Name" xml:space="preserve">
-    <value>ManageVATToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ManageVATToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;HelpToolStripMenuItem.Name" xml:space="preserve">

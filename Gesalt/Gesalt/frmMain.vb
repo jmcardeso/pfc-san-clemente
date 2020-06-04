@@ -720,7 +720,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub ManageVATToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageVATToolStripMenuItem.Click
+    Private Sub ManageVATToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         If bs.Current Is Nothing Then
             Exit Sub
         End If

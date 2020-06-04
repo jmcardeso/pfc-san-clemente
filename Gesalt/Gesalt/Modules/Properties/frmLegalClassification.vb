@@ -32,7 +32,7 @@ Public Class frmLegalClassification
             .DataSource = bs
         End With
 
-        tbxDescription.DataBindings.Add("Text", legalClassAux, "Description")
+        tbxDescription.DataBindings.Add("Text", bs, "Description")
 
     End Sub
 
@@ -78,9 +78,7 @@ Public Class frmLegalClassification
             Exit Sub
         End If
 
-        CType(bs.Current, LegalClassification).Description = tbxDescription.Text
-
-        If Not opProp.UpdateLegalClass(bs.Current) Then
+        If Not opProp.UpdateLegalClass(legalClassAux) Then
             MsgBox(LocRM.GetString("opFailedMsg"), MsgBoxStyle.Exclamation, LocRM.GetString("opFailedTitle"))
         Else
             bs.ResetBindings(False)

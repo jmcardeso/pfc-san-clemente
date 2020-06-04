@@ -111,6 +111,8 @@ Public Class frmPropertiesAux
         Me.DialogResult = DialogResult.Cancel
     End Sub
 
+#Region "Photo"
+
     Private Sub btnAddPhoto_Click(sender As Object, e As EventArgs) Handles btnAddPhoto.Click
         ofdPhotos.Filter = LocRM.GetString("ofdImageFilter")
         ofdPhotos.FilterIndex = 1
@@ -150,28 +152,6 @@ Public Class frmPropertiesAux
         End If
     End Sub
 
-    Private Function ValidateFields() As Boolean
-        Dim result As Boolean = True
-        Dim fieldName As String = ""
-
-        If tbxCadRef.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldCadRef")
-            result = False
-        ElseIf tbxAddress.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldAddress")
-            result = False
-        ElseIf tbxMaxGuests.Text.Trim.Length = 0 Then
-            fieldName = LocRM.GetString("fieldMaxGuests")
-            result = False
-        End If
-
-        If Not result Then
-            MsgBox(fieldName & ". " & LocRM.GetString("fieldRequired"), MsgBoxStyle.Exclamation, "Gesalt")
-        End If
-
-        Return result
-    End Function
-
     Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
         bsPhotos.Position = 0
     End Sub
@@ -198,6 +178,10 @@ Public Class frmPropertiesAux
         frmPV.index = bsPhotos.Position
         frmPV.ShowDialog()
     End Sub
+
+#End Region
+
+#Region "Lessor"
 
     Private Sub btnAddLessor_Click(sender As Object, e As EventArgs) Handles btnAddLessor.Click
         Dim frmLP = New frmLessorProp With {
@@ -267,6 +251,32 @@ Public Class frmPropertiesAux
         bsLessors.ResetBindings(False)
     End Sub
 
+#End Region
+
+#Region "Validators"
+
+    Private Function ValidateFields() As Boolean
+        Dim result As Boolean = True
+        Dim fieldName As String = ""
+
+        If tbxCadRef.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldCadRef")
+            result = False
+        ElseIf tbxAddress.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldAddress")
+            result = False
+        ElseIf tbxMaxGuests.Text.Trim.Length = 0 Then
+            fieldName = LocRM.GetString("fieldMaxGuests")
+            result = False
+        End If
+
+        If Not result Then
+            MsgBox(fieldName & ". " & LocRM.GetString("fieldRequired"), MsgBoxStyle.Exclamation, "Gesalt")
+        End If
+
+        Return result
+    End Function
+
     Private Function ValidatePercent(Optional newPercentage As Decimal = 0) As Boolean
         Dim percentTotal As Decimal = 0
         For Each lessor As LessorProp In propAux.Lessors
@@ -289,4 +299,8 @@ Public Class frmPropertiesAux
 
         Return True
     End Function
+
+
+#End Region
+
 End Class
