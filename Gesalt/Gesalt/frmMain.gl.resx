@@ -270,4 +270,16 @@
   <data name="ManagementToolStripMenuItem.Text" xml:space="preserve">
     <value>Xestión</value>
   </data>
+  <data name="lblKeys.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="lblVat.Text" xml:space="preserve">
+    <value>&lt;Baleiro&gt;</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>IVA:</value>
+  </data>
+  <data name="Label17.Text" xml:space="preserve">
+    <value>Chaves:</value>
+  </data>
 </root>

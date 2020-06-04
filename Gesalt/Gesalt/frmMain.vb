@@ -106,6 +106,8 @@ Public Class frmMain
             lblBaths.DataBindings.Add("Text", bs, "Baths")
             lblDescription.DataBindings.Add("Text", bs, "Description")
             lblLegalClass.DataBindings.Add("Text", bs, "PropClass")
+            lblVat.DataBindings.Add("Text", bs, "PropClass.VAT")
+            lblKeys.DataBindings.Add("Text", bs, "PropClass.Keys")
 
             If bs.Current IsNot Nothing Then
                 bsPhotos.DataSource = bs.Current.Photos
@@ -309,7 +311,7 @@ Public Class frmMain
         New ReportParameter("p_RptPropertiesFieldCity", LocRM.GetString("fieldCity")),
         New ReportParameter("p_RptPropertiesFieldZip", LocRM.GetString("fieldZip")),
         New ReportParameter("p_RptPropertiesFieldProvince", LocRM.GetString("fieldProvince"))
-    }
+        }
 
         frmRpt.rpvProp.LocalReport.DataSources.Clear()
         frmRpt.rpvProp.LocalReport.DataSources.Add(rpd)

@@ -81,7 +81,7 @@ Public Class OpProp
     ''' </summary>
     ''' <param name="prop">El objeto de la clase <c>Prop</c> que se va a añadir en la tabla property de la base de datos.</param>
     ''' <returns>El índice de la clave primaria de la fila añadida. -1 si ha habido un problema al calcular el índice.
-    ''' -2 si ha habido un problema al añadir la fila. -3 si ha habido un problema al refrescar la tabla lessor_prop</returns>
+    ''' -2 si ha habido un problema al añadir la fila. -3 si ha habido un problema al refrescar la tabla lessor_prop. -4 si ha habido un problema al añadir una fila en la tabla prop_class</returns>
     Public Function AddProp(prop As Prop) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
@@ -110,6 +110,7 @@ Public Class OpProp
 
         If result <> -1 Then
             prop.Id = result
+            prop.PropClass.PropId = result
 
             FillRow(dr, prop)
             dt.Rows.Add(dr)
@@ -121,6 +122,10 @@ Public Class OpProp
 
         If Not RefreshLessors(prop) Then
             result = -3
+        End If
+
+        If Not AddPropClass(prop.PropClass) Then
+            result = -4
         End If
 
         Return result
@@ -174,7 +179,9 @@ Public Class OpProp
             result = False
         End If
 
-        ' actualizar propclass
+        If Not UpdatePropClass(prop.PropClass) Then
+            result = False
+        End If
 
         Return result
     End Function
@@ -225,7 +232,7 @@ Public Class OpProp
             opBook.DeleteBookType(bt)
         Next
 
-        ' borrar propclass
+        DeletePropClass(prop.PropClass)
 
         Dim dr As DataRow
         dr = dt.Rows.Item(0)
@@ -622,6 +629,44 @@ Public Class OpProp
 
 #Region "LegalProp"
 
+    Public Function GetPropClassById(Id As Integer) As PropClass
+        Dim pc As PropClass
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pId As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pId = con.Factory.CreateParameter()
+
+        pId.ParameterName = "@p_id"
+        pId.Value = Id
+        pId.DbType = DbType.Int32
+
+        sqlCommand.Parameters.Add(pId)
+
+        sqlCommand.CommandText = "select * from prop_class where Id = @p_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        If dt.Rows.Count = 0 Then
+            Return Nothing
+        End If
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        dr = dt.Rows.Item(0)
+        pc = New PropClass(dr.Item("Id"), dr.Item("property_id"), dr.Item("class_id"),
+                           dr.Item("start_date"), dr.Item("keys"), dr.Item("vat"))
+        pc.LegalClass = GetLegalClassById(pc.ClassId)
+
+        Return pc
+    End Function
+
     Public Function GetPropClassByPropertyId(propertyId As Integer) As PropClass
         Dim pc As PropClass
         Dim da As DbDataAdapter
@@ -653,7 +698,8 @@ Public Class OpProp
         Dim dr As DataRow = dt.Rows.Item(0)
 
         dr = dt.Rows.Item(0)
-        pc = New PropClass(dr.Item("property_id"), dr.Item("class_id"), dr.Item("start_date"), dr.Item("keys"))
+        pc = New PropClass(dr.Item("Id"), dr.Item("property_id"), dr.Item("class_id"),
+                           dr.Item("start_date"), dr.Item("keys"), dr.Item("vat"))
         pc.LegalClass = GetLegalClassById(pc.ClassId)
 
         Return pc
@@ -690,13 +736,166 @@ Public Class OpProp
         Dim dr As DataRow = dt.Rows.Item(0)
 
         dr = dt.Rows.Item(0)
-        pc = New PropClass(dr.Item("property_id"), dr.Item("class_id"), dr.Item("start_date"), dr.Item("keys"))
+        pc = New PropClass(dr.Item("Id"), dr.Item("property_id"), dr.Item("class_id"),
+                           dr.Item("start_date"), dr.Item("keys"), dr.Item("vat"))
         pc.LegalClass = GetLegalClassById(pc.ClassId)
 
         Return pc
     End Function
 
+    Public Function AddPropClass(pc As PropClass) As Integer
+        Dim result As Integer
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
 
+        Dim sql As String = "select * from prop_class"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.NewRow()
+
+        result = GetPropClassId()
+
+        If result <> -1 Then
+            pc.Id = result
+
+            dr.Item("Id") = pc.Id
+            dr.Item("property_id") = pc.PropId
+            dr.Item("class_id") = pc.ClassId
+            dr.Item("start_date") = pc.StartDate
+            dr.Item("keys") = pc.Keys
+            dr.Item("vat") = pc.VAT
+            dt.Rows.Add(dr)
+
+            If da.Update(dt) <> 1 Then
+                result = -2
+            End If
+        End If
+
+        Return result
+    End Function
+
+    Public Function UpdatePropClass(pc As PropClass) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim pId As DbParameter
+
+        Dim sql As String = "select * from prop_class where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        pId = con.Factory.CreateParameter()
+        pId.DbType = DbType.Int32
+        pId.Value = pc.Id
+        pId.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(pId)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.BeginEdit()
+        dr.Item("property_id") = pc.PropId
+        dr.Item("class_id") = pc.ClassId
+        dr.Item("start_date") = pc.StartDate
+        dr.Item("keys") = pc.Keys
+        dr.Item("vat") = pc.VAT
+        dr.EndEdit()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Public Function DeletePropClass(pc As PropClass) As Boolean
+        Dim result As Boolean = False
+        Dim da As DbDataAdapter
+        Dim cb As DbCommandBuilder
+        Dim sqlCommand As DbCommand
+        Dim pId As DbParameter
+
+        Dim sql As String = "select * from prop_class where Id = @p_id"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        pId = con.Factory.CreateParameter()
+        pId.DbType = DbType.Int32
+        pId.Value = pc.Id
+        pId.ParameterName = "@p_id"
+        sqlCommand.Parameters.Add(pId)
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        cb = con.Factory.CreateCommandBuilder()
+        cb.DataAdapter = da
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim dr As DataRow
+        dr = dt.Rows.Item(0)
+
+        dr.Delete()
+
+        If da.Update(dt) = 1 Then
+            result = True
+        End If
+
+        Return result
+    End Function
+
+    Private Function GetPropClassId() As Integer
+        Dim result As Object
+        Dim sqlCommand As DbCommand
+        Dim sql As String = "select max(Id) from prop_class"
+
+        sqlCommand = con.Factory.CreateCommand()
+        sqlCommand.CommandText = sql
+        sqlCommand.Connection = con.Con
+
+        Try
+            result = sqlCommand.ExecuteScalar()
+            If IsDBNull(result) Then
+                result = 1
+            Else
+                result += 1
+            End If
+        Catch err As Exception
+            result = -1
+        End Try
+
+        Return result
+    End Function
 
 #End Region
 

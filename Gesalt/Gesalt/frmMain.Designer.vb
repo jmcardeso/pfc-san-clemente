@@ -45,6 +45,11 @@ Partial Class frmMain
         Me.BookTypeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PropertiesReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageLessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LegalClassificationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageVATToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -90,11 +95,10 @@ Partial Class frmMain
         Me.pbxPhotos = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblLegalClass = New System.Windows.Forms.Label()
-        Me.ManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageLessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageVATToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LegalClassificationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lblKeys = New System.Windows.Forms.Label()
+        Me.lblVat = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -208,6 +212,32 @@ Partial Class frmMain
         '
         Me.PropertiesReportToolStripMenuItem.Name = "PropertiesReportToolStripMenuItem"
         resources.ApplyResources(Me.PropertiesReportToolStripMenuItem, "PropertiesReportToolStripMenuItem")
+        '
+        'ManagementToolStripMenuItem
+        '
+        Me.ManagementToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem, Me.ManageLessorsToolStripMenuItem, Me.LegalClassificationToolStripMenuItem, Me.ManageVATToolStripMenuItem})
+        Me.ManagementToolStripMenuItem.Name = "ManagementToolStripMenuItem"
+        resources.ApplyResources(Me.ManagementToolStripMenuItem, "ManagementToolStripMenuItem")
+        '
+        'ManageGuestsToolStripMenuItem
+        '
+        Me.ManageGuestsToolStripMenuItem.Name = "ManageGuestsToolStripMenuItem"
+        resources.ApplyResources(Me.ManageGuestsToolStripMenuItem, "ManageGuestsToolStripMenuItem")
+        '
+        'ManageLessorsToolStripMenuItem
+        '
+        Me.ManageLessorsToolStripMenuItem.Name = "ManageLessorsToolStripMenuItem"
+        resources.ApplyResources(Me.ManageLessorsToolStripMenuItem, "ManageLessorsToolStripMenuItem")
+        '
+        'LegalClassificationToolStripMenuItem
+        '
+        Me.LegalClassificationToolStripMenuItem.Name = "LegalClassificationToolStripMenuItem"
+        resources.ApplyResources(Me.LegalClassificationToolStripMenuItem, "LegalClassificationToolStripMenuItem")
+        '
+        'ManageVATToolStripMenuItem
+        '
+        Me.ManageVATToolStripMenuItem.Name = "ManageVATToolStripMenuItem"
+        resources.ApplyResources(Me.ManageVATToolStripMenuItem, "ManageVATToolStripMenuItem")
         '
         'HelpToolStripMenuItem
         '
@@ -476,36 +506,34 @@ Partial Class frmMain
         resources.ApplyResources(Me.lblLegalClass, "lblLegalClass")
         Me.lblLegalClass.Name = "lblLegalClass"
         '
-        'ManagementToolStripMenuItem
+        'Label14
         '
-        Me.ManagementToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem, Me.ManageLessorsToolStripMenuItem, Me.LegalClassificationToolStripMenuItem, Me.ManageVATToolStripMenuItem})
-        Me.ManagementToolStripMenuItem.Name = "ManagementToolStripMenuItem"
-        resources.ApplyResources(Me.ManagementToolStripMenuItem, "ManagementToolStripMenuItem")
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
         '
-        'ManageLessorsToolStripMenuItem
+        'lblKeys
         '
-        Me.ManageLessorsToolStripMenuItem.Name = "ManageLessorsToolStripMenuItem"
-        resources.ApplyResources(Me.ManageLessorsToolStripMenuItem, "ManageLessorsToolStripMenuItem")
+        resources.ApplyResources(Me.lblKeys, "lblKeys")
+        Me.lblKeys.Name = "lblKeys"
         '
-        'ManageGuestsToolStripMenuItem
+        'lblVat
         '
-        Me.ManageGuestsToolStripMenuItem.Name = "ManageGuestsToolStripMenuItem"
-        resources.ApplyResources(Me.ManageGuestsToolStripMenuItem, "ManageGuestsToolStripMenuItem")
+        resources.ApplyResources(Me.lblVat, "lblVat")
+        Me.lblVat.Name = "lblVat"
         '
-        'ManageVATToolStripMenuItem
+        'Label17
         '
-        Me.ManageVATToolStripMenuItem.Name = "ManageVATToolStripMenuItem"
-        resources.ApplyResources(Me.ManageVATToolStripMenuItem, "ManageVATToolStripMenuItem")
-        '
-        'LegalClassificationToolStripMenuItem
-        '
-        Me.LegalClassificationToolStripMenuItem.Name = "LegalClassificationToolStripMenuItem"
-        resources.ApplyResources(Me.LegalClassificationToolStripMenuItem, "LegalClassificationToolStripMenuItem")
+        resources.ApplyResources(Me.Label17, "Label17")
+        Me.Label17.Name = "Label17"
         '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.lblVat)
+        Me.Controls.Add(Me.lblKeys)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.lblLegalClass)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.pnlCalendar)
@@ -633,4 +661,8 @@ Partial Class frmMain
     Friend WithEvents ManageLessorsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LegalClassificationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageVATToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label14 As Label
+    Friend WithEvents lblKeys As Label
+    Friend WithEvents lblVat As Label
+    Friend WithEvents Label17 As Label
 End Class

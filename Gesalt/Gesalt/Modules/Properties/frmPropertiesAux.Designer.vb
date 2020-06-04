@@ -61,6 +61,10 @@ Partial Class frmPropertiesAux
         Me.btnAddLessor = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cbxLegalClass = New System.Windows.Forms.ComboBox()
+        Me.tbxVat = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.tbxKeys = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.pbxPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxLessors.SuspendLayout()
         CType(Me.dgvLessors, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -283,12 +287,36 @@ Partial Class frmPropertiesAux
         resources.ApplyResources(Me.cbxLegalClass, "cbxLegalClass")
         Me.cbxLegalClass.Name = "cbxLegalClass"
         '
+        'tbxVat
+        '
+        resources.ApplyResources(Me.tbxVat, "tbxVat")
+        Me.tbxVat.Name = "tbxVat"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'tbxKeys
+        '
+        resources.ApplyResources(Me.tbxKeys, "tbxKeys")
+        Me.tbxKeys.Name = "tbxKeys"
+        '
+        'Label14
+        '
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
+        '
         'frmPropertiesAux
         '
         Me.AcceptButton = Me.btnOK
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bntCancel
+        Me.Controls.Add(Me.tbxKeys)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.tbxVat)
+        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.cbxLegalClass)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.gbxLessors)
@@ -370,4 +398,8 @@ Partial Class frmPropertiesAux
     Friend WithEvents btnEditLessor As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents cbxLegalClass As ComboBox
+    Friend WithEvents tbxVat As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents tbxKeys As TextBox
+    Friend WithEvents Label14 As Label
 End Class

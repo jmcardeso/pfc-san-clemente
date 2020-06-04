@@ -197,9 +197,6 @@
     <Compile Include="Modules\DataBase\Tables\Photo.vb" />
     <Compile Include="Modules\DataBase\Tables\Price.vb" />
     <Compile Include="Modules\DataBase\Tables\PropClass.vb" />
-    <Compile Include="Modules\DataBase\Tables\Vat.vb" />
-    <Compile Include="Modules\DataBase\Tables\VatRate.vb" />
-    <Compile Include="Modules\DataBase\Tables\VatRateLegalClass.vb" />
     <Compile Include="Modules\DataBase\Utils.vb" />
     <Compile Include="Modules\Guests\frmGuests.Designer.vb">
       <DependentUpon>frmGuests.vb</DependentUpon>

@@ -12,15 +12,25 @@ Public Class frmPropertiesAux
 
     Private Sub frmPropertiesAux_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         opProp = OpProp.GetInstance()
+        legalClasses = opProp.GetLegalClasses()
+        cbxLegalClass.DataSource = legalClasses
 
         If editProp IsNot Nothing Then
             Me.Text = LocRM.GetString("editPropTitle")
+
+            If legalClasses.Count = 0 Then
+                cbxLegalClass.SelectedIndex = 0
+            Else
+                Dim thisLegalClass = From lc In legalClasses Where lc.Id = editProp.PropClass.ClassId
+                cbxLegalClass.SelectedItem = thisLegalClass.First
+            End If
         Else
             editProp = New Prop()
+            cbxLegalClass.SelectedIndex = 0
         End If
 
         propAux = Utils.DeepClone(editProp)
-   
+
         If propAux.Photos.Count = 0 Then
             pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
             pbxPhotos.Image = My.Resources.noImage
@@ -30,8 +40,6 @@ Public Class frmPropertiesAux
         bsPhotos.DataSource = propAux.Photos
 
         bsLessors.DataSource = propAux.Lessors
-
-        legalClasses = opProp.GetLegalClasses()
 
         Dim column As DataGridViewColumn
         With dgvLessors
@@ -63,21 +71,16 @@ Public Class frmPropertiesAux
         tbxProvince.DataBindings.Add("Text", propAux, "Province")
         tbxZip.DataBindings.Add("Text", propAux, "Zip")
         tbxDescription.DataBindings.Add("Text", propAux, "Description")
-        cbxLegalClass.DataSource = legalClasses
-
-        If legalClasses.Count = 0 Then
-            cbxLegalClass.SelectedIndex = 0
-        Else
-            Dim thisLegalClass = From lc In legalClasses Where lc.Id = propAux.PropClass.ClassId
-            cbxLegalClass.SelectedItem = thisLegalClass.First
-        End If
+        tbxVat.DataBindings.Add("Text", propAux, "PropClass.VAT")
+        tbxKeys.DataBindings.Add("Text", propAux, "PropClass.Keys")
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         If Not ValidateFields() Then
             Exit Sub
         End If
-
+        ' CUANDO CAMBIE DE CLASE LEGAL TIENE QUE CREAR UN NUEVO REGISTRO!!!!
+        propAux.PropClass.ClassId = CType(cbxLegalClass.SelectedItem, LegalClassification).Id
         editProp = Utils.DeepClone(propAux)
         Me.DialogResult = DialogResult.OK
     End Sub
@@ -264,8 +267,4 @@ Public Class frmPropertiesAux
 
         Return True
     End Function
-
-    Private Sub cbxLegalClass_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxLegalClass.SelectedIndexChanged
-
-    End Sub
 End Class
