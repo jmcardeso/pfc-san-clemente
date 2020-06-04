@@ -78,6 +78,7 @@ Public Class frmBook
         Dim priceAux As Decimal = 0
         Dim percentAux As Decimal = 0
         Dim VAT As Decimal = 0
+        Dim vatAmount As Decimal = 0
         Dim total As Decimal = 0
 
         bookType = opBook.GetBookTypeById(bookAux.BookTypeId)
@@ -110,16 +111,22 @@ Public Class frmBook
             today = today.AddDays(1)
         End While
 
-        VAT = CalculateVAT(amount)
-        total = amount + (amount * VAT / 100)
+        VAT = CalculateVAT()
+        vatAmount = amount * VAT / 100
+        total = amount + vatAmount
 
         lblAmount.Text = amount & " €"
-        lblVat.Text = VAT & " €"
+        lblVATPercent.Text = "(" & VAT & " %):"
+        lblVat.Text = vatAmount & " €"
         lblTotal.Text = total & " €"
     End Sub
 
-    Private Function CalculateVAT(amount As Decimal) As Decimal
-        Return 0
+    Private Function CalculateVAT() As Decimal
+        Dim opProp As OpProp = OpProp.GetInstance()
+
+        Dim pc As PropClass = opProp.GetPropClassesByInvoiceDate(bookAux.PropertyId, bookAux.CheckOut)
+
+        Return pc.VAT
     End Function
 
     Private Function ValidateFields() As Boolean
@@ -245,7 +252,7 @@ Public Class frmBook
             End If
         Next
 
-        If Not lblVat.Text.Equals("0 €") Then ' Falta el IVA
+        If Not lblVat.Text.Equals("0 €") Then
             VATVisible = True
         End If
 
@@ -275,8 +282,9 @@ Public Class frmBook
             New ReportParameter("p_Amount", LocRM.GetString("invoiceAmount")),
             New ReportParameter("p_AmountValue", lblAmount.Text),
             New ReportParameter("p_VAT", LocRM.GetString("invoiceVAT")),
-            New ReportParameter("p_VATPercentage", "0"),
+            New ReportParameter("p_VATPercentage", lblVATPercent.Text),
             New ReportParameter("p_VATValue", lblVat.Text),
+            New ReportParameter("p_VATVisible", VATVisible),
             New ReportParameter("p_Total", LocRM.GetString("invoiceTotal")),
             New ReportParameter("p_TotalValue", lblTotal.Text)
             }

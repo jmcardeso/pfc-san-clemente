@@ -1,14 +1,14 @@
 ﻿Imports System.Data.Common
 
 ''' <summary>
-''' Representa un conjunto de métodos para realizar operaciones en la tabla property de la base de datos.
+''' Representa un conjunto de métodos para realizar operaciones en la tabla property y asociadas de la base de datos.
 ''' </summary>
 Public Class OpProp
     Private Shared objOpProp As OpProp
     Private con As Connection = Connection.GetInstance()
 
     ''' <summary>
-    ''' Inicializa una nueva instancia de la clase <c>OpProp</c>, que permite realizar operaciones en la tabla property de la base de datos.
+    ''' Inicializa una nueva instancia de la clase <c>OpProp</c>, que permite realizar operaciones en la tabla property y asociadas de la base de datos.
     ''' </summary>
     Private Sub New()
         con.Open()
@@ -645,6 +645,51 @@ Public Class OpProp
         sqlCommand.Parameters.Add(pId)
 
         sqlCommand.CommandText = "select * from prop_class where Id = @p_id"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        If dt.Rows.Count = 0 Then
+            Return Nothing
+        End If
+
+        Dim dr As DataRow = dt.Rows.Item(0)
+
+        dr = dt.Rows.Item(0)
+        pc = New PropClass(dr.Item("Id"), dr.Item("property_id"), dr.Item("class_id"),
+                           dr.Item("start_date"), dr.Item("keys"), dr.Item("vat"))
+        pc.LegalClass = GetLegalClassById(pc.ClassId)
+
+        Return pc
+    End Function
+
+    Public Function GetPropClassesByInvoiceDate(propertyId As Integer, invoiceDate As Date) As PropClass
+        Dim pc As PropClass
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+        Dim pPropId As DbParameter
+        Dim pInvoiceDate As DbParameter
+
+        sqlCommand = con.Factory.CreateCommand()
+        pPropId = con.Factory.CreateParameter()
+        pInvoiceDate = con.Factory.CreateParameter()
+
+        pPropId.ParameterName = "@p_property_id"
+        pPropId.Value = propertyId
+        pPropId.DbType = DbType.Int32
+
+        pInvoiceDate.ParameterName = "@p_invoice_date"
+        pInvoiceDate.Value = invoiceDate
+        pInvoiceDate.DbType = DbType.Date
+
+        sqlCommand.Parameters.Add(pPropId)
+        sqlCommand.Parameters.Add(pInvoiceDate)
+
+        sqlCommand.CommandText = "select * from prop_class where property_id = @p_property_id and start_date <= @p_invoice_date order by start_date desc"
         sqlCommand.Connection = con.Con
 
         da = con.Factory.CreateDataAdapter()

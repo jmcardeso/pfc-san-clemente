@@ -592,7 +592,7 @@
             <Width>5.96604cm</Width>
             <ZIndex>10</ZIndex>
             <Visibility>
-              <Hidden>=Parameters!p_VATVisible.Value=True</Hidden>
+              <Hidden>=Parameters!p_VATVisible.Value=False</Hidden>
             </Visibility>
             <Style>
               <Border>
@@ -615,7 +615,7 @@
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value> ( </Value>
+                    <Value xml:space="preserve">  </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -623,7 +623,7 @@
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>%); </Value>
+                    <Value xml:space="preserve">  </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -643,7 +643,7 @@
             <Width>6.28354cm</Width>
             <ZIndex>11</ZIndex>
             <Visibility>
-              <Hidden>=Parameters!p_VATVisible.Value=true</Hidden>
+              <Hidden>=Parameters!p_VATVisible.Value=False</Hidden>
             </Visibility>
             <Style>
               <Border>

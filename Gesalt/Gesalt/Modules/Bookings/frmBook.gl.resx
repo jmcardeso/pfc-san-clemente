@@ -148,7 +148,7 @@
     <value>Prezo:</value>
   </data>
   <data name="Label8.Text" xml:space="preserve">
-    <value>IVA*:</value>
+    <value>IVA*</value>
   </data>
   <data name="Label9.Text" xml:space="preserve">
     <value>Total:</value>
@@ -176,5 +176,8 @@
   </data>
   <data name="btnCalculatePrice.ToolTip" xml:space="preserve">
     <value>Calcular prezo</value>
+  </data>
+  <data name="lblVATPercent.Text" xml:space="preserve">
+    <value>(0 %)</value>
   </data>
 </root>

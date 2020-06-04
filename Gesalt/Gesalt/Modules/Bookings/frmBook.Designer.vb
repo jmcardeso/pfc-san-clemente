@@ -51,6 +51,7 @@ Partial Class frmBook
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbxInvoiceNumber = New System.Windows.Forms.TextBox()
         Me.btnPrintInvoice = New System.Windows.Forms.Button()
+        Me.lblVATPercent = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -196,10 +197,16 @@ Partial Class frmBook
         Me.btnPrintInvoice.Name = "btnPrintInvoice"
         Me.btnPrintInvoice.UseVisualStyleBackColor = True
         '
+        'lblVATPercent
+        '
+        resources.ApplyResources(Me.lblVATPercent, "lblVATPercent")
+        Me.lblVATPercent.Name = "lblVATPercent"
+        '
         'frmBook
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblVATPercent)
         Me.Controls.Add(Me.btnPrintInvoice)
         Me.Controls.Add(Me.tbxInvoiceNumber)
         Me.Controls.Add(Me.Label11)
@@ -260,4 +267,5 @@ Partial Class frmBook
     Friend WithEvents Label11 As Label
     Friend WithEvents tbxInvoiceNumber As TextBox
     Friend WithEvents btnPrintInvoice As Button
+    Friend WithEvents lblVATPercent As Label
 End Class
