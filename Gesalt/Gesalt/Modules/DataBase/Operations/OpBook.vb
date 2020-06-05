@@ -47,7 +47,7 @@ Public Class OpBook
 
         sqlCommand.Parameters.Add(pPropId)
 
-        sqlCommand.CommandText = "select * from book where guest_id = @p_guest_id"
+        sqlCommand.CommandText = "select * from book where guest_id = @p_guest_id order by property_id"
         sqlCommand.Connection = con.Con
 
         da = con.Factory.CreateDataAdapter()

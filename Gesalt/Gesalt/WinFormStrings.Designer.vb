@@ -1343,6 +1343,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a Guests:.
+        '''</summary>
+        Friend Shared ReadOnly Property selectGuestsLabel() As String
+            Get
+                Return ResourceManager.GetString("selectGuestsLabel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a Select a guest - Gesalt.
+        '''</summary>
+        Friend Shared ReadOnly Property selectGuestsTitle() As String
+            Get
+                Return ResourceManager.GetString("selectGuestsTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Start date is after end date..
         '''</summary>
         Friend Shared ReadOnly Property startDateAfterEndDate() As String

@@ -15,6 +15,7 @@
 
 Imports System.Resources
 Imports Microsoft.Reporting.WinForms
+
 Public Class frmMain
     Dim opProp As OpProp
     Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmMain).Assembly)
@@ -731,6 +732,32 @@ Public Class frmMain
                                               mySplash.Close()
                                               mySplash.Dispose()
                                           End Sub))
+
+    End Sub
+
+    Private Sub ByGuestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByGuestsToolStripMenuItem.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim guests As New List(Of Guest)
+
+        Dim opGuest As OpGuest = OpGuest.GetInstance()
+
+        guests = opGuest.GetGuests()
+
+        Dim frmAux As New frmBookingsByGuest
+
+        frmAux.cbxSelect.DataSource = guests
+        frmAux.cbxSelect.SelectedIndex = 0
+        frmAux.ShowDialog()
+    End Sub
+
+    Private Sub ByDatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByDatesToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ByBookingTypesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByBookingTypesToolStripMenuItem.Click
 
     End Sub
 End Class

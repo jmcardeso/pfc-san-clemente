@@ -548,4 +548,10 @@
   <data name="legalClassChangedMsg" xml:space="preserve">
     <value>The legal classification of the property will change. A new entry will be created in the database and the previous values ​​will be kept for invoicing. Are you sure?</value>
   </data>
+  <data name="selectGuestsTitle" xml:space="preserve">
+    <value>Select a guest - Gesalt</value>
+  </data>
+  <data name="selectGuestsLabel" xml:space="preserve">
+    <value>Guests:</value>
+  </data>
 </root>

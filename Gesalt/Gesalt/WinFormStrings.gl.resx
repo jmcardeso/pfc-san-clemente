@@ -548,4 +548,10 @@
   <data name="legalClassChangedMsg" xml:space="preserve">
     <value>Vai cambiar a clasificación legal do inmoble. Crearase unha nova entrada na base de datos e os valores anteriores conservaranse para a facturación. Está seguro?</value>
   </data>
+  <data name="selectGuestsTitle" xml:space="preserve">
+    <value>Seleccione un cliente - Gesalt</value>
+  </data>
+  <data name="selectGuestsLabel" xml:space="preserve">
+    <value>Clientes:</value>
+  </data>
 </root>

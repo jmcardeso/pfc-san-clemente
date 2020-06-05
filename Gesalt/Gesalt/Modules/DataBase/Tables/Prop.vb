@@ -70,4 +70,7 @@ Public Class Prop
         Me.Description = description
     End Sub
 
+    Public Overrides Function ToString() As String
+        Return Me.Address
+    End Function
 End Class

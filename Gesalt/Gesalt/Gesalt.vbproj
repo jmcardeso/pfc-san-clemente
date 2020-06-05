@@ -183,6 +183,12 @@
     <Compile Include="Modules\Bookings\frmInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Bookings\frmBookingsByGuest.Designer.vb">
+      <DependentUpon>frmBookingsByGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Bookings\frmBookingsByGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\DataBase\Operations\OpBook.vb" />
     <Compile Include="Modules\DataBase\Tables\Book.vb" />
     <Compile Include="Modules\DataBase\Tables\BookType.vb" />
@@ -405,6 +411,15 @@
     <EmbeddedResource Include="Modules\Bookings\frmInvoice.resx">
       <DependentUpon>frmInvoice.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByGuest.es.resx">
+      <DependentUpon>frmBookingsByGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByGuest.gl.resx">
+      <DependentUpon>frmBookingsByGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByGuest.resx">
+      <DependentUpon>frmBookingsByGuest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Bookings\rptInvoice.rdlc" />
     <EmbeddedResource Include="Modules\Guests\frmGuests.es.resx">
       <DependentUpon>frmGuests.vb</DependentUpon>
@@ -583,6 +598,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\BookingsForReports.datasource" />
     <None Include="My Project\DataSources\Owner.datasource" />
     <None Include="My Project\DataSources\Guest.datasource" />
     <None Include="My Project\DataSources\Prop.datasource" />
