@@ -186,4 +186,28 @@
   <data name="lblUser.Text" xml:space="preserve">
     <value>Usuario:</value>
   </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Enderezo:</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Usuario:</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Contrasinal:</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Porto:</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>SSL:</value>
+  </data>
+  <data name="tbpMail.Text" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
 </root>

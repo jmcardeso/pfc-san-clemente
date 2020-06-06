@@ -291,4 +291,10 @@
   <data name="FiltersToolStripMenuItem.Text" xml:space="preserve">
     <value>Filtros</value>
   </data>
+  <data name="EmailMarketingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mailing</value>
+  </data>
+  <data name="ToolStripMailing.Text" xml:space="preserve">
+    <value>Mailing</value>
+  </data>
 </root>

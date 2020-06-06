@@ -171,6 +171,561 @@
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>tbpLogin</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbServer.Name" xml:space="preserve">
+    <value>rbServer</value>
+  </data>
+  <data name="&gt;&gt;rbServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbServer.Parent" xml:space="preserve">
+    <value>tbpLogin</value>
+  </data>
+  <data name="&gt;&gt;rbServer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbLocal.Name" xml:space="preserve">
+    <value>rbLocal</value>
+  </data>
+  <data name="&gt;&gt;rbLocal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbLocal.Parent" xml:space="preserve">
+    <value>tbpLogin</value>
+  </data>
+  <data name="&gt;&gt;rbLocal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.Name" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.Parent" xml:space="preserve">
+    <value>tbpLogin</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbpLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbpLogin.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbpLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 464</value>
+  </data>
+  <data name="tbpLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbpLogin.Text" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="&gt;&gt;tbpLogin.Name" xml:space="preserve">
+    <value>tbpLogin</value>
+  </data>
+  <data name="&gt;&gt;tbpLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpLogin.Parent" xml:space="preserve">
+    <value>tcPreferencias</value>
+  </data>
+  <data name="&gt;&gt;tbpLogin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbxMailSSL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbxMailSSL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 223</value>
+  </data>
+  <data name="cbxMailSSL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="cbxMailSSL.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbxMailSSL.Name" xml:space="preserve">
+    <value>cbxMailSSL</value>
+  </data>
+  <data name="&gt;&gt;cbxMailSSL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbxMailSSL.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;cbxMailSSL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudMailPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 197</value>
+  </data>
+  <data name="nudMailPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="nudMailPort.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;nudMailPort.Name" xml:space="preserve">
+    <value>nudMailPort</value>
+  </data>
+  <data name="&gt;&gt;nudMailPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudMailPort.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;nudMailPort.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 224</value>
+  </data>
+  <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="Label8.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>SSL:</value>
+  </data>
+  <data name="&gt;&gt;Label8.Name" xml:space="preserve">
+    <value>Label8</value>
+  </data>
+  <data name="&gt;&gt;Label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label8.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 199</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbxMailHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 171</value>
+  </data>
+  <data name="tbxMailHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="tbxMailHost.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbxMailHost.Name" xml:space="preserve">
+    <value>tbxMailHost</value>
+  </data>
+  <data name="&gt;&gt;tbxMailHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxMailHost.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;tbxMailHost.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 174</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tbxMailPass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 145</value>
+  </data>
+  <data name="tbxMailPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="tbxMailPass.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbxMailPass.Name" xml:space="preserve">
+    <value>tbxMailPass</value>
+  </data>
+  <data name="&gt;&gt;tbxMailPass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxMailPass.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;tbxMailPass.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 148</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbxMailUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 119</value>
+  </data>
+  <data name="tbxMailUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="tbxMailUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbxMailUserName.Name" xml:space="preserve">
+    <value>tbxMailUserName</value>
+  </data>
+  <data name="&gt;&gt;tbxMailUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxMailUserName.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;tbxMailUserName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 122</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tbxMailName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 93</value>
+  </data>
+  <data name="tbxMailName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="tbxMailName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbxMailName.Name" xml:space="preserve">
+    <value>tbxMailName</value>
+  </data>
+  <data name="&gt;&gt;tbxMailName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxMailName.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;tbxMailName.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 96</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tbxMailAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 67</value>
+  </data>
+  <data name="tbxMailAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="tbxMailAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbxMailAddress.Name" xml:space="preserve">
+    <value>tbxMailAddress</value>
+  </data>
+  <data name="&gt;&gt;tbxMailAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxMailAddress.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;tbxMailAddress.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 70</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tbpMail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbpMail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbpMail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 464</value>
+  </data>
+  <data name="tbpMail.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tbpMail.Text" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="&gt;&gt;tbpMail.Name" xml:space="preserve">
+    <value>tbpMail</value>
+  </data>
+  <data name="&gt;&gt;tbpMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpMail.Parent" xml:space="preserve">
+    <value>tcPreferencias</value>
+  </data>
+  <data name="&gt;&gt;tbpMail.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbEnglish.Name" xml:space="preserve">
+    <value>rbEnglish</value>
+  </data>
+  <data name="&gt;&gt;rbEnglish.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbEnglish.Parent" xml:space="preserve">
+    <value>tbpLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbEnglish.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbSpanish.Name" xml:space="preserve">
+    <value>rbSpanish</value>
+  </data>
+  <data name="&gt;&gt;rbSpanish.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbSpanish.Parent" xml:space="preserve">
+    <value>tbpLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbSpanish.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbGalician.Name" xml:space="preserve">
+    <value>rbGalician</value>
+  </data>
+  <data name="&gt;&gt;rbGalician.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGalician.Parent" xml:space="preserve">
+    <value>tbpLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbGalician.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblIdioma.Name" xml:space="preserve">
+    <value>lblIdioma</value>
+  </data>
+  <data name="&gt;&gt;lblIdioma.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIdioma.Parent" xml:space="preserve">
+    <value>tbpLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblIdioma.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbpLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbpLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbpLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 464</value>
+  </data>
+  <data name="tbpLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tbpLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.Name" xml:space="preserve">
+    <value>tbpLanguage</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.Parent" xml:space="preserve">
+    <value>tcPreferencias</value>
+  </data>
+  <data name="&gt;&gt;tbpLanguage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcPreferencias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 17</value>
+  </data>
+  <data name="tcPreferencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 490</value>
+  </data>
+  <data name="tcPreferencias.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.Name" xml:space="preserve">
+    <value>tcPreferencias</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcPreferencias.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -254,6 +809,171 @@
   </data>
   <data name="&gt;&gt;rbLocal.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblServerSettings.Name" xml:space="preserve">
+    <value>lblServerSettings</value>
+  </data>
+  <data name="&gt;&gt;lblServerSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblServerSettings.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;lblServerSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;nudPort.Name" xml:space="preserve">
+    <value>nudPort</value>
+  </data>
+  <data name="&gt;&gt;nudPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudPort.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;nudPort.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnTestCon.Name" xml:space="preserve">
+    <value>btnTestCon</value>
+  </data>
+  <data name="&gt;&gt;btnTestCon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestCon.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;btnTestCon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblPort.Name" xml:space="preserve">
+    <value>lblPort</value>
+  </data>
+  <data name="&gt;&gt;lblPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPort.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;lblPort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.Name" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbxServer.Name" xml:space="preserve">
+    <value>tbxServer</value>
+  </data>
+  <data name="&gt;&gt;tbxServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxServer.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;tbxServer.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblServer.Name" xml:space="preserve">
+    <value>lblServer</value>
+  </data>
+  <data name="&gt;&gt;lblServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblServer.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;lblServer.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbxSSH.Name" xml:space="preserve">
+    <value>cbxSSH</value>
+  </data>
+  <data name="&gt;&gt;cbxSSH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbxSSH.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;cbxSSH.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tbxPass.Name" xml:space="preserve">
+    <value>tbxPass</value>
+  </data>
+  <data name="&gt;&gt;tbxPass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxPass.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;tbxPass.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Name" xml:space="preserve">
+    <value>lblPass</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;lblPass.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tbxUser.Name" xml:space="preserve">
+    <value>tbxUser</value>
+  </data>
+  <data name="&gt;&gt;tbxUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxUser.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;tbxUser.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblUser.Name" xml:space="preserve">
+    <value>lblUser</value>
+  </data>
+  <data name="&gt;&gt;lblUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUser.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;lblUser.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="pnlConnection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 96</value>
+  </data>
+  <data name="pnlConnection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 353</value>
+  </data>
+  <data name="pnlConnection.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.Name" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.Parent" xml:space="preserve">
+    <value>tbpLogin</value>
+  </data>
+  <data name="&gt;&gt;pnlConnection.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblServerSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -359,6 +1079,123 @@
   </data>
   <data name="&gt;&gt;lblPort.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudSSHPort.Name" xml:space="preserve">
+    <value>nudSSHPort</value>
+  </data>
+  <data name="&gt;&gt;nudSSHPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSSHPort.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;nudSSHPort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHPass.Name" xml:space="preserve">
+    <value>tbxSSHPass</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHPass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHPass.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHPass.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPort.Name" xml:space="preserve">
+    <value>lblSSHPort</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPort.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPort.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHHost.Name" xml:space="preserve">
+    <value>tbxSSHHost</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHHost.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHHost.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHName.Name" xml:space="preserve">
+    <value>tbxSSHName</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHName.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;tbxSSHName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
+    <value>lblUserName</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPassword.Name" xml:space="preserve">
+    <value>lblSSHPassword</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPassword.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;lblSSHPassword.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblHostName.Name" xml:space="preserve">
+    <value>lblHostName</value>
+  </data>
+  <data name="&gt;&gt;lblHostName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHostName.Parent" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;lblHostName.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pnlSSH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 167</value>
+  </data>
+  <data name="pnlSSH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>374, 128</value>
+  </data>
+  <data name="pnlSSH.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.Name" xml:space="preserve">
+    <value>pnlSSH</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.Parent" xml:space="preserve">
+    <value>pnlConnection</value>
+  </data>
+  <data name="&gt;&gt;pnlSSH.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="nudSSHPort.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -585,27 +1422,6 @@
   <data name="&gt;&gt;lblHostName.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="pnlSSH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 167</value>
-  </data>
-  <data name="pnlSSH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 128</value>
-  </data>
-  <data name="pnlSSH.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pnlSSH.Name" xml:space="preserve">
-    <value>pnlSSH</value>
-  </data>
-  <data name="&gt;&gt;pnlSSH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlSSH.Parent" xml:space="preserve">
-    <value>pnlConnection</value>
-  </data>
-  <data name="&gt;&gt;pnlSSH.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="tbxServer.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 82</value>
   </data>
@@ -777,54 +1593,6 @@
   <data name="&gt;&gt;lblUser.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="pnlConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 96</value>
-  </data>
-  <data name="pnlConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 353</value>
-  </data>
-  <data name="pnlConnection.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;pnlConnection.Name" xml:space="preserve">
-    <value>pnlConnection</value>
-  </data>
-  <data name="&gt;&gt;pnlConnection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlConnection.Parent" xml:space="preserve">
-    <value>tbpLogin</value>
-  </data>
-  <data name="&gt;&gt;pnlConnection.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbpLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tbpLogin.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 464</value>
-  </data>
-  <data name="tbpLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tbpLogin.Text" xml:space="preserve">
-    <value>Database</value>
-  </data>
-  <data name="&gt;&gt;tbpLogin.Name" xml:space="preserve">
-    <value>tbpLogin</value>
-  </data>
-  <data name="&gt;&gt;tbpLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpLogin.Parent" xml:space="preserve">
-    <value>tcPreferencias</value>
-  </data>
-  <data name="&gt;&gt;tbpLogin.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="rbEnglish.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -832,7 +1600,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbEnglish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 62</value>
+    <value>227, 160</value>
   </data>
   <data name="rbEnglish.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
@@ -862,7 +1630,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbSpanish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 37</value>
+    <value>227, 137</value>
   </data>
   <data name="rbSpanish.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 17</value>
@@ -889,7 +1657,7 @@
     <value>True</value>
   </data>
   <data name="rbGalician.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 14</value>
+    <value>227, 114</value>
   </data>
   <data name="rbGalician.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 17</value>
@@ -916,10 +1684,10 @@
     <value>True</value>
   </data>
   <data name="lblIdioma.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 16</value>
+    <value>113, 114</value>
   </data>
   <data name="lblIdioma.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 13</value>
+    <value>108, 13</value>
   </data>
   <data name="lblIdioma.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -938,54 +1706,6 @@
   </data>
   <data name="&gt;&gt;lblIdioma.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="tbpLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tbpLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 464</value>
-  </data>
-  <data name="tbpLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbpLanguage.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.Name" xml:space="preserve">
-    <value>tbpLanguage</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.Parent" xml:space="preserve">
-    <value>tcPreferencias</value>
-  </data>
-  <data name="&gt;&gt;tbpLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tcPreferencias.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 17</value>
-  </data>
-  <data name="tcPreferencias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 490</value>
-  </data>
-  <data name="tcPreferencias.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.Name" xml:space="preserve">
-    <value>tcPreferencias</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcPreferencias.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

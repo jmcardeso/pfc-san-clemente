@@ -33,7 +33,6 @@ Partial Class frmLessors
         Me.FilterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MailingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsLessors = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripEdit = New System.Windows.Forms.ToolStripButton()
@@ -42,8 +41,6 @@ Partial Class frmLessors
         Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
         Me.LessorsReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMailing = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripExit = New System.Windows.Forms.ToolStripButton()
         Me.btnFirst = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
@@ -94,7 +91,7 @@ Partial Class frmLessors
         '
         'mnsLessors
         '
-        Me.mnsLessors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LessorsToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.MailingToolStripMenuItem})
+        Me.mnsLessors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LessorsToolStripMenuItem, Me.ReportsToolStripMenuItem})
         resources.ApplyResources(Me.mnsLessors, "mnsLessors")
         Me.mnsLessors.Name = "mnsLessors"
         '
@@ -135,14 +132,9 @@ Partial Class frmLessors
         Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
         resources.ApplyResources(Me.PruebaToolStripMenuItem, "PruebaToolStripMenuItem")
         '
-        'MailingToolStripMenuItem
-        '
-        Me.MailingToolStripMenuItem.Name = "MailingToolStripMenuItem"
-        resources.ApplyResources(Me.MailingToolStripMenuItem, "MailingToolStripMenuItem")
-        '
         'tlsLessors
         '
-        Me.tlsLessors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripMailing, Me.ToolStripSeparator3, Me.ToolStripExit})
+        Me.tlsLessors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripExit})
         resources.ApplyResources(Me.tlsLessors, "tlsLessors")
         Me.tlsLessors.Name = "tlsLessors"
         '
@@ -185,17 +177,6 @@ Partial Class frmLessors
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
-        '
-        'ToolStripMailing
-        '
-        Me.ToolStripMailing.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.ToolStripMailing, "ToolStripMailing")
-        Me.ToolStripMailing.Name = "ToolStripMailing"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
         '
         'ToolStripExit
         '
@@ -423,7 +404,6 @@ Partial Class frmLessors
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MailingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblFilter As Label
     Friend WithEvents ToolStripAdd As ToolStripButton
@@ -432,8 +412,6 @@ Partial Class frmLessors
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripReports As ToolStripDropDownButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripMailing As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripExit As ToolStripButton
     Friend WithEvents pbxLogo As PictureBox
     Friend WithEvents PruebaToolStripMenuItem As ToolStripMenuItem

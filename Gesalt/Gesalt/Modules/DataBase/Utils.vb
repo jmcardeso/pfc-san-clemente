@@ -2,11 +2,13 @@
 Imports System.IO
 Imports System.Resources
 Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.Security.Cryptography
 
 ''' <summary>
 ''' Representa un conjunto de métodos de utilidad general.
 ''' </summary>
 Public Class Utils
+    Private Shared s_aditionalEntropy As Byte() = {9, 8, 7, 6, 5}
 
     ''' <summary>
     ''' Realiza una copia profunda del objeto especificado.
@@ -169,5 +171,64 @@ Public Class Utils
         Next
 
         Return limits
+    End Function
+
+    ''' <summary>
+    ''' Encripta una cadena de texto usando DataProtectionScope.CurrentUser. El resultado puede
+    ''' ser desencriptado sólo por el mismo usuario.
+    ''' <para>Ref: https://docs.microsoft.com/es-es/dotnet/api/system.security.cryptography.protecteddata?view=netframework-4.8 </para>
+    ''' </summary>
+    ''' <param name="strPlaneText">La cadena de texto a encriptar.</param>
+    ''' <returns>La cadena de texto en Base64 encriptada o <c>Nothing</c> si se ha producido un error.</returns>
+    Public Shared Function Protect(strPlaneText As String) As String
+        Try
+            Dim data As Byte() = Convert.FromBase64String(EncodeStrToBase64(strPlaneText))
+            Dim encript As Byte()
+            encript = ProtectedData.Protect(data, s_aditionalEntropy, DataProtectionScope.CurrentUser)
+            Return Convert.ToBase64String(encript)
+        Catch e As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Desencripta una cadena de texto usando DataProtectionScope.CurrentUser.
+    ''' <para>Ref: https://docs.microsoft.com/es-es/dotnet/api/system.security.cryptography.protecteddata?view=netframework-4.8 </para>
+    ''' </summary>
+    ''' <param name="strEncript">La cadena de texto en Base64 encriptada.</param>
+    ''' <returns>La cadena de texto desencriptada o <c>Nothing</c> si se ha producido un error.</returns>
+    Public Shared Function Unprotect(strEncript As String) As String
+        Try
+            Dim data As Byte() = Convert.FromBase64String(strEncript)
+            Dim decript As Byte()
+            decript = ProtectedData.Unprotect(data, s_aditionalEntropy, DataProtectionScope.CurrentUser)
+            Return DecodeBase64ToString(Convert.ToBase64String(decript))
+        Catch e As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Convierte una cadena de texto en Base64 a una cadena de texto UTF8.
+    ''' <para>Ref: http://www.dotnetcr.com/convertir-string-a-base64-y-base64-a-string/ </para>
+    ''' </summary>
+    ''' <param name="value">La cadena de texto en Base64.</param>
+    ''' <returns>La cadena de texto en formato UTF8.</returns>
+    Public Shared Function DecodeBase64ToString(value As String) As String
+        Dim myBase64ret As Byte() = Convert.FromBase64String(value)
+        Dim myStr As String = System.Text.Encoding.UTF8.GetString(myBase64ret)
+        Return myStr
+    End Function
+
+    ''' <summary>
+    ''' Convierte una cadena de texto UTF8 a una cadena de texto en Base64.
+    ''' <para>Ref: http://www.dotnetcr.com/convertir-string-a-base64-y-base64-a-string/ </para>
+    ''' </summary>
+    ''' <param name="value">La cadena de texto en formato UTF8.</param>
+    ''' <returns>La cadena de texto en Base64.</returns>
+    Public Shared Function EncodeStrToBase64(value As String) As String
+        Dim myByte As Byte() = System.Text.Encoding.UTF8.GetBytes(value)
+        Dim myBase64 As String = Convert.ToBase64String(myByte)
+        Return myBase64
     End Function
 End Class

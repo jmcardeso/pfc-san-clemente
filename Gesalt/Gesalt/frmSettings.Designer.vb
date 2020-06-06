@@ -56,6 +56,21 @@ Partial Class frmSettings
         Me.rbSpanish = New System.Windows.Forms.RadioButton()
         Me.rbGalician = New System.Windows.Forms.RadioButton()
         Me.lblIdioma = New System.Windows.Forms.Label()
+        Me.tbpMail = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tbxMailAddress = New System.Windows.Forms.TextBox()
+        Me.tbxMailName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tbxMailUserName = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbxMailPass = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.tbxMailHost = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.nudMailPort = New System.Windows.Forms.NumericUpDown()
+        Me.cbxMailSSL = New System.Windows.Forms.CheckBox()
         Me.tcPreferencias.SuspendLayout()
         Me.tbpLogin.SuspendLayout()
         Me.pnlConnection.SuspendLayout()
@@ -63,6 +78,8 @@ Partial Class frmSettings
         Me.pnlSSH.SuspendLayout()
         CType(Me.nudSSHPort, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpLanguage.SuspendLayout()
+        Me.tbpMail.SuspendLayout()
+        CType(Me.nudMailPort, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnOK
@@ -80,6 +97,7 @@ Partial Class frmSettings
         'tcPreferencias
         '
         Me.tcPreferencias.Controls.Add(Me.tbpLogin)
+        Me.tcPreferencias.Controls.Add(Me.tbpMail)
         Me.tcPreferencias.Controls.Add(Me.tbpLanguage)
         resources.ApplyResources(Me.tcPreferencias, "tcPreferencias")
         Me.tcPreferencias.Name = "tcPreferencias"
@@ -104,12 +122,12 @@ Partial Class frmSettings
         '
         resources.ApplyResources(Me.rbServer, "rbServer")
         Me.rbServer.Name = "rbServer"
-        Me.rbServer.TabStop = True
         Me.rbServer.UseVisualStyleBackColor = True
         '
         'rbLocal
         '
         resources.ApplyResources(Me.rbLocal, "rbLocal")
+        Me.rbLocal.Checked = True
         Me.rbLocal.Name = "rbLocal"
         Me.rbLocal.TabStop = True
         Me.rbLocal.UseVisualStyleBackColor = True
@@ -286,6 +304,99 @@ Partial Class frmSettings
         resources.ApplyResources(Me.lblIdioma, "lblIdioma")
         Me.lblIdioma.Name = "lblIdioma"
         '
+        'tbpMail
+        '
+        Me.tbpMail.Controls.Add(Me.cbxMailSSL)
+        Me.tbpMail.Controls.Add(Me.nudMailPort)
+        Me.tbpMail.Controls.Add(Me.Label8)
+        Me.tbpMail.Controls.Add(Me.Label7)
+        Me.tbpMail.Controls.Add(Me.tbxMailHost)
+        Me.tbpMail.Controls.Add(Me.Label5)
+        Me.tbpMail.Controls.Add(Me.tbxMailPass)
+        Me.tbpMail.Controls.Add(Me.Label4)
+        Me.tbpMail.Controls.Add(Me.tbxMailUserName)
+        Me.tbpMail.Controls.Add(Me.Label3)
+        Me.tbpMail.Controls.Add(Me.tbxMailName)
+        Me.tbpMail.Controls.Add(Me.Label2)
+        Me.tbpMail.Controls.Add(Me.tbxMailAddress)
+        Me.tbpMail.Controls.Add(Me.Label1)
+        resources.ApplyResources(Me.tbpMail, "tbpMail")
+        Me.tbpMail.Name = "tbpMail"
+        Me.tbpMail.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'tbxMailAddress
+        '
+        resources.ApplyResources(Me.tbxMailAddress, "tbxMailAddress")
+        Me.tbxMailAddress.Name = "tbxMailAddress"
+        '
+        'tbxMailName
+        '
+        resources.ApplyResources(Me.tbxMailName, "tbxMailName")
+        Me.tbxMailName.Name = "tbxMailName"
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'tbxMailUserName
+        '
+        resources.ApplyResources(Me.tbxMailUserName, "tbxMailUserName")
+        Me.tbxMailUserName.Name = "tbxMailUserName"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
+        '
+        'tbxMailPass
+        '
+        resources.ApplyResources(Me.tbxMailPass, "tbxMailPass")
+        Me.tbxMailPass.Name = "tbxMailPass"
+        Me.tbxMailPass.UseSystemPasswordChar = True
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.Name = "Label4"
+        '
+        'tbxMailHost
+        '
+        resources.ApplyResources(Me.tbxMailHost, "tbxMailHost")
+        Me.tbxMailHost.Name = "tbxMailHost"
+        '
+        'Label5
+        '
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'Label7
+        '
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.Name = "Label7"
+        '
+        'Label8
+        '
+        resources.ApplyResources(Me.Label8, "Label8")
+        Me.Label8.Name = "Label8"
+        '
+        'nudMailPort
+        '
+        resources.ApplyResources(Me.nudMailPort, "nudMailPort")
+        Me.nudMailPort.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
+        Me.nudMailPort.Name = "nudMailPort"
+        '
+        'cbxMailSSL
+        '
+        resources.ApplyResources(Me.cbxMailSSL, "cbxMailSSL")
+        Me.cbxMailSSL.Name = "cbxMailSSL"
+        Me.cbxMailSSL.UseVisualStyleBackColor = True
+        '
         'frmSettings
         '
         Me.AcceptButton = Me.btnOK
@@ -307,6 +418,9 @@ Partial Class frmSettings
         CType(Me.nudSSHPort, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpLanguage.ResumeLayout(False)
         Me.tbpLanguage.PerformLayout()
+        Me.tbpMail.ResumeLayout(False)
+        Me.tbpMail.PerformLayout()
+        CType(Me.nudMailPort, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -344,4 +458,19 @@ Partial Class frmSettings
     Friend WithEvents rbServer As RadioButton
     Friend WithEvents rbLocal As RadioButton
     Friend WithEvents lblServerSettings As Label
+    Friend WithEvents tbpMail As TabPage
+    Friend WithEvents tbxMailHost As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents tbxMailPass As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents tbxMailUserName As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents tbxMailName As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents tbxMailAddress As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents cbxMailSSL As CheckBox
+    Friend WithEvents nudMailPort As NumericUpDown
+    Friend WithEvents Label8 As Label
 End Class

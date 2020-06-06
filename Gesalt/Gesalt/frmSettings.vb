@@ -44,6 +44,14 @@ Public Class frmSettings
         If My.Settings.dbType.Equals("remote") Then
             LoadMySQLConnectionStringData()
         End If
+
+        tbxMailAddress.Text = My.Settings.mailAddress
+        tbxMailHost.Text = My.Settings.mailHost
+        tbxMailName.Text = My.Settings.mailName
+        nudMailPort.Value = My.Settings.mailPort
+        cbxMailSSL.Checked = My.Settings.mailSSL
+        tbxMailUserName.Text = My.Settings.mailUserName
+        tbxMailPass.Text = Utils.Unprotect(My.Settings.mailPassword)
     End Sub
 
     Private Sub frmPreferencias_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -125,6 +133,15 @@ Public Class frmSettings
         End If
 
         My.Settings.appStatus = "ok"
+
+        My.Settings.mailAddress = tbxMailAddress.Text
+        My.Settings.mailHost = tbxMailHost.Text
+        My.Settings.mailName = tbxMailName.Text
+        My.Settings.mailPort = nudMailPort.Value
+        My.Settings.mailSSL = cbxMailSSL.Checked
+        My.Settings.mailUserName = tbxMailUserName.Text
+        My.Settings.mailPassword = Utils.Protect(tbxMailPass.Text)
+
         My.Settings.Save()
 
         Close()

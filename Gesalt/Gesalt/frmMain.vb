@@ -25,11 +25,13 @@ Public Class frmMain
     Dim props As New List(Of Prop)
     Private lastClickTick As Integer
 
+#Region "Inicialización"
     Public Sub New()
         Dim strLanguage As String = My.Settings.language
         Dim culture As Globalization.CultureInfo
 
         ' Si es la primera vez que se inicia la aplicación (y, por tanto, no hay un idioma definido)
+        ' hacemos que el idioma sea el del sistema (si está soportado en el programa) o el inglés en caso contrario.
         If My.Settings.appStatus.Equals("first_start") Then
             culture = Threading.Thread.CurrentThread.CurrentUICulture
 
@@ -42,16 +44,15 @@ Public Class frmMain
             My.Settings.language = strLanguage
         End If
 
-        ' Para forzar el cambio de idioma por código
+        ' Para forzar el cambio de idioma por código.
         Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.GetCultureInfo(strLanguage)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
     Private Sub frmprops_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Si es la primera vez que se inicia la aplicación, llamamos al asistente de conexión.
         If My.Settings.appStatus.Equals("first_start") Then
             ConnectionWizard()
         End If
@@ -150,7 +151,9 @@ Public Class frmMain
             Close()
         End Try
     End Sub
+#End Region
 
+#Region "Navegación"
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         bs.Position += 1
     End Sub
@@ -165,6 +168,61 @@ Public Class frmMain
 
     Private Sub btnLast_Click(sender As Object, e As EventArgs) Handles btnLast.Click
         bs.Position = props.Count - 1
+    End Sub
+
+    Private Sub dgvProperties_SelectionChanged(sender As Object, e As EventArgs) Handles dgvProperties.SelectionChanged
+        If bs.Current Is Nothing OrElse bs.Current.Photos.Count = 0 Then
+            pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
+            pbxPhotos.Image = My.Resources.noImage
+            bsPhotos.DataSource = New List(Of Photo)
+        Else
+            pbxPhotos.SizeMode = PictureBoxSizeMode.Zoom
+            bsPhotos.DataSource = bs.Current.Photos
+            bsPhotos.ResetBindings(False)
+        End If
+
+        If bs.Current Is Nothing OrElse bs.Current.Lessors.Count = 0 Then
+            bsLessors.DataSource = New List(Of LessorProp)
+        Else
+            bsLessors.DataSource = bs.Current.Lessors
+        End If
+
+        bsLessors.ResetBindings(False)
+
+        mclCalendar.RemoveAllBoldedDates()
+        mclCalendar.SelectionStart = Now()
+        mclCalendar.SelectionEnd = Now()
+        Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
+        mclCalendar_DateChanged(Nothing, New DateRangeEventArgs(Now(), Now()))
+    End Sub
+
+    Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
+        bsPhotos.Position = 0
+    End Sub
+
+    Private Sub btnPhotosPrevious_Click(sender As Object, e As EventArgs) Handles btnPhotosPrevious.Click
+        bsPhotos.Position -= 1
+    End Sub
+
+    Private Sub btnPhotosNext_Click(sender As Object, e As EventArgs) Handles btnPhotosNext.Click
+        bsPhotos.Position += 1
+    End Sub
+
+    Private Sub btnPhotosLast_Click(sender As Object, e As EventArgs) Handles btnPhotosLast.Click
+        bsPhotos.Position = bsPhotos.Count - 1
+    End Sub
+#End Region
+
+#Region "Manipulación"
+    Private Sub pbxPhotos_Click(sender As Object, e As EventArgs) Handles pbxPhotos.Click
+        If bs.Current Is Nothing OrElse bs.Current.Photos.Count = 0 Then
+            Exit Sub
+        End If
+
+        Dim frmPV = New frmPictureViewer()
+        frmPV.photos = bs.Current.Photos
+        frmPV.index = bsPhotos.Position
+        frmPV.ShowDialog()
     End Sub
 
     Private Sub AddAPropertyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAPropertyToolStripMenuItem.Click, ToolStripAdd.Click
@@ -321,60 +379,9 @@ Public Class frmMain
         frmRpt.rpvProp.RefreshReport()
         frmRpt.ShowDialog()
     End Sub
+#End Region
 
-    Private Sub dgvProperties_SelectionChanged(sender As Object, e As EventArgs) Handles dgvProperties.SelectionChanged
-        If bs.Current Is Nothing OrElse bs.Current.Photos.Count = 0 Then
-            pbxPhotos.SizeMode = PictureBoxSizeMode.CenterImage
-            pbxPhotos.Image = My.Resources.noImage
-            bsPhotos.DataSource = New List(Of Photo)
-        Else
-            pbxPhotos.SizeMode = PictureBoxSizeMode.Zoom
-            bsPhotos.DataSource = bs.Current.Photos
-            bsPhotos.ResetBindings(False)
-        End If
-
-        If bs.Current Is Nothing OrElse bs.Current.Lessors.Count = 0 Then
-            bsLessors.DataSource = New List(Of LessorProp)
-        Else
-            bsLessors.DataSource = bs.Current.Lessors
-        End If
-
-        bsLessors.ResetBindings(False)
-
-        mclCalendar.RemoveAllBoldedDates()
-        mclCalendar.SelectionStart = Now()
-        mclCalendar.SelectionEnd = Now()
-        Utils.MarkBooksInCalendar(bs.Current.Books, mclCalendar)
-        mclCalendar_DateChanged(Nothing, New DateRangeEventArgs(Now(), Now()))
-    End Sub
-
-    Private Sub btnPhotosFirst_Click(sender As Object, e As EventArgs) Handles btnPhotosFirst.Click
-        bsPhotos.Position = 0
-    End Sub
-
-    Private Sub btnPhotosPrevious_Click(sender As Object, e As EventArgs) Handles btnPhotosPrevious.Click
-        bsPhotos.Position -= 1
-    End Sub
-
-    Private Sub btnPhotosNext_Click(sender As Object, e As EventArgs) Handles btnPhotosNext.Click
-        bsPhotos.Position += 1
-    End Sub
-
-    Private Sub btnPhotosLast_Click(sender As Object, e As EventArgs) Handles btnPhotosLast.Click
-        bsPhotos.Position = bsPhotos.Count - 1
-    End Sub
-
-    Private Sub pbxPhotos_Click(sender As Object, e As EventArgs) Handles pbxPhotos.Click
-        If bs.Current Is Nothing OrElse bs.Current.Photos.Count = 0 Then
-            Exit Sub
-        End If
-
-        Dim frmPV = New frmPictureViewer()
-        frmPV.photos = bs.Current.Photos
-        frmPV.index = bsPhotos.Position
-        frmPV.ShowDialog()
-    End Sub
-
+#Region "Formularios auxiliares"
     Private Sub BookTypeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BookTypeToolStripMenuItem1.Click
         If bs.Current Is Nothing Then
             Exit Sub
@@ -388,6 +395,59 @@ Public Class frmMain
         frmBT.ShowDialog()
     End Sub
 
+    Private Sub ByGuestsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByGuestsToolStripMenuItem1.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim guests As New List(Of Guest)
+
+        Dim opGuest As OpGuest = OpGuest.GetInstance()
+
+        guests = opGuest.GetGuests()
+
+        Dim frmAux As New frmBookingsByGuest
+
+        frmAux.cbxSelect.DataSource = guests
+        frmAux.cbxSelect.SelectedIndex = 0
+        frmAux.ShowDialog()
+    End Sub
+
+    Private Sub ByDatesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByDatesToolStripMenuItem1.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmAux As New frmBookingsByDate
+
+        frmAux.cbxProperties.DataSource = props
+        frmAux.cbxProperties.SelectedIndex = 0
+        frmAux.ShowDialog()
+    End Sub
+
+    Private Sub ByBookingTypesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByBookingTypesToolStripMenuItem1.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmAux As New frmBookingsByBookType
+        frmAux.ShowDialog()
+    End Sub
+
+    Private Sub LegalClassificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LegalClassificationToolStripMenuItem.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim frmLC As New frmLegalClassification()
+
+        If frmLC.ShowDialog() = DialogResult.Cancel Then
+            Exit Sub
+        End If
+
+        RefreshData()
+    End Sub
+
     Private Sub ManageLessorsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageLessorsToolStripMenuItem.Click
         Dim frmLsr As New frmLessors
 
@@ -399,6 +459,12 @@ Public Class frmMain
         Dim frmGst As New frmGuests
 
         frmGst.ShowDialog()
+    End Sub
+
+    Private Sub ToolStripMailing_Click(sender As Object, e As EventArgs) Handles ToolStripMailing.Click, EmailMarketingToolStripMenuItem.Click
+        Dim frmMl As New frmMail
+
+        frmMl.ShowDialog()
     End Sub
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
@@ -416,7 +482,9 @@ Public Class frmMain
 
         frmAbout.ShowDialog()
     End Sub
+#End Region
 
+#Region "Calendario de reservas"
     Private Sub mclCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mclCalendar.DateChanged
         ' Se elimina el evento para que no se dispare dentro de él (al añadir una BoldedDate)
         RemoveHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
@@ -437,6 +505,7 @@ Public Class frmMain
         AddHandler mclCalendar.DateChanged, AddressOf mclCalendar_DateChanged
     End Sub
 
+    ' Simulamos el doble click en una fecha del calendario.
     ' Ref: https://stackoverflow.com/questions/8498014/capture-doubleclick-for-monthcalendar-control-in-windows-forms-app
     Private Sub mclCalendar_MouseDown(sender As Object, e As MouseEventArgs) Handles mclCalendar.MouseDown
         Dim info As MonthCalendar.HitTestInfo = mclCalendar.HitTest(e.X, e.Y)
@@ -648,21 +717,9 @@ Public Class frmMain
 
         bs.ResetBindings(False)
     End Sub
+#End Region
 
-    Private Sub LegalClassificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LegalClassificationToolStripMenuItem.Click
-        If bs.Current Is Nothing Then
-            Exit Sub
-        End If
-
-        Dim frmLC As New frmLegalClassification()
-
-        If frmLC.ShowDialog() = DialogResult.Cancel Then
-            Exit Sub
-        End If
-
-        RefreshData()
-    End Sub
-
+#Region "Funciones auxiliares"
     ''' <summary>
     ''' Vuelve a cargar el formulario.
     ''' </summary>
@@ -734,43 +791,6 @@ Public Class frmMain
                                           End Sub))
 
     End Sub
+#End Region
 
-    Private Sub ByGuestsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByGuestsToolStripMenuItem1.Click
-        If bs.Current Is Nothing Then
-            Exit Sub
-        End If
-
-        Dim guests As New List(Of Guest)
-
-        Dim opGuest As OpGuest = OpGuest.GetInstance()
-
-        guests = opGuest.GetGuests()
-
-        Dim frmAux As New frmBookingsByGuest
-
-        frmAux.cbxSelect.DataSource = guests
-        frmAux.cbxSelect.SelectedIndex = 0
-        frmAux.ShowDialog()
-    End Sub
-
-    Private Sub ByDatesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByDatesToolStripMenuItem1.Click
-        If bs.Current Is Nothing Then
-            Exit Sub
-        End If
-
-        Dim frmAux As New frmBookingsByDate
-
-        frmAux.cbxProperties.DataSource = props
-        frmAux.cbxProperties.SelectedIndex = 0
-        frmAux.ShowDialog()
-    End Sub
-
-    Private Sub ByBookingTypesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByBookingTypesToolStripMenuItem1.Click
-        If bs.Current Is Nothing Then
-            Exit Sub
-        End If
-
-        Dim frmAux As New frmBookingsByBookType
-        frmAux.ShowDialog()
-    End Sub
 End Class

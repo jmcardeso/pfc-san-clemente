@@ -230,6 +230,26 @@
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Reports</value>
   </data>
+  <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="ToolStripMailing.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABZSURBVDhP7Y5RCsAwCEO9/6UdiUm3rqX4vz0IVnxK4wdk
+        3tXvQO1mS57g/HFEV+YfHNGiskWmj1bewKPLlSGqaQCv9BUpPjrHwKPLlSGoaQCv9BUPO/k4ERd41vcJ
+        TE9NhgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripMailing.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripMailing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="ToolStripMailing.Text" xml:space="preserve">
+    <value>Email Marketing</value>
+  </data>
   <data name="tlsProperties.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
@@ -288,37 +308,37 @@
     <value>&amp;Properties</value>
   </data>
   <data name="ManageBooksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="ManageBooksToolStripMenuItem.Text" xml:space="preserve">
     <value>Add/Edit Bookings</value>
   </data>
   <data name="BookTypeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="BookTypeToolStripMenuItem1.Text" xml:space="preserve">
     <value>Booking &amp;Types</value>
   </data>
   <data name="ByGuestsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>166, 22</value>
   </data>
   <data name="ByGuestsToolStripMenuItem1.Text" xml:space="preserve">
     <value>By Guests</value>
   </data>
   <data name="ByDatesToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>166, 22</value>
   </data>
   <data name="ByDatesToolStripMenuItem1.Text" xml:space="preserve">
     <value>By Dates</value>
   </data>
   <data name="ByBookingTypesToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>166, 22</value>
   </data>
   <data name="ByBookingTypesToolStripMenuItem1.Text" xml:space="preserve">
     <value>By Booking Types</value>
   </data>
   <data name="FiltersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="FiltersToolStripMenuItem.Text" xml:space="preserve">
     <value>Filters</value>
@@ -330,7 +350,7 @@
     <value>&amp;Bookings</value>
   </data>
   <data name="PropertiesReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="PropertiesReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Properties Report</value>
@@ -352,6 +372,12 @@
   </data>
   <data name="ManageLessorsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lessors</value>
+  </data>
+  <data name="EmailMarketingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="EmailMarketingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Email Marketing</value>
   </data>
   <data name="LegalClassificationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
@@ -2382,6 +2408,18 @@
   <data name="&gt;&gt;PropReportToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ToolStripSeparator2.Name" xml:space="preserve">
+    <value>ToolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMailing.Name" xml:space="preserve">
+    <value>ToolStripMailing</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMailing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;PropertiesToolStripMenuItem.Name" xml:space="preserve">
     <value>PropertiesToolStripMenuItem</value>
   </data>
@@ -2482,6 +2520,12 @@
     <value>ManageLessorsToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;ManageLessorsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EmailMarketingToolStripMenuItem.Name" xml:space="preserve">
+    <value>EmailMarketingToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;EmailMarketingToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LegalClassificationToolStripMenuItem.Name" xml:space="preserve">

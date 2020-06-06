@@ -101,6 +101,90 @@ Namespace My
                 Me("appStatus") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property mailAddress() As String
+            Get
+                Return CType(Me("mailAddress"),String)
+            End Get
+            Set
+                Me("mailAddress") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property mailName() As String
+            Get
+                Return CType(Me("mailName"),String)
+            End Get
+            Set
+                Me("mailName") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property mailUserName() As String
+            Get
+                Return CType(Me("mailUserName"),String)
+            End Get
+            Set
+                Me("mailUserName") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property mailHost() As String
+            Get
+                Return CType(Me("mailHost"),String)
+            End Get
+            Set
+                Me("mailHost") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property mailPort() As Integer
+            Get
+                Return CType(Me("mailPort"),Integer)
+            End Get
+            Set
+                Me("mailPort") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property mailSSL() As Boolean
+            Get
+                Return CType(Me("mailSSL"),Boolean)
+            End Get
+            Set
+                Me("mailSSL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property mailPassword() As String
+            Get
+                Return CType(Me("mailPassword"),String)
+            End Get
+            Set
+                Me("mailPassword") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

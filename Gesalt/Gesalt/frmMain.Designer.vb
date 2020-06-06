@@ -34,6 +34,8 @@ Partial Class frmMain
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripReports = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PropReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripMailing = New System.Windows.Forms.ToolStripButton()
         Me.mnsProperties = New System.Windows.Forms.MenuStrip()
         Me.PropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddAPropertyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,6 +54,7 @@ Partial Class frmMain
         Me.ManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageLessorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmailMarketingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LegalClassificationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -118,7 +121,7 @@ Partial Class frmMain
         '
         'tlsProperties
         '
-        Me.tlsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports})
+        Me.tlsProperties.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripAdd, Me.ToolStripEdit, Me.ToolStripDelete, Me.ToolStripSeparator1, Me.ToolStripReports, Me.ToolStripSeparator2, Me.ToolStripMailing})
         resources.ApplyResources(Me.tlsProperties, "tlsProperties")
         Me.tlsProperties.Name = "tlsProperties"
         '
@@ -156,6 +159,17 @@ Partial Class frmMain
         '
         Me.PropReportToolStripMenuItem.Name = "PropReportToolStripMenuItem"
         resources.ApplyResources(Me.PropReportToolStripMenuItem, "PropReportToolStripMenuItem")
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
+        '
+        'ToolStripMailing
+        '
+        Me.ToolStripMailing.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.ToolStripMailing, "ToolStripMailing")
+        Me.ToolStripMailing.Name = "ToolStripMailing"
         '
         'mnsProperties
         '
@@ -239,7 +253,7 @@ Partial Class frmMain
         '
         'ManagementToolStripMenuItem
         '
-        Me.ManagementToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem, Me.ManageLessorsToolStripMenuItem, Me.LegalClassificationToolStripMenuItem})
+        Me.ManagementToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageGuestsToolStripMenuItem, Me.ManageLessorsToolStripMenuItem, Me.EmailMarketingToolStripMenuItem, Me.LegalClassificationToolStripMenuItem})
         Me.ManagementToolStripMenuItem.Name = "ManagementToolStripMenuItem"
         resources.ApplyResources(Me.ManagementToolStripMenuItem, "ManagementToolStripMenuItem")
         '
@@ -252,6 +266,11 @@ Partial Class frmMain
         '
         Me.ManageLessorsToolStripMenuItem.Name = "ManageLessorsToolStripMenuItem"
         resources.ApplyResources(Me.ManageLessorsToolStripMenuItem, "ManageLessorsToolStripMenuItem")
+        '
+        'EmailMarketingToolStripMenuItem
+        '
+        Me.EmailMarketingToolStripMenuItem.Name = "EmailMarketingToolStripMenuItem"
+        resources.ApplyResources(Me.EmailMarketingToolStripMenuItem, "EmailMarketingToolStripMenuItem")
         '
         'LegalClassificationToolStripMenuItem
         '
@@ -687,4 +706,7 @@ Partial Class frmMain
     Friend WithEvents ByGuestsToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ByDatesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ByBookingTypesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripMailing As ToolStripButton
+    Friend WithEvents EmailMarketingToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1064,6 +1064,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca una cadena traducida similar a An error occurred while sending the emails..
+        '''</summary>
+        Friend Shared ReadOnly Property mailErrorMsg() As String
+            Get
+                Return ResourceManager.GetString("mailErrorMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca una cadena traducida similar a Gesalt.
         '''</summary>
         Friend Shared ReadOnly Property msgTitle() As String

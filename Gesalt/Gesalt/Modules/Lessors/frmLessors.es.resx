@@ -189,9 +189,6 @@
   <data name="EditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Editar</value>
   </data>
-  <data name="MailingToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Mailing</value>
-  </data>
   <data name="LessorsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Arrendadores</value>
   </data>
@@ -212,9 +209,6 @@
   </data>
   <data name="ToolStripExit.Text" xml:space="preserve">
     <value>Salir</value>
-  </data>
-  <data name="ToolStripMailing.Text" xml:space="preserve">
-    <value>Mailing</value>
   </data>
   <data name="ToolStripReports.Text" xml:space="preserve">
     <value>Informes</value>

@@ -554,4 +554,7 @@
   <data name="selectGuestsLabel" xml:space="preserve">
     <value>Clientes:</value>
   </data>
+  <data name="mailErrorMsg" xml:space="preserve">
+    <value>Produciuse un erro ao enviar os correos electrónicos.</value>
+  </data>
 </root>
