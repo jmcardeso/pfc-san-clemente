@@ -70,99 +70,6 @@ Public Class frmBook
         Me.DialogResult = DialogResult.OK
     End Sub
 
-    Private Sub CalculatePrice()
-        Dim opBook As OpBook = OpBook.GetInstance()
-        Dim bookType As BookType
-        Dim today As Date = bookAux.CheckIn
-        Dim amount As Decimal = 0
-        Dim priceAux As Decimal = 0
-        Dim percentAux As Decimal = 0
-        Dim VAT As Decimal = 0
-        Dim vatAmount As Decimal = 0
-        Dim total As Decimal = 0
-
-        bookType = opBook.GetBookTypeById(bookAux.BookTypeId)
-
-        Dim todayprices = From price In bookType.Prices
-                          Where price.Percentage = False And
-                              price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
-                          Select price.Value
-
-        Dim todayPercentages = From price In bookType.Prices
-                               Where price.Percentage = True And
-                                 price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
-                               Select price.Value
-
-        While today < bookAux.CheckOut.Date
-            If todayprices.Count > 0 Then
-                priceAux = todayprices.Min()
-            Else
-                priceAux = 0
-            End If
-
-            If todayPercentages.Count > 0 Then
-                percentAux = todayPercentages.Max()
-            Else
-                percentAux = 0
-            End If
-
-            amount += priceAux - (priceAux * percentAux / 100)
-
-            today = today.AddDays(1)
-        End While
-
-        VAT = CalculateVAT()
-        vatAmount = amount * VAT / 100
-        total = amount + vatAmount
-
-        lblAmount.Text = amount & " €"
-        lblVATPercent.Text = "(" & VAT & " %):"
-        lblVat.Text = vatAmount & " €"
-        lblTotal.Text = total & " €"
-    End Sub
-
-    Private Function CalculateVAT() As Decimal
-        Dim opProp As OpProp = OpProp.GetInstance()
-
-        Dim pc As PropClass = opProp.GetPropClassesByInvoiceDate(prop.Id, bookAux.CheckOut)
-
-        If pc Is Nothing Then
-            Return 0
-        Else
-            Return pc.VAT
-        End If
-    End Function
-
-    Private Function ValidateFields() As Boolean
-        If editBook.Status = BK_COMPLETED AndAlso bookAux.Status <> BK_COMPLETED Then
-            If MsgBox(LocRM.GetString("bookingCompletedErrorMsg"),
-                   MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
-                Return False
-            End If
-        End If
-
-        If bookAux.CheckIn > bookAux.CheckOut Then
-            MsgBox(LocRM.GetString("startDateAfterEndDate3"), MsgBoxStyle.Exclamation, "Gesalt")
-            Return False
-        End If
-
-        bookAux.BookTypeId = CType(cbxBookTypes.SelectedItem, BookType).Id
-        bookAux.GuestId = CType(cbxGuests.SelectedItem, Guest).Id
-        bookAux.CheckIn = dtpCheckin.Value.Date
-        bookAux.CheckOut = dtpCheckout.Value.Date
-
-        If IsEdited AndAlso (editBook.GuestId <> bookAux.GuestId Or
-            editBook.BookTypeId <> bookAux.BookTypeId Or editBook.CheckIn <> bookAux.CheckIn Or
-            editBook.CheckOut <> bookAux.CheckOut) Then
-            If MsgBox(LocRM.GetString("bookingChangeData"),
-               MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
-                Return False
-            End If
-        End If
-
-        Return True
-    End Function
-
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.DialogResult = DialogResult.Cancel
     End Sub
@@ -308,4 +215,108 @@ Public Class frmBook
 
         bookAux.BookTypeId = CType(cbxBookTypes.SelectedItem, BookType).Id
     End Sub
+
+    ''' <summary>
+    ''' Calcula el precio de la reserva de un inmueble.
+    ''' </summary>
+    Private Sub CalculatePrice()
+        Dim opBook As OpBook = OpBook.GetInstance()
+        Dim bookType As BookType
+        Dim today As Date = bookAux.CheckIn
+        Dim amount As Decimal = 0
+        Dim priceAux As Decimal = 0
+        Dim percentAux As Decimal = 0
+        Dim VAT As Decimal = 0
+        Dim vatAmount As Decimal = 0
+        Dim total As Decimal = 0
+
+        bookType = opBook.GetBookTypeById(bookAux.BookTypeId)
+
+        Dim todayprices = From price In bookType.Prices
+                          Where price.Percentage = False And
+                              price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
+                          Select price.Value
+
+        Dim todayPercentages = From price In bookType.Prices
+                               Where price.Percentage = True And
+                                 price.StartDate <= today And (price.EndDate >= today Or price.EndDate < New Date(1971, 1, 1))
+                               Select price.Value
+
+        While today < bookAux.CheckOut.Date
+            If todayprices.Count > 0 Then
+                priceAux = todayprices.Min()
+            Else
+                priceAux = 0
+            End If
+
+            If todayPercentages.Count > 0 Then
+                percentAux = todayPercentages.Max()
+            Else
+                percentAux = 0
+            End If
+
+            amount += priceAux - (priceAux * percentAux / 100)
+
+            today = today.AddDays(1)
+        End While
+
+        VAT = CalculateVAT()
+        vatAmount = amount * VAT / 100
+        total = amount + vatAmount
+
+        lblAmount.Text = amount & " €"
+        lblVATPercent.Text = "(" & VAT & " %):"
+        lblVat.Text = vatAmount & " €"
+        lblTotal.Text = total & " €"
+    End Sub
+
+    ''' <summary>
+    ''' Calcula el IVA del precio de la reserva de un inmueble.
+    ''' </summary>
+    ''' <returns>El valor del IVA del precio de la reserva de un inmueble.</returns>
+    Private Function CalculateVAT() As Decimal
+        Dim opProp As OpProp = OpProp.GetInstance()
+
+        Dim pc As PropClass = opProp.GetPropClassesByInvoiceDate(prop.Id, bookAux.CheckOut)
+
+        If pc Is Nothing Then
+            Return 0
+        Else
+            Return pc.VAT
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Comprueba que los datos de la reserva sean correctos.
+    ''' </summary>
+    ''' <returns><c>True</c> si los datos son correctos, <c>False</c> en caso contrario.</returns>
+    Private Function ValidateFields() As Boolean
+        If editBook.Status = BK_COMPLETED AndAlso bookAux.Status <> BK_COMPLETED Then
+            If MsgBox(LocRM.GetString("bookingCompletedErrorMsg"),
+                   MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
+                Return False
+            End If
+        End If
+
+        If bookAux.CheckIn > bookAux.CheckOut Then
+            MsgBox(LocRM.GetString("startDateAfterEndDate3"), MsgBoxStyle.Exclamation, "Gesalt")
+            Return False
+        End If
+
+        bookAux.BookTypeId = CType(cbxBookTypes.SelectedItem, BookType).Id
+        bookAux.GuestId = CType(cbxGuests.SelectedItem, Guest).Id
+        bookAux.CheckIn = dtpCheckin.Value.Date
+        bookAux.CheckOut = dtpCheckout.Value.Date
+
+        If IsEdited AndAlso (editBook.GuestId <> bookAux.GuestId Or
+            editBook.BookTypeId <> bookAux.BookTypeId Or editBook.CheckIn <> bookAux.CheckIn Or
+            editBook.CheckOut <> bookAux.CheckOut) Then
+            If MsgBox(LocRM.GetString("bookingChangeData"),
+               MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2, "Gesalt") = MsgBoxResult.No Then
+                Return False
+            End If
+        End If
+
+        Return True
+    End Function
 End Class

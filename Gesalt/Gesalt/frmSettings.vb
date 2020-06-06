@@ -159,7 +159,7 @@ Public Class frmSettings
         Try
             con.Open()
             MsgBox(LocRM.GetString("conOK"), MsgBoxStyle.Information, LocRM.GetString("msgTitle"))
-            ' Comprobar si es una excepción de Socket y, en ese caso, salir del programa o algo
+            ' Comprobar si es una excepción de Socket y, en ese caso, salir del programa o algo así
         Catch err As Exception
             MsgBox(LocRM.GetString("conError"), MsgBoxStyle.Exclamation, LocRM.GetString("msgTitle"))
         Finally

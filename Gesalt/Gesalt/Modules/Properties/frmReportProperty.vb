@@ -3,8 +3,4 @@
 
         Me.rpvProp.RefreshReport()
     End Sub
-
-    Private Sub OwnerBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles PropBindingSource.CurrentChanged
-
-    End Sub
 End Class

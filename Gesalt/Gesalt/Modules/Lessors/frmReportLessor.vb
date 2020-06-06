@@ -3,8 +3,4 @@
 
         Me.rpvLessor.RefreshReport()
     End Sub
-
-    Private Sub LessorBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles LessorBindingSource.CurrentChanged
-
-    End Sub
 End Class

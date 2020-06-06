@@ -378,7 +378,7 @@ Public Class OpBook
     End Function
 
     ''' <summary>
-    ''' Devuelve una lista de objetos de la clase <c>BookType</c> que representan las reservas asociadas a un inmueble.
+    ''' Devuelve una lista de objetos de la clase <c>BookType</c> que representan las reservas asociadas a un inmueble concreto.
     ''' </summary>
     ''' <param name="propertyId">El campo Id del inmueble.</param>
     ''' <returns>La lista que contiene las reservas del inmueble.</returns>
@@ -416,6 +416,10 @@ Public Class OpBook
         Return bookTypes
     End Function
 
+    ''' <summary>
+    ''' Devuelve una lista con todos los objetos de la clase <c>BookType</c> que representan las reservas asociadas a los inmuebles.
+    ''' </summary>
+    ''' <returns>La lista que contiene las reservas de todos los inmuebles.</returns>
     Public Function GetAllBookTypes() As List(Of BookType)
         Dim bookTypes As New List(Of BookType)
         Dim da As DbDataAdapter

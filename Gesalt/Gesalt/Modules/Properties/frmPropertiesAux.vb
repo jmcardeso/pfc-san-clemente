@@ -302,7 +302,6 @@ Public Class frmPropertiesAux
         Return True
     End Function
 
-
 #End Region
 
 End Class

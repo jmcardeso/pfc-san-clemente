@@ -627,8 +627,13 @@ Public Class OpProp
 
 #End Region
 
-#Region "LegalProp"
+#Region "PropClass"
 
+    ''' <summary>
+    ''' Devuelve una fila de la tabla prop_class que representa la asociación entre un inmueble y su clasificación legal.
+    ''' </summary>
+    ''' <param name="Id">El índice de la fila de la tabla prop_class donde está almacenada la asociación entre un inmueble y su clasificación legal.</param>
+    ''' <returns>Un objeto de la clase <c>PropClass</c> que representa la asociación entre un inmueble y su clasificación legal.</returns>
     Public Function GetPropClassById(Id As Integer) As PropClass
         Dim pc As PropClass
         Dim da As DbDataAdapter
@@ -667,6 +672,12 @@ Public Class OpProp
         Return pc
     End Function
 
+    ''' <summary>
+    ''' Devuelve una fila de la clase prop_class que representa la asociación entre un inmueble y su clasificación legal para un inmueble concreto y una fecha de facturación concreta.
+    ''' </summary>
+    ''' <param name="propertyId">El índice la la fila de la tabla property donde está almacenado el inmueble.</param>
+    ''' <param name="invoiceDate">La fecha de facturación.</param>
+    ''' <returns>Un objeto de la clase <c>PropClass</c> que representa la asociación entre un inmueble y su clasificación legal.</returns>
     Public Function GetPropClassesByInvoiceDate(propertyId As Integer, invoiceDate As Date) As PropClass
         Dim pc As PropClass
         Dim da As DbDataAdapter
@@ -712,6 +723,11 @@ Public Class OpProp
         Return pc
     End Function
 
+    ''' <summary>
+    ''' Devuelve una fila de la clase prop_class que representa la asociación entre un inmueble y su clasificación legal para un inmueble concreto.
+    ''' </summary>
+    ''' <param name="propertyId">El índice del inmueble asociado a la clasificación legal.</param>
+    ''' <returns>Un objeto de la clase <c>PropClass</c> que representa la asociación entre un inmueble y su clasificación legal.</returns>
     Public Function GetPropClassByPropertyId(propertyId As Integer) As PropClass
         Dim pc As PropClass
         Dim da As DbDataAdapter
@@ -750,6 +766,11 @@ Public Class OpProp
         Return pc
     End Function
 
+    ''' <summary>
+    ''' Devuelve una fila de la clase prop_class que representa la asociación entre un inmueble y su clasificación legal para una clasificación legal concreta.
+    ''' </summary>
+    ''' <param name="classId">El índice de la clasificación legal asociada al inmueble.</param>
+    ''' <returns>Un objeto de la clase <c>PropClass</c> que representa la asociación entre un inmueble y su clasificación legal.</returns>
     Public Function GetPropClassByClassId(classId As Integer) As PropClass
         Dim pc As PropClass
         Dim da As DbDataAdapter
@@ -788,6 +809,11 @@ Public Class OpProp
         Return pc
     End Function
 
+    ''' <summary>
+    ''' Añade una nueva fila a la tabla prop_class que representa una asociación entre un inmueble y su clasificación legal.
+    ''' </summary>
+    ''' <param name="pc">Un objeto de la clase <c>PropClass</c> que representa una asociación entre un inmueble y su clasificación legal.</param>
+    ''' <returns>El índice de la nueva fila de la tabla prop_class, -1 si ha habido un error al obtener un nuevo índice, -2 si ha habido un error al añadir la fila.</returns>
     Public Function AddPropClass(ByRef pc As PropClass) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
@@ -833,6 +859,11 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Actualiza una fila de la tabla prop_class que representa una asociación entre un inmueble y su clasificación legal.
+    ''' </summary>
+    ''' <param name="pc">Un objeto de la clase <c>PropClass</c> que representa una asociación entre un inmueble y su clasificación legal.</param>
+    ''' <returns><c>True</c> si la operación se ha realizado correctamente, <c>False</c> en caso contrario.</returns>
     Public Function UpdatePropClass(pc As PropClass) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -879,6 +910,11 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Elimina una fila de la tabla prop_class que representa una asociación entre un inmueble y su clasificación legal.
+    ''' </summary>
+    ''' <param name="pc">Un objeto de la clase <c>PropClass</c> que representa una asociación entre un inmueble y su clasificación legal.</param>
+    ''' <returns><c>True</c> si la operación se ha realizado correctamente, <c>False</c> en caso contrario.</returns>
     Public Function DeletePropClass(pc As PropClass) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -918,6 +954,10 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    '''Genera una nueva Id para añadir una fila de la tabla prop_class en la base de datos.
+    ''' </summary>
+    ''' <returns>La nueva Id, -1 si ha habido un error al generarla.</returns>
     Private Function GetPropClassId() As Integer
         Dim result As Object
         Dim sqlCommand As DbCommand
@@ -945,6 +985,12 @@ Public Class OpProp
 
 #Region "LegalClassification"
 
+    ''' <summary>
+    ''' Obtiene una lista de objetos <c>LegalClassification</c> que representan la clasificación legal de un inmueble.
+    ''' </summary>
+    ''' <param name="sql">(Opcional) Una cadena SQL para seleccionar la clasificación legal.</param>
+    ''' <param name="parameters">(Opcional) Una lista de objetos <c>DbParameter</c> con los parámetros necesarios para la selección.</param>
+    ''' <returns>Una lista de objetos <c>LegalClassification</c> que representan la clasificación legal de un inmueble.</returns>
     Public Function GetLegalClasses(Optional sql As String = "select * from legalclassification",
                              Optional parameters As List(Of DbParameter) = Nothing) As List(Of LegalClassification)
         Dim LegalClasses As New List(Of LegalClassification)
@@ -978,6 +1024,11 @@ Public Class OpProp
         Return LegalClasses
     End Function
 
+    ''' <summary>
+    ''' Obtiene un objeto de la clase <c>LeglaClassification</c> que representa la clasificación legal de un inmueble.
+    ''' </summary>
+    ''' <param name="Id">El índice de la fila de la tabla legalclassification que se quiere obtener.</param>
+    ''' <returns>Un objeto de la clase <c>LegalClassification</c> que representa la clasificación legal de un inmueble.</returns>
     Public Function GetLegalClassById(Id As Integer) As LegalClassification
         Dim lc As LegalClassification
         Dim da As DbDataAdapter
@@ -1010,6 +1061,11 @@ Public Class OpProp
         Return lc
     End Function
 
+    ''' <summary>
+    ''' Añade una nueva fila a la tabla legalclassification de la base de datos.
+    ''' </summary>
+    ''' <param name="lc">Un objeto de la clase <c>LegalClassification</c> que representa la clasificación legal de un inmueble.</param>
+    ''' <returns>La Id de la nueva fila, -1 si ha habido un error al obtener la Id, -2 si ha habido un error al añadir la fila.</returns>
     Public Function AddLegalClass(lc As LegalClassification) As Integer
         Dim result As Integer
         Dim da As DbDataAdapter
@@ -1051,6 +1107,11 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Actualiza una fila de la tabla legalclassification de la base de datos.
+    ''' </summary>
+    ''' <param name="lc">Un objeto de la clase <c>LegalClassification</c> que representa la clasificación legal de un inmueble.</param>
+    ''' <returns><c>True</c> si la operación ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function UpdateLegalClass(lc As LegalClassification) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -1093,6 +1154,11 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Elimina una fila de la tabla legalclassification de la base de datos.
+    ''' </summary>
+    ''' <param name="lc">Un objeto de la clase <c>LegalClassification</c> que representa la clasificación legal de un inmueble.</param>
+    ''' <returns><c>True</c> si la operación ha tenido éxito, <c>False</c> en caso contrario.</returns>
     Public Function DeleteLegalClass(lc As LegalClassification) As Boolean
         Dim result As Boolean = False
         Dim da As DbDataAdapter
@@ -1133,10 +1199,19 @@ Public Class OpProp
         Return result
     End Function
 
+    ''' <summary>
+    ''' Comprueba si es seguro eliminar una fila de la tabla legalclassification de la base de datos.
+    ''' </summary>
+    ''' <param name="Id">El índice de la fila legalclassification de la base de datos que se quiere eliminar.</param>
+    ''' <returns><c>True</c> si es segura la eliminación, <c>False</c> en caso contrario.</returns>
     Public Function IsSafeDeleteLegalClass(Id As Integer) As Boolean
         Return GetPropClassByClassId(Id) Is Nothing
     End Function
 
+    ''' <summary>
+    ''' Genera el índice de una nueva fila de la tabla legalclassification de la base de datos.
+    ''' </summary>
+    ''' <returns>El nuevo índice, -1 si ha habido un error al generarlo.</returns>
     Private Function GetLegalClassId() As Integer
         Dim result As Object
         Dim sqlCommand As DbCommand

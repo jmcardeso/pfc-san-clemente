@@ -70,6 +70,10 @@ Public Class Prop
         Me.Description = description
     End Sub
 
+    ''' <summary>
+    ''' Devuelve una cadena de texto que representa al objeto de la clase <c>Prop</c> (dirección).
+    ''' </summary>
+    ''' <returns>La cadena de texto que representa al objeto de la clase <c>Prop</c>.</returns>
     Public Overrides Function ToString() As String
         Return Me.Address
     End Function

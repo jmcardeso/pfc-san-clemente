@@ -270,6 +270,11 @@ Public Class OpLessor
         Return result
     End Function
 
+    ''' <summary>
+    ''' Comprueba si un arrendador tiene inmuebles asociados
+    ''' </summary>
+    ''' <param name="id">El índice correspondiente a la fila de la tabla lessor donde está almacenado el arrendador.</param>
+    ''' <returns><c>True</c> si el arrendador tiene inmuebles asociados, <c>False</c> en caso contrario.</returns>
     Public Function LessorHasProperty(id As Integer) As Boolean
         Dim da As DbDataAdapter
         Dim sqlCommand As DbCommand
@@ -319,6 +324,11 @@ Public Class OpLessor
         dr("email") = lessor.Email
         dr("path_logo") = lessor.PathLogo
     End Sub
+
+    ''' <summary>
+    ''' Genera una Id para una nueva fila de la tabla lessor.
+    ''' </summary>
+    ''' <returns>La nueva Id generada, -1 en caso de error.</returns>
     Private Function GetId() As Integer
         Dim result As Object
         Dim sqlCommand As DbCommand

@@ -214,7 +214,7 @@ Public Class Utils
     ''' </summary>
     ''' <param name="value">La cadena de texto en Base64.</param>
     ''' <returns>La cadena de texto en formato UTF8.</returns>
-    Public Shared Function DecodeBase64ToString(value As String) As String
+    Private Shared Function DecodeBase64ToString(value As String) As String
         Dim myBase64ret As Byte() = Convert.FromBase64String(value)
         Dim myStr As String = System.Text.Encoding.UTF8.GetString(myBase64ret)
         Return myStr
@@ -226,7 +226,7 @@ Public Class Utils
     ''' </summary>
     ''' <param name="value">La cadena de texto en formato UTF8.</param>
     ''' <returns>La cadena de texto en Base64.</returns>
-    Public Shared Function EncodeStrToBase64(value As String) As String
+    Private Shared Function EncodeStrToBase64(value As String) As String
         Dim myByte As Byte() = System.Text.Encoding.UTF8.GetBytes(value)
         Dim myBase64 As String = Convert.ToBase64String(myByte)
         Return myBase64

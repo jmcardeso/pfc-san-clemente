@@ -279,6 +279,10 @@ Public Class OpGuest
         dr("accept_ad") = guest.AcceptAd
     End Sub
 
+    ''' <summary>
+    ''' Genera una Id para una nueva fila de la tabla guest.
+    ''' </summary>
+    ''' <returns>La nueva Id generada, -1 en caso de error.</returns>
     Private Function GetId() As Integer
         Dim result As Object
         Dim sqlCommand As DbCommand

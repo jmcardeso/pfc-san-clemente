@@ -90,11 +90,11 @@ Public Class frmGuestsFilter
     Private Sub VTextBox_KeyDown(sender As TextBox, e As EventArgs)
         sender.BackColor = Color.White
     End Sub
-    Private Sub BtnMas_Click(sender As Object, e As EventArgs)
+    Private Sub BtnPlus_Click(sender As Object, e As EventArgs)
         AddFilterLine()
     End Sub
 
-    Private Sub BtnMenos_Click(sender As Object, e As EventArgs)
+    Private Sub BtnMinus_Click(sender As Object, e As EventArgs)
         Dim index As Integer = Val(CType(sender, Control).Parent.Name.Last)
         ContainerPanel.Controls.Remove(Controls.Find("Panel_" & index, True)(0))
         FiltersPanel.RemoveAt(index)
@@ -172,14 +172,14 @@ Public Class frmGuestsFilter
         btnPlus.Location = New Point(650, 0)
         btnPlus.Name = "BtnPlus_" & FiltersPanel.Count - 1
         btnPlus.Text = "+"
-        AddHandler btnPlus.Click, AddressOf Me.BtnMas_Click
+        AddHandler btnPlus.Click, AddressOf Me.BtnPlus_Click
         pnlFilter.Controls.Add(btnPlus)
 
         Dim btnMinus As New Button
         btnMinus.Location = New Point(750, 0)
         btnMinus.Name = "BtnMinus_" & FiltersPanel.Count - 1
         btnMinus.Text = "-"
-        AddHandler btnMinus.Click, AddressOf Me.BtnMenos_Click
+        AddHandler btnMinus.Click, AddressOf Me.BtnMinus_Click
         pnlFilter.Controls.Add(btnMinus)
 
         If FiltersPanel.Count = 1 Then

@@ -232,14 +232,6 @@ Public Class frmBookType
         End If
     End Sub
 
-    'Private Sub DateWithTime(sender As Object, dateEvent As ConvertEventArgs)
-    '    'If dateEvent.DesiredType IsNot GetType(Date) Then
-    '    '    Exit Sub
-    '    'End If
-
-    '    dateEvent.Value = dateEvent.Value.Date + New TimeSpan(0, 0, 0)
-    'End Sub
-
     ' El DataGridView ya implementa sus propios eventos para dar formato a los datos.
     ' En el tipo de reserva, hacemos que se muestre la fecha sin la hora.
     Private Sub dgvBooksTypes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvBooksTypes.CellFormatting
