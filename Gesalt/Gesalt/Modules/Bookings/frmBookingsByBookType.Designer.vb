@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmBookingsByGuest
+Partial Class frmBookingsByBookType
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,26 +22,25 @@ Partial Class frmBookingsByGuest
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBookingsByGuest))
-        Me.lblSelect = New System.Windows.Forms.Label()
-        Me.cbxSelect = New System.Windows.Forms.ComboBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBookingsByBookType))
+        Me.tbxBookings = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.cbxProps = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tbxBookings = New System.Windows.Forms.TextBox()
+        Me.cbxSelect = New System.Windows.Forms.ComboBox()
+        Me.lblSelect = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'lblSelect
+        'tbxBookings
         '
-        resources.ApplyResources(Me.lblSelect, "lblSelect")
-        Me.lblSelect.Name = "lblSelect"
+        resources.ApplyResources(Me.tbxBookings, "tbxBookings")
+        Me.tbxBookings.Name = "tbxBookings"
+        Me.tbxBookings.ReadOnly = True
         '
-        'cbxSelect
+        'Label2
         '
-        Me.cbxSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxSelect.FormattingEnabled = True
-        resources.ApplyResources(Me.cbxSelect, "cbxSelect")
-        Me.cbxSelect.Name = "cbxSelect"
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
         '
         'cbxProps
         '
@@ -55,18 +54,19 @@ Partial Class frmBookingsByGuest
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
         '
-        'Label2
+        'cbxSelect
         '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Name = "Label2"
+        Me.cbxSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxSelect.FormattingEnabled = True
+        resources.ApplyResources(Me.cbxSelect, "cbxSelect")
+        Me.cbxSelect.Name = "cbxSelect"
         '
-        'tbxBookings
+        'lblSelect
         '
-        resources.ApplyResources(Me.tbxBookings, "tbxBookings")
-        Me.tbxBookings.Name = "tbxBookings"
-        Me.tbxBookings.ReadOnly = True
+        resources.ApplyResources(Me.lblSelect, "lblSelect")
+        Me.lblSelect.Name = "lblSelect"
         '
-        'frmBookingsByGuest
+        'frmBookingsByBookType
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -77,16 +77,16 @@ Partial Class frmBookingsByGuest
         Me.Controls.Add(Me.cbxSelect)
         Me.Controls.Add(Me.lblSelect)
         Me.MaximizeBox = False
-        Me.Name = "frmBookingsByGuest"
+        Me.Name = "frmBookingsByBookType"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lblSelect As Label
-    Friend WithEvents cbxSelect As ComboBox
+    Friend WithEvents tbxBookings As TextBox
+    Friend WithEvents Label2 As Label
     Friend WithEvents cbxProps As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents tbxBookings As TextBox
+    Friend WithEvents cbxSelect As ComboBox
+    Friend WithEvents lblSelect As Label
 End Class

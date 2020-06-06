@@ -416,6 +416,33 @@ Public Class OpBook
         Return bookTypes
     End Function
 
+    Public Function GetAllBookTypes() As List(Of BookType)
+        Dim bookTypes As New List(Of BookType)
+        Dim da As DbDataAdapter
+        Dim sqlCommand As DbCommand
+
+        sqlCommand = con.Factory.CreateCommand()
+
+        sqlCommand.CommandText = "select * from booktype"
+        sqlCommand.Connection = con.Con
+
+        da = con.Factory.CreateDataAdapter()
+        da.SelectCommand = sqlCommand
+
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        Dim bt As BookType
+        For Each dr As DataRow In dt.Rows
+            bt = New BookType(dr.Item("Id"), dr.Item("property_id"), dr.Item("bt_name"), dr.Item("start_date"),
+                              Utils.EndDateToObject(dr.Item("end_date")), dr.Item("url_web"), dr.Item("url_icalendar"))
+            bt.Prices = GetPrices(bt.Id)
+            bookTypes.Add(bt)
+        Next
+
+        Return bookTypes
+    End Function
+
     ''' <summary>
     ''' Devuelve una nueva Id para insertar en una nueva fila de la tabla booktype de la base de datos.
     ''' </summary>

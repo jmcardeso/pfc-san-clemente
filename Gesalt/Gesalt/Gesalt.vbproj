@@ -153,6 +153,18 @@
     <Compile Include="Modules\Bookings\frmBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Bookings\frmBookingsByBookType.Designer.vb">
+      <DependentUpon>frmBookingsByBookType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Bookings\frmBookingsByBookType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Bookings\frmBookingsByDate.Designer.vb">
+      <DependentUpon>frmBookingsByDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Bookings\frmBookingsByDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Bookings\frmBookingSelect.Designer.vb">
       <DependentUpon>frmBookingSelect.vb</DependentUpon>
     </Compile>
@@ -365,6 +377,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Bookings\frmBook.resx">
       <DependentUpon>frmBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByBookType.es.resx">
+      <DependentUpon>frmBookingsByBookType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByBookType.gl.resx">
+      <DependentUpon>frmBookingsByBookType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByBookType.resx">
+      <DependentUpon>frmBookingsByBookType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByDate.es.resx">
+      <DependentUpon>frmBookingsByDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByDate.gl.resx">
+      <DependentUpon>frmBookingsByDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookings\frmBookingsByDate.resx">
+      <DependentUpon>frmBookingsByDate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Bookings\frmBookingSelect.es.resx">
       <DependentUpon>frmBookingSelect.vb</DependentUpon>

@@ -24,8 +24,8 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tlsProperties = New System.Windows.Forms.ToolStrip()
         Me.ToolStripAdd = New System.Windows.Forms.ToolStripButton()
@@ -43,6 +43,10 @@ Partial Class frmMain
         Me.BookTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageBooksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookTypeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FiltersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ByGuestsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ByDatesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ByBookingTypesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PropertiesReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -98,10 +102,6 @@ Partial Class frmMain
         Me.lblKeys = New System.Windows.Forms.Label()
         Me.lblVat = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.BookingsReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ByGuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ByDatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ByBookingTypesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tlsProperties.SuspendLayout()
         Me.mnsProperties.SuspendLayout()
         CType(Me.dgvProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,7 +191,7 @@ Partial Class frmMain
         '
         'BookTypeToolStripMenuItem
         '
-        Me.BookTypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageBooksToolStripMenuItem, Me.BookTypeToolStripMenuItem1})
+        Me.BookTypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageBooksToolStripMenuItem, Me.BookTypeToolStripMenuItem1, Me.FiltersToolStripMenuItem})
         Me.BookTypeToolStripMenuItem.Name = "BookTypeToolStripMenuItem"
         resources.ApplyResources(Me.BookTypeToolStripMenuItem, "BookTypeToolStripMenuItem")
         '
@@ -205,9 +205,30 @@ Partial Class frmMain
         Me.BookTypeToolStripMenuItem1.Name = "BookTypeToolStripMenuItem1"
         resources.ApplyResources(Me.BookTypeToolStripMenuItem1, "BookTypeToolStripMenuItem1")
         '
+        'FiltersToolStripMenuItem
+        '
+        Me.FiltersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByGuestsToolStripMenuItem1, Me.ByDatesToolStripMenuItem1, Me.ByBookingTypesToolStripMenuItem1})
+        Me.FiltersToolStripMenuItem.Name = "FiltersToolStripMenuItem"
+        resources.ApplyResources(Me.FiltersToolStripMenuItem, "FiltersToolStripMenuItem")
+        '
+        'ByGuestsToolStripMenuItem1
+        '
+        Me.ByGuestsToolStripMenuItem1.Name = "ByGuestsToolStripMenuItem1"
+        resources.ApplyResources(Me.ByGuestsToolStripMenuItem1, "ByGuestsToolStripMenuItem1")
+        '
+        'ByDatesToolStripMenuItem1
+        '
+        Me.ByDatesToolStripMenuItem1.Name = "ByDatesToolStripMenuItem1"
+        resources.ApplyResources(Me.ByDatesToolStripMenuItem1, "ByDatesToolStripMenuItem1")
+        '
+        'ByBookingTypesToolStripMenuItem1
+        '
+        Me.ByBookingTypesToolStripMenuItem1.Name = "ByBookingTypesToolStripMenuItem1"
+        resources.ApplyResources(Me.ByBookingTypesToolStripMenuItem1, "ByBookingTypesToolStripMenuItem1")
+        '
         'ReportsToolStripMenuItem
         '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesReportToolStripMenuItem, Me.BookingsReportsToolStripMenuItem})
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PropertiesReportToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         resources.ApplyResources(Me.ReportsToolStripMenuItem, "ReportsToolStripMenuItem")
         '
@@ -331,8 +352,8 @@ Partial Class frmMain
         '
         Me.dgvProperties.AllowUserToAddRows = False
         Me.dgvProperties.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvProperties.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         resources.ApplyResources(Me.dgvProperties, "dgvProperties")
         Me.dgvProperties.MultiSelect = False
@@ -426,14 +447,14 @@ Partial Class frmMain
         Me.dgvLessors.AllowUserToAddRows = False
         Me.dgvLessors.AllowUserToDeleteRows = False
         Me.dgvLessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLessors.DefaultCellStyle = DataGridViewCellStyle2
         resources.ApplyResources(Me.dgvLessors, "dgvLessors")
         Me.dgvLessors.MultiSelect = False
         Me.dgvLessors.Name = "dgvLessors"
@@ -523,27 +544,6 @@ Partial Class frmMain
         '
         resources.ApplyResources(Me.Label17, "Label17")
         Me.Label17.Name = "Label17"
-        '
-        'BookingsReportsToolStripMenuItem
-        '
-        Me.BookingsReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByGuestsToolStripMenuItem, Me.ByDatesToolStripMenuItem, Me.ByBookingTypesToolStripMenuItem})
-        Me.BookingsReportsToolStripMenuItem.Name = "BookingsReportsToolStripMenuItem"
-        resources.ApplyResources(Me.BookingsReportsToolStripMenuItem, "BookingsReportsToolStripMenuItem")
-        '
-        'ByGuestsToolStripMenuItem
-        '
-        Me.ByGuestsToolStripMenuItem.Name = "ByGuestsToolStripMenuItem"
-        resources.ApplyResources(Me.ByGuestsToolStripMenuItem, "ByGuestsToolStripMenuItem")
-        '
-        'ByDatesToolStripMenuItem
-        '
-        Me.ByDatesToolStripMenuItem.Name = "ByDatesToolStripMenuItem"
-        resources.ApplyResources(Me.ByDatesToolStripMenuItem, "ByDatesToolStripMenuItem")
-        '
-        'ByBookingTypesToolStripMenuItem
-        '
-        Me.ByBookingTypesToolStripMenuItem.Name = "ByBookingTypesToolStripMenuItem"
-        resources.ApplyResources(Me.ByBookingTypesToolStripMenuItem, "ByBookingTypesToolStripMenuItem")
         '
         'frmMain
         '
@@ -683,8 +683,8 @@ Partial Class frmMain
     Friend WithEvents lblKeys As Label
     Friend WithEvents lblVat As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents BookingsReportsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ByGuestsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ByDatesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ByBookingTypesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FiltersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ByGuestsToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ByDatesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ByBookingTypesToolStripMenuItem1 As ToolStripMenuItem
 End Class

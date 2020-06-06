@@ -1,4 +1,8 @@
-﻿Public Class frmBookingsByGuest
+﻿Imports System.Resources
+
+Public Class frmBookingsByGuest
+    Dim LocRM As New ResourceManager("Gesalt.WinFormStrings", GetType(frmBookingsByGuest).Assembly)
+
     Dim books As New List(Of Book)
     Dim props As New List(Of Prop)
 
@@ -23,14 +27,14 @@
         If cbxProps.Items.Count > 0 Then
             cbxProps.SelectedIndex = 0
         Else
-            lblBookings.Text = ""
+            tbxBookings.Text = ""
         End If
 
     End Sub
 
     Private Sub cbxProps_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxProps.SelectedIndexChanged
         Dim booksByProp As New List(Of Book)
-        Dim text As String = ""
+        Dim strInfo As String = ""
 
         Dim propId As Integer = CType(cbxProps.SelectedItem, Prop).Id
 
@@ -38,12 +42,13 @@
         booksByProp = bookAux.ToList
 
         For Each book As Book In booksByProp
-            text &= opBook.GetBookTypeById(book.BookTypeId).BTName & vbNewLine
-            text &= book.ToString & vbNewLine
-            text &= Utils.GetBookStatusString(book.Status) & vbNewLine
-            text &= "--------------------------------------------------" & vbNewLine
+            strInfo &= LocRM.GetString("bookBT") & " "
+            strInfo &= opBook.GetBookTypeById(book.BookTypeId).BTName & vbNewLine
+            strInfo &= LocRM.GetString("bookDays") & " "
+            strInfo &= book.CheckIn.ToShortDateString & " - " & book.CheckOut.ToShortDateString & vbNewLine
+            strInfo &= LocRM.GetString("bookStatus") & " " & Utils.GetBookStatusString(book.Status) & vbNewLine & "---------------------------------------------------" & vbNewLine
         Next
 
-        lblBookings.Text = text.Substring(0, text.Length - 54)
+        tbxBookings.Text = strInfo.Substring(0, strInfo.Length - 54)
     End Sub
 End Class

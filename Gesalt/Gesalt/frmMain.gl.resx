@@ -279,16 +279,16 @@
   <data name="Label17.Text" xml:space="preserve">
     <value>Chaves:</value>
   </data>
-  <data name="BookingsReportsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informes de reservas</value>
-  </data>
-  <data name="ByBookingTypesToolStripMenuItem.Text" xml:space="preserve">
+  <data name="ByBookingTypesToolStripMenuItem1.Text" xml:space="preserve">
     <value>Por modos de reserva</value>
   </data>
-  <data name="ByDatesToolStripMenuItem.Text" xml:space="preserve">
+  <data name="ByDatesToolStripMenuItem1.Text" xml:space="preserve">
     <value>Por datas</value>
   </data>
-  <data name="ByGuestsToolStripMenuItem.Text" xml:space="preserve">
+  <data name="ByGuestsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Por clientes</value>
+  </data>
+  <data name="FiltersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filtros</value>
   </data>
 </root>

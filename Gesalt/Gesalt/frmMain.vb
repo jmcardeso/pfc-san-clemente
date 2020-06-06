@@ -735,7 +735,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub ByGuestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByGuestsToolStripMenuItem.Click
+    Private Sub ByGuestsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByGuestsToolStripMenuItem1.Click
         If bs.Current Is Nothing Then
             Exit Sub
         End If
@@ -753,11 +753,24 @@ Public Class frmMain
         frmAux.ShowDialog()
     End Sub
 
-    Private Sub ByDatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByDatesToolStripMenuItem.Click
+    Private Sub ByDatesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByDatesToolStripMenuItem1.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
 
+        Dim frmAux As New frmBookingsByDate
+
+        frmAux.cbxProperties.DataSource = props
+        frmAux.cbxProperties.SelectedIndex = 0
+        frmAux.ShowDialog()
     End Sub
 
-    Private Sub ByBookingTypesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByBookingTypesToolStripMenuItem.Click
+    Private Sub ByBookingTypesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ByBookingTypesToolStripMenuItem1.Click
+        If bs.Current Is Nothing Then
+            Exit Sub
+        End If
 
+        Dim frmAux As New frmBookingsByBookType
+        frmAux.ShowDialog()
     End Sub
 End Class
