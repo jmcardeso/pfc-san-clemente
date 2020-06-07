@@ -6,7 +6,7 @@
 
 #### Relacional
 
-![Diagrama Relacional](diagramas/Gesalt_Relacional.png)
+![Diagrama Relacional](diagramas/Gesalt_relacional.png)
 
 #### UML
 
