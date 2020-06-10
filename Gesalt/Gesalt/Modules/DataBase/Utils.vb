@@ -116,9 +116,10 @@ Public Class Utils
         Dim opBook As OpBook = OpBook.GetInstance()
         Dim opGuest As OpGuest = OpGuest.GetInstance()
         Dim guest As Guest
+        Dim result As String = ""
 
         For Each book As Book In prop.Books
-            If book.CheckIn <= day And book.CheckOut >= day Then
+            If book.CheckIn <= day.Date And book.CheckOut >= day.Date Then
                 strInfo &= LocRM.GetString("bookBT") & " "
                 strInfo &= opBook.GetBookTypeById(book.BookTypeId).BTName & vbNewLine & LocRM.GetString("bookGuest") & " "
                 guest = opGuest.GuetGuestById(book.GuestId)
@@ -129,7 +130,11 @@ Public Class Utils
             End If
         Next
 
-        Return strInfo.Substring(0, strInfo.Length - 54)
+        If strInfo.Length > 0 Then
+            result = strInfo.Substring(0, strInfo.Length - 54)
+        End If
+
+        Return result
     End Function
 
     ''' <summary>
@@ -159,12 +164,12 @@ Public Class Utils
         Dim limits() As Date = {New Date(9999, 12, 31), New Date(1, 1, 1)}
 
         For Each book As Book In prop.Books
-            If book.CheckIn <= day And book.CheckOut >= day Then
-                If limits(0) > book.CheckIn Then
+            If book.CheckIn <= day.Date And book.CheckOut >= day.Date Then
+                If limits(0).Date > book.CheckIn.Date Then
                     limits(0) = book.CheckIn
                 End If
 
-                If limits(1) < book.CheckOut Then
+                If limits(1).Date < book.CheckOut.Date Then
                     limits(1) = book.CheckOut
                 End If
             End If

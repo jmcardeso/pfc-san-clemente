@@ -495,6 +495,7 @@ Public Class frmMain
             lblCalendar.Text = Utils.GetBookInfo(bs.Current, e.Start)
 
             limits = Utils.GetBookLimits(bs.Current, e.Start)
+
             mclCalendar.SelectionStart = limits(0)
             mclCalendar.SelectionEnd = limits(1)
         Else
