@@ -253,7 +253,7 @@
     <value>0</value>
   </data>
   <data name="LabelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Author</value>
   </data>
   <data name="LabelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

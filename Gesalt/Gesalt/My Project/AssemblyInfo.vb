@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Gestión de alquileres turísticos.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Gesalt")>
-<Assembly: AssemblyCopyright("Copyright © Juan Manuel Cardeso García 2020")>
+<Assembly: AssemblyCopyright("Juan Manuel Cardeso García")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' mediante el carácter '*', como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.1.215")>
-<Assembly: AssemblyFileVersion("1.0.1.215")>
+<Assembly: AssemblyVersion("1.0.2.216")>
+<Assembly: AssemblyFileVersion("1.0.2.216")>
 <Assembly: NeutralResourcesLanguage("en")>

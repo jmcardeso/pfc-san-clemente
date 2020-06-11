@@ -2,7 +2,7 @@
 '*                                                                                      *
 '*                       GESALT - Gestión de alquileres turísticos                      *
 '*                                                                                      *
-'*                         (c) Juan Manuel Cardeso García, 2020                         *
+'*                          Autor:   Juan Manuel Cardeso García                         *
 '*                                                                                      *
 '*      Proyecto de fin de ciclo DAM - IES San Clemente - Santiago de Compostela        *
 '*                                                                                      *

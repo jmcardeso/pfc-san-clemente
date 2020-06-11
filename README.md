@@ -57,7 +57,7 @@ Autodidacta en los primeros tiempos, con un certificado de profesionalidad de pr
 ## Licencia
 
 Gesalt, Gestión de alquileres turísticos  
-Copyright (C) 2020 Juan Manuel Cardeso García
+Autor: Juan Manuel Cardeso García
 
 Este programa es software libre: puedes redistribuirlo y/o modificarlo bajo
 los términos de la Licencia General Pública de GNU publicada por la Free
